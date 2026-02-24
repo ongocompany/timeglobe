@@ -149,7 +149,11 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
 
         let targetGray = Math.min(Math.abs(distanceRatio) * 100, 100);
         let targetBrightness = 100 - targetGray * 0.4;
-        let targetOpacity = 1;
+        // [cl] 카드별 거리 기반 페이드아웃 (양쪽 끝 소멸)
+        const absDist = Math.abs(distanceRatio);
+        let targetOpacity = absDist > 0.4
+          ? Math.max(0, 1 - (absDist - 0.4) / 0.5)
+          : 1;
 
         const ai = activeIndexRef.current;
         if (ai !== -1) {
@@ -223,17 +227,6 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
             "linear-gradient(to right, rgba(0,0,0,0.9) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.9) 100%)",
         }}
       />
-
-      {/* [cl] 하단 가이드 텍스트 */}
-      <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-sm uppercase tracking-widest text-white/50 z-[160] transition-opacity duration-400"
-        style={{
-          fontFamily: "var(--font-noto-sans), sans-serif",
-          opacity: activeIndex !== -1 ? 0 : 1,
-        }}
-      >
-        Drag or Scroll to Explore
-      </div>
 
       {/* [cl] 3D 캐러셀 컨테이너 */}
       <div

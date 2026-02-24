@@ -22,29 +22,60 @@ const SAMPLE_CARDS: CarouselCard[] = [
   { title: "VOLCANO", desc: "Feel the earth's fiery core", image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80" },
 ];
 
+// [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
+type ViewMode = "orbit" | "marker" | null;
+
 export default function Home() {
-  const [carouselOpen, setCarouselOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<ViewMode>(null);
+  const carouselOpen = viewMode === "orbit";
 
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black">
       <Header />
       <DateDisplay />
       <Timeline />
-      <GlobeLoader />
 
-      {/* [cl] 캐러셀 토글 버튼 (테스트용, 나중에 타임라인/마커 클릭으로 대체) */}
-      <button
-        onClick={() => setCarouselOpen(true)}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm uppercase tracking-widest hover:bg-white/20 transition-colors pointer-events-auto"
-        style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+      {/* [cl] 지구본: 캐러셀 열릴 때 축소 (카드 궤도 안쪽으로) */}
+      <div
+        className="absolute inset-0 transition-transform duration-700 ease-out"
+        style={{
+          transform: carouselOpen ? "scale(0.7)" : "scale(1)",
+          transformOrigin: "center center",
+        }}
       >
-        Explore Events
-      </button>
+        <GlobeLoader />
+      </div>
+
+      {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[60] flex gap-3 pointer-events-auto">
+        <button
+          onClick={() => setViewMode((v) => (v === "orbit" ? null : "orbit"))}
+          className={`px-5 py-2.5 rounded-full backdrop-blur-md border text-sm uppercase tracking-widest transition-all duration-300 ${
+            viewMode === "orbit"
+              ? "bg-white/25 border-white/40 text-white"
+              : "bg-white/10 border-white/20 text-white/60 hover:bg-white/15"
+          }`}
+          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+        >
+          Event Orbit
+        </button>
+        <button
+          onClick={() => setViewMode((v) => (v === "marker" ? null : "marker"))}
+          className={`px-5 py-2.5 rounded-full backdrop-blur-md border text-sm uppercase tracking-widest transition-all duration-300 ${
+            viewMode === "marker"
+              ? "bg-white/25 border-white/40 text-white"
+              : "bg-white/10 border-white/20 text-white/60 hover:bg-white/15"
+          }`}
+          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+        >
+          Event Marker
+        </button>
+      </div>
 
       <Carousel3D
         items={SAMPLE_CARDS}
         isOpen={carouselOpen}
-        onClose={() => setCarouselOpen(false)}
+        onClose={() => setViewMode(null)}
       />
     </main>
   );
