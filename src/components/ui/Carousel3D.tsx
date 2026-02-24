@@ -184,13 +184,22 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
     container.addEventListener("mouseover", handleMouseOver);
     container.addEventListener("mouseout", handleMouseOut);
 
+    // [cl] 지구 종속: 위치 오프셋 + 기울기를 부드럽게 보간
+    let currentTilt = 0;
+    let currentOffX = 0;
+    let currentOffY = 0;
+
     const render = () => {
       currentXRef.current +=
         (targetXRef.current - currentXRef.current) * 0.07;
 
-      // [cl] 지구 화면 반지름 읽기
+      // [cl] 지구 화면 상태 읽기 (CesiumGlobe rAF에서 매 프레임 갱신)
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const globeScreenR = (window as any).__timeglobe_screenRadius || 300;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const globeCenter = (window as any).__timeglobe_center as { x: number; y: number } | undefined;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const cameraPitch = (window as any).__timeglobe_cameraPitch ?? (-Math.PI / 2);
 
       // [cl] 상태 업데이트 throttle (React 렌더 비용 줄임)
       if (Math.abs(globeScreenR - globeRadius) > 5) {
@@ -208,6 +217,27 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       const scrollAngle = currentXRef.current;
       const hi = hoveredIndexRef.current;
       const ai = activeIndexRef.current;
+
+      // [cl] 지구 종속: 궤도 위치를 지구 중심에 맞추고, 카메라 pitch에 따라 기울임
+      // pitch = -π/2 (위에서 내려다봄) → tilt 0°, pitch = 0 (수평) → tilt 90°
+      const rawTilt = (cameraPitch + Math.PI / 2) * (180 / Math.PI);
+      // 모달 열림 시 기울기 0으로 복원 (모달이 비스듬히 보이는 것 방지)
+      const targetTilt = ai !== -1 ? 0 : rawTilt;
+      currentTilt = lerp(currentTilt, targetTilt, 0.06);
+
+      let targetOffX = 0;
+      let targetOffY = 0;
+      if (globeCenter) {
+        targetOffX = globeCenter.x - window.innerWidth / 2;
+        targetOffY = globeCenter.y - window.innerHeight / 2;
+      }
+      // 모달 열림 시 오프셋 0으로 (화면 중앙에 모달 표시)
+      if (ai !== -1) { targetOffX = 0; targetOffY = 0; }
+      currentOffX = lerp(currentOffX, targetOffX, 0.06);
+      currentOffY = lerp(currentOffY, targetOffY, 0.06);
+
+      // [cl] 컨테이너 transform: 지구 중심으로 이동 + pitch 기울기
+      container.style.transform = `translate3d(${currentOffX}px, ${currentOffY}px, 0) rotateX(${currentTilt}deg)`;
 
       itemElsRef.current.forEach((el, i) => {
         if (!el) return;
