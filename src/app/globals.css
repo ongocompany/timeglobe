@@ -56,7 +56,8 @@ body {
   border-radius: 4px;
   width: var(--orbit-icon-size, 80px);
   height: var(--orbit-icon-size, 80px);
-  cursor: grab;
+  cursor: pointer;
+  pointer-events: auto;
   transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
               height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
               border-radius 0.3s ease;

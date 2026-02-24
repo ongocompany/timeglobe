@@ -118,6 +118,8 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
         (window as any).__timeglobe_center = { x: center.x, y: center.y };
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).__timeglobe_cameraPitch = viewer.camera.pitch;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_cameraHeading = viewer.camera.heading;
 
         // [cl] 대기 글로우
         const glowSize = screenRadius * 2 * 1.75;
@@ -159,15 +161,15 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
     };
   }, [viewer]);
 
-  // [cl] Event Orbit 활성 시 줌 제한: 현재 높이 기준 50%~200% 범위로 제한
+  // [cl] Event Orbit 활성 시 줌 제한: 현재 높이 기준 30%~300% 범위로 제한
   useEffect(() => {
     if (!viewer) return;
     const controller = viewer.scene.screenSpaceCameraController;
 
     if (orbitActive) {
       const height = viewer.camera.positionCartographic.height;
-      controller.minimumZoomDistance = height * 0.5;
-      controller.maximumZoomDistance = height * 2.0;
+      controller.minimumZoomDistance = height * 0.3;
+      controller.maximumZoomDistance = height * 3.0;
     } else {
       controller.minimumZoomDistance = 1;
       controller.maximumZoomDistance = Infinity;
