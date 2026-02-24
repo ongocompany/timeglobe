@@ -135,10 +135,15 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       currentXRef.current +=
         (targetXRef.current - currentXRef.current) * 0.07;
 
-      // [cl] 지구 화면 반지름에 연동된 궤도 반지름 (매 프레임 갱신)
+      // [cl] CSS perspective 보정된 궤도 반지름 (매 프레임 갱신)
+      // 측면 카드(angle=90°)의 화면상 겉보기 x = R*P/(P+R)
+      // 이 값이 지구 반지름 + MARGIN이 되도록 역산: R = (G+M)*P / (P-G-M)
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const globeScreenR = (window as any).__timeglobe_screenRadius || 300;
-      const ORBIT_RADIUS = globeScreenR + 100; // 지구 가장자리 + 100px 바깥
+      const P = 1200; // perspective 값과 동일
+      const MARGIN = 50; // 지구 가장자리로부터의 여유 (px)
+      const G = Math.min(globeScreenR, P - MARGIN - 100); // 특이점 방지
+      const ORBIT_RADIUS = (G + MARGIN) * P / (P - G - MARGIN);
 
       // [cl] 스크롤 오프셋 → 궤도 각도 변환
       const scrollAngle = (currentXRef.current / totalWidth) * 2 * Math.PI;
