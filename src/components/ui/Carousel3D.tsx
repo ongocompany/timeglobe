@@ -121,8 +121,6 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
     const numItems = items.length;
     const itemWidth = window.innerWidth * 0.12;
     const totalWidth = itemWidth * numItems;
-    // [cl] 원형 궤도 파라미터
-    const ORBIT_RADIUS = 450; // px (나중에 지구 screenRadius에 맞출 예정)
     const angleStep = (2 * Math.PI) / numItems;
 
     container.addEventListener("wheel", handleWheel, { passive: false });
@@ -136,6 +134,11 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
     const render = () => {
       currentXRef.current +=
         (targetXRef.current - currentXRef.current) * 0.07;
+
+      // [cl] 지구 화면 반지름에 연동된 궤도 반지름 (매 프레임 갱신)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const globeScreenR = (window as any).__timeglobe_screenRadius || 300;
+      const ORBIT_RADIUS = globeScreenR + 100; // 지구 가장자리 + 100px 바깥
 
       // [cl] 스크롤 오프셋 → 궤도 각도 변환
       const scrollAngle = (currentXRef.current / totalWidth) * 2 * Math.PI;
@@ -252,11 +255,10 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
               activeIndex === i ? "cursor-default" : "cursor-grab"
             }`}
             style={{
-              width: activeIndex === i ? "min(800px, 90vw)" : "11vw",
-              height: activeIndex === i ? "auto" : "30vh",
+              width: activeIndex === i ? "min(800px, 90vw)" : "180px",
+              height: activeIndex === i ? "auto" : "180px",
               aspectRatio: activeIndex === i ? "3/4" : undefined,
               maxHeight: activeIndex === i ? "85vh" : undefined,
-              minWidth: "120px",
               transformOrigin: "center center",
               backgroundColor: "#222",
               borderRadius: activeIndex === i ? "24px" : "0px",

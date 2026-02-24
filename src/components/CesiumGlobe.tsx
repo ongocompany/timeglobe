@@ -112,6 +112,10 @@ function SceneSetup({ shrink }: { shrink: boolean }) {
           (Math.tan(angularRadius) / Math.tan(fovy / 2)) *
           (viewer.canvas.clientHeight / 2);
 
+        // [cl] 지구 화면 반지름을 캐러셀 궤도에 공유 (rAF 매 프레임 동기화)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_screenRadius = screenRadius;
+
         // [cl] 대기 글로우
         const glowSize = screenRadius * 2 * 1.75;
         glowEl.style.width = `${glowSize}px`;
