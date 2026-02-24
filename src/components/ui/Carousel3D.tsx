@@ -64,14 +64,18 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
   const lerp = (start: number, end: number, factor: number) =>
     start + (end - start) * factor;
 
-  // [cl] 모달 열기: 해당 카드를 중앙으로 이동 + 확장
+  // [cl] 모달 열기: 클릭된 카드를 궤도 전면(angle=0)으로 최단 경로 회전
   const openModal = useCallback((index: number) => {
     setActiveIndex(index);
-    const state = itemStatesRef.current[index];
-    if (state) {
-      targetXRef.current += state.currentX;
-    }
-  }, []);
+    const itemWidth = window.innerWidth * 0.12;
+    const totalWidth = itemWidth * items.length;
+    const target = index * itemWidth;
+    let diff = target - targetXRef.current;
+    // [cl] 원형 최단 경로: 반 바퀴 이내로 회전
+    while (diff > totalWidth / 2) diff -= totalWidth;
+    while (diff < -totalWidth / 2) diff += totalWidth;
+    targetXRef.current += diff;
+  }, [items.length]);
 
   // [cl] 모달 닫기
   const closeModal = useCallback(() => {
@@ -117,6 +121,9 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
     const numItems = items.length;
     const itemWidth = window.innerWidth * 0.12;
     const totalWidth = itemWidth * numItems;
+    // [cl] 원형 궤도 파라미터
+    const ORBIT_RADIUS = 450; // px (나중에 지구 screenRadius에 맞출 예정)
+    const angleStep = (2 * Math.PI) / numItems;
 
     container.addEventListener("wheel", handleWheel, { passive: false });
     container.addEventListener("mousedown", handleDragStart);
@@ -130,30 +137,33 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       currentXRef.current +=
         (targetXRef.current - currentXRef.current) * 0.07;
 
+      // [cl] 스크롤 오프셋 → 궤도 각도 변환
+      const scrollAngle = (currentXRef.current / totalWidth) * 2 * Math.PI;
+
       itemElsRef.current.forEach((el, i) => {
         if (!el) return;
         const state = itemStatesRef.current[i];
         if (!state) return;
 
-        let x = i * itemWidth - currentXRef.current;
+        // [cl] 원형 궤도 위 각도 (정면=0, 좌=-π, 우=+π)
+        let angle = i * angleStep - scrollAngle;
+        while (angle > Math.PI) angle -= 2 * Math.PI;
+        while (angle < -Math.PI) angle += 2 * Math.PI;
 
-        // [cl] 무한 스크롤
-        while (x > totalWidth / 2) x -= totalWidth;
-        while (x < -totalWidth / 2) x += totalWidth;
+        // [cl] 원형 궤도 3D 좌표: x=좌우, z=앞뒤 (정면 z=0, 뒤 z=-2R)
+        const x = ORBIT_RADIUS * Math.sin(angle);
+        let z = ORBIT_RADIUS * (Math.cos(angle) - 1);
+        let cardRotateY = angle * (180 / Math.PI);
 
         state.currentX = x;
 
-        const distanceRatio = x / (window.innerWidth / 2);
-        let z = -Math.abs(distanceRatio) * 600;
-        let rotateY = distanceRatio * 40;
-
-        let targetGray = Math.min(Math.abs(distanceRatio) * 100, 100);
+        // [cl] 각도 기반 시각 효과: 정면 밝고, 측면 흐리고, 후면 소멸
+        const cosAngle = Math.cos(angle);
+        let targetGray = Math.max(0, (1 - cosAngle) * 50);
         let targetBrightness = 100 - targetGray * 0.4;
-        // [cl] 카드별 거리 기반 페이드아웃 (양쪽 끝 소멸)
-        const absDist = Math.abs(distanceRatio);
-        let targetOpacity = absDist > 0.4
-          ? Math.max(0, 1 - (absDist - 0.4) / 0.5)
-          : 1;
+        let targetOpacity = cosAngle > -0.2
+          ? Math.max(0, (cosAngle + 0.2) / 1.2)
+          : 0;
 
         const ai = activeIndexRef.current;
         if (ai !== -1) {
@@ -161,8 +171,8 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
             targetGray = 0;
             targetBrightness = 100;
             targetOpacity = 1;
-            z += 50;
-            rotateY = 0;
+            z = 50; // [cl] 모달: 카메라 앞으로 팝아웃
+            cardRotateY = 0;
           } else {
             targetGray = 100;
             targetBrightness = 40;
@@ -174,13 +184,13 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
         state.brightness = lerp(state.brightness, targetBrightness, 0.08);
         state.opacity = lerp(state.opacity, targetOpacity, 0.08);
 
-        el.style.transform = `translate3d(calc(-50% + ${x}px), -50%, ${z}px) rotateY(${rotateY}deg)`;
+        el.style.transform = `translate3d(calc(-50% + ${x}px), -50%, ${z}px) rotateY(${cardRotateY}deg)`;
         el.style.filter = `grayscale(${state.gray}%) brightness(${state.brightness}%)`;
         el.style.opacity = state.opacity.toString();
         el.style.zIndex =
           ai === i
             ? "200"
-            : Math.round(100 - Math.abs(distanceRatio) * 100).toString();
+            : Math.round(100 + cosAngle * 100).toString();
       });
 
       frameIdRef.current = requestAnimationFrame(render);
@@ -219,12 +229,12 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
         }}
       />
 
-      {/* [cl] 양끝 페이드 오버레이 (3D 보호) */}
+      {/* [cl] 부드러운 비네트 (궤도 분위기 연출) */}
       <div
         className="absolute inset-0 pointer-events-none z-[150]"
         style={{
           background:
-            "linear-gradient(to right, rgba(0,0,0,0.9) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.9) 100%)",
+            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%)",
         }}
       />
 
