@@ -31,13 +31,16 @@
 - **저장소 주소**: https://github.com/leejinwoo1973/timeglobe.git
 
 ## 7. 업무 시작 및 기록 규칙
-* **업무 시작 시:** 작업 스레드가 새로 열리면 형의 지시를 처리하기 전에 먼저 `docs/develop/[gm]database_schema_plan.md`, `docs/develop/[gm]development_guide.md`, `docs/work_change_log.md` 3개의 파일을 무조건 읽고, 현재 프로젝트 내용과 이전 업무 진행 상황을 파악해!
+* **업무 시작 시:** 작업 스레드가 새로 열리면 형의 지시를 처리하기 전에 먼저 `docs/develop/02_[gm]database_schema_plan.md`, `docs/develop/01_[gm]development_guide.md`, `docs/work_change_log.md` 3개의 파일을 무조건 읽고, 현재 프로젝트 내용과 이전 업무 진행 상황을 파악해!
 * **로그 작성:** 코드를 대량으로 수정하거나, 형(진형)의 지시가 있거나, 내 업무(세션)가 종료될 시점에는 **반드시** 내가 무엇을 작업했는지 `docs/work_change_log.md`에 지시사항과 업무 내용을 기록해 둬야 해. (작업자 표기: 나 지훈이 일 때는 '[gm]'을 사용해)
 
-## 8. 세션 시작과 종료시
+## 8. 파일 네이밍 규칙
+* **새로운 주요 문서 작성 시:** 파일명은 반드시 순차적인 번호와 작성자 코드를 붙여서 생성해. (예: `01_[gm]development_guide.md`, `02_[gm]database_schema_plan.md`)
+
+## 9. 세션 시작과 종료시
 * 세션 시작 시 저장소 주소로 `git pull`을 실행해줘.
 * 세션 종료 시 저장소 주소로 `git push`를 실행해줘.
 
-## 9. 협업 규칙
+## 10. 협업 규칙
 * 이 프로젝트는 진(jn), claude(cl), gemini(gm)가 함께 개발하는 프로젝트야.
 * 따라서 주석을 남기거나 문서를 남길 때, 클로드는 `cl`, gemini는 `gm`, 진은 `jn`으로 반드시 표기해줘. 

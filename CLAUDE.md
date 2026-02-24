@@ -39,5 +39,8 @@
 **따라서 주석을 남기거나 문서를 남길때, 클로드는 cl, gemini는 gm, 진은 jn으로 표기해줘.**
 
 ## 9. 업무 및 기록 규칙
-* **업무 시작 시:** 항상 `docs/develop/[gm]database_schema_plan.md`, `docs/develop/[gm]development_guide.md`, 그리고 `docs/work_change_log.md` 파일을 읽어 프로젝트의 전반적인 내용과 현재까지의 업무 진행 상황을 파악해야 해.
+* **업무 시작 시:** 항상 `docs/develop/02_[gm]database_schema_plan.md`, `docs/develop/01_[gm]development_guide.md`, 그리고 `docs/work_change_log.md` 파일을 읽어 프로젝트의 전반적인 내용과 현재까지의 업무 진행 상황을 파악해야 해.
 * **업무 기록:** 대량의 코드/데이터 수정이 발생하거나, 진형(jn)의 명시적인 지시가 있을 때, 그리고 세션/업무가 종료될 때는 반드시 변경된 사항과 어떤 AI가 작업했는지(cl, gm 등)를 `docs/work_change_log.md`에 상세히 기록해줘.
+
+## 10. 파일 네이밍 규칙
+* **새로운 주요 문서 작성 시:** 파일명은 반드시 순차적인 번호와 작성자 코드를 붙여서 생성해. (예: `01_[gm]development_guide.md`, `02_[cl]api_specs.md`)
