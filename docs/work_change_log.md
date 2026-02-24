@@ -26,4 +26,12 @@
 * `01_[gm]development_guide.md`에 기술 검토 및 추가 제안(섹션 6) 작성.
 * 진형(jn)의 결정에 따라 기술 스택 확정 반영: 프론트엔드 `Next.js` 확정, GeoJSON `CDN 정적 호스팅` 확정.
 * 진형(jn)의 요청으로 CesiumJS 커스터마이징 가능 범위 조사 및 `01_[gm]development_guide.md` 섹션 6-7에 결과 추가: 3D glTF 마커, SkyBox 우주 배경 커스텀, ParticleSystem 이펙트 모두 기본 지원 확인.
+* **[Phase 0] Next.js + CesiumJS 프로젝트 초기 환경 구축:**
+  * Next.js 16.1.6 + TypeScript + Tailwind CSS 4 + App Router로 프로젝트 초기화.
+  * CesiumJS(^1.138.0) + Resium(^1.19.4) 설치 및 `next.config.ts`에 copy-webpack-plugin 설정 (Workers, ThirdParty, Assets, Widgets 에셋 복사).
+  * Next.js 16 Turbopack 기본 설정과 CesiumJS webpack 설정 충돌 해결 (`--webpack` 플래그 추가).
+  * `CesiumGlobe.tsx` (3D 지구본 + 서울 테스트 마커) 및 `GlobeLoader.tsx` (SSR 비활성화 래퍼) 컴포넌트 생성.
+  * `.env.example` 작성 (Cesium Ion 토큰, Supabase 키 템플릿).
+  * `.gitignore` 정리 (public/cesium/, .claude/, .mcp.json, bkit 관련 파일 제외).
+  * git remote 재설정 및 전체 빌드 성공 확인 후 push 완료.
 
