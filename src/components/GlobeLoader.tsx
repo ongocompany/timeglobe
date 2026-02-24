@@ -12,6 +12,6 @@ const CesiumGlobe = dynamic(() => import("@/components/CesiumGlobe"), {
   ),
 });
 
-export default function GlobeLoader() {
-  return <CesiumGlobe />;
+export default function GlobeLoader({ shrink = false }: { shrink?: boolean }) {
+  return <CesiumGlobe shrink={shrink} />;
 }

@@ -45,10 +45,11 @@ const SKYBOX_SOURCES = {
 };
 
 // [cl] Viewer 마운트 후 SkyBox + 자동 자전을 설정하는 내부 컴포넌트
-function SceneSetup() {
+function SceneSetup({ shrink }: { shrink: boolean }) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
+  const preShrinkHeightRef = useRef<number | null>(null);
 
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
@@ -151,6 +152,30 @@ function SceneSetup() {
     };
   }, [viewer]);
 
+  // [cl] 캐러셀 열릴 때 카메라 줌아웃 → 지구만 축소 (스카이박스는 유지)
+  useEffect(() => {
+    if (!viewer) return;
+    const camera = viewer.camera;
+    const pos = camera.positionCartographic;
+
+    if (shrink) {
+      preShrinkHeightRef.current = pos.height;
+      camera.flyTo({
+        destination: Cartesian3.fromRadians(pos.longitude, pos.latitude, pos.height * 2.0),
+        orientation: { heading: camera.heading, pitch: camera.pitch, roll: camera.roll },
+        duration: 0.7,
+      });
+    } else if (preShrinkHeightRef.current !== null) {
+      const curPos = camera.positionCartographic;
+      camera.flyTo({
+        destination: Cartesian3.fromRadians(curPos.longitude, curPos.latitude, preShrinkHeightRef.current),
+        orientation: { heading: camera.heading, pitch: camera.pitch, roll: camera.roll },
+        duration: 0.7,
+      });
+      preShrinkHeightRef.current = null;
+    }
+  }, [shrink, viewer]);
+
   // [cl] 자동 자전 + 자전축 복원: 마우스 조작 멈추고 1초 후 서→동 방향 회전
   // 마우스 클릭 시 북극↑ 남극↓ 정위치로 부드럽게 복원
   useEffect(() => {
@@ -237,7 +262,7 @@ function SceneSetup() {
   return null;
 }
 
-export default function CesiumGlobe() {
+export default function CesiumGlobe({ shrink = false }: { shrink?: boolean }) {
   return (
     <Viewer
       full
@@ -253,7 +278,7 @@ export default function CesiumGlobe() {
       selectionIndicator={false}
       infoBox={false}
     >
-      <SceneSetup />
+      <SceneSetup shrink={shrink} />
 
       {/* [cl] 서울 마커 실험: 원거리 = 2D 아이콘(Billboard), 근거리 = 3D 모델 */}
 

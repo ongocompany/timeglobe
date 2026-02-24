@@ -35,16 +35,8 @@ export default function Home() {
       <DateDisplay />
       <Timeline />
 
-      {/* [cl] 지구본: 캐러셀 열릴 때 축소 (카드 궤도 안쪽으로) */}
-      <div
-        className="absolute inset-0 transition-transform duration-700 ease-out"
-        style={{
-          transform: carouselOpen ? "scale(0.7)" : "scale(1)",
-          transformOrigin: "center center",
-        }}
-      >
-        <GlobeLoader />
-      </div>
+      {/* [cl] 지구본: shrink=true면 카메라 줌아웃으로 지구만 축소 (스카이박스 유지) */}
+      <GlobeLoader shrink={carouselOpen} />
 
       {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[60] flex gap-3 pointer-events-auto">
