@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everest 3D Carousel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
+
+        /* 기본 초기화 및 화면 세팅 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            color: #fff;
+            overflow: hidden;
+            /* 네이티브 스크롤 방지 */
+            font-family: 'Inter', sans-serif;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 3D 원근감 부여 */
+            perspective: 1200px;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* --- 상단 타이틀 영역 --- */
+        .header-container {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 50;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .main-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            letter-spacing: -1px;
+            background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            animation: blurReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: 0.2s;
+        }
+
+        .sub-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #888;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            animation: blurReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes blurReveal {
+            0% {
+                opacity: 0;
+                filter: blur(20px) brightness(1.5);
+                transform: scale(1.1) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                filter: blur(0px) brightness(1);
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .sub-title {
+                font-size: 0.9rem;
+                margin-top: 8px;
+            }
+
+            .header-container {
+                top: 10%;
+            }
+        }
+
+        /* 배경 레이어드 타이포그래피 */
+        .background-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Anton', sans-serif;
+            font-size: 20vw;
+            color: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+            z-index: 0;
+            pointer-events: none;
+            letter-spacing: 1vw;
+        }
+
+        /* [추가됨] 양끝 화면을 흐리게 가려주는 오버레이 레이어 
+           3D 공간을 훼손하지 않고 Mask 효과를 냅니다. */
+        .edge-fade-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* 배경색과 동일한 색상으로 양끝 15% 그라데이션 적용 */
+            background: linear-gradient(to right, #111 0%, transparent 15%, transparent 85%, #111 100%);
+            z-index: 150;
+            /* 기본 카드(100 이하)보다 위, 활성화 모달(200)보다 아래 */
+            pointer-events: none;
+            /* 클릭 방해 금지 */
+        }
+
+        /* 3D 요소를 담는 컨테이너 */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            z-index: 1;
+            /* [수정됨] 3D 효과를 없애던 CSS Mask 속성 제거 */
+        }
+
+        /* --- 개별 카드 아이템 및 전환 애니메이션 --- */
+        .carousel-item {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 11vw;
+            height: 30vh;
+            min-width: 120px;
+            transform-origin: center center;
+            background-color: #222;
+            overflow: hidden;
+            cursor: grab;
+            border-radius: 0px;
+            will-change: transform, filter, opacity;
+            transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+                height 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+                border-radius 0.7s ease;
+        }
+
+        .carousel-item:active {
+            cursor: grabbing;
+        }
+
+        /* 모달 활성화 시 카드 스타일 (가로 800px, 3:4 비율) */
+        .carousel-item.modal-active {
+            width: 800px;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 24px;
+            cursor: default;
+        }
+
+        /* 텍스트 가독성을 위한 카드 하단 그라데이션 */
+        .carousel-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .carousel-item.modal-active::after {
+            opacity: 1;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        /* --- 타이포그래피 (모달 내부 텍스트) --- */
+        .card-content {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            z-index: 10;
+            color: #fff;
+            opacity: 0;
+            transform: translateX(80px);
+            transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* 카드가 모달로 커지면 텍스트가 우측에서 안쪽으로 들어옴 */
+        .carousel-item.modal-active .card-content {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: 0.3s;
+        }
+
+        .card-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 4rem;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 4px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .card-title {
+                font-size: 2.5rem;
+            }
+
+            .card-desc {
+                font-size: 0.9rem;
+            }
+
+            .card-content {
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+            }
+        }
+
+        /* 하단 텍스트 가이드 */
+        .bottom-ui {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+        }
+
+        body.modal-open .bottom-ui {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background-text">TIME GLOBE</div>
+
+    <div class="header-container">
+        <h1 class="main-title">Time Globe</h1>
+        <p class="sub-title">Travel through time, unveil what happened.</p>
+    </div>
+
+    <!-- 추가된 가장자리 페이드 오버레이 (3D 보호) -->
+    <div class="edge-fade-overlay"></div>
+
+    <div class="carousel-container" id="carousel"></div>
+    <div class="bottom-ui">Drag or Scroll to Explore</div>
+
+    <script>
+        const container = document.getElementById('carousel');
+        const itemsData = [];
+
+        // 데이터 20개
+        const cardContents = [
+            { title: "PEAK", desc: "Reach the highest point of nature" },
+            { title: "VALLEY", desc: "Discover the hidden depths" },
+            { title: "FOREST", desc: "Embrace the profound green silence" },
+            { title: "OCEAN", desc: "Listen to the deep blue whispers" },
+            { title: "DESERT", desc: "Feel the warmth of golden sands" },
+            { title: "WINTER", desc: "Experience the pure white snow" },
+            { title: "CANYON", desc: "Witness the ancient rock formations" },
+            { title: "NIGHT", desc: "Gaze at the endless bright stars" },
+            { title: "RIVER", desc: "Flow with the endless stream" },
+            { title: "VOLCANO", desc: "Feel the earth's fiery core" },
+            { title: "ISLAND", desc: "Escape to the isolated paradise" },
+            { title: "GLACIER", desc: "Touch the ancient frozen water" },
+            { title: "CAVE", desc: "Explore the dark underground" },
+            { title: "MEADOW", desc: "Breathe the fresh spring air" },
+            { title: "CLIFF", desc: "Stand at the edge of the world" },
+            { title: "TUNDRA", desc: "Survive the frozen wasteland" },
+            { title: "JUNGLE", desc: "Discover the dense wild nature" },
+            { title: "OASIS", desc: "Find life in the barren land" },
+            { title: "REEF", desc: "Dive into the colorful deep" },
+            { title: "SKY", desc: "Soar above the infinite clouds" }
+        ];
+
+        // 이미지 20개
+        const imageUrls = [
+            'https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1444464666168-49b626f86211?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1513689125086-6c432170e843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        ];
+
+        const numItems = imageUrls.length;
+        const itemWidth = window.innerWidth * 0.12;
+        const totalWidth = itemWidth * numItems;
+
+        let targetX = 0;
+        let currentX = 0;
+        const ease = 0.07;
+
+        let isDragging = false;
+        let isDraggingAction = false;
+        let startX = 0;
+        let startScrollX = 0;
+
+        let activeIndex = -1;
+
+        imageUrls.forEach((url, i) => {
+            const el = document.createElement('div');
+            el.className = 'carousel-item';
+
+            el.innerHTML = `
+                <img src="${url}" alt="Carousel Image">
+                <div class="card-content">
+                    <h2 class="card-title">${cardContents[i].title}</h2>
+                    <p class="card-desc">${cardContents[i].desc}</p>
+                </div>
+            `;
+            container.appendChild(el);
+
+            const itemObj = {
+                el: el,
+                currentX: 0,
+                gray: 0,
+                brightness: 100,
+                opacity: 1
+            };
+
+            el.addEventListener('click', (e) => {
+                if (isDraggingAction) return;
+                if (activeIndex === i) return;
+
+                e.stopPropagation();
+                openModal(i);
+            });
+
+            itemsData.push(itemObj);
+        });
+
+        window.addEventListener('click', (e) => {
+            if (activeIndex !== -1) {
+                const activeEl = itemsData[activeIndex].el;
+                if (!activeEl.contains(e.target)) {
+                    closeModal();
+                }
+            }
+        });
+
+        function openModal(index) {
+            activeIndex = index;
+            document.body.classList.add('modal-open');
+            itemsData[index].el.classList.add('modal-active');
+
+            targetX += itemsData[index].currentX;
+        }
+
+        function closeModal() {
+            itemsData[activeIndex].el.classList.remove('modal-active');
+            activeIndex = -1;
+            document.body.classList.remove('modal-open');
+        }
+
+        window.addEventListener('wheel', (e) => {
+            if (activeIndex !== -1) return;
+            targetX += e.deltaY * 1.5 + e.deltaX * 1.5;
+        });
+
+        const handleDragStart = (e) => {
+            if (activeIndex !== -1) return;
+            isDragging = true;
+            isDraggingAction = false;
+            startX = e.touches ? e.touches[0].clientX : e.clientX;
+            startScrollX = targetX;
+            container.style.cursor = 'grabbing';
+        };
+
+        const handleDragMove = (e) => {
+            if (!isDragging) return;
+            const currentEventX = e.touches ? e.touches[0].clientX : e.clientX;
+            const deltaX = currentEventX - startX;
+
+            if (Math.abs(deltaX) > 5) isDraggingAction = true;
+
+            if (activeIndex === -1) {
+                targetX = startScrollX - deltaX * 2.5;
+            }
+        };
+
+        const handleDragEnd = () => {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        };
+
+        window.addEventListener('mousedown', handleDragStart);
+        window.addEventListener('mousemove', handleDragMove);
+        window.addEventListener('mouseup', handleDragEnd);
+        window.addEventListener('touchstart', handleDragStart);
+        window.addEventListener('touchmove', handleDragMove);
+        window.addEventListener('touchend', handleDragEnd);
+
+        const lerp = (start, end, factor) => start + (end - start) * factor;
+
+        // --- 렌더링 루프 ---
+        function render() {
+            currentX += (targetX - currentX) * ease;
+
+            itemsData.forEach((itemObj, i) => {
+                const el = itemObj.el;
+                let x = (i * itemWidth) - currentX;
+
+                // 무한 스크롤
+                while (x > totalWidth / 2) x -= totalWidth;
+                while (x < -totalWidth / 2) x += totalWidth;
+
+                itemObj.currentX = x;
+
+                const distanceRatio = x / (window.innerWidth / 2);
+
+                let z = -Math.abs(distanceRatio) * 600;
+                let rotateY = distanceRatio * 40;
+
+                let targetGray = Math.min(Math.abs(distanceRatio) * 100, 100);
+                let targetBrightness = 100 - (targetGray * 0.4);
+                let targetOpacity = 1;
+
+                // 모달 켜졌을 때 배경 페이드 효과
+                if (activeIndex !== -1) {
+                    if (activeIndex === i) {
+                        targetGray = 0;
+                        targetBrightness = 100;
+                        targetOpacity = 1;
+                        z = z + 50;
+                        rotateY = 0;
+                    } else {
+                        targetGray = 100;
+                        targetBrightness = 40;
+                        targetOpacity = 0.3;
+                    }
+                }
+
+                itemObj.gray = lerp(itemObj.gray, targetGray, 0.08);
+                itemObj.brightness = lerp(itemObj.brightness, targetBrightness, 0.08);
+                itemObj.opacity = lerp(itemObj.opacity, targetOpacity, 0.08);
+
+                el.style.transform = `translate3d(calc(-50% + ${x}px), -50%, ${z}px) rotateY(${rotateY}deg)`;
+                el.style.filter = `grayscale(${itemObj.gray}%) brightness(${itemObj.brightness}%)`;
+                el.style.opacity = itemObj.opacity;
+
+                if (activeIndex === i) {
+                    el.style.zIndex = 200;
+                } else {
+                    el.style.zIndex = Math.round(100 - Math.abs(distanceRatio) * 100);
+                }
+            });
+
+            requestAnimationFrame(render);
+        }
+
+        render();
+    </script>
+</body>
+
+</html>

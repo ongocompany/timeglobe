@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* [cl] 사이트 진입 시 블러→선명 리빌 애니메이션 */
+@keyframes blurReveal {
+  0% {
+    opacity: 0;
+    filter: blur(20px) brightness(1.5);
+    transform: scale(1.1) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-blur-reveal {
+  opacity: 0;
+  animation: blurReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
