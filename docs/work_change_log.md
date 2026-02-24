@@ -63,6 +63,16 @@
 * **page.tsx**: "Explore Events" 테스트 버튼 + Carousel3D 오버레이 연동 (샘플 Unsplash 데이터 10장)
 * **프로토타입 보관**: `docs/interactiontest.html` 원본 저장소에 보관
 
+## [2026-02-25] [cl] Event Orbit UX 대폭 개선
+* **캐러셀 → 원형 궤도**: 선형 스크롤에서 원형 띠(circular orbit) 방식으로 전환, CSS perspective 보정 공식 `R = (G+M)*P/(P-G-M)` 적용
+* **동적 궤도 반지름**: CesiumGlobe에서 `window.__timeglobe_screenRadius` 공유 → 캐러셀이 매 프레임 읽어 궤도 크기 자동 조절
+* **아이콘 hover 인터랙션**: 기본 ~30px 아이콘 (지구 지름 800px 기준 비례), hover 시 180×180 확대 (0.3s cubic-bezier)
+* **카드 자동 반복**: 궤도 둘레를 아이콘+5px 간격으로 나눠 필요한 만큼 items 반복 (최대 200개)
+* **스크롤 제거**: 마우스 휠 핸들러 삭제, 드래그/터치만 지원
+* **줌 제한**: `orbitActive` prop으로 Event Orbit 활성 시 카메라 줌 범위 제한 (현재 높이 50%~200%)
+* **prop 체인 교체**: `shrink` → `orbitActive` (page.tsx → GlobeLoader → CesiumGlobe → SceneSetup)
+* **UI 토글**: Event Orbit / Event Marker 듀얼 토글 버튼 (viewMode state)
+
 ### [향후 검토] 시대별 맵 전환 방향
 * **문제**: 과거 시대에 현대 위성사진(Bing Maps)이 보이면 타임머신 컨셉과 불일치
 * **방향**: 현대=위성타일, 과거=자연지형 텍스처(8K) + 역사 벡터 데이터(GeoJSON) 오버레이
