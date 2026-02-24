@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- [cl] 박물관 마커 아이콘: 지구본 위 POI용 -->
+  <!-- 배경 원 -->
+  <circle cx="32" cy="32" r="30" fill="#1a1a2e" stroke="#4ecdc4" stroke-width="2" opacity="0.9"/>
+  <!-- 지붕 삼각형 -->
+  <polygon points="32,12 14,26 50,26" fill="#4ecdc4"/>
+  <!-- 기둥 3개 -->
+  <rect x="18" y="27" width="4" height="18" rx="1" fill="#e0e0e0"/>
+  <rect x="30" y="27" width="4" height="18" rx="1" fill="#e0e0e0"/>
+  <rect x="42" y="27" width="4" height="18" rx="1" fill="#e0e0e0"/>
+  <!-- 바닥 -->
+  <rect x="12" y="45" width="40" height="4" rx="1" fill="#4ecdc4"/>
+</svg>

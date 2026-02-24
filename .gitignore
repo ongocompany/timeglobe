@@ -52,6 +52,15 @@ supabase/.temp/
 .mcp.json
 
 # bkit plugin files
+.bkit/
 docs/.bkit-memory.json
 docs/.pdca-snapshots/
 docs/.pdca-status.json
+
+# Temporary working files
+docs/tmp/
+
+# Unused textures (keep only actively used ones)
+public/textures/earth_daymap.jpg
+public/textures/earth_daymap_8k.jpg
+public/textures/clouds.png
