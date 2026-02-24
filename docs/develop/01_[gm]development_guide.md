@@ -82,3 +82,52 @@ Globe.gl은 WebGL(Three.js) 기반이라 수백 개의 마커와 무거운 GeoJS
 | 4 | Supabase 연동 (Events 데이터) | 정적 → 동적 데이터 전환 |
 | 5 | 인증 + 도감(패스포트) | 사용자 기능 시작 |
 | 6 | 퀴즈 / 결제 / BGM 등 | 부가 기능 (후순위) |
+
+### 6-7. [cl] CesiumJS 커스터마이징 가능 범위 조사 (2026-02-24)
+
+진형(jn)의 요청으로 CesiumJS에서 TimeGlobe가 요구하는 시각적 커스터마이징이 어디까지 가능한지 조사한 결과입니다.
+
+#### 3D 오브젝트 마커 (glTF 모델) — 완벽 지원
+CesiumJS는 마커 위치에 **glTF/GLB 포맷의 3D 모델**을 직접 배치할 수 있습니다.
+* 카테고리별 3D 마커 구현 가능 (예: 전쟁 = 대포, 발명 = 전구/느낌표 등)
+* glTF에 내장된 **애니메이션 재생** 지원 (등장 시 뿅 하고 튀어나오는 연출 가능)
+* 애니메이션 속도 조절, 반복, 역재생 모두 가능
+* Entity 클릭 이벤트 지원 → 마커 클릭 시 모달 팝업 연동 가능
+* 일반 2D 아이콘(Billboard) 마커도 동시 지원
+* 무료 glTF 모델 소스: [Sketchfab](https://sketchfab.com), [Poly Pizza](https://poly.pizza) 등
+* 참고: [CesiumJS ModelGraphics 공식 문서](https://cesium.com/learn/cesiumjs/ref-doc/ModelGraphics.html)
+
+#### 우주 배경 (SkyBox) 커스텀 — 완벽 지원
+기본 배경이 밋밋하더라도 **SkyBox 큐브맵 6면 이미지**를 교체하여 완전히 커스텀 가능합니다.
+* 성운, 은하수, 별이 가득한 우주 배경으로 자유롭게 교체 가능
+* 원리: 지구본을 감싸는 거대한 정육면체 6면에 이미지를 입히는 방식
+* NASA 등에서 무료 우주 이미지 배포 중, 직접 제작한 이미지도 사용 가능
+* 참고: [CesiumJS SkyBox 공식 문서](https://cesium.com/learn/cesiumjs/ref-doc/SkyBox.html)
+
+#### 파티클 이펙트 (화산, 폭발 등) — 내장 기능
+CesiumJS에는 **ParticleSystem**이 내장되어 있어 별도 라이브러리 없이 이펙트 구현 가능합니다.
+* 기본 제공 이펙트: 불/연기(화산), 폭발(전쟁), 불꽃놀이, 눈/비/먼지
+* 색상 그라데이션 (시작색 → 끝색 전환)
+* 크기 변화 (작게 시작 → 크게 퍼짐)
+* **버스트(폭발) 타이밍 지정** 가능
+* 파티클 텍스처 이미지 자유 교체
+* 참고: [CesiumJS Particle Systems 튜토리얼](https://cesium.com/learn/cesiumjs-learn/cesiumjs-particle-systems/)
+
+#### 기타 내장 기능
+* **Timeline 위젯**: 시간축 슬라이더 내장 (TimeGlobe의 타임라인 기능에 활용)
+* **GeoJsonDataSource**: GeoJSON 국경선 데이터 렌더링 지원
+* **시간 기반 애니메이션(CZML)**: 시간에 따라 데이터가 변하는 시각화에 최적화
+
+#### 커스터마이징 가능 범위 요약
+
+| TimeGlobe 요구사항 | CesiumJS 지원 여부 | 비고 |
+|---|---|---|
+| 카테고리별 3D 마커 (대포, 전구 등) | **glTF 모델 로딩으로 완벽 지원** | 무료 모델 소스 풍부 |
+| 마커 등장 애니메이션 (뿅!) | **glTF 내장 애니메이션 재생** | 속도/반복/역재생 제어 가능 |
+| 마커 클릭 → 모달 | **Entity 클릭 이벤트** | 기본 API 지원 |
+| 우주 느낌 배경 | **SkyBox 큐브맵 커스텀** | 6면 이미지 자유 교체 |
+| 화산 폭발/전쟁 이펙트 | **ParticleSystem 내장** | 불/연기/폭발/눈/비 등 |
+| 타임라인 슬라이더 | **Timeline 위젯 내장** | 시간 기반 데이터 전환 최적화 |
+| GeoJSON 국경선 | **GeoJsonDataSource** | CDN에서 fetch 후 렌더링 |
+
+**-> [jn 검토 대기] CesiumJS는 TimeGlobe가 요구하는 모든 시각적 커스터마이징을 기본 기능으로 지원함. 3D 렌더링 라이브러리 최종 확정 논의 필요.**
