@@ -23,15 +23,7 @@
 
 ## 5. 문서 작업 후 자동 push 규칙
 - `docs/` 폴더에 문서를 작성하거나 수정하면, **해당 파일만** `git add → commit → push` 해.
-- 커밋 메시지 형식: `[지훈][Docs] 작업 내용 요약`
-
-## 6. 프로젝트 규칙
-- **프로젝트명**: TimeGlobe
-- **저장소**: https://github.com/leejinwoo1973/timeglobe
-- **저장소 주소**: https://github.com/leejinwoo1973/timeglobe.git
-## 5. 문서 작업 후 자동 push 규칙
-- `docs/` 폴더에 문서를 작성하거나 수정하면, **해당 파일만** `git add → commit → push` 해.
-- 커밋 메시지 형식: `[지훈][Docs] 작업 내용 요약`
+- 커밋 메시지 형식: `[민철][Docs] 작업 내용 요약`
 
 ## 6. 프로젝트 규칙
 - **프로젝트명**: TimeGlobe
@@ -47,5 +39,5 @@
 **따라서 주석을 남기거나 문서를 남길때, 클로드는 cl, gemini는 gm, 진은 jn으로 표기해줘.**
 
 ## 9. 업무 및 기록 규칙
-* **업무 시작 시:** 항상 `docs/database_schema_plan.md`, `docs/development_guide.md`, 그리고 `docs/work_change_log.md` 파일을 읽어 프로젝트의 전반적인 내용과 현재까지의 업무 진행 상황을 파악해야 해.
+* **업무 시작 시:** 항상 `docs/develop/[gm]database_schema_plan.md`, `docs/develop/[gm]development_guide.md`, 그리고 `docs/work_change_log.md` 파일을 읽어 프로젝트의 전반적인 내용과 현재까지의 업무 진행 상황을 파악해야 해.
 * **업무 기록:** 대량의 코드/데이터 수정이 발생하거나, 진형(jn)의 명시적인 지시가 있을 때, 그리고 세션/업무가 종료될 때는 반드시 변경된 사항과 어떤 AI가 작업했는지(cl, gm 등)를 `docs/work_change_log.md`에 상세히 기록해줘.

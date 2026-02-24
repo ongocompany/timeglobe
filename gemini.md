@@ -31,7 +31,7 @@
 - **저장소 주소**: https://github.com/leejinwoo1973/timeglobe.git
 
 ## 7. 업무 시작 및 기록 규칙
-* **업무 시작 시:** 작업 스레드가 새로 열리면 형의 지시를 처리하기 전에 먼저 `docs/database_schema_plan.md`, `docs/development_guide.md`, `docs/work_change_log.md` 3개의 파일을 무조건 읽고, 현재 프로젝트 내용과 이전 업무 진행 상황을 파악해!
+* **업무 시작 시:** 작업 스레드가 새로 열리면 형의 지시를 처리하기 전에 먼저 `docs/develop/[gm]database_schema_plan.md`, `docs/develop/[gm]development_guide.md`, `docs/work_change_log.md` 3개의 파일을 무조건 읽고, 현재 프로젝트 내용과 이전 업무 진행 상황을 파악해!
 * **로그 작성:** 코드를 대량으로 수정하거나, 형(진형)의 지시가 있거나, 내 업무(세션)가 종료될 시점에는 **반드시** 내가 무엇을 작업했는지 `docs/work_change_log.md`에 지시사항과 업무 내용을 기록해 둬야 해. (작업자 표기: 나 지훈이 일 때는 '[gm]'을 사용해)
 
 ## 8. 세션 시작과 종료시
