@@ -12,6 +12,6 @@ const CesiumGlobe = dynamic(() => import("@/components/CesiumGlobe"), {
   ),
 });
 
-export default function GlobeLoader({ shrink = false }: { shrink?: boolean }) {
-  return <CesiumGlobe shrink={shrink} />;
+export default function GlobeLoader({ orbitActive = false }: { orbitActive?: boolean }) {
+  return <CesiumGlobe orbitActive={orbitActive} />;
 }

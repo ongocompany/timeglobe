@@ -36,7 +36,7 @@ export default function Home() {
       <Timeline />
 
       {/* [cl] 지구본: 원래 크기 유지 (카드가 궤도 위에서 감싸는 형태) */}
-      <GlobeLoader />
+      <GlobeLoader orbitActive={carouselOpen} />
 
       {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[60] flex gap-3 pointer-events-auto">
