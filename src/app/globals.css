@@ -43,3 +43,37 @@ body {
   opacity: 0;
   animation: blurReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
+/* [cl] Event Orbit 카드: CSS로 hover/active 크기 전환 (React re-render 회피) */
+.orbit-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  will-change: transform;
+  transform-origin: center center;
+  background-color: #222;
+  border-radius: 4px;
+  width: var(--orbit-icon-size, 30px);
+  height: var(--orbit-icon-size, 30px);
+  cursor: grab;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              border-radius 0.3s ease;
+}
+
+.orbit-card:not([data-active]):hover {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+}
+
+.orbit-card[data-active] {
+  width: min(800px, 90vw);
+  height: auto;
+  aspect-ratio: 3 / 4;
+  max-height: 85vh;
+  border-radius: 24px;
+  cursor: default;
+  transition-duration: 0.7s;
+}
