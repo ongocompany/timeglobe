@@ -54,8 +54,8 @@ body {
   transform-origin: center center;
   background-color: #222;
   border-radius: 4px;
-  width: var(--orbit-icon-size, 30px);
-  height: var(--orbit-icon-size, 30px);
+  width: var(--orbit-icon-size, 80px);
+  height: var(--orbit-icon-size, 80px);
   cursor: grab;
   transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
               height 0.3s cubic-bezier(0.25, 1, 0.5, 1),

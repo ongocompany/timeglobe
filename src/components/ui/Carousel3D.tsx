@@ -26,7 +26,7 @@ interface ItemState {
 
 // [cl] 기준값
 const BASE_GLOBE_DIAMETER = 800;
-const BASE_ICON_SIZE = 30;
+const BASE_ICON_SIZE = 80;
 const ICON_GAP = 5;
 const P = 1200; // perspective 값
 const MARGIN = 50; // 지구 가장자리 여유 (px)
