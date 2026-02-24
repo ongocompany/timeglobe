@@ -8,10 +8,10 @@
 ## Phase 0: 프로젝트 인프라 세팅 (기반 공사)
 > 코딩 전에 프로젝트 뼈대와 핵심 기술이 돌아가는지 확인하는 단계.
 
-- [ ] Next.js 프로젝트 초기화 (TypeScript 기반)
-- [ ] CesiumJS + Resium 설치 및 기본 3D 지구본 렌더링 확인
-  - [ ] SkyBox(우주 배경) 커스텀 적용 테스트
-  - [ ] 기본 마커(Entity) 1개 찍어보기
+- [x] Next.js 프로젝트 초기화 (TypeScript 기반)
+- [x] CesiumJS + Resium 설치 및 기본 3D 지구본 렌더링 확인
+  - [x] SkyBox(우주 배경) 커스텀 적용 테스트
+  - [x] 기본 마커(Entity) 1개 찍어보기
 - [ ] Supabase 프로젝트 생성 및 SQL 스키마 배포
   - [ ] `20260224174800_initial_schema.sql` 적용
   - [ ] 테스트 데이터 1~2건 삽입 확인
