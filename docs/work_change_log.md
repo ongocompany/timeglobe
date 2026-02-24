@@ -52,6 +52,17 @@
 * **DateDisplay 컴포넌트** 추가
 * **.gitignore 정리**: .bkit/, docs/tmp/, 미사용 텍스처 제외
 
+## [2026-02-25] [cl] 3D 캐러셀 + 헤더 애니메이션
+* **Carousel3D 컴포넌트** 신규 생성 (`src/components/ui/Carousel3D.tsx`): `docs/interactiontest.html` 바닐라 JS 프로토타입을 React로 변환
+  * 3D perspective(1200px) 무한 스크롤 캐러셀
+  * 드래그/터치/스크롤 조작 지원
+  * 카드 클릭 시 모달 확장 (800px, 3:4 비율, cubic-bezier 트랜지션)
+  * 배경 클릭: 모달 닫기 → 캐러셀 닫기 (2단계 동작)
+  * rAF 루프에서 useRef/useState 동기화 패턴 적용
+* **Header 블러 리빌 애니메이션**: `@keyframes blurReveal` (blur 20px→0, brightness 1.5→1, scale 1.1→1) 사이트 진입 시 적용
+* **page.tsx**: "Explore Events" 테스트 버튼 + Carousel3D 오버레이 연동 (샘플 Unsplash 데이터 10장)
+* **프로토타입 보관**: `docs/interactiontest.html` 원본 저장소에 보관
+
 ### [향후 검토] 시대별 맵 전환 방향
 * **문제**: 과거 시대에 현대 위성사진(Bing Maps)이 보이면 타임머신 컨셉과 불일치
 * **방향**: 현대=위성타일, 과거=자연지형 텍스처(8K) + 역사 벡터 데이터(GeoJSON) 오버레이
