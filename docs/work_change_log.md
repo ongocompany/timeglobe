@@ -37,3 +37,18 @@
   * `.gitignore` 정리 (public/cesium/, .claude/, .mcp.json, bkit 관련 파일 제외).
   * git remote 재설정 및 전체 빌드 성공 확인 후 push 완료.
 
+## [2026-02-24] [cl] Phase 0 시각 효과 + 마커 + UI 개선
+* **ESO 은하수 스카이박스** 적용: eso0932a 파노라마(6000x3000) → 큐브맵 6면 변환(px/nx/py/ny/pz/nz.png), 내장 skyAtmosphere OFF
+* **CSS 대기 글로우**: radial-gradient 오버레이 (1.75x, 38%→41%→85% 소멸), rAF 매 프레임 추적
+* **CSS 그림자**: linear-gradient 오버레이 (태양=오른쪽 가정, 왼쪽 어둡게 5단계)
+* **구름 오버레이**: clouds_alpha.png (SingleTileImageryProvider, alpha 0.15)
+* **기본 타일 색감 보정**: saturation 0.7, brightness 1.05, contrast 1.1
+* **Cesium Ion 토큰 설정**: .env.local에 NEXT_PUBLIC_CESIUM_ION_TOKEN 추가 → Bing Maps 위성 타일 활성화
+* **서울 마커 LOD 시스템**: 원거리(500km+) 2D Billboard(museum.svg) ↔ 근거리(0~500km) 3D Box 자동 전환
+* **자동 자전 거리별 속도 제어**: 500km 이내 완전 정지, 500km~2000km 선형 감속, 2000km+ 정상 속도
+* **자전축 복원**: heading/roll을 0(북↑)으로 서서히 보간 (RESTORE_SPEED=0.03)
+* **하이브리드 이미지리 시도 → 철회**: 8K 커스텀 텍스처 + Bing Maps 타일 조합 시도했으나, 레이어 간섭으로 타일 로딩 실패. 기본 CesiumJS 맵으로 복원.
+* **Header/Timeline UI 리뉴얼**: Noto Sans 폰트, 타임스케일 지구 탄생(45억년)까지 확장, mask-image 페이드
+* **DateDisplay 컴포넌트** 추가
+* **.gitignore 정리**: .bkit/, docs/tmp/, 미사용 텍스처 제외
+
