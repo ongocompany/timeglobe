@@ -72,6 +72,8 @@ Supabase Auth의 `auth.users`와 1:1 매핑되는 프로필 테이블.
 * `id` : `uuid` (Primary Key)
 * `user_id` : `uuid` (Foreign Key -> `Users.id`)
 * `event_id` : `uuid` (Foreign Key -> `Events.id`)
+* `user_token` : `integer` (해당 도감을 획득할 때 발생/소모한 토큰 양이나 당시 보유 토큰)
+* `user_level` : `text` (해당 시점의 유저 레벨 기록용)
 * `acquired_at` : `timestamp with time zone`
 * Unique Constraint : `(user_id, event_id)` (중복 획득 방지)
 
