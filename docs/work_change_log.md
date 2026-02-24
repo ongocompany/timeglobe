@@ -19,6 +19,7 @@
 * 진형(jn)의 요청으로 Design-First 방침에 따른 단계별 개발 로드맵 `03_[cl]development_roadmap.md` 작성 (Phase 0~5: 인프라 세팅 → UI 디자인 → 프론트엔드 → 백엔드 → 게이미피케이션 → 런칭).
 * 진형(jn)의 요청으로 `01_[gm]development_guide.md` 파트 6-8에 CesiumJS 모바일 배포 전략 추가: WebView의 WebGL 성능 한계로 인해 Capacitor(네이티브 래핑) 대신 **반응형 웹 + PWA 방식** 강력 권장 및 명시적 렌더링 최적화 기법 기록.
 * 진형(jn)의 요청으로 MVP 1차 스케치 UI 구현: Next.js + TailwindCSS를 사용하여 CesiumJS 지구본 위에 `Time Globe` 타이틀 헤더와 애플 타임머신 스타일의 세로 타임라인 레이아웃 오버레이 추가.
+* 진형(jn)의 피드백을 수렴하여 UI 디자인 전면 수정: 타이틀 텍스트 아웃라인 효과(`text-stroke`), 그라데이션 페이드 백그라운드 적용 및 중앙 정렬 처리. 타임라인은 밀집된 연도 표기(스크롤 가능)와 마우스 커서 위치에 따른 포물선(Parabolic) 호버 확장 효과를 적용하여 애플 타임머신 감성 극대화.
 
 
 
