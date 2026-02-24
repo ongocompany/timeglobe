@@ -73,6 +73,17 @@
 * **prop 체인 교체**: `shrink` → `orbitActive` (page.tsx → GlobeLoader → CesiumGlobe → SceneSetup)
 * **UI 토글**: Event Orbit / Event Marker 듀얼 토글 버튼 (viewMode state)
 
+## [2026-02-25] [cl] Event Orbit 지구본 완전 종속 시스템
+* **지구본 위치/기울기 동기화**: CesiumGlobe에서 `__timeglobe_center`, `__timeglobe_cameraPitch`, `__timeglobe_cameraHeading` 공유 → 캐러셀이 rAF에서 읽어 컨테이너 transform 갱신
+* **pointer-events 패스스루**: 오버레이 `pointer-events: none` → 카드만 `auto` → 지구본 조작과 캐러셀 공존
+* **heading(자전축) 동기화**: 컨테이너 `rotateY(-heading)` → 지구 좌우 회전 시 궤도도 같이 회전
+* **pitch(기울기) 동기화**: 컨테이너 `rotateX(tilt)` → 지구 기울이면 궤도도 같이 기울어짐
+* **재렌더링 완전 제거**: `globeRadius` state 삭제, `displayCount`는 열릴 때 한번만 계산 (1.5배 버퍼), 모든 시각 업데이트 rAF에서만 수행
+* **physicalAngle vs visualAngle 분리**: 카드 위치는 링 내 고정(physical), 밝기/투명도는 카메라 기준(visual)
+* **모달 시 heading freeze**: 모달 열리면 heading 고정 → 지구 돌려도 모달 카드 위치 유지
+* **줌 제한 완화**: 50%~200% → 30%~300%으로 확대
+* **아이콘 기본 크기**: 30px → 80px (지구 지름 800px 기준 비례)
+
 ### [향후 검토] 시대별 맵 전환 방향
 * **문제**: 과거 시대에 현대 위성사진(Bing Maps)이 보이면 타임머신 컨셉과 불일치
 * **방향**: 현대=위성타일, 과거=자연지형 텍스처(8K) + 역사 벡터 데이터(GeoJSON) 오버레이
