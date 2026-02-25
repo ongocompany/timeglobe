@@ -1,10 +1,12 @@
 "use client";
 
-// [cl] WebGL2 워프 쉐이더 컴포넌트 — docs/디자인샘플/warp.html 포팅
-// 원작: Matthias Hurrle (@atzedent) 소용돌이 광속 패턴
+// [cl] WebGL2 워프 쉐이더 컴포넌트 — 방사형 하이퍼스페이스 스트릭
+// 원작: docs/디자인샘플/warp_alt.css (GLSL polar-coord radial streaks)
 
 import { useEffect, useRef, useState } from "react";
 
+// [cl] 방사형 하이퍼스페이스 스트릭 셰이더
+// 200개 별이 중심→외곽으로 방사, screen blend 전용 (검정=투명)
 const DEFAULT_FRAG = `#version 300 es
 precision highp float;
 out vec4 O;
@@ -14,36 +16,49 @@ uniform vec2 resolution;
 #define FC gl_FragCoord.xy
 #define R resolution
 #define T time
-#define hue(a) (.6+.6*cos(6.3*(a)+vec3(0,83,21)))
 
-float rnd(float a) {
-  vec2 p = fract(a * vec2(12.9898, 78.233));
-  p += dot(p, p*345.);
-  return fract(p.x * p.y);
+float random(vec2 st) {
+  return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
 }
 
-vec3 pattern(vec2 uv) {
-  vec3 col = vec3(0.);
-  for (float i=.0; i++<20.;) {
-    float a = rnd(i);
-    vec2 n = vec2(a, fract(a*34.56));
-    vec2 p = sin(n*(T+7.) + T*.5);
-    float d = dot(uv-p, uv-p);
-    col += .00125/d * hue(dot(uv,uv) + i*.125 + T);
+void main() {
+  vec2 st = (FC - .5 * R) / R.y;
+  vec3 color = vec3(0.);
+
+  float len = length(st);
+
+  // [cl] 극좌표: 중심에서 바깥으로 방사
+  vec2 polar = vec2(atan(st.y, st.x), len);
+
+  // [cl] 200개 별 줄기
+  float num_stars = 200.;
+  polar.x *= num_stars;
+
+  float star_seed = floor(polar.x) + .5;
+  float random_star = random(vec2(star_seed));
+
+  // [cl] 별 이동: time에 따라 바깥으로 흘러감
+  float time_offset = T * (.5 + random_star * .5);
+  float star_pos = fract(random_star + time_offset) * 2.;
+
+  // [cl] 줄기 폭 + 형태
+  float streak_width = .005 + random_star * .005;
+  float star_streak = smoothstep(-streak_width, streak_width, polar.y - star_pos)
+                    - smoothstep(streak_width, streak_width + .2, polar.y - star_pos);
+
+  // [cl] 가장자리 페이드: 중심과 외곽에서 소멸
+  star_streak *= smoothstep(0., .3, polar.y) * smoothstep(1., .7, polar.y);
+
+  float brightness = .5 + random_star * .5;
+  vec3 star_color = vec3(.8, .9, 1.) * brightness;
+
+  // [cl] 2% 확률로 핑크/보라 별
+  if (random(vec2(star_seed, 2.)) > .98) {
+    star_color = vec3(1., .6, .8);
   }
-  return col;
-}
 
-void main(void) {
-  vec2 uv = (FC - .5 * R) / min(R.x, R.y);
-  vec3 col = vec3(0.);
-  float s = 2.4;
-  float a = atan(uv.x, uv.y);
-  float b = length(uv);
-  uv = vec2(a * 5. / 6.28318, .05 / tan(b) + T);
-  uv = fract(uv) - .5;
-  col += pattern(uv * s);
-  O = vec4(col, 1.);
+  color += star_streak * star_color;
+  O = vec4(color, 1.);
 }`;
 
 const DEFAULT_VERT = `#version 300 es

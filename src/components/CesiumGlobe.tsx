@@ -15,6 +15,7 @@ import {
   Cartesian3,
   Cartesian2,
   Cartographic,
+  Color,
   SkyBox,
   Math as CesiumMath,
   SingleTileImageryProvider,
@@ -167,6 +168,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const warpSpinMultRef = useRef(0);
   // [cl] 워프 전 카메라 위치: zoomin 복귀 시 사용
   const capturedCameraRef = useRef<{ lon: number; lat: number; alt: number } | null>(null);
+  // [cl] 워프 고도 수동 보간 refs: flyTo 대신 spin 루프에서 고도+회전 동시 제어
+  const warpAltStartRef = useRef(0);
+  const warpAltTargetRef = useRef(0);
+  const warpAltStartTimeRef = useRef(0);
+  const warpLatStartRef = useRef(0);
 
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
@@ -188,6 +194,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     SingleTileImageryProvider.fromUrl("/textures/clouds_alpha.png", {
       rectangle: Rectangle.MAX_VALUE,
     }).then((cloudProvider) => {
+      if (viewer.isDestroyed()) return;
       const cloudLayer = viewer.imageryLayers.addImageryProvider(cloudProvider);
       cloudLayer.alpha = 0.15;
     });
@@ -246,6 +253,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     let frameId: number;
     const updateGlow = () => {
+      // [cl] Viewer 파괴 후 rAF 잔존 방지
+      if (viewer.isDestroyed()) return;
       // [cl] Orbit 모드 카메라 강제 고정: 위도/피치/높이/heading 벗어나면 즉시 복원
       // ★ heading도 0으로 강제 (기존: viewer.camera.heading 유지 → 기울기 고착 버그)
       // ★ resetToDefault 보호 구간(500ms)에는 lock 스킵 — 리셋 setView와 충돌 방지
@@ -456,35 +465,62 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     };
   }, []);
 
-  // [cl] 워프 단계 전환: zoomout→70000km 줌아웃, zoomin→원위치 복귀
+  // [cl] 워프 배경 제어: page.tsx에서 타이밍별로 호출
+  // "black"  → 스카이박스 OFF + 검정 배경 (별만 제거, 지구 유지)
+  // "transparent" → 배경 투명 (뒤의 LightSpeed 비침)
+  // "normal" → 스카이박스 ON + 검정 배경 (정상 복귀)
+  useEffect(() => {
+    if (!viewer) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__timeglobe_setWarpBackground = (mode: "normal" | "black" | "transparent") => {
+      if (viewer.isDestroyed()) return;
+      switch (mode) {
+        case "black":
+          if (viewer.scene.skyBox) viewer.scene.skyBox.show = false;
+          viewer.scene.backgroundColor = Color.BLACK;
+          break;
+        case "transparent":
+          viewer.scene.backgroundColor = Color.TRANSPARENT;
+          break;
+        case "normal":
+          if (viewer.scene.skyBox) viewer.scene.skyBox.show = true;
+          viewer.scene.backgroundColor = Color.BLACK;
+          break;
+      }
+    };
+    return () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      delete (window as any).__timeglobe_setWarpBackground;
+    };
+  }, [viewer]);
+
+  // [cl] 워프 단계 전환: ref 값만 설정 → spin 루프에서 고도 보간 + 회전 동시 처리
+  // flyTo 제거: flyTo는 카메라를 매 프레임 덮어쓰므로 rotateRight와 충돌
   useEffect(() => {
     if (!viewer) return;
     if (warpPhase === "zoomout") {
-      // [cl] 현재 카메라 위치 저장 → zoomin 시 복귀용
+      // [cl] 현재 카메라 위치 저장 + 고도 보간 시작
       const carto = viewer.camera.positionCartographic;
       capturedCameraRef.current = {
         lon: carto.longitude,
         lat: carto.latitude,
         alt: carto.height,
       };
-      // [cl] 70,000km까지 1.5초 줌아웃
-      viewer.camera.flyTo({
-        destination: Cartesian3.fromRadians(carto.longitude, carto.latitude, 70_000_000),
-        duration: 1.5,
-      });
+      warpAltStartRef.current = carto.height;
+      warpAltTargetRef.current = 70_000_000;
+      warpAltStartTimeRef.current = performance.now();
     } else if (warpPhase === "hold") {
-      // [cl] flyTo 중단 (hold 진입 = 카메라 위치 고정)
-      viewer.camera.cancelFlight();
+      // [cl] 고도 보간 정지 (현재 고도 유지, 회전만)
+      warpAltStartTimeRef.current = 0;
     } else if (warpPhase === "zoomin" && capturedCameraRef.current) {
-      // [cl] 원래 높이로 1.5초 복귀, heading 0(북↑)으로 정렬
-      const { lon, lat, alt } = capturedCameraRef.current;
-      viewer.camera.flyTo({
-        destination: Cartesian3.fromRadians(lon, lat, alt),
-        orientation: { heading: 0, pitch: CesiumMath.toRadians(-90), roll: 0 },
-        duration: 1.5,
-      });
+      // [cl] 원위치 복귀 보간 시작
+      const carto = viewer.camera.positionCartographic;
+      warpAltStartRef.current = carto.height;
+      warpAltTargetRef.current = capturedCameraRef.current.alt;
+      warpLatStartRef.current = carto.latitude;
+      warpAltStartTimeRef.current = performance.now();
     } else if (warpPhase === "idle") {
-      viewer.camera.cancelFlight();
+      warpAltStartTimeRef.current = 0;
     }
   }, [warpPhase, viewer]);
 
@@ -753,6 +789,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     // [cl] rAF 루프: 타임스탬프 비교로 딜레이 판단 + 이미지 팝업 위치 매 프레임 갱신
     const tick = () => {
+      // [cl] Viewer 파괴 후 rAF 잔존 방지
+      if (viewer.isDestroyed()) return;
       const now = performance.now();
 
       // [cl] 스택 클릭 시 툴팁 즉시 강제 숨김
@@ -882,6 +920,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     }, ScreenSpaceEventType.MOUSE_MOVE);
 
     const tick = () => {
+      // [cl] Viewer 파괴 후 rAF 잔존 방지
+      if (viewer.isDestroyed()) return;
       const h = viewer.camera.positionCartographic.height;
       const inZone = h < 3_000_000;
       const hovering = markerHoverRef.current;
@@ -924,7 +964,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       moveHandler.destroy();
       cancelAnimationFrame(rafId);
       el.remove();
-      if (viewer.canvas.style.cursor === "none") viewer.canvas.style.cursor = "";
+      if (!viewer.isDestroyed() && viewer.canvas.style.cursor === "none") viewer.canvas.style.cursor = "";
     };
   }, [viewer]);
 
@@ -955,14 +995,38 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     let frameId: number;
     const spin = () => {
+      // [cl] Viewer 파괴 후 rAF 잔존 방지
+      if (viewer.isDestroyed()) return;
       const currentWarpPhase = warpPhaseRef.current;
 
-      // [cl] 워프 홀드: 역방향 고속 자전 (flyTo 없음, spinMult에 따라 가속/감속)
-      if (currentWarpPhase === "hold") {
+      // [cl] 워프 전체 단계: 수동 고도 보간 + 역방향 회전 동시 처리
+      // flyTo 대신 setView → rotateRight가 매 프레임 누적되어 자연스러운 자전
+      if (currentWarpPhase === "zoomout" || currentWarpPhase === "hold" || currentWarpPhase === "zoomin") {
+        // [cl] ① 고도 보간 (zoomout/zoomin만, hold는 고도 고정)
+        if (currentWarpPhase !== "hold" && warpAltStartTimeRef.current > 0) {
+          const elapsed = (performance.now() - warpAltStartTimeRef.current) / 1000;
+          const t = Math.min(elapsed / 1.5, 1); // [cl] 1.5초 duration
+          const eased = 0.5 - 0.5 * Math.cos(t * Math.PI); // [cl] ease in-out
+
+          const pos = viewer.camera.positionCartographic;
+          const newAlt = warpAltStartRef.current + (warpAltTargetRef.current - warpAltStartRef.current) * eased;
+
+          // [cl] zoomin: 위도도 캡처 위치로 보간 복귀
+          let newLat = pos.latitude;
+          if (currentWarpPhase === "zoomin" && capturedCameraRef.current) {
+            newLat = warpLatStartRef.current + (capturedCameraRef.current.lat - warpLatStartRef.current) * eased;
+          }
+
+          viewer.camera.setView({
+            destination: Cartesian3.fromRadians(pos.longitude, newLat, newAlt),
+            orientation: { heading: 0, pitch: CesiumMath.toRadians(-90), roll: 0 },
+          });
+        }
+
+        // [cl] ② 역방향 고속 자전: spinMult에 따라 가감속
         const spinMult = warpSpinMultRef.current;
         if (spinMult > 0) {
           const delta = CesiumMath.toRadians(ROTATION_SPEED * spinMult);
-          // [cl] 역방향: 평소 left(서→동)면 warp는 right(동→서)
           if (globeDirectionRef.current !== "right") {
             viewer.camera.rotateRight(delta);
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -973,12 +1037,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
           }
         }
-        frameId = requestAnimationFrame(spin);
-        return;
-      }
 
-      // [cl] 워프 줌아웃/줌인 단계: flyTo가 카메라 제어, 자전 스킵
-      if (currentWarpPhase === "zoomout" || currentWarpPhase === "zoomin") {
         frameId = requestAnimationFrame(spin);
         return;
       }
@@ -1089,6 +1148,8 @@ export default function CesiumGlobe({
   return (
     <Viewer
       full
+      // [cl] alpha:true → 스카이박스 OFF 시 우주 영역 투명 → 뒤의 LightSpeed 비침
+      contextOptions={{ webgl: { alpha: true } }}
       timeline={false}
       animation={false}
       homeButton={false}
