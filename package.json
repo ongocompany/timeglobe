@@ -6,7 +6,11 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "collect:bootstrap": "node scripts/wikidata/run.mjs --mode bootstrap",
+    "collect:incremental": "node scripts/wikidata/run.mjs --mode incremental",
+    "collect:backfill": "node scripts/wikidata/run.mjs --mode backfill",
+    "collect:probe": "node scripts/wikidata/run.mjs --mode probe --dry-run"
   },
   "dependencies": {
     "cesium": "^1.138.0",
@@ -26,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
