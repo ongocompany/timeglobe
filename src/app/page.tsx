@@ -9,6 +9,9 @@ import Carousel3D, { type CarouselCard } from "@/components/ui/Carousel3D";
 import { EventDetailContent } from "@/components/ui/HistoryEventModal";
 import Dashboard from "@/components/ui/Dashboard";
 import TimeDial from "@/components/ui/TimeDial";
+import ControlBar from "@/components/ui/ControlBar";
+import HelpCard from "@/components/ui/HelpCard";
+import LightSpeed from "@/components/ui/LightSpeed";
 import { MOCK_EVENTS } from "@/data/mockEvents";
 import type { MockEvent } from "@/data/mockEvents";
 
@@ -190,8 +193,13 @@ function StackCarousel({
 export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>(null);
   const [stackState, setStackState] = useState<{ events: MockEvent[]; pos: { x: number; y: number } } | null>(null);
-  // [cl] Orbit 자전 제어: rotate(기본) / stop
+  // [cl] Orbit 캐러셀 전용 자전 제어: rotate(기본) / stop
   const [orbitMotion, setOrbitMotion] = useState<"rotate" | "stop">("rotate");
+  // [cl] 글로벌 자전 제어 (컨트롤 바)
+  const [currentYear, setCurrentYear] = useState(1875);
+  const [globePaused, setGlobePaused] = useState(false);
+  const [globeDirection, setGlobeDirection] = useState<"left" | "right">("left");
+  const [warpActive, setWarpActive] = useState(false);
   // [cl] 마커 카테고리 다중 선택 (기본: 전체 선택)
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
     MARKER_CATEGORIES.map((c) => c.name)
@@ -202,80 +210,71 @@ export default function Home() {
     );
   const carouselOpen = viewMode === "orbit";
 
+  // [cl] 워프 시퀀스: LightSpeed 풀스크린 → 연도 전환 → 페이드아웃
+  const handleWarp = (targetYear: number) => {
+    if (warpActive || targetYear === currentYear) return;
+    setWarpActive(true);
+    setTimeout(() => setCurrentYear(targetYear), 600);
+    setTimeout(() => setWarpActive(false), 1600);
+  };
+
+  // [cl] 리셋 핸들러 (컨트롤 바용)
+  const handleReset = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__timeglobe_markerFocused = false;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const reset = (window as any).__timeglobe_resetToDefault;
+    if (reset) reset();
+  };
+
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black">
       <Header />
       <Dashboard events={MOCK_EVENTS} />
       <DateDisplay />
-      <TimeDial defaultYear={1875} />
+      <TimeDial defaultYear={currentYear} />
 
-      {/* [cl] 지구본: orbit/marker 모드 전달 */}
+      {/* [cl] 지구본: orbit/marker/글로벌 자전 제어 전달 */}
       <GlobeLoader
         orbitActive={carouselOpen}
         orbitPaused={orbitMotion === "stop"}
+        globePaused={globePaused}
+        globeDirection={globeDirection}
         markerMode={viewMode === "marker"}
         events={MOCK_EVENTS}
         onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
       />
+
+      {/* [cl] 워프 오버레이: LightSpeed 전체화면 페이드인/아웃 */}
+      <div
+        className="fixed inset-0 pointer-events-none transition-opacity duration-500"
+        style={{ opacity: warpActive ? 1 : 0, zIndex: 100 }}
+      >
+        <LightSpeed speed={2} paused={!warpActive} className="w-full h-full" />
+      </div>
 
       {/* [cl] 좌상단 메뉴 — 로고 하단 세로 배치 */}
       <div
         className="absolute left-6 z-[60] flex flex-col gap-0.5 pointer-events-auto"
         style={{ top: 52, fontFamily: "var(--font-noto-sans), sans-serif" }}
       >
-        {/* Event Orbit + 아코디언 */}
-        <div>
-          <button
-            onClick={() => {
-              setViewMode((v) => (v === "orbit" ? null : "orbit"));
-              setOrbitMotion("rotate"); // [cl] 모드 전환 시 회전으로 초기화
-            }}
-            className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group w-full"
+        {/* Event Orbit (단순 토글, 아코디언 없음 — 자전 제어는 하단 ControlBar) */}
+        <button
+          onClick={() => {
+            setViewMode((v) => (v === "orbit" ? null : "orbit"));
+            setOrbitMotion("rotate");
+          }}
+          className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group w-full"
+        >
+          <svg
+            width="7" height="8" viewBox="0 0 7 8" fill="currentColor"
+            className={`flex-shrink-0 transition-all duration-300 ease-in-out ${viewMode === "orbit" ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
+            style={{ transform: viewMode === "orbit" ? "rotate(90deg)" : "rotate(0deg)" }}
           >
-            {/* [cl] 삼각형 인디케이터: 비선택=▶, 선택=▼ (90도 회전) */}
-            <svg
-              width="7" height="8" viewBox="0 0 7 8" fill="currentColor"
-              className={`flex-shrink-0 transition-all duration-300 ease-in-out ${viewMode === "orbit" ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
-              style={{ transform: viewMode === "orbit" ? "rotate(90deg)" : "rotate(0deg)" }}
-            >
-              <path d="M1 1L6.5 4L1 7Z" />
-            </svg>
-            <span className={`transition-colors duration-200 ${viewMode === "orbit" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Orbit</span>
-          </button>
-
-          {/* [cl] 아코디언: 회전 / 정지 라디오 선택 (단일 선택) */}
-          <div
-            className="overflow-hidden transition-all duration-300 ease-in-out"
-            style={{ maxHeight: viewMode === "orbit" ? "80px" : "0px", opacity: viewMode === "orbit" ? 1 : 0 }}
-          >
-            <div className="pl-5 pt-1 pb-1 flex flex-col gap-2">
-              {(["rotate", "stop"] as const).map((motion) => {
-                const label = motion === "rotate" ? "회전" : "정지";
-                const selected = orbitMotion === motion;
-                return (
-                  <button
-                    key={motion}
-                    onClick={() => setOrbitMotion(motion)}
-                    className="flex items-center gap-2 group text-left"
-                  >
-                    {/* [cl] 라디오 도트: 단일 선택, 화이트 글로우 */}
-                    <span
-                      className="w-2.5 h-2.5 rounded-full border flex-shrink-0 transition-all duration-200"
-                      style={{
-                        backgroundColor: selected ? "rgba(255,255,255,0.9)" : "transparent",
-                        borderColor: selected ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.22)",
-                        boxShadow: selected ? "0 0 6px rgba(255,255,255,0.5)" : "none",
-                      }}
-                    />
-                    <span className={`text-xs transition-colors duration-200 ${selected ? "text-white/85" : "text-white/38 group-hover:text-white/65"}`}>
-                      {label}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+            <path d="M1 1L6.5 4L1 7Z" />
+          </svg>
+          <span className={`transition-colors duration-200 ${viewMode === "orbit" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Orbit</span>
+        </button>
 
         {/* Event Marker + 아코디언 */}
         <div>
@@ -330,21 +329,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Reset View */}
-        <button
-          onClick={() => {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).__timeglobe_markerFocused = false;
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const reset = (window as any).__timeglobe_resetToDefault;
-            if (reset) reset();
-          }}
-          className="flex items-center gap-2.5 px-2 py-1.5 text-xs uppercase tracking-wider text-white/25 hover:text-white/55 transition-colors duration-200 group"
-        >
-          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-white/15 group-hover:bg-white/40 transition-all duration-200" />
-          Reset View
-        </button>
       </div>
+
+      {/* [cl] 하단 컨트롤 바: 타임입력 + 자전제어 + 방향 + 리셋 */}
+      <ControlBar
+        year={currentYear}
+        paused={globePaused}
+        direction={globeDirection}
+        warping={warpActive}
+        onYearCommit={handleWarp}
+        onPauseToggle={() => setGlobePaused((v) => !v)}
+        onDirectionToggle={() => setGlobeDirection((v) => (v === "left" ? "right" : "left"))}
+        onReset={handleReset}
+      />
+
+      {/* [cl] 우측 하단 유저가이드 */}
+      <HelpCard />
 
       {/* [cl] 마커 클릭: 단독/스택 모두 StackCarousel로 통합 처리 */}
       {stackState && (

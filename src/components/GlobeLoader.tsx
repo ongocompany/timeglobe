@@ -16,6 +16,8 @@ const CesiumGlobe = dynamic(() => import("@/components/CesiumGlobe"), {
 interface GlobeLoaderProps {
   orbitActive?: boolean;
   orbitPaused?: boolean;
+  globePaused?: boolean;
+  globeDirection?: "left" | "right";
   markerMode?: boolean;
   events?: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
@@ -24,6 +26,8 @@ interface GlobeLoaderProps {
 export default function GlobeLoader({
   orbitActive = false,
   orbitPaused = false,
+  globePaused = false,
+  globeDirection = "left",
   markerMode = false,
   events = [],
   onStackClick,
@@ -32,6 +36,8 @@ export default function GlobeLoader({
     <CesiumGlobe
       orbitActive={orbitActive}
       orbitPaused={orbitPaused}
+      globePaused={globePaused}
+      globeDirection={globeDirection}
       markerMode={markerMode}
       events={events}
       onStackClick={onStackClick}

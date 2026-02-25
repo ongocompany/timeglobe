@@ -116,12 +116,14 @@ function calcDefaultHeight(viewer: InstanceType<typeof import("cesium").Viewer>)
 interface SceneSetupProps {
   orbitActive: boolean;
   orbitPaused: boolean;
+  globePaused: boolean;
+  globeDirection: "left" | "right";
   markerMode: boolean;
   events: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
 }
 
-function SceneSetup({ orbitActive, orbitPaused, markerMode, events, onStackClick }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -130,9 +132,15 @@ function SceneSetup({ orbitActive, orbitPaused, markerMode, events, onStackClick
   // [cl] orbitActive를 ref로 → spin 루프에서 접근 가능 (클로저 갱신 없이)
   const orbitActiveRef = useRef(orbitActive);
   useEffect(() => { orbitActiveRef.current = orbitActive; }, [orbitActive]);
-  // [cl] orbitPaused ref → orbit 모드에서 자전 정지 여부
+  // [cl] orbitPaused ref → orbit 캐러셀 전용 정지
   const orbitPausedRef = useRef(orbitPaused);
   useEffect(() => { orbitPausedRef.current = orbitPaused; }, [orbitPaused]);
+  // [cl] globePaused ref → 전역 자전 정지 (컨트롤 바 ⏸)
+  const globePausedRef = useRef(globePaused);
+  useEffect(() => { globePausedRef.current = globePaused; }, [globePaused]);
+  // [cl] globeDirection ref → 자전 방향 (left=서→동, right=동→서)
+  const globeDirectionRef = useRef(globeDirection);
+  useEffect(() => { globeDirectionRef.current = globeDirection; }, [globeDirection]);
   // [cl] markerMode ref → spin 루프에서 접근
   const markerModeRef = useRef(markerMode);
   useEffect(() => { markerModeRef.current = markerMode; }, [markerMode]);
@@ -901,9 +909,10 @@ function SceneSetup({ orbitActive, orbitPaused, markerMode, events, onStackClick
       const markerFocused = markerFocusedRef.current;
 
       const elapsed = Date.now() - lastInteraction.current;
-      // [cl] orbit 정지 모드: 자전 + autoRot 누적 모두 스킵
-      const orbitPaused = orbitActiveRef.current && orbitPausedRef.current;
-      if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected && !markerFocused && !orbitPaused) {
+      // [cl] 자전 정지 조건: 전역 일시정지 OR (orbit 캐러셀 전용 정지)
+      const shouldStopRotation = globePausedRef.current
+        || (orbitActiveRef.current && orbitPausedRef.current);
+      if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected && !markerFocused && !shouldStopRotation) {
         // [cl] 고도 기반 자전 속도: 3,000km 이하 정지 → 15,000km 이상 정상 속도
         const camDist = Cartesian3.magnitude(viewer.camera.positionWC) - 6378137;
         let speedFactor = 1.0;
@@ -915,10 +924,16 @@ function SceneSetup({ orbitActive, orbitPaused, markerMode, events, onStackClick
 
         if (speedFactor > 0) {
           const delta = CesiumMath.toRadians(ROTATION_SPEED * speedFactor);
-          viewer.camera.rotateLeft(delta);
-          // [cl] 자동 자전 누적량 공유 → orbit 반대 회전 계산용
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
+          // [cl] 방향에 따라 rotateLeft/Right 선택, autoRotationTotal 부호도 맞춤
+          if (globeDirectionRef.current !== "right") {
+            viewer.camera.rotateLeft(delta);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
+          } else {
+            viewer.camera.rotateRight(delta);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) - delta;
+          }
         }
 
         // [cl] 자전축 복원: heading→0(북↑), roll→0으로 서서히 보정
@@ -966,10 +981,12 @@ function SceneSetup({ orbitActive, orbitPaused, markerMode, events, onStackClick
   return null;
 }
 
-// [cl] CesiumGlobe props: orbit + marker 모드
+// [cl] CesiumGlobe props: orbit + marker + 글로벌 자전 제어
 interface CesiumGlobeProps {
   orbitActive?: boolean;
   orbitPaused?: boolean;
+  globePaused?: boolean;
+  globeDirection?: "left" | "right";
   markerMode?: boolean;
   events?: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
@@ -978,6 +995,8 @@ interface CesiumGlobeProps {
 export default function CesiumGlobe({
   orbitActive = false,
   orbitPaused = false,
+  globePaused = false,
+  globeDirection = "left",
   markerMode = false,
   events = [],
   onStackClick,
@@ -1000,6 +1019,8 @@ export default function CesiumGlobe({
       <SceneSetup
         orbitActive={orbitActive}
         orbitPaused={orbitPaused}
+        globePaused={globePaused}
+        globeDirection={globeDirection}
         markerMode={markerMode}
         events={events}
         onStackClick={onStackClick}
