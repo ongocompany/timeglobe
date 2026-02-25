@@ -232,6 +232,15 @@ export default function Home() {
     // [cl] 워프 방향 캡처: currentYear 변경 전에 결정 (TimeDial 스크롤 방향용)
     setWarpDirection(targetYear < currentYear ? "past" : "future");
 
+    // [cl] 워프 전 디폴트 상태로 리셋 — orbit/marker/modal 닫고 카메라 원위치
+    setViewMode(null);
+    setStackState(null);
+    setGlobePaused(false);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__timeglobe_markerFocused = false;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__timeglobe_resetToDefault?.();
+
     const TOTAL = 5200;
 
     // [cl] 0ms: 스카이박스 OFF + 검정 배경 (별만 제거, 지구 유지) + LightSpeed 시작
