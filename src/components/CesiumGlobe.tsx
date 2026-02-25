@@ -682,8 +682,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const CONTENT_UPDATE_DELAY = 200;
     const MAX_DISPLAY        = 5;
     const ALT_THRESHOLD      = 1_500_000; // [cl] 1500km
-    const CARD_W             = 140;
-    const CARD_H             = 187; // [cl] 3:4 비율
 
     // [cl] 텍스트 툴팁 기본 스타일
     const TEXT_STYLES = [
@@ -696,21 +694,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       "min-width:160px",
     ].join(";");
 
-    // [cl] 이미지 카드 팝업 기본 스타일
-    const IMAGE_STYLES = [
-      "position:absolute", "pointer-events:none",
-      `width:${CARD_W}px`, `height:${CARD_H}px`,
-      "border-radius:10px", "overflow:hidden", "display:none",
-      "z-index:200", "background:#111",
-      "box-shadow:0 8px 28px rgba(0,0,0,0.65)",
-      "border:1px solid rgba(255,255,255,0.15)",
-    ].join(";");
-
     const tooltipEl = document.createElement("div");
     tooltipEl.style.cssText = TEXT_STYLES;
     viewer.container.appendChild(tooltipEl);
 
-    let mode: "text" | "image" = "text";
     let inRadius = false;
     let visible = false;
     let enterTime = 0;
@@ -718,20 +705,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     let contentChangedTime = 0;
     let currentHtml = "";
     let shownHtml = "";
-    let currentX = 0, currentY = 0;       // [cl] 텍스트 모드: 커서 위치
-    let markerScreenX = 0, markerScreenY = 0; // [cl] 이미지 모드: 마커 화면 위치
-    let currentSingleEvent: MockEvent | null = null;
+    let currentX = 0, currentY = 0;
     let rafId: number;
 
-    // [cl] 모드 전환 시 엘리먼트 스타일 리셋 + 현재 표시 숨김
-    const switchMode = (newMode: "text" | "image") => {
-      if (mode === newMode) return;
-      mode = newMode;
-      visible = false;
-      shownHtml = "";
-      tooltipEl.style.display = "none";
-      tooltipEl.style.cssText = newMode === "image" ? IMAGE_STYLES : TEXT_STYLES;
-    };
+    // [cl] 저고도 단독 마커: 호버 시 onStackClick 트리거용 타이머
+    let hoverTriggeredId: string | null = null;
+    let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = viewer.canvas.getBoundingClientRect();
@@ -752,54 +731,63 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       nearby.sort((a, b) => a.dist - b.dist);
 
       if (nearby.length > 0) {
-        const isImageMode = alt <= ALT_THRESHOLD && nearby.length === 1;
-        switchMode(isImageMode ? "image" : "text");
-
-        let newHtml: string;
-        if (mode === "image") {
+        // [cl] 저고도 + 단독 마커: 호버로 StackCarousel 직접 트리거 (텍스트 툴팁 스킵)
+        if (alt <= ALT_THRESHOLD && nearby.length === 1) {
           const ev = nearby[0].ev;
-          currentSingleEvent = ev;
-          markerScreenX = nearby[0].sx;
-          markerScreenY = nearby[0].sy;
-          newHtml =
-            `<img src="${ev.image_url}" alt="${ev.title.ko}" style="width:100%;height:100%;object-fit:cover;display:block;">` +
-            `<div style="position:absolute;bottom:0;left:0;right:0;padding:8px 10px 7px;background:linear-gradient(to top,rgba(0,0,0,0.88),transparent);">` +
-            `<p style="margin:0;color:#fff;font-size:11px;font-weight:700;line-height:1.3;">${ev.title.ko}</p>` +
-            `<p style="margin:3px 0 0;color:rgba(255,255,255,0.6);font-size:10px;">${ev.start_year}</p>` +
-            `</div>`;
-        } else {
-          currentSingleEvent = null;
-          const shown = nearby.slice(0, MAX_DISPLAY);
-          const extra = nearby.length - shown.length;
-          const rows = shown.map(({ ev }, i) => {
-            const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
-            const opacity = Math.max(0.45, 1.0 - i * 0.14);
-            return (
-              `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}opacity:${opacity};">` +
-              `<span style="color:${color};font-size:9px;flex-shrink:0;">●</span>` +
-              `<span style="font-weight:${i === 0 ? "600" : "400"};flex:1;">${ev.title.ko}</span>` +
-              `<span style="color:#777;font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
-              `</div>`
-            );
-          });
-          if (extra > 0) rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
-          newHtml = rows.join("");
-          currentX = mx; currentY = my;
+          if (hoverTriggeredId !== ev.id) {
+            // 이전 타이머 정리
+            if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+            hoverTriggeredId = ev.id;
+            hoverTimer = setTimeout(() => {
+              forceHideTooltipRef.current = true;
+              onStackClickRef.current?.([ev], { x: nearby[0].sx, y: nearby[0].sy });
+              hoverTimer = null;
+            }, SHOW_DELAY);
+          }
+          markerHoverRef.current = true;
+          return; // 텍스트 툴팁 로직 완전 스킵
         }
+
+        // [cl] 호버 트리거 영역 벗어남 → 타이머 정리
+        if (hoverTriggeredId) {
+          if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+          hoverTriggeredId = null;
+        }
+
+        const shown = nearby.slice(0, MAX_DISPLAY);
+        const extra = nearby.length - shown.length;
+        const rows = shown.map(({ ev }, i) => {
+          const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
+          const opacity = Math.max(0.45, 1.0 - i * 0.14);
+          return (
+            `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}opacity:${opacity};">` +
+            `<span style="color:${color};font-size:9px;flex-shrink:0;">●</span>` +
+            `<span style="font-weight:${i === 0 ? "600" : "400"};flex:1;">${ev.title.ko}</span>` +
+            `<span style="color:#777;font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
+            `</div>`
+          );
+        });
+        if (extra > 0) rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
+        const newHtml = rows.join("");
+        currentX = mx; currentY = my;
 
         if (newHtml !== currentHtml) { currentHtml = newHtml; contentChangedTime = now; }
 
         if (!inRadius) { inRadius = true; enterTime = now; exitTime = 0; }
 
-        if (visible && mode === "text") {
+        if (visible) {
           tooltipEl.style.left = `${mx + 20}px`;
           tooltipEl.style.top  = `${my - 16}px`;
         }
         markerHoverRef.current = true;
       } else {
+        // [cl] 호버 트리거 타이머 정리
+        if (hoverTriggeredId) {
+          if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+          hoverTriggeredId = null;
+        }
         if (currentHtml !== "") { currentHtml = ""; contentChangedTime = now; }
         if (inRadius) { inRadius = false; exitTime = now; enterTime = 0; }
-        currentSingleEvent = null;
         markerHoverRef.current = false;
       }
     };
@@ -817,31 +805,16 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         tooltipEl.style.display = "none";
       }
 
-      // [cl] 표시 딜레이
+      // [cl] 표시 딜레이 (텍스트 툴팁만 — 이미지 모드 제거됨)
       if (inRadius && !visible && enterTime > 0 && (now - enterTime) >= SHOW_DELAY) {
         if (currentHtml) {
           visible = true; shownHtml = currentHtml;
           tooltipEl.innerHTML = shownHtml;
-          if (mode === "image") {
-            tooltipEl.style.left = `${markerScreenX - CARD_W / 2}px`;
-            tooltipEl.style.top  = `${markerScreenY - CARD_H - 16}px`;
-          } else {
-            tooltipEl.style.left = `${currentX + 20}px`;
-            tooltipEl.style.top  = `${currentY - 16}px`;
-          }
+          tooltipEl.style.left = `${currentX + 20}px`;
+          tooltipEl.style.top  = `${currentY - 16}px`;
           tooltipEl.style.display = "block";
         }
         enterTime = 0;
-      }
-
-      // [cl] 이미지 팝업: 매 프레임 마커 화면 위치 추적 (카메라 이동 시 따라감)
-      if (visible && mode === "image" && currentSingleEvent) {
-        const pos3d = Cartesian3.fromDegrees(currentSingleEvent.location_lng, currentSingleEvent.location_lat);
-        const sp = SceneTransforms.worldToWindowCoordinates(viewer.scene, pos3d);
-        if (defined(sp)) {
-          tooltipEl.style.left = `${sp.x - CARD_W / 2}px`;
-          tooltipEl.style.top  = `${sp.y - CARD_H - 16}px`;
-        }
       }
 
       // [cl] 내용 갱신 딜레이
@@ -867,6 +840,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     return () => {
       viewer.canvas.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(rafId);
+      if (hoverTimer) clearTimeout(hoverTimer);
       tooltipEl.remove();
       markerHoverRef.current = false;
     };
