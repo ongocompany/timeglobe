@@ -203,6 +203,8 @@ export default function Home() {
   const [warpActive, setWarpActive] = useState(false);
   const [warpPhase, setWarpPhase] = useState<"idle" | "zoomout" | "hold" | "zoomin">("idle");
   const [warpYearReveal, setWarpYearReveal] = useState(false);
+  // [cl] 워프 방향: TimeDial 틱 스크롤 방향 결정 (과거→오른쪽, 미래→왼쪽)
+  const [warpDirection, setWarpDirection] = useState<"past" | "future">("future");
   // [cl] 워프 속도 ref: sine 이징 애니메이션에서 매 프레임 LightSpeed에 주입
   const warpSpeedRef = useRef<number>(0);
   const warpingRef = useRef(false); // [cl] 중복 실행 방지 (state 클로저 우회)
@@ -227,6 +229,8 @@ export default function Home() {
   const handleWarp = (targetYear: number) => {
     if (warpingRef.current || targetYear === currentYear) return;
     warpingRef.current = true;
+    // [cl] 워프 방향 캡처: currentYear 변경 전에 결정 (TimeDial 스크롤 방향용)
+    setWarpDirection(targetYear < currentYear ? "past" : "future");
 
     const TOTAL = 5200;
 
@@ -311,7 +315,7 @@ export default function Home() {
       <Header />
       <Dashboard events={MOCK_EVENTS} />
       <DateDisplay />
-      <TimeDial defaultYear={currentYear} />
+      <TimeDial defaultYear={currentYear} warping={warpPhase !== "idle"} warpDirection={warpDirection} />
 
       {/* [cl] LightSpeed 지구 뒤 (z:1) — 스카이박스 OFF 시 투명 우주를 통해 비침 */}
       <div

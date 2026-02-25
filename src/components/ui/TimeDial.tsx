@@ -1,23 +1,34 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
+import NumberFlow from "@number-flow/react";
 
 // [cl] 타임 다이얼: 대시보드 하단 표시 전용 (드래그 없음, 디스플레이 + 애니메이션 용도)
 // 구조: 틱마크(먼저) → 수평 점선(위에 겹침) → 중앙 Glass 렌즈 / 좌우 페이드
-// 1틱 = 1년 (Phase 0), 추후 시대 스케일 연동 예정
+// 워프 중: 틱 스크롤(과거→오른쪽, 미래→왼쪽) + 글래스 숫자 스크램블(NumberFlow)
 
 const TICK_PX = 14;       // [cl] 픽셀/틱
 const MAJOR_EVERY = 5;    // [cl] 5틱마다 주요 틱 + 연도 라벨
 const MIN_YEAR = -3000;
 const MAX_YEAR = 2100;
 const DIAL_WIDTH = 480;   // [cl] 대시보드 min-width에 맞춤
+const SCROLL_PX = TICK_PX * MAJOR_EVERY; // [cl] 70px — 심리스 루프 단위
 
 interface TimeDialProps {
   defaultYear?: number;
+  warping?: boolean;
+  warpDirection?: "past" | "future";
 }
 
-export default function TimeDial({ defaultYear = 1875 }: TimeDialProps) {
+export default function TimeDial({
+  defaultYear = 1875,
+  warping = false,
+  warpDirection = "future",
+}: TimeDialProps) {
   const barRef = useRef<HTMLDivElement>(null);
+  const tickContainerRef = useRef<HTMLDivElement>(null);
+  const scrollAccumRef = useRef(0);
   const [barWidth, setBarWidth] = useState(DIAL_WIDTH);
+  const [scrambleYear, setScrambleYear] = useState(defaultYear);
 
   // [cl] 바 폭 측정 (resize 대응)
   useEffect(() => {
@@ -29,10 +40,55 @@ export default function TimeDial({ defaultYear = 1875 }: TimeDialProps) {
     return () => window.removeEventListener("resize", measure);
   }, []);
 
-  const displayYear = Math.max(MIN_YEAR, Math.min(MAX_YEAR, Math.round(defaultYear)));
+  // [cl] 워프 중 틱 스크롤: rAF → 직접 DOM transform (re-render 없이 성능 최적)
+  useEffect(() => {
+    if (!warping) {
+      if (tickContainerRef.current) tickContainerRef.current.style.transform = "";
+      scrollAccumRef.current = 0;
+      return;
+    }
 
-  // [cl] 보이는 틱 목록 계산
-  const halfTicks = Math.ceil(barWidth / 2 / TICK_PX) + 2;
+    const direction = warpDirection === "past" ? 1 : -1; // past→오른쪽(+), future→왼쪽(-)
+    const speed = 280; // px/sec
+    let lastTime = performance.now();
+    let frameId = 0;
+
+    const scroll = (now: number) => {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+      scrollAccumRef.current += direction * speed * dt;
+      // [cl] SCROLL_PX(70px) 단위로 래핑 → 틱 패턴 반복이라 심리스 루프
+      scrollAccumRef.current = ((scrollAccumRef.current % SCROLL_PX) + SCROLL_PX) % SCROLL_PX;
+      if (tickContainerRef.current) {
+        tickContainerRef.current.style.transform = `translateX(${scrollAccumRef.current}px)`;
+      }
+      frameId = requestAnimationFrame(scroll);
+    };
+
+    frameId = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(frameId);
+  }, [warping, warpDirection]);
+
+  // [cl] 워프 중 숫자 스크램블: 80ms마다 랜덤 연도
+  useEffect(() => {
+    if (!warping) {
+      setScrambleYear(defaultYear);
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setScrambleYear(Math.floor(Math.random() * 3000) + 100);
+    }, 80);
+
+    return () => clearInterval(interval);
+  }, [warping, defaultYear]);
+
+  const displayYear = Math.max(MIN_YEAR, Math.min(MAX_YEAR, Math.round(defaultYear)));
+  const shownYear = warping ? scrambleYear : displayYear;
+
+  // [cl] 워프 중 버퍼 틱 추가 (스크롤 시 빈 공간 방지)
+  const extraTicks = warping ? 8 : 2;
+  const halfTicks = Math.ceil(barWidth / 2 / TICK_PX) + extraTicks;
   const ticks: { year: number; xPx: number; isMajor: boolean }[] = [];
   for (let i = -halfTicks; i <= halfTicks; i++) {
     const y = displayYear + i;
@@ -53,10 +109,9 @@ export default function TimeDial({ defaultYear = 1875 }: TimeDialProps) {
       className="absolute left-1/2 -translate-x-1/2 z-20 select-none pointer-events-none overflow-hidden"
       style={{ top: 96, height: 76, width: DIAL_WIDTH }}
     >
-      {/* [cl] 배경: 완전 투명 */}
-
-      {/* [cl] 틱마크 + 기준선 — 좌우 페이드 마스크 적용 */}
+      {/* [cl] 틱마크 + 기준선 — 좌우 페이드 마스크 적용, 워프 시 스크롤 */}
       <div
+        ref={tickContainerRef}
         className="absolute inset-0"
         style={{
           maskImage:
@@ -120,7 +175,7 @@ export default function TimeDial({ defaultYear = 1875 }: TimeDialProps) {
         />
       </div>
 
-      {/* [cl] 중앙 Glass 렌즈 — 현재 연도 크게 표시 */}
+      {/* [cl] 중앙 Glass 렌즈 — NumberFlow로 숫자 애니메이션 */}
       <div
         className="absolute left-1/2 flex items-center justify-center"
         style={{
@@ -129,7 +184,6 @@ export default function TimeDial({ defaultYear = 1875 }: TimeDialProps) {
           width: 96,
           transform: "translateX(-50%)",
           borderRadius: 10,
-          /* [cl] 메탈릭 글래스 효과 */
           background:
             "linear-gradient(180deg, rgba(220,218,215,0.22) 0%, rgba(130,128,126,0.10) 50%, rgba(210,208,205,0.22) 100%)",
           border: "1px solid rgba(255,255,255,0.28)",
@@ -138,9 +192,12 @@ export default function TimeDial({ defaultYear = 1875 }: TimeDialProps) {
           backdropFilter: "blur(8px)",
           WebkitBackdropFilter: "blur(8px)",
           zIndex: 10,
+          overflow: "hidden",
         }}
       >
-        <span
+        <NumberFlow
+          value={Math.abs(shownYear)}
+          trend={warping ? (warpDirection === "future" ? 1 : -1) : 0}
           style={{
             fontSize: 16,
             fontWeight: 700,
@@ -150,9 +207,22 @@ export default function TimeDial({ defaultYear = 1875 }: TimeDialProps) {
             textShadow: "0 0 12px rgba(255,255,255,0.28)",
             userSelect: "none",
           }}
-        >
-          {fmt(displayYear)}
-        </span>
+        />
+        {/* [cl] BC 접미사: 음수 연도일 때만 표시 */}
+        {shownYear < 0 && (
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 500,
+              fontFamily: "var(--font-geist-mono), monospace",
+              color: "rgba(255,255,255,0.65)",
+              marginLeft: 3,
+              userSelect: "none",
+            }}
+          >
+            BC
+          </span>
+        )}
       </div>
 
       {/* [cl] 렌즈 좌우 화살 인디케이터 */}

@@ -10,9 +10,12 @@
     "collect:bootstrap": "node scripts/wikidata/run.mjs --mode bootstrap",
     "collect:incremental": "node scripts/wikidata/run.mjs --mode incremental",
     "collect:backfill": "node scripts/wikidata/run.mjs --mode backfill",
-    "collect:probe": "node scripts/wikidata/run.mjs --mode probe --dry-run"
+    "collect:probe": "node scripts/wikidata/run.mjs --mode probe --dry-run",
+    "collect:enrich-existing": "node scripts/wikidata/enrichExistingFromSources.mjs",
+    "collect:classify-gaps": "node scripts/wikidata/classifyGapsForCuration.mjs"
   },
   "dependencies": {
+    "@number-flow/react": "^0.5.14",
     "cesium": "^1.138.0",
     "lucide-react": "^0.575.0",
     "motion": "^12.34.3",
