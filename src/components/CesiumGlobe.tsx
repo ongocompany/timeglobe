@@ -573,12 +573,14 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
     let hideTimer: ReturnType<typeof setTimeout> | null = null;
     let pendingHtml = "";
     let pendingX = 0, pendingY = 0;
+    let visible = false; // [cl] style.display 문자열 대신 명시적 상태 추적
 
-    const moveHandler = new ScreenSpaceEventHandler(viewer.canvas);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    moveHandler.setInputAction((movement: any) => {
-      const mx = movement.endPosition.x;
-      const my = movement.endPosition.y;
+    // [cl] Cesium ScreenSpaceEventHandler 대신 DOM addEventListener 사용
+    // → 다른 MOUSE_MOVE 핸들러(커서, 좌표추적)와의 충돌 방지
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = viewer.canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
 
       // [cl] 전체 이벤트 → 스크린 좌표 변환 후 반경 30px 이내 필터
       const nearby: { ev: MockEvent; dist: number }[] = [];
@@ -615,7 +617,7 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
 
         if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
 
-        if (tooltipEl.style.display === "block") {
+        if (visible) {
           // [cl] 이미 표시 중 → 내용/위치 즉시 갱신
           tooltipEl.innerHTML = pendingHtml;
           tooltipEl.style.left = `${mx + 20}px`;
@@ -625,6 +627,7 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
           showTimer = setTimeout(() => {
             showTimer = null;
             if (pendingHtml) {
+              visible = true;
               tooltipEl.innerHTML = pendingHtml;
               tooltipEl.style.left = `${pendingX + 20}px`;
               tooltipEl.style.top  = `${pendingY - 16}px`;
@@ -640,17 +643,20 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         if (showTimer) { clearTimeout(showTimer); showTimer = null; }
         markerHoverRef.current = false;
 
-        if (tooltipEl.style.display === "block" && !hideTimer) {
+        if (visible && !hideTimer) {
           hideTimer = setTimeout(() => {
             hideTimer = null;
+            visible = false;
             tooltipEl.style.display = "none";
           }, HIDE_DELAY);
         }
       }
-    }, ScreenSpaceEventType.MOUSE_MOVE);
+    };
+
+    viewer.canvas.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      moveHandler.destroy();
+      viewer.canvas.removeEventListener("mousemove", handleMouseMove);
       tooltipEl.remove();
       if (showTimer) clearTimeout(showTimer);
       if (hideTimer) clearTimeout(hideTimer);
