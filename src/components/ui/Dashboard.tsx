@@ -224,9 +224,9 @@ export default function Dashboard({ events }: DashboardProps) {
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
     >
       <div
-        className="bg-black/60 backdrop-blur-sm rounded-xl px-5 py-3 text-white
-          border border-white/10 min-w-[480px] max-w-[720px]"
-        style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+        className="bg-black/40 backdrop-blur-sm rounded-xl px-5 py-3 text-white
+          border border-white/30 min-w-[480px] max-w-[720px]"
+        style={{ fontFamily: "var(--font-noto-sans), sans-serif", boxShadow: "0 0 7px rgba(255,255,255,0.20)" }}
       >
         {/* ── 행 1: 지명 브레드크럼 + 시대 연도 ── */}
         <div className="flex items-center gap-1.5 text-base font-medium leading-snug flex-wrap">

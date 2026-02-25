@@ -35,8 +35,8 @@
 - 세션 종료시 저장소 주소로 git push를 실행해줘
 
 ## 8. 협업규칙
-** 이 프로젝트는 진, claude, gemini가 함께 개발하는 프로젝트야. **
-**따라서 주석을 남기거나 문서를 남길때, 클로드는 cl, gemini는 gm, 진은 jn으로 표기해줘.**
+** 이 프로젝트는 진(jn), 민철(cl,claude), 지훈(gm,gemini), 태훈(co,codex)가 함께 개발하는 프로젝트야. **
+**따라서 주석을 남기거나 문서를 남길때, 클로드는 `cl`, gemini는 `gm`, 진은 `jn`, 코덱스는 `co`으로 반드시 표기해줘.**
 
 ## 9. 업무 및 기록 규칙
 * **업무 시작 시:** 항상 `docs/develop/02_[gm]database_schema_plan.md`, `docs/develop/01_[gm]development_guide.md`, 그리고 `docs/work_change_log.md` 파일을 읽어 프로젝트의 전반적인 내용과 현재까지의 업무 진행 상황을 파악해야 해.

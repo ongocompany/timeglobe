@@ -9,6 +9,7 @@ import Timeline from "@/components/ui/Timeline";
 import Carousel3D, { type CarouselCard } from "@/components/ui/Carousel3D";
 import { EventDetailContent } from "@/components/ui/HistoryEventModal";
 import Dashboard from "@/components/ui/Dashboard";
+import TimeDial from "@/components/ui/TimeDial";
 import { MOCK_EVENTS } from "@/data/mockEvents";
 import type { MockEvent } from "@/data/mockEvents";
 
@@ -190,6 +191,7 @@ export default function Home() {
       <Dashboard events={MOCK_EVENTS} />
       <DateDisplay />
       <Timeline />
+      <TimeDial defaultYear={1875} />
 
       {/* [cl] 지구본: orbit/marker 모드 전달 */}
       <GlobeLoader
