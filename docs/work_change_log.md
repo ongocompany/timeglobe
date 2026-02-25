@@ -115,3 +115,38 @@
 * **참고 데이터**: Natural Earth(naturalearthdata.com), 역사 국경 오픈소스 프로젝트
 * **구현 시기**: Phase 2~3 (타임라인↔지구본 연동 시)
 
+## [2026-02-25] [cl] DB 스키마 필드 추가 + 15세기 목업 데이터
+* **MockEvent 인터페이스**: Events 스키마 기반 TypeScript 인터페이스 정의 (`src/data/mockEvents.ts`)
+* **15세기 목업 데이터 27건** 작성: 동아시아(조선, 명, 일본), 동남아, 중앙아시아, 중동, 유럽, 아프리카, 아메리카 균등 분포
+* **DB 스키마 업데이트** (`02_[gm]database_schema_plan.md`): image_url, summary, description, external_link 필드 추가
+
+## [2026-02-25] [cl] Event Orbit 베타 완성: 이벤트 상세 카드 시스템
+* **HistoryEventModal 컴포넌트** 신규 생성 (`src/components/ui/HistoryEventModal.tsx`)
+  * `EventDetailContent`: 오빗 카드 내부 인라인용 (renderDetail 패턴)
+  * `HistoryEventModal`: 독립 모달 래퍼 (마커 모드 등에서 사용)
+  * 다크/라이트 테마 지원: `themeTokens` 객체로 모든 색상 토큰 관리
+  * 카테고리별 아이콘 + 테마별 색상 뱃지 (Swords, User, Lightbulb, Landmark, Mountain, Palette, BookOpen)
+  * 히어로 이미지 (38%) + 지역 정보 + 설명 + 출처 링크 + "같은 시대 다른 나라에서는?" 연관 이벤트
+* **Carousel3D 연동 개선**:
+  * `renderDetail` render prop 패턴: 활성 카드 내부에 EventDetailContent 렌더링
+  * 카드 클릭 시 화면 좌/우 판별 → 좌우 대칭 확대 + 기울기 반전
+  * 무중력 플로팅 애니메이션 (Y축 ±3° + 상하 ±5px, 느린 사인파)
+  * 글로우 효과 (box-shadow, 블루 톤)
+  * 확대 애니메이션 1초, 왼쪽 5vw 오프셋
+  * 뒤쪽 카드 지구 관통 방지 (`Math.min(0.3, targetOpacity)`)
+* **tsconfig.json**: `docs/디자인샘플` 폴더 exclude 추가 (Figma 샘플 빌드 오류 방지)
+* **lucide-react, motion** 패키지 추가
+
+## [2026-02-25] [cl] Event Marker 베타 구현: 글로우 도트 + 카메라 flyTo
+* **동적 마커 렌더링**: 27개 MockEvent를 카테고리별 글로우 도트로 지구본 위에 표시
+  * Canvas API로 64×64 방사형 그라데이션 글로우 이미지 동적 생성 + 캐싱
+  * 카테고리별 SF 네온 색상 (정치=빨강, 인물=파랑, 과학=에메랄드, 건축=앰버, 자연재해=오렌지, 문화=보라, 지적유산=인디고)
+  * `scaleByDistance`로 거리에 따른 도트 크기 자동 조절
+  * 마커 모드 토글 시 엔티티 동적 생성/제거
+* **마커 클릭 인터랙션**: `ScreenSpaceEventHandler`로 Entity 클릭 감지
+  * 카메라 flyTo: 해당 위치 2000km 높이, pitch -45°, 1.5초 애니메이션
+  * 자전 정지 플래그 (`__timeglobe_markerFocused`) 연동
+  * Reset View로 복귀 시 자전 재개
+* **서울 테스트 마커 제거**: 하드코딩된 Seoul Museum Entity 2개 → 동적 마커로 대체
+* **Props 확장**: CesiumGlobe/GlobeLoader에 `markerMode`, `events`, `onMarkerClick` 추가
+
