@@ -1,7 +1,7 @@
 "use client";
 
 // [cl] TimeGlobe 메인 페이지 - Phase 0
-import { useState } from "react";
+import { useState, useRef } from "react";
 import GlobeLoader from "@/components/GlobeLoader";
 import Header from "@/components/ui/Header";
 import DateDisplay from "@/components/ui/DateDisplay";
@@ -21,6 +21,99 @@ const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
 
 // [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
 type ViewMode = "orbit" | "marker" | null;
+
+// [cl] 스택 마커 미니 캐러셀: 하단 카드 나열 → 클릭 시 모달 scale-in (오빗과 동일 패턴)
+function StackCarousel({ events, onClose }: { events: MockEvent[]; onClose: () => void }) {
+  const [expandedEvent, setExpandedEvent] = useState<MockEvent | null>(null);
+  const [expanding, setExpanding] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openCard = (ev: MockEvent) => {
+    setExpandedEvent(ev);
+    // rAF 두 번: DOM 삽입 → 다음 프레임에 클래스 적용 → 트랜지션 발동
+    requestAnimationFrame(() => requestAnimationFrame(() => setExpanding(true)));
+  };
+
+  const closeCard = () => {
+    setExpanding(false);
+    closeTimerRef.current = setTimeout(() => setExpandedEvent(null), 420);
+  };
+
+  return (
+    <>
+      {/* [cl] 미니 캐러셀: 카드 확장 시 아래로 페이드아웃 */}
+      <div
+        className="absolute bottom-28 z-[85] pointer-events-auto"
+        style={{
+          left: "50%",
+          animation: "stack-pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+          opacity: expanding ? 0 : 1,
+          transform: expanding
+            ? "translateX(-50%) translateY(12px) scale(0.9)"
+            : "translateX(-50%)",
+          transition: "opacity 0.22s ease, transform 0.22s ease",
+          pointerEvents: expanding ? "none" : "auto",
+        }}
+      >
+        <div className="relative flex gap-3 p-3 bg-black/65 backdrop-blur-md rounded-2xl border border-white/10">
+          <button
+            className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-white/15 hover:bg-white/30 text-white/70 text-sm flex items-center justify-center transition-colors"
+            onClick={onClose}
+          >✕</button>
+          {events.map((ev) => (
+            <div
+              key={ev.id}
+              className="relative flex-shrink-0 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-200"
+              style={{ width: 90, height: 120 }}
+              onClick={() => openCard(ev)}
+            >
+              <img src={ev.image_url} alt={ev.title.ko} className="w-full h-full object-cover" />
+              <div className="absolute bottom-0 left-0 right-0 px-2 py-1.5" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}>
+                <p className="text-white text-[10px] font-semibold leading-tight line-clamp-2">{ev.title.ko}</p>
+                <p className="text-white/50 text-[9px] mt-0.5">{ev.start_year}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* [cl] 확장 모달: 아래서 scale-up (스프링 이징) */}
+      {expandedEvent && (
+        <div
+          className="absolute inset-0 z-[86] flex items-center justify-center pointer-events-auto"
+          style={{
+            background: expanding ? "rgba(0,0,0,0.65)" : "transparent",
+            transition: "background 0.38s",
+          }}
+          onClick={closeCard}
+        >
+          <div
+            className="relative w-full max-w-2xl rounded-2xl bg-white shadow-2xl mx-4 overflow-hidden"
+            style={{
+              maxHeight: "80vh",
+              transform: expanding ? "scale(1) translateY(0)" : "scale(0.82) translateY(50px)",
+              opacity: expanding ? 1 : 0,
+              transition: "transform 0.42s cubic-bezier(0.34, 1.15, 0.64, 1), opacity 0.32s ease",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-lg leading-none"
+              onClick={closeCard}
+            >✕</button>
+            <div className="overflow-y-auto" style={{ maxHeight: "80vh" }}>
+              <EventDetailContent
+                event={expandedEvent}
+                theme="light"
+                relatedEvents={MOCK_EVENTS.filter((e) => e.id !== expandedEvent.id).slice(0, 4)}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
 
 export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>(null);
@@ -84,35 +177,9 @@ export default function Home() {
         </button>
       </div>
 
-      {/* [cl] 스택 마커 클릭: 가로 미니 캐러셀 팝업 → 카드 선택 → 상세 모달 */}
+      {/* [cl] 스택 마커 클릭: 미니 캐러셀 → 카드 클릭 시 모달 scale-in */}
       {stackEvents.length > 0 && (
-        <div
-          className="absolute bottom-28 z-[85] pointer-events-auto"
-          style={{ left: "50%", animation: "stack-pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards" }}
-        >
-          <div className="flex items-end gap-3 px-4 py-3 rounded-2xl bg-black/65 backdrop-blur-md border border-white/10">
-            {/* 닫기 */}
-            <button
-              className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-white/15 hover:bg-white/30 text-white/70 text-sm flex items-center justify-center transition-colors"
-              onClick={() => setStackEvents([])}
-            >✕</button>
-            {/* 카드 목록 */}
-            {stackEvents.map((ev) => (
-              <div
-                key={ev.id}
-                className="relative flex-shrink-0 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-200"
-                style={{ width: 90, height: 120 }}
-                onClick={() => { setStackEvents([]); setSelectedEvent(ev); }}
-              >
-                <img src={ev.image_url} alt={ev.title.ko} className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 px-2 py-1.5" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}>
-                  <p className="text-white text-[10px] font-semibold leading-tight line-clamp-2">{ev.title.ko}</p>
-                  <p className="text-white/50 text-[9px] mt-0.5">{ev.start_year}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <StackCarousel events={stackEvents} onClose={() => setStackEvents([])} />
       )}
 
       {/* [cl] Event Marker 모달: 마커 클릭 시 이벤트 상세 표시, 닫으면 원래 카메라로 복귀 */}
