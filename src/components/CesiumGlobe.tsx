@@ -516,6 +516,25 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
       if (defined(picked) && defined(picked.id) && picked.id.id) {
         const ev = eventsRef.current.find((e) => e.id === picked.id.id);
         if (ev) {
+          // [cl] flyTo 직전 카메라 상태 저장 → 모달 닫을 때 복귀용
+          const prevPos = viewer.camera.positionCartographic.clone();
+          const prevHeading = viewer.camera.heading;
+          const prevPitch   = viewer.camera.pitch;
+          const prevRoll    = viewer.camera.roll;
+
+          // [cl] 모달 닫기 시 원래 위치/각도로 flyBack
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (window as any).__timeglobe_flyBack = () => {
+            markerFocusedRef.current = false;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_markerFocused = false;
+            viewer.camera.flyTo({
+              destination: Cartesian3.fromRadians(prevPos.longitude, prevPos.latitude, prevPos.height),
+              orientation: { heading: prevHeading, pitch: prevPitch, roll: prevRoll },
+              duration: 1.2,
+            });
+          };
+
           // [cl] 카메라 flyTo: 해당 위치로 비스듬히 접근
           viewer.camera.flyTo({
             destination: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 2_000_000),

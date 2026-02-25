@@ -10,6 +10,7 @@ import Carousel3D, { type CarouselCard } from "@/components/ui/Carousel3D";
 import { EventDetailContent } from "@/components/ui/HistoryEventModal";
 import Dashboard from "@/components/ui/Dashboard";
 import { MOCK_EVENTS } from "@/data/mockEvents";
+import type { MockEvent } from "@/data/mockEvents";
 
 // [cl] MOCK_EVENTS → CarouselCard 변환 (오빗 카드용)
 const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
@@ -23,6 +24,7 @@ type ViewMode = "orbit" | "marker" | null;
 
 export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>(null);
+  const [selectedEvent, setSelectedEvent] = useState<MockEvent | null>(null);
   const carouselOpen = viewMode === "orbit";
 
   return (
@@ -37,6 +39,7 @@ export default function Home() {
         orbitActive={carouselOpen}
         markerMode={viewMode === "marker"}
         events={MOCK_EVENTS}
+        onMarkerClick={(ev) => setSelectedEvent(ev)}
       />
 
       {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
@@ -78,6 +81,39 @@ export default function Home() {
           Reset View
         </button>
       </div>
+
+      {/* [cl] Event Marker 모달: 마커 클릭 시 이벤트 상세 표시, 닫으면 원래 카메라로 복귀 */}
+      {selectedEvent && (
+        <div className="absolute inset-0 z-[80] flex items-center justify-center pointer-events-auto">
+          {/* 배경 딤 */}
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => {
+              setSelectedEvent(null);
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              (window as any).__timeglobe_flyBack?.();
+            }}
+          />
+          {/* 모달 패널 */}
+          <div className="relative z-10 w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-2xl bg-white shadow-2xl mx-4">
+            <button
+              className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-lg leading-none"
+              onClick={() => {
+                setSelectedEvent(null);
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (window as any).__timeglobe_flyBack?.();
+              }}
+            >
+              ✕
+            </button>
+            <EventDetailContent
+              event={selectedEvent}
+              theme="light"
+              relatedEvents={MOCK_EVENTS.filter((e) => e.id !== selectedEvent.id).slice(0, 4)}
+            />
+          </div>
+        </div>
+      )}
 
       {/* [cl] 오빗 캐러셀 + 카드 클릭 시 인라인 상세 콘텐츠 */}
       <Carousel3D
