@@ -487,8 +487,8 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         position: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 0),
         billboard: {
           image: glowImage,
-          width: 48,
-          height: 48,
+          width: 12,
+          height: 12,
           scale: 1.0,
           scaleByDistance: new NearFarScalar(5e5, 1.5, 1.5e7, 0.6),
         },
