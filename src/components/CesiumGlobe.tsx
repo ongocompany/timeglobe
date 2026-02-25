@@ -569,18 +569,21 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
     ].join(";");
     viewer.container.appendChild(tooltipEl);
 
-    let showTimer: ReturnType<typeof setTimeout> | null = null;
-    let hideTimer: ReturnType<typeof setTimeout> | null = null;
-    let pendingHtml = "";
-    let pendingX = 0, pendingY = 0;
-    let visible = false; // [cl] style.display 문자열 대신 명시적 상태 추적
+    // [cl] setTimeout 대신 performance.now() + rAF 기반 타이밍
+    // → setTimeout은 Cesium rAF 환경에서 신뢰도 낮음
+    let inRadius = false;
+    let visible = false;
+    let enterTime = 0;  // [cl] 반경 진입 시각 (ms)
+    let exitTime = 0;   // [cl] 반경 이탈 시각 (ms), 0 = 미이탈
+    let currentHtml = "";
+    let currentX = 0, currentY = 0;
+    let rafId: number;
 
-    // [cl] Cesium ScreenSpaceEventHandler 대신 DOM addEventListener 사용
-    // → 다른 MOUSE_MOVE 핸들러(커서, 좌표추적)와의 충돌 방지
     const handleMouseMove = (e: MouseEvent) => {
       const rect = viewer.canvas.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
+      const now = performance.now();
 
       // [cl] 전체 이벤트 → 스크린 좌표 변환 후 반경 30px 이내 필터
       const nearby: { ev: MockEvent; dist: number }[] = [];
@@ -594,7 +597,7 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
       nearby.sort((a, b) => a.dist - b.dist);
 
       if (nearby.length > 0) {
-        // [cl] 스택 툴팁 HTML: 가장 가까운 항목 굵게, 멀수록 투명도 감소
+        // [cl] 스택 툴팁 HTML
         const shown = nearby.slice(0, MAX_DISPLAY);
         const extra = nearby.length - shown.length;
         const rows = shown.map(({ ev }, i) => {
@@ -611,55 +614,70 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         if (extra > 0) {
           rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
         }
-        pendingHtml = rows.join("");
-        pendingX = mx;
-        pendingY = my;
+        currentHtml = rows.join("");
+        currentX = mx;
+        currentY = my;
 
-        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+        if (!inRadius) {
+          // [cl] 새로 반경 진입: enterTime 기록
+          inRadius = true;
+          enterTime = now;
+          exitTime = 0;
+        }
 
         if (visible) {
           // [cl] 이미 표시 중 → 내용/위치 즉시 갱신
-          tooltipEl.innerHTML = pendingHtml;
+          tooltipEl.innerHTML = currentHtml;
           tooltipEl.style.left = `${mx + 20}px`;
           tooltipEl.style.top  = `${my - 16}px`;
-        } else if (!showTimer) {
-          // [cl] 처음 진입 → SHOW_DELAY 후 표시
-          showTimer = setTimeout(() => {
-            showTimer = null;
-            if (pendingHtml) {
-              visible = true;
-              tooltipEl.innerHTML = pendingHtml;
-              tooltipEl.style.left = `${pendingX + 20}px`;
-              tooltipEl.style.top  = `${pendingY - 16}px`;
-              tooltipEl.style.display = "block";
-            }
-          }, SHOW_DELAY);
         }
 
         markerHoverRef.current = true;
       } else {
-        // [cl] 반경 밖 → 표시 타이머 취소 + HIDE_DELAY 후 숨김
-        pendingHtml = "";
-        if (showTimer) { clearTimeout(showTimer); showTimer = null; }
-        markerHoverRef.current = false;
-
-        if (visible && !hideTimer) {
-          hideTimer = setTimeout(() => {
-            hideTimer = null;
-            visible = false;
-            tooltipEl.style.display = "none";
-          }, HIDE_DELAY);
+        currentHtml = "";
+        if (inRadius) {
+          // [cl] 반경 이탈: exitTime 기록
+          inRadius = false;
+          exitTime = now;
+          enterTime = 0;
         }
+        markerHoverRef.current = false;
       }
     };
+
+    // [cl] rAF 루프: 타임스탬프 비교로 딜레이 판단 (setTimeout보다 안정적)
+    const tick = () => {
+      const now = performance.now();
+
+      // [cl] 표시 딜레이: 반경 진입 후 SHOW_DELAY ms 경과 → 툴팁 표시
+      if (inRadius && !visible && enterTime > 0 && (now - enterTime) >= SHOW_DELAY) {
+        if (currentHtml) {
+          visible = true;
+          tooltipEl.innerHTML = currentHtml;
+          tooltipEl.style.left = `${currentX + 20}px`;
+          tooltipEl.style.top  = `${currentY - 16}px`;
+          tooltipEl.style.display = "block";
+        }
+        enterTime = 0; // [cl] 한 번만 트리거
+      }
+
+      // [cl] 숨김 딜레이: 반경 이탈 후 HIDE_DELAY ms 경과 → 툴팁 숨김
+      if (!inRadius && visible && exitTime > 0 && (now - exitTime) >= HIDE_DELAY) {
+        visible = false;
+        exitTime = 0;
+        tooltipEl.style.display = "none";
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
 
     viewer.canvas.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       viewer.canvas.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(rafId);
       tooltipEl.remove();
-      if (showTimer) clearTimeout(showTimer);
-      if (hideTimer) clearTimeout(hideTimer);
       markerHoverRef.current = false;
     };
   }, [viewer, markerMode]);
