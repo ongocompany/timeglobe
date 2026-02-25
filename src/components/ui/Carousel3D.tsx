@@ -292,7 +292,7 @@ export default function Carousel3D({ items, isOpen, onClose, onCardClick, render
     >
       {/* [cl] 배경 (모달 시에만 클릭 가능) */}
       <div
-        className={`absolute inset-0 bg-black/30 transition-opacity duration-500 ${
+        className={`absolute inset-0 transition-opacity duration-500 ${
           activeIndex !== -1 ? "pointer-events-auto bg-black/60" : ""
         }`}
         onClick={activeIndex !== -1 ? closeModal : undefined}
