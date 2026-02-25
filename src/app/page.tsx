@@ -1,7 +1,7 @@
 "use client";
 
 // [cl] TimeGlobe 메인 페이지 - Phase 0
-import { useState } from "react";
+import { useState, useRef } from "react";
 import GlobeLoader from "@/components/GlobeLoader";
 import Header from "@/components/ui/Header";
 import DateDisplay from "@/components/ui/DateDisplay";
@@ -200,6 +200,11 @@ export default function Home() {
   const [globePaused, setGlobePaused] = useState(false);
   const [globeDirection, setGlobeDirection] = useState<"left" | "right">("left");
   const [warpActive, setWarpActive] = useState(false);
+  // [cl] 워프 속도 ref: sine 이징 애니메이션에서 매 프레임 LightSpeed에 주입
+  const warpSpeedRef = useRef<number>(0);
+  const warpingRef = useRef(false); // [cl] 중복 실행 방지 (state 클로저 우회)
+  // [cl] 워프 마스크: 지구 반지름 기준 라디얼 그라디언트 — 지구 위는 투명, 우주만 워프
+  const [warpMask, setWarpMask] = useState("");
   // [cl] 마커 카테고리 다중 선택 (기본: 전체 선택)
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
     MARKER_CATEGORIES.map((c) => c.name)
@@ -210,12 +215,48 @@ export default function Home() {
     );
   const carouselOpen = viewMode === "orbit";
 
-  // [cl] 워프 시퀀스: LightSpeed 풀스크린 → 연도 전환 → 페이드아웃
+  // [cl] 워프 시퀀스: sine 이징 + 지구 유지 (mix-blend-mode: screen)
+  // 속도 곡선: 0 → 최대(MAX_SPEED) → 0 (종소리 모양, 총 DURATION ms)
   const handleWarp = (targetYear: number) => {
-    if (warpActive || targetYear === currentYear) return;
+    if (warpingRef.current || targetYear === currentYear) return;
+    warpingRef.current = true;
+
+    // [cl] 지구 반지름 읽어서 마스크 계산 — 지구 위는 투명, 우주만 워프
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const r = (window as any).__timeglobe_screenRadius || 300;
+    setWarpMask(
+      `radial-gradient(circle at 50% 50%, transparent 0px, transparent ${Math.round(r * 0.88)}px, black ${Math.round(r * 1.12)}px)`
+    );
+
     setWarpActive(true);
-    setTimeout(() => setCurrentYear(targetYear), 600);
-    setTimeout(() => setWarpActive(false), 1600);
+
+    const DURATION = 1600;
+    const MAX_SPEED = 5;
+    const startTime = performance.now();
+    let yearChanged = false;
+
+    const animate = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / DURATION, 1);
+      // [cl] sin(0→π) = 0→1→0 벨 곡선: 느리게 시작 → 최고 속도 → 느리게 종료
+      warpSpeedRef.current = Math.sin(progress * Math.PI) * MAX_SPEED;
+
+      // [cl] 절반 지점(800ms)에서 연도 전환 — LightSpeed가 완전히 덮인 순간
+      if (!yearChanged && elapsed >= 800) {
+        yearChanged = true;
+        setCurrentYear(targetYear);
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        warpSpeedRef.current = 0;
+        warpingRef.current = false;
+        setWarpActive(false);
+      }
+    };
+
+    requestAnimationFrame(animate);
   };
 
   // [cl] 리셋 핸들러 (컨트롤 바용)
@@ -245,12 +286,18 @@ export default function Home() {
         onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
       />
 
-      {/* [cl] 워프 오버레이: LightSpeed 전체화면 페이드인/아웃 */}
+      {/* [cl] 워프 오버레이: 지구 반지름 마스크 → 우주만 워프, 지구 표면 보호 */}
       <div
-        className="fixed inset-0 pointer-events-none transition-opacity duration-500"
-        style={{ opacity: warpActive ? 1 : 0, zIndex: 100 }}
+        className="fixed inset-0 pointer-events-none transition-opacity duration-300"
+        style={{
+          opacity: warpActive ? 1 : 0,
+          zIndex: 100,
+          mixBlendMode: "screen",
+          WebkitMaskImage: warpMask,
+          maskImage: warpMask,
+        }}
       >
-        <LightSpeed speed={2} paused={!warpActive} className="w-full h-full" />
+        <LightSpeed speedRef={warpSpeedRef} className="w-full h-full" />
       </div>
 
       {/* [cl] 좌상단 메뉴 — 로고 하단 세로 배치 */}

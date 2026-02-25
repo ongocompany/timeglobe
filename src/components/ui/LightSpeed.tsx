@@ -57,14 +57,17 @@ interface LightSpeedProps {
   className?: string;
   paused?: boolean;
   speed?: number;
+  // [cl] 외부 speed 제어용 ref — sine 이징 애니메이션에서 매 프레임 속도 주입
+  speedRef?: { current: number };
   fragmentSource?: string;
   onShaderError?: (err: string) => void;
 }
 
 export default function LightSpeed({
-  className = "relative w-full h-full bg-black overflow-hidden",
+  className = "relative w-full h-full overflow-hidden",
   paused = false,
   speed = 1,
+  speedRef,
   fragmentSource = DEFAULT_FRAG,
   onShaderError,
 }: LightSpeedProps) {
@@ -74,7 +77,13 @@ export default function LightSpeed({
   const buffersRef = useRef<{ vbo: WebGLBuffer | null }>({ vbo: null });
   const uniformsRef = useRef<{ time?: WebGLUniformLocation; resolution?: WebGLUniformLocation }>({});
   const rafRef = useRef<number>(0);
+  // [cl] paused/speed → ref 동기화: 메인 useEffect 재실행 없이 즉시 반영
+  const pausedRef = useRef(paused);
+  const internalSpeedRef = useRef(speed);
   const [webglOk, setWebglOk] = useState(true);
+
+  useEffect(() => { pausedRef.current = paused; }, [paused]);
+  useEffect(() => { internalSpeedRef.current = speed; }, [speed]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -165,13 +174,23 @@ export default function LightSpeed({
     window.addEventListener("resize", resize);
     resize();
 
-    let start = performance.now();
+    // [cl] 시간 누적 방식: speed가 매 프레임 바뀌어도 shader time이 연속적
+    let accumulatedTime = 0;
+    let lastFrameTime = performance.now();
+
     const loop = (t: number) => {
       rafRef.current = requestAnimationFrame(loop);
-      if (paused) return;
-      const now = (t - start) * 0.001 * (speed || 1);
+
+      const dt = (t - lastFrameTime) * 0.001;
+      lastFrameTime = t;
+
+      // [cl] 외부 speedRef 우선, 없으면 내부 speed ref
+      const currentSpeed = speedRef ? speedRef.current : internalSpeedRef.current;
+      if (pausedRef.current || currentSpeed <= 0) return;
+
+      accumulatedTime += dt * currentSpeed;
       gl.useProgram(programRef.current);
-      gl.uniform1f(uniformsRef.current.time!, now);
+      gl.uniform1f(uniformsRef.current.time!, accumulatedTime);
       gl.clearColor(0, 0, 0, 1);
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
@@ -190,7 +209,9 @@ export default function LightSpeed({
       }
       if (gl && buffersRef.current.vbo) gl.deleteBuffer(buffersRef.current.vbo);
     };
-  }, [fragmentSource, paused, speed, onShaderError]);
+    // [cl] fragmentSource/onShaderError/speedRef 변경 시만 WebGL 재초기화
+    // paused/speed는 ref 동기화로 처리 → 재초기화 불필요
+  }, [fragmentSource, onShaderError, speedRef]);
 
   return (
     <div className={className}>
