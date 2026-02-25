@@ -190,6 +190,8 @@ function StackCarousel({
 export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>(null);
   const [stackState, setStackState] = useState<{ events: MockEvent[]; pos: { x: number; y: number } } | null>(null);
+  // [cl] Orbit 자전 제어: rotate(기본) / stop
+  const [orbitMotion, setOrbitMotion] = useState<"rotate" | "stop">("rotate");
   // [cl] 마커 카테고리 다중 선택 (기본: 전체 선택)
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
     MARKER_CATEGORIES.map((c) => c.name)
@@ -210,6 +212,7 @@ export default function Home() {
       {/* [cl] 지구본: orbit/marker 모드 전달 */}
       <GlobeLoader
         orbitActive={carouselOpen}
+        orbitPaused={orbitMotion === "stop"}
         markerMode={viewMode === "marker"}
         events={MOCK_EVENTS}
         onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
@@ -220,21 +223,59 @@ export default function Home() {
         className="absolute left-6 z-[60] flex flex-col gap-0.5 pointer-events-auto"
         style={{ top: 52, fontFamily: "var(--font-noto-sans), sans-serif" }}
       >
-        {/* Event Orbit */}
-        <button
-          onClick={() => setViewMode((v) => (v === "orbit" ? null : "orbit"))}
-          className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group"
-        >
-          {/* [cl] 삼각형 인디케이터: 비선택=▶, 선택=▼ (90도 회전) */}
-          <svg
-            width="7" height="8" viewBox="0 0 7 8" fill="currentColor"
-            className={`flex-shrink-0 transition-all duration-300 ease-in-out ${viewMode === "orbit" ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
-            style={{ transform: viewMode === "orbit" ? "rotate(90deg)" : "rotate(0deg)" }}
+        {/* Event Orbit + 아코디언 */}
+        <div>
+          <button
+            onClick={() => {
+              setViewMode((v) => (v === "orbit" ? null : "orbit"));
+              setOrbitMotion("rotate"); // [cl] 모드 전환 시 회전으로 초기화
+            }}
+            className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group w-full"
           >
-            <path d="M1 1L6.5 4L1 7Z" />
-          </svg>
-          <span className={`transition-colors duration-200 ${viewMode === "orbit" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Orbit</span>
-        </button>
+            {/* [cl] 삼각형 인디케이터: 비선택=▶, 선택=▼ (90도 회전) */}
+            <svg
+              width="7" height="8" viewBox="0 0 7 8" fill="currentColor"
+              className={`flex-shrink-0 transition-all duration-300 ease-in-out ${viewMode === "orbit" ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
+              style={{ transform: viewMode === "orbit" ? "rotate(90deg)" : "rotate(0deg)" }}
+            >
+              <path d="M1 1L6.5 4L1 7Z" />
+            </svg>
+            <span className={`transition-colors duration-200 ${viewMode === "orbit" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Orbit</span>
+          </button>
+
+          {/* [cl] 아코디언: 회전 / 정지 라디오 선택 (단일 선택) */}
+          <div
+            className="overflow-hidden transition-all duration-300 ease-in-out"
+            style={{ maxHeight: viewMode === "orbit" ? "80px" : "0px", opacity: viewMode === "orbit" ? 1 : 0 }}
+          >
+            <div className="pl-5 pt-1 pb-1 flex flex-col gap-2">
+              {(["rotate", "stop"] as const).map((motion) => {
+                const label = motion === "rotate" ? "회전" : "정지";
+                const selected = orbitMotion === motion;
+                return (
+                  <button
+                    key={motion}
+                    onClick={() => setOrbitMotion(motion)}
+                    className="flex items-center gap-2 group text-left"
+                  >
+                    {/* [cl] 라디오 도트: 단일 선택, 화이트 글로우 */}
+                    <span
+                      className="w-2.5 h-2.5 rounded-full border flex-shrink-0 transition-all duration-200"
+                      style={{
+                        backgroundColor: selected ? "rgba(255,255,255,0.9)" : "transparent",
+                        borderColor: selected ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.22)",
+                        boxShadow: selected ? "0 0 6px rgba(255,255,255,0.5)" : "none",
+                      }}
+                    />
+                    <span className={`text-xs transition-colors duration-200 ${selected ? "text-white/85" : "text-white/38 group-hover:text-white/65"}`}>
+                      {label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
 
         {/* Event Marker + 아코디언 */}
         <div>

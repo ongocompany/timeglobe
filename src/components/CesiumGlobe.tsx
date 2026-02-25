@@ -115,12 +115,13 @@ function calcDefaultHeight(viewer: InstanceType<typeof import("cesium").Viewer>)
 // [cl] Viewer 마운트 후 SkyBox + 자동 자전을 설정하는 내부 컴포넌트
 interface SceneSetupProps {
   orbitActive: boolean;
+  orbitPaused: boolean;
   markerMode: boolean;
   events: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
 }
 
-function SceneSetup({ orbitActive, markerMode, events, onStackClick }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, markerMode, events, onStackClick }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -129,6 +130,9 @@ function SceneSetup({ orbitActive, markerMode, events, onStackClick }: SceneSetu
   // [cl] orbitActive를 ref로 → spin 루프에서 접근 가능 (클로저 갱신 없이)
   const orbitActiveRef = useRef(orbitActive);
   useEffect(() => { orbitActiveRef.current = orbitActive; }, [orbitActive]);
+  // [cl] orbitPaused ref → orbit 모드에서 자전 정지 여부
+  const orbitPausedRef = useRef(orbitPaused);
+  useEffect(() => { orbitPausedRef.current = orbitPaused; }, [orbitPaused]);
   // [cl] markerMode ref → spin 루프에서 접근
   const markerModeRef = useRef(markerMode);
   useEffect(() => { markerModeRef.current = markerMode; }, [markerMode]);
@@ -897,7 +901,9 @@ function SceneSetup({ orbitActive, markerMode, events, onStackClick }: SceneSetu
       const markerFocused = markerFocusedRef.current;
 
       const elapsed = Date.now() - lastInteraction.current;
-      if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected && !markerFocused) {
+      // [cl] orbit 정지 모드: 자전 + autoRot 누적 모두 스킵
+      const orbitPaused = orbitActiveRef.current && orbitPausedRef.current;
+      if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected && !markerFocused && !orbitPaused) {
         // [cl] 고도 기반 자전 속도: 3,000km 이하 정지 → 15,000km 이상 정상 속도
         const camDist = Cartesian3.magnitude(viewer.camera.positionWC) - 6378137;
         let speedFactor = 1.0;
@@ -963,6 +969,7 @@ function SceneSetup({ orbitActive, markerMode, events, onStackClick }: SceneSetu
 // [cl] CesiumGlobe props: orbit + marker 모드
 interface CesiumGlobeProps {
   orbitActive?: boolean;
+  orbitPaused?: boolean;
   markerMode?: boolean;
   events?: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
@@ -970,6 +977,7 @@ interface CesiumGlobeProps {
 
 export default function CesiumGlobe({
   orbitActive = false,
+  orbitPaused = false,
   markerMode = false,
   events = [],
   onStackClick,
@@ -991,6 +999,7 @@ export default function CesiumGlobe({
     >
       <SceneSetup
         orbitActive={orbitActive}
+        orbitPaused={orbitPaused}
         markerMode={markerMode}
         events={events}
         onStackClick={onStackClick}
