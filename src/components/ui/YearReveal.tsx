@@ -1,9 +1,9 @@
 "use client";
 
 // [cl] 워프 완료 후 "Welcome to XXXX" 블러 리빌 + 역재생 퇴장
-// Phase 1 (reveal): 개별 단어 blur→clear 스태거 등장 (~2s)
+// Phase 1 (reveal): blur+scale→clear 사방에서 중앙으로 수렴
 // Phase 2 (hold): 텍스트 유지 (~1.5s)
-// Phase 3 (fadeout): clear→blur 역스태거 퇴장 (연도 먼저 → Welcome 마지막)
+// Phase 3 (fadeout): clear→blur+scale 중앙에서 사방으로 확산 (역재생)
 
 import { useEffect, useRef, useState } from "react";
 
@@ -19,11 +19,6 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
   const onCompleteRef = useRef(onComplete);
   onCompleteRef.current = onComplete;
 
-  // [cl] 타이밍:
-  //   0ms    → 블러 상태 배치
-  //   200ms  → reveal 시작 (blur→clear, 스태거)
-  //   3500ms → fadeout 시작 (clear→blur, 역스태거) [기존 2500 + 1000]
-  //   5000ms → onComplete
   useEffect(() => {
     if (!visible) return;
     setIsAnimating(false);
@@ -36,7 +31,6 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
       setIsAnimating(false);
     }, 3500);
 
-    // [cl] 퇴장 트랜지션 완료 대기 (가장 긴 delay 0.3s + duration 1.2s = 1.5s)
     const doneTimer = setTimeout(() => {
       onCompleteRef.current();
     }, 5000);
@@ -50,9 +44,6 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
 
   if (!visible) return null;
 
-  // [cl] 등장/퇴장 단어별 타이밍 정의
-  // 등장: Welcome(0s) → to(0.12s) → 연도(0.3s) — 순서대로
-  // 퇴장: 연도(0s) → to(0.1s) → Welcome(0.2s) — 역순, 짧은 duration
   const subWords = [
     {
       text: "Welcome",
@@ -93,18 +84,19 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
               style={{
                 color: "white",
                 opacity: active ? 1 : 0,
+                // [cl] scale(1.15)→scale(1): 사방에서 중앙으로 수렴 (방향성 없음)
                 filter: active
                   ? "blur(0px) brightness(1)"
                   : `blur(${w.blur}px) brightness(0.6)`,
                 transform: active
-                  ? "translateY(0) scale(1)"
-                  : "translateY(12px) scale(0.92)",
+                  ? "scale(1)"
+                  : "scale(1.15)",
                 transitionProperty: "opacity, filter, transform",
                 transitionDuration: isFading ? `${w.fadeDuration}s` : `${w.revealDuration}s`,
                 transitionDelay: isFading ? `${w.fadeDelay}s` : `${w.revealDelay}s`,
                 transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                 textShadow: active
-                  ? "0 2px 8px rgba(255,255,255,0.1)"
+                  ? "0 0 8px rgba(255,255,255,0.1)"
                   : "0 0 30px rgba(255,255,255,0.4)",
                 willChange: "filter, transform, opacity",
               }}
@@ -125,21 +117,21 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
             lineHeight: 1,
             color: "white",
             opacity: active ? 1 : 0,
+            // [cl] scale(1.12)→scale(1): 확대→원본 크기, 블러와 결합해 사방에서 응집
             filter: active
               ? "blur(0px) brightness(1)"
               : `blur(${yearWord.blur}px) brightness(0.6)`,
             transform: active
-              ? "translateY(0) scale(1) rotateX(0deg)"
-              : "translateY(20px) scale(0.9) rotateX(-15deg)",
+              ? "scale(1)"
+              : "scale(1.12)",
             transitionProperty: "opacity, filter, transform",
             transitionDuration: isFading ? `${yearWord.fadeDuration}s` : `${yearWord.revealDuration}s`,
             transitionDelay: isFading ? `${yearWord.fadeDelay}s` : `${yearWord.revealDelay}s`,
             transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
             textShadow: active
-              ? "0 2px 12px rgba(255,255,255,0.15)"
+              ? "0 0 12px rgba(255,255,255,0.15)"
               : "0 0 50px rgba(255,255,255,0.5)",
             willChange: "filter, transform, opacity",
-            transformStyle: "preserve-3d",
           }}
         >
           {year}
