@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,11 @@
   <meta property="og:description" content="시간 여행하는 인터랙티브 지구본. 역사적 사건들을 3D 지구 위에서 탐험하세요.">
   <meta property="og:type" content="website">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       background: #0a0a12;
@@ -26,6 +31,7 @@
       pointer-events: none;
       z-index: -1;
     }
+
     .stars span {
       position: absolute;
       border-radius: 50%;
@@ -34,8 +40,13 @@
     }
 
     @keyframes twinkle {
-      0% { opacity: 0.2; }
-      100% { opacity: 0.9; }
+      0% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 0.9;
+      }
     }
 
     /* globe */
@@ -82,13 +93,29 @@
       transform-box: fill-box;
       animation: lonSweep 5s ease-in-out infinite;
     }
-    .globe-lon-a { animation-delay: 0s; }
-    .globe-lon-b { animation-delay: -1.67s; }
-    .globe-lon-c { animation-delay: -3.33s; }
+
+    .globe-lon-a {
+      animation-delay: 0s;
+    }
+
+    .globe-lon-b {
+      animation-delay: -1.67s;
+    }
+
+    .globe-lon-c {
+      animation-delay: -3.33s;
+    }
 
     @keyframes lonSweep {
-      0%, 100% { transform: scaleX(0.12); }
-      50% { transform: scaleX(1); }
+
+      0%,
+      100% {
+        transform: scaleX(0.12);
+      }
+
+      50% {
+        transform: scaleX(1);
+      }
     }
 
     .glow {
@@ -96,10 +123,9 @@
       inset: -40%;
       border-radius: 50%;
       background: radial-gradient(circle,
-        rgba(60, 140, 255, 0.10) 30%,
-        rgba(60, 140, 255, 0.04) 50%,
-        transparent 70%
-      );
+          rgba(60, 140, 255, 0.10) 30%,
+          rgba(60, 140, 255, 0.04) 50%,
+          transparent 70%);
       pointer-events: none;
     }
 
@@ -193,6 +219,15 @@
       border-color: rgba(100, 160, 255, 0.5);
     }
 
+    .cta-primary {
+      background: linear-gradient(135deg, rgba(80, 140, 255, 0.35), rgba(60, 120, 255, 0.2));
+      border-color: rgba(100, 160, 255, 0.5);
+    }
+    .cta-primary:hover {
+      background: linear-gradient(135deg, rgba(80, 140, 255, 0.5), rgba(60, 120, 255, 0.3));
+      border-color: rgba(100, 160, 255, 0.7);
+    }
+
     .tech {
       margin-top: 60px;
       padding-top: 32px;
@@ -237,8 +272,15 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
     footer {
@@ -251,13 +293,26 @@
     }
 
     @media (max-width: 480px) {
-      h1 { font-size: 2.2rem; }
-      .features { grid-template-columns: 1fr; }
-      .globe { width: 160px; height: 160px; }
-      .globe-wrap { padding-top: 60px; }
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .globe {
+        width: 160px;
+        height: 160px;
+      }
+
+      .globe-wrap {
+        padding-top: 60px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Stars background -->
@@ -268,11 +323,11 @@
     <div class="globe">
       <div class="glow"></div>
       <svg viewBox="0 0 200 200" fill="none">
-        <circle cx="100" cy="100" r="80" class="globe-circle"/>
-        <ellipse cx="100" cy="100" rx="80" ry="28" class="globe-equator"/>
-        <ellipse cx="100" cy="100" rx="35" ry="80" class="globe-lon globe-lon-a"/>
-        <ellipse cx="100" cy="100" rx="55" ry="80" class="globe-lon globe-lon-b"/>
-        <ellipse cx="100" cy="100" rx="20" ry="80" class="globe-lon globe-lon-c"/>
+        <circle cx="100" cy="100" r="80" class="globe-circle" />
+        <ellipse cx="100" cy="100" rx="80" ry="28" class="globe-equator" />
+        <ellipse cx="100" cy="100" rx="35" ry="80" class="globe-lon globe-lon-a" />
+        <ellipse cx="100" cy="100" rx="55" ry="80" class="globe-lon globe-lon-b" />
+        <ellipse cx="100" cy="100" rx="20" ry="80" class="globe-lon globe-lon-c" />
       </svg>
     </div>
   </div>
@@ -311,12 +366,22 @@
       </div>
     </div>
 
-    <a href="https://github.com/leejinwoo1973/timeglobe" class="cta" target="_blank" rel="noopener noreferrer">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-      </svg>
-      GitHub Repository
-    </a>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://timeglobe-indol.vercel.app" class="cta cta-primary" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <ellipse cx="10" cy="10" rx="8" ry="3" stroke="currentColor" stroke-width="0.8"/>
+          <ellipse cx="10" cy="10" rx="3.5" ry="8" stroke="currentColor" stroke-width="0.8"/>
+        </svg>
+        Launch App
+      </a>
+      <a href="https://github.com/leejinwoo1973/timeglobe" class="cta" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
 
     <div class="tech">
       <div class="tech-label">Built with</div>
@@ -341,7 +406,7 @@
 
   <script>
     // Generate random stars
-    (function() {
+    (function () {
       var container = document.getElementById('stars');
       for (var i = 0; i < 80; i++) {
         var star = document.createElement('span');
@@ -357,4 +422,5 @@
     })();
   </script>
 </body>
+
 </html>
