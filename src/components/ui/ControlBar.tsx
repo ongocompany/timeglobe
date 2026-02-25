@@ -41,6 +41,7 @@ export default function ControlBar({
   warpingRef.current = warping;
   const wheelCountRef = useRef(0);
   const wheelTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wheelDirRef = useRef<number>(0); // [cl] 마지막 휠 방향 (1=위, -1=아래)
 
   const setEditingSync = useCallback((v: boolean) => { setEditing(v); editingRef.current = v; }, []);
 
@@ -77,6 +78,12 @@ export default function ControlBar({
       e.preventDefault();
       e.stopPropagation();
 
+      // [cl] 휠 방향 전환 감지 → 즉시 가속 리셋 (정밀 탐색용)
+      const dir = e.deltaY > 0 ? -1 : 1;
+      if (dir !== wheelDirRef.current) {
+        wheelCountRef.current = 0;
+        wheelDirRef.current = dir;
+      }
       wheelCountRef.current += 1;
       if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
       wheelTimerRef.current = setTimeout(() => { wheelCountRef.current = 0; }, 300);
