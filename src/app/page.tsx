@@ -456,7 +456,7 @@ export default function Home() {
         warping={warpActive}
         onYearCommit={handleWarp}
         onPauseToggle={() => setGlobePaused((v) => !v)}
-        onDirectionToggle={() => setGlobeDirection((v) => (v === "left" ? "right" : "left"))}
+        onDirectionChange={(dir) => setGlobeDirection(dir)}
         onReset={handleReset}
       />
 

@@ -13,7 +13,7 @@ interface ControlBarProps {
   warping: boolean;
   onYearCommit: (year: number) => void;
   onPauseToggle: () => void;
-  onDirectionToggle: () => void;
+  onDirectionChange: (dir: "left" | "right") => void;
   onReset: () => void;
 }
 
@@ -26,7 +26,7 @@ export default function ControlBar({
   warping,
   onYearCommit,
   onPauseToggle,
-  onDirectionToggle,
+  onDirectionChange,
   onReset,
 }: ControlBarProps) {
   const [editing, setEditing] = useState(false);
@@ -83,26 +83,65 @@ export default function ControlBar({
         fontFamily: "var(--font-noto-sans), sans-serif",
       }}
     >
-      {/* [cl] 자전 방향 토글 */}
-      <button
-        onClick={onDirectionToggle}
-        title={direction === "left" ? "서→동 자전 중 (클릭하면 반전)" : "동→서 자전 중 (클릭하면 반전)"}
-        style={iconBtnStyle}
-        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)")}
-        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)")}
-      >
-        {direction === "left" ? (
-          // ← 화살표 (현재 서→동 방향)
-          <svg width="15" height="12" viewBox="0 0 15 12" fill="none">
-            <path d="M14 6H1.5M1.5 6L6 1.5M1.5 6L6 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* [cl] 자전 방향: ← 지구아이콘(회전) → */}
+      <div className="flex items-center gap-1">
+        {/* ← 왼쪽 방향 */}
+        <button
+          onClick={() => onDirectionChange("left")}
+          title="서→동 자전"
+          style={{
+            ...iconBtnStyle,
+            width: 28,
+            height: 28,
+            color: direction === "left" ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.3)",
+          }}
+          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)")}
+          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = direction === "left" ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.3)")}
+        >
+          <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
+            <path d="M12 5H2M2 5L5.5 1.5M2 5L5.5 8.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        ) : (
-          // → 화살표 (현재 동→서 방향)
-          <svg width="15" height="12" viewBox="0 0 15 12" fill="none">
-            <path d="M1 6H13.5M13.5 6L9 1.5M13.5 6L9 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </button>
+
+        {/* [cl] 회전 지구 아이콘 — direction에 따라 정/역회전, paused 시 정지 */}
+        <div
+          style={{
+            width: 22,
+            height: 22,
+            color: "rgba(255,255,255,0.5)",
+            animation: "ctrlGlobeSpin 4s linear infinite",
+            animationDirection: direction === "right" ? "reverse" : "normal",
+            animationPlayState: paused ? "paused" : "running",
+          }}
+        >
+          <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8.5" stroke="currentColor" strokeWidth="1.2" />
+            <ellipse cx="10" cy="10" rx="8.5" ry="3" stroke="currentColor" strokeWidth="0.8" />
+            <ellipse cx="10" cy="10" rx="3.5" ry="8.5" stroke="currentColor" strokeWidth="0.8" />
           </svg>
-        )}
-      </button>
+        </div>
+
+        {/* → 오른쪽 방향 */}
+        <button
+          onClick={() => onDirectionChange("right")}
+          title="동→서 자전"
+          style={{
+            ...iconBtnStyle,
+            width: 28,
+            height: 28,
+            color: direction === "right" ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.3)",
+          }}
+          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)")}
+          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = direction === "right" ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.3)")}
+        >
+          <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
+            <path d="M1 5H11M11 5L7.5 1.5M11 5L7.5 8.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      {/* [cl] @keyframes ctrlGlobeSpin — 인라인 style 태그 */}
+      <style>{`@keyframes ctrlGlobeSpin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }`}</style>
 
       <Divider />
 
