@@ -30,8 +30,12 @@ export default function Home() {
       <DateDisplay />
       <Timeline />
 
-      {/* [cl] 지구본: 원래 크기 유지 (카드가 궤도 위에서 감싸는 형태) */}
-      <GlobeLoader orbitActive={carouselOpen} />
+      {/* [cl] 지구본: orbit/marker 모드 전달 */}
+      <GlobeLoader
+        orbitActive={carouselOpen}
+        markerMode={viewMode === "marker"}
+        events={MOCK_EVENTS}
+      />
 
       {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[60] flex gap-3 pointer-events-auto">
@@ -60,6 +64,9 @@ export default function Home() {
         {/* [cl] 카메라 리셋: 적도 기본 뷰로 복귀 (마커 탐색 후 복원 등에 활용) */}
         <button
           onClick={() => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_markerFocused = false;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const reset = (window as any).__timeglobe_resetToDefault;
             if (reset) reset();
           }}

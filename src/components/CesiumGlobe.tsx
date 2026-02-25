@@ -10,21 +10,21 @@ if (typeof window !== "undefined") {
 }
 
 import { useEffect, useRef } from "react";
-import { Viewer, Entity, useCesium } from "resium";
+import { Viewer, useCesium } from "resium";
 import {
   Cartesian3,
-  Color,
   SkyBox,
   Math as CesiumMath,
   SingleTileImageryProvider,
   Rectangle,
   SceneTransforms,
-  DistanceDisplayCondition,
-  VerticalOrigin,
-  HorizontalOrigin,
   NearFarScalar,
   Ion,
+  ScreenSpaceEventHandler,
+  ScreenSpaceEventType,
+  defined,
 } from "cesium";
+import type { MockEvent } from "@/data/mockEvents";
 
 // [cl] Cesium Ion 토큰 설정 — Bing Maps 위성 타일 사용에 필요
 if (typeof window !== "undefined" && process.env.NEXT_PUBLIC_CESIUM_ION_TOKEN) {
@@ -44,6 +44,40 @@ const SKYBOX_SOURCES = {
   negativeZ: "/skybox/nz.png",
 };
 
+// [cl] 카테고리별 글로우 도트 색상 (SF 느낌 네온 톤)
+const CATEGORY_COLORS: Record<string, string> = {
+  "정치/전쟁": "#FF4444",
+  "인물/문화": "#4488FF",
+  "과학/발명": "#44CC88",
+  "건축/유물": "#FFAA33",
+  "자연재해/지질": "#FF8833",
+  문화: "#AA55FF",
+  지적유산: "#5566FF",
+};
+const DEFAULT_MARKER_COLOR = "#88AAFF";
+
+// [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
+const glowImageCache: Record<string, string> = {};
+function createGlowImage(color: string, size = 64): string {
+  if (glowImageCache[color]) return glowImageCache[color];
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  const half = size / 2;
+  const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
+  gradient.addColorStop(0, color);
+  gradient.addColorStop(0.15, color);
+  gradient.addColorStop(0.4, color + "80"); // 50% alpha
+  gradient.addColorStop(0.7, color + "30"); // 19% alpha
+  gradient.addColorStop(1, "transparent");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, size, size);
+  const dataUrl = canvas.toDataURL();
+  glowImageCache[color] = dataUrl;
+  return dataUrl;
+}
+
 // [cl] 800px 지구 지름에 맞는 카메라 기본 높이 계산
 // orbit 진입, resetToDefault, 초기 카메라 모두 이 값을 사용
 function calcDefaultHeight(viewer: InstanceType<typeof import("cesium").Viewer>) {
@@ -58,7 +92,14 @@ function calcDefaultHeight(viewer: InstanceType<typeof import("cesium").Viewer>)
 }
 
 // [cl] Viewer 마운트 후 SkyBox + 자동 자전을 설정하는 내부 컴포넌트
-function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
+interface SceneSetupProps {
+  orbitActive: boolean;
+  markerMode: boolean;
+  events: MockEvent[];
+  onMarkerClick?: (event: MockEvent) => void;
+}
+
+function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -67,6 +108,17 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
   // [cl] orbitActive를 ref로 → spin 루프에서 접근 가능 (클로저 갱신 없이)
   const orbitActiveRef = useRef(orbitActive);
   useEffect(() => { orbitActiveRef.current = orbitActive; }, [orbitActive]);
+  // [cl] markerMode ref → spin 루프에서 접근
+  const markerModeRef = useRef(markerMode);
+  useEffect(() => { markerModeRef.current = markerMode; }, [markerMode]);
+  // [cl] 마커 포커스 상태: 클릭 후 카메라 이동 → 자전 정지
+  const markerFocusedRef = useRef(false);
+  // [cl] onMarkerClick ref
+  const onMarkerClickRef = useRef(onMarkerClick);
+  useEffect(() => { onMarkerClickRef.current = onMarkerClick; }, [onMarkerClick]);
+  // [cl] events ref
+  const eventsRef = useRef(events);
+  useEffect(() => { eventsRef.current = events; }, [events]);
 
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
@@ -341,6 +393,87 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
     }
   }, [orbitActive, viewer]);
 
+  // [cl] Event Marker: 글로우 도트 엔티티 동적 생성/제거
+  useEffect(() => {
+    if (!viewer) return;
+    // [cl] 마커 모드 해제 시: 마커 엔티티 제거 + 포커스 해제
+    if (!markerMode) {
+      events.forEach((ev) => {
+        const existing = viewer.entities.getById(ev.id);
+        if (existing) viewer.entities.remove(existing);
+      });
+      markerFocusedRef.current = false;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_markerFocused = false;
+      return;
+    }
+
+    // [cl] 마커 모드 진입: 글로우 도트 엔티티 생성
+    events.forEach((ev) => {
+      if (viewer.entities.getById(ev.id)) return; // 중복 방지
+      const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
+      const glowImage = createGlowImage(color);
+
+      viewer.entities.add({
+        id: ev.id,
+        name: ev.title.ko,
+        position: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 0),
+        billboard: {
+          image: glowImage,
+          width: 24,
+          height: 24,
+          scale: 1.0,
+          scaleByDistance: new NearFarScalar(5e5, 2.0, 1.5e7, 0.5),
+        },
+      });
+    });
+
+    return () => {
+      // [cl] 클린업: 모든 이벤트 마커 제거
+      events.forEach((ev) => {
+        const existing = viewer.entities.getById(ev.id);
+        if (existing) viewer.entities.remove(existing);
+      });
+    };
+  }, [viewer, markerMode, events]);
+
+  // [cl] Event Marker: 클릭 핸들러 (ScreenSpaceEventHandler)
+  useEffect(() => {
+    if (!viewer || !markerMode) return;
+
+    const handler = new ScreenSpaceEventHandler(viewer.canvas);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    handler.setInputAction((click: any) => {
+      const picked = viewer.scene.pick(click.position);
+      if (defined(picked) && defined(picked.id) && picked.id.id) {
+        const ev = eventsRef.current.find((e) => e.id === picked.id.id);
+        if (ev) {
+          // [cl] 카메라 flyTo: 해당 위치로 비스듬히 접근
+          viewer.camera.flyTo({
+            destination: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 2_000_000),
+            orientation: {
+              heading: 0,
+              pitch: CesiumMath.toRadians(-45),
+              roll: 0,
+            },
+            duration: 1.5,
+          });
+
+          // [cl] 자전 정지 플래그
+          markerFocusedRef.current = true;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (window as any).__timeglobe_markerFocused = true;
+
+          onMarkerClickRef.current?.(ev);
+        }
+      }
+    }, ScreenSpaceEventType.LEFT_CLICK);
+
+    return () => {
+      handler.destroy();
+    };
+  }, [viewer, markerMode]);
+
   // [cl] 자동 자전 + 자전축 복원: 마우스 조작 멈추고 1초 후 서→동 방향 회전
   // 마우스 클릭 시 북극↑ 남극↓ 정위치로 부드럽게 복원
   useEffect(() => {
@@ -373,8 +506,11 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
       const resetTs = (window as any).__timeglobe_resetTimestamp || 0;
       const resetProtected = Date.now() - resetTs < 1500;
 
+      // [cl] 마커 포커스 중이면 자전 + 복원 모두 정지
+      const markerFocused = markerFocusedRef.current;
+
       const elapsed = Date.now() - lastInteraction.current;
-      if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected) {
+      if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected && !markerFocused) {
         // [cl] 카메라 거리에 따른 자전 속도 조절: 가까우면 멈춤, 멀면 정상
         const camDist = Cartesian3.magnitude(viewer.camera.positionWC) - 6378137;
         let speedFactor = 1.0;
@@ -439,7 +575,20 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
   return null;
 }
 
-export default function CesiumGlobe({ orbitActive = false }: { orbitActive?: boolean }) {
+// [cl] CesiumGlobe props: orbit + marker 모드
+interface CesiumGlobeProps {
+  orbitActive?: boolean;
+  markerMode?: boolean;
+  events?: MockEvent[];
+  onMarkerClick?: (event: MockEvent) => void;
+}
+
+export default function CesiumGlobe({
+  orbitActive = false,
+  markerMode = false,
+  events = [],
+  onMarkerClick,
+}: CesiumGlobeProps) {
   return (
     <Viewer
       full
@@ -455,39 +604,11 @@ export default function CesiumGlobe({ orbitActive = false }: { orbitActive?: boo
       selectionIndicator={false}
       infoBox={false}
     >
-      <SceneSetup orbitActive={orbitActive} />
-
-      {/* [cl] 서울 마커 실험: 원거리 = 2D 아이콘(Billboard), 근거리 = 3D 모델 */}
-
-      {/* [cl] 원거리용 2D 박물관 아이콘 (카메라 거리 500km~무한대) */}
-      <Entity
-        name="Seoul Museum"
-        position={Cartesian3.fromDegrees(126.978, 37.5665, 0)}
-        billboard={{
-          image: "/icons/museum.svg",
-          width: 40,
-          height: 40,
-          verticalOrigin: VerticalOrigin.BOTTOM,
-          horizontalOrigin: HorizontalOrigin.CENTER,
-          distanceDisplayCondition: new DistanceDisplayCondition(500_000, Number.MAX_VALUE),
-          scaleByDistance: new NearFarScalar(500_000, 1.0, 15_000_000, 0.4),
-        }}
-        description="국립중앙박물관 - 서울"
-      />
-
-      {/* [cl] 근거리용 3D 프리미티브 (카메라 거리 0~500km) */}
-      {/* 시범: CesiumJS 내장 박스로 테스트, 나중에 실제 glTF 모델로 교체 예정 */}
-      <Entity
-        name="Seoul Museum 3D"
-        position={Cartesian3.fromDegrees(126.978, 37.5665, 2000)}
-        box={{
-          dimensions: new Cartesian3(3000, 3000, 6000),
-          material: Color.fromCssColorString("#4ecdc4").withAlpha(0.85),
-          outline: true,
-          outlineColor: Color.WHITE,
-          distanceDisplayCondition: new DistanceDisplayCondition(0, 500_000),
-        }}
-        description="국립중앙박물관 3D - 서울 (시범)"
+      <SceneSetup
+        orbitActive={orbitActive}
+        markerMode={markerMode}
+        events={events}
+        onMarkerClick={onMarkerClick}
       />
     </Viewer>
   );

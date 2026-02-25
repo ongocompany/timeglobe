@@ -2,6 +2,7 @@
 
 // [cl] CesiumGlobe를 SSR 없이 로딩하는 클라이언트 래퍼
 import dynamic from "next/dynamic";
+import type { MockEvent } from "@/data/mockEvents";
 
 const CesiumGlobe = dynamic(() => import("@/components/CesiumGlobe"), {
   ssr: false,
@@ -12,6 +13,25 @@ const CesiumGlobe = dynamic(() => import("@/components/CesiumGlobe"), {
   ),
 });
 
-export default function GlobeLoader({ orbitActive = false }: { orbitActive?: boolean }) {
-  return <CesiumGlobe orbitActive={orbitActive} />;
+interface GlobeLoaderProps {
+  orbitActive?: boolean;
+  markerMode?: boolean;
+  events?: MockEvent[];
+  onMarkerClick?: (event: MockEvent) => void;
+}
+
+export default function GlobeLoader({
+  orbitActive = false,
+  markerMode = false,
+  events = [],
+  onMarkerClick,
+}: GlobeLoaderProps) {
+  return (
+    <CesiumGlobe
+      orbitActive={orbitActive}
+      markerMode={markerMode}
+      events={events}
+      onMarkerClick={onMarkerClick}
+    />
+  );
 }
