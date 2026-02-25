@@ -214,19 +214,19 @@ export default function Home() {
     );
   const carouselOpen = viewMode === "orbit";
 
-  // [cl] 시네마틱 워프 시퀀스 (~6.2초):
+  // [cl] 시네마틱 워프 시퀀스 (~5.2초):
   //   0ms    → 스카이박스 OFF(검정 배경) + LightSpeed 페이드인
-  //   500ms  → 배경 투명 + 줌아웃 + 회전 시작 (빠른 가속)
-  //   2000ms → hold: 고속 역자전 피크 (3.2초 지속)
-  //   3000ms → 연도 전환
-  //   4200ms → zoomin: 감속 + 카메라 복귀
-  //   5200ms → LightSpeed fade-out
-  //   5700ms → 스카이박스 ON + idle 복귀
+  //   500ms  → 배경 투명 + 줌아웃 + 회전 시작 (sin ease-in 가속)
+  //   1500ms → hold: 고속 역자전 피크 (2.5초 지속)
+  //   2000ms → 연도 전환
+  //   3200ms → zoomin: cos ease-out 감속 + 카메라 복귀
+  //   4200ms → LightSpeed fade-out
+  //   4700ms → 스카이박스 ON + idle 복귀
   const handleWarp = (targetYear: number) => {
     if (warpingRef.current || targetYear === currentYear) return;
     warpingRef.current = true;
 
-    const TOTAL = 6200;
+    const TOTAL = 5200;
 
     // [cl] 0ms: 스카이박스 OFF + 검정 배경 (별만 제거, 지구 유지) + LightSpeed 시작
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -240,20 +240,19 @@ export default function Home() {
       setWarpPhase("zoomout");
     }, 500);
 
-    // [cl] 2000ms: hold (고속 역자전, 줌아웃 완료 시점)
-    setTimeout(() => setWarpPhase("hold"), 2000);
+    // [cl] 1500ms: hold (고속 역자전, 줌아웃 완료 시점)
+    setTimeout(() => setWarpPhase("hold"), 1500);
 
-    // [cl] 3000ms: 연도 전환 (회전 한참 진행 중)
-    setTimeout(() => setCurrentYear(targetYear), 3000);
+    // [cl] 2000ms: 연도 전환 (회전 한참 진행 중)
+    setTimeout(() => setCurrentYear(targetYear), 2000);
 
-    // [cl] 4200ms: 줌인 복귀 + 감속 시작
-    setTimeout(() => setWarpPhase("zoomin"), 4200);
+    // [cl] 3200ms: 줌인 복귀 + 감속 시작
+    setTimeout(() => setWarpPhase("zoomin"), 3200);
 
-    // [cl] 5200ms: LightSpeed 페이드아웃 시작
-    setTimeout(() => setWarpActive(false), 5200);
+    // [cl] 4200ms: LightSpeed 페이드아웃 시작
+    setTimeout(() => setWarpActive(false), 4200);
 
-    // [cl] 5700ms: 스카이박스 복원 + idle + 정리
-    //   LightSpeed opacity = 0 (5200+500=5700), 깔끔한 전환
+    // [cl] 4700ms: 스카이박스 복원 + idle + 정리
     setTimeout(() => {
       warpSpeedRef.current = 0;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -262,7 +261,7 @@ export default function Home() {
       (window as any).__timeglobe_setWarpBackground?.("normal");
       setWarpPhase("idle");
       warpingRef.current = false;
-    }, 5700);
+    }, 4700);
 
     // [cl] rAF 루프: LightSpeed 속도(sine 벨 곡선) + 스핀 배율 연속 업데이트
     const startTime = performance.now();
@@ -273,15 +272,19 @@ export default function Home() {
       // [cl] LightSpeed: sin(0→π) 벨 곡선 — 느리게 시작 → 피크 → 느리게 종료
       warpSpeedRef.current = Math.sin(progress * Math.PI) * 5;
 
-      // [cl] 역자전 배율: 200ms 급가속 → 피크 160배 × 3.5초 → 400ms 급감속
-      // 160배 × 0.05deg/frame × 60fps = 480deg/s → 3.5초 ≈ 4.7바퀴
+      // [cl] 역자전 배율: sin ease-in 가속 → 피크 160배 × 2.5초 → cos ease-out 감속
+      // sin/cos 곡선으로 가감속이 자연스럽게 부드러워짐
       let spinMult = 0;
       if (elapsed >= 500 && elapsed < 700) {
-        spinMult = ((elapsed - 500) / 200) * 160;            // 0 → 160 (200ms 급가속)
-      } else if (elapsed >= 700 && elapsed < 4200) {
-        spinMult = 160;                                       // 피크 유지 (3.5초!)
-      } else if (elapsed >= 4200 && elapsed < 4600) {
-        spinMult = (1 - (elapsed - 4200) / 400) * 160;      // 160 → 0 (400ms 급감속)
+        // [cl] 가속: sin(0→π/2) = 0→1 (부드러운 시작)
+        const t = (elapsed - 500) / 200;
+        spinMult = Math.sin(t * Math.PI / 2) * 160;
+      } else if (elapsed >= 700 && elapsed < 3200) {
+        spinMult = 160;                                       // 피크 유지 (2.5초)
+      } else if (elapsed >= 3200 && elapsed < 3700) {
+        // [cl] 감속: cos(0→π/2) = 1→0 (관성 있게 서서히 멈춤, 500ms)
+        const t = (elapsed - 3200) / 500;
+        spinMult = Math.cos(t * Math.PI / 2) * 160;
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_setWarpSpinMult?.(spinMult);
