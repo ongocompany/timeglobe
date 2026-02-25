@@ -150,3 +150,91 @@
 * **서울 테스트 마커 제거**: 하드코딩된 Seoul Museum Entity 2개 → 동적 마커로 대체
 * **Props 확장**: CesiumGlobe/GlobeLoader에 `markerMode`, `events`, `onMarkerClick` 추가
 
+## [2026-02-25] [co] DB 구축용 데이터 수집/구조화 기획 문서 작성
+* 진형(jn)의 지시에 따라 UI 작업과 병렬로 진행할 DB 구축 준비 목적의 데이터 수집/정규화 운영 기획을 작성.
+* 참고 기준:
+  * 방법론: `docs/develop/04_[jin]database_const_co.md`
+  * 스키마 참조: `docs/develop/02_[gm]database_schema_plan.md`
+  * 실구현 기준 확인: `supabase/migrations/20260224174800_initial_schema.sql`
+* 신규 문서 생성: `docs/develop/05_[co]wikidata_collection_operating_plan.md`
+  * Wikidata 1차 수집 + Wikipedia 보조 수집 원칙 확정
+  * 타입×기간 분할 Task 기반 ETL 운영 정책(체크포인트/재시도/로깅 포함) 정리
+  * TimeGlobe 스키마(`events`, `eras`, `borders`, `event_relations`) 매핑 전략 명시
+  * 초기 적재(bootstrap) / 증분 업데이트(incremental) 실행 전략과 품질 게이트 정의
+* 문서 정합성 메모 추가:
+  * `02_[gm]...`의 `Borders.geojson_data`와 실제 migration의 `borders.geojson_url` 차이를 명시하고, 실행 기준은 migration 우선으로 정리.
+
+## [2026-02-25] [co] 수집 파이프라인 최소 실행 골격 구현
+* 진형(jn)의 "수정 반영 후 진행" 지시에 따라 문서 기획안을 기반으로 실제 실행 가능한 Wikidata 수집 파이프라인 골격 추가.
+* 신규 코드 추가: `scripts/wikidata/`
+  * `run.mjs`: bootstrap / incremental / backfill 실행 엔트리
+  * `planner.mjs`: 타입×기간 task 분할 생성
+  * `sparqlTemplates.mjs`: Event/Person/Place WDQS 쿼리 템플릿
+  * `wdqsClient.mjs`: WDQS 요청, timeout, exponential backoff 재시도
+  * `normalizer.mjs`: 날짜/좌표/라벨 정규화 및 events 레코드 변환
+  * `supabaseLoader.mjs`: Supabase PostgREST upsert/patch 로더
+  * `checkpoint.mjs`: task 상태 저장/복구(`pending/success/failed`)
+  * `wikiEnricher.mjs`: Wikipedia summary/image 선택 보강
+  * `config.mjs`, `logger.mjs`: 환경 설정/로그
+* 실행 스크립트 추가 (`package.json`):
+  * `collect:bootstrap`, `collect:incremental`, `collect:backfill`
+* 실행 문서 추가:
+  * `docs/develop/06_[co]wikidata_pipeline_runbook.md`
+* 검증:
+  * `node --check`로 주요 모듈 문법 검사 통과.
+
+## [2026-02-25] [co] 초기 수집 검증 우선 정책 반영 + probe 모드 추가
+* 진형(jn)의 피드백 반영:
+  * 비전문가 수동 큐레이션 부담을 줄이기 위해 seed 수동 결정 전 **수집 품질 테스트 선행**으로 정책 전환.
+  * 역사 데이터 특성을 반영해 증분 업데이트를 핵심 전략에서 제외하고 **초기 정밀 구축 우선**으로 문서/실행 흐름 수정.
+* 파이프라인 개선:
+  * `scripts/wikidata/run.mjs`에 `probe` 모드 및 `--dry-run` 지원 추가 (DB 적재 없이 WDQS 수집/정규화 품질 지표 산출).
+  * CLI 인자 확장: `--year-from`, `--year-to`, `--report-file`.
+  * 품질 지표 리포트 추가: `normalizeRate`, `ko/en label/wiki coverage`, `bilingualTitleRate`.
+* 실행 스크립트 추가:
+  * `package.json`에 `collect:probe` 추가.
+* 실행 문서/기획 문서 수정:
+  * `05_[co]wikidata_collection_operating_plan.md`에 MVP 기간 선택 프레임(0~1500 vs 1900~2000)과 현재 권고안(1900~2000) 반영.
+  * `06_[co]wikidata_pipeline_runbook.md`에 probe 기반 비교 테스트 절차 반영.
+* 로컬 실행 검증:
+  * `npm run collect:probe -- --types event --year-from 1950 --year-to 1955` 실행 시도.
+  * 네트워크 제한으로 WDQS fetch 실패 재시도 후 종료되었으나, 재시도/리포트 출력/체크포인트 동작은 확인됨.
+
+## [2026-02-25] [co] WDQS 쿼리 경량화 및 정규화 버그 수정
+* 진형(jn)의 요청에 따라 WDQS 타임아웃 원인을 쿼리 복잡도로 판단하고 SPARQL 템플릿 경량화 진행.
+* `scripts/wikidata/sparqlTemplates.mjs` 변경:
+  * `P31/P279*` 경로 제거 -> `P31` 직접 매칭으로 축소
+  * `GROUP BY + SAMPLE` 제거, `SELECT DISTINCT` 기반으로 단순화
+  * 다중 OPTIONAL(설명/국가/sitelink) 축소, 1차 수집은 핵심 필드 중심으로 분리
+  * 시간 필드는 UNION 기반(`P580/P585/P571`)으로 단순화
+* `scripts/wikidata/normalizer.mjs` 수정:
+  * 연도 파싱 로직 개선(`YYYY-...` 형식에서 연도 추출 실패 버그 해결)
+* 검증:
+  * `collect:probe` (`event`, `1950~1950`) 실행 성공
+  * 결과: `rows=58`, `normalized=58`, `normalizeRate=100%`, `koLabelRate=89.66%`, `enLabelRate=100%`
+
+## [2026-02-25] [cl] 17c/18c/19c 역사 이벤트 목데이터 105개 추가 + mockEvents.ts 통합
+* 진형(jn)의 요청으로 다국어 런칭 대비 17~19세기 이벤트 데이터 신규 작성.
+* 각 세기별로 35개씩 총 105개의 역사 이벤트 MockData 생성 (기존 15c 27개 유지).
+* 참조 링크 다양화: `en.wikipedia.org` / `ko.wikipedia.org` / `britannica.com` / `namu.wiki` 분산.
+* 지역 분포: 동아시아(조선/중국/일본), 남아시아, 중동, 유럽, 아프리카, 아메리카, 오세아니아 균형.
+* 생성 파일:
+  * `src/data/events17c.ts` — 17세기 35개 (갈릴레이, 케플러, 30년전쟁, 병자호란, 세키가하라 전투, 타지마할, 명→청 교체, 코로크나 혁명 등)
+  * `src/data/events18c.ts` — 18세기 35개 (계몽주의, 미국독립, 프랑스혁명, 와트 증기기관, 제너 백신, 영조 탕평책, 화성 건설 등)
+  * `src/data/events19c.ts` — 19세기 35개 (나폴레옹, 메이지유신, 아편전쟁, 달윈 진화론, 에디슨 전구, 흥선대원군, 동학혁명 등)
+* `src/data/mockEvents.ts` 구조 개편:
+  * 기존 15c 인라인 배열을 `EVENTS_15C` 상수로 분리.
+  * `export const MOCK_EVENTS` = `[...EVENTS_15C, ...EVENTS_17C, ...EVENTS_18C, ...EVENTS_19C]` — 전 세기 통합.
+  * 총 이벤트 수: 27 + 35 + 35 + 35 = **132개**.
+
+## [2026-02-25] [co] 실제 적재 시도 + 웹 데이터 확인 UI 추가
+* 진형(jn)의 요청으로 `dry-run`이 아닌 실제 DB 적재를 소범위(`event`, `1950`)로 실행 시도.
+* 실행 결과:
+  * `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` 미설정으로 로더 단계에서 중단됨.
+  * 에러: `Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY environment variables.`
+* 웹상 확인용 간단 UI 추가:
+  * 신규 페이지: `src/app/data-check/page.tsx`
+  * 기능: Supabase `events` 테이블 최근 50건 조회, 상태 표시(loading/error), refresh 버튼, 외부 링크 확인
+  * 환경변수(`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`) 누락 시 화면 경고 표시
+* 검증:
+  * `npm run lint -- src/app/data-check/page.tsx` 통과.

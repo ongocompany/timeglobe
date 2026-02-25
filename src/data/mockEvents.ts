@@ -1,6 +1,9 @@
-// [cl] 15세기 초반 역사 이벤트 목데이터 (Events 스키마 기준)
-// 카테고리: 정치/전쟁, 인물/문화, 과학/발명, 건축/유물, 자연재해/지질
-// 지역: 동아시아, 동남아시아, 중앙아시아, 중동, 유럽, 아프리카, 아메리카
+// [cl] 역사 이벤트 목데이터 통합 (15c / 17c / 18c / 19c)
+// 카테고리: 정치/전쟁, 인물/문화, 과학/발명, 건축/유물, 자연재해/지질, 문화, 지적유산
+// 지역: 동아시아, 동남아시아, 남아시아, 중앙아시아, 중동, 유럽, 아프리카, 아메리카, 오세아니아
+import { EVENTS_17C } from "./events17c";
+import { EVENTS_18C } from "./events18c";
+import { EVENTS_19C } from "./events19c";
 
 export interface MockEvent {
   id: string;
@@ -22,7 +25,7 @@ export interface MockEvent {
 
 const ERA_15C = "era-15c-001";
 
-export const MOCK_EVENTS: MockEvent[] = [
+const EVENTS_15C: MockEvent[] = [
   // ─── 동아시아: 조선 ───
   {
     id: "evt-001",
@@ -663,4 +666,12 @@ export const MOCK_EVENTS: MockEvent[] = [
     },
     external_link: "https://namu.wiki/w/코시모 데 메디치",
   },
+];
+
+// [cl] 15c + 17c + 18c + 19c 통합 배열 → 전체 프로젝트에서 이 배열 사용
+export const MOCK_EVENTS: MockEvent[] = [
+  ...EVENTS_15C,
+  ...EVENTS_17C,
+  ...EVENTS_18C,
+  ...EVENTS_19C,
 ];
