@@ -34,6 +34,7 @@ function StackCarousel({
   onClose: () => void;
 }) {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [scattering, setScattering] = useState(false);
   // [cl] 흩어질 방향 벡터: 마운트 시 1회 생성
   const scatterVecsRef = useState<Array<{ tx: number; ty: number; rot: number }>>(() =>
@@ -94,6 +95,7 @@ function StackCarousel({
         {events.map((ev, i) => {
           const isActive = activeId === ev.id;
           const isHidden = !!activeId && !isActive;
+          const isHovered = hoveredId === ev.id && !isActive && !scattering;
           const vec = scatterVecsRef[i];
 
           return (
@@ -111,14 +113,20 @@ function StackCarousel({
                 pointerEvents: scattering ? "none" : "auto",
                 boxShadow: isActive
                   ? "0 24px 64px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35)"
+                  : isHovered
+                  ? "0 12px 32px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.35)"
                   : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3)",
                 transform: scattering
                   ? `translate(${vec.tx}px, ${vec.ty}px) rotate(${vec.rot}deg)`
+                  : isHovered
+                  ? "scale(1.08) translateY(-4px)"
                   : "none",
                 transition: scattering
                   ? "transform 0.4s cubic-bezier(0.4,0,1,1), opacity 0.3s ease"
-                  : "width 0.5s cubic-bezier(0.25,1,0.5,1), height 0.5s cubic-bezier(0.25,1,0.5,1), opacity 0.3s ease, border-radius 0.5s ease, box-shadow 0.4s ease",
+                  : "width 0.5s cubic-bezier(0.25,1,0.5,1), height 0.5s cubic-bezier(0.25,1,0.5,1), opacity 0.3s ease, border-radius 0.5s ease, box-shadow 0.3s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1)",
               }}
+              onMouseEnter={() => !isActive && setHoveredId(ev.id)}
+              onMouseLeave={() => setHoveredId(null)}
               onClick={!isActive && !scattering ? () => setActiveId(ev.id) : undefined}
             >
               {/* [cl] 미니 카드: 확장 시 페이드아웃 */}

@@ -536,38 +536,10 @@ function SceneSetup({ orbitActive, markerMode, events, onStackClick }: SceneSetu
         return;
       }
 
-      // [cl] 단독 마커: flyTo + 캐러셀(1장) 팝업
+      // [cl] 단독 마커: 지구본 움직임 없이 카드만 팝업
       const ev = nearbyEvents[0] ?? eventsRef.current.find((e) => e.id === picked.id.id);
       if (!ev) return;
 
-      // [cl] flyTo 직전 카메라 상태 저장 → 캐러셀 닫을 때 복귀용
-      const prevPos = viewer.camera.positionCartographic.clone();
-      const prevHeading = viewer.camera.heading;
-      const prevPitch   = viewer.camera.pitch;
-      const prevRoll    = viewer.camera.roll;
-
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).__timeglobe_flyBack = () => {
-        markerFocusedRef.current = false;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (window as any).__timeglobe_markerFocused = false;
-        viewer.camera.flyTo({
-          destination: Cartesian3.fromRadians(prevPos.longitude, prevPos.latitude, prevPos.height),
-          orientation: { heading: prevHeading, pitch: prevPitch, roll: prevRoll },
-          duration: 1.2,
-        });
-      };
-
-      // [cl] 카메라 flyTo: 해당 위치로 비스듬히 접근
-      viewer.camera.flyTo({
-        destination: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 2_000_000),
-        orientation: { heading: 0, pitch: CesiumMath.toRadians(-45), roll: 0 },
-        duration: 1.5,
-      });
-
-      markerFocusedRef.current = true;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).__timeglobe_markerFocused = true;
       forceHideTooltipRef.current = true;
       onStackClickRef.current?.([ev], clickPos);
     }, ScreenSpaceEventType.LEFT_CLICK);
