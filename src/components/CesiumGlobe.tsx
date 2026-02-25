@@ -626,8 +626,7 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         }
 
         if (visible) {
-          // [cl] 이미 표시 중 → 내용/위치 즉시 갱신
-          tooltipEl.innerHTML = currentHtml;
+          // [cl] 이미 표시 중 → 위치만 업데이트 (내용은 표시 시점에 고정)
           tooltipEl.style.left = `${mx + 20}px`;
           tooltipEl.style.top  = `${my - 16}px`;
         }
