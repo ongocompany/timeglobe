@@ -619,7 +619,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     });
 
     return () => {
-      // [cl] 클린업: 모든 이벤트 마커 제거
+      // [cl] 클린업: 모든 이벤트 마커 제거 (Viewer 파괴 후 접근 방지)
+      if (viewer.isDestroyed()) return;
       events.forEach((ev) => {
         const existing = viewer.entities.getById(ev.id);
         if (existing) viewer.entities.remove(existing);
