@@ -29,7 +29,7 @@ interface ItemState {
 // [cl] 기준값
 const BASE_GLOBE_DIAMETER = 800;
 const BASE_ICON_SIZE = 80;
-const ICON_GAP = 5;
+const ICON_GAP = 15;
 const P = 1200;
 const MARGIN = 50;
 
@@ -58,8 +58,8 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       const iconSz = Math.max(16, Math.round(BASE_ICON_SIZE * (globeScreenR * 2 / BASE_GLOBE_DIAMETER)));
       const circumference = 2 * Math.PI * orbitR;
       const slots = Math.ceil(circumference / (iconSz + ICON_GAP));
-      // [cl] 1.5배 버퍼로 줌 범위 커버 (최대 200개)
-      const count = Math.max(items.length, Math.min(Math.ceil(slots * 1.5), 200));
+      // [cl] 궤도 둘레에 딱 맞게 배치 (ICON_GAP 5px 간격 보장, 최대 200개)
+      const count = Math.max(items.length, Math.min(slots, 200));
       setDisplayCount(count);
       setActiveIndex(-1);
       hoveredIndexRef.current = -1;
@@ -123,8 +123,9 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
     let currentTilt = 0;
     let currentOffX = 0;
     let currentOffY = 0;
-    let currentHeading = 0;
-    let frozenHeading = 0;
+    // [cl] 초기값을 현재 카메라 경도로 설정 → 열릴 때 스냅 방지
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let currentLongitude = (window as any).__timeglobe_cameraLongitude ?? 0;
 
     const render = () => {
       // [cl] 지구 상태 읽기 (CesiumGlobe rAF에서 매 프레임 갱신)
@@ -132,10 +133,11 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       const globeScreenR = (window as any).__timeglobe_screenRadius || 300;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const globeCenter = (window as any).__timeglobe_center as { x: number; y: number } | undefined;
+      // [cl] pitch 동적 연동 제거 → 고정 기울기로 orbit 느낌 강화
+      // [cl] 경도(longitude) 기반 회전 추적: 자동 자전 + 드래그 모두 반영
+      // heading은 middle-drag에서만 변하지만, longitude는 rotateLeft/left-drag 모두에서 변함
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const cameraPitch = (window as any).__timeglobe_cameraPitch ?? (-Math.PI / 2);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const cameraHeading = (window as any).__timeglobe_cameraHeading ?? 0;
+      const cameraLongitude = (window as any).__timeglobe_cameraLongitude ?? 0;
 
       const ai = activeIndexRef.current;
       const hi = hoveredIndexRef.current;
@@ -150,21 +152,22 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
 
       // ──── 컨테이너 transform: 위치 + 기울기 + 회전 ────
 
-      // [cl] heading 동기화 (모달 시 freeze)
-      if (ai === -1) frozenHeading = cameraHeading;
-      const targetHeading = ai !== -1 ? frozenHeading : cameraHeading;
+      // [cl] 모달 시: 활성 카드의 physicalAngle - 오프셋으로 회전
+      // → 화면 왼쪽 배치 + rotateY(+10°) 3D 기울기 (왼쪽 크게, 오른쪽 작게)
+      const MODAL_ANGLE_OFFSET = 10 * (Math.PI / 180);
+      const targetLon = ai !== -1 ? (ai * angleStep - MODAL_ANGLE_OFFSET) : cameraLongitude;
       // [cl] 각도 보간 (2π 래핑)
-      let headingDiff = targetHeading - currentHeading;
-      while (headingDiff > Math.PI) headingDiff -= 2 * Math.PI;
-      while (headingDiff < -Math.PI) headingDiff += 2 * Math.PI;
-      currentHeading += headingDiff * 0.1;
+      let lonDiff = targetLon - currentLongitude;
+      while (lonDiff > Math.PI) lonDiff -= 2 * Math.PI;
+      while (lonDiff < -Math.PI) lonDiff += 2 * Math.PI;
+      currentLongitude += lonDiff * 0.1;
 
-      // [cl] pitch → tilt (모달 시 0으로 복원)
-      const rawTilt = (cameraPitch + Math.PI / 2) * (180 / Math.PI);
-      const targetTilt = ai !== -1 ? 0 : rawTilt;
+      // [cl] 고정 기울기: 앞쪽 살짝 낮고 뒤로 갈수록 위로 (인공위성 궤도 느낌)
+      const FIXED_TILT = -15;
+      const targetTilt = ai !== -1 ? 0 : FIXED_TILT;
       currentTilt = lerp(currentTilt, targetTilt, 0.06);
 
-      // [cl] 위치 오프셋 (모달 시 화면 중앙)
+      // [cl] 위치 오프셋 (모달 시 화면 중앙, 평소엔 지구 추종)
       let targetOffX = 0;
       let targetOffY = 0;
       if (globeCenter && ai === -1) {
@@ -174,11 +177,18 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       currentOffX = lerp(currentOffX, targetOffX, 0.06);
       currentOffY = lerp(currentOffY, targetOffY, 0.06);
 
-      const headingDeg = currentHeading * (180 / Math.PI);
+      const lonDeg = currentLongitude * (180 / Math.PI);
 
-      // [cl] ★ rotateY(-heading): 지구 자전축 추종, rotateX(tilt): 기울기
-      container.style.transform =
-        `translate3d(${currentOffX}px, ${currentOffY}px, 0) rotateX(${currentTilt}deg) rotateY(${-headingDeg}deg)`;
+      // [cl] ★ 회전축 보정: 궤도 중심은 z=-ORBIT_R에 있으므로
+      // translateZ(+R)로 중심을 z=0으로 맞추고 → 회전 → translateZ(-R)로 복원
+      // 이렇게 해야 바퀴처럼 제자리에서 회전함 (안 하면 훌라후프처럼 돌아감)
+      container.style.transform = [
+        `translate3d(${currentOffX}px, ${currentOffY}px, 0)`,
+        `translateZ(${-ORBIT_R}px)`,      // 4) 복원: 궤도를 원래 깊이로
+        `rotateX(${currentTilt}deg)`,      // 3) 기울기: 화면 X축 기준
+        `rotateY(${-lonDeg}deg)`,          // 2) 자전: 기울어진 면 위에서
+        `translateZ(${ORBIT_R}px)`,        // 1) 궤도 중심을 z=0으로 이동
+      ].join(" ");
 
       // ──── 카드별 위치/효과 ────
 
@@ -190,8 +200,8 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
         // [cl] 물리적 각도 (링 내 고정 위치)
         const physicalAngle = i * angleStep;
 
-        // [cl] 카메라 기준 시각적 각도 (heading에 의해 어떤 카드가 정면인지 결정)
-        let visualAngle = physicalAngle - currentHeading;
+        // [cl] 카메라 기준 시각적 각도 (longitude에 의해 어떤 카드가 정면인지 결정)
+        let visualAngle = physicalAngle - currentLongitude;
         while (visualAngle > Math.PI) visualAngle -= 2 * Math.PI;
         while (visualAngle < -Math.PI) visualAngle += 2 * Math.PI;
 
@@ -209,8 +219,7 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
           ? Math.max(0, (cosVisual + 0.2) / 1.2)
           : 0;
 
-        // [cl] hover 팝아웃
-        if (hi === i && ai === -1) z += 30;
+        // [cl] hover 팝아웃은 CSS translateZ로 처리 (히트박스/비주얼 분리)
 
         // [cl] 모달 활성 시
         if (ai !== -1) {
@@ -218,8 +227,7 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
             targetGray = 0;
             targetBrightness = 100;
             targetOpacity = 1;
-            z = 50;
-            targetX = 0;
+            // [cl] 위치/기울기는 컨테이너 회전이 처리, 왼쪽 시프트는 CSS에서 처리
           } else {
             targetGray = 100;
             targetBrightness = 40;
@@ -286,11 +294,12 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
         className="relative w-full h-full"
         style={{ transformStyle: "preserve-3d" }}
       >
+        {/* [cl] 히트박스/비주얼 분리: wrapper는 궤도 위치 고정, inner만 CSS로 확대+z팝 */}
         {displayItems.map((item, i) => (
           <div
             key={i}
             ref={(el) => { itemElsRef.current[i] = el; }}
-            className="orbit-card"
+            className="orbit-card-hit"
             data-card-index={i}
             data-active={activeIndex === i ? "" : undefined}
             onClick={(e) => {
@@ -299,55 +308,57 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
               openModal(i);
             }}
           >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-cover pointer-events-none"
-              loading="lazy"
-            />
+            <div className="orbit-card">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover pointer-events-none"
+                loading="lazy"
+              />
 
-            <div
-              className="absolute bottom-0 left-0 right-0 pointer-events-none transition-opacity duration-600"
-              style={{
-                height: "60%",
-                background:
-                  "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)",
-                opacity: activeIndex === i ? 1 : 0,
-              }}
-            />
-
-            <div
-              className="absolute bottom-10 left-10 right-10 z-10 text-white transition-all duration-600"
-              style={{
-                opacity: activeIndex === i ? 1 : 0,
-                transform:
-                  activeIndex === i ? "translateX(0)" : "translateX(80px)",
-                transitionTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)",
-                transitionDelay: activeIndex === i ? "0.3s" : "0s",
-              }}
-            >
-              <h2
+              <div
+                className="absolute bottom-0 left-0 right-0 pointer-events-none transition-opacity duration-600"
                 style={{
-                  fontFamily: "'Anton', sans-serif",
-                  fontSize: "4rem",
-                  letterSpacing: "1px",
-                  lineHeight: 1.1,
-                  marginBottom: "4px",
-                  textShadow: "0 4px 12px rgba(0,0,0,0.5)",
+                  height: "60%",
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)",
+                  opacity: activeIndex === i ? 1 : 0,
+                }}
+              />
+
+              <div
+                className="absolute bottom-10 left-10 right-10 z-10 text-white transition-all duration-600"
+                style={{
+                  opacity: activeIndex === i ? 1 : 0,
+                  transform:
+                    activeIndex === i ? "translateX(0)" : "translateX(80px)",
+                  transitionTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                  transitionDelay: activeIndex === i ? "0.3s" : "0s",
                 }}
               >
-                {item.title}
-              </h2>
-              <p
-                style={{
-                  fontFamily: "var(--font-noto-sans), sans-serif",
-                  fontSize: "1.1rem",
-                  letterSpacing: "0.5px",
-                  opacity: 0.9,
-                }}
-              >
-                {item.desc}
-              </p>
+                <h2
+                  style={{
+                    fontFamily: "'Anton', sans-serif",
+                    fontSize: "4rem",
+                    letterSpacing: "1px",
+                    lineHeight: 1.1,
+                    marginBottom: "4px",
+                    textShadow: "0 4px 12px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  {item.title}
+                </h2>
+                <p
+                  style={{
+                    fontFamily: "var(--font-noto-sans), sans-serif",
+                    fontSize: "1.1rem",
+                    letterSpacing: "0.5px",
+                    opacity: 0.9,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
             </div>
           </div>
         ))}

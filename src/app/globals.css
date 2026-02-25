@@ -44,37 +44,59 @@ body {
   animation: blurReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* [cl] Event Orbit 카드: CSS로 hover/active 크기 전환 (React re-render 회피) */
-.orbit-card {
+/* [cl] Event Orbit 히트박스: 궤도 위치에 고정, 이벤트 감지 전용 (z축 이동 안 함) */
+/* ★ hover 깜빡임 근본 해결: 히트박스는 절대 움직이지 않으므로 커서 이탈 불가 */
+.orbit-card-hit {
   position: absolute;
   top: 50%;
   left: 50%;
-  overflow: hidden;
-  will-change: transform;
-  transform-origin: center center;
-  background-color: #222;
-  border-radius: 4px;
   width: var(--orbit-icon-size, 80px);
   height: var(--orbit-icon-size, 80px);
   cursor: pointer;
   pointer-events: auto;
-  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              border-radius 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
-.orbit-card:not([data-active]):hover {
+/* [cl] Event Orbit 비주얼 카드: 히트박스 내부, 확대+z팝아웃 담당 */
+.orbit-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-color: #222;
+  border-radius: 4px;
+  width: var(--orbit-icon-size, 80px);
+  height: var(--orbit-icon-size, 80px);
+  pointer-events: none;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              border-radius 0.3s ease,
+              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* [cl] hover: 히트박스는 고정, 비주얼만 확대+앞으로 팝아웃 */
+.orbit-card-hit:not([data-active]):hover .orbit-card {
   width: 180px;
   height: 180px;
   border-radius: 8px;
+  transform: translate(-50%, -50%) translateZ(150px);
 }
 
-.orbit-card[data-active] {
-  width: min(800px, 90vw);
+/* [cl] 모달 활성: 큰 카드 (클릭 영역 확대를 위해 pointer-events 복원) */
+.orbit-card-hit[data-active] {
+  cursor: default;
+}
+.orbit-card-hit[data-active] .orbit-card {
+  width: min(500px, 90vw);
   height: auto;
   aspect-ratio: 3 / 4;
   max-height: 85vh;
   border-radius: 24px;
+  pointer-events: auto;
   cursor: default;
+  /* [cl] 왼쪽 시프트: inner 카드의 로컬 X = 화면 X (컨테이너 회전 후 정면이니까) */
+  transform: translate(-50%, -50%) translateX(-400px);
   transition-duration: 0.7s;
 }

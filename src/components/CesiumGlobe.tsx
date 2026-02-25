@@ -49,6 +49,8 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
+  // [cl] Orbit 모드 카메라 잠금: flyTo 완료 후 위도/피치/높이 고정
+  const lockedOrbitRef = useRef<{ lat: number; pitch: number; height: number } | null>(null);
 
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
@@ -92,6 +94,23 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
 
     let frameId: number;
     const updateGlow = () => {
+      // [cl] Orbit 모드 카메라 강제 고정: 위도/피치/높이가 드래그로 벗어나면 즉시 복원
+      const locked = lockedOrbitRef.current;
+      if (locked) {
+        const pos = viewer.camera.positionCartographic;
+        if (Math.abs(pos.latitude - locked.lat) > 0.0001 ||
+            Math.abs(pos.height - locked.height) > 1) {
+          viewer.camera.setView({
+            destination: Cartesian3.fromRadians(pos.longitude, locked.lat, locked.height),
+            orientation: {
+              heading: viewer.camera.heading,
+              pitch: locked.pitch,
+              roll: 0,
+            },
+          });
+        }
+      }
+
       // [cl] 지구 중심의 화면 좌표
       const center = SceneTransforms.worldToWindowCoordinates(
         viewer.scene,
@@ -120,6 +139,10 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
         (window as any).__timeglobe_cameraPitch = viewer.camera.pitch;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).__timeglobe_cameraHeading = viewer.camera.heading;
+        // [cl] 카메라 경도 공유: 자동 자전(rotateLeft)은 heading이 아닌 longitude를 변경하므로
+        // 궤도 회전 동기화에는 longitude가 필요
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_cameraLongitude = viewer.camera.positionCartographic.longitude;
 
         // [cl] 대기 글로우
         const glowSize = screenRadius * 2 * 1.75;
@@ -161,16 +184,51 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
     };
   }, [viewer]);
 
-  // [cl] Event Orbit 활성 시 줌 제한: 현재 높이 기준 30%~300% 범위로 제한
+  // [cl] Event Orbit 모드: 지구 800px 고정 + 좌우 회전만 허용
+  // Event Marker 모드: 줌/틸트/회전 모두 자유
   useEffect(() => {
     if (!viewer) return;
     const controller = viewer.scene.screenSpaceCameraController;
 
     if (orbitActive) {
-      const height = viewer.camera.positionCartographic.height;
-      controller.minimumZoomDistance = height * 0.3;
-      controller.maximumZoomDistance = height * 3.0;
+      // [cl] 800px 지구 지름에 맞는 카메라 높이 계산
+      const TARGET_DIAMETER = 800;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const fovy = (viewer.camera.frustum as any).fovy || 1.0;
+      const halfHeight = viewer.canvas.clientHeight / 2;
+      const tanAngR = (TARGET_DIAMETER / 2) * Math.tan(fovy / 2) / halfHeight;
+      const angR = Math.atan(tanAngR);
+      const GLOBE_R = 6378137;
+      const targetHeight = (GLOBE_R / Math.sin(angR)) - GLOBE_R;
+
+      // [cl] 현재 경도 유지, 높이만 800px에 맞게 조정
+      const pos = viewer.camera.positionCartographic;
+      viewer.camera.flyTo({
+        destination: Cartesian3.fromRadians(pos.longitude, pos.latitude, targetHeight),
+        orientation: {
+          heading: viewer.camera.heading,
+          pitch: viewer.camera.pitch,
+          roll: 0,
+        },
+        duration: 0.8,
+        complete: () => {
+          // [cl] flyTo 완료 후 위도/피치/높이 잠금 → 좌우 회전만 허용
+          lockedOrbitRef.current = {
+            lat: viewer.camera.positionCartographic.latitude,
+            pitch: viewer.camera.pitch,
+            height: viewer.camera.positionCartographic.height,
+          };
+        },
+      });
+
+      // [cl] 좌우 회전만 허용: 줌/틸트 잠금
+      controller.enableZoom = false;
+      controller.enableTilt = false;
     } else {
+      // [cl] Marker 모드: 카메라 잠금 해제 + 모든 조작 허용
+      lockedOrbitRef.current = null;
+      controller.enableZoom = true;
+      controller.enableTilt = true;
       controller.minimumZoomDistance = 1;
       controller.maximumZoomDistance = Infinity;
     }
