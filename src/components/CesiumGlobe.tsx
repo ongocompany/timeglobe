@@ -67,13 +67,13 @@ function makeReticleSvg(color: string, size = RETICLE_BASE_SIZE): string {
 const CATEGORY_COLORS: Record<string, string> = {
   "정치/전쟁":    "#ae2012", // oxidized-iron
   "인물/문화":    "#0a9396", // dark-cyan
-  "과학/발명":    "#94d2bd", // pearl-aqua
+  "과학/발명":    "#6a4c93", // purple (custom)
   "건축/유물":    "#ee9b00", // golden-orange
   "자연재해/지질": "#ca6702", // burnt-caramel
   문화:           "#005f73", // dark-teal
   지적유산:       "#e9d8a6", // vanilla-custard
 };
-const DEFAULT_MARKER_COLOR = "#94d2bd"; // pearl-aqua
+const DEFAULT_MARKER_COLOR = "#6a4c93"; // purple (custom)
 
 // [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
 // size=64, billboard=24px → canvas:screen = 2.67x
