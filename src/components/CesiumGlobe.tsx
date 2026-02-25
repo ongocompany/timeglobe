@@ -1023,18 +1023,18 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           });
         }
 
-        // [cl] ② 역방향 고속 자전: spinMult에 따라 가감속
+        // [cl] ② 순방향 고속 자전: 돌던 방향 그대로 가속 (멈칫 없이 자연스러운 가감속)
         const spinMult = warpSpinMultRef.current;
         if (spinMult > 0) {
           const delta = CesiumMath.toRadians(ROTATION_SPEED * spinMult);
           if (globeDirectionRef.current !== "right") {
-            viewer.camera.rotateRight(delta);
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) - delta;
-          } else {
             viewer.camera.rotateLeft(delta);
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
+          } else {
+            viewer.camera.rotateRight(delta);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) - delta;
           }
         }
 
