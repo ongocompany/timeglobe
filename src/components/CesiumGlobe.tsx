@@ -117,11 +117,10 @@ interface SceneSetupProps {
   orbitActive: boolean;
   markerMode: boolean;
   events: MockEvent[];
-  onMarkerClick?: (event: MockEvent) => void;
-  onStackClick?: (events: MockEvent[]) => void;
+  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
 }
 
-function SceneSetup({ orbitActive, markerMode, events, onMarkerClick, onStackClick }: SceneSetupProps) {
+function SceneSetup({ orbitActive, markerMode, events, onStackClick }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -137,10 +136,7 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick, onStackCli
   const markerFocusedRef = useRef(false);
   // [cl] 마커 호버 상태: 조준경 색상/맥동 제어
   const markerHoverRef = useRef(false);
-  // [cl] onMarkerClick ref
-  const onMarkerClickRef = useRef(onMarkerClick);
-  useEffect(() => { onMarkerClickRef.current = onMarkerClick; }, [onMarkerClick]);
-  // [cl] onStackClick ref
+  // [cl] onStackClick ref (단독+스택 공통 콜백)
   const onStackClickRef = useRef(onStackClick);
   useEffect(() => { onStackClickRef.current = onStackClick; }, [onStackClick]);
   // [cl] 툴팁 강제 숨김 ref: 스택 클릭 시 툴팁 즉시 제거
@@ -531,24 +527,25 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick, onStackCli
         if (Math.sqrt((cx - sp.x) ** 2 + (cy - sp.y) ** 2) < 30) nearbyEvents.push(ev);
       }
 
-      // [cl] 스택(2개 이상): 툴팁 숨기고 미니 캐러셀 팝업
+      const clickPos = { x: cx, y: cy };
+
+      // [cl] 스택(2개 이상): 툴팁 숨기고 캐러셀 팝업 (flyTo 없음)
       if (nearbyEvents.length > 1) {
         forceHideTooltipRef.current = true;
-        onStackClickRef.current?.(nearbyEvents);
+        onStackClickRef.current?.(nearbyEvents, clickPos);
         return;
       }
 
-      // [cl] 단독 마커: flyTo + 모달
+      // [cl] 단독 마커: flyTo + 캐러셀(1장) 팝업
       const ev = nearbyEvents[0] ?? eventsRef.current.find((e) => e.id === picked.id.id);
       if (!ev) return;
 
-      // [cl] flyTo 직전 카메라 상태 저장 → 모달 닫을 때 복귀용
+      // [cl] flyTo 직전 카메라 상태 저장 → 캐러셀 닫을 때 복귀용
       const prevPos = viewer.camera.positionCartographic.clone();
       const prevHeading = viewer.camera.heading;
       const prevPitch   = viewer.camera.pitch;
       const prevRoll    = viewer.camera.roll;
 
-      // [cl] 모달 닫기 시 원래 위치/각도로 flyBack
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_flyBack = () => {
         markerFocusedRef.current = false;
@@ -571,7 +568,8 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick, onStackCli
       markerFocusedRef.current = true;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_markerFocused = true;
-      onMarkerClickRef.current?.(ev);
+      forceHideTooltipRef.current = true;
+      onStackClickRef.current?.([ev], clickPos);
     }, ScreenSpaceEventType.LEFT_CLICK);
 
     return () => {
@@ -995,15 +993,13 @@ interface CesiumGlobeProps {
   orbitActive?: boolean;
   markerMode?: boolean;
   events?: MockEvent[];
-  onMarkerClick?: (event: MockEvent) => void;
-  onStackClick?: (events: MockEvent[]) => void;
+  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
 }
 
 export default function CesiumGlobe({
   orbitActive = false,
   markerMode = false,
   events = [],
-  onMarkerClick,
   onStackClick,
 }: CesiumGlobeProps) {
   return (
@@ -1025,7 +1021,6 @@ export default function CesiumGlobe({
         orbitActive={orbitActive}
         markerMode={markerMode}
         events={events}
-        onMarkerClick={onMarkerClick}
         onStackClick={onStackClick}
       />
     </Viewer>

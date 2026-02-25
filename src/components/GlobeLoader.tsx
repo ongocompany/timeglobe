@@ -17,15 +17,13 @@ interface GlobeLoaderProps {
   orbitActive?: boolean;
   markerMode?: boolean;
   events?: MockEvent[];
-  onMarkerClick?: (event: MockEvent) => void;
-  onStackClick?: (events: MockEvent[]) => void;
+  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
 }
 
 export default function GlobeLoader({
   orbitActive = false,
   markerMode = false,
   events = [],
-  onMarkerClick,
   onStackClick,
 }: GlobeLoaderProps) {
   return (
@@ -33,7 +31,6 @@ export default function GlobeLoader({
       orbitActive={orbitActive}
       markerMode={markerMode}
       events={events}
-      onMarkerClick={onMarkerClick}
       onStackClick={onStackClick}
     />
   );

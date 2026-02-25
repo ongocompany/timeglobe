@@ -22,122 +22,149 @@ const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
 // [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
 type ViewMode = "orbit" | "marker" | null;
 
-// [cl] 스택 마커 캐러셀: 카드 클릭 시 해당 카드가 위로 직접 커지면서 모달로 변신 (오빗 패턴)
-function StackCarousel({ events, onClose }: { events: MockEvent[]; onClose: () => void }) {
+// [cl] 스택/단독 마커 캐러셀: 커서 위치에 카드 배열, 클릭한 카드가 직접 확장
+// 밖 클릭 시 카드들이 랜덤 방향으로 흩어지며 사라짐, 배경 컨테이너 없이 개별 그림자
+function StackCarousel({
+  events,
+  position,
+  onClose,
+}: {
+  events: MockEvent[];
+  position: { x: number; y: number };
+  onClose: () => void;
+}) {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [scattering, setScattering] = useState(false);
+  // [cl] 흩어질 방향 벡터: 마운트 시 1회 생성
+  const scatterVecsRef = useState<Array<{ tx: number; ty: number; rot: number }>>(() =>
+    events.map(() => ({
+      tx: (Math.random() - 0.5) * 500,
+      ty: -(Math.random() * 300 + 80),
+      rot: (Math.random() - 0.5) * 60,
+    }))
+  )[0];
 
   // [cl] 확장 카드 크기: 화면에 맞게 계산
-  const CARD_W = typeof window !== "undefined" ? Math.min(520, Math.round(window.innerWidth * 0.88)) : 480;
-  const MAX_H = typeof window !== "undefined" ? window.innerHeight - 112 - 48 : 600;
+  const CARD_W = typeof window !== "undefined" ? Math.min(500, Math.round(window.innerWidth * 0.88)) : 460;
+  const MAX_H = typeof window !== "undefined" ? window.innerHeight - 80 : 600;
   const CARD_H = Math.min(Math.round(CARD_W * (4 / 3)), MAX_H);
+
+  // [cl] 커서 위 배치: 뷰포트 경계 클램핑
+  const MINI_W = events.length * 90 + Math.max(0, events.length - 1) * 10;
+  const vw = typeof window !== "undefined" ? window.innerWidth : 800;
+  const vh = typeof window !== "undefined" ? window.innerHeight : 600;
+  const clampedLeft = Math.max(16, Math.min(position.x - MINI_W / 2, vw - MINI_W - 16));
+  const clampedTop = Math.max(16, Math.min(position.y - 140, vh - 180));
+
+  const scatter = () => {
+    if (scattering) return;
+    setScattering(true);
+    setTimeout(() => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_flyBack?.();
+      onClose();
+    }, 420);
+  };
 
   return (
     <>
-      {/* [cl] 배경 딤: 카드 확장 시에만 등장 */}
+      {/* [cl] 전체화면 투명 오버레이: 밖 클릭 → scatter / 확장 카드 → 축소 */}
+      <div
+        className="fixed inset-0 z-[84]"
+        onClick={activeId ? () => setActiveId(null) : scatter}
+      />
+
+      {/* [cl] 확장 카드용 딤 레이어 */}
       {activeId && (
-        <div
-          className="fixed inset-0 z-[84] bg-black/65 backdrop-blur-sm"
-          onClick={() => setActiveId(null)}
-        />
+        <div className="fixed inset-0 z-[85] bg-black/60 backdrop-blur-sm pointer-events-none" />
       )}
 
-      {/* [cl] 캐러셀 컨테이너: bottom 고정 → 카드가 위로 자람 */}
+      {/* [cl] 카드들: 커서 위치에 플로팅, 확장 시 화면 중앙으로 이동 */}
       <div
-        className="fixed z-[85] pointer-events-auto"
+        className="fixed z-[86] pointer-events-none"
         style={{
-          bottom: "7rem",
-          left: "50%",
-          animation: "stack-pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both",
+          left: activeId ? "50%" : clampedLeft,
+          top: activeId ? "50%" : clampedTop,
+          transform: activeId ? "translate(-50%, -50%)" : "none",
+          display: "flex",
+          gap: activeId ? 0 : 10,
+          transition: "left 0.5s cubic-bezier(0.25,1,0.5,1), top 0.5s cubic-bezier(0.25,1,0.5,1), transform 0.5s cubic-bezier(0.25,1,0.5,1), gap 0.5s cubic-bezier(0.25,1,0.5,1)",
         }}
       >
-        <div
-          className="relative flex rounded-2xl border"
-          style={{
-            background: activeId ? "transparent" : "rgba(0,0,0,0.65)",
-            backdropFilter: "blur(12px)",
-            borderColor: activeId ? "transparent" : "rgba(255,255,255,0.1)",
-            gap: activeId ? 0 : 12,
-            padding: activeId ? 0 : 12,
-            transition:
-              "background 0.4s ease, border-color 0.4s ease, gap 0.5s cubic-bezier(0.25,1,0.5,1), padding 0.5s cubic-bezier(0.25,1,0.5,1)",
-          }}
-        >
-          {/* [cl] 닫기 버튼: 캐러셀 상태에서만 표시 */}
-          {!activeId && (
-            <button
-              className="absolute -top-3 -right-3 z-10 w-7 h-7 rounded-full bg-white/15 hover:bg-white/30 text-white/70 text-sm flex items-center justify-center transition-colors"
-              onClick={onClose}
+        {events.map((ev, i) => {
+          const isActive = activeId === ev.id;
+          const isHidden = !!activeId && !isActive;
+          const vec = scatterVecsRef[i];
+
+          return (
+            <div
+              key={ev.id}
+              style={{
+                width: isActive ? CARD_W : isHidden ? 0 : 90,
+                height: isActive ? CARD_H : isHidden ? 0 : 120,
+                flexShrink: 0,
+                borderRadius: isActive ? 20 : 12,
+                overflow: "hidden",
+                position: "relative",
+                cursor: isActive || scattering ? "default" : "pointer",
+                opacity: isHidden || scattering ? 0 : 1,
+                pointerEvents: scattering ? "none" : "auto",
+                boxShadow: isActive
+                  ? "0 24px 64px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35)"
+                  : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3)",
+                transform: scattering
+                  ? `translate(${vec.tx}px, ${vec.ty}px) rotate(${vec.rot}deg)`
+                  : "none",
+                transition: scattering
+                  ? "transform 0.4s cubic-bezier(0.4,0,1,1), opacity 0.3s ease"
+                  : "width 0.5s cubic-bezier(0.25,1,0.5,1), height 0.5s cubic-bezier(0.25,1,0.5,1), opacity 0.3s ease, border-radius 0.5s ease, box-shadow 0.4s ease",
+              }}
+              onClick={!isActive && !scattering ? () => setActiveId(ev.id) : undefined}
             >
-              ✕
-            </button>
-          )}
-
-          {events.map((ev) => {
-            const isActive = activeId === ev.id;
-            const isHidden = !!activeId && !isActive;
-
-            return (
+              {/* [cl] 미니 카드: 확장 시 페이드아웃 */}
               <div
-                key={ev.id}
+                className="absolute inset-0"
                 style={{
-                  width: isActive ? CARD_W : isHidden ? 0 : 90,
-                  height: isActive ? CARD_H : isHidden ? 0 : 120,
-                  flexShrink: 0,
-                  borderRadius: isActive ? 16 : 12,
-                  overflow: "hidden",
-                  position: "relative",
-                  cursor: isActive ? "default" : "pointer",
-                  opacity: isHidden ? 0 : 1,
-                  transition:
-                    "width 0.5s cubic-bezier(0.25, 1, 0.5, 1), height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, border-radius 0.5s ease",
+                  opacity: isActive ? 0 : 1,
+                  transition: "opacity 0.2s ease",
+                  pointerEvents: isActive ? "none" : "auto",
                 }}
-                onClick={!isActive ? () => setActiveId(ev.id) : undefined}
               >
-                {/* [cl] 미니 카드: 확장 시 페이드아웃 */}
+                <img src={ev.image_url} alt={ev.title.ko} className="w-full h-full object-cover" />
                 <div
-                  className="absolute inset-0"
-                  style={{
-                    opacity: isActive ? 0 : 1,
-                    transition: "opacity 0.2s ease",
-                    pointerEvents: isActive ? "none" : "auto",
-                  }}
+                  className="absolute bottom-0 left-0 right-0 px-2 py-1.5"
+                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}
                 >
-                  <img src={ev.image_url} alt={ev.title.ko} className="w-full h-full object-cover" />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 px-2 py-1.5"
-                    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}
-                  >
-                    <p className="text-white text-[10px] font-semibold leading-tight line-clamp-2">{ev.title.ko}</p>
-                    <p className="text-white/50 text-[9px] mt-0.5">{ev.start_year}</p>
-                  </div>
+                  <p className="text-white text-[10px] font-semibold leading-tight line-clamp-2">{ev.title.ko}</p>
+                  <p className="text-white/50 text-[9px] mt-0.5">{ev.start_year}</p>
                 </div>
-
-                {/* [cl] 확장 콘텐츠: 카드가 다 커진 뒤 페이드인 */}
-                {isActive && (
-                  <div
-                    className="absolute inset-0 overflow-y-auto bg-white"
-                    style={{ animation: "fadeIn 0.3s 0.25s both" }}
-                  >
-                    <button
-                      className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-lg leading-none"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setActiveId(null);
-                      }}
-                    >
-                      ✕
-                    </button>
-                    <EventDetailContent
-                      event={ev}
-                      theme="light"
-                      relatedEvents={MOCK_EVENTS.filter((e) => e.id !== ev.id).slice(0, 4)}
-                    />
-                  </div>
-                )}
               </div>
-            );
-          })}
-        </div>
+
+              {/* [cl] 확장 콘텐츠: 카드 커진 뒤 페이드인 */}
+              {isActive && (
+                <div
+                  className="absolute inset-0 overflow-y-auto bg-white"
+                  style={{ animation: "fadeIn 0.3s 0.25s both" }}
+                >
+                  <button
+                    className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-lg leading-none"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveId(null);
+                    }}
+                  >
+                    ✕
+                  </button>
+                  <EventDetailContent
+                    event={ev}
+                    theme="light"
+                    relatedEvents={MOCK_EVENTS.filter((e) => e.id !== ev.id).slice(0, 4)}
+                  />
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </>
   );
@@ -145,8 +172,8 @@ function StackCarousel({ events, onClose }: { events: MockEvent[]; onClose: () =
 
 export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>(null);
-  const [selectedEvent, setSelectedEvent] = useState<MockEvent | null>(null);
-  const [stackEvents, setStackEvents] = useState<MockEvent[]>([]);
+  // [cl] 마커 클릭 상태: 단독/스택 모두 StackCarousel로 통합
+  const [stackState, setStackState] = useState<{ events: MockEvent[]; pos: { x: number; y: number } } | null>(null);
   const carouselOpen = viewMode === "orbit";
 
   return (
@@ -161,8 +188,7 @@ export default function Home() {
         orbitActive={carouselOpen}
         markerMode={viewMode === "marker"}
         events={MOCK_EVENTS}
-        onMarkerClick={(ev) => setSelectedEvent(ev)}
-        onStackClick={(evs) => setStackEvents(evs)}
+        onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
       />
 
       {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
@@ -205,42 +231,13 @@ export default function Home() {
         </button>
       </div>
 
-      {/* [cl] 스택 마커 클릭: 미니 캐러셀 → 카드 클릭 시 모달 scale-in */}
-      {stackEvents.length > 0 && (
-        <StackCarousel events={stackEvents} onClose={() => setStackEvents([])} />
-      )}
-
-      {/* [cl] Event Marker 모달: 마커 클릭 시 이벤트 상세 표시, 닫으면 원래 카메라로 복귀 */}
-      {selectedEvent && (
-        <div className="absolute inset-0 z-[80] flex items-center justify-center pointer-events-auto">
-          {/* 배경 딤 */}
-          <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => {
-              setSelectedEvent(null);
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              (window as any).__timeglobe_flyBack?.();
-            }}
-          />
-          {/* 모달 패널 */}
-          <div className="relative z-10 w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-2xl bg-white shadow-2xl mx-4">
-            <button
-              className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-lg leading-none"
-              onClick={() => {
-                setSelectedEvent(null);
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                (window as any).__timeglobe_flyBack?.();
-              }}
-            >
-              ✕
-            </button>
-            <EventDetailContent
-              event={selectedEvent}
-              theme="light"
-              relatedEvents={MOCK_EVENTS.filter((e) => e.id !== selectedEvent.id).slice(0, 4)}
-            />
-          </div>
-        </div>
+      {/* [cl] 마커 클릭: 단독/스택 모두 StackCarousel로 통합 처리 */}
+      {stackState && (
+        <StackCarousel
+          events={stackState.events}
+          position={stackState.pos}
+          onClose={() => setStackState(null)}
+        />
       )}
 
       {/* [cl] 오빗 캐러셀 + 카드 클릭 시 인라인 상세 콘텐츠 */}
