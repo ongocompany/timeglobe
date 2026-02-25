@@ -173,17 +173,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const warpAltTargetRef = useRef(0);
   const warpAltStartTimeRef = useRef(0);
   const warpLatStartRef = useRef(0);
-  // [cl] 초기 카메라 설정이 한 번만 실행되도록 가드 (React StrictMode 이중실행 방지)
-  const sceneInitializedRef = useRef(false);
-
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
     if (!scene || !viewer) return;
-
-    // [cl] ★ 이미 초기화된 경우 스킵 (useEffect 재실행 시 카메라 리셋 방지)
-    if (sceneInitializedRef.current) return;
-    sceneInitializedRef.current = true;
-
     scene.skyBox = new SkyBox({ sources: SKYBOX_SOURCES });
     if (scene.skyAtmosphere) scene.skyAtmosphere.show = false;
     scene.globe.showGroundAtmosphere = false;
