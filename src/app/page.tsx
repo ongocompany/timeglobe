@@ -7,20 +7,15 @@ import Header from "@/components/ui/Header";
 import DateDisplay from "@/components/ui/DateDisplay";
 import Timeline from "@/components/ui/Timeline";
 import Carousel3D, { type CarouselCard } from "@/components/ui/Carousel3D";
+import { EventDetailContent } from "@/components/ui/HistoryEventModal";
+import { MOCK_EVENTS } from "@/data/mockEvents";
 
-// [cl] 테스트용 샘플 데이터 (나중에 역사 이벤트 DB에서 가져올 예정)
-const SAMPLE_CARDS: CarouselCard[] = [
-  { title: "PEAK", desc: "Reach the highest point of nature", image: "https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=800&q=80" },
-  { title: "VALLEY", desc: "Discover the hidden depths", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" },
-  { title: "FOREST", desc: "Embrace the profound green silence", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" },
-  { title: "OCEAN", desc: "Listen to the deep blue whispers", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" },
-  { title: "DESERT", desc: "Feel the warmth of golden sands", image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=800&q=80" },
-  { title: "WINTER", desc: "Experience the pure white snow", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80" },
-  { title: "CANYON", desc: "Witness the ancient rock formations", image: "https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?auto=format&fit=crop&w=800&q=80" },
-  { title: "NIGHT", desc: "Gaze at the endless bright stars", image: "https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?auto=format&fit=crop&w=800&q=80" },
-  { title: "RIVER", desc: "Flow with the endless stream", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" },
-  { title: "VOLCANO", desc: "Feel the earth's fiery core", image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80" },
-];
+// [cl] MOCK_EVENTS → CarouselCard 변환 (오빗 카드용)
+const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
+  title: ev.title.ko,
+  desc: ev.summary.ko,
+  image: ev.image_url,
+}));
 
 // [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
 type ViewMode = "orbit" | "marker" | null;
@@ -75,10 +70,21 @@ export default function Home() {
         </button>
       </div>
 
+      {/* [cl] 오빗 캐러셀 + 카드 클릭 시 인라인 상세 콘텐츠 */}
       <Carousel3D
-        items={SAMPLE_CARDS}
+        items={EVENT_CARDS}
         isOpen={carouselOpen}
         onClose={() => setViewMode(null)}
+        renderDetail={(originalIndex) => {
+          const ev = MOCK_EVENTS[originalIndex];
+          return (
+            <EventDetailContent
+              event={ev}
+              theme="light"
+              relatedEvents={MOCK_EVENTS.filter((e) => e.id !== ev.id).slice(0, 4)}
+            />
+          );
+        }}
       />
     </main>
   );

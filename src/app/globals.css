@@ -96,7 +96,17 @@ body {
   border-radius: 24px;
   pointer-events: auto;
   cursor: default;
-  /* [cl] 왼쪽 시프트: inner 카드의 로컬 X = 화면 X (컨테이너 회전 후 정면이니까) */
-  transform: translate(-50%, -50%) translateX(-400px);
-  transition-duration: 0.7s;
+  /* [cl] 기본(왼쪽) 시프트: inner 카드의 로컬 X = 화면 X (컨테이너 회전 후 정면이니까) */
+  transform: translate(-50%, -50%) translateX(calc(-400px - 5vw));
+  transition-duration: 1s;
+  /* [cl] 글로우 효과: 카드 주변 은은한 빛 */
+  box-shadow:
+    0 0 30px rgba(100, 160, 255, 0.15),
+    0 0 60px rgba(80, 140, 240, 0.08),
+    0 0 100px rgba(60, 120, 220, 0.04);
+}
+
+/* [cl] 오른쪽 카드: 좌우 대칭으로 반대 방향 확대 */
+.orbit-card-hit[data-active][data-side="right"] .orbit-card {
+  transform: translate(-50%, -50%) translateX(calc(400px + 5vw));
 }

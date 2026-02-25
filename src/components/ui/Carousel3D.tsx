@@ -17,6 +17,8 @@ interface Carousel3DProps {
   items: CarouselCard[];
   isOpen: boolean;
   onClose: () => void;
+  onCardClick?: (originalIndex: number) => void;
+  renderDetail?: (originalIndex: number) => React.ReactNode;
 }
 
 interface ItemState {
@@ -33,7 +35,7 @@ const P = 1200;
 const ORBIT_CARD_COUNT = 44; // [cl] 궤도 카드 고정 개수 (원본 items를 순환 반복)
 const MARGIN = 50;
 
-export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) {
+export default function Carousel3D({ items, isOpen, onClose, onCardClick, renderDetail }: Carousel3DProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const itemElsRef = useRef<(HTMLDivElement | null)[]>([]);
   const itemStatesRef = useRef<ItemState[]>([]);
@@ -42,6 +44,9 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
   const [activeIndex, setActiveIndex] = useState(-1);
   const activeIndexRef = useRef(-1);
   const hoveredIndexRef = useRef(-1);
+  // [cl] 활성 카드가 화면 좌/우 어디에 있었는지 추적 (좌우 대칭 확대용)
+  const currentLongitudeRef = useRef(0);
+  const activeSideRef = useRef<"left" | "right">("left");
 
   // [cl] displayCount: 고정 개수 (orbit 크기 불변 → 동적 계산 불필요)
   const displayCount = isOpen ? ORBIT_CARD_COUNT : 0;
@@ -73,6 +78,13 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
     start + (end - start) * factor;
 
   const openModal = useCallback((index: number) => {
+    // [cl] 클릭 시점 카드가 화면 좌/우 어디에 있는지 판별
+    const step = (2 * Math.PI) / ORBIT_CARD_COUNT;
+    const phys = index * step;
+    let vis = phys - currentLongitudeRef.current;
+    while (vis > Math.PI) vis -= 2 * Math.PI;
+    while (vis < -Math.PI) vis += 2 * Math.PI;
+    activeSideRef.current = Math.sin(vis) >= 0 ? "right" : "left";
     setActiveIndex(index);
   }, []);
 
@@ -144,12 +156,15 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       // 자동 자전: (-δ) + 2*(+δ) = +δ → 반대 방향 / 드래그: autoRot 불변 → 따라감
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const autoRot = (window as any).__timeglobe_autoRotationTotal || 0;
-      const targetLon = ai !== -1 ? (ai * angleStep - MODAL_ANGLE_OFFSET) : cameraLongitude + 2 * autoRot;
+      // [cl] 좌우 대칭: 왼쪽 카드는 +오프셋(현재), 오른쪽 카드는 -오프셋(반전)
+      const sideSign = activeSideRef.current === "right" ? -1 : 1;
+      const targetLon = ai !== -1 ? (ai * angleStep - sideSign * MODAL_ANGLE_OFFSET) : cameraLongitude + 2 * autoRot;
       // [cl] 각도 보간 (2π 래핑)
       let lonDiff = targetLon - currentLongitude;
       while (lonDiff > Math.PI) lonDiff -= 2 * Math.PI;
       while (lonDiff < -Math.PI) lonDiff += 2 * Math.PI;
       currentLongitude += lonDiff * 0.1;
+      currentLongitudeRef.current = currentLongitude;
 
       // [cl] 고정 기울기: 앞쪽 살짝 낮고 뒤로 갈수록 위로 (인공위성 궤도 느낌)
       const FIXED_TILT = -15;
@@ -227,7 +242,8 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
           } else {
             targetGray = 100;
             targetBrightness = 40;
-            targetOpacity = 0.3;
+            // [cl] 시각 각도 페이드아웃 유지 + 최대 0.3 캡 → 뒤쪽 카드 지구 관통 방지
+            targetOpacity = Math.min(0.3, targetOpacity);
           }
         }
 
@@ -237,7 +253,14 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
         state.brightness = lerp(state.brightness, targetBrightness, 0.08);
         state.opacity = lerp(state.opacity, targetOpacity, 0.08);
 
-        el.style.transform = `translate3d(calc(-50% + ${state.currentX}px), -50%, ${z}px) rotateY(${cardRotateY}deg)`;
+        // [cl] 활성 카드: 무중력 플로팅 (Y축 회전 ±3° + 상하 ±5px, 느린 사인파)
+        // [cl] 좌우 대칭: 오른쪽 카드는 플로팅 회전 방향도 반전
+        const now = Date.now();
+        const floatDir = activeSideRef.current === "right" ? -1 : 1;
+        const floatRotY = ai === i ? floatDir * 3 * Math.sin(now * 0.0006) : 0;
+        const floatY = ai === i ? 5 * Math.sin(now * 0.0008 + 1) : 0;
+
+        el.style.transform = `translate3d(calc(-50% + ${state.currentX}px), calc(-50% + ${floatY}px), ${z}px) rotateY(${cardRotateY + floatRotY}deg)`;
         el.style.filter = `grayscale(${state.gray}%) brightness(${state.brightness}%)`;
         el.style.opacity = state.opacity.toString();
         el.style.zIndex =
@@ -298,63 +321,74 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
             className="orbit-card-hit"
             data-card-index={i}
             data-active={activeIndex === i ? "" : undefined}
+            data-side={activeIndex === i ? activeSideRef.current : undefined}
             onClick={(e) => {
               e.stopPropagation();
               if (activeIndex === i) { closeModal(); return; }
               openModal(i);
+              if (onCardClick) onCardClick(item.originalIndex);
             }}
           >
             <div className="orbit-card">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover pointer-events-none"
-                loading="lazy"
-              />
+              {/* [cl] renderDetail이 있고 활성 카드면 → 상세 내용으로 대체 */}
+              {activeIndex === i && renderDetail ? (
+                <div className="w-full h-full overflow-hidden">
+                  {renderDetail(item.originalIndex)}
+                </div>
+              ) : (
+                <>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover pointer-events-none"
+                    loading="lazy"
+                  />
 
-              <div
-                className="absolute bottom-0 left-0 right-0 pointer-events-none transition-opacity duration-600"
-                style={{
-                  height: "60%",
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)",
-                  opacity: activeIndex === i ? 1 : 0,
-                }}
-              />
+                  <div
+                    className="absolute bottom-0 left-0 right-0 pointer-events-none transition-opacity duration-600"
+                    style={{
+                      height: "60%",
+                      background:
+                        "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)",
+                      opacity: activeIndex === i ? 1 : 0,
+                    }}
+                  />
 
-              <div
-                className="absolute bottom-10 left-10 right-10 z-10 text-white transition-all duration-600"
-                style={{
-                  opacity: activeIndex === i ? 1 : 0,
-                  transform:
-                    activeIndex === i ? "translateX(0)" : "translateX(80px)",
-                  transitionTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)",
-                  transitionDelay: activeIndex === i ? "0.3s" : "0s",
-                }}
-              >
-                <h2
-                  style={{
-                    fontFamily: "'Anton', sans-serif",
-                    fontSize: "4rem",
-                    letterSpacing: "1px",
-                    lineHeight: 1.1,
-                    marginBottom: "4px",
-                    textShadow: "0 4px 12px rgba(0,0,0,0.5)",
-                  }}
-                >
-                  {item.title}
-                </h2>
-                <p
-                  style={{
-                    fontFamily: "var(--font-noto-sans), sans-serif",
-                    fontSize: "1.1rem",
-                    letterSpacing: "0.5px",
-                    opacity: 0.9,
-                  }}
-                >
-                  {item.desc}
-                </p>
-              </div>
+                  <div
+                    className="absolute bottom-10 left-10 right-10 z-10 text-white transition-all duration-600"
+                    style={{
+                      opacity: activeIndex === i ? 1 : 0,
+                      transform:
+                        activeIndex === i ? "translateX(0)" : "translateX(80px)",
+                      transitionTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                      transitionDelay: activeIndex === i ? "0.3s" : "0s",
+                    }}
+                  >
+                    <h2
+                      style={{
+                        fontFamily: "'Anton', sans-serif",
+                        fontSize: "4rem",
+                        letterSpacing: "1px",
+                        lineHeight: 1.1,
+                        marginBottom: "4px",
+                        textShadow: "0 4px 12px rgba(0,0,0,0.5)",
+                      }}
+                    >
+                      {item.title}
+                    </h2>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-noto-sans), sans-serif",
+                        fontSize: "1.1rem",
+                        letterSpacing: "0.5px",
+                        opacity: 0.9,
+                      }}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         ))}
