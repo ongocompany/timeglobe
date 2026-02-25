@@ -44,6 +44,19 @@ const SKYBOX_SOURCES = {
   negativeZ: "/skybox/nz.png",
 };
 
+// [cl] 800px 지구 지름에 맞는 카메라 기본 높이 계산
+// orbit 진입, resetToDefault, 초기 카메라 모두 이 값을 사용
+function calcDefaultHeight(viewer: InstanceType<typeof import("cesium").Viewer>) {
+  const TARGET_DIAMETER = 800;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const fovy = (viewer.camera.frustum as any).fovy || 1.0;
+  const halfHeight = viewer.canvas.clientHeight / 2;
+  const tanAngR = (TARGET_DIAMETER / 2) * Math.tan(fovy / 2) / halfHeight;
+  const angR = Math.atan(tanAngR);
+  const GLOBE_R = 6378137;
+  return (GLOBE_R / Math.sin(angR)) - GLOBE_R;
+}
+
 // [cl] Viewer 마운트 후 SkyBox + 자동 자전을 설정하는 내부 컴포넌트
 function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
   const { viewer, scene } = useCesium();
@@ -51,6 +64,9 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
   const isInteracting = useRef(false);
   // [cl] Orbit 모드 카메라 잠금: flyTo 완료 후 위도/피치/높이 고정
   const lockedOrbitRef = useRef<{ lat: number; pitch: number; height: number } | null>(null);
+  // [cl] orbitActive를 ref로 → spin 루프에서 접근 가능 (클로저 갱신 없이)
+  const orbitActiveRef = useRef(orbitActive);
+  useEffect(() => { orbitActiveRef.current = orbitActive; }, [orbitActive]);
 
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
@@ -62,9 +78,10 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
     // [cl] 기본 타일 색감 보정
     const baseLayer = viewer.imageryLayers.get(0);
     if (baseLayer) {
-      baseLayer.saturation = 0.7;
-      baseLayer.brightness = 1.05;
-      baseLayer.contrast = 1.1;
+      baseLayer.saturation = 1.6;     // [cl] 채도: 바다 파란색 강조
+      baseLayer.brightness = 1.5;    // [cl] 밝기: 어두운 바다 살리기
+      baseLayer.contrast = 0.9;      // [cl] 대비: 낮춰서 녹색 과포화 방지
+      baseLayer.gamma = 1.0;         // [cl] 감마: 원본
     }
 
     // [cl] 구름 오버레이
@@ -73,6 +90,13 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
     }).then((cloudProvider) => {
       const cloudLayer = viewer.imageryLayers.addImageryProvider(cloudProvider);
       cloudLayer.alpha = 0.15;
+    });
+
+    // [cl] ★ 초기 카메라: 적도 + orbit 기본 높이에서 시작
+    const initHeight = calcDefaultHeight(viewer);
+    viewer.camera.setView({
+      destination: Cartesian3.fromDegrees(126.978, 0, initHeight),
+      orientation: { heading: 0, pitch: CesiumMath.toRadians(-90), roll: 0 },
     });
   }, [scene, viewer]);
 
@@ -86,6 +110,18 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
       "position:absolute;pointer-events:none;border-radius:50%;will-change:transform;";
     viewer.container.appendChild(glowEl);
 
+    // [cl] 내부 발광 오버레이: 지구가 은은하게 자체 발광하는 효과
+    const innerGlowEl = document.createElement("div");
+    innerGlowEl.style.cssText =
+      "position:absolute;pointer-events:none;border-radius:50%;will-change:transform;mix-blend-mode:screen;";
+    viewer.container.appendChild(innerGlowEl);
+
+    // [cl] 하이라이트 오버레이: 광원 방향(우측 앞)을 실제로 밝게 — screen 블렌드
+    const highlightEl = document.createElement("div");
+    highlightEl.style.cssText =
+      "position:absolute;pointer-events:none;border-radius:50%;will-change:transform;mix-blend-mode:screen;";
+    viewer.container.appendChild(highlightEl);
+
     // [cl] 그림자 오버레이: 태양이 오른쪽에 있는 것처럼 왼쪽을 약간 어둡게
     const shadowEl = document.createElement("div");
     shadowEl.style.cssText =
@@ -94,16 +130,23 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
 
     let frameId: number;
     const updateGlow = () => {
-      // [cl] Orbit 모드 카메라 강제 고정: 위도/피치/높이가 드래그로 벗어나면 즉시 복원
+      // [cl] Orbit 모드 카메라 강제 고정: 위도/피치/높이/heading 벗어나면 즉시 복원
+      // ★ heading도 0으로 강제 (기존: viewer.camera.heading 유지 → 기울기 고착 버그)
+      // ★ resetToDefault 보호 구간(500ms)에는 lock 스킵 — 리셋 setView와 충돌 방지
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const resetTsGlow = (window as any).__timeglobe_resetTimestamp || 0;
       const locked = lockedOrbitRef.current;
-      if (locked) {
+      if (locked && (Date.now() - resetTsGlow >= 500)) {
         const pos = viewer.camera.positionCartographic;
+        const h = viewer.camera.heading;
+        const headingOff = h > CesiumMath.toRadians(0.5) && h < CesiumMath.toRadians(359.5);
         if (Math.abs(pos.latitude - locked.lat) > 0.0001 ||
-            Math.abs(pos.height - locked.height) > 1) {
+            Math.abs(pos.height - locked.height) > 1 ||
+            headingOff) {
           viewer.camera.setView({
             destination: Cartesian3.fromRadians(pos.longitude, locked.lat, locked.height),
             orientation: {
-              heading: viewer.camera.heading,
+              heading: 0,
               pitch: locked.pitch,
               roll: 0,
             },
@@ -159,18 +202,48 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
           transparent 85%
         )`;
 
-        // [cl] 그림자: 지구 크기에 맞춰 왼쪽 어둡게 (태양 = 오른쪽)
+        // [cl] 내부 발광: 바다(어두운 영역)를 푸른빛으로 살리는 핵심 레이어
+        // ★ screen 블렌드: 검은 바다에 파란빛 추가 → "푸른 별" 느낌
+        const innerSize = screenRadius * 2;
+        innerGlowEl.style.width = `${innerSize}px`;
+        innerGlowEl.style.height = `${innerSize}px`;
+        innerGlowEl.style.left = `${center.x - innerSize / 2}px`;
+        innerGlowEl.style.top = `${center.y - innerSize / 2}px`;
+        innerGlowEl.style.background = `radial-gradient(circle,
+          rgba(40, 100, 220, 0.35) 0%,
+          rgba(35, 90, 200, 0.30) 30%,
+          rgba(30, 80, 180, 0.22) 50%,
+          rgba(20, 60, 150, 0.10) 70%,
+          transparent 85%
+        )`;
+
+        // [cl] 하이라이트: 광원 방향(우측 앞)에 밝은 빛 스팟 (screen 블렌드)
+        const hlSize = screenRadius * 2;
+        highlightEl.style.width = `${hlSize}px`;
+        highlightEl.style.height = `${hlSize}px`;
+        highlightEl.style.left = `${center.x - hlSize / 2}px`;
+        highlightEl.style.top = `${center.y - hlSize / 2}px`;
+        highlightEl.style.background = `radial-gradient(circle at 62% 45%,
+          rgba(180, 215, 255, 0.30) 0%,
+          rgba(140, 190, 250, 0.18) 25%,
+          rgba(100, 160, 240, 0.08) 45%,
+          transparent 65%
+        )`;
+
+        // [cl] 그림자: 광원 = 오른쪽 앞(카메라 기준) → 중앙-우측에 하이라이트, 가장자리+왼쪽 어둡게
+        // radial-gradient 중심을 60% 48%로 오프셋 → "오른쪽 앞에서 비추는" 입체 조명
         const shadowSize = screenRadius * 2;
         shadowEl.style.width = `${shadowSize}px`;
         shadowEl.style.height = `${shadowSize}px`;
         shadowEl.style.left = `${center.x - shadowSize / 2}px`;
         shadowEl.style.top = `${center.y - shadowSize / 2}px`;
-        shadowEl.style.background = `linear-gradient(to right,
-          rgba(0, 0, 0, 0.35) 0%,
-          rgba(0, 0, 0, 0.22) 20%,
-          rgba(0, 0, 0, 0.12) 40%,
-          rgba(0, 0, 0, 0.05) 60%,
-          transparent 80%
+        shadowEl.style.background = `radial-gradient(circle at 62% 45%,
+          transparent 0%,
+          transparent 25%,
+          rgba(0, 0, 0, 0.04) 40%,
+          rgba(0, 0, 0, 0.12) 55%,
+          rgba(0, 0, 0, 0.25) 70%,
+          rgba(0, 0, 0, 0.38) 90%
         )`;
       }
       frameId = requestAnimationFrame(updateGlow);
@@ -180,46 +253,80 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
     return () => {
       cancelAnimationFrame(frameId);
       glowEl.remove();
+      innerGlowEl.remove();
+      highlightEl.remove();
       shadowEl.remove();
     };
   }, [viewer]);
 
-  // [cl] Event Orbit 모드: 지구 800px 고정 + 좌우 회전만 허용
+  // [cl] 전역 카메라 리셋 함수: heading→0(북↑), roll→0으로 자전축 즉시 복원
+  // ★ setView로 heading/roll 즉시 스냅 (race condition 원천 차단)
+  // ★ flyTo는 높이 전환만 담당 (heading은 이미 리셋 완료)
+  // orbit 진입, UI 버튼 등 어디서든 호출 가능
+  useEffect(() => {
+    if (!viewer) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__timeglobe_resetToDefault = (options?: {
+      height?: number;
+      duration?: number;
+      onComplete?: () => void;
+    }) => {
+      // [cl] ★ 보호 플래그: spin loop이 리셋 중 간섭 못 하게
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_resetTimestamp = Date.now();
+
+      const pos = viewer.camera.positionCartographic;
+      // [cl] ★ 위도→적도, 높이→기본값으로 flyTo (스케일+기울기 동시 복원)
+      const targetHeight = options?.height ?? calcDefaultHeight(viewer);
+      viewer.camera.flyTo({
+        destination: Cartesian3.fromRadians(
+          pos.longitude,  // 경도는 유지
+          0,              // ★ 위도 → 0 (적도)
+          targetHeight,
+        ),
+        orientation: {
+          heading: 0,
+          pitch: CesiumMath.toRadians(-90), // 위에서 내려다보기
+          roll: 0,
+        },
+        duration: options?.duration ?? 0.8,
+        complete: options?.onComplete,
+      });
+    };
+
+    return () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      delete (window as any).__timeglobe_resetToDefault;
+    };
+  }, [viewer]);
+
+  // [cl] Event Orbit 모드: 순차 실행 → ①자전축 리셋 ②800px 줌 ③잠금
   // Event Marker 모드: 줌/틸트/회전 모두 자유
   useEffect(() => {
     if (!viewer) return;
     const controller = viewer.scene.screenSpaceCameraController;
 
     if (orbitActive) {
-      // [cl] 800px 지구 지름에 맞는 카메라 높이 계산
-      const TARGET_DIAMETER = 800;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const fovy = (viewer.camera.frustum as any).fovy || 1.0;
-      const halfHeight = viewer.canvas.clientHeight / 2;
-      const tanAngR = (TARGET_DIAMETER / 2) * Math.tan(fovy / 2) / halfHeight;
-      const angR = Math.atan(tanAngR);
-      const GLOBE_R = 6378137;
-      const targetHeight = (GLOBE_R / Math.sin(angR)) - GLOBE_R;
+      // [cl] orbit 기본 높이 (800px 지구 지름)
+      const targetHeight = calcDefaultHeight(viewer);
 
-      // [cl] 현재 경도 유지, 높이만 800px에 맞게 조정
-      const pos = viewer.camera.positionCartographic;
-      viewer.camera.flyTo({
-        destination: Cartesian3.fromRadians(pos.longitude, pos.latitude, targetHeight),
-        orientation: {
-          heading: viewer.camera.heading,
-          pitch: viewer.camera.pitch,
-          roll: 0,
-        },
-        duration: 0.8,
-        complete: () => {
-          // [cl] flyTo 완료 후 위도/피치/높이 잠금 → 좌우 회전만 허용
-          lockedOrbitRef.current = {
-            lat: viewer.camera.positionCartographic.latitude,
-            pitch: viewer.camera.pitch,
-            height: viewer.camera.positionCartographic.height,
-          };
-        },
-      });
+      // [cl] ①적도 리셋 → ②기본 높이 flyTo → ③완료 후 잠금
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const resetFn = (window as any).__timeglobe_resetToDefault;
+      if (resetFn) {
+        resetFn({
+          height: targetHeight,
+          duration: 0.8,
+          onComplete: () => {
+            // [cl] ③ flyTo 완료 후 위도/피치/높이 잠금 → 좌우 회전만 허용
+            lockedOrbitRef.current = {
+              lat: viewer.camera.positionCartographic.latitude,
+              pitch: viewer.camera.pitch,
+              height: viewer.camera.positionCartographic.height,
+            };
+          },
+        });
+      }
 
       // [cl] 좌우 회전만 허용: 줌/틸트 잠금
       controller.enableZoom = false;
@@ -261,8 +368,13 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
 
     let frameId: number;
     const spin = () => {
+      // [cl] ★ resetToDefault 보호: flyTo 진행 중(1초)에는 자전+복원 모두 정지
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const resetTs = (window as any).__timeglobe_resetTimestamp || 0;
+      const resetProtected = Date.now() - resetTs < 1500;
+
       const elapsed = Date.now() - lastInteraction.current;
-      if (!isInteracting.current && elapsed > IDLE_DELAY) {
+      if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected) {
         // [cl] 카메라 거리에 따른 자전 속도 조절: 가까우면 멈춤, 멀면 정상
         const camDist = Cartesian3.magnitude(viewer.camera.positionWC) - 6378137;
         let speedFactor = 1.0;
@@ -275,34 +387,41 @@ function SceneSetup({ orbitActive }: { orbitActive: boolean }) {
 
         // [cl] 서→동 방향 자전 (거리 비례 속도)
         if (speedFactor > 0) {
-          viewer.camera.rotateLeft(CesiumMath.toRadians(ROTATION_SPEED * speedFactor));
+          const delta = CesiumMath.toRadians(ROTATION_SPEED * speedFactor);
+          viewer.camera.rotateLeft(delta);
+          // [cl] 자동 자전 누적량 공유 → orbit 반대 회전 계산용
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
         }
 
         // [cl] 자전축 복원: heading→0(북↑), roll→0으로 서서히 보정
-        const heading = viewer.camera.heading;
-        const roll = viewer.camera.roll;
-        const needsHeadingFix = Math.abs(heading) > CesiumMath.toRadians(0.5) && Math.abs(heading) < CesiumMath.toRadians(359.5);
-        const needsRollFix = Math.abs(roll) > CesiumMath.toRadians(0.5);
+        // ★ orbit 모드에서는 스킵
+        if (!orbitActiveRef.current) {
+          const heading = viewer.camera.heading;
+          const roll = viewer.camera.roll;
+          const needsHeadingFix = Math.abs(heading) > CesiumMath.toRadians(0.5) && Math.abs(heading) < CesiumMath.toRadians(359.5);
+          const needsRollFix = Math.abs(roll) > CesiumMath.toRadians(0.5);
 
-        if (needsHeadingFix || needsRollFix) {
-          // [cl] heading을 0 또는 2π 중 가까운 쪽으로 보간
-          let newHeading = heading;
-          if (needsHeadingFix) {
-            if (heading > Math.PI) {
-              newHeading = heading + (CesiumMath.TWO_PI - heading) * RESTORE_SPEED;
-            } else {
-              newHeading = heading * (1 - RESTORE_SPEED);
+          if (needsHeadingFix || needsRollFix) {
+            // [cl] heading을 0 또는 2π 중 가까운 쪽으로 보간
+            let newHeading = heading;
+            if (needsHeadingFix) {
+              if (heading > Math.PI) {
+                newHeading = heading + (CesiumMath.TWO_PI - heading) * RESTORE_SPEED;
+              } else {
+                newHeading = heading * (1 - RESTORE_SPEED);
+              }
             }
-          }
-          const newRoll = needsRollFix ? roll * (1 - RESTORE_SPEED) : 0;
+            const newRoll = needsRollFix ? roll * (1 - RESTORE_SPEED) : 0;
 
-          viewer.camera.setView({
-            orientation: {
-              heading: newHeading,
-              pitch: viewer.camera.pitch,
-              roll: newRoll,
-            },
-          });
+            viewer.camera.setView({
+              orientation: {
+                heading: newHeading,
+                pitch: viewer.camera.pitch,
+                roll: newRoll,
+              },
+            });
+          }
         }
       }
       frameId = requestAnimationFrame(spin);

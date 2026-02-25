@@ -62,6 +62,17 @@ export default function Home() {
         >
           Event Marker
         </button>
+        {/* [cl] 카메라 리셋: 적도 기본 뷰로 복귀 (마커 탐색 후 복원 등에 활용) */}
+        <button
+          onClick={() => {
+            const reset = (window as any).__timeglobe_resetToDefault;
+            if (reset) reset();
+          }}
+          className="px-5 py-2.5 rounded-full backdrop-blur-md border text-sm uppercase tracking-widest transition-all duration-300 bg-white/10 border-white/20 text-white/60 hover:bg-white/15"
+          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+        >
+          Reset View
+        </button>
       </div>
 
       <Carousel3D

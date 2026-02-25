@@ -84,6 +84,31 @@
 * **줌 제한 완화**: 50%~200% → 30%~300%으로 확대
 * **아이콘 기본 크기**: 30px → 80px (지구 지름 800px 기준 비례)
 
+## [2026-02-25] [cl] resetToDefault + Orbit 안정화 + 지구 색감 개선
+
+### resetToDefault 기능 구현 (카메라 리셋)
+* **원인 발견**: 지구 자전축 "기울기"의 원인은 heading이 아닌 **카메라 위도(latitude)**였음 — 극지방(lat=76°)에서 내려다보면 자전축이 기울어 보이는 원근 효과
+* **resetToDefault 전역 함수**: `flyTo(lat→0°, height→기본높이, heading→0, pitch→-90°)` — 적도 기본 뷰로 부드럽게 복귀
+* **calcDefaultHeight 공용 함수**: 800px 지구 지름 기준 카메라 높이 계산 → 초기 카메라, Reset View, Event Orbit 진입 모두 동일 값 사용
+* **초기 카메라 위치 설정**: 사이트 진입 시 적도 + 기본 높이에서 시작 (서울 경도 126.978°)
+* **Reset View 버튼**: page.tsx에 정식 UI 버튼 추가 — 마커 탐색 후 복귀 등에 활용
+* **spin loop 보호**: resetToDefault 호출 후 1.5초간 자전+heading 복원 모두 정지 (flyTo 간섭 방지)
+* **updateGlow camera lock 보호**: 리셋 후 500ms간 lock setView 스킵
+
+### Event Orbit 안정화
+* **카드 겹침 버그 수정**: 동적 `displayCount` 계산 제거 → `ORBIT_CARD_COUNT = 44` 고정 (원본 items 순환 반복)
+* **itemElsRef 초기화**: 캐러셀 열릴 때마다 ref 배열을 명시적으로 초기화 — 이전 DOM 참조 찌꺼기 방지
+* **미사용 ICON_GAP 상수 제거**
+* **Orbit rolling 애니메이션**: ±5° 좌우 rolling 오실레이션 (sin파, ~15초 주기), 모달 시 0°로 수렴
+* **Orbit 반대 자전**: `targetLon = cameraLongitude + 2 * autoRotationTotal` — 자동 자전과 반대 방향, 수동 드래그는 따라감
+* **hover 애니메이션 튜닝**: 확대 크기 180→120px, translateZ 120px, transition 0.5s
+
+### 지구 색감 개선
+* **타일 색감 보정 강화**: saturation 1.6, brightness 1.5, contrast 0.9, gamma 1.0 — "Blue Marble" 느낌
+* **CSS 내부 발광 레이어**: `mix-blend-mode: screen` — 어두운 바다에 파란빛 추가 (rgba 40,100,220, opacity 0.35)
+* **CSS 하이라이트 레이어**: `screen` 블렌드, 광원 방향(62%, 45%) 오프셋 — 우측 앞에서 비추는 입체 조명
+* **그림자 radial-gradient**: linear → radial 변경, 광원 오른쪽 앞 기준 — 중앙이 밝고 가장자리가 어두운 3D 입체감
+
 ### [향후 검토] 시대별 맵 전환 방향
 * **문제**: 과거 시대에 현대 위성사진(Bing Maps)이 보이면 타임머신 컨셉과 불일치
 * **방향**: 현대=위성타일, 과거=자연지형 텍스처(8K) + 역사 벡터 데이터(GeoJSON) 오버레이

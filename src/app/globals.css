@@ -70,18 +70,18 @@ body {
   width: var(--orbit-icon-size, 80px);
   height: var(--orbit-icon-size, 80px);
   pointer-events: none;
-  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              border-radius 0.3s ease,
-              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              border-radius 0.5s ease,
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* [cl] hover: 히트박스는 고정, 비주얼만 확대+앞으로 팝아웃 */
+/* [cl] hover: 히트박스는 고정, 비주얼만 살짝 확대+앞으로 팝아웃 */
 .orbit-card-hit:not([data-active]):hover .orbit-card {
-  width: 180px;
-  height: 180px;
-  border-radius: 8px;
-  transform: translate(-50%, -50%) translateZ(150px);
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  transform: translate(-50%, -50%) translateZ(120px);
 }
 
 /* [cl] 모달 활성: 큰 카드 (클릭 영역 확대를 위해 pointer-events 복원) */

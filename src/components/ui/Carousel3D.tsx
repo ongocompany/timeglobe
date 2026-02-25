@@ -29,8 +29,8 @@ interface ItemState {
 // [cl] 기준값
 const BASE_GLOBE_DIAMETER = 800;
 const BASE_ICON_SIZE = 80;
-const ICON_GAP = 15;
 const P = 1200;
+const ORBIT_CARD_COUNT = 44; // [cl] 궤도 카드 고정 개수 (원본 items를 순환 반복)
 const MARGIN = 50;
 
 export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) {
@@ -43,48 +43,31 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
   const activeIndexRef = useRef(-1);
   const hoveredIndexRef = useRef(-1);
 
-  // [cl] displayCount: 열릴 때 한번만 계산 (줌 중 재렌더 방지)
-  const [displayCount, setDisplayCount] = useState(0);
+  // [cl] displayCount: 고정 개수 (orbit 크기 불변 → 동적 계산 불필요)
+  const displayCount = isOpen ? ORBIT_CARD_COUNT : 0;
 
   useEffect(() => { activeIndexRef.current = activeIndex; }, [activeIndex]);
 
-  // [cl] 캐러셀 열릴 때: 현재 지구 크기로 displayCount 계산 (1.5배 버퍼)
+  // [cl] 캐러셀 열릴 때: 상태 초기화 (ref 배열 크기를 displayCount에 맞춤)
   useEffect(() => {
     if (isOpen) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const globeScreenR = (window as any).__timeglobe_screenRadius || 300;
-      const G = Math.min(globeScreenR, P - MARGIN - 100);
-      const orbitR = (G + MARGIN) * P / (P - G - MARGIN);
-      const iconSz = Math.max(16, Math.round(BASE_ICON_SIZE * (globeScreenR * 2 / BASE_GLOBE_DIAMETER)));
-      const circumference = 2 * Math.PI * orbitR;
-      const slots = Math.ceil(circumference / (iconSz + ICON_GAP));
-      // [cl] 궤도 둘레에 딱 맞게 배치 (ICON_GAP 5px 간격 보장, 최대 200개)
-      const count = Math.max(items.length, Math.min(slots, 200));
-      setDisplayCount(count);
       setActiveIndex(-1);
       hoveredIndexRef.current = -1;
-    } else {
-      setDisplayCount(0);
-    }
-  }, [isOpen, items.length]);
-
-  // [cl] displayCount 변할 때 itemStates 초기화
-  useEffect(() => {
-    if (displayCount > 0) {
-      itemStatesRef.current = Array.from({ length: displayCount }, () => ({
+      itemElsRef.current = Array(ORBIT_CARD_COUNT).fill(null);
+      itemStatesRef.current = Array.from({ length: ORBIT_CARD_COUNT }, () => ({
         gray: 0, brightness: 100, opacity: 1, currentX: 0,
       }));
     }
-  }, [displayCount]);
+  }, [isOpen]);
 
-  // [cl] 반복 매핑된 표시용 아이템 배열
+  // [cl] 표시용 아이템 배열 (원본 items를 순환 반복하여 ORBIT_CARD_COUNT개)
   const displayItems = useMemo(() => {
-    if (items.length === 0 || displayCount === 0) return [];
-    return Array.from({ length: displayCount }, (_, i) => ({
+    if (!isOpen || items.length === 0) return [];
+    return Array.from({ length: ORBIT_CARD_COUNT }, (_, i) => ({
       ...items[i % items.length],
       originalIndex: i % items.length,
     }));
-  }, [items, displayCount]);
+  }, [items, isOpen]);
 
   const lerp = (start: number, end: number, factor: number) =>
     start + (end - start) * factor;
@@ -121,6 +104,7 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
 
     // [cl] 보간 변수 (클로저에서 프레임 간 유지)
     let currentTilt = 0;
+    let currentRoll = 0;
     let currentOffX = 0;
     let currentOffY = 0;
     // [cl] 초기값을 현재 카메라 경도로 설정 → 열릴 때 스냅 방지
@@ -155,7 +139,12 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       // [cl] 모달 시: 활성 카드의 physicalAngle - 오프셋으로 회전
       // → 화면 왼쪽 배치 + rotateY(+10°) 3D 기울기 (왼쪽 크게, 오른쪽 작게)
       const MODAL_ANGLE_OFFSET = 10 * (Math.PI / 180);
-      const targetLon = ai !== -1 ? (ai * angleStep - MODAL_ANGLE_OFFSET) : cameraLongitude;
+      // [cl] 자동 자전 누적량: CesiumGlobe에서 매 프레임 누적
+      // cam + 2*autoRot → rotateLeft가 camLon을 줄이고 autoRot을 늘리므로
+      // 자동 자전: (-δ) + 2*(+δ) = +δ → 반대 방향 / 드래그: autoRot 불변 → 따라감
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const autoRot = (window as any).__timeglobe_autoRotationTotal || 0;
+      const targetLon = ai !== -1 ? (ai * angleStep - MODAL_ANGLE_OFFSET) : cameraLongitude + 2 * autoRot;
       // [cl] 각도 보간 (2π 래핑)
       let lonDiff = targetLon - currentLongitude;
       while (lonDiff > Math.PI) lonDiff -= 2 * Math.PI;
@@ -166,6 +155,12 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       const FIXED_TILT = -15;
       const targetTilt = ai !== -1 ? 0 : FIXED_TILT;
       currentTilt = lerp(currentTilt, targetTilt, 0.06);
+
+      // [cl] 좌우 롤링: sin파로 ±5° 천천히 흔들림 (모달 시 정지)
+      const ROLL_AMPLITUDE = 5;       // 최대 기울기 (도)
+      const ROLL_SPEED = 0.0004;      // 주기 속도 (낮을수록 느림, ~15초 주기)
+      const targetRoll = ai !== -1 ? 0 : ROLL_AMPLITUDE * Math.sin(Date.now() * ROLL_SPEED);
+      currentRoll = lerp(currentRoll, targetRoll, 0.03);
 
       // [cl] 위치 오프셋 (모달 시 화면 중앙, 평소엔 지구 추종)
       let targetOffX = 0;
@@ -184,7 +179,8 @@ export default function Carousel3D({ items, isOpen, onClose }: Carousel3DProps) 
       // 이렇게 해야 바퀴처럼 제자리에서 회전함 (안 하면 훌라후프처럼 돌아감)
       container.style.transform = [
         `translate3d(${currentOffX}px, ${currentOffY}px, 0)`,
-        `translateZ(${-ORBIT_R}px)`,      // 4) 복원: 궤도를 원래 깊이로
+        `translateZ(${-ORBIT_R}px)`,      // 5) 복원: 궤도를 원래 깊이로
+        `rotateZ(${currentRoll}deg)`,     // 4) 롤링: 좌우 천천히 흔들림
         `rotateX(${currentTilt}deg)`,      // 3) 기울기: 화면 X축 기준
         `rotateY(${-lonDeg}deg)`,          // 2) 자전: 기울어진 면 위에서
         `translateZ(${ORBIT_R}px)`,        // 1) 궤도 중심을 z=0으로 이동
