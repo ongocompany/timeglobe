@@ -29,9 +29,11 @@
 * `location_lat` : `double precision` (위도)
 * `location_lng` : `double precision` (경도)
 * `is_fog_region` : `boolean` (Default: `false` - 불명확한 지역: 안개/히트맵 표현 여부 플래그)
+* `historical_region` : `jsonb` (다국어 당시 국가/지역명, 예: `{"ko": "조선", "en": "Joseon Dynasty"}`)
 * `modern_country` : `jsonb` (다국어 현재 기준의 국가/지역명)
 * `image_url` : `text` (대표 이미지 URL)
-* `summary` : `jsonb` (다국어 핵심 요약 설명 3~4줄)
+* `summary` : `jsonb` (다국어 핵심 요약 2~3줄 — orbit 카드 프리뷰용)
+* `description` : `jsonb` (다국어 상세 본문 설명 — 모달 펼침 시 표시, 분량 제한 없음)
 * `external_link` : `text` (나무위키 등 외부 링크 버튼을 위한 URL)
 * `created_at` : `timestamp with time zone`
 
