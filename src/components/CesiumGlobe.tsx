@@ -46,16 +46,22 @@ const SKYBOX_SOURCES = {
   negativeZ: "/skybox/nz.png",
 };
 
-// [cl] 확대 시 조준경(reticle) 커서 — circle + 4방향 십자 라인
-const RETICLE_CURSOR = `url("data:image/svg+xml,${encodeURIComponent(
-  '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">' +
-  '<circle cx="16" cy="16" r="7" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.9"/>' +
-  '<line x1="16" y1="1" x2="16" y2="7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
-  '<line x1="16" y1="25" x2="16" y2="31" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
-  '<line x1="1" y1="16" x2="7" y2="16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
-  '<line x1="25" y1="16" x2="31" y2="16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
-  '</svg>'
-)}") 16 16, crosshair`;
+// [cl] 커스텀 조준경 SVG 생성 — DOM 오버레이 방식 (애니메이션 지원)
+const RETICLE_BASE_SIZE = 64; // [cl] 기본 크기 (기존 32px × 2)
+function makeReticleSvg(color: string, size = RETICLE_BASE_SIZE): string {
+  const h = size / 2;
+  const r = size * 0.218;  // 원 반지름
+  const g = size * 0.09;   // 원과 라인 사이 간격
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}">` +
+    `<circle cx="${h}" cy="${h}" r="${r}" fill="none" stroke="${color}" stroke-width="1.5" stroke-opacity="0.9"/>` +
+    `<line x1="${h}" y1="2" x2="${h}" y2="${h - r - g}" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>` +
+    `<line x1="${h}" y1="${h + r + g}" x2="${h}" y2="${size - 2}" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>` +
+    `<line x1="2" y1="${h}" x2="${h - r - g}" y2="${h}" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>` +
+    `<line x1="${h + r + g}" y1="${h}" x2="${size - 2}" y2="${h}" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>` +
+    `</svg>`
+  );
+}
 
 // [cl] 카테고리별 글로우 도트 색상 (SF 느낌 네온 톤)
 const CATEGORY_COLORS: Record<string, string> = {
@@ -126,6 +132,8 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
   useEffect(() => { markerModeRef.current = markerMode; }, [markerMode]);
   // [cl] 마커 포커스 상태: 클릭 후 카메라 이동 → 자전 정지
   const markerFocusedRef = useRef(false);
+  // [cl] 마커 호버 상태: 조준경 색상/맥동 제어
+  const markerHoverRef = useRef(false);
   // [cl] onMarkerClick ref
   const onMarkerClickRef = useRef(onMarkerClick);
   useEffect(() => { onMarkerClickRef.current = onMarkerClick; }, [onMarkerClick]);
@@ -295,13 +303,6 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
             }
           }
         } catch { /* pick 실패 무시 */ }
-
-        // [cl] 줌 레벨에 따른 커서 전환: 3,000km 이내 → 조준경, 그 외 → 기본
-        // 마커 hover 중(pointer)은 건드리지 않음
-        if (viewer.canvas.style.cursor !== "pointer") {
-          viewer.canvas.style.cursor =
-            camCart.height < 3_000_000 ? RETICLE_CURSOR : "";
-        }
 
         // [cl] 대기 글로우
         const glowSize = screenRadius * 2 * 1.75;
@@ -579,18 +580,18 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
           tooltipEl.style.display = "block";
           tooltipEl.style.left = `${movement.endPosition.x + 18}px`;
           tooltipEl.style.top = `${movement.endPosition.y - 16}px`;
-          viewer.canvas.style.cursor = "pointer";
+          markerHoverRef.current = true;
           return;
         }
       }
       tooltipEl.style.display = "none";
-      viewer.canvas.style.cursor = "";
+      markerHoverRef.current = false;
     }, ScreenSpaceEventType.MOUSE_MOVE);
 
     return () => {
       moveHandler.destroy();
       tooltipEl.remove();
-      viewer.canvas.style.cursor = "";
+      markerHoverRef.current = false;
     };
   }, [viewer, markerMode]);
 
@@ -620,6 +621,89 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
       (window as any).__timeglobe_cursorLng = null;
     }, ScreenSpaceEventType.MOUSE_MOVE);
     return () => handler.destroy();
+  }, [viewer]);
+
+  // [cl] 커스텀 조준경 커서: 고도 < 3,000km → 네이티브 커서 숨기고 DOM SVG 커서 표시
+  // 기본: 검정 정적 (64px) / 마커 호버: 파랑 + 사인 맥동 (0.7~1.3 스케일)
+  useEffect(() => {
+    if (!viewer) return;
+
+    const S = RETICLE_BASE_SIZE;
+    const PULSE_SPEED = 0.06; // [cl] ~1.7초 주기
+
+    const el = document.createElement("div");
+    el.style.cssText = [
+      "position:absolute",
+      "pointer-events:none",
+      `width:${S}px`,
+      `height:${S}px`,
+      "left:0",
+      "top:0",
+      "z-index:1000",
+      "display:none",
+      "will-change:transform",
+      "transform-origin:0 0",
+    ].join(";");
+    el.innerHTML = makeReticleSvg("#111111");
+    viewer.container.appendChild(el);
+
+    let mx = 0, my = 0;
+    let pulseT = 0;
+    let lastHover = false;
+    let rafId: number;
+
+    const moveHandler = new ScreenSpaceEventHandler(viewer.canvas);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    moveHandler.setInputAction((mv: any) => {
+      mx = mv.endPosition.x;
+      my = mv.endPosition.y;
+    }, ScreenSpaceEventType.MOUSE_MOVE);
+
+    const tick = () => {
+      const h = viewer.camera.positionCartographic.height;
+      const inZone = h < 3_000_000;
+      const hovering = markerHoverRef.current;
+
+      if (inZone) {
+        viewer.canvas.style.cursor = "none";
+        el.style.display = "block";
+
+        // [cl] 색상 변경은 상태 전환 시에만 (innerHTML 갱신 최소화)
+        if (hovering !== lastHover) {
+          el.innerHTML = makeReticleSvg(hovering ? "#4488FF" : "#111111");
+          lastHover = hovering;
+        }
+
+        // [cl] 맥동: 호버 시 scale 0.7~1.3 사인 변화, 비호버 시 scale 1.0
+        let scale = 1.0;
+        if (hovering) {
+          pulseT += PULSE_SPEED;
+          scale = 1.0 + 0.3 * Math.sin(pulseT);
+        } else {
+          pulseT = 0;
+        }
+
+        // [cl] transform으로만 위치+스케일 업데이트 (레이아웃 reflow 없음)
+        // translate(mx, my) scale(s) translate(-S/2, -S/2) → 커서 중심이 마우스 위치에 고정
+        el.style.transform =
+          `translate(${mx}px,${my}px) scale(${scale}) translate(-${S / 2}px,-${S / 2}px)`;
+      } else {
+        if (viewer.canvas.style.cursor === "none") viewer.canvas.style.cursor = "";
+        el.style.display = "none";
+        pulseT = 0;
+        lastHover = false;
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      moveHandler.destroy();
+      cancelAnimationFrame(rafId);
+      el.remove();
+      if (viewer.canvas.style.cursor === "none") viewer.canvas.style.cursor = "";
+    };
   }, [viewer]);
 
   // [cl] 자동 자전 + 자전축 복원: 마우스 조작 멈추고 1초 후 서→동 방향 회전
