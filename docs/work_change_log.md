@@ -320,3 +320,33 @@
   * 기획: `docs/develop/05_[co]wikidata_collection_operating_plan.md`
   * 실행문서: `docs/develop/06_[co]wikidata_pipeline_runbook.md`
   * probe 리포트: `.cache/probe-1950-event.json`, `.cache/probe-1950-1955-event.json`
+
+## [2026-02-25] [cl] — Event Marker + StackCarousel UI 완성
+
+### 마커 색상 팔레트 교체
+* `CesiumGlobe.tsx` `CATEGORY_COLORS`: SF 네온 계열 → `map_marker_color_palettes.scss` 어스톤 팔레트로 교체
+* 글로우 이미지 크기 96→64, 글로우 반경 3px로 축소
+* 과학/발명 + 기본 색상: `#94d2bd` → `#6a4c93` (커스텀 보라)로 교체
+
+### 마커 스케일 설정
+* 빌보드 기본 크기 12×12px
+* `NearFarScalar(3e6, 20/12, 5e6, 1.0)`: 고도 5000km→3000km 구간에서 12→20px, 이하 20px 고정
+
+### 고도 분기 툴팁/이미지 팝업
+* 고도 > 1500km: 텍스트 툴팁
+* 고도 ≤ 1500km + 단독 마커: 3:4 비율 이미지 카드 팝업 (커서 추적)
+* 스택 마커: 툴팁 유지, 클릭 시 StackCarousel
+
+### Carousel3D (Event Orbit) 카드 디자인
+* 정방형 → 3:4 비율로 변경, 카드 하단에 제목 텍스트 상시 표시
+
+### StackCarousel 완성
+* 커서 클릭 위치 기준 배치, 배경 컨테이너 없이 개별 그림자
+* 클릭 시 해당 카드가 CSS width/height 트랜지션으로 직접 확장 (오빗 패턴 동일)
+* 밖 클릭 → 카드들 랜덤 방향 scatter 애니메이션 후 사라짐
+* hover 효과: `scale(1.08) translateY(-4px)` + 그림자 강화 (스프링 이징)
+
+### 단독/스택 마커 통합
+* `onMarkerClick` 콜백 완전 제거, `onStackClick(events, pos)` 단일 콜백으로 통합
+* 단독 마커 flyTo/flyBack/markerFocused 제거 → 지구본 고정 상태에서 카드만 팝업
+* `page.tsx`: `selectedEvent` 상태 제거, `stackState: {events, pos}` 단일 상태로 관리
