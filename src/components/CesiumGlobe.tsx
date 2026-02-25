@@ -738,9 +738,32 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             // 이전 타이머 정리
             if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
             hoverTriggeredId = ev.id;
+            const markerSx = nearby[0].sx, markerSy = nearby[0].sy;
             hoverTimer = setTimeout(() => {
+              // [cl] 카메라 위치 보존: onStackClick으로 인한 리렌더에서 카메라 리셋 방지
+              const carto = viewer.camera.positionCartographic;
+              const savedLon = carto.longitude;
+              const savedLat = carto.latitude;
+              const savedAlt = carto.height;
+              const savedH = viewer.camera.heading;
+              const savedP = viewer.camera.pitch;
+              const savedR = viewer.camera.roll;
+
               forceHideTooltipRef.current = true;
-              onStackClickRef.current?.([ev], { x: nearby[0].sx, y: nearby[0].sy });
+              onStackClickRef.current?.([ev], { x: markerSx, y: markerSy });
+
+              // [cl] 다음 프레임에 카메라 복원 (혹시 리셋되더라도 원위치)
+              requestAnimationFrame(() => {
+                if (viewer.isDestroyed()) return;
+                const cur = viewer.camera.positionCartographic;
+                // 고도 변화가 5% 이상이면 리셋 발생으로 판단 → 복원
+                if (Math.abs(cur.height - savedAlt) / savedAlt > 0.05) {
+                  viewer.camera.setView({
+                    destination: Cartesian3.fromRadians(savedLon, savedLat, savedAlt),
+                    orientation: { heading: savedH, pitch: savedP, roll: savedR },
+                  });
+                }
+              });
               hoverTimer = null;
             }, SHOW_DELAY);
           }
