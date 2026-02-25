@@ -180,62 +180,40 @@ export default function ControlBar({
 
       <Divider />
 
-      {/* [cl] 연도 표시 / 입력 + Go 버튼 */}
+      {/* [cl] 연도 표시 / 입력 + Go 버튼 (항상 표시) */}
       <div
-        style={{ minWidth: 96, display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}
-        onClick={!editing ? startEdit : undefined}
+        style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}
       >
         {editing ? (
-          <>
-            <input
-              ref={inputRef}
-              type="number"
-              value={inputVal}
-              min={-3000}
-              max={2100}
-              onChange={(e) => setInputVal(e.target.value)}
-              onBlur={() => setEditing(false)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") commit();
-                if (e.key === "Escape") setEditing(false);
-              }}
-              autoFocus
-              className="bg-transparent text-center outline-none"
-              style={{
-                fontFamily: "var(--font-geist-mono), monospace",
-                fontSize: 19,
-                fontWeight: 700,
-                color: "rgba(255,255,255,0.95)",
-                letterSpacing: "0.05em",
-                width: 80,
-                // [cl] 숫자 input 화살표 제거
-                MozAppearance: "textfield",
-              }}
-            />
-            {/* [cl] Go 버튼: ↵ 아이콘, mouseDown으로 blur보다 먼저 실행 */}
-            <button
-              onMouseDown={(e) => {
-                e.preventDefault();
-                commit();
-              }}
-              style={{
-                ...iconBtnStyle,
-                width: 24,
-                height: 24,
-                color: "rgba(255,255,255,0.7)",
-              }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,1)")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.7)")}
-              title="이동 (Enter)"
-            >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M11 3V8.5C11 9.05 10.55 9.5 10 9.5H3.5M3.5 9.5L6 7M3.5 9.5L6 12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </>
+          <input
+            ref={inputRef}
+            type="number"
+            value={inputVal}
+            min={-3000}
+            max={2100}
+            onChange={(e) => setInputVal(e.target.value)}
+            onBlur={() => setEditing(false)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") commit();
+              if (e.key === "Escape") setEditing(false);
+            }}
+            autoFocus
+            className="bg-transparent text-center outline-none"
+            style={{
+              fontFamily: "var(--font-geist-mono), monospace",
+              fontSize: 19,
+              fontWeight: 700,
+              color: "rgba(255,255,255,0.95)",
+              letterSpacing: "0.05em",
+              width: 80,
+              // [cl] 숫자 input 화살표 제거
+              MozAppearance: "textfield",
+            }}
+          />
         ) : (
           <span
             title="클릭하여 연도 입력"
+            onClick={startEdit}
             style={{
               fontFamily: "var(--font-geist-mono), monospace",
               fontSize: 19,
@@ -251,6 +229,28 @@ export default function ControlBar({
             {fmt(year)}
           </span>
         )}
+
+        {/* [cl] Go 버튼: 항상 표시, 편집 중이면 commit / 아니면 편집 시작 */}
+        <button
+          onMouseDown={(e) => {
+            e.preventDefault();
+            if (editing) commit();
+            else startEdit();
+          }}
+          style={{
+            ...iconBtnStyle,
+            width: 24,
+            height: 24,
+            color: editing ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.3)",
+          }}
+          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.9)")}
+          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = editing ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.3)")}
+          title="연도 이동 (Enter)"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M11 3V8.5C11 9.05 10.55 9.5 10 9.5H3.5M3.5 9.5L6 7M3.5 9.5L6 12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
 
       <Divider />
