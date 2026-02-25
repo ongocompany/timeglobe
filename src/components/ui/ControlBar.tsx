@@ -103,21 +103,13 @@ export default function ControlBar({
           </svg>
         </button>
 
-        {/* [cl] 회전 지구 아이콘 — direction에 따라 정/역회전, paused 시 정지 */}
-        <div
-          style={{
-            width: 22,
-            height: 22,
-            color: "rgba(255,255,255,0.5)",
-            animation: "ctrlGlobeSpin 4s linear infinite",
-            animationDirection: direction === "right" ? "reverse" : "normal",
-            animationPlayState: paused ? "paused" : "running",
-          }}
-        >
+        {/* [cl] 회전 지구 아이콘 — 경도선 scaleX 애니메이션으로 3D 자전 효과 */}
+        <div style={{ width: 22, height: 22, color: "rgba(255,255,255,0.5)", flexShrink: 0 }}>
           <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="8.5" stroke="currentColor" strokeWidth="1.2" />
             <ellipse cx="10" cy="10" rx="8.5" ry="3" stroke="currentColor" strokeWidth="0.8" />
-            <ellipse cx="10" cy="10" rx="3.5" ry="8.5" stroke="currentColor" strokeWidth="0.8" />
+            <ellipse className="ctrl-lon-a" cx="10" cy="10" rx="8.5" ry="8.5" stroke="currentColor" strokeWidth="0.8" />
+            <ellipse className="ctrl-lon-b" cx="10" cy="10" rx="8.5" ry="8.5" stroke="currentColor" strokeWidth="0.8" />
           </svg>
         </div>
 
@@ -140,8 +132,22 @@ export default function ControlBar({
         </button>
       </div>
 
-      {/* [cl] @keyframes ctrlGlobeSpin — 인라인 style 태그 */}
-      <style>{`@keyframes ctrlGlobeSpin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }`}</style>
+      {/* [cl] 경도선 scaleX 애니메이션: direction/paused 반영 */}
+      <style>{`
+        .ctrl-lon-a, .ctrl-lon-b {
+          transform-origin: center;
+          transform-box: fill-box;
+          animation: ctrlLon 3s ease-in-out infinite;
+          animation-direction: ${direction === "right" ? "reverse" : "normal"};
+          animation-play-state: ${paused ? "paused" : "running"};
+        }
+        .ctrl-lon-a { animation-delay: 0s; }
+        .ctrl-lon-b { animation-delay: -1.5s; }
+        @keyframes ctrlLon {
+          0%, 100% { transform: scaleX(0.05); }
+          50% { transform: scaleX(1); }
+        }
+      `}</style>
 
       <Divider />
 
