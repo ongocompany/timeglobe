@@ -57,14 +57,14 @@ export default function ControlBar({
     setEditingSync(false);
   };
 
-  // [cl] 연속 휠 틱 수에 따른 가속 단계
+  // [cl] 연속 휠 틱 수에 따른 가속 단계 (넉넉한 임계값)
   const getWheelStep = (count: number) => {
-    if (count < 4) return 1;
-    if (count < 8) return 5;
-    if (count < 13) return 10;
-    if (count < 19) return 50;
-    if (count < 26) return 100;
-    if (count < 36) return 500;
+    if (count < 10) return 1;
+    if (count < 25) return 5;
+    if (count < 45) return 10;
+    if (count < 70) return 50;
+    if (count < 100) return 100;
+    if (count < 140) return 500;
     return 1000;
   };
 
