@@ -1,11 +1,11 @@
 "use client";
 
-// [cl] 워프 완료 후 "Welcome to XXXX" 블러 리빌 + 파티클 dissolve
-// Phase 1: 개별 단어 블러 텍스트 등장 (word_effect.txt 패턴 — 스태거 딜레이)
-//   - "Welcome" → "to" → 연도 순서로 블러에서 선명하게
-// Phase 2: 전체 텍스트 → ~1000개 파티클로 분해 → 산란 소멸
+// [cl] 워프 완료 후 "Welcome to XXXX" 블러 리빌 + 역재생 퇴장
+// Phase 1 (reveal): 개별 단어 blur→clear 스태거 등장 (~2s)
+// Phase 2 (hold): 텍스트 유지 (~1.5s)
+// Phase 3 (fadeout): clear→blur 역스태거 퇴장 (연도 먼저 → Welcome 마지막)
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface YearRevealProps {
   year: number;
@@ -13,195 +13,69 @@ interface YearRevealProps {
   onComplete: () => void;
 }
 
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  opacity: number;
-  size: number;
-}
-
 export default function YearReveal({ year, visible, onComplete }: YearRevealProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const frameRef = useRef<number>(0);
-  const [phase, setPhase] = useState<"text" | "dissolve" | "done">("text");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isFading, setIsFading] = useState(false);
   const onCompleteRef = useRef(onComplete);
   onCompleteRef.current = onComplete;
 
-  // [cl] 텍스트에서 파티클 생성: offscreen canvas에 2줄 렌더 → 픽셀 샘플링
-  const createParticles = useCallback(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const rect = container.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
-
-    const offscreen = document.createElement("canvas");
-    const ow = Math.ceil(rect.width * dpr);
-    const oh = Math.ceil(rect.height * dpr);
-    offscreen.width = ow;
-    offscreen.height = oh;
-    const octx = offscreen.getContext("2d")!;
-    octx.scale(dpr, dpr);
-    octx.fillStyle = "white";
-    octx.textAlign = "center";
-
-    // [cl] 1줄: "Welcome to" (작은 폰트)
-    const smallSize = Math.min(26, Math.max(16, rect.width * 0.042));
-    octx.font = `300 ${smallSize}px system-ui, sans-serif`;
-    octx.fillText("Welcome to", rect.width / 2, rect.height * 0.28);
-
-    // [cl] 2줄: 연도 (큰 모노 폰트)
-    const bigSize = Math.min(150, Math.max(80, rect.width * 0.26));
-    octx.font = `700 ${bigSize}px monospace`;
-    octx.fillText(String(year), rect.width / 2, rect.height * 0.68);
-
-    // [cl] 픽셀 샘플링
-    const imageData = octx.getImageData(0, 0, ow, oh);
-    const pixels = imageData.data;
-    const candidates: Array<{ x: number; y: number }> = [];
-
-    for (let py = 0; py < oh; py += 3) {
-      for (let px = 0; px < ow; px += 3) {
-        const i = (py * ow + px) * 4;
-        if (pixels[i + 3] > 128) {
-          candidates.push({ x: px / dpr, y: py / dpr });
-        }
-      }
-    }
-
-    const TARGET_COUNT = 1000;
-    const step = Math.max(1, Math.floor(candidates.length / TARGET_COUNT));
-    const particles: Particle[] = [];
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-
-    for (let i = 0; i < candidates.length; i += step) {
-      const { x, y } = candidates[i];
-      const dx = x - cx;
-      const dy = y - cy;
-      const spread = 0.5 + Math.random() * 1.5;
-
-      particles.push({
-        x,
-        y,
-        vx: dx * spread * 0.12 + (Math.random() - 0.5) * 0.8,
-        vy: dy * spread * 0.12 + (Math.random() - 0.5) * 0.8,
-        opacity: 1.0,
-        size: 1.5 + Math.random() * 2.0,
-      });
-    }
-
-    particlesRef.current = particles;
-  }, [year]);
-
-  // [cl] 파티클 애니메이션 루프
-  useEffect(() => {
-    if (phase !== "dissolve") return;
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const dpr = window.devicePixelRatio || 1;
-    const w = canvas.clientWidth;
-    const h = canvas.clientHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    ctx.scale(dpr, dpr);
-
-    const animate = () => {
-      ctx.clearRect(0, 0, w, h);
-
-      let alive = 0;
-      const particles = particlesRef.current;
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        if (p.opacity <= 0) continue;
-
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.025;
-        p.opacity -= 0.014;
-        p.size *= 0.996;
-
-        if (p.opacity <= 0) continue;
-        alive++;
-
-        ctx.globalAlpha = p.opacity;
-        ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
-        ctx.shadowColor = "rgba(255, 255, 255, 0.6)";
-        ctx.shadowBlur = p.size * 2;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      ctx.globalAlpha = 1;
-      ctx.shadowBlur = 0;
-
-      if (alive > 0) {
-        frameRef.current = requestAnimationFrame(animate);
-      } else {
-        setPhase("done");
-      }
-    };
-
-    frameRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-    };
-  }, [phase]);
-
-  // [cl] done → onComplete
-  useEffect(() => {
-    if (phase === "done") onCompleteRef.current();
-  }, [phase]);
-
-  // [cl] 타이밍: 200ms 후 블러 애니메이션 시작 → 2.5초 후 dissolve
+  // [cl] 타이밍:
+  //   0ms    → 블러 상태 배치
+  //   200ms  → reveal 시작 (blur→clear, 스태거)
+  //   3500ms → fadeout 시작 (clear→blur, 역스태거) [기존 2500 + 1000]
+  //   5000ms → onComplete
   useEffect(() => {
     if (!visible) return;
-    setPhase("text");
     setIsAnimating(false);
+    setIsFading(false);
 
-    const animTimer = setTimeout(() => setIsAnimating(true), 200);
-    const dissolveTimer = setTimeout(() => {
-      createParticles();
-      setPhase("dissolve");
-    }, 2500);
+    const revealTimer = setTimeout(() => setIsAnimating(true), 200);
+
+    const fadeTimer = setTimeout(() => {
+      setIsFading(true);
+      setIsAnimating(false);
+    }, 3500);
+
+    // [cl] 퇴장 트랜지션 완료 대기 (가장 긴 delay 0.3s + duration 1.2s = 1.5s)
+    const doneTimer = setTimeout(() => {
+      onCompleteRef.current();
+    }, 5000);
 
     return () => {
-      clearTimeout(animTimer);
-      clearTimeout(dissolveTimer);
+      clearTimeout(revealTimer);
+      clearTimeout(fadeTimer);
+      clearTimeout(doneTimer);
     };
-  }, [visible, createParticles]);
+  }, [visible]);
 
-  if (!visible || phase === "done") return null;
+  if (!visible) return null;
 
-  // [cl] 블러 리빌 단어 정의: Welcome, to (작은 서브), year (큰 메인)
+  // [cl] 등장/퇴장 단어별 타이밍 정의
+  // 등장: Welcome(0s) → to(0.12s) → 연도(0.3s) — 순서대로
+  // 퇴장: 연도(0s) → to(0.1s) → Welcome(0.2s) — 역순, 짧은 duration
   const subWords = [
-    { text: "Welcome", delay: 0, duration: 1.8, blur: 14 },
-    { text: "to", delay: 0.12, duration: 1.8, blur: 12 },
+    {
+      text: "Welcome",
+      revealDelay: 0, revealDuration: 1.8, blur: 14,
+      fadeDelay: 0.2, fadeDuration: 1.0,
+    },
+    {
+      text: "to",
+      revealDelay: 0.12, revealDuration: 1.8, blur: 12,
+      fadeDelay: 0.1, fadeDuration: 1.0,
+    },
   ];
-  const yearWord = { delay: 0.3, duration: 2.2, blur: 18 };
+  const yearWord = {
+    revealDelay: 0.3, revealDuration: 2.2, blur: 18,
+    fadeDelay: 0, fadeDuration: 1.2,
+  };
+
+  const active = isAnimating && !isFading;
 
   return (
-    <div ref={containerRef} className="relative" style={{ width: 520, height: 240 }}>
-      {/* [cl] 블러 텍스트 레이어 */}
-      <div
-        className="absolute inset-0 flex flex-col items-center justify-center select-none"
-        style={{
-          opacity: phase === "text" ? 1 : 0,
-          transition: phase === "dissolve" ? "opacity 0.12s ease" : "none",
-        }}
-      >
-        {/* [cl] "Welcome to" — 작은 서브 텍스트, 개별 단어 스태거 블러 */}
+    <div className="relative" style={{ width: 520, height: 240 }}>
+      <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
+        {/* [cl] "Welcome to" — 작은 서브 텍스트 */}
         <div
           className="flex gap-[0.35em] mb-2"
           style={{
@@ -218,18 +92,18 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
               className="inline-block"
               style={{
                 color: "white",
-                opacity: isAnimating ? 1 : 0,
-                filter: isAnimating
+                opacity: active ? 1 : 0,
+                filter: active
                   ? "blur(0px) brightness(1)"
                   : `blur(${w.blur}px) brightness(0.6)`,
-                transform: isAnimating
+                transform: active
                   ? "translateY(0) scale(1)"
                   : "translateY(12px) scale(0.92)",
                 transitionProperty: "opacity, filter, transform",
-                transitionDuration: `${w.duration}s`,
-                transitionDelay: `${w.delay}s`,
+                transitionDuration: isFading ? `${w.fadeDuration}s` : `${w.revealDuration}s`,
+                transitionDelay: isFading ? `${w.fadeDelay}s` : `${w.revealDelay}s`,
                 transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-                textShadow: isAnimating
+                textShadow: active
                   ? "0 2px 8px rgba(255,255,255,0.1)"
                   : "0 0 30px rgba(255,255,255,0.4)",
                 willChange: "filter, transform, opacity",
@@ -240,7 +114,7 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
           ))}
         </div>
 
-        {/* [cl] 연도 — 큰 모노 텍스트, 블러 리빌 */}
+        {/* [cl] 연도 — 큰 모노 텍스트 */}
         <span
           className="inline-block"
           style={{
@@ -250,18 +124,18 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
             letterSpacing: "0.05em",
             lineHeight: 1,
             color: "white",
-            opacity: isAnimating ? 1 : 0,
-            filter: isAnimating
+            opacity: active ? 1 : 0,
+            filter: active
               ? "blur(0px) brightness(1)"
               : `blur(${yearWord.blur}px) brightness(0.6)`,
-            transform: isAnimating
+            transform: active
               ? "translateY(0) scale(1) rotateX(0deg)"
               : "translateY(20px) scale(0.9) rotateX(-15deg)",
             transitionProperty: "opacity, filter, transform",
-            transitionDuration: `${yearWord.duration}s`,
-            transitionDelay: `${yearWord.delay}s`,
+            transitionDuration: isFading ? `${yearWord.fadeDuration}s` : `${yearWord.revealDuration}s`,
+            transitionDelay: isFading ? `${yearWord.fadeDelay}s` : `${yearWord.revealDelay}s`,
             transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-            textShadow: isAnimating
+            textShadow: active
               ? "0 2px 12px rgba(255,255,255,0.15)"
               : "0 0 50px rgba(255,255,255,0.5)",
             willChange: "filter, transform, opacity",
@@ -271,15 +145,6 @@ export default function YearReveal({ year, visible, onComplete }: YearRevealProp
           {year}
         </span>
       </div>
-
-      {/* [cl] 파티클 캔버스 */}
-      {phase === "dissolve" && (
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0"
-          style={{ width: "100%", height: "100%" }}
-        />
-      )}
     </div>
   );
 }
