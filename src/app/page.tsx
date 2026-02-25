@@ -8,7 +8,7 @@ import DateDisplay from "@/components/ui/DateDisplay";
 import Timeline from "@/components/ui/Timeline";
 import Carousel3D, { type CarouselCard } from "@/components/ui/Carousel3D";
 import { EventDetailContent } from "@/components/ui/HistoryEventModal";
-import LocationIndicator from "@/components/ui/LocationIndicator";
+import Dashboard from "@/components/ui/Dashboard";
 import { MOCK_EVENTS } from "@/data/mockEvents";
 
 // [cl] MOCK_EVENTS → CarouselCard 변환 (오빗 카드용)
@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black">
       <Header />
-      <LocationIndicator events={MOCK_EVENTS} />
+      <Dashboard events={MOCK_EVENTS} />
       <DateDisplay />
       <Timeline />
 

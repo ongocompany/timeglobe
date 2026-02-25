@@ -13,6 +13,8 @@ import { useEffect, useRef } from "react";
 import { Viewer, useCesium } from "resium";
 import {
   Cartesian3,
+  Cartesian2,
+  Cartographic,
   SkyBox,
   Math as CesiumMath,
   SingleTileImageryProvider,
@@ -43,6 +45,17 @@ const SKYBOX_SOURCES = {
   positiveZ: "/skybox/pz.png",
   negativeZ: "/skybox/nz.png",
 };
+
+// [cl] 확대 시 조준경(reticle) 커서 — circle + 4방향 십자 라인
+const RETICLE_CURSOR = `url("data:image/svg+xml,${encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">' +
+  '<circle cx="16" cy="16" r="7" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.9"/>' +
+  '<line x1="16" y1="1" x2="16" y2="7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
+  '<line x1="16" y1="25" x2="16" y2="31" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
+  '<line x1="1" y1="16" x2="7" y2="16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
+  '<line x1="25" y1="16" x2="31" y2="16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>' +
+  '</svg>'
+)}") 16 16, crosshair`;
 
 // [cl] 카테고리별 글로우 도트 색상 (SF 느낌 네온 톤)
 const CATEGORY_COLORS: Record<string, string> = {
@@ -250,14 +263,45 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         (window as any).__timeglobe_cameraPitch = viewer.camera.pitch;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).__timeglobe_cameraHeading = viewer.camera.heading;
-        // [cl] 카메라 경도/위도/높이 공유: 자동 자전(rotateLeft)은 heading이 아닌 longitude를 변경하므로
-        // 궤도 회전 동기화에는 longitude가 필요, 위도+높이는 LocationIndicator가 사용
+        // [cl] 카메라 경도/위도/높이 공유
+        const camCart = viewer.camera.positionCartographic;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (window as any).__timeglobe_cameraLongitude = viewer.camera.positionCartographic.longitude;
+        (window as any).__timeglobe_cameraLongitude = camCart.longitude;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (window as any).__timeglobe_cameraLatitude = viewer.camera.positionCartographic.latitude;
+        (window as any).__timeglobe_cameraLatitude = camCart.latitude;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (window as any).__timeglobe_cameraHeight = viewer.camera.positionCartographic.height;
+        (window as any).__timeglobe_cameraHeight = camCart.height;
+
+        // [cl] 화면 정중앙 → 지구 표면 좌표 (Dashboard 중심 좌표 표시용)
+        try {
+          const screenCtr = new Cartesian2(
+            viewer.canvas.clientWidth / 2,
+            viewer.canvas.clientHeight / 2,
+          );
+          const centerRay = viewer.camera.getPickRay(screenCtr);
+          if (centerRay) {
+            const groundPt = viewer.scene.globe.pick(centerRay, viewer.scene);
+            if (groundPt) {
+              const gc = Cartographic.fromCartesian(groundPt);
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              (window as any).__timeglobe_groundLat = gc.latitude;
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              (window as any).__timeglobe_groundLng = gc.longitude;
+            } else {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              (window as any).__timeglobe_groundLat = null;
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              (window as any).__timeglobe_groundLng = null;
+            }
+          }
+        } catch { /* pick 실패 무시 */ }
+
+        // [cl] 줌 레벨에 따른 커서 전환: 3,000km 이내 → 조준경, 그 외 → 기본
+        // 마커 hover 중(pointer)은 건드리지 않음
+        if (viewer.canvas.style.cursor !== "pointer") {
+          viewer.canvas.style.cursor =
+            camCart.height < 3_000_000 ? RETICLE_CURSOR : "";
+        }
 
         // [cl] 대기 글로우
         const glowSize = screenRadius * 2 * 1.75;
@@ -549,6 +593,34 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
       viewer.canvas.style.cursor = "";
     };
   }, [viewer, markerMode]);
+
+  // [cl] 마우스 커서 → 지구 표면 좌표 추적 (항상 활성화, Dashboard 커서 좌표 표시용)
+  useEffect(() => {
+    if (!viewer) return;
+    const handler = new ScreenSpaceEventHandler(viewer.canvas);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    handler.setInputAction((movement: any) => {
+      try {
+        const ray = viewer.camera.getPickRay(movement.endPosition);
+        if (ray) {
+          const groundPt = viewer.scene.globe.pick(ray, viewer.scene);
+          if (groundPt) {
+            const gc = Cartographic.fromCartesian(groundPt);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_cursorLat = gc.latitude;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_cursorLng = gc.longitude;
+            return;
+          }
+        }
+      } catch { /* 무시 */ }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_cursorLat = null;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_cursorLng = null;
+    }, ScreenSpaceEventType.MOUSE_MOVE);
+    return () => handler.destroy();
+  }, [viewer]);
 
   // [cl] 자동 자전 + 자전축 복원: 마우스 조작 멈추고 1초 후 서→동 방향 회전
   // 마우스 클릭 시 북극↑ 남극↓ 정위치로 부드럽게 복원
