@@ -644,8 +644,8 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
     const IDLE_DELAY = 1000;
     const ROTATION_SPEED = 0.05; // [cl] 서→동 자전 (rotateLeft = 동쪽으로)
     const RESTORE_SPEED = 0.03; // [cl] 자전축 복원 속도 (0~1, 클수록 빠름)
-    const ROTATION_STOP_DIST = 500_000; // [cl] 이 거리(m) 이하면 자전 정지 (3D 마커 전환 거리와 동일)
-    const ROTATION_FADE_DIST = 2_000_000; // [cl] 이 거리부터 서서히 감속 시작
+    const ROTATION_STOP_DIST  =  3_000_000; // [cl] 3,000km 이하: 완전 정지
+    const ROTATION_FADE_DIST  = 15_000_000; // [cl] 3,000km~15,000km: 선형 가속 → 정상 속도
 
     let frameId: number;
     const spin = () => {
@@ -659,17 +659,15 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
 
       const elapsed = Date.now() - lastInteraction.current;
       if (!isInteracting.current && elapsed > IDLE_DELAY && !resetProtected && !markerFocused) {
-        // [cl] 카메라 거리에 따른 자전 속도 조절: 가까우면 멈춤, 멀면 정상
+        // [cl] 고도 기반 자전 속도: 3,000km 이하 정지 → 15,000km 이상 정상 속도
         const camDist = Cartesian3.magnitude(viewer.camera.positionWC) - 6378137;
         let speedFactor = 1.0;
         if (camDist < ROTATION_STOP_DIST) {
-          speedFactor = 0; // [cl] 500km 이내: 완전 정지
+          speedFactor = 0;
         } else if (camDist < ROTATION_FADE_DIST) {
-          // [cl] 500km~2000km: 부드럽게 감속 (0→1 선형 보간)
           speedFactor = (camDist - ROTATION_STOP_DIST) / (ROTATION_FADE_DIST - ROTATION_STOP_DIST);
         }
 
-        // [cl] 서→동 방향 자전 (거리 비례 속도)
         if (speedFactor > 0) {
           const delta = CesiumMath.toRadians(ROTATION_SPEED * speedFactor);
           viewer.camera.rotateLeft(delta);
