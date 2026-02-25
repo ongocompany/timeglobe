@@ -1022,7 +1022,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         // [cl] ① 고도 보간 (zoomout/zoomin만, hold는 고도 고정)
         if (currentWarpPhase !== "hold" && warpAltStartTimeRef.current > 0) {
           const elapsed = (performance.now() - warpAltStartTimeRef.current) / 1000;
-          const t = Math.min(elapsed / 1.0, 1); // [cl] 1.0초 duration (줌아웃/줌인 단축)
+          // [cl] 줌아웃 1.0s / 줌인 1.5s (줌인은 자전 감속과 동기화)
+          const dur = currentWarpPhase === "zoomin" ? 1.5 : 1.0;
+          const t = Math.min(elapsed / dur, 1);
           const eased = 0.5 - 0.5 * Math.cos(t * Math.PI); // [cl] ease in-out
 
           const pos = viewer.camera.positionCartographic;

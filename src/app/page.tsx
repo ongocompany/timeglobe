@@ -290,17 +290,17 @@ export default function Home() {
       warpSpeedRef.current = Math.sin(progress * Math.PI) * 5;
 
       // [cl] 자전 배율: 바닥=1(정상 자전) → sin 가속 → 피크 160 → cos 감속 → 바닥=1
-      // 출발/도착 모두 정상 자전과 끊김 없이 연결됨
+      // 감속 1500ms = 고도 줌인 1500ms와 동기화 → 회전+확대가 동시에 완료
       let spinMult = 1;
       if (elapsed >= 500 && elapsed < 700) {
-        // [cl] 가속: 1 + sin(0→π/2) × 159 = 1→160
+        // [cl] 가속: 1 + sin(0→π/2) × 159 = 1→160 (200ms)
         const t = (elapsed - 500) / 200;
         spinMult = 1 + Math.sin(t * Math.PI / 2) * 159;
       } else if (elapsed >= 700 && elapsed < 3200) {
         spinMult = 160;                                       // 피크 유지 (2.5초)
-      } else if (elapsed >= 3200 && elapsed < 3700) {
-        // [cl] 감속: 1 + cos(0→π/2) × 159 = 160→1 (정상 속도로 수렴)
-        const t = (elapsed - 3200) / 500;
+      } else if (elapsed >= 3200 && elapsed < 4700) {
+        // [cl] 감속: 1 + cos(0→π/2) × 159 = 160→1 (1500ms, 줌인과 동기화)
+        const t = (elapsed - 3200) / 1500;
         spinMult = 1 + Math.cos(t * Math.PI / 2) * 159;
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
