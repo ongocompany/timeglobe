@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeGlobe - Interactive Historical Globe</title>
+  <meta name="description" content="TimeGlobe: 시간 여행하는 인터랙티브 지구본. 역사적 사건들을 3D 지구 위에서 탐험하세요.">
+  <meta property="og:title" content="TimeGlobe">
+  <meta property="og:description" content="시간 여행하는 인터랙티브 지구본. 역사적 사건들을 3D 지구 위에서 탐험하세요.">
+  <meta property="og:type" content="website">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a12;
+      color: #e0e0e8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* stars */
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stars span {
+      position: absolute;
+      border-radius: 50%;
+      background: #fff;
+      animation: twinkle 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      100% { opacity: 0.9; }
+    }
+
+    /* globe */
+    .globe-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .globe {
+      width: 220px;
+      height: 220px;
+      position: relative;
+    }
+
+    .globe svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 40px rgba(80, 160, 255, 0.25));
+    }
+
+    .globe-circle {
+      fill: none;
+      stroke: rgba(100, 180, 255, 0.5);
+      stroke-width: 1.5;
+    }
+
+    .globe-equator {
+      fill: none;
+      stroke: rgba(100, 180, 255, 0.35);
+      stroke-width: 1;
+    }
+
+    .globe-lon {
+      fill: none;
+      stroke: rgba(100, 180, 255, 0.3);
+      stroke-width: 0.8;
+      transform-origin: center;
+      transform-box: fill-box;
+      animation: lonSweep 5s ease-in-out infinite;
+    }
+    .globe-lon-a { animation-delay: 0s; }
+    .globe-lon-b { animation-delay: -1.67s; }
+    .globe-lon-c { animation-delay: -3.33s; }
+
+    @keyframes lonSweep {
+      0%, 100% { transform: scaleX(0.12); }
+      50% { transform: scaleX(1); }
+    }
+
+    .glow {
+      position: absolute;
+      inset: -40%;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(60, 140, 255, 0.10) 30%,
+        rgba(60, 140, 255, 0.04) 50%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    /* content */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 24px 80px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #a0c4ff 0%, #e0e8ff 50%, #80b0ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(180, 200, 230, 0.7);
+      margin-bottom: 40px;
+      letter-spacing: 0.04em;
+    }
+
+    .desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(200, 210, 230, 0.65);
+      margin-bottom: 48px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 48px;
+      text-align: left;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .feature-icon {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .feature h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(180, 210, 255, 0.85);
+      margin-bottom: 4px;
+    }
+
+    .feature p {
+      font-size: 0.8rem;
+      color: rgba(180, 200, 230, 0.5);
+      line-height: 1.5;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, rgba(80, 140, 255, 0.2), rgba(80, 140, 255, 0.1));
+      border: 1px solid rgba(100, 160, 255, 0.3);
+      border-radius: 999px;
+      color: rgba(180, 210, 255, 0.9);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .cta:hover {
+      background: linear-gradient(135deg, rgba(80, 140, 255, 0.3), rgba(80, 140, 255, 0.15));
+      border-color: rgba(100, 160, 255, 0.5);
+    }
+
+    .tech {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tech-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(180, 200, 230, 0.35);
+      margin-bottom: 12px;
+    }
+
+    .tech-list {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .tech-item {
+      font-size: 0.8rem;
+      color: rgba(180, 200, 230, 0.45);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: rgba(180, 200, 230, 0.4);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.75rem;
+      color: rgba(180, 200, 230, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.2rem; }
+      .features { grid-template-columns: 1fr; }
+      .globe { width: 160px; height: 160px; }
+      .globe-wrap { padding-top: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Globe illustration -->
+  <div class="globe-wrap">
+    <div class="globe">
+      <div class="glow"></div>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" class="globe-circle"/>
+        <ellipse cx="100" cy="100" rx="80" ry="28" class="globe-equator"/>
+        <ellipse cx="100" cy="100" rx="35" ry="80" class="globe-lon globe-lon-a"/>
+        <ellipse cx="100" cy="100" rx="55" ry="80" class="globe-lon globe-lon-b"/>
+        <ellipse cx="100" cy="100" rx="20" ry="80" class="globe-lon globe-lon-c"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <h1>TimeGlobe</h1>
+    <p class="subtitle">Interactive Historical Globe</p>
+
+    <p class="desc">
+      시간을 넘나드는 인터랙티브 3D 지구본.<br>
+      인류 문명의 역사적 사건들을 지구 위에서 직접 탐험하세요.<br>
+      고대부터 현대까지, 시간의 흐름을 손끝으로 여행합니다.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">&#127758;</div>
+        <h3>3D Globe</h3>
+        <p>CesiumJS 기반 실시간 3D 지구본으로 역사의 현장을 탐험</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#9202;</div>
+        <h3>Time Travel</h3>
+        <p>연도를 자유롭게 이동하며 각 시대의 사건을 확인</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#128205;</div>
+        <h3>Event Markers</h3>
+        <p>역사적 사건이 발생한 위치에 마커로 표시</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#128640;</div>
+        <h3>Warp Drive</h3>
+        <p>시네마틱 워프 효과로 시간대를 빠르게 이동</p>
+      </div>
+    </div>
+
+    <a href="https://github.com/leejinwoo1973/timeglobe" class="cta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+      GitHub Repository
+    </a>
+
+    <div class="tech">
+      <div class="tech-label">Built with</div>
+      <div class="tech-list">
+        <span class="tech-item">Next.js</span>
+        <span class="tech-item">CesiumJS</span>
+        <span class="tech-item">Resium</span>
+        <span class="tech-item">TypeScript</span>
+        <span class="tech-item">Supabase</span>
+      </div>
+    </div>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      In active development
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 TimeGlobe Project
+  </footer>
+
+  <script>
+    // Generate random stars
+    (function() {
+      var container = document.getElementById('stars');
+      for (var i = 0; i < 80; i++) {
+        var star = document.createElement('span');
+        var size = Math.random() * 2 + 0.5;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = (Math.random() * 3) + 's';
+        star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        container.appendChild(star);
+      }
+    })();
+  </script>
+</body>
+</html>
