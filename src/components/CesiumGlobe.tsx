@@ -490,7 +490,8 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
           width: 12,
           height: 12,
           scale: 1.0,
-          scaleByDistance: new NearFarScalar(5e5, 1.5, 1.5e7, 0.6),
+          // [cl] 5000km↑: 12px 고정 / 5000→3000km: 12→20px 보간 / 3000km↓: 20px 고정
+          scaleByDistance: new NearFarScalar(3e6, 20 / 12, 5e6, 1.0),
         },
       });
     });
