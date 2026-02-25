@@ -173,10 +173,17 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const warpAltTargetRef = useRef(0);
   const warpAltStartTimeRef = useRef(0);
   const warpLatStartRef = useRef(0);
+  // [cl] 초기 카메라 설정이 한 번만 실행되도록 가드 (React StrictMode 이중실행 방지)
+  const sceneInitializedRef = useRef(false);
 
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
     if (!scene || !viewer) return;
+
+    // [cl] ★ 이미 초기화된 경우 스킵 (useEffect 재실행 시 카메라 리셋 방지)
+    if (sceneInitializedRef.current) return;
+    sceneInitializedRef.current = true;
+
     scene.skyBox = new SkyBox({ sources: SKYBOX_SOURCES });
     if (scene.skyAtmosphere) scene.skyAtmosphere.show = false;
     scene.globe.showGroundAtmosphere = false;
@@ -424,6 +431,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       duration?: number;
       onComplete?: () => void;
     }) => {
+      // [cl] 디버그: 리셋 호출 추적
+      console.warn("[TimeGlobe] resetToDefault called", new Error().stack?.split("\n").slice(1, 4).join(" ← "));
       // [cl] ★ 보호 플래그: spin loop이 리셋 중 간섭 못 하게
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_resetTimestamp = Date.now();
@@ -452,6 +461,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).__timeglobe_warpResetCamera = () => {
       if (viewer.isDestroyed()) return;
+      // [cl] 디버그: 워프 리셋 호출 추적
+      console.warn("[TimeGlobe] warpResetCamera called", new Error().stack?.split("\n").slice(1, 4).join(" ← "));
       const pos = viewer.camera.positionCartographic;
       const targetHeight = calcDefaultHeight(viewer);
       viewer.camera.setView({
@@ -545,6 +556,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // Event Marker 모드: 줌/틸트/회전 모두 자유
   useEffect(() => {
     if (!viewer) return;
+    // [cl] 디버그: orbit/marker 모드 전환 추적
+    console.warn("[TimeGlobe] orbit/camera effect:", { orbitActive });
     const controller = viewer.scene.screenSpaceCameraController;
 
     if (orbitActive) {
@@ -862,7 +875,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     viewer.canvas.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      viewer.canvas.removeEventListener("mousemove", handleMouseMove);
+      if (!viewer.isDestroyed()) {
+        viewer.canvas.removeEventListener("mousemove", handleMouseMove);
+      }
       cancelAnimationFrame(rafId);
       if (hoverTimer) clearTimeout(hoverTimer);
       tooltipEl.remove();
