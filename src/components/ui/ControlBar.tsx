@@ -4,7 +4,7 @@
 // 위치: absolute bottom-6 left-1/2 -translate-x-1/2
 // 스타일: TimeDial 글래스 렌즈와 동일한 glassmorphism 필
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 interface ControlBarProps {
   year: number;
@@ -32,12 +32,17 @@ export default function ControlBar({
   const [editing, setEditing] = useState(false);
   const [inputVal, setInputVal] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  // [cl] 휠 가속 추적: 연속 스크롤 시 1→5→10→50→100→500→1000년 단위
+  const yearAreaRef = useRef<HTMLDivElement>(null);
+  // [cl] 휠 가속: native 이벤트 리스너 (passive: false) + ref로 최신 값 추적
   const editingRef = useRef(false);
+  const yearRef = useRef(year);
+  yearRef.current = year;
+  const warpingRef = useRef(warping);
+  warpingRef.current = warping;
   const wheelCountRef = useRef(0);
   const wheelTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const setEditingSync = (v: boolean) => { setEditing(v); editingRef.current = v; };
+  const setEditingSync = useCallback((v: boolean) => { setEditing(v); editingRef.current = v; }, []);
 
   const startEdit = () => {
     if (warping) return;
@@ -63,26 +68,35 @@ export default function ControlBar({
     return 1000;
   };
 
-  // [cl] 휠 핸들러: 편집 모드 자동 진입 + 가속 적용
-  const handleWheel = (e: React.WheelEvent) => {
-    if (warping) return;
-    wheelCountRef.current += 1;
-    if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
-    wheelTimerRef.current = setTimeout(() => { wheelCountRef.current = 0; }, 300);
+  // [cl] native wheel 이벤트: passive:false로 preventDefault 가능 + type="number" 충돌 방지
+  useEffect(() => {
+    const el = yearAreaRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (warpingRef.current) return;
+      e.preventDefault();
+      e.stopPropagation();
 
-    const step = getWheelStep(wheelCountRef.current);
-    const delta = e.deltaY > 0 ? -step : step;
+      wheelCountRef.current += 1;
+      if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
+      wheelTimerRef.current = setTimeout(() => { wheelCountRef.current = 0; }, 300);
 
-    if (!editingRef.current) {
-      setInputVal(String(Math.max(-3000, Math.min(2100, year + delta))));
-      setEditingSync(true);
-    } else {
-      setInputVal((prev) => {
-        const n = parseInt(prev, 10) || 0;
-        return String(Math.max(-3000, Math.min(2100, n + delta)));
-      });
-    }
-  };
+      const step = getWheelStep(wheelCountRef.current);
+      const delta = e.deltaY > 0 ? -step : step;
+
+      if (!editingRef.current) {
+        setInputVal(String(Math.max(-3000, Math.min(2100, yearRef.current + delta))));
+        setEditingSync(true);
+      } else {
+        setInputVal((prev) => {
+          const n = parseInt(prev, 10) || 0;
+          return String(Math.max(-3000, Math.min(2100, n + delta)));
+        });
+      }
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [setEditingSync]);
 
   // [cl] 공통 아이콘 버튼 스타일
   const iconBtnStyle: React.CSSProperties = {
@@ -220,16 +234,15 @@ export default function ControlBar({
 
       {/* [cl] 연도 표시 / 입력 + Go 버튼 (항상 표시) + 휠 가속 */}
       <div
+        ref={yearAreaRef}
         style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}
-        onWheel={handleWheel}
       >
         {editing ? (
           <input
             ref={inputRef}
-            type="number"
+            type="text"
+            inputMode="numeric"
             value={inputVal}
-            min={-3000}
-            max={2100}
             onChange={(e) => setInputVal(e.target.value)}
             onBlur={() => setEditingSync(false)}
             onKeyDown={(e) => {
