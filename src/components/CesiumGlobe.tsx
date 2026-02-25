@@ -539,58 +539,121 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
     };
   }, [viewer, markerMode]);
 
-  // [cl] Event Marker: 호버 툴팁 (마커 위 커서 올리면 제목+연도 표시)
+  // [cl] Event Marker: 30px 반경 스택 툴팁 (고도 높을수록 다수 → 확대하면 자연 분리)
+  // 인/아웃 딜레이로 빠른 커서 이동 시 깜빡임 방지
   useEffect(() => {
     if (!viewer || !markerMode) return;
 
-    // [cl] 툴팁 HTML 요소 생성 (viewer 컨테이너 안에 절대 위치)
+    const HOVER_RADIUS = 30; // [cl] 스크린 픽셀 반경 (절대값)
+    const SHOW_DELAY   = 250; // [cl] 툴팁 표시 딜레이 (ms)
+    const HIDE_DELAY   = 450; // [cl] 툴팁 숨김 딜레이 (ms)
+    const MAX_DISPLAY  = 5;   // [cl] 최대 표시 항목 수
+
     const tooltipEl = document.createElement("div");
     tooltipEl.style.cssText = [
       "position:absolute",
       "pointer-events:none",
-      "background:rgba(8,8,18,0.90)",
+      "background:rgba(8,8,18,0.92)",
       "color:#fff",
-      "padding:6px 12px",
-      "border-radius:8px",
+      "padding:8px 14px",
+      "border-radius:10px",
       "font-size:13px",
-      "font-weight:600",
       "white-space:nowrap",
       "display:none",
       "z-index:200",
       "border:1px solid rgba(255,255,255,0.13)",
-      "backdrop-filter:blur(10px)",
+      "backdrop-filter:blur(12px)",
       "letter-spacing:0.02em",
-      "box-shadow:0 4px 18px rgba(0,0,0,0.5)",
-      "transition:opacity 0.1s",
+      "box-shadow:0 4px 20px rgba(0,0,0,0.55)",
+      "min-width:160px",
     ].join(";");
     viewer.container.appendChild(tooltipEl);
+
+    let showTimer: ReturnType<typeof setTimeout> | null = null;
+    let hideTimer: ReturnType<typeof setTimeout> | null = null;
+    let pendingHtml = "";
+    let pendingX = 0, pendingY = 0;
 
     const moveHandler = new ScreenSpaceEventHandler(viewer.canvas);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     moveHandler.setInputAction((movement: any) => {
-      const picked = viewer.scene.pick(movement.endPosition);
-      if (defined(picked) && defined(picked.id) && picked.id.id) {
-        const ev = eventsRef.current.find((e) => e.id === picked.id.id);
-        if (ev) {
+      const mx = movement.endPosition.x;
+      const my = movement.endPosition.y;
+
+      // [cl] 전체 이벤트 → 스크린 좌표 변환 후 반경 30px 이내 필터
+      const nearby: { ev: MockEvent; dist: number }[] = [];
+      for (const ev of eventsRef.current) {
+        const pos3d = Cartesian3.fromDegrees(ev.location_lng, ev.location_lat);
+        const sp = SceneTransforms.worldToWindowCoordinates(viewer.scene, pos3d);
+        if (!defined(sp)) continue;
+        const dist = Math.sqrt((mx - sp.x) ** 2 + (my - sp.y) ** 2);
+        if (dist < HOVER_RADIUS) nearby.push({ ev, dist });
+      }
+      nearby.sort((a, b) => a.dist - b.dist);
+
+      if (nearby.length > 0) {
+        // [cl] 스택 툴팁 HTML: 가장 가까운 항목 굵게, 멀수록 투명도 감소
+        const shown = nearby.slice(0, MAX_DISPLAY);
+        const extra = nearby.length - shown.length;
+        const rows = shown.map(({ ev }, i) => {
           const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
-          tooltipEl.innerHTML =
-            `<span style="color:${color};margin-right:6px;">●</span>` +
-            `${ev.title.ko}` +
-            `<span style="color:#999;font-weight:400;margin-left:6px;">${ev.start_year}</span>`;
-          tooltipEl.style.display = "block";
-          tooltipEl.style.left = `${movement.endPosition.x + 18}px`;
-          tooltipEl.style.top = `${movement.endPosition.y - 16}px`;
-          markerHoverRef.current = true;
-          return;
+          const opacity = Math.max(0.45, 1.0 - i * 0.14);
+          return (
+            `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}opacity:${opacity};">` +
+            `<span style="color:${color};font-size:9px;flex-shrink:0;">●</span>` +
+            `<span style="font-weight:${i === 0 ? "600" : "400"};flex:1;">${ev.title.ko}</span>` +
+            `<span style="color:#777;font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
+            `</div>`
+          );
+        });
+        if (extra > 0) {
+          rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
+        }
+        pendingHtml = rows.join("");
+        pendingX = mx;
+        pendingY = my;
+
+        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+
+        if (tooltipEl.style.display === "block") {
+          // [cl] 이미 표시 중 → 내용/위치 즉시 갱신
+          tooltipEl.innerHTML = pendingHtml;
+          tooltipEl.style.left = `${mx + 20}px`;
+          tooltipEl.style.top  = `${my - 16}px`;
+        } else if (!showTimer) {
+          // [cl] 처음 진입 → SHOW_DELAY 후 표시
+          showTimer = setTimeout(() => {
+            showTimer = null;
+            if (pendingHtml) {
+              tooltipEl.innerHTML = pendingHtml;
+              tooltipEl.style.left = `${pendingX + 20}px`;
+              tooltipEl.style.top  = `${pendingY - 16}px`;
+              tooltipEl.style.display = "block";
+            }
+          }, SHOW_DELAY);
+        }
+
+        markerHoverRef.current = true;
+      } else {
+        // [cl] 반경 밖 → 표시 타이머 취소 + HIDE_DELAY 후 숨김
+        pendingHtml = "";
+        if (showTimer) { clearTimeout(showTimer); showTimer = null; }
+        markerHoverRef.current = false;
+
+        if (tooltipEl.style.display === "block" && !hideTimer) {
+          hideTimer = setTimeout(() => {
+            hideTimer = null;
+            tooltipEl.style.display = "none";
+          }, HIDE_DELAY);
         }
       }
-      tooltipEl.style.display = "none";
-      markerHoverRef.current = false;
     }, ScreenSpaceEventType.MOUSE_MOVE);
 
     return () => {
       moveHandler.destroy();
       tooltipEl.remove();
+      if (showTimer) clearTimeout(showTimer);
+      if (hideTimer) clearTimeout(hideTimer);
       markerHoverRef.current = false;
     };
   }, [viewer, markerMode]);
