@@ -63,21 +63,23 @@ function makeReticleSvg(color: string, size = RETICLE_BASE_SIZE): string {
   );
 }
 
-// [cl] 카테고리별 글로우 도트 색상 (SF 느낌 네온 톤)
+// [cl] 카테고리별 글로우 도트 색상 (팔레트: map_marker_color_palettes.scss)
 const CATEGORY_COLORS: Record<string, string> = {
-  "정치/전쟁": "#FF4444",
-  "인물/문화": "#4488FF",
-  "과학/발명": "#44CC88",
-  "건축/유물": "#FFAA33",
-  "자연재해/지질": "#FF8833",
-  문화: "#AA55FF",
-  지적유산: "#5566FF",
+  "정치/전쟁":    "#ae2012", // oxidized-iron
+  "인물/문화":    "#0a9396", // dark-cyan
+  "과학/발명":    "#94d2bd", // pearl-aqua
+  "건축/유물":    "#ee9b00", // golden-orange
+  "자연재해/지질": "#ca6702", // burnt-caramel
+  문화:           "#005f73", // dark-teal
+  지적유산:       "#e9d8a6", // vanilla-custard
 };
-const DEFAULT_MARKER_COLOR = "#88AAFF";
+const DEFAULT_MARKER_COLOR = "#94d2bd"; // pearl-aqua
 
 // [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
+// size=64, billboard=24px → canvas:screen = 2.67x
+// 솔리드 코어 60% + 3px 글로우 링 (0.61→0.85 = 3px on screen)
 const glowImageCache: Record<string, string> = {};
-function createGlowImage(color: string, size = 96): string {
+function createGlowImage(color: string, size = 64): string {
   if (glowImageCache[color]) return glowImageCache[color];
   const canvas = document.createElement("canvas");
   canvas.width = size;
@@ -85,11 +87,11 @@ function createGlowImage(color: string, size = 96): string {
   const ctx = canvas.getContext("2d")!;
   const half = size / 2;
   const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
-  gradient.addColorStop(0, color);
-  gradient.addColorStop(0.15, color);
-  gradient.addColorStop(0.4, color + "80"); // 50% alpha
-  gradient.addColorStop(0.7, color + "30"); // 19% alpha
-  gradient.addColorStop(1, "transparent");
+  gradient.addColorStop(0,    color);
+  gradient.addColorStop(0.60, color);           // 솔리드 코어 끝
+  gradient.addColorStop(0.61, color + "88");    // 글로우 링 시작 (53% alpha)
+  gradient.addColorStop(0.85, color + "18");    // 글로우 빠르게 소멸
+  gradient.addColorStop(1.0,  "transparent");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, size, size);
   const dataUrl = canvas.toDataURL();
@@ -778,7 +780,7 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
 
         // [cl] 색상 변경은 상태 전환 시에만 (innerHTML 갱신 최소화)
         if (hovering !== lastHover) {
-          el.innerHTML = makeReticleSvg(hovering ? "#4488FF" : "#111111");
+          el.innerHTML = makeReticleSvg(hovering ? "#0a9396" : "#111111");
           lastHover = hovering;
         }
 
