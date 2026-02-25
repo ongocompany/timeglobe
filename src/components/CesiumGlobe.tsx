@@ -447,9 +447,24 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       });
     };
 
+    // [cl] 워프용 즉시 카메라 리셋: flyTo 없이 setView → 자전 중단 없음
+    // 검정 배경이 가리는 0~500ms 동안 실행되므로 유저 눈에 보이지 않음
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__timeglobe_warpResetCamera = () => {
+      if (viewer.isDestroyed()) return;
+      const pos = viewer.camera.positionCartographic;
+      const targetHeight = calcDefaultHeight(viewer);
+      viewer.camera.setView({
+        destination: Cartesian3.fromRadians(pos.longitude, 0, targetHeight),
+        orientation: { heading: 0, pitch: CesiumMath.toRadians(-90), roll: 0 },
+      });
+    };
+
     return () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       delete (window as any).__timeglobe_resetToDefault;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      delete (window as any).__timeglobe_warpResetCamera;
     };
   }, [viewer]);
 
@@ -521,6 +536,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       warpAltStartTimeRef.current = performance.now();
     } else if (warpPhase === "idle") {
       warpAltStartTimeRef.current = 0;
+      // [cl] 워프 완료 → 정상 자전 즉시 시작 (IDLE_DELAY 스킵)
+      lastInteraction.current = 0;
     }
   }, [warpPhase, viewer]);
 
@@ -1023,19 +1040,17 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           });
         }
 
-        // [cl] ② 순방향 고속 자전: 돌던 방향 그대로 가속 (멈칫 없이 자연스러운 가감속)
-        const spinMult = warpSpinMultRef.current;
-        if (spinMult > 0) {
-          const delta = CesiumMath.toRadians(ROTATION_SPEED * spinMult);
-          if (globeDirectionRef.current !== "right") {
-            viewer.camera.rotateLeft(delta);
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
-          } else {
-            viewer.camera.rotateRight(delta);
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) - delta;
-          }
+        // [cl] ② 순방향 자전: 최소 1배(정상 속도) 보장 → 출발/도착 시 멈춤 없이 연속 자전
+        const spinMult = Math.max(warpSpinMultRef.current, 1);
+        const delta = CesiumMath.toRadians(ROTATION_SPEED * spinMult);
+        if (globeDirectionRef.current !== "right") {
+          viewer.camera.rotateLeft(delta);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
+        } else {
+          viewer.camera.rotateRight(delta);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) - delta;
         }
 
         frameId = requestAnimationFrame(spin);

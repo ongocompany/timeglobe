@@ -238,8 +238,9 @@ export default function Home() {
     setGlobePaused(false);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).__timeglobe_markerFocused = false;
+    // [cl] 즉시 setView 리셋 (flyTo 아님) → 자전 중단 없음, 검정 배경이 가림
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).__timeglobe_resetToDefault?.();
+    (window as any).__timeglobe_warpResetCamera?.();
 
     const TOTAL = 5200;
 
@@ -271,8 +272,8 @@ export default function Home() {
     //   warpingRef는 YearReveal 완료 후 해제 (중복 워프 방지)
     setTimeout(() => {
       warpSpeedRef.current = 0;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).__timeglobe_setWarpSpinMult?.(0);
+      // [cl] spinMult 강제 0 제거 — rAF가 1(정상 속도)을 유지하다가
+      //   idle 전환 시 정상 자전이 바로 이어받음 (끊김 없음)
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_setWarpBackground?.("normal");
       setWarpPhase("idle");
@@ -288,19 +289,19 @@ export default function Home() {
       // [cl] LightSpeed: sin(0→π) 벨 곡선 — 느리게 시작 → 피크 → 느리게 종료
       warpSpeedRef.current = Math.sin(progress * Math.PI) * 5;
 
-      // [cl] 역자전 배율: sin ease-in 가속 → 피크 160배 × 2.5초 → cos ease-out 감속
-      // sin/cos 곡선으로 가감속이 자연스럽게 부드러워짐
-      let spinMult = 0;
+      // [cl] 자전 배율: 바닥=1(정상 자전) → sin 가속 → 피크 160 → cos 감속 → 바닥=1
+      // 출발/도착 모두 정상 자전과 끊김 없이 연결됨
+      let spinMult = 1;
       if (elapsed >= 500 && elapsed < 700) {
-        // [cl] 가속: sin(0→π/2) = 0→1 (부드러운 시작)
+        // [cl] 가속: 1 + sin(0→π/2) × 159 = 1→160
         const t = (elapsed - 500) / 200;
-        spinMult = Math.sin(t * Math.PI / 2) * 160;
+        spinMult = 1 + Math.sin(t * Math.PI / 2) * 159;
       } else if (elapsed >= 700 && elapsed < 3200) {
         spinMult = 160;                                       // 피크 유지 (2.5초)
       } else if (elapsed >= 3200 && elapsed < 3700) {
-        // [cl] 감속: cos(0→π/2) = 1→0 (관성 있게 서서히 멈춤, 500ms)
+        // [cl] 감속: 1 + cos(0→π/2) × 159 = 160→1 (정상 속도로 수렴)
         const t = (elapsed - 3200) / 500;
-        spinMult = Math.cos(t * Math.PI / 2) * 160;
+        spinMult = 1 + Math.cos(t * Math.PI / 2) * 159;
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_setWarpSpinMult?.(spinMult);
