@@ -258,6 +258,22 @@
   * `export const MOCK_EVENTS` = `[...EVENTS_15C, ...EVENTS_17C, ...EVENTS_18C, ...EVENTS_19C]` — 전 세기 통합.
   * 총 이벤트 수: 27 + 35 + 35 + 35 = **132개**.
 
+## [2026-02-25] [cl] 조준경 커서 개선 + 자전 고도 임계값 변경 + 스택 툴팁 구현
+* **자전 고도 임계값 조정**: ROTATION_STOP_DIST 3,000km / ROTATION_FADE_DIST 15,000km (기존 500km/2,000km)
+  * 3,000km 이하 완전 정지, 3,000~15,000km 선형 가속, 15,000km+ 정상 자전
+* **조준경 커서 DOM 오버레이 전환**: CSS 정적 커서 → `position:absolute` div + rAF 루프 애니메이션
+  * `makeReticleSvg(color, size)` 함수로 SVG 동적 생성 (기존 `RETICLE_CURSOR` 상수 대체)
+  * 기본 상태: 검정(#111111) 64px 정적 조준경
+  * 마커 호버 상태: 파랑 맥동 (사인곡선 scale 0.7~1.3, ~1.7초 주기)
+  * 변환 공식: `translate(mx,my) scale(s) translate(-S/2,-S/2)` → 스케일 변화 시에도 커서 중심 고정
+* **스택 툴팁 구현**: 커서 반경 30px(스크린 픽셀, 절대값) 내 마커 중첩 표시
+  * `SceneTransforms.worldToWindowCoordinates()` → 전체 132개 이벤트 스크린 좌표 변환 후 필터링
+  * 거리 기준 정렬, 최대 5개 항목 + "+N more" 표시 (투명도 단계별 감소)
+  * 가장 가까운 항목 font-weight:600, 나머지 400
+  * 표시 딜레이 250ms / 숨김 딜레이 450ms: 커서 빠른 이동 시 깜빡임 방지, 클릭 용이성 향상
+  * 이미 표시 중이면 즉시 내용/위치 갱신 (딜레이 없음)
+  * `markerHoverRef` 공유: 툴팁 useEffect ↔ 커서 useEffect 간 hover 상태 동기화
+
 ## [2026-02-25] [co] 실제 적재 시도 + 웹 데이터 확인 UI 추가
 * 진형(jn)의 요청으로 `dry-run`이 아닌 실제 DB 적재를 소범위(`event`, `1950`)로 실행 시도.
 * 실행 결과:
