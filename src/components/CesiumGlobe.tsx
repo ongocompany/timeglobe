@@ -150,6 +150,22 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
       destination: Cartesian3.fromDegrees(126.978, 0, initHeight),
       orientation: { heading: 0, pitch: CesiumMath.toRadians(-90), roll: 0 },
     });
+
+    // [cl] 지구 초기 타일 로드 완료 → Header/LocationIndicator에 globeReady 신호
+    let globeReadyFired = false;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const removeTileListener = (viewer.scene.globe.tileLoadProgressEvent as any).addEventListener(
+      (remaining: number) => {
+        if (remaining === 0 && !globeReadyFired) {
+          globeReadyFired = true;
+          window.dispatchEvent(new CustomEvent("timeglobe:globeReady"));
+          removeTileListener();
+        }
+      }
+    );
+    return () => {
+      try { removeTileListener(); } catch { /* 이미 제거됨 */ }
+    };
   }, [scene, viewer]);
 
   // [cl] CSS 대기 글로우: 매 프레임 지구 화면 좌표를 계산해서 방사형 그라데이션 오버레이
@@ -234,10 +250,14 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         (window as any).__timeglobe_cameraPitch = viewer.camera.pitch;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).__timeglobe_cameraHeading = viewer.camera.heading;
-        // [cl] 카메라 경도 공유: 자동 자전(rotateLeft)은 heading이 아닌 longitude를 변경하므로
-        // 궤도 회전 동기화에는 longitude가 필요
+        // [cl] 카메라 경도/위도/높이 공유: 자동 자전(rotateLeft)은 heading이 아닌 longitude를 변경하므로
+        // 궤도 회전 동기화에는 longitude가 필요, 위도+높이는 LocationIndicator가 사용
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).__timeglobe_cameraLongitude = viewer.camera.positionCartographic.longitude;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_cameraLatitude = viewer.camera.positionCartographic.latitude;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_cameraHeight = viewer.camera.positionCartographic.height;
 
         // [cl] 대기 글로우
         const glowSize = screenRadius * 2 * 1.75;
