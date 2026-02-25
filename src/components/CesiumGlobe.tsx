@@ -58,7 +58,7 @@ const DEFAULT_MARKER_COLOR = "#88AAFF";
 
 // [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
 const glowImageCache: Record<string, string> = {};
-function createGlowImage(color: string, size = 64): string {
+function createGlowImage(color: string, size = 96): string {
   if (glowImageCache[color]) return glowImageCache[color];
   const canvas = document.createElement("canvas");
   canvas.width = size;
@@ -420,10 +420,10 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         position: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 0),
         billboard: {
           image: glowImage,
-          width: 24,
-          height: 24,
+          width: 48,
+          height: 48,
           scale: 1.0,
-          scaleByDistance: new NearFarScalar(5e5, 2.0, 1.5e7, 0.5),
+          scaleByDistance: new NearFarScalar(5e5, 1.5, 1.5e7, 0.6),
         },
       });
     });
@@ -471,6 +471,62 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
 
     return () => {
       handler.destroy();
+    };
+  }, [viewer, markerMode]);
+
+  // [cl] Event Marker: 호버 툴팁 (마커 위 커서 올리면 제목+연도 표시)
+  useEffect(() => {
+    if (!viewer || !markerMode) return;
+
+    // [cl] 툴팁 HTML 요소 생성 (viewer 컨테이너 안에 절대 위치)
+    const tooltipEl = document.createElement("div");
+    tooltipEl.style.cssText = [
+      "position:absolute",
+      "pointer-events:none",
+      "background:rgba(8,8,18,0.90)",
+      "color:#fff",
+      "padding:6px 12px",
+      "border-radius:8px",
+      "font-size:13px",
+      "font-weight:600",
+      "white-space:nowrap",
+      "display:none",
+      "z-index:200",
+      "border:1px solid rgba(255,255,255,0.13)",
+      "backdrop-filter:blur(10px)",
+      "letter-spacing:0.02em",
+      "box-shadow:0 4px 18px rgba(0,0,0,0.5)",
+      "transition:opacity 0.1s",
+    ].join(";");
+    viewer.container.appendChild(tooltipEl);
+
+    const moveHandler = new ScreenSpaceEventHandler(viewer.canvas);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    moveHandler.setInputAction((movement: any) => {
+      const picked = viewer.scene.pick(movement.endPosition);
+      if (defined(picked) && defined(picked.id) && picked.id.id) {
+        const ev = eventsRef.current.find((e) => e.id === picked.id.id);
+        if (ev) {
+          const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
+          tooltipEl.innerHTML =
+            `<span style="color:${color};margin-right:6px;">●</span>` +
+            `${ev.title.ko}` +
+            `<span style="color:#999;font-weight:400;margin-left:6px;">${ev.start_year}</span>`;
+          tooltipEl.style.display = "block";
+          tooltipEl.style.left = `${movement.endPosition.x + 18}px`;
+          tooltipEl.style.top = `${movement.endPosition.y - 16}px`;
+          viewer.canvas.style.cursor = "pointer";
+          return;
+        }
+      }
+      tooltipEl.style.display = "none";
+      viewer.canvas.style.cursor = "";
+    }, ScreenSpaceEventType.MOUSE_MOVE);
+
+    return () => {
+      moveHandler.destroy();
+      tooltipEl.remove();
+      viewer.canvas.style.cursor = "";
     };
   }, [viewer, markerMode]);
 
