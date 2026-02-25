@@ -27,6 +27,7 @@ export default function TimeDial({
   const barRef = useRef<HTMLDivElement>(null);
   const tickContainerRef = useRef<HTMLDivElement>(null);
   const scrollAccumRef = useRef(0);
+  const dialSpeedRef = useRef(0); // [cl] 현재 스크롤 속도 (지수 가감속용, 프레임 간 유지)
   const [barWidth, setBarWidth] = useState(DIAL_WIDTH);
   const [scrambleYear, setScrambleYear] = useState(defaultYear);
 
@@ -40,32 +41,51 @@ export default function TimeDial({
     return () => window.removeEventListener("resize", measure);
   }, []);
 
-  // [cl] 워프 중 틱 스크롤: rAF → 직접 DOM transform (re-render 없이 성능 최적)
+  // [cl] 워프 중 틱 스크롤: rAF + 지수 가감속 (re-render 없이 성능 최적)
+  // 출발: 지수 접근 — 부드럽게 가속 (0 → PEAK)
+  // 정지: 지수 감쇠 — 관성 있게 서서히 멈춤 (PEAK → 0)
   useEffect(() => {
-    if (!warping) {
-      if (tickContainerRef.current) tickContainerRef.current.style.transform = "";
-      scrollAccumRef.current = 0;
-      return;
-    }
-
-    const direction = warpDirection === "past" ? 1 : -1; // past→오른쪽(+), future→왼쪽(-)
-    const speed = 280; // px/sec
+    const direction = warpDirection === "past" ? 1 : -1;
+    const PEAK = 280; // px/sec 최고 속도
     let lastTime = performance.now();
     let frameId = 0;
 
     const scroll = (now: number) => {
-      const dt = (now - lastTime) / 1000;
+      const dt = Math.min((now - lastTime) / 1000, 0.05); // [cl] dt 상한: 탭 전환 복귀 시 점프 방지
       lastTime = now;
-      scrollAccumRef.current += direction * speed * dt;
-      // [cl] SCROLL_PX(70px) 단위로 래핑 → 틱 패턴 반복이라 심리스 루프
-      scrollAccumRef.current = ((scrollAccumRef.current % SCROLL_PX) + SCROLL_PX) % SCROLL_PX;
-      if (tickContainerRef.current) {
-        tickContainerRef.current.style.transform = `translateX(${scrollAccumRef.current}px)`;
+
+      if (warping) {
+        // [cl] 지수 접근: speed += (목표-현재) × 0.06/frame → 부드러운 가속
+        dialSpeedRef.current += (PEAK - dialSpeedRef.current) * (1 - Math.pow(0.94, dt * 60));
+      } else {
+        // [cl] 지수 감쇠: speed × 0.96/frame → 관성 있는 감속 (꼬리가 길게)
+        dialSpeedRef.current *= Math.pow(0.96, dt * 60);
       }
-      frameId = requestAnimationFrame(scroll);
+
+      if (dialSpeedRef.current > 0.5) {
+        scrollAccumRef.current += direction * dialSpeedRef.current * dt;
+        // [cl] SCROLL_PX(70px) 단위 래핑 → 틱 패턴 반복이라 심리스 루프
+        scrollAccumRef.current = ((scrollAccumRef.current % SCROLL_PX) + SCROLL_PX) % SCROLL_PX;
+        if (tickContainerRef.current) {
+          tickContainerRef.current.style.transform = `translateX(${scrollAccumRef.current}px)`;
+        }
+        frameId = requestAnimationFrame(scroll);
+      } else {
+        // [cl] 완전 정지 — 깨끗하게 리셋
+        dialSpeedRef.current = 0;
+        scrollAccumRef.current = 0;
+        if (tickContainerRef.current) tickContainerRef.current.style.transform = "";
+      }
     };
 
-    frameId = requestAnimationFrame(scroll);
+    // [cl] warping=true이거나, 아직 감속 중(speed>0)이면 루프 시작
+    if (warping || dialSpeedRef.current > 0.5) {
+      frameId = requestAnimationFrame(scroll);
+    } else {
+      if (tickContainerRef.current) tickContainerRef.current.style.transform = "";
+      scrollAccumRef.current = 0;
+    }
+
     return () => cancelAnimationFrame(frameId);
   }, [warping, warpDirection]);
 
