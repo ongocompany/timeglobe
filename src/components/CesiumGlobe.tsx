@@ -431,8 +431,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       duration?: number;
       onComplete?: () => void;
     }) => {
-      // [cl] 디버그: 리셋 호출 추적
-      console.warn("[TimeGlobe] resetToDefault called", new Error().stack?.split("\n").slice(1, 4).join(" ← "));
       // [cl] ★ 보호 플래그: spin loop이 리셋 중 간섭 못 하게
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_resetTimestamp = Date.now();
@@ -461,8 +459,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).__timeglobe_warpResetCamera = () => {
       if (viewer.isDestroyed()) return;
-      // [cl] 디버그: 워프 리셋 호출 추적
-      console.warn("[TimeGlobe] warpResetCamera called", new Error().stack?.split("\n").slice(1, 4).join(" ← "));
       const pos = viewer.camera.positionCartographic;
       const targetHeight = calcDefaultHeight(viewer);
       viewer.camera.setView({
@@ -556,8 +552,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // Event Marker 모드: 줌/틸트/회전 모두 자유
   useEffect(() => {
     if (!viewer) return;
-    // [cl] 디버그: orbit/marker 모드 전환 추적
-    console.warn("[TimeGlobe] orbit/camera effect:", { orbitActive });
     const controller = viewer.scene.screenSpaceCameraController;
 
     if (orbitActive) {
@@ -754,30 +748,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             hoverTriggeredId = ev.id;
             const markerSx = nearby[0].sx, markerSy = nearby[0].sy;
             hoverTimer = setTimeout(() => {
-              // [cl] 카메라 위치 보존: onStackClick으로 인한 리렌더에서 카메라 리셋 방지
-              const carto = viewer.camera.positionCartographic;
-              const savedLon = carto.longitude;
-              const savedLat = carto.latitude;
-              const savedAlt = carto.height;
-              const savedH = viewer.camera.heading;
-              const savedP = viewer.camera.pitch;
-              const savedR = viewer.camera.roll;
-
               forceHideTooltipRef.current = true;
               onStackClickRef.current?.([ev], { x: markerSx, y: markerSy });
-
-              // [cl] 다음 프레임에 카메라 복원 (혹시 리셋되더라도 원위치)
-              requestAnimationFrame(() => {
-                if (viewer.isDestroyed()) return;
-                const cur = viewer.camera.positionCartographic;
-                // 고도 변화가 5% 이상이면 리셋 발생으로 판단 → 복원
-                if (Math.abs(cur.height - savedAlt) / savedAlt > 0.05) {
-                  viewer.camera.setView({
-                    destination: Cartesian3.fromRadians(savedLon, savedLat, savedAlt),
-                    orientation: { heading: savedH, pitch: savedP, roll: savedR },
-                  });
-                }
-              });
               hoverTimer = null;
             }, SHOW_DELAY);
           }
@@ -1165,6 +1137,9 @@ interface CesiumGlobeProps {
   warpPhase?: WarpPhase;
 }
 
+// [cl] ★ 모듈 레벨 상수: 렌더링마다 새 객체 생성 방지 → Viewer 재생성 차단
+const VIEWER_CONTEXT_OPTIONS = { webgl: { alpha: true } } as const;
+
 export default function CesiumGlobe({
   orbitActive = false,
   orbitPaused = false,
@@ -1179,7 +1154,7 @@ export default function CesiumGlobe({
     <Viewer
       full
       // [cl] alpha:true → 스카이박스 OFF 시 우주 영역 투명 → 뒤의 LightSpeed 비침
-      contextOptions={{ webgl: { alpha: true } }}
+      contextOptions={VIEWER_CONTEXT_OPTIONS}
       timeline={false}
       animation={false}
       homeButton={false}
