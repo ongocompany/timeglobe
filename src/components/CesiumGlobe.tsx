@@ -571,11 +571,14 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
 
     // [cl] setTimeout 대신 performance.now() + rAF 기반 타이밍
     // → setTimeout은 Cesium rAF 환경에서 신뢰도 낮음
+    const CONTENT_UPDATE_DELAY = 200; // [cl] 이미 표시 중 내용 갱신 딜레이
     let inRadius = false;
     let visible = false;
-    let enterTime = 0;  // [cl] 반경 진입 시각 (ms)
-    let exitTime = 0;   // [cl] 반경 이탈 시각 (ms), 0 = 미이탈
+    let enterTime = 0;        // [cl] 반경 진입 시각 (ms)
+    let exitTime = 0;         // [cl] 반경 이탈 시각 (ms), 0 = 미이탈
+    let contentChangedTime = 0; // [cl] 내용이 마지막으로 바뀐 시각
     let currentHtml = "";
+    let shownHtml = "";       // [cl] 현재 툴팁에 표시된 내용
     let currentX = 0, currentY = 0;
     let rafId: number;
 
@@ -614,7 +617,13 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         if (extra > 0) {
           rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
         }
-        currentHtml = rows.join("");
+        const newHtml = rows.join("");
+
+        // [cl] 내용이 바뀌었으면 변경 시각 기록 (rAF에서 딜레이 후 반영)
+        if (newHtml !== currentHtml) {
+          currentHtml = newHtml;
+          contentChangedTime = now;
+        }
         currentX = mx;
         currentY = my;
 
@@ -626,14 +635,17 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         }
 
         if (visible) {
-          // [cl] 이미 표시 중 → 위치만 업데이트 (내용은 표시 시점에 고정)
+          // [cl] 이미 표시 중 → 위치 즉시 업데이트 (내용은 rAF에서 딜레이 후 갱신)
           tooltipEl.style.left = `${mx + 20}px`;
           tooltipEl.style.top  = `${my - 16}px`;
         }
 
         markerHoverRef.current = true;
       } else {
-        currentHtml = "";
+        if (currentHtml !== "") {
+          currentHtml = "";
+          contentChangedTime = now;
+        }
         if (inRadius) {
           // [cl] 반경 이탈: exitTime 기록
           inRadius = false;
@@ -652,7 +664,8 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
       if (inRadius && !visible && enterTime > 0 && (now - enterTime) >= SHOW_DELAY) {
         if (currentHtml) {
           visible = true;
-          tooltipEl.innerHTML = currentHtml;
+          shownHtml = currentHtml;
+          tooltipEl.innerHTML = shownHtml;
           tooltipEl.style.left = `${currentX + 20}px`;
           tooltipEl.style.top  = `${currentY - 16}px`;
           tooltipEl.style.display = "block";
@@ -660,9 +673,18 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         enterTime = 0; // [cl] 한 번만 트리거
       }
 
+      // [cl] 내용 갱신 딜레이: 표시 중 내용이 바뀌고 CONTENT_UPDATE_DELAY ms 경과 → 갱신
+      if (visible && currentHtml !== shownHtml && contentChangedTime > 0 &&
+          (now - contentChangedTime) >= CONTENT_UPDATE_DELAY) {
+        shownHtml = currentHtml;
+        tooltipEl.innerHTML = shownHtml || "";
+        contentChangedTime = 0;
+      }
+
       // [cl] 숨김 딜레이: 반경 이탈 후 HIDE_DELAY ms 경과 → 툴팁 숨김
       if (!inRadius && visible && exitTime > 0 && (now - exitTime) >= HIDE_DELAY) {
         visible = false;
+        shownHtml = "";
         exitTime = 0;
         tooltipEl.style.display = "none";
       }
