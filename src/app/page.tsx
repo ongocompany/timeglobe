@@ -12,6 +12,7 @@ import TimeDial from "@/components/ui/TimeDial";
 import ControlBar from "@/components/ui/ControlBar";
 import HelpCard from "@/components/ui/HelpCard";
 import LightSpeed from "@/components/ui/LightSpeed";
+import YearReveal from "@/components/ui/YearReveal";
 import { MOCK_EVENTS } from "@/data/mockEvents";
 import type { MockEvent } from "@/data/mockEvents";
 
@@ -201,6 +202,7 @@ export default function Home() {
   const [globeDirection, setGlobeDirection] = useState<"left" | "right">("left");
   const [warpActive, setWarpActive] = useState(false);
   const [warpPhase, setWarpPhase] = useState<"idle" | "zoomout" | "hold" | "zoomin">("idle");
+  const [warpYearReveal, setWarpYearReveal] = useState(false);
   // [cl] 워프 속도 ref: sine 이징 애니메이션에서 매 프레임 LightSpeed에 주입
   const warpSpeedRef = useRef<number>(0);
   const warpingRef = useRef(false); // [cl] 중복 실행 방지 (state 클로저 우회)
@@ -252,7 +254,8 @@ export default function Home() {
     // [cl] 4200ms: LightSpeed 페이드아웃 시작
     setTimeout(() => setWarpActive(false), 4200);
 
-    // [cl] 4700ms: 스카이박스 복원 + idle + 정리
+    // [cl] 4700ms: 스카이박스 복원 + idle + 연도 리빌 시작
+    //   warpingRef는 YearReveal 완료 후 해제 (중복 워프 방지)
     setTimeout(() => {
       warpSpeedRef.current = 0;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -260,7 +263,7 @@ export default function Home() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__timeglobe_setWarpBackground?.("normal");
       setWarpPhase("idle");
-      warpingRef.current = false;
+      setWarpYearReveal(true);
     }, 4700);
 
     // [cl] rAF 루프: LightSpeed 속도(sine 벨 곡선) + 스핀 배율 연속 업데이트
@@ -335,6 +338,23 @@ export default function Home() {
           warpPhase={warpPhase}
         />
       </div>
+
+      {/* [cl] 연도 리빌 + 파티클 dissolve (z:3, 지구 바로 위) */}
+      {warpYearReveal && (
+        <div
+          className="fixed inset-0 pointer-events-none flex items-center justify-center"
+          style={{ zIndex: 3 }}
+        >
+          <YearReveal
+            year={currentYear}
+            visible={warpYearReveal}
+            onComplete={() => {
+              setWarpYearReveal(false);
+              warpingRef.current = false;
+            }}
+          />
+        </div>
+      )}
 
       {/* [cl] 좌상단 메뉴 — 로고 하단 세로 배치 */}
       <div
