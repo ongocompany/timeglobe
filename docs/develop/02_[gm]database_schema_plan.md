@@ -32,6 +32,7 @@
 * `historical_region` : `jsonb` (다국어 당시 국가/지역명, 예: `{"ko": "조선", "en": "Joseon Dynasty"}`)
 * `modern_country` : `jsonb` (다국어 현재 기준의 국가/지역명)
 * `image_url` : `text` (대표 이미지 URL)
+* `importance` : `smallint` (Default: `5`, range 1~10 — 마커 표시 우선순위. 타임 윈도우 필터링 시 카메라 줌 레벨과 결합하여 `importance >= threshold` 조건으로 렌더 이벤트 제어. 10=필수 랜드마크, 1=희귀 보조 이벤트)
 * `summary` : `jsonb` (다국어 핵심 요약 2~3줄 — orbit 카드 프리뷰용)
 * `description` : `jsonb` (다국어 상세 본문 설명 — 모달 펼침 시 표시, 분량 제한 없음)
 * `external_link` : `text` (나무위키 등 외부 링크 버튼을 위한 URL)

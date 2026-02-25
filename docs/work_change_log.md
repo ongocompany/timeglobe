@@ -213,6 +213,37 @@
   * `collect:probe` (`event`, `1950~1950`) 실행 성공
   * 결과: `rows=58`, `normalized=58`, `normalizeRate=100%`, `koLabelRate=89.66%`, `enLabelRate=100%`
 
+## [2026-02-25] [cl] 타임스케일 스펙 + DB 스키마 문서화
+* **타임스케일 T1~T7 설계 스펙 문서화** (`01_[gm]development_guide.md` 섹션 7 추가):
+  * T1(200년)~T7(1년) 비균등 계층 구조 표로 정리
+  * 연속 윈도우 규칙(Contiguous Window Rule): 최대 3단위, 반드시 연속된 단위만 선택 가능
+  * 구현 시기: Phase 2 (Supabase 연동) 때 본격 적용
+* **Events 테이블 `importance` 컬럼 추가** (`02_[gm]database_schema_plan.md`):
+  * `importance: smallint DEFAULT 5, range 1~10`
+  * 카메라 줌 레벨 + 타임 윈도우와 결합하여 마커 밀도 제어 예정
+
+## [2026-02-25] [cl] Event Marker 시인성 개선 + 호버 툴팁 + 헤더 애니메이션 + Dashboard
+* **Event Marker 시인성 개선**: 마커 크기 24px → 48px, Canvas 글로우 이미지 64px → 96px
+  * `scaleByDistance`: NearFarScalar(5e5, 2.0, 1.5e7, 0.5) → NearFarScalar(5e5, 1.5, 1.5e7, 0.6)
+* **마커 호버 툴팁 추가**: ScreenSpaceEventHandler MOUSE_MOVE로 Entity 감지 → `● 제목 연도` 툴팁 DOM 표시, 커서 pointer 전환
+* **Header 컴팩트 전환 애니메이션** (`src/components/ui/Header.tsx`):
+  * `timeglobe:globeReady` 이벤트 수신 시 대형 중앙 타이틀 → 좌상단 컴팩트 로고로 전환
+  * CSS `transition-all duration-1000` + `blur-md` 페이드 효과
+* **LocationIndicator 컴포넌트** 생성 후 Dashboard로 대체 (파일은 보관)
+* **Dashboard 컴포넌트** 신규 생성 (`src/components/ui/Dashboard.tsx`):
+  * 지명 브레드크럼: 대륙 → 소지역 → 역사적 지역명 → 도시 근처 (카메라 높이 기반 계층별 표시)
+  * 시대 연도: `| 1859년` (height < 2,000km 시 가장 가까운 이벤트 연도 표시)
+  * 좌표 표시: 화면 중심(중심) + 마우스 커서(커서) 지상 좌표 (라디안 → `47.42°N 19.05°E` 포맷)
+  * 고도 표시: `fmtHeight()` 함수로 m/km 자동 전환 (1,243 km 등)
+  * 폴링 방식: `window.__timeglobe_*` 글로벌 200ms 인터벌, prevRef 얕은 비교로 불필요한 리렌더 방지
+* **CesiumGlobe.tsx 확장** (Dashboard 지원을 위한 데이터 노출):
+  * `tileLoadProgressEvent` → `timeglobe:globeReady` 커스텀 이벤트 발행 (tiles 로딩 완료 시)
+  * rAF 루프에서 `__timeglobe_cameraLatitude`, `__timeglobe_cameraLongitude`, `__timeglobe_cameraHeight` 갱신
+  * 화면 중앙 레이캐스팅으로 지상 좌표 계산 → `__timeglobe_groundLat/Lng` 갱신
+  * MOUSE_MOVE 핸들러로 커서 지상 좌표 계산 → `__timeglobe_cursorLat/Lng` 갱신
+  * 고도 < 3,000km 시 커서 조준경(reticle) SVG 커서로 전환
+* **page.tsx**: `LocationIndicator` → `Dashboard` 교체
+
 ## [2026-02-25] [cl] 17c/18c/19c 역사 이벤트 목데이터 105개 추가 + mockEvents.ts 통합
 * 진형(jn)의 요청으로 다국어 런칭 대비 17~19세기 이벤트 데이터 신규 작성.
 * 각 세기별로 35개씩 총 105개의 역사 이벤트 MockData 생성 (기존 15c 27개 유지).
@@ -238,3 +269,38 @@
   * 환경변수(`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`) 누락 시 화면 경고 표시
 * 검증:
   * `npm run lint -- src/app/data-check/page.tsx` 통과.
+
+## [2026-02-25] [co] 세션 정리 기록 (재부팅 전 인수인계용)
+* 진형(jn)의 피드백(초보 사용자 기준)에 맞춰 데이터 확인 UI 단순화 진행.
+* 수정 파일:
+  * `src/app/data-check/page.tsx`
+* UI 변경 내용:
+  * React 훅 복잡도 축소(`useEffect/useCallback/useMemo` 제거)
+  * 버튼 클릭형 `데이터 불러오기` 방식으로 단순화
+  * 표(`table`) 중심의 HTML 형태 화면으로 정리
+  * 환경변수 누락/로딩/에러 메시지 직관적으로 표시
+* 쿼리/파이프라인 관련 현재 상태(핵심):
+  * `scripts/wikidata/sparqlTemplates.mjs`
+    * WDQS 경량화 반영 완료 (`P31/P279*` 제거, `SELECT DISTINCT`, OPTIONAL 축소, 시간 UNION)
+  * `scripts/wikidata/normalizer.mjs`
+    * 연도 파싱 버그 수정 완료 (`YYYY-...` 형식 처리)
+  * `scripts/wikidata/run.mjs`
+    * `probe`/`dry-run` 모드로 DB 적재 없이 품질 리포트 생성 가능
+* 실행 결과 요약:
+  * `collect:probe` 소범위(`event`, `1950`) 성공
+    * `rows=58`, `normalized=58`, `normalizeRate=100%`
+  * 실제 적재(backfill) 시도는 Supabase 환경변수 미설정으로 중단
+    * 필요 키: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
+* 현시점 미완료/대기 항목:
+  * `.env.local`에 Supabase 4개 키 입력 필요
+    * `NEXT_PUBLIC_SUPABASE_URL`
+    * `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+    * `SUPABASE_URL`
+    * `SUPABASE_SERVICE_ROLE_KEY`
+  * 입력 후 재실행 순서:
+    1. `node scripts/wikidata/run.mjs --mode backfill --types event --year-from 1950 --year-to 1950`
+    2. `http://localhost:3000/data-check`에서 실제 DB 반영 확인
+* 참고 산출물 경로:
+  * 기획: `docs/develop/05_[co]wikidata_collection_operating_plan.md`
+  * 실행문서: `docs/develop/06_[co]wikidata_pipeline_runbook.md`
+  * probe 리포트: `.cache/probe-1950-event.json`, `.cache/probe-1950-1955-event.json`
