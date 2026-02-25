@@ -225,7 +225,14 @@ export default function Home() {
           onClick={() => setViewMode((v) => (v === "orbit" ? null : "orbit"))}
           className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group"
         >
-          <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-200 ${viewMode === "orbit" ? "bg-white scale-125" : "bg-white/30 group-hover:bg-white/60"}`} />
+          {/* [cl] 삼각형 인디케이터: 비선택=▶, 선택=▼ (90도 회전) */}
+          <svg
+            width="7" height="8" viewBox="0 0 7 8" fill="currentColor"
+            className={`flex-shrink-0 transition-all duration-300 ease-in-out ${viewMode === "orbit" ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
+            style={{ transform: viewMode === "orbit" ? "rotate(90deg)" : "rotate(0deg)" }}
+          >
+            <path d="M1 1L6.5 4L1 7Z" />
+          </svg>
           <span className={`transition-colors duration-200 ${viewMode === "orbit" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Orbit</span>
         </button>
 
@@ -235,9 +242,15 @@ export default function Home() {
             onClick={() => setViewMode((v) => (v === "marker" ? null : "marker"))}
             className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group w-full"
           >
-            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-200 ${viewMode === "marker" ? "bg-white scale-125" : "bg-white/30 group-hover:bg-white/60"}`} />
+            {/* [cl] 삼각형 인디케이터: 비선택=▶, 선택=▼ (90도 회전) */}
+            <svg
+              width="7" height="8" viewBox="0 0 7 8" fill="currentColor"
+              className={`flex-shrink-0 transition-all duration-300 ease-in-out ${viewMode === "marker" ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
+              style={{ transform: viewMode === "marker" ? "rotate(90deg)" : "rotate(0deg)" }}
+            >
+              <path d="M1 1L6.5 4L1 7Z" />
+            </svg>
             <span className={`transition-colors duration-200 ${viewMode === "marker" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Marker</span>
-            <span className={`ml-2 text-white/35 text-sm transition-transform duration-300 ${viewMode === "marker" ? "rotate-90" : ""}`}>›</span>
           </button>
 
           {/* [cl] 아코디언: 카테고리 다중 선택 */}
