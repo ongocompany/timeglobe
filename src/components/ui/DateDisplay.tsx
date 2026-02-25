@@ -22,32 +22,17 @@ export default function DateDisplay() {
 
     return (
         <div
-            className="absolute right-0 w-48 z-20 pointer-events-none flex justify-center"
-            style={{
-                // [cl] 타임바 600px 영역의 상단 = (100vh - 600px) / 2
-                // 거기서 카드 높이 + 50px 위로
-                top: "calc((100vh - 600px) / 2 - 130px)",
-            }}
+            className="absolute right-6 top-5 z-20 pointer-events-none text-right"
+            style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
         >
+            <div className="text-xs font-semibold tracking-wider text-white/80">
+                {year}년 {month}월 {day}일
+            </div>
             <div
-                className="rounded-xl border border-white/15 px-6 py-4 backdrop-blur-sm"
-                style={{ background: "rgba(30, 30, 30, 0.4)" }}
+                className="mt-0.5 text-white/45 tracking-widest"
+                style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "0.65rem" }}
             >
-                <div
-                    className="text-center text-white"
-                    style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
-                >
-                    <div className="text-3xl font-bold tracking-wider">{year}</div>
-                    <div className="text-sm font-light mt-1 text-white/70">
-                        {month}월 {day}일
-                    </div>
-                    <div
-                        className="text-xs mt-1 text-white/50 tracking-widest"
-                        style={{ fontFamily: "var(--font-geist-mono), monospace" }}
-                    >
-                        {period} {displayHours}:{minutes}:{seconds}
-                    </div>
-                </div>
+                {period} {displayHours}:{minutes}:{seconds}
             </div>
         </div>
     );

@@ -5,7 +5,6 @@ import { useState } from "react";
 import GlobeLoader from "@/components/GlobeLoader";
 import Header from "@/components/ui/Header";
 import DateDisplay from "@/components/ui/DateDisplay";
-import Timeline from "@/components/ui/Timeline";
 import Carousel3D, { type CarouselCard } from "@/components/ui/Carousel3D";
 import { EventDetailContent } from "@/components/ui/HistoryEventModal";
 import Dashboard from "@/components/ui/Dashboard";
@@ -22,6 +21,15 @@ const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
 
 // [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
 type ViewMode = "orbit" | "marker" | null;
+
+// [cl] 마커 카테고리 정의 (CesiumGlobe 색상과 동일)
+const MARKER_CATEGORIES = [
+  { name: "정치/전쟁",   color: "#ae2012", desc: "전쟁·혁명·조약" },
+  { name: "인물/문화",   color: "#0a9396", desc: "인물·예술·종교" },
+  { name: "과학/발명",   color: "#6a4c93", desc: "발명·탐험·의학" },
+  { name: "건축/유물",   color: "#ee9b00", desc: "건축·유적·유물" },
+  { name: "자연재해/지질", color: "#ca6702", desc: "화산·지진·재해" },
+];
 
 // [cl] 스택/단독 마커 캐러셀: 커서 위치에 카드 배열, 클릭한 카드가 직접 확장
 // 밖 클릭 시 카드들이 랜덤 방향으로 흩어지며 사라짐, 배경 컨테이너 없이 개별 그림자
@@ -181,8 +189,15 @@ function StackCarousel({
 
 export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>(null);
-  // [cl] 마커 클릭 상태: 단독/스택 모두 StackCarousel로 통합
   const [stackState, setStackState] = useState<{ events: MockEvent[]; pos: { x: number; y: number } } | null>(null);
+  // [cl] 마커 카테고리 다중 선택 (기본: 전체 선택)
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(
+    MARKER_CATEGORIES.map((c) => c.name)
+  );
+  const toggleCategory = (name: string) =>
+    setSelectedCategories((prev) =>
+      prev.includes(name) ? prev.filter((c) => c !== name) : [...prev, name]
+    );
   const carouselOpen = viewMode === "orbit";
 
   return (
@@ -190,7 +205,6 @@ export default function Home() {
       <Header />
       <Dashboard events={MOCK_EVENTS} />
       <DateDisplay />
-      <Timeline />
       <TimeDial defaultYear={1875} />
 
       {/* [cl] 지구본: orbit/marker 모드 전달 */}
@@ -201,31 +215,68 @@ export default function Home() {
         onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
       />
 
-      {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[60] flex gap-3 pointer-events-auto">
+      {/* [cl] 좌상단 메뉴 — 로고 하단 세로 배치 */}
+      <div
+        className="absolute left-6 z-[60] flex flex-col gap-0.5 pointer-events-auto"
+        style={{ top: 52, fontFamily: "var(--font-noto-sans), sans-serif" }}
+      >
+        {/* Event Orbit */}
         <button
           onClick={() => setViewMode((v) => (v === "orbit" ? null : "orbit"))}
-          className={`px-5 py-2.5 rounded-full backdrop-blur-md border text-sm uppercase tracking-widest transition-all duration-300 ${
-            viewMode === "orbit"
-              ? "bg-white/25 border-white/40 text-white"
-              : "bg-white/10 border-white/20 text-white/60 hover:bg-white/15"
-          }`}
-          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+          className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group"
         >
-          Event Orbit
+          <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-200 ${viewMode === "orbit" ? "bg-white scale-125" : "bg-white/30 group-hover:bg-white/60"}`} />
+          <span className={`transition-colors duration-200 ${viewMode === "orbit" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Orbit</span>
         </button>
-        <button
-          onClick={() => setViewMode((v) => (v === "marker" ? null : "marker"))}
-          className={`px-5 py-2.5 rounded-full backdrop-blur-md border text-sm uppercase tracking-widest transition-all duration-300 ${
-            viewMode === "marker"
-              ? "bg-white/25 border-white/40 text-white"
-              : "bg-white/10 border-white/20 text-white/60 hover:bg-white/15"
-          }`}
-          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
-        >
-          Event Marker
-        </button>
-        {/* [cl] 카메라 리셋: 적도 기본 뷰로 복귀 (마커 탐색 후 복원 등에 활용) */}
+
+        {/* Event Marker + 아코디언 */}
+        <div>
+          <button
+            onClick={() => setViewMode((v) => (v === "marker" ? null : "marker"))}
+            className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group w-full"
+          >
+            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-200 ${viewMode === "marker" ? "bg-white scale-125" : "bg-white/30 group-hover:bg-white/60"}`} />
+            <span className={`transition-colors duration-200 ${viewMode === "marker" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Event Marker</span>
+            <span className={`ml-2 text-white/35 text-sm transition-transform duration-300 ${viewMode === "marker" ? "rotate-90" : ""}`}>›</span>
+          </button>
+
+          {/* [cl] 아코디언: 카테고리 다중 선택 */}
+          <div
+            className="overflow-hidden transition-all duration-300 ease-in-out"
+            style={{ maxHeight: viewMode === "marker" ? "200px" : "0px", opacity: viewMode === "marker" ? 1 : 0 }}
+          >
+            <div className="pl-5 pt-1 pb-1 flex flex-col gap-2">
+              {MARKER_CATEGORIES.map((cat) => {
+                const selected = selectedCategories.includes(cat.name);
+                return (
+                  <button
+                    key={cat.name}
+                    onClick={() => toggleCategory(cat.name)}
+                    className="flex items-center gap-2 group text-left"
+                  >
+                    {/* [cl] 컬러 도트 — 선택 시 글로우 */}
+                    <span
+                      className="w-2.5 h-2.5 rounded-full border flex-shrink-0 transition-all duration-200"
+                      style={{
+                        backgroundColor: selected ? cat.color : "transparent",
+                        borderColor: selected ? cat.color : "rgba(255,255,255,0.22)",
+                        boxShadow: selected ? `0 0 6px ${cat.color}90` : "none",
+                      }}
+                    />
+                    <span className={`text-xs transition-colors duration-200 ${selected ? "text-white/85" : "text-white/38 group-hover:text-white/65"}`}>
+                      {cat.name}
+                    </span>
+                    <span className={`text-[10px] transition-colors duration-200 ${selected ? "text-white/35" : "text-white/18"}`}>
+                      {cat.desc}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Reset View */}
         <button
           onClick={() => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -234,9 +285,9 @@ export default function Home() {
             const reset = (window as any).__timeglobe_resetToDefault;
             if (reset) reset();
           }}
-          className="px-5 py-2.5 rounded-full backdrop-blur-md border text-sm uppercase tracking-widest transition-all duration-300 bg-white/10 border-white/20 text-white/60 hover:bg-white/15"
-          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+          className="flex items-center gap-2.5 px-2 py-1.5 text-xs uppercase tracking-wider text-white/25 hover:text-white/55 transition-colors duration-200 group"
         >
+          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-white/15 group-hover:bg-white/40 transition-all duration-200" />
           Reset View
         </button>
       </div>

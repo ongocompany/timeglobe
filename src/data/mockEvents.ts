@@ -668,10 +668,130 @@ const EVENTS_15C: MockEvent[] = [
   },
 ];
 
-// [cl] 15c + 17c + 18c + 19c 통합 배열 → 전체 프로젝트에서 이 배열 사용
+// [cl] 자연재해/지질 이벤트 (Mock 샘플)
+const EVENTS_NATURAL: MockEvent[] = [
+  {
+    id: "nat-001",
+    era_id: "era-medieval",
+    title: { ko: "백두산 천지 대분화", en: "Paektu Mountain Millennium Eruption" },
+    start_year: 946,
+    end_year: null,
+    category: "자연재해/지질",
+    location_lat: 42.005,
+    location_lng: 128.055,
+    is_fog_region: false,
+    historical_region: { ko: "발해/고려 접경", en: "Balhae-Goryeo Border" },
+    modern_country: { ko: "북한/중국", en: "North Korea/China" },
+    image_url: "https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?auto=format&fit=crop&w=800&q=80",
+    summary: {
+      ko: "946년 백두산이 역사상 최대 규모의 화산 폭발 중 하나로 분화하여 동아시아 일대에 막대한 피해를 입혔다.",
+      en: "In 946, Paektu Mountain erupted in one of the largest volcanic events in history, causing massive devastation across East Asia.",
+    },
+    description: {
+      ko: "946년(또는 947년) 백두산은 화산폭발지수(VEI) 7에 해당하는 초대형 분화를 일으켰다. '천년 분화(Millennium Eruption)'로 불리는 이 사건은 일본 혼슈 북부까지 두꺼운 화산재를 뒤덮었으며, 발해 문명의 쇠퇴에 영향을 주었다는 설이 있다. 천지 칼데라는 이 분화로 형성된 것으로 추정된다.",
+      en: "In 946 (or 947), Paektu Mountain produced a colossal eruption with a Volcanic Explosivity Index (VEI) of 7. Known as the 'Millennium Eruption,' it blanketed northern Honshu, Japan, with thick volcanic ash and may have contributed to the decline of the Balhae civilization. The Cheonji caldera lake is thought to have formed during this eruption.",
+    },
+    external_link: "https://namu.wiki/w/백두산/화산 활동",
+  },
+  {
+    id: "nat-002",
+    era_id: "era-ancient",
+    title: { ko: "베수비오 화산 폭발 — 폼페이 매몰", en: "Eruption of Vesuvius — Pompeii Buried" },
+    start_year: 79,
+    end_year: null,
+    category: "자연재해/지질",
+    location_lat: 40.8216,
+    location_lng: 14.4268,
+    is_fog_region: false,
+    historical_region: { ko: "로마 제국 캄파니아", en: "Campania, Roman Empire" },
+    modern_country: { ko: "이탈리아", en: "Italy" },
+    image_url: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?auto=format&fit=crop&w=800&q=80",
+    summary: {
+      ko: "서기 79년 베수비오 화산이 폭발하여 폼페이, 헤르쿨라네움 등 도시를 화산재 아래 영구히 매몰시켰다.",
+      en: "In 79 AD, Mount Vesuvius erupted, permanently burying the cities of Pompeii and Herculaneum under volcanic ash.",
+    },
+    description: {
+      ko: "79년 8월 24일(또는 10월 24일) 베수비오 화산이 갑작스럽게 폭발하여 폼페이, 헤르쿨라네움, 스타비아이 등을 화산재와 용암류로 덮었다. 약 2,000명이 폼페이에서만 사망한 것으로 추정되며, 소(小)플리니우스가 목격담을 남겼다. 1748년 발굴이 시작되어 고대 로마의 일상을 생생히 보여주는 고고학적 보물이 되었다.",
+      en: "On August 24 (or October 24), 79 AD, Vesuvius erupted suddenly, burying Pompeii, Herculaneum, and Stabiae under ash and pyroclastic flows. Around 2,000 people perished in Pompeii alone. The younger Pliny recorded eyewitness accounts. Excavations beginning in 1748 revealed an extraordinary archaeological treasure showing daily Roman life in vivid detail.",
+    },
+    external_link: "https://namu.wiki/w/폼페이",
+  },
+  {
+    id: "nat-003",
+    era_id: "era-16c",
+    title: { ko: "산시(陝西) 대지진", en: "Shaanxi Earthquake" },
+    start_year: 1556,
+    end_year: null,
+    category: "자연재해/지질",
+    location_lat: 34.5,
+    location_lng: 109.7,
+    is_fog_region: false,
+    historical_region: { ko: "명나라 산시성", en: "Shaanxi Province, Ming Dynasty" },
+    modern_country: { ko: "중국", en: "China" },
+    image_url: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=800&q=80",
+    summary: {
+      ko: "1556년 중국 산시성에서 발생한 규모 약 8.0의 대지진으로 약 83만 명이 사망해 인류 역사상 가장 많은 사망자를 낸 지진으로 기록된다.",
+      en: "The 1556 Shaanxi earthquake (~M8.0) killed approximately 830,000 people, making it the deadliest earthquake in recorded history.",
+    },
+    description: {
+      ko: "1556년 1월 23일 새벽 중국 산시성을 강타한 대지진은 추정 규모 7.9~8.0으로 약 830,000명의 목숨을 앗아갔다. 당시 인구가 밀집한 황토 동굴(요동)에 살던 주민들이 무너진 동굴에 매몰되어 대규모 사망이 발생했다. 97개 현이 피해를 입었으며 일부 지역은 인구의 60%가 사망했다.",
+      en: "Striking in the early morning of January 23, 1556, the Shaanxi earthquake (est. M7.9–8.0) killed approximately 830,000 people. Mass casualties resulted from the collapse of densely populated loess cave dwellings (yaodong). Ninety-seven counties were affected, with some regions losing 60% of their population.",
+    },
+    external_link: "https://namu.wiki/w/산시 대지진",
+  },
+  {
+    id: "nat-004",
+    era_id: "era-18c",
+    title: { ko: "리스본 대지진", en: "1755 Lisbon Earthquake" },
+    start_year: 1755,
+    end_year: null,
+    category: "자연재해/지질",
+    location_lat: 38.7169,
+    location_lng: -9.1399,
+    is_fog_region: false,
+    historical_region: { ko: "포르투갈 왕국", en: "Kingdom of Portugal" },
+    modern_country: { ko: "포르투갈", en: "Portugal" },
+    image_url: "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&w=800&q=80",
+    summary: {
+      ko: "1755년 11월 1일 만성절 아침, 규모 8.5~9.0의 대지진이 리스본을 강타하고 쓰나미와 화재가 뒤따라 최대 10만 명이 사망했다.",
+      en: "On the morning of All Saints' Day, November 1, 1755, a magnitude 8.5–9.0 earthquake struck Lisbon, followed by tsunami and fires, killing up to 100,000 people.",
+    },
+    description: {
+      ko: "1755년 11월 1일 아침 9시 40분경 규모 8.5~9.0의 초대형 지진이 리스본을 강타했다. 지진, 쓰나미(최고 파고 약 15m), 화재의 3중 재난으로 리스본의 85%가 파괴되었으며 3만~10만 명이 사망했다. 이 재앙은 유럽 지식인들에게 신의 섭리에 대한 심각한 철학적 물음을 던졌고, 볼테르의 『캉디드』와 루소의 계몽주의 논쟁에 영향을 주었다.",
+      en: "At around 9:40 AM on November 1, 1755, a massive earthquake (M8.5–9.0) struck Lisbon. A triple disaster of earthquake, tsunami (waves up to ~15m), and fire destroyed 85% of the city and killed 30,000–100,000 people. The catastrophe prompted profound philosophical debate among European intellectuals about divine providence, influencing Voltaire's Candide and Rousseau's Enlightenment arguments.",
+    },
+    external_link: "https://namu.wiki/w/리스본 대지진",
+  },
+  {
+    id: "nat-005",
+    era_id: "era-19c",
+    title: { ko: "크라카타우 화산 폭발", en: "Eruption of Krakatoa" },
+    start_year: 1883,
+    end_year: null,
+    category: "자연재해/지질",
+    location_lat: -6.102,
+    location_lng: 105.423,
+    is_fog_region: false,
+    historical_region: { ko: "네덜란드령 동인도", en: "Dutch East Indies" },
+    modern_country: { ko: "인도네시아", en: "Indonesia" },
+    image_url: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80",
+    summary: {
+      ko: "1883년 8월 27일 크라카타우 화산이 대폭발하여 쓰나미와 화산재로 약 36,000명이 사망하고 전 지구적 기후 이상을 초래했다.",
+      en: "On August 27, 1883, Krakatoa erupted catastrophically, killing ~36,000 people via tsunami and ash, and causing global climate anomalies.",
+    },
+    description: {
+      ko: "1883년 8월 26~27일 인도네시아 순다 해협의 크라카타우 섬이 폭발하여 약 36,000명이 사망했다. 폭발음은 4,800km 이상 떨어진 오스트레일리아까지 들렸으며, 높이 30m에 달하는 쓰나미가 자바와 수마트라 해안 마을을 덮쳤다. 화산재가 성층권까지 올라가 지구 평균 기온을 약 1.2°C 낮추었고, 전 세계에서 붉은 노을이 관측되었다. 뭉크의 '절규'가 이 때의 이상한 하늘에서 영감을 받았다는 설이 있다.",
+      en: "From August 26–27, 1883, Krakatoa island in Indonesia's Sunda Strait erupted catastrophically, killing ~36,000 people. The explosion was heard up to 4,800 km away in Australia, and tsunamis up to 30m high devastated coastal villages in Java and Sumatra. Volcanic ash in the stratosphere lowered global temperatures by ~1.2°C and produced spectacular red sunsets worldwide. Munch's 'The Scream' is said to have been inspired by the eerie skies.",
+    },
+    external_link: "https://namu.wiki/w/크라카타우",
+  },
+];
+
+// [cl] 15c + 17c + 18c + 19c + 자연재해 통합 배열 → 전체 프로젝트에서 이 배열 사용
 export const MOCK_EVENTS: MockEvent[] = [
   ...EVENTS_15C,
   ...EVENTS_17C,
   ...EVENTS_18C,
   ...EVENTS_19C,
+  ...EVENTS_NATURAL,
 ];
