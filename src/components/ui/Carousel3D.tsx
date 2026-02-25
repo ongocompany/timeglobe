@@ -343,6 +343,15 @@ export default function Carousel3D({ items, isOpen, onClose, onCardClick, render
                     className="w-full h-full object-cover pointer-events-none"
                     loading="lazy"
                   />
+                  {/* [cl] 항상 표시되는 카드 제목 */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 pointer-events-none"
+                    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%)", padding: "18px 8px 6px" }}
+                  >
+                    <p style={{ margin: 0, color: "#fff", fontSize: "10px", fontWeight: 600, lineHeight: 1.3, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
+                      {item.title}
+                    </p>
+                  </div>
 
                   <div
                     className="absolute bottom-0 left-0 right-0 pointer-events-none transition-opacity duration-600"

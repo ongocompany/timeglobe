@@ -118,9 +118,10 @@ interface SceneSetupProps {
   markerMode: boolean;
   events: MockEvent[];
   onMarkerClick?: (event: MockEvent) => void;
+  onStackClick?: (events: MockEvent[]) => void;
 }
 
-function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSetupProps) {
+function SceneSetup({ orbitActive, markerMode, events, onMarkerClick, onStackClick }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -139,6 +140,11 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
   // [cl] onMarkerClick ref
   const onMarkerClickRef = useRef(onMarkerClick);
   useEffect(() => { onMarkerClickRef.current = onMarkerClick; }, [onMarkerClick]);
+  // [cl] onStackClick ref
+  const onStackClickRef = useRef(onStackClick);
+  useEffect(() => { onStackClickRef.current = onStackClick; }, [onStackClick]);
+  // [cl] 툴팁 강제 숨김 ref: 스택 클릭 시 툴팁 즉시 제거
+  const forceHideTooltipRef = useRef(false);
   // [cl] events ref
   const eventsRef = useRef(events);
   useEffect(() => { eventsRef.current = events; }, [events]);
@@ -513,47 +519,59 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     handler.setInputAction((click: any) => {
       const picked = viewer.scene.pick(click.position);
-      if (defined(picked) && defined(picked.id) && picked.id.id) {
-        const ev = eventsRef.current.find((e) => e.id === picked.id.id);
-        if (ev) {
-          // [cl] flyTo 직전 카메라 상태 저장 → 모달 닫을 때 복귀용
-          const prevPos = viewer.camera.positionCartographic.clone();
-          const prevHeading = viewer.camera.heading;
-          const prevPitch   = viewer.camera.pitch;
-          const prevRoll    = viewer.camera.roll;
+      if (!defined(picked) || !defined(picked?.id) || !picked.id.id) return;
 
-          // [cl] 모달 닫기 시 원래 위치/각도로 flyBack
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (window as any).__timeglobe_flyBack = () => {
-            markerFocusedRef.current = false;
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).__timeglobe_markerFocused = false;
-            viewer.camera.flyTo({
-              destination: Cartesian3.fromRadians(prevPos.longitude, prevPos.latitude, prevPos.height),
-              orientation: { heading: prevHeading, pitch: prevPitch, roll: prevRoll },
-              duration: 1.2,
-            });
-          };
-
-          // [cl] 카메라 flyTo: 해당 위치로 비스듬히 접근
-          viewer.camera.flyTo({
-            destination: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 2_000_000),
-            orientation: {
-              heading: 0,
-              pitch: CesiumMath.toRadians(-45),
-              roll: 0,
-            },
-            duration: 1.5,
-          });
-
-          // [cl] 자전 정지 플래그
-          markerFocusedRef.current = true;
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (window as any).__timeglobe_markerFocused = true;
-
-          onMarkerClickRef.current?.(ev);
-        }
+      // [cl] 클릭 위치 30px 반경 내 모든 마커 탐색 (스택 감지)
+      const cx = click.position.x, cy = click.position.y;
+      const nearbyEvents: MockEvent[] = [];
+      for (const ev of eventsRef.current) {
+        const pos3d = Cartesian3.fromDegrees(ev.location_lng, ev.location_lat);
+        const sp = SceneTransforms.worldToWindowCoordinates(viewer.scene, pos3d);
+        if (!defined(sp)) continue;
+        if (Math.sqrt((cx - sp.x) ** 2 + (cy - sp.y) ** 2) < 30) nearbyEvents.push(ev);
       }
+
+      // [cl] 스택(2개 이상): 툴팁 숨기고 미니 캐러셀 팝업
+      if (nearbyEvents.length > 1) {
+        forceHideTooltipRef.current = true;
+        onStackClickRef.current?.(nearbyEvents);
+        return;
+      }
+
+      // [cl] 단독 마커: flyTo + 모달
+      const ev = nearbyEvents[0] ?? eventsRef.current.find((e) => e.id === picked.id.id);
+      if (!ev) return;
+
+      // [cl] flyTo 직전 카메라 상태 저장 → 모달 닫을 때 복귀용
+      const prevPos = viewer.camera.positionCartographic.clone();
+      const prevHeading = viewer.camera.heading;
+      const prevPitch   = viewer.camera.pitch;
+      const prevRoll    = viewer.camera.roll;
+
+      // [cl] 모달 닫기 시 원래 위치/각도로 flyBack
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_flyBack = () => {
+        markerFocusedRef.current = false;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_markerFocused = false;
+        viewer.camera.flyTo({
+          destination: Cartesian3.fromRadians(prevPos.longitude, prevPos.latitude, prevPos.height),
+          orientation: { heading: prevHeading, pitch: prevPitch, roll: prevRoll },
+          duration: 1.2,
+        });
+      };
+
+      // [cl] 카메라 flyTo: 해당 위치로 비스듬히 접근
+      viewer.camera.flyTo({
+        destination: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 2_000_000),
+        orientation: { heading: 0, pitch: CesiumMath.toRadians(-45), roll: 0 },
+        duration: 1.5,
+      });
+
+      markerFocusedRef.current = true;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_markerFocused = true;
+      onMarkerClickRef.current?.(ev);
     }, ScreenSpaceEventType.LEFT_CLICK);
 
     return () => {
@@ -561,141 +579,180 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
     };
   }, [viewer, markerMode]);
 
-  // [cl] Event Marker: 30px 반경 스택 툴팁 (고도 높을수록 다수 → 확대하면 자연 분리)
-  // 인/아웃 딜레이로 빠른 커서 이동 시 깜빡임 방지
+  // [cl] Event Marker: 30px 반경 스택 툴팁 / 이미지 팝업 (고도 분기)
+  // - 고도 > 1500km: 항상 텍스트 툴팁
+  // - 고도 ≤ 1500km + 단독 마커: 이미지 카드 팝업 (3:4, 제목 포함)
+  // - 고도 ≤ 1500km + 스택:  텍스트 툴팁 유지
   useEffect(() => {
     if (!viewer || !markerMode) return;
 
-    const HOVER_RADIUS = 30; // [cl] 스크린 픽셀 반경 (절대값)
-    const SHOW_DELAY   = 250; // [cl] 툴팁 표시 딜레이 (ms)
-    const HIDE_DELAY   = 450; // [cl] 툴팁 숨김 딜레이 (ms)
-    const MAX_DISPLAY  = 5;   // [cl] 최대 표시 항목 수
+    const HOVER_RADIUS       = 30;
+    const SHOW_DELAY         = 250;
+    const HIDE_DELAY         = 450;
+    const CONTENT_UPDATE_DELAY = 200;
+    const MAX_DISPLAY        = 5;
+    const ALT_THRESHOLD      = 1_500_000; // [cl] 1500km
+    const CARD_W             = 140;
+    const CARD_H             = 187; // [cl] 3:4 비율
 
-    const tooltipEl = document.createElement("div");
-    tooltipEl.style.cssText = [
-      "position:absolute",
-      "pointer-events:none",
-      "background:rgba(8,8,18,0.92)",
-      "color:#fff",
-      "padding:8px 14px",
-      "border-radius:10px",
-      "font-size:13px",
-      "white-space:nowrap",
-      "display:none",
-      "z-index:200",
-      "border:1px solid rgba(255,255,255,0.13)",
-      "backdrop-filter:blur(12px)",
-      "letter-spacing:0.02em",
-      "box-shadow:0 4px 20px rgba(0,0,0,0.55)",
+    // [cl] 텍스트 툴팁 기본 스타일
+    const TEXT_STYLES = [
+      "position:absolute", "pointer-events:none",
+      "background:rgba(8,8,18,0.92)", "color:#fff",
+      "padding:8px 14px", "border-radius:10px", "font-size:13px",
+      "white-space:nowrap", "display:none", "z-index:200",
+      "border:1px solid rgba(255,255,255,0.13)", "backdrop-filter:blur(12px)",
+      "letter-spacing:0.02em", "box-shadow:0 4px 20px rgba(0,0,0,0.55)",
       "min-width:160px",
     ].join(";");
+
+    // [cl] 이미지 카드 팝업 기본 스타일
+    const IMAGE_STYLES = [
+      "position:absolute", "pointer-events:none",
+      `width:${CARD_W}px`, `height:${CARD_H}px`,
+      "border-radius:10px", "overflow:hidden", "display:none",
+      "z-index:200", "background:#111",
+      "box-shadow:0 8px 28px rgba(0,0,0,0.65)",
+      "border:1px solid rgba(255,255,255,0.15)",
+    ].join(";");
+
+    const tooltipEl = document.createElement("div");
+    tooltipEl.style.cssText = TEXT_STYLES;
     viewer.container.appendChild(tooltipEl);
 
-    // [cl] setTimeout 대신 performance.now() + rAF 기반 타이밍
-    // → setTimeout은 Cesium rAF 환경에서 신뢰도 낮음
-    const CONTENT_UPDATE_DELAY = 200; // [cl] 이미 표시 중 내용 갱신 딜레이
+    let mode: "text" | "image" = "text";
     let inRadius = false;
     let visible = false;
-    let enterTime = 0;        // [cl] 반경 진입 시각 (ms)
-    let exitTime = 0;         // [cl] 반경 이탈 시각 (ms), 0 = 미이탈
-    let contentChangedTime = 0; // [cl] 내용이 마지막으로 바뀐 시각
+    let enterTime = 0;
+    let exitTime = 0;
+    let contentChangedTime = 0;
     let currentHtml = "";
-    let shownHtml = "";       // [cl] 현재 툴팁에 표시된 내용
-    let currentX = 0, currentY = 0;
+    let shownHtml = "";
+    let currentX = 0, currentY = 0;       // [cl] 텍스트 모드: 커서 위치
+    let markerScreenX = 0, markerScreenY = 0; // [cl] 이미지 모드: 마커 화면 위치
+    let currentSingleEvent: MockEvent | null = null;
     let rafId: number;
+
+    // [cl] 모드 전환 시 엘리먼트 스타일 리셋 + 현재 표시 숨김
+    const switchMode = (newMode: "text" | "image") => {
+      if (mode === newMode) return;
+      mode = newMode;
+      visible = false;
+      shownHtml = "";
+      tooltipEl.style.display = "none";
+      tooltipEl.style.cssText = newMode === "image" ? IMAGE_STYLES : TEXT_STYLES;
+    };
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = viewer.canvas.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
       const now = performance.now();
+      const alt = viewer.camera.positionCartographic.height;
 
       // [cl] 전체 이벤트 → 스크린 좌표 변환 후 반경 30px 이내 필터
-      const nearby: { ev: MockEvent; dist: number }[] = [];
+      const nearby: { ev: MockEvent; dist: number; sx: number; sy: number }[] = [];
       for (const ev of eventsRef.current) {
         const pos3d = Cartesian3.fromDegrees(ev.location_lng, ev.location_lat);
         const sp = SceneTransforms.worldToWindowCoordinates(viewer.scene, pos3d);
         if (!defined(sp)) continue;
         const dist = Math.sqrt((mx - sp.x) ** 2 + (my - sp.y) ** 2);
-        if (dist < HOVER_RADIUS) nearby.push({ ev, dist });
+        if (dist < HOVER_RADIUS) nearby.push({ ev, dist, sx: sp.x, sy: sp.y });
       }
       nearby.sort((a, b) => a.dist - b.dist);
 
       if (nearby.length > 0) {
-        // [cl] 스택 툴팁 HTML
-        const shown = nearby.slice(0, MAX_DISPLAY);
-        const extra = nearby.length - shown.length;
-        const rows = shown.map(({ ev }, i) => {
-          const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
-          const opacity = Math.max(0.45, 1.0 - i * 0.14);
-          return (
-            `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}opacity:${opacity};">` +
-            `<span style="color:${color};font-size:9px;flex-shrink:0;">●</span>` +
-            `<span style="font-weight:${i === 0 ? "600" : "400"};flex:1;">${ev.title.ko}</span>` +
-            `<span style="color:#777;font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
-            `</div>`
-          );
-        });
-        if (extra > 0) {
-          rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
-        }
-        const newHtml = rows.join("");
+        const isImageMode = alt <= ALT_THRESHOLD && nearby.length === 1;
+        switchMode(isImageMode ? "image" : "text");
 
-        // [cl] 내용이 바뀌었으면 변경 시각 기록 (rAF에서 딜레이 후 반영)
-        if (newHtml !== currentHtml) {
-          currentHtml = newHtml;
-          contentChangedTime = now;
+        let newHtml: string;
+        if (mode === "image") {
+          const ev = nearby[0].ev;
+          currentSingleEvent = ev;
+          markerScreenX = nearby[0].sx;
+          markerScreenY = nearby[0].sy;
+          newHtml =
+            `<img src="${ev.image_url}" alt="${ev.title.ko}" style="width:100%;height:100%;object-fit:cover;display:block;">` +
+            `<div style="position:absolute;bottom:0;left:0;right:0;padding:8px 10px 7px;background:linear-gradient(to top,rgba(0,0,0,0.88),transparent);">` +
+            `<p style="margin:0;color:#fff;font-size:11px;font-weight:700;line-height:1.3;">${ev.title.ko}</p>` +
+            `<p style="margin:3px 0 0;color:rgba(255,255,255,0.6);font-size:10px;">${ev.start_year}</p>` +
+            `</div>`;
+        } else {
+          currentSingleEvent = null;
+          const shown = nearby.slice(0, MAX_DISPLAY);
+          const extra = nearby.length - shown.length;
+          const rows = shown.map(({ ev }, i) => {
+            const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
+            const opacity = Math.max(0.45, 1.0 - i * 0.14);
+            return (
+              `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}opacity:${opacity};">` +
+              `<span style="color:${color};font-size:9px;flex-shrink:0;">●</span>` +
+              `<span style="font-weight:${i === 0 ? "600" : "400"};flex:1;">${ev.title.ko}</span>` +
+              `<span style="color:#777;font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
+              `</div>`
+            );
+          });
+          if (extra > 0) rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
+          newHtml = rows.join("");
+          currentX = mx; currentY = my;
         }
-        currentX = mx;
-        currentY = my;
 
-        if (!inRadius) {
-          // [cl] 새로 반경 진입: enterTime 기록
-          inRadius = true;
-          enterTime = now;
-          exitTime = 0;
-        }
+        if (newHtml !== currentHtml) { currentHtml = newHtml; contentChangedTime = now; }
 
-        if (visible) {
-          // [cl] 이미 표시 중 → 위치 즉시 업데이트 (내용은 rAF에서 딜레이 후 갱신)
+        if (!inRadius) { inRadius = true; enterTime = now; exitTime = 0; }
+
+        if (visible && mode === "text") {
           tooltipEl.style.left = `${mx + 20}px`;
           tooltipEl.style.top  = `${my - 16}px`;
         }
-
         markerHoverRef.current = true;
       } else {
-        if (currentHtml !== "") {
-          currentHtml = "";
-          contentChangedTime = now;
-        }
-        if (inRadius) {
-          // [cl] 반경 이탈: exitTime 기록
-          inRadius = false;
-          exitTime = now;
-          enterTime = 0;
-        }
+        if (currentHtml !== "") { currentHtml = ""; contentChangedTime = now; }
+        if (inRadius) { inRadius = false; exitTime = now; enterTime = 0; }
+        currentSingleEvent = null;
         markerHoverRef.current = false;
       }
     };
 
-    // [cl] rAF 루프: 타임스탬프 비교로 딜레이 판단 (setTimeout보다 안정적)
+    // [cl] rAF 루프: 타임스탬프 비교로 딜레이 판단 + 이미지 팝업 위치 매 프레임 갱신
     const tick = () => {
       const now = performance.now();
 
-      // [cl] 표시 딜레이: 반경 진입 후 SHOW_DELAY ms 경과 → 툴팁 표시
-      if (inRadius && !visible && enterTime > 0 && (now - enterTime) >= SHOW_DELAY) {
-        if (currentHtml) {
-          visible = true;
-          shownHtml = currentHtml;
-          tooltipEl.innerHTML = shownHtml;
-          tooltipEl.style.left = `${currentX + 20}px`;
-          tooltipEl.style.top  = `${currentY - 16}px`;
-          tooltipEl.style.display = "block";
-        }
-        enterTime = 0; // [cl] 한 번만 트리거
+      // [cl] 스택 클릭 시 툴팁 즉시 강제 숨김
+      if (forceHideTooltipRef.current) {
+        forceHideTooltipRef.current = false;
+        visible = false; shownHtml = ""; inRadius = false; enterTime = 0;
+        tooltipEl.style.display = "none";
       }
 
-      // [cl] 내용 갱신 딜레이: 표시 중 내용이 바뀌고 CONTENT_UPDATE_DELAY ms 경과 → 갱신
+      // [cl] 표시 딜레이
+      if (inRadius && !visible && enterTime > 0 && (now - enterTime) >= SHOW_DELAY) {
+        if (currentHtml) {
+          visible = true; shownHtml = currentHtml;
+          tooltipEl.innerHTML = shownHtml;
+          if (mode === "image") {
+            tooltipEl.style.left = `${markerScreenX - CARD_W / 2}px`;
+            tooltipEl.style.top  = `${markerScreenY - CARD_H - 16}px`;
+          } else {
+            tooltipEl.style.left = `${currentX + 20}px`;
+            tooltipEl.style.top  = `${currentY - 16}px`;
+          }
+          tooltipEl.style.display = "block";
+        }
+        enterTime = 0;
+      }
+
+      // [cl] 이미지 팝업: 매 프레임 마커 화면 위치 추적 (카메라 이동 시 따라감)
+      if (visible && mode === "image" && currentSingleEvent) {
+        const pos3d = Cartesian3.fromDegrees(currentSingleEvent.location_lng, currentSingleEvent.location_lat);
+        const sp = SceneTransforms.worldToWindowCoordinates(viewer.scene, pos3d);
+        if (defined(sp)) {
+          tooltipEl.style.left = `${sp.x - CARD_W / 2}px`;
+          tooltipEl.style.top  = `${sp.y - CARD_H - 16}px`;
+        }
+      }
+
+      // [cl] 내용 갱신 딜레이
       if (visible && currentHtml !== shownHtml && contentChangedTime > 0 &&
           (now - contentChangedTime) >= CONTENT_UPDATE_DELAY) {
         shownHtml = currentHtml;
@@ -703,11 +760,9 @@ function SceneSetup({ orbitActive, markerMode, events, onMarkerClick }: SceneSet
         contentChangedTime = 0;
       }
 
-      // [cl] 숨김 딜레이: 반경 이탈 후 HIDE_DELAY ms 경과 → 툴팁 숨김
+      // [cl] 숨김 딜레이
       if (!inRadius && visible && exitTime > 0 && (now - exitTime) >= HIDE_DELAY) {
-        visible = false;
-        shownHtml = "";
-        exitTime = 0;
+        visible = false; shownHtml = ""; exitTime = 0;
         tooltipEl.style.display = "none";
       }
 
@@ -941,6 +996,7 @@ interface CesiumGlobeProps {
   markerMode?: boolean;
   events?: MockEvent[];
   onMarkerClick?: (event: MockEvent) => void;
+  onStackClick?: (events: MockEvent[]) => void;
 }
 
 export default function CesiumGlobe({
@@ -948,6 +1004,7 @@ export default function CesiumGlobe({
   markerMode = false,
   events = [],
   onMarkerClick,
+  onStackClick,
 }: CesiumGlobeProps) {
   return (
     <Viewer
@@ -969,6 +1026,7 @@ export default function CesiumGlobe({
         markerMode={markerMode}
         events={events}
         onMarkerClick={onMarkerClick}
+        onStackClick={onStackClick}
       />
     </Viewer>
   );

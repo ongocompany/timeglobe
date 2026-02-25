@@ -51,7 +51,7 @@ body {
   top: 50%;
   left: 50%;
   width: var(--orbit-icon-size, 80px);
-  height: var(--orbit-icon-size, 80px);
+  height: calc(var(--orbit-icon-size, 80px) * 4 / 3); /* [cl] 3:4 비율 */
   cursor: pointer;
   pointer-events: auto;
   transform-style: preserve-3d;
@@ -68,7 +68,7 @@ body {
   background-color: #222;
   border-radius: 4px;
   width: var(--orbit-icon-size, 80px);
-  height: var(--orbit-icon-size, 80px);
+  height: calc(var(--orbit-icon-size, 80px) * 4 / 3); /* [cl] 3:4 비율 */
   pointer-events: none;
   transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
               height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
@@ -79,7 +79,7 @@ body {
 /* [cl] hover: 히트박스는 고정, 비주얼만 살짝 확대+앞으로 팝아웃 */
 .orbit-card-hit:not([data-active]):hover .orbit-card {
   width: 120px;
-  height: 120px;
+  height: 160px; /* [cl] 3:4 비율 */
   border-radius: 6px;
   transform: translate(-50%, -50%) translateZ(120px);
 }
@@ -109,4 +109,10 @@ body {
 /* [cl] 오른쪽 카드: 좌우 대칭으로 반대 방향 확대 */
 .orbit-card-hit[data-active][data-side="right"] .orbit-card {
   transform: translate(-50%, -50%) translateX(calc(400px + 5vw));
+}
+
+/* [cl] 스택 마커 클릭 시 가로 미니 캐러셀 팝인 애니메이션 */
+@keyframes stack-pop-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.92); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0)    scale(1); }
 }

@@ -18,6 +18,7 @@ interface GlobeLoaderProps {
   markerMode?: boolean;
   events?: MockEvent[];
   onMarkerClick?: (event: MockEvent) => void;
+  onStackClick?: (events: MockEvent[]) => void;
 }
 
 export default function GlobeLoader({
@@ -25,6 +26,7 @@ export default function GlobeLoader({
   markerMode = false,
   events = [],
   onMarkerClick,
+  onStackClick,
 }: GlobeLoaderProps) {
   return (
     <CesiumGlobe
@@ -32,6 +34,7 @@ export default function GlobeLoader({
       markerMode={markerMode}
       events={events}
       onMarkerClick={onMarkerClick}
+      onStackClick={onStackClick}
     />
   );
 }

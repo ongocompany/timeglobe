@@ -25,6 +25,7 @@ type ViewMode = "orbit" | "marker" | null;
 export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>(null);
   const [selectedEvent, setSelectedEvent] = useState<MockEvent | null>(null);
+  const [stackEvents, setStackEvents] = useState<MockEvent[]>([]);
   const carouselOpen = viewMode === "orbit";
 
   return (
@@ -40,6 +41,7 @@ export default function Home() {
         markerMode={viewMode === "marker"}
         events={MOCK_EVENTS}
         onMarkerClick={(ev) => setSelectedEvent(ev)}
+        onStackClick={(evs) => setStackEvents(evs)}
       />
 
       {/* [cl] Event Orbit / Event Marker 토글 버튼 */}
@@ -81,6 +83,37 @@ export default function Home() {
           Reset View
         </button>
       </div>
+
+      {/* [cl] 스택 마커 클릭: 가로 미니 캐러셀 팝업 → 카드 선택 → 상세 모달 */}
+      {stackEvents.length > 0 && (
+        <div
+          className="absolute bottom-28 z-[85] pointer-events-auto"
+          style={{ left: "50%", animation: "stack-pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards" }}
+        >
+          <div className="flex items-end gap-3 px-4 py-3 rounded-2xl bg-black/65 backdrop-blur-md border border-white/10">
+            {/* 닫기 */}
+            <button
+              className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-white/15 hover:bg-white/30 text-white/70 text-sm flex items-center justify-center transition-colors"
+              onClick={() => setStackEvents([])}
+            >✕</button>
+            {/* 카드 목록 */}
+            {stackEvents.map((ev) => (
+              <div
+                key={ev.id}
+                className="relative flex-shrink-0 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-200"
+                style={{ width: 90, height: 120 }}
+                onClick={() => { setStackEvents([]); setSelectedEvent(ev); }}
+              >
+                <img src={ev.image_url} alt={ev.title.ko} className="w-full h-full object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 px-2 py-1.5" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}>
+                  <p className="text-white text-[10px] font-semibold leading-tight line-clamp-2">{ev.title.ko}</p>
+                  <p className="text-white/50 text-[9px] mt-0.5">{ev.start_year}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* [cl] Event Marker 모달: 마커 클릭 시 이벤트 상세 표시, 닫으면 원래 카메라로 복귀 */}
       {selectedEvent && (
