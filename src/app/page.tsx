@@ -200,6 +200,7 @@ export default function Home() {
   const [globePaused, setGlobePaused] = useState(false);
   const [globeDirection, setGlobeDirection] = useState<"left" | "right">("left");
   const [warpActive, setWarpActive] = useState(false);
+  const [warpPhase, setWarpPhase] = useState<"idle" | "zoomout" | "hold" | "zoomin">("idle");
   // [cl] 워프 속도 ref: sine 이징 애니메이션에서 매 프레임 LightSpeed에 주입
   const warpSpeedRef = useRef<number>(0);
   const warpingRef = useRef(false); // [cl] 중복 실행 방지 (state 클로저 우회)
@@ -215,47 +216,62 @@ export default function Home() {
     );
   const carouselOpen = viewMode === "orbit";
 
-  // [cl] 워프 시퀀스: sine 이징 + 지구 유지 (mix-blend-mode: screen)
-  // 속도 곡선: 0 → 최대(MAX_SPEED) → 0 (종소리 모양, 총 DURATION ms)
+  // [cl] 시네마틱 워프 시퀀스 (총 5초):
+  //   0s    → zoomout: 카메라 70,000km 후퇴 + LightSpeed 서서히 등장
+  //   1.5s  → hold:    역방향 고속 자전 + LightSpeed 피크
+  //   2.5s  → 연도 전환 (가장 깊은 워프 순간)
+  //   3.5s  → zoomin:  카메라 복귀 + LightSpeed 서서히 소멸 + 별 등장
+  //   5s    → idle:    완전 복귀
   const handleWarp = (targetYear: number) => {
     if (warpingRef.current || targetYear === currentYear) return;
     warpingRef.current = true;
 
-    // [cl] 지구 반지름 읽어서 마스크 계산 — 지구 위는 투명, 우주만 워프
+    const TOTAL = 5000;
+    // [cl] 지구 반지름으로 마스크 계산: 지구 표면 보호, 우주만 워프
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const r = (window as any).__timeglobe_screenRadius || 300;
     setWarpMask(
       `radial-gradient(circle at 50% 50%, transparent 0px, transparent ${Math.round(r * 0.88)}px, black ${Math.round(r * 1.12)}px)`
     );
 
+    // [cl] 단계 전환 (setTimeout → 정확한 타이밍)
+    setWarpPhase("zoomout");
     setWarpActive(true);
+    setTimeout(() => setWarpPhase("hold"), 1500);
+    setTimeout(() => setCurrentYear(targetYear), 2500);
+    setTimeout(() => setWarpPhase("zoomin"), 3500);
+    setTimeout(() => {
+      warpSpeedRef.current = 0;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_setWarpSpinMult?.(0);
+      setWarpPhase("idle");
+      setWarpActive(false);
+      warpingRef.current = false;
+    }, TOTAL);
 
-    const DURATION = 1600;
-    const MAX_SPEED = 5;
+    // [cl] rAF 루프: LightSpeed 속도(sine 벨 곡선) + 스핀 배율 연속 업데이트
     const startTime = performance.now();
-    let yearChanged = false;
-
     const animate = (now: number) => {
       const elapsed = now - startTime;
-      const progress = Math.min(elapsed / DURATION, 1);
-      // [cl] sin(0→π) = 0→1→0 벨 곡선: 느리게 시작 → 최고 속도 → 느리게 종료
-      warpSpeedRef.current = Math.sin(progress * Math.PI) * MAX_SPEED;
+      const progress = Math.min(elapsed / TOTAL, 1);
 
-      // [cl] 절반 지점(800ms)에서 연도 전환 — LightSpeed가 완전히 덮인 순간
-      if (!yearChanged && elapsed >= 800) {
-        yearChanged = true;
-        setCurrentYear(targetYear);
-      }
+      // [cl] LightSpeed: sin(0→π) 벨 곡선 — 느리게 시작 → 피크 → 느리게 종료
+      warpSpeedRef.current = Math.sin(progress * Math.PI) * 5;
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        warpSpeedRef.current = 0;
-        warpingRef.current = false;
-        setWarpActive(false);
+      // [cl] 역자전 배율: hold 진입(1.5s)부터 500ms 가속 → 3.5s까지 유지 → 500ms 감속
+      let spinMult = 0;
+      if (elapsed >= 1500 && elapsed < 2000) {
+        spinMult = ((elapsed - 1500) / 500) * 3;           // 0 → 3
+      } else if (elapsed >= 2000 && elapsed < 3500) {
+        spinMult = 3;                                        // 유지
+      } else if (elapsed >= 3500 && elapsed < 4000) {
+        spinMult = (1 - (elapsed - 3500) / 500) * 3;       // 3 → 0
       }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).__timeglobe_setWarpSpinMult?.(spinMult);
+
+      if (progress < 1) requestAnimationFrame(animate);
     };
-
     requestAnimationFrame(animate);
   };
 
@@ -275,7 +291,7 @@ export default function Home() {
       <DateDisplay />
       <TimeDial defaultYear={currentYear} />
 
-      {/* [cl] 지구본: orbit/marker/글로벌 자전 제어 전달 */}
+      {/* [cl] 지구본: orbit/marker/글로벌 자전 제어 + 워프 단계 전달 */}
       <GlobeLoader
         orbitActive={carouselOpen}
         orbitPaused={orbitMotion === "stop"}
@@ -284,9 +300,23 @@ export default function Home() {
         markerMode={viewMode === "marker"}
         events={MOCK_EVENTS}
         onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
+        warpPhase={warpPhase}
       />
 
-      {/* [cl] 워프 오버레이: 지구 반지름 마스크 → 우주만 워프, 지구 표면 보호 */}
+      {/* [cl] 워프 비네트: 우주 공간을 서서히 어둡게 (지구 구체는 마스크로 보호) */}
+      <div
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          opacity: warpActive ? 0.72 : 0,
+          zIndex: 99,
+          background: "black",
+          transition: "opacity 1.2s ease",
+          WebkitMaskImage: warpMask,
+          maskImage: warpMask,
+        }}
+      />
+
+      {/* [cl] 워프 오버레이: mix-blend-mode screen → 검정=투명, 빛줄기만 우주에 합성 */}
       <div
         className="fixed inset-0 pointer-events-none transition-opacity duration-300"
         style={{

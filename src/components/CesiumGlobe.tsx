@@ -113,6 +113,9 @@ function calcDefaultHeight(viewer: InstanceType<typeof import("cesium").Viewer>)
 }
 
 // [cl] Viewer 마운트 후 SkyBox + 자동 자전을 설정하는 내부 컴포넌트
+// [cl] 워프 단계 타입: 카메라 줌아웃 → 홀드(역자전) → 줌인 복귀
+type WarpPhase = "idle" | "zoomout" | "hold" | "zoomin";
+
 interface SceneSetupProps {
   orbitActive: boolean;
   orbitPaused: boolean;
@@ -121,9 +124,10 @@ interface SceneSetupProps {
   markerMode: boolean;
   events: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
+  warpPhase?: WarpPhase;
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle" }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -156,6 +160,13 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] events ref
   const eventsRef = useRef(events);
   useEffect(() => { eventsRef.current = events; }, [events]);
+  // [cl] 워프 단계 ref: spin 루프에서 즉시 읽기 (클로저 갱신 없이)
+  const warpPhaseRef = useRef<WarpPhase>("idle");
+  useEffect(() => { warpPhaseRef.current = warpPhase; }, [warpPhase]);
+  // [cl] 워프 스핀 배율: page.tsx rAF 루프에서 매 프레임 주입 (window global 경유)
+  const warpSpinMultRef = useRef(0);
+  // [cl] 워프 전 카메라 위치: zoomin 복귀 시 사용
+  const capturedCameraRef = useRef<{ lon: number; lat: number; alt: number } | null>(null);
 
   // [cl] SkyBox + 기본 지구 텍스처 설정
   useEffect(() => {
@@ -432,6 +443,50 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       delete (window as any).__timeglobe_resetToDefault;
     };
   }, [viewer]);
+
+  // [cl] 워프 스핀 배율 외부 주입 창구: page.tsx rAF 루프 → 매 프레임 호출
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__timeglobe_setWarpSpinMult = (mult: number) => {
+      warpSpinMultRef.current = mult;
+    };
+    return () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      delete (window as any).__timeglobe_setWarpSpinMult;
+    };
+  }, []);
+
+  // [cl] 워프 단계 전환: zoomout→70000km 줌아웃, zoomin→원위치 복귀
+  useEffect(() => {
+    if (!viewer) return;
+    if (warpPhase === "zoomout") {
+      // [cl] 현재 카메라 위치 저장 → zoomin 시 복귀용
+      const carto = viewer.camera.positionCartographic;
+      capturedCameraRef.current = {
+        lon: carto.longitude,
+        lat: carto.latitude,
+        alt: carto.height,
+      };
+      // [cl] 70,000km까지 1.5초 줌아웃
+      viewer.camera.flyTo({
+        destination: Cartesian3.fromRadians(carto.longitude, carto.latitude, 70_000_000),
+        duration: 1.5,
+      });
+    } else if (warpPhase === "hold") {
+      // [cl] flyTo 중단 (hold 진입 = 카메라 위치 고정)
+      viewer.camera.cancelFlight();
+    } else if (warpPhase === "zoomin" && capturedCameraRef.current) {
+      // [cl] 원래 높이로 1.5초 복귀, heading 0(북↑)으로 정렬
+      const { lon, lat, alt } = capturedCameraRef.current;
+      viewer.camera.flyTo({
+        destination: Cartesian3.fromRadians(lon, lat, alt),
+        orientation: { heading: 0, pitch: CesiumMath.toRadians(-90), roll: 0 },
+        duration: 1.5,
+      });
+    } else if (warpPhase === "idle") {
+      viewer.camera.cancelFlight();
+    }
+  }, [warpPhase, viewer]);
 
   // [cl] Event Orbit 모드: 순차 실행 → ①자전축 리셋 ②800px 줌 ③잠금
   // Event Marker 모드: 줌/틸트/회전 모두 자유
@@ -900,6 +955,34 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     let frameId: number;
     const spin = () => {
+      const currentWarpPhase = warpPhaseRef.current;
+
+      // [cl] 워프 홀드: 역방향 고속 자전 (flyTo 없음, spinMult에 따라 가속/감속)
+      if (currentWarpPhase === "hold") {
+        const spinMult = warpSpinMultRef.current;
+        if (spinMult > 0) {
+          const delta = CesiumMath.toRadians(ROTATION_SPEED * spinMult);
+          // [cl] 역방향: 평소 left(서→동)면 warp는 right(동→서)
+          if (globeDirectionRef.current !== "right") {
+            viewer.camera.rotateRight(delta);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) - delta;
+          } else {
+            viewer.camera.rotateLeft(delta);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).__timeglobe_autoRotationTotal = ((window as any).__timeglobe_autoRotationTotal || 0) + delta;
+          }
+        }
+        frameId = requestAnimationFrame(spin);
+        return;
+      }
+
+      // [cl] 워프 줌아웃/줌인 단계: flyTo가 카메라 제어, 자전 스킵
+      if (currentWarpPhase === "zoomout" || currentWarpPhase === "zoomin") {
+        frameId = requestAnimationFrame(spin);
+        return;
+      }
+
       // [cl] ★ resetToDefault 보호: flyTo 진행 중(1초)에는 자전+복원 모두 정지
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const resetTs = (window as any).__timeglobe_resetTimestamp || 0;
@@ -981,7 +1064,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   return null;
 }
 
-// [cl] CesiumGlobe props: orbit + marker + 글로벌 자전 제어
+// [cl] CesiumGlobe props: orbit + marker + 글로벌 자전 제어 + 워프 단계
 interface CesiumGlobeProps {
   orbitActive?: boolean;
   orbitPaused?: boolean;
@@ -990,6 +1073,7 @@ interface CesiumGlobeProps {
   markerMode?: boolean;
   events?: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
+  warpPhase?: WarpPhase;
 }
 
 export default function CesiumGlobe({
@@ -1000,6 +1084,7 @@ export default function CesiumGlobe({
   markerMode = false,
   events = [],
   onStackClick,
+  warpPhase = "idle",
 }: CesiumGlobeProps) {
   return (
     <Viewer
@@ -1024,6 +1109,7 @@ export default function CesiumGlobe({
         markerMode={markerMode}
         events={events}
         onStackClick={onStackClick}
+        warpPhase={warpPhase}
       />
     </Viewer>
   );

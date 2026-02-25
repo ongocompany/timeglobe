@@ -21,6 +21,7 @@ interface GlobeLoaderProps {
   markerMode?: boolean;
   events?: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
+  warpPhase?: "idle" | "zoomout" | "hold" | "zoomin";
 }
 
 export default function GlobeLoader({
@@ -31,6 +32,7 @@ export default function GlobeLoader({
   markerMode = false,
   events = [],
   onStackClick,
+  warpPhase = "idle",
 }: GlobeLoaderProps) {
   return (
     <CesiumGlobe
@@ -41,6 +43,7 @@ export default function GlobeLoader({
       markerMode={markerMode}
       events={events}
       onStackClick={onStackClick}
+      warpPhase={warpPhase}
     />
   );
 }
