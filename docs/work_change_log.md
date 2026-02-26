@@ -636,3 +636,42 @@
 ### 설정 파일 업데이트
 * `CLAUDE.md`, `gemini.md`, `codex.md` — 저장소 정보 GitHub → Gitea로 변경
 * 세션 시작/종료 시 `git pull/push origin main` 명령어로 통일
+
+---
+
+## 2026-02-27 (cl) — TripoSR 로컬 3D 모델링 환경 구축
+
+### 3D 모델 생성 서비스 비교 조사
+* Meshy.ai, Tripo3D 등 상용 Image-to-3D 서비스 테스트
+* Image-to-3D 모드가 Text-to-3D보다 훨씬 우수, Meshy가 약간 우위
+* GLB 포맷이 CesiumJS 네이티브 지원으로 권장
+* Meshy 무료 티어는 다운로드 불가 (월 $20 유료) → TripoSR 로컬 대안 탐색
+
+### TripoSR 로컬 환경 구축 (Ubuntu PC — jinserver)
+* 서버: RTX 3080 10GB, Ubuntu 24.04, Tailscale IP 100.68.25.79
+* SSH 원격 접속으로 전체 환경 세팅 수행
+* Stable Diffusion 프로세스 종료 (5.3GB VRAM 확보)
+* Python venv 생성 (`~/triposr/venv/`)
+* TripoSR GitHub 클론 + PyTorch CUDA 12.1 + 의존성 설치
+* torchmcubes 빌드 이슈 해결 (`python3-dev`, `nvidia-cuda-toolkit` 설치)
+
+### CLI 테스트 성공
+* `python run.py examples/chair.png --output-dir output/` — ~5초 생성 완료
+* OBJ → GLB 변환: trimesh 라이브러리 사용
+
+### Web UI 개발 (VRAM OOM 해결)
+* 원본 Gradio UI (`gradio_app.py`) — CUDA OOM 반복 발생
+  * chunk_size 조정, model.half(), torch.autocast 등 시도 → 모두 실패
+  * 원인: 모델(~2GB) + GUI(~2GB) + 추론 활성화(~7GB) > 10GB VRAM
+* **해결**: `web_ui.py` 신규 작성 — 서브프로세스 방식
+  * 웹 서버 GPU 메모리 0, 매 요청마다 `run.py` 서브프로세스 실행
+  * 생성 완료 후 프로세스 종료 → GPU 메모리 완전 해제
+  * OBJ/GLB 파일 다운로드 지원
+
+### 최종 결정
+* TripoSR 품질: 모델링은 가능하나 텍스처/맵핑 후처리 필요
+* **TimeGlobe 프로젝트**: Meshy.ai 등 상용 서비스 우선 사용
+* **TripoSR 활용 계획**: 향후 대량 자동 생성/파이프라인 구축 시
+
+### 문서 작성
+* `docs/develop/07_[cl]triposr_local_setup_guide.md` — 서버 정보, 설치 구조, 사용법(CLI/Web UI/SSH), 알려진 이슈, 포맷 호환성, 향후 활용 아이디어 포함

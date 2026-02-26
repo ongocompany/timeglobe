@@ -27,9 +27,9 @@
 
 ## 6. 프로젝트 규칙
 - **프로젝트명**: TimeGlobe
-- **저장소 (Gitea)**: http://100.115.194.12:3000/jinadmin/timeglobe
-- **저장소 remote**: `origin` (Gitea), `nas` (bare repo 백업)
-- **배포**: https://timeglobe-indol.vercel.app (Vercel)
+- **저장소 (Gitea)**: http://git.timeglobe.kr/jinadmin/timeglobe
+- **저장소 remote**: `origin` (VPS Gitea), `nas` / `nas-gitea` (NAS 백업)
+- **배포**: http://timeglobe.kr (Vultr VPS, PM2 + Nginx, push 시 자동 배포)
 
 ## 7. 세션 시작과 종료시
 - 세션 시작시 `git pull origin main`을 실행해줘
