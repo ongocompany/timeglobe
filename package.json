@@ -12,7 +12,8 @@
     "collect:backfill": "node scripts/wikidata/run.mjs --mode backfill",
     "collect:probe": "node scripts/wikidata/run.mjs --mode probe --dry-run",
     "collect:enrich-existing": "node scripts/wikidata/enrichExistingFromSources.mjs",
-    "collect:classify-gaps": "node scripts/wikidata/classifyGapsForCuration.mjs"
+    "collect:classify-gaps": "node scripts/wikidata/classifyGapsForCuration.mjs",
+    "collect:archive-missing-summary": "node scripts/wikidata/archiveMissingSummaryEvents.mjs"
   },
   "dependencies": {
     "@number-flow/react": "^0.5.14",

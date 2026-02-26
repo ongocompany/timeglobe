@@ -2,6 +2,8 @@
 -- Created by: Jihoon [gm] (2026-02-24)
 -- Description: Core schema for Epochs, Events, Spatial Data, and Gamification.
 
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 -- ==========================================
 -- 1. Core Data: Eras & Events
 -- ==========================================

@@ -57,8 +57,8 @@ docs/.bkit-memory.json
 docs/.pdca-snapshots/
 docs/.pdca-status.json
 
-# Temporary working files
-docs/tmp/
+# Docs (iCloud 동기화로 관리)
+docs/
 
 # Unused textures (keep only actively used ones)
 public/textures/earth_daymap.jpg

@@ -6,6 +6,14 @@ const categoryMap = {
   place: "건축/유물",
 };
 
+const EVENT_KIND_BY_CLASS_QID = {
+  Q13418847: "historical_event",
+  Q198: "war",
+  Q178561: "battle",
+  Q178706: "treaty",
+  Q2380335: "disaster",
+};
+
 function read(binding, key) {
   return binding[key]?.value?.trim() || "";
 }
@@ -84,14 +92,25 @@ function deterministicUuid(input) {
   ].join("-");
 }
 
-function buildExternalLink(koTitle, enTitle) {
+function buildExternalLink(koTitle, enTitle, qid) {
   if (koTitle) {
     return `https://ko.wikipedia.org/wiki/${encodeURIComponent(koTitle)}`;
   }
   if (enTitle) {
     return `https://en.wikipedia.org/wiki/${encodeURIComponent(enTitle)}`;
   }
+  if (qid) {
+    return `https://www.wikidata.org/wiki/${encodeURIComponent(qid)}`;
+  }
   return "";
+}
+
+function resolveEventKind(binding, entityType) {
+  if (entityType === "person") return "person";
+  if (entityType === "place") return "place";
+  if (entityType !== "event") return "historical_event";
+  const classQid = read(binding, "classQid");
+  return EVENT_KIND_BY_CLASS_QID[classQid] ?? "historical_event";
 }
 
 export function normalizeBinding(binding, entityType) {
@@ -100,7 +119,8 @@ export function normalizeBinding(binding, entityType) {
 
   const titleKo = read(binding, "itemLabel_ko");
   const titleEn = read(binding, "itemLabel_en");
-  if (!titleKo && !titleEn) return null;
+  const titleFallback = read(binding, "itemLabel_fallback");
+  if (!titleKo && !titleEn && !titleFallback) return null;
 
   const year = pickYear(binding, entityType);
   if (year === null) return null;
@@ -111,10 +131,11 @@ export function normalizeBinding(binding, entityType) {
   const endYear = pickEndYear(binding, entityType);
   const koTitle = read(binding, "koWikiTitle");
   const enTitle = read(binding, "enWikiTitle");
+  const eventKind = resolveEventKind(binding, entityType);
 
   const eventRecord = {
     id: deterministicUuid(`wd:${qid}`),
-    title: buildJsonb(titleKo, titleEn),
+    title: buildJsonb(titleKo || titleFallback, titleEn || titleFallback),
     start_year: year,
     end_year: endYear,
     category: categoryMap[entityType] ?? "인물/문화",
@@ -127,13 +148,17 @@ export function normalizeBinding(binding, entityType) {
     ),
     image_url: null,
     summary: null,
-    external_link: buildExternalLink(koTitle, enTitle) || null,
+    external_link: buildExternalLink(koTitle, enTitle, qid) || null,
+    event_kind: eventKind,
+    is_battle: eventKind === "battle",
   };
 
   const sourceMeta = {
     event_id: eventRecord.id,
     qid,
     entity_type: entityType,
+    class_qid: read(binding, "classQid") || null,
+    event_kind: eventKind,
     ko_wiki_title: koTitle || null,
     en_wiki_title: enTitle || null,
     description: buildJsonb(read(binding, "itemDesc_ko"), read(binding, "itemDesc_en")),

@@ -1,7 +1,7 @@
 "use client";
 
 // [cl] TimeGlobe 메인 페이지 - Phase 0
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import GlobeLoader from "@/components/GlobeLoader";
 import Header from "@/components/ui/Header";
 import DateDisplay from "@/components/ui/DateDisplay";
@@ -192,6 +192,14 @@ function StackCarousel({
 }
 
 export default function Home() {
+  // [cl] 로딩 오버레이: 지구 타일 로드 완료까지 렌더링 과정 차단
+  const [globeReady, setGlobeReady] = useState(false);
+  useEffect(() => {
+    const onReady = () => setGlobeReady(true);
+    window.addEventListener("timeglobe:globeReady", onReady);
+    return () => window.removeEventListener("timeglobe:globeReady", onReady);
+  }, []);
+
   const [viewMode, setViewMode] = useState<ViewMode>(null);
   const [stackState, setStackState] = useState<{ events: MockEvent[]; pos: { x: number; y: number } } | null>(null);
   // [cl] Orbit 캐러셀 전용 자전 제어: rotate(기본) / stop
@@ -488,6 +496,50 @@ export default function Home() {
           );
         }}
       />
+
+      {/* [cl] 로딩 오버레이: 지구 렌더링 과정을 가리고 타일 로드 완료 후 페이드아웃 */}
+      <div
+        className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-black"
+        style={{
+          opacity: globeReady ? 0 : 1,
+          transition: "opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)",
+          pointerEvents: globeReady ? "none" : "auto",
+        }}
+      >
+        {/* [cl] 스탑워치 아이콘 + 회전 초침 */}
+        <svg width="48" height="60" viewBox="0 0 16 20" fill="none" className="mb-6">
+          <rect x="5.5" y="0" width="5" height="2.5" rx="1" fill="rgba(255,255,255,0.5)" />
+          <circle cx="8" cy="12" r="7.5" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" />
+          <line x1="8" y1="12" x2="8" y2="6" stroke="rgba(255,255,255,0.7)" strokeWidth="1.3" strokeLinecap="round">
+            <animateTransform attributeName="transform" type="rotate" from="0 8 12" to="360 8 12" dur="2s" repeatCount="indefinite" />
+          </line>
+          <circle cx="8" cy="12" r="1" fill="rgba(255,255,255,0.7)" />
+        </svg>
+        <h2
+          className="uppercase tracking-widest"
+          style={{
+            fontFamily: "var(--font-noto-sans), sans-serif",
+            fontWeight: 800,
+            fontSize: "2rem",
+            color: "transparent",
+            WebkitTextStroke: "1.2px rgba(255, 255, 255, 0.6)",
+            textShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
+          }}
+        >
+          Time Globe
+        </h2>
+        <p
+          className="mt-3 tracking-wide animate-pulse"
+          style={{
+            fontFamily: "var(--font-noto-sans), sans-serif",
+            fontWeight: 300,
+            fontSize: "0.85rem",
+            color: "rgba(255, 255, 255, 0.35)",
+          }}
+        >
+          Loading...
+        </p>
+      </div>
     </main>
   );
 }

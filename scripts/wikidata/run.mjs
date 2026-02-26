@@ -1,4 +1,4 @@
-import { config } from "./config.mjs";
+import { config, requireDbEnv } from "./config.mjs";
 import { loadCheckpoint, saveCheckpoint, ensureTaskState } from "./checkpoint.mjs";
 import { buildTasks } from "./planner.mjs";
 import { buildQuery } from "./sparqlTemplates.mjs";
@@ -8,6 +8,19 @@ import { enrichWithWikipedia } from "./wikiEnricher.mjs";
 import { patchEventById, upsertEvents, upsertSourceMeta } from "./supabaseLoader.mjs";
 import { logError, logInfo } from "./logger.mjs";
 import fs from "node:fs/promises";
+
+const FALLBACK_LABEL_LANG_PRIORITY = [
+  "ko",
+  "en",
+  "de",
+  "fr",
+  "es",
+  "ja",
+  "zh",
+  "ru",
+  "it",
+  "pt",
+];
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -61,6 +74,8 @@ function initTaskStats() {
     withKoWiki: 0,
     withEnWiki: 0,
     bilingualTitle: 0,
+    detailKept: 0,
+    detailSkipped: 0,
   };
 }
 
@@ -84,6 +99,172 @@ function ratio(a, b) {
   return Number(((a / b) * 100).toFixed(2));
 }
 
+function dedupeBy(items, getKey) {
+  const map = new Map();
+  for (const item of items) {
+    const key = getKey(item);
+    if (!map.has(key)) {
+      map.set(key, item);
+    }
+  }
+  return [...map.values()];
+}
+
+function isEmptyBilingual(value) {
+  if (!value || typeof value !== "object") return true;
+  const ko = String(value.ko ?? "").trim();
+  const en = String(value.en ?? "").trim();
+  return !ko && !en;
+}
+
+function detailScoreOf(item, wikiPatch) {
+  const source = item.sourceMeta;
+  const event = item.eventRecord;
+
+  const hasWikiTitle = Boolean(source.ko_wiki_title || source.en_wiki_title);
+  const hasSourceDescription = !isEmptyBilingual(source.description);
+  const hasCountry = !isEmptyBilingual(event.modern_country);
+  const hasSummary =
+    !isEmptyBilingual(event.summary) ||
+    (wikiPatch ? !isEmptyBilingual(wikiPatch.summary) : false);
+  const hasImage = Boolean(event.image_url || (wikiPatch ? wikiPatch.image_url : null));
+
+  return [hasWikiTitle, hasSourceDescription, hasCountry, hasSummary, hasImage]
+    .filter(Boolean).length;
+}
+
+function hasSummaryOf(item, wikiPatch) {
+  const hasEventSummary = !isEmptyBilingual(item.eventRecord.summary);
+  const hasWikiSummary = wikiPatch ? !isEmptyBilingual(wikiPatch.summary) : false;
+  return hasEventSummary || hasWikiSummary;
+}
+
+function buildFallbackLabelQuery(qids) {
+  const validQids = qids.filter((qid) => /^Q\d+$/.test(qid));
+  if (!validQids.length) return "";
+  const values = validQids.map((qid) => `wd:${qid}`).join(" ");
+  const langs = FALLBACK_LABEL_LANG_PRIORITY.map((lang) => `"${lang}"`).join(", ");
+
+  return `
+    SELECT DISTINCT
+      (STRAFTER(STR(?item), "http://www.wikidata.org/entity/") AS ?qid)
+      ?label
+      (LANG(?label) AS ?lang)
+    WHERE {
+      VALUES ?item { ${values} }
+      ?item rdfs:label ?label .
+      FILTER(LANG(?label) IN (${langs}))
+    }
+  `;
+}
+
+function pickFallbackLabels(labelRows) {
+  const rank = new Map(
+    FALLBACK_LABEL_LANG_PRIORITY.map((lang, index) => [lang, index]),
+  );
+  const picked = new Map();
+
+  for (const row of labelRows) {
+    const qid = row.qid?.value?.trim();
+    const label = row.label?.value?.trim();
+    const lang = row.lang?.value?.trim();
+    if (!qid || !label || !lang) continue;
+    if (!rank.has(lang)) continue;
+
+    const existing = picked.get(qid);
+    const next = { label, lang, rank: rank.get(lang) };
+    if (!existing || next.rank < existing.rank) {
+      picked.set(qid, next);
+    }
+  }
+
+  return picked;
+}
+
+async function attachFallbackLabels(rows) {
+  const targetQids = [...new Set(
+    rows
+      .filter((row) => !row.itemLabel_ko?.value && !row.itemLabel_en?.value)
+      .map((row) => row.qid?.value?.trim())
+      .filter(Boolean),
+  )];
+
+  if (!targetQids.length) return rows;
+
+  const query = buildFallbackLabelQuery(targetQids);
+  if (!query) return rows;
+
+  const labelRows = await runSparql(query);
+  const fallbackMap = pickFallbackLabels(labelRows);
+  if (!fallbackMap.size) return rows;
+
+  let applied = 0;
+  const mapped = rows.map((row) => {
+    if (row.itemLabel_ko?.value || row.itemLabel_en?.value) return row;
+    const qid = row.qid?.value?.trim();
+    const fallback = qid ? fallbackMap.get(qid) : null;
+    if (!fallback) return row;
+    applied += 1;
+    return {
+      ...row,
+      itemLabel_fallback: {
+        type: "literal",
+        value: fallback.label,
+      },
+    };
+  });
+
+  if (applied > 0) {
+    logInfo("Applied fallback labels", { targets: targetQids.length, applied });
+  }
+
+  return mapped;
+}
+
+async function applyDetailGate(items) {
+  const shouldTryWiki =
+    config.fetchWikipediaSummary || config.requireDetail || config.requireSummary;
+  const minScore = Math.max(1, config.minDetailScore || 1);
+
+  const kept = [];
+  const patches = [];
+  let skipped = 0;
+
+  for (const item of items) {
+    let wikiPatch = null;
+    let score = detailScoreOf(item, wikiPatch);
+    let hasSummary = hasSummaryOf(item, wikiPatch);
+
+    if (
+      shouldTryWiki &&
+      (config.fetchWikipediaSummary ||
+        score < minScore ||
+        (config.requireSummary && !hasSummary))
+    ) {
+      wikiPatch = await enrichWithWikipedia(item.sourceMeta);
+      score = detailScoreOf(item, wikiPatch);
+      hasSummary = hasSummaryOf(item, wikiPatch);
+    }
+
+    if (config.requireSummary && !hasSummary) {
+      skipped += 1;
+      continue;
+    }
+
+    if (config.requireDetail && score < minScore) {
+      skipped += 1;
+      continue;
+    }
+
+    kept.push(item);
+    if (wikiPatch) {
+      patches.push({ eventId: item.sourceMeta.event_id, patch: wikiPatch });
+    }
+  }
+
+  return { kept, patches, skipped };
+}
+
 function summarizeTaskStats(stats) {
   return {
     rows: stats.rows,
@@ -99,6 +280,9 @@ function summarizeTaskStats(stats) {
     koWikiRate: ratio(stats.withKoWiki, stats.rows),
     enWikiRate: ratio(stats.withEnWiki, stats.rows),
     bilingualTitleRate: ratio(stats.bilingualTitle, stats.normalized),
+    detailKept: stats.detailKept,
+    detailSkipped: stats.detailSkipped,
+    detailKeepRate: ratio(stats.detailKept, stats.detailKept + stats.detailSkipped),
   };
 }
 
@@ -131,26 +315,26 @@ async function runTask(task, checkpointState, mode, options) {
     const rows = await runSparql(query);
     if (!rows.length) break;
 
-    const normalized = rows.map((row) => {
+    const rowsWithFallback = await attachFallbackLabels(rows);
+    const normalized = rowsWithFallback.map((row) => {
       const n = normalizeBinding(row, task.type);
       accumulateStats(stats, row, n);
       return n;
     }).filter(Boolean);
 
-    const events = normalized.map((item) => item.eventRecord);
-    const sources = normalized.map((item) => item.sourceMeta);
+    const deduped = dedupeBy(normalized, (item) => item.eventRecord.id);
+    const detailResult = await applyDetailGate(deduped);
+    const events = detailResult.kept.map((item) => item.eventRecord);
+    const sources = detailResult.kept.map((item) => item.sourceMeta);
+    stats.detailKept += events.length;
+    stats.detailSkipped += detailResult.skipped;
 
     if (!options.dryRun) {
       await upsertEvents(events);
       await upsertSourceMeta(sources);
 
-      if (config.fetchWikipediaSummary) {
-        for (const source of sources) {
-          const patch = await enrichWithWikipedia(source);
-          if (patch) {
-            await patchEventById(source.event_id, patch);
-          }
-        }
+      for (const prepared of detailResult.patches) {
+        await patchEventById(prepared.eventId, prepared.patch);
       }
     }
 
@@ -163,6 +347,7 @@ async function runTask(task, checkpointState, mode, options) {
       page: pageCount,
       pageRows: events.length,
       totalRows,
+      detailSkipped: detailResult.skipped,
     });
 
     if (rows.length < config.pageSize) break;
@@ -187,6 +372,8 @@ function mergeTaskSummaries(results) {
     withKoWiki: 0,
     withEnWiki: 0,
     bilingualTitle: 0,
+    detailKept: 0,
+    detailSkipped: 0,
   };
 
   for (const result of results) {
@@ -198,6 +385,8 @@ function mergeTaskSummaries(results) {
     merged.withKoWiki += result.summary.withKoWiki;
     merged.withEnWiki += result.summary.withEnWiki;
     merged.bilingualTitle += result.summary.bilingualTitle;
+    merged.detailKept += result.summary.detailKept ?? 0;
+    merged.detailSkipped += result.summary.detailSkipped ?? 0;
   }
 
   return {
@@ -209,12 +398,20 @@ function mergeTaskSummaries(results) {
     koWikiRate: ratio(merged.withKoWiki, merged.rows),
     enWikiRate: ratio(merged.withEnWiki, merged.rows),
     bilingualTitleRate: ratio(merged.bilingualTitle, merged.normalized),
+    detailKept: merged.detailKept,
+    detailSkipped: merged.detailSkipped,
+    detailKeepRate: ratio(merged.detailKept, merged.detailKept + merged.detailSkipped),
   };
 }
 
 async function main() {
   const parsed = parseArgs();
   const { mode, types, dryRun, reportFile } = parsed;
+
+  if (!dryRun && mode !== "probe") {
+    requireDbEnv();
+  }
+
   const years = resolveYearRange(mode, parsed);
   const tasks = buildTasks({
     types,
@@ -230,6 +427,10 @@ async function main() {
     dryRun,
     yearFrom: years.from,
     yearTo: years.to,
+    requireDetail: config.requireDetail,
+    requireSummary: config.requireSummary,
+    minDetailScore: config.minDetailScore,
+    fetchWikipediaSummary: config.fetchWikipediaSummary,
     tasks: tasks.length,
     checkpoint: config.checkpointPath,
   });

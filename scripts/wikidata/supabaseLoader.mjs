@@ -28,7 +28,9 @@ async function postgrest(path, options = {}) {
     throw new Error(`PostgREST ${response.status} ${path}: ${text.slice(0, 400)}`);
   }
   if (response.status === 204) return null;
-  return response.json();
+  const text = await response.text();
+  if (!text.trim()) return null;
+  return JSON.parse(text);
 }
 
 export async function upsertEvents(records) {

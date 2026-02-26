@@ -17,6 +17,7 @@ function buildSelect() {
   return `
     SELECT DISTINCT
       (STRAFTER(STR(?item), "http://www.wikidata.org/entity/") AS ?qid)
+      (STRAFTER(STR(?class), "http://www.wikidata.org/entity/") AS ?classQid)
       ?coord
       (STR(?start) AS ?startRaw)
       (STR(?end) AS ?endRaw)
@@ -26,6 +27,10 @@ function buildSelect() {
       (STR(?inception) AS ?inceptionRaw)
       ?itemLabel_ko
       ?itemLabel_en
+      ?itemDesc_ko
+      ?itemDesc_en
+      ?koWikiTitle
+      ?enWikiTitle
   `;
 }
 
@@ -33,6 +38,18 @@ function buildSharedLabelOptionals() {
   return `
     OPTIONAL { ?item rdfs:label ?itemLabel_ko FILTER(LANG(?itemLabel_ko) = "ko") }
     OPTIONAL { ?item rdfs:label ?itemLabel_en FILTER(LANG(?itemLabel_en) = "en") }
+    OPTIONAL { ?item schema:description ?itemDesc_ko FILTER(LANG(?itemDesc_ko) = "ko") }
+    OPTIONAL { ?item schema:description ?itemDesc_en FILTER(LANG(?itemDesc_en) = "en") }
+    OPTIONAL {
+      ?koWiki schema:about ?item ;
+              schema:isPartOf <https://ko.wikipedia.org/> ;
+              schema:name ?koWikiTitle .
+    }
+    OPTIONAL {
+      ?enWiki schema:about ?item ;
+              schema:isPartOf <https://en.wikipedia.org/> ;
+              schema:name ?enWikiTitle .
+    }
   `;
 }
 
@@ -49,21 +66,22 @@ export function buildQuery({ entityType, yearFrom, yearTo, limit, offset }) {
         ?item wdt:P625 ?coord .
         {
           ?item wdt:P580 ?start .
+          FILTER(YEAR(?start) >= ${yearFrom} && YEAR(?start) <= ${yearTo})
           BIND(?start AS ?timeRef)
         }
         UNION
         {
           ?item wdt:P585 ?pointInTime .
+          FILTER(YEAR(?pointInTime) >= ${yearFrom} && YEAR(?pointInTime) <= ${yearTo})
           BIND(?pointInTime AS ?timeRef)
         }
         UNION
         {
           ?item wdt:P571 ?inception .
+          FILTER(YEAR(?inception) >= ${yearFrom} && YEAR(?inception) <= ${yearTo})
           BIND(?inception AS ?timeRef)
         }
         OPTIONAL { ?item wdt:P582 ?end. }
-        BIND(YEAR(?timeRef) AS ?yearRef)
-        FILTER(?yearRef >= ${yearFrom} && ?yearRef <= ${yearTo})
         ${sharedLabelOptionals}
       }
       ORDER BY ?item
@@ -82,6 +100,19 @@ export function buildQuery({ entityType, yearFrom, yearTo, limit, offset }) {
         OPTIONAL { ?item wdt:P570 ?death. }
         BIND(YEAR(?birth) AS ?yearRef)
         FILTER(?yearRef >= ${yearFrom} && ?yearRef <= ${yearTo})
+        FILTER(
+          EXISTS {
+            ?koWiki schema:about ?item ;
+                    schema:isPartOf <https://ko.wikipedia.org/> ;
+                    schema:name ?koWikiTitle .
+          }
+          ||
+          EXISTS {
+            ?enWiki schema:about ?item ;
+                    schema:isPartOf <https://en.wikipedia.org/> ;
+                    schema:name ?enWikiTitle .
+          }
+        )
         ${sharedLabelOptionals}
       }
       ORDER BY ?item
