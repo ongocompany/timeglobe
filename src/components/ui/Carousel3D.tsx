@@ -53,12 +53,13 @@ export default function Carousel3D({ items, isOpen, onClose, onCardClick, render
 
   useEffect(() => { activeIndexRef.current = activeIndex; }, [activeIndex]);
 
-  // [cl] 캐러셀 열릴 때: 상태 초기화 (ref 배열 크기를 displayCount에 맞춤)
+  // [cl] 캐러셀 열릴 때: 상태 초기화 (ref 배열은 React 콜백에 맡기고 states만 리셋)
   useEffect(() => {
     if (isOpen) {
       setActiveIndex(-1);
       hoveredIndexRef.current = -1;
-      itemElsRef.current = Array(ORBIT_CARD_COUNT).fill(null);
+      // [cl] itemElsRef는 리셋하지 않음 — React ref 콜백이 커밋 단계에서 이미 세팅했으므로
+      // 여기서 덮어쓰면 프로덕션에서 ref가 null로 날아감
       itemStatesRef.current = Array.from({ length: ORBIT_CARD_COUNT }, () => ({
         gray: 0, brightness: 100, opacity: 1, currentX: 0,
       }));
