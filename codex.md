@@ -27,8 +27,9 @@
 
 ## 6. 프로젝트 규칙
 - **프로젝트명**: TimeGlobe
-- **저장소**: https://github.com/leejinwoo1973/timeglobe
-- **저장소 주소**: https://github.com/leejinwoo1973/timeglobe.git
+- **저장소 (Gitea)**: http://100.115.194.12:3000/jinadmin/timeglobe
+- **저장소 remote**: `origin` (Gitea), `nas` (bare repo 백업)
+- **배포**: https://timeglobe-indol.vercel.app (Vercel)
 
 ## 7. 업무 시작 및 기록 규칙
 * **업무 시작 시:** 작업 스레드가 새로 열리면 형의 지시를 처리하기 전에 먼저 `docs/develop/02_[gm]database_schema_plan.md`, `docs/develop/01_[gm]development_guide.md`, `docs/work_change_log.md` 3개의 파일을 무조건 읽고, 현재 프로젝트 내용과 이전 업무 진행 상황을 파악해!
@@ -38,8 +39,8 @@
 * **새로운 주요 문서 작성 시:** 파일명은 반드시 순차적인 번호와 작성자 코드를 붙여서 생성해. (예: `01_[gm]development_guide.md`, `02_[gm]database_schema_plan.md`)
 
 ## 9. 세션 시작과 종료시
-* 세션 시작 시 저장소 주소로 `git pull`을 실행해줘.
-* 세션 종료 시 저장소 주소로 `git push`를 실행해줘.
+* 세션 시작 시 `git pull origin main`을 실행해줘.
+* 세션 종료 시 `git push origin main`을 실행해줘.
 
 ## 10. 협업 규칙
 * 이 프로젝트는 진(jn), 민철(cl,claude), 지훈(gm,gemini), 태훈(co,codex)가 함께 개발하는 프로젝트야.

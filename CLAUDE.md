@@ -27,12 +27,13 @@
 
 ## 6. 프로젝트 규칙
 - **프로젝트명**: TimeGlobe
-- **저장소**: https://github.com/leejinwoo1973/timeglobe
-- **저장소 주소**: https://github.com/leejinwoo1973/timeglobe.git
+- **저장소 (Gitea)**: http://100.115.194.12:3000/jinadmin/timeglobe
+- **저장소 remote**: `origin` (Gitea), `nas` (bare repo 백업)
+- **배포**: https://timeglobe-indol.vercel.app (Vercel)
 
 ## 7. 세션 시작과 종료시
-- 세션 시작시 저장소 주소로 git pull을 실행해줘
-- 세션 종료시 저장소 주소로 git push를 실행해줘
+- 세션 시작시 `git pull origin main`을 실행해줘
+- 세션 종료시 `git push origin main`을 실행해줘
 
 ## 8. 협업규칙
 ** 이 프로젝트는 진(jn), 민철(cl,claude), 지훈(gm,gemini), 태훈(co,codex)가 함께 개발하는 프로젝트야. **
