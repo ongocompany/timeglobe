@@ -26,6 +26,9 @@ import {
   ScreenSpaceEventHandler,
   ScreenSpaceEventType,
   defined,
+  HeightReference,
+  DirectionalLight,
+  CameraEventType,
 } from "cesium";
 import type { MockEvent } from "@/data/mockEvents";
 
@@ -179,6 +182,31 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     scene.skyBox = new SkyBox({ sources: SKYBOX_SOURCES });
     if (scene.skyAtmosphere) scene.skyAtmosphere.show = false;
     scene.globe.showGroundAtmosphere = false;
+
+    // [cl] 3D 모델용 방향성 조명: 우측 상단에서 비추는 느낌
+    scene.light = new DirectionalLight({
+      direction: new Cartesian3(0.3, -0.5, -0.7),
+      intensity: 3.0,
+    });
+
+    // [cl] 우클릭 → 틸트(기울기), 줌은 휠+미들버튼만
+    const controller = viewer.scene.screenSpaceCameraController;
+    controller.tiltEventTypes = [CameraEventType.RIGHT_DRAG];
+    controller.zoomEventTypes = [CameraEventType.MIDDLE_DRAG, CameraEventType.WHEEL, CameraEventType.PINCH];
+
+    // [cl] 지구 내부 진입 방지: 최소 줌 거리 = 지표면에서 500m
+    controller.minimumZoomDistance = 500;
+    // [cl] 최대 줌 거리: 너무 멀리 빠지지 않게 (5만 km)
+    controller.maximumZoomDistance = 50_000_000;
+
+    // [cl] 틸트 각도 제한: 수직(-90°)~수평(-10°) 범위만 허용
+    // -90° = 바로 위에서 내려다봄 (기본), -10° = 거의 수평 (지평선 근처)
+    controller.minimumCollisionTerrainHeight = 500;
+
+    // [cl] 관성(inertia) 줄이기: 마우스 놓은 후 휙휙 도는 문제 해결
+    controller.inertiaSpin = 0.3;        // 기본 0.9 → 0.3으로 줄임
+    controller.inertiaTranslate = 0.3;   // 패닝 관성도 줄임
+    controller.inertiaZoom = 0.5;        // 줌 관성 약간 줄임
 
     // [cl] 기본 타일 색감 보정
     const baseLayer = viewer.imageryLayers.get(0);
@@ -576,8 +604,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       lockedOrbitRef.current = null;
       controller.enableZoom = true;
       controller.enableTilt = true;
-      controller.minimumZoomDistance = 1;
-      controller.maximumZoomDistance = Infinity;
+      controller.minimumZoomDistance = 500;      // [cl] 지구 내부 진입 방지 유지
+      controller.maximumZoomDistance = 50_000_000;
     }
   }, [orbitActive, viewer]);
 
@@ -959,6 +987,42 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       cancelAnimationFrame(rafId);
       el.remove();
       if (!viewer.isDestroyed() && viewer.canvas.style.cursor === "none") viewer.canvas.style.cursor = "";
+    };
+  }, [viewer]);
+
+  // [cl] ★ 3D 모델 테스트: 랜드마크 몇 개를 지구본 위에 올려보기
+  useEffect(() => {
+    if (!viewer) return;
+
+    const TEST_MODELS = [
+      { id: "test-eiffel",   uri: "/models/landmark/eiffel_tower.glb",      lng: 2.2945,    lat: 48.8584,  name: "Eiffel Tower" },
+      { id: "test-colosseum", uri: "/models/landmark/colosseum.glb",        lng: 12.4922,   lat: 41.8902,  name: "Colosseum" },
+      { id: "test-liberty",   uri: "/models/landmark/statue_of_liberty.glb", lng: -74.0445,  lat: 40.6892,  name: "Statue of Liberty" },
+      { id: "test-tajmahal",  uri: "/models/landmark/taj_mahal.glb",        lng: 78.0421,   lat: 27.1751,  name: "Taj Mahal" },
+      { id: "test-bigben",    uri: "/models/landmark/big_ben.glb",          lng: -0.1246,   lat: 51.5007,  name: "Big Ben" },
+    ];
+
+    TEST_MODELS.forEach((m) => {
+      if (viewer.entities.getById(m.id)) return;
+      viewer.entities.add({
+        id: m.id,
+        name: m.name,
+        position: Cartesian3.fromDegrees(m.lng, m.lat, 0),
+        model: {
+          uri: m.uri,
+          minimumPixelSize: 64,
+          scale: 30000,
+          heightReference: HeightReference.CLAMP_TO_GROUND,
+        },
+      });
+    });
+
+    return () => {
+      if (viewer.isDestroyed()) return;
+      TEST_MODELS.forEach((m) => {
+        const e = viewer.entities.getById(m.id);
+        if (e) viewer.entities.remove(e);
+      });
     };
   }, [viewer]);
 
