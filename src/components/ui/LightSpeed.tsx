@@ -28,7 +28,7 @@ void main() {
   float len = length(st);
 
   // [cl] 극좌표: 중심에서 바깥으로 방사 + 스파이럴 twist
-  float twist = len * 2.5 + T * 0.4;
+  float twist = len * 0.6 + T * 0.15;
   vec2 polar = vec2(atan(st.y, st.x) + twist, len);
 
   // [cl] 200개 별 줄기
