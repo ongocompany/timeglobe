@@ -161,6 +161,10 @@ function createShapeMarker(category: string, size = 64): string {
   }
   ctx.closePath();
   ctx.fill();
+  // [cl] 흰색 외곽선
+  ctx.strokeStyle = "rgba(255,255,255,0.85)";
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
 
   const url = canvas.toDataURL();
   markerCache[cacheKey] = url;
