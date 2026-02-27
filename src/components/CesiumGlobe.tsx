@@ -718,16 +718,42 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       });
     });
 
-    // [cl] heartbeat: 마커별 랜덤 위상으로 부드럽게 커졌다 작아졌다
+    // [cl] heartbeat + 랜덤 스핀: 마커별 비동기 펄스 & 가끔 360도 회전
+    // 스핀 상태: 각 마커별 { startTime, duration }
+    const spinState: Record<string, { start: number; dur: number }> = {};
+    const SPIN_INTERVAL = 10_000; // [cl] 평균 10초에 한 번 스핀
+    const SPIN_DURATION = 800;    // [cl] 회전 소요 시간 (ms)
+
     let pulseRaf = 0;
     const pulse = () => {
-      const t = performance.now() * 0.002; // [cl] 속도 조절 (낮을수록 느림)
+      const now = performance.now();
+      const t = now * 0.002;
       events.forEach((ev) => {
         const entity = viewer.entities.getById(ev.id);
         if (!entity?.billboard) return;
         const phase = phaseMap[ev.id] || 0;
-        const s = 1.0 + 0.2 * Math.sin(t + phase); // [cl] ±20% 스케일 변화
+
+        // [cl] heartbeat
+        const s = 1.0 + 0.2 * Math.sin(t + phase);
         entity.billboard.scale = s as unknown as import("cesium").Property;
+
+        // [cl] 랜덤 스핀: 매 프레임 확률 체크 → 약 10초에 한 번 트리거
+        const spin = spinState[ev.id];
+        if (!spin && Math.random() < 1 / (60 * SPIN_INTERVAL / 1000)) {
+          spinState[ev.id] = { start: now, dur: SPIN_DURATION };
+        }
+        if (spin) {
+          const elapsed = now - spin.start;
+          if (elapsed < spin.dur) {
+            // [cl] easeInOut으로 부드러운 회전
+            const p = elapsed / spin.dur;
+            const ease = p < 0.5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2;
+            entity.billboard.rotation = (-ease * Math.PI * 2) as unknown as import("cesium").Property;
+          } else {
+            entity.billboard.rotation = 0 as unknown as import("cesium").Property;
+            delete spinState[ev.id];
+          }
+        }
       });
       pulseRaf = requestAnimationFrame(pulse);
     };
