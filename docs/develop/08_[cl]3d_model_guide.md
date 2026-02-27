@@ -192,17 +192,381 @@ function getModelPath(event: Event): string {
 
 ---
 
-## 5. Meshy 생성 팁
+## 5. Meshy Text-to-3D 프롬프트 가이드
 
-- **프롬프트 스타일 통일**: "low-poly stylized [물체], soft colors, clean geometry" 계열로 통일감 유지
-- **Image-to-3D 모드** 권장: Text-to-3D보다 퀄리티 우수
-- **참고 이미지**: 원하는 스타일의 2D 이미지를 먼저 찾아서 Input으로 사용
-- **텍스처**: Meshy에서 자동 생성된 텍스처 사용, 필요 시 후보정
-- **크기 조절**: CesiumJS에서 `modelMatrix`의 `scale`로 조정 가능
+### 5-1. 스타일 공통 규칙
+
+**일반 카테고리 모델** (전쟁, 혁명, 인물, 과학, 정치, 건국, 선사):
+- 스타일: Low-poly, 미니어처 느낌, 단순한 색감
+- 텍스처: 플랫 컬러 위주 (복잡한 맵핑 X)
+- 폴리곤: 적게 (지구 위에 작게 올라가므로 디테일 과잉 불필요)
+
+**랜드마크 모델**:
+- 스타일: Medium-poly, 건축물 특징이 살아야 함
+- 텍스처: 약간 더 디테일 허용 (돌결, 금속감 정도)
+- 실루엣이 명확해야 함 (멀리서도 알아볼 수 있게)
+
+### 5-2. 공통 프롬프트 템플릿
+
+**일반 모델용 (Base Prompt)**:
+```
+[물체 영문], low-poly miniature style, flat shading, simple solid colors,
+clean geometry, minimal detail, soft matte finish, no background,
+centered, game asset style, isometric view
+```
+
+**랜드마크용 (Landmark Prompt)**:
+```
+[건축물 영문], stylized miniature model, medium-poly,
+subtle stone/metal texture, clean silhouette, recognizable shape,
+warm natural lighting, no background, centered, architectural model style
+```
+
+### 5-3. 전체 프롬프트 목록
 
 ---
 
-## 6. 총 모델 수 요약
+#### H. 선사시대
+
+**H1. 주먹도끼** — `hand_axe.glb`
+```
+prehistoric hand axe, flint stone tool, teardrop shaped,
+low-poly miniature style, flat shading, simple solid colors,
+rough grey-brown stone surface, clean geometry, minimal detail,
+no background, centered, game asset style
+```
+
+**H2. 토기** — `simple_pot.glb`
+```
+neolithic clay pot, simple round pottery with no decoration,
+low-poly miniature style, flat shading, warm terracotta color,
+clean geometry, minimal detail, soft matte finish,
+no background, centered, game asset style
+```
+
+**H3. 청동 도끼** — `bronze_axe.glb`
+```
+bronze age axe, short wooden handle with bronze blade,
+low-poly miniature style, flat shading, bronze metallic color and brown wood,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+---
+
+#### B. 전쟁/분쟁
+
+**B1. 검과 방패** — `sword_shield.glb`
+```
+ancient sword and round shield crossed together,
+low-poly miniature style, flat shading, silver blade and bronze shield,
+clean geometry, minimal detail, soft matte finish,
+no background, centered, game asset style
+```
+
+**B2. 활과 화살** — `bow_arrow.glb`
+```
+medieval longbow with single arrow, wooden bow with string,
+low-poly miniature style, flat shading, brown wood tones,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+**B3. 대포** — `cannon.glb`
+```
+old cannon on wooden wheeled carriage, 16th century style,
+low-poly miniature style, flat shading, dark iron barrel and brown wood,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+**B4. 소총** — `rifle.glb`
+```
+19th century military rifle, bolt action, wooden stock,
+low-poly miniature style, flat shading, dark metal and brown wood,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+**B5. 미사일 기지** — `missile_base.glb`
+```
+military missile launcher on platform, single upright missile,
+low-poly miniature style, flat shading, military green and grey,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+---
+
+#### C. 혁명/봉기
+
+**C1. 주먹과 깃발** — `revolution_fist_flag.glb`
+```
+raised clenched fist holding a waving flag on a pole,
+low-poly miniature style, flat shading, stone grey fist and red flag,
+clean geometry, minimal detail, powerful upward pose,
+no background, centered, game asset style
+```
+
+---
+
+#### D. 인물/문화
+
+**D1. 대리석 흉상** — `marble_bust.glb`
+```
+classical marble bust sculpture on small pedestal, generic male figure,
+low-poly miniature style, flat shading, white marble color,
+clean geometry, minimal detail, Roman/Greek style,
+no background, centered, game asset style
+```
+
+---
+
+#### E. 과학/발명
+
+**E1. 파피루스 두루마리** — `papyrus_scroll.glb`
+```
+ancient papyrus scroll partially unrolled,
+low-poly miniature style, flat shading, aged yellow-beige color,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+**E2. 고서** — `old_book.glb`
+```
+thick old leather-bound book, slightly open, medieval style,
+low-poly miniature style, flat shading, dark brown leather cover,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+**E3. 톱니바퀴** — `cogwheel.glb`
+```
+industrial cogwheel gear, single large metallic gear with teeth,
+low-poly miniature style, flat shading, iron grey metallic color,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+**E4. 원자 모형** — `atom_model.glb`
+```
+atom model with nucleus and three electron orbits,
+low-poly miniature style, flat shading, blue orbits and red nucleus,
+clean geometry, minimal detail, scientific model style,
+no background, centered, game asset style
+```
+
+**E5. 컴퓨터 칩** — `computer_chip.glb`
+```
+computer microchip processor, square chip with pins,
+low-poly miniature style, flat shading, dark green PCB with gold pins,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+---
+
+#### F. 정치/사회
+
+**F1. 두루마리 문서** — `scroll_document.glb`
+```
+official scroll document with wax seal, partially unrolled parchment,
+low-poly miniature style, flat shading, cream parchment with red wax seal,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+---
+
+#### G. 건국/수립
+
+**G1. 국새/옥새** — `royal_seal.glb`
+```
+royal seal stamp, ornate handle on square base, official government seal,
+low-poly miniature style, flat shading, gold and jade green colors,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+**G2. 국기** — `national_flag.glb`
+```
+flag on a pole waving in wind, simple tricolor design,
+low-poly miniature style, flat shading, vibrant flag colors,
+clean geometry, minimal detail, no background, centered, game asset style
+```
+
+---
+
+#### A. 랜드마크 (Medium-poly)
+
+**A1. 기자 피라미드** — `pyramid_giza.glb`
+```
+Great Pyramid of Giza, ancient Egyptian pyramid,
+stylized miniature model, medium-poly, subtle sandstone texture,
+clean silhouette, warm desert colors, sandy beige stone blocks,
+no background, centered, architectural model style
+```
+
+**A2. 스핑크스** — `sphinx.glb`
+```
+Great Sphinx of Giza, lion body with human head,
+stylized miniature model, medium-poly, subtle sandstone texture,
+clean silhouette, warm sandy beige color,
+no background, centered, architectural model style
+```
+
+**A3. 파르테논 신전** — `parthenon.glb`
+```
+Parthenon temple Athens, Greek columns and pediment,
+stylized miniature model, medium-poly, white marble texture,
+clean silhouette, classical Greek architecture,
+no background, centered, architectural model style
+```
+
+**A4. 콜로세움** — `colosseum.glb`
+```
+Roman Colosseum, oval amphitheater with arched tiers,
+stylized miniature model, medium-poly, aged stone texture,
+clean silhouette, warm beige-grey stone color,
+no background, centered, architectural model style
+```
+
+**A5. 만리장성** — `great_wall.glb`
+```
+Great Wall of China section with watchtower, winding wall segment,
+stylized miniature model, medium-poly, grey stone brick texture,
+clean silhouette, mountain wall section,
+no background, centered, architectural model style
+```
+
+**A6. 앙코르와트** — `angkor_wat.glb`
+```
+Angkor Wat temple, Cambodian temple with five towers,
+stylized miniature model, medium-poly, aged grey stone texture,
+clean silhouette, iconic tower profile,
+no background, centered, architectural model style
+```
+
+**A7. 마추픽추** — `machu_picchu.glb`
+```
+Machu Picchu ruins, Inca stone terraces and buildings on mountain,
+stylized miniature model, medium-poly, grey stone with green grass,
+clean silhouette, terraced mountain city,
+no background, centered, architectural model style
+```
+
+**A8. 타지마할** — `taj_mahal.glb`
+```
+Taj Mahal, white marble mausoleum with central dome and four minarets,
+stylized miniature model, medium-poly, white marble with subtle detail,
+clean silhouette, symmetrical design,
+no background, centered, architectural model style
+```
+
+**A9. 노트르담 대성당** — `notre_dame.glb`
+```
+Notre-Dame Cathedral Paris, Gothic cathedral with twin towers and spire,
+stylized miniature model, medium-poly, grey stone texture,
+clean silhouette, Gothic architecture,
+no background, centered, architectural model style
+```
+
+**A10. 피사의 사탑** — `leaning_tower_pisa.glb`
+```
+Leaning Tower of Pisa, tilted white marble tower with arched galleries,
+stylized miniature model, medium-poly, white marble texture,
+clean silhouette, characteristic tilt angle,
+no background, centered, architectural model style
+```
+
+**A11. 모아이 석상** — `moai.glb`
+```
+Easter Island Moai statue, single large stone head figure,
+stylized miniature model, medium-poly, dark grey volcanic stone,
+clean silhouette, iconic elongated face,
+no background, centered, architectural model style
+```
+
+**A12. 개선문** — `arc_de_triomphe.glb`
+```
+Arc de Triomphe Paris, monumental arch with relief sculptures,
+stylized miniature model, medium-poly, light grey stone texture,
+clean silhouette, neoclassical arch,
+no background, centered, architectural model style
+```
+
+**A13. 에펠탑** — `eiffel_tower.glb`
+```
+Eiffel Tower Paris, iron lattice tower,
+stylized miniature model, medium-poly, dark iron grey metallic,
+clean silhouette, iconic tapered shape with observation decks,
+no background, centered, architectural model style
+```
+
+**A14. 자유의 여신상** — `statue_of_liberty.glb`
+```
+Statue of Liberty New York, figure holding torch and tablet on pedestal,
+stylized miniature model, medium-poly, copper green patina color,
+clean silhouette, recognizable pose with crown,
+no background, centered, architectural model style
+```
+
+**A15. 빅벤** — `big_ben.glb`
+```
+Big Ben clock tower London, Elizabeth Tower with clock faces,
+stylized miniature model, medium-poly, golden stone and dark roof,
+clean silhouette, Gothic Revival style,
+no background, centered, architectural model style
+```
+
+**A16. 브란덴부르크 문** — `brandenburg_gate.glb`
+```
+Brandenburg Gate Berlin, neoclassical gate with columns and quadriga on top,
+stylized miniature model, medium-poly, light sandstone texture,
+clean silhouette, six columns with chariot sculpture,
+no background, centered, architectural model style
+```
+
+**A17. 엠파이어스테이트 빌딩** — `empire_state.glb`
+```
+Empire State Building New York, Art Deco skyscraper with antenna spire,
+stylized miniature model, medium-poly, grey concrete and steel,
+clean silhouette, iconic stepped setback design,
+no background, centered, architectural model style
+```
+
+**A18. 시드니 오페라하우스** — `sydney_opera.glb`
+```
+Sydney Opera House, white shell-shaped roof sections,
+stylized miniature model, medium-poly, bright white ceramic tiles,
+clean silhouette, distinctive sail-shaped shells,
+no background, centered, architectural model style
+```
+
+**A19. 부르즈 할리파** — `burj_khalifa.glb`
+```
+Burj Khalifa Dubai, super tall modern skyscraper with Y-shaped floor plan,
+stylized miniature model, medium-poly, silver glass and steel,
+clean silhouette, tapering needle shape,
+no background, centered, architectural model style
+```
+
+**A20. 크렘린궁** — `kremlin.glb`
+```
+Moscow Kremlin, red brick fortress with towers and green onion domes,
+stylized miniature model, medium-poly, red brick and green dome colors,
+clean silhouette, iconic star-topped tower,
+no background, centered, architectural model style
+```
+
+---
+
+## 6. 생성 작업 순서 추천
+
+1단계: 우선 테스트 (3개)
+- 대포 (B3) — 가장 단순한 형태, 스타일 기준 잡기
+- 기자 피라미드 (A1) — 랜드마크 기준 잡기
+- 대리석 흉상 (D1) — 인물 기준 잡기
+
+2단계: 나머지 일반 모델 (15개)
+- 전쟁 4개 + 혁명 1개 + 과학 5개 + 정치 1개 + 건국 2개 + 선사 3개 - 1(테스트)
+
+3단계: 나머지 랜드마크 (19개)
+
+> 1단계에서 스타일이 확정되면 나머지는 같은 프롬프트 패턴으로 빠르게 생성 가능
+
+---
+
+## 7. 총 모델 수 요약
 
 | 카테고리 | 모델 수 |
 |---------|--------|
