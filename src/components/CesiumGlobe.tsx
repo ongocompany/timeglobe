@@ -205,36 +205,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     // [cl] 관성: CesiumJS 기본값 유지 (0.9, 0.9, 0.8)
 
-    // [cl] ★ 틸트 상태에서 휠 줌 시 heading 360° 회전 방지
-    // 원인: CesiumJS가 기울어진 상태에서 줌할 때 지표면 포인트 중심으로 공전
-    // 해결: 휠 줌 중 매 프레임 heading을 고정 (단발 복원으로는 부족)
-    let lockedHeading: number | null = null;
-    let wheelLockTimer: ReturnType<typeof setTimeout> | null = null;
-    const onWheel = () => {
-      const pitch = viewer.camera.pitch;
-      if (pitch > CesiumMath.toRadians(-85)) {
-        // [cl] 최초 휠 시점의 heading 캡처 (연속 휠 중에는 갱신 안 함)
-        if (lockedHeading === null) {
-          lockedHeading = viewer.camera.heading;
-        }
-        // [cl] 마지막 휠 이벤트 후 300ms 뒤 잠금 해제
-        if (wheelLockTimer) clearTimeout(wheelLockTimer);
-        wheelLockTimer = setTimeout(() => { lockedHeading = null; }, 300);
-      }
-    };
-    viewer.canvas.addEventListener("wheel", onWheel, { passive: true });
-    const removePostRender = viewer.scene.postRender.addEventListener(() => {
-      if (lockedHeading !== null) {
-        viewer.camera.setView({
-          orientation: {
-            heading: lockedHeading,
-            pitch: viewer.camera.pitch,
-            roll: viewer.camera.roll,
-          },
-        });
-      }
-    });
-
     // [cl] 기본 타일 색감 보정
     const baseLayer = viewer.imageryLayers.get(0);
     if (baseLayer) {
@@ -274,8 +244,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     );
     return () => {
       try { removeTileListener(); } catch { /* 이미 제거됨 */ }
-      viewer.canvas.removeEventListener("wheel", onWheel);
-      removePostRender();
     };
   }, [scene, viewer]);
 
@@ -1167,7 +1135,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
         // [cl] 자전축 복원: heading→0(북↑), roll→0으로 서서히 보정
         // ★ orbit 모드에서는 스킵
-        if (!orbitActiveRef.current) {
+        // ★ 기울어진 상태(pitch > -80°)에서는 스킵 — 기울기 중 heading 복원이
+        //   한 방향으로만 회전하면서 360° 휙 도는 문제 방지
+        const pitch = viewer.camera.pitch;
+        if (!orbitActiveRef.current && pitch < CesiumMath.toRadians(-80)) {
           const heading = viewer.camera.heading;
           const roll = viewer.camera.roll;
           const needsHeadingFix = Math.abs(heading) > CesiumMath.toRadians(0.5) && Math.abs(heading) < CesiumMath.toRadians(359.5);
@@ -1188,7 +1159,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             viewer.camera.setView({
               orientation: {
                 heading: newHeading,
-                pitch: viewer.camera.pitch,
+                pitch,
                 roll: newRoll,
               },
             });
