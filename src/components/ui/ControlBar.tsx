@@ -17,7 +17,7 @@ interface ControlBarProps {
   onReset: () => void;
 }
 
-const fmt = (y: number) => (y < 0 ? `${Math.abs(y)} BC` : `${y}`);
+const fmt = (y: number) => (y < 0 ? `${Math.abs(y)} BC` : `${y} AD`);
 
 export default function ControlBar({
   year,

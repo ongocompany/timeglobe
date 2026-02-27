@@ -30,7 +30,7 @@ export default function DateDisplay() {
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
         >
             <div className="text-xs font-semibold tracking-wider text-white/80">
-                {year}년 {month}월 {day}일
+                AD {year}년 {month}월 {day}일
             </div>
             <div
                 className="mt-0.5 text-white/45 tracking-widest"

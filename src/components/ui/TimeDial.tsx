@@ -121,7 +121,7 @@ export default function TimeDial({
   }
 
   const fmt = (y: number) =>
-    y < 0 ? `${Math.abs(y)} BC` : `${y}`;
+    y < 0 ? `${Math.abs(y)} BC` : `${y} AD`;
 
   return (
     <div
@@ -218,6 +218,7 @@ export default function TimeDial({
         <NumberFlow
           value={Math.abs(shownYear)}
           trend={warping ? (warpDirection === "future" ? 1 : -1) : 0}
+          format={{ useGrouping: false }}
           style={{
             fontSize: 16,
             fontWeight: 700,
@@ -228,21 +229,19 @@ export default function TimeDial({
             userSelect: "none",
           }}
         />
-        {/* [cl] BC 접미사: 음수 연도일 때만 표시 */}
-        {shownYear < 0 && (
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 500,
-              fontFamily: "var(--font-geist-mono), monospace",
-              color: "rgba(255,255,255,0.65)",
-              marginLeft: 3,
-              userSelect: "none",
-            }}
-          >
-            BC
-          </span>
-        )}
+        {/* [cl] AD/BC 접미사 */}
+        <span
+          style={{
+            fontSize: 10,
+            fontWeight: 500,
+            fontFamily: "var(--font-geist-mono), monospace",
+            color: "rgba(255,255,255,0.65)",
+            marginLeft: 3,
+            userSelect: "none",
+          }}
+        >
+          {shownYear < 0 ? "BC" : "AD"}
+        </span>
       </div>
 
       {/* [cl] 렌즈 좌우 화살 인디케이터 */}
