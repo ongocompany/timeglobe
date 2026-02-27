@@ -1155,7 +1155,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const canvas = viewer.canvas;
 
     // [cl] ★ 빠른 flick 감지: 드래그 중 커서 위치를 버퍼에 기록 → pointerup 시 속도 계산
-    const SPIN_WARP_THRESHOLD = 1500; // [cl] px/sec — 이 속도 이상이면 타임워프 발동
+    const SPIN_WARP_THRESHOLD = 2500; // [cl] px/sec — 이 속도 이상이면 타임워프 발동
     const SPIN_WARP_COOLDOWN = 10_000; // [cl] ms — 워프 후 10초간 재트리거 방지
     const BUFFER_WINDOW = 300; // [cl] ms — 속도 계산용 최근 샘플 윈도우
     const flickBuffer: { x: number; t: number }[] = [];
