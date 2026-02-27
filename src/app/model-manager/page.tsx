@@ -64,7 +64,17 @@ export default function ModelManagerPage() {
   const [editingNotes, setEditingNotes] = useState('');
   const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadResult, setUploadResult] = useState<{
+    originalSize: number;
+    finalSize: number;
+    reduction: string;
+  } | null>(null);
+  const [dragOver, setDragOver] = useState(false);
+  const [optimizing, setOptimizing] = useState(false);
+  const [optimizeResult, setOptimizeResult] = useState<string | null>(null);
   const promptRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const fetchModels = async () => {
     const res = await fetch('/api/models');
@@ -82,7 +92,65 @@ export default function ModelManagerPage() {
       setEditingPrompt(selected.prompt);
       setEditingNotes(selected.notes);
     }
+    setUploadResult(null);
   }, [selectedId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // [cl] 드래그앤드롭 / 파일선택 업로드 핸들러
+  const handleFileUpload = async (file: File) => {
+    if (!selected) return;
+    if (!file.name.toLowerCase().endsWith('.glb')) {
+      alert('GLB 파일만 업로드 가능합니다.');
+      return;
+    }
+    setUploading(true);
+    setUploadResult(null);
+    const formData = new FormData();
+    formData.append('modelId', selected.id);
+    formData.append('file', file);
+    try {
+      const res = await fetch('/api/models/upload', { method: 'POST', body: formData });
+      const data = await res.json();
+      if (data.ok) {
+        setUploadResult({
+          originalSize: data.originalSize,
+          finalSize: data.finalSize,
+          reduction: data.reduction,
+        });
+        await fetchModels();
+      } else {
+        alert('업로드 실패: ' + data.error);
+      }
+    } catch (err) {
+      alert('업로드 중 오류 발생');
+    }
+    setUploading(false);
+  };
+
+  // [cl] 전체 GLB 일괄 최적화
+  const handleOptimizeAll = async () => {
+    setOptimizing(true);
+    setOptimizeResult(null);
+    try {
+      const res = await fetch('/api/models/optimize', { method: 'POST' });
+      const data = await res.json();
+      if (data.ok) {
+        setOptimizeResult(
+          `${data.count}개 최적화 완료! ${formatBytes(data.totalOriginal)} → ${formatBytes(data.totalFinal)} (${data.totalReduction} 절감)`
+        );
+        await fetchModels();
+      }
+    } catch {
+      setOptimizeResult('최적화 중 오류 발생');
+    }
+    setOptimizing(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragOver(false);
+    const file = e.dataTransfer.files[0];
+    if (file) handleFileUpload(file);
+  };
 
   const handleCopy = async () => {
     if (!selected) return;
@@ -211,16 +279,41 @@ export default function ModelManagerPage() {
             <option value="approved">승인</option>
           </select>
           <button
-            onClick={fetchModels}
+            onClick={handleOptimizeAll}
+            disabled={optimizing}
             style={{
               ...btnStyle,
               marginLeft: 'auto',
+              background: optimizing ? '#333' : '#1a2a1a',
+              color: '#28A745',
+              fontWeight: 600,
+            }}
+          >
+            {optimizing ? '최적화 중...' : '전체 GLB 최적화'}
+          </button>
+          <button
+            onClick={fetchModels}
+            style={{
+              ...btnStyle,
               background: '#1a1a2e',
             }}
           >
             새로고침
           </button>
         </div>
+
+        {/* [cl] 전체 최적화 결과 */}
+        {optimizeResult && (
+          <div style={{
+            padding: '8px 30px',
+            background: '#0a1a0a',
+            fontSize: 13,
+            color: '#28A745',
+            borderBottom: '1px solid #1a3a1a',
+          }}>
+            {optimizeResult}
+          </div>
+        )}
 
         {/* 메인 레이아웃: 좌 목록 + 우 상세 */}
         <div style={{ display: 'flex', height: 'calc(100vh - 120px)' }}>
@@ -549,32 +642,111 @@ export default function ModelManagerPage() {
                   </div>
                 )}
 
+                {/* [cl] GLB 교체 버튼 (이미 파일 있을 때) */}
+                {selected.glbExists && (
+                  <div style={{ marginTop: 12, display: 'flex', gap: 8, alignItems: 'center' }}>
+                    <button
+                      onClick={() => fileInputRef.current?.click()}
+                      style={{
+                        ...btnStyle,
+                        background: '#1a1a2e',
+                        color: '#888',
+                      }}
+                    >
+                      GLB 교체
+                    </button>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept=".glb"
+                      style={{ display: 'none' }}
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) handleFileUpload(file);
+                        e.target.value = '';
+                      }}
+                    />
+                    {uploading && (
+                      <span style={{ fontSize: 12, color: '#4FC3F7' }}>최적화 중...</span>
+                    )}
+                  </div>
+                )}
+
+                {/* [cl] 드래그앤드롭 업로드 영역 (GLB 없을 때) */}
                 {!selected.glbExists && (
+                  <div
+                    onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                    onDragLeave={() => setDragOver(false)}
+                    onDrop={handleDrop}
+                    onClick={() => fileInputRef.current?.click()}
+                    style={{
+                      borderRadius: 12,
+                      border: `2px dashed ${dragOver ? '#4FC3F7' : '#2a2a3e'}`,
+                      background: dragOver ? '#111128' : 'transparent',
+                      height: 300,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: dragOver ? '#4FC3F7' : '#444',
+                      gap: 12,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                    }}
+                  >
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept=".glb"
+                      style={{ display: 'none' }}
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) handleFileUpload(file);
+                        e.target.value = '';
+                      }}
+                    />
+                    {uploading ? (
+                      <>
+                        <div style={{ fontSize: 36 }}>⏳</div>
+                        <div style={{ fontSize: 14, color: '#4FC3F7' }}>
+                          업로드 + 최적화 중...
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div style={{ fontSize: 48 }}>📦</div>
+                        <div style={{ fontSize: 14 }}>
+                          GLB 파일을 여기에 드래그하거나 클릭하세요
+                        </div>
+                        <div style={{ fontSize: 12, color: '#555' }}>
+                          자동으로 이름 변경 + 폴더 저장 + 압축됩니다
+                        </div>
+                        <code style={{
+                          fontSize: 11,
+                          color: '#666',
+                          background: '#111118',
+                          padding: '4px 12px',
+                          borderRadius: 4,
+                        }}>
+                          → public/models/{selected.filePath}
+                        </code>
+                      </>
+                    )}
+                  </div>
+                )}
+
+                {/* [cl] 업로드 결과 표시 */}
+                {uploadResult && (
                   <div style={{
-                    borderRadius: 12,
-                    border: '2px dashed #2a2a3e',
-                    height: 300,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#444',
-                    gap: 12,
+                    marginTop: 12,
+                    padding: 12,
+                    background: '#0a1a0a',
+                    border: '1px solid #28A745',
+                    borderRadius: 8,
+                    fontSize: 13,
+                    color: '#28A745',
                   }}>
-                    <div style={{ fontSize: 48 }}>📦</div>
-                    <div style={{ fontSize: 14 }}>GLB 파일을 아래 경로에 넣어주세요</div>
-                    <code style={{
-                      fontSize: 12,
-                      color: '#4FC3F7',
-                      background: '#111118',
-                      padding: '4px 12px',
-                      borderRadius: 4,
-                    }}>
-                      public/models/{selected.filePath}
-                    </code>
-                    <div style={{ fontSize: 12, color: '#555' }}>
-                      넣은 후 &quot;새로고침&quot; 버튼을 누르면 프리뷰가 표시됩니다
-                    </div>
+                    업로드 완료! 원본 {formatBytes(uploadResult.originalSize)} → 최적화 {formatBytes(uploadResult.finalSize)} ({uploadResult.reduction} 절감)
                   </div>
                 )}
               </div>

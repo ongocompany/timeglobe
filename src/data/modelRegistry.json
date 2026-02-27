@@ -10,7 +10,7 @@
       "fileName": "hand_axe.glb",
       "filePath": "prehistoric/hand_axe.glb",
       "prompt": "prehistoric hand axe, flint stone tool, teardrop shaped, low-poly miniature style, flat shading, simple solid colors, rough grey-brown stone surface, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -23,7 +23,7 @@
       "fileName": "simple_pot.glb",
       "filePath": "prehistoric/simple_pot.glb",
       "prompt": "neolithic clay pot, simple round pottery with no decoration, low-poly miniature style, flat shading, warm terracotta color, clean geometry, minimal detail, soft matte finish, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -36,7 +36,7 @@
       "fileName": "bronze_axe.glb",
       "filePath": "prehistoric/bronze_axe.glb",
       "prompt": "bronze age axe, short wooden handle with bronze blade, low-poly miniature style, flat shading, bronze metallic color and brown wood, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -49,7 +49,7 @@
       "fileName": "sword_shield.glb",
       "filePath": "war/sword_shield.glb",
       "prompt": "ancient sword and round shield crossed together, low-poly miniature style, flat shading, silver blade and bronze shield, clean geometry, minimal detail, soft matte finish, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -62,7 +62,7 @@
       "fileName": "bow_arrow.glb",
       "filePath": "war/bow_arrow.glb",
       "prompt": "medieval longbow with single arrow, wooden bow with string, low-poly miniature style, flat shading, brown wood tones, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -75,7 +75,7 @@
       "fileName": "cannon.glb",
       "filePath": "war/cannon.glb",
       "prompt": "old cannon on wooden wheeled carriage, 16th century style, low-poly miniature style, flat shading, dark iron barrel and brown wood, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -88,7 +88,7 @@
       "fileName": "rifle.glb",
       "filePath": "war/rifle.glb",
       "prompt": "19th century military rifle, bolt action, wooden stock, low-poly miniature style, flat shading, dark metal and brown wood, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -101,7 +101,7 @@
       "fileName": "missile_base.glb",
       "filePath": "war/missile_base.glb",
       "prompt": "military missile launcher on platform, single upright missile, low-poly miniature style, flat shading, military green and grey, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -114,7 +114,7 @@
       "fileName": "revolution_fist_flag.glb",
       "filePath": "revolution/revolution_fist_flag.glb",
       "prompt": "raised clenched fist holding a waving flag on a pole, low-poly miniature style, flat shading, stone grey fist and red flag, clean geometry, minimal detail, powerful upward pose, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -127,7 +127,7 @@
       "fileName": "marble_bust.glb",
       "filePath": "people/marble_bust.glb",
       "prompt": "classical marble bust sculpture on small pedestal, generic male figure, low-poly miniature style, flat shading, white marble color, clean geometry, minimal detail, Roman/Greek style, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -140,7 +140,7 @@
       "fileName": "papyrus_scroll.glb",
       "filePath": "science/papyrus_scroll.glb",
       "prompt": "ancient papyrus scroll partially unrolled, low-poly miniature style, flat shading, aged yellow-beige color, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -153,7 +153,7 @@
       "fileName": "old_book.glb",
       "filePath": "science/old_book.glb",
       "prompt": "thick old leather-bound book, slightly open, medieval style, low-poly miniature style, flat shading, dark brown leather cover, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -165,8 +165,8 @@
       "yearRange": "1700~1900",
       "fileName": "cogwheel.glb",
       "filePath": "science/cogwheel.glb",
-      "prompt": "industrial cogwheel gear, single large metallic gear with teeth, low-poly miniature style, flat shading, iron grey metallic color, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "prompt": "industrial cogwheel gear, two different size of metallic gears with teeth, low-poly miniature style, flat shading, iron grey metallic color, clean geometry, minimal detail, no background, centered, game asset style",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -179,7 +179,7 @@
       "fileName": "atom_model.glb",
       "filePath": "science/atom_model.glb",
       "prompt": "atom model with nucleus and three electron orbits, low-poly miniature style, flat shading, blue orbits and red nucleus, clean geometry, minimal detail, scientific model style, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -192,7 +192,7 @@
       "fileName": "computer_chip.glb",
       "filePath": "science/computer_chip.glb",
       "prompt": "computer microchip processor, square chip with pins, low-poly miniature style, flat shading, dark green PCB with gold pins, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -205,7 +205,7 @@
       "fileName": "scroll_document.glb",
       "filePath": "politics/scroll_document.glb",
       "prompt": "official scroll document with wax seal, partially unrolled parchment, low-poly miniature style, flat shading, cream parchment with red wax seal, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -218,7 +218,7 @@
       "fileName": "royal_seal.glb",
       "filePath": "establishment/royal_seal.glb",
       "prompt": "royal seal stamp, ornate handle on square base, official government seal, low-poly miniature style, flat shading, gold and jade green colors, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -231,7 +231,7 @@
       "fileName": "national_flag.glb",
       "filePath": "establishment/national_flag.glb",
       "prompt": "flag on a pole waving in wind, simple tricolor design, low-poly miniature style, flat shading, vibrant flag colors, clean geometry, minimal detail, no background, centered, game asset style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -257,7 +257,7 @@
       "fileName": "sphinx.glb",
       "filePath": "landmark/sphinx.glb",
       "prompt": "Great Sphinx of Giza, lion body with human head, stylized miniature model, medium-poly, subtle sandstone texture, clean silhouette, warm sandy beige color, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -270,7 +270,7 @@
       "fileName": "parthenon.glb",
       "filePath": "landmark/parthenon.glb",
       "prompt": "Parthenon temple Athens, Greek columns and pediment, stylized miniature model, medium-poly, white marble texture, clean silhouette, classical Greek architecture, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -283,7 +283,7 @@
       "fileName": "colosseum.glb",
       "filePath": "landmark/colosseum.glb",
       "prompt": "Roman Colosseum, oval amphitheater with arched tiers, stylized miniature model, medium-poly, aged stone texture, clean silhouette, warm beige-grey stone color, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -296,7 +296,7 @@
       "fileName": "great_wall.glb",
       "filePath": "landmark/great_wall.glb",
       "prompt": "Great Wall of China section with watchtower, winding wall segment, stylized miniature model, medium-poly, grey stone brick texture, clean silhouette, mountain wall section, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -309,7 +309,7 @@
       "fileName": "angkor_wat.glb",
       "filePath": "landmark/angkor_wat.glb",
       "prompt": "Angkor Wat temple, Cambodian temple with five towers, stylized miniature model, medium-poly, aged grey stone texture, clean silhouette, iconic tower profile, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -322,7 +322,7 @@
       "fileName": "machu_picchu.glb",
       "filePath": "landmark/machu_picchu.glb",
       "prompt": "Machu Picchu ruins, Inca stone terraces and buildings on mountain, stylized miniature model, medium-poly, grey stone with green grass, clean silhouette, terraced mountain city, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -335,7 +335,7 @@
       "fileName": "taj_mahal.glb",
       "filePath": "landmark/taj_mahal.glb",
       "prompt": "Taj Mahal, white marble mausoleum with central dome and four minarets, stylized miniature model, medium-poly, white marble with subtle detail, clean silhouette, symmetrical design, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -348,7 +348,7 @@
       "fileName": "notre_dame.glb",
       "filePath": "landmark/notre_dame.glb",
       "prompt": "Notre-Dame Cathedral Paris, Gothic cathedral with twin towers and spire, stylized miniature model, medium-poly, grey stone texture, clean silhouette, Gothic architecture, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -361,7 +361,7 @@
       "fileName": "leaning_tower_pisa.glb",
       "filePath": "landmark/leaning_tower_pisa.glb",
       "prompt": "Leaning Tower of Pisa, tilted white marble tower with arched galleries, stylized miniature model, medium-poly, white marble texture, clean silhouette, characteristic tilt angle, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -374,7 +374,7 @@
       "fileName": "moai.glb",
       "filePath": "landmark/moai.glb",
       "prompt": "Easter Island Moai statue, single large stone head figure, stylized miniature model, medium-poly, dark grey volcanic stone, clean silhouette, iconic elongated face, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -387,7 +387,7 @@
       "fileName": "arc_de_triomphe.glb",
       "filePath": "landmark/arc_de_triomphe.glb",
       "prompt": "Arc de Triomphe Paris, monumental arch with relief sculptures, stylized miniature model, medium-poly, light grey stone texture, clean silhouette, neoclassical arch, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -400,7 +400,7 @@
       "fileName": "eiffel_tower.glb",
       "filePath": "landmark/eiffel_tower.glb",
       "prompt": "Eiffel Tower Paris, iron lattice tower, stylized miniature model, medium-poly, dark iron grey metallic, clean silhouette, iconic tapered shape with observation decks, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -413,7 +413,7 @@
       "fileName": "statue_of_liberty.glb",
       "filePath": "landmark/statue_of_liberty.glb",
       "prompt": "Statue of Liberty New York, figure holding torch and tablet on pedestal, stylized miniature model, medium-poly, copper green patina color, clean silhouette, recognizable pose with crown, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -426,7 +426,7 @@
       "fileName": "big_ben.glb",
       "filePath": "landmark/big_ben.glb",
       "prompt": "Big Ben clock tower London, Elizabeth Tower with clock faces, stylized miniature model, medium-poly, golden stone and dark roof, clean silhouette, Gothic Revival style, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -439,7 +439,7 @@
       "fileName": "brandenburg_gate.glb",
       "filePath": "landmark/brandenburg_gate.glb",
       "prompt": "Brandenburg Gate Berlin, neoclassical gate with columns and quadriga on top, stylized miniature model, medium-poly, light sandstone texture, clean silhouette, six columns with chariot sculpture, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -452,7 +452,7 @@
       "fileName": "empire_state.glb",
       "filePath": "landmark/empire_state.glb",
       "prompt": "Empire State Building New York, Art Deco skyscraper with antenna spire, stylized miniature model, medium-poly, grey concrete and steel, clean silhouette, iconic stepped setback design, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -465,7 +465,7 @@
       "fileName": "sydney_opera.glb",
       "filePath": "landmark/sydney_opera.glb",
       "prompt": "Sydney Opera House, white shell-shaped roof sections, stylized miniature model, medium-poly, bright white ceramic tiles, clean silhouette, distinctive sail-shaped shells, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -478,7 +478,7 @@
       "fileName": "burj_khalifa.glb",
       "filePath": "landmark/burj_khalifa.glb",
       "prompt": "Burj Khalifa Dubai, super tall modern skyscraper with Y-shaped floor plan, stylized miniature model, medium-poly, silver glass and steel, clean silhouette, tapering needle shape, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     },
     {
@@ -491,7 +491,7 @@
       "fileName": "kremlin.glb",
       "filePath": "landmark/kremlin.glb",
       "prompt": "Moscow Kremlin, red brick fortress with towers and green onion domes, stylized miniature model, medium-poly, red brick and green dome colors, clean silhouette, iconic star-topped tower, no background, centered, architectural model style",
-      "status": "pending",
+      "status": "approved",
       "notes": ""
     }
   ]

@@ -64,3 +64,6 @@ docs/
 public/textures/earth_daymap.jpg
 public/textures/earth_daymap_8k.jpg
 public/textures/clouds.png
+
+# Cache files
+.cache/
