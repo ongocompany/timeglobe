@@ -67,9 +67,9 @@ body {
   overflow: hidden;
   background-color: #222;
   border-radius: 4px;
-  /* [cl] 글래스 보더 + inset 하이라이트 (StackCarousel과 통일) */
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12);
+  /* [cl] 글래스 보더 + inset 하이라이트 (orbit 카드는 작고 brightness 필터 영향받아 더 밝게) */
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
   width: var(--orbit-icon-size, 80px);
   height: calc(var(--orbit-icon-size, 80px) * 4 / 3); /* [cl] 3:4 비율 */
   pointer-events: none;
@@ -87,7 +87,7 @@ body {
   border-radius: 6px;
   transform: translate(-50%, -50%) translateZ(120px);
   /* [cl] hover 시 inset 하이라이트 살짝 밝게 */
-  box-shadow: 0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.22);
 }
 
 /* [cl] 모달 활성: 큰 카드 (클릭 영역 확대를 위해 pointer-events 복원) */
