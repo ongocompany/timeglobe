@@ -73,19 +73,21 @@ const CATEGORY_COLORS: Record<string, string> = {
   "과학/발명":    "#6a4c93", // purple (custom)
   "건축/유물":    "#ee9b00", // golden-orange
   "자연재해/지질": "#ca6702", // burnt-caramel
+  "탐험/발견":    "#2a9d8f", // teal-green
   문화:           "#005f73", // dark-teal
   지적유산:       "#e76f51", // orange
 };
 const DEFAULT_MARKER_COLOR = "#6a4c93"; // purple (custom)
 
 // [cl] 카테고리별 도형 (의미 없이 시각 구별용)
-type ShapeType = "circle" | "square" | "diamond" | "triangle" | "star" | "hexagon" | "cross";
+type ShapeType = "circle" | "square" | "diamond" | "triangle" | "star" | "hexagon" | "cross" | "compass";
 const CATEGORY_SHAPE: Record<string, ShapeType> = {
   "정치/전쟁":    "diamond",
   "인물/문화":    "star",
   "과학/발명":    "triangle",
   "건축/유물":    "square",
   "자연재해/지질": "hexagon",
+  "탐험/발견":    "compass",
   문화:           "circle",
   지적유산:       "cross",
 };
@@ -156,6 +158,21 @@ function createShapeMarker(category: string, size = 64): string {
       const w = r * 0.4;
       ctx.rect(half - w, half - r, w * 2, r * 2);
       ctx.rect(half - r, half - w, r * 2, w * 2);
+      break;
+    }
+    case "compass": {
+      // [cl] 나침반: 4방향 뾰족 별 (◇ 형태이나 날카롭게)
+      ctx.moveTo(half, half - r);         // N
+      ctx.lineTo(half + r * 0.25, half);
+      ctx.lineTo(half, half + r);         // S
+      ctx.lineTo(half - r * 0.25, half);
+      ctx.closePath();
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(half - r, half);         // W
+      ctx.lineTo(half, half - r * 0.25);
+      ctx.lineTo(half + r, half);         // E
+      ctx.lineTo(half, half + r * 0.25);
       break;
     }
   }

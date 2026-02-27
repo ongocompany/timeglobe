@@ -26,13 +26,45 @@ const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
 // [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
 type ViewMode = "orbit" | "marker" | null;
 
-// [cl] 마커 카테고리 정의 (CesiumGlobe 색상과 동일)
-const MARKER_CATEGORIES = [
-  { name: "정치/전쟁",   color: "#ae2012", desc: "전쟁·혁명·조약" },
-  { name: "인물/문화",   color: "#0a9396", desc: "인물·예술·종교" },
-  { name: "과학/발명",   color: "#6a4c93", desc: "발명·탐험·의학" },
-  { name: "건축/유물",   color: "#ee9b00", desc: "건축·유적·유물" },
-  { name: "자연재해/지질", color: "#ca6702", desc: "화산·지진·재해" },
+// [cl] 마커 카테고리 정의 (CesiumGlobe 색상/도형과 동일)
+type ShapeType = "circle" | "square" | "diamond" | "triangle" | "star" | "hexagon" | "cross" | "compass";
+
+// [cl] 토글 메뉴용 SVG 도형 아이콘 (CesiumGlobe 마커와 동일 모양)
+function ShapeIcon({ shape, color }: { shape: ShapeType; color: string }) {
+  const props = { fill: color, stroke: "rgba(255,255,255,0.85)", strokeWidth: 0.8 };
+  switch (shape) {
+    case "circle":   return <circle cx="6" cy="6" r="4" {...props} />;
+    case "square":   return <rect x="2.5" y="2.5" width="7" height="7" {...props} />;
+    case "diamond":  return <polygon points="6,1.5 10,6 6,10.5 2,6" {...props} />;
+    case "triangle": return <polygon points="6,1.5 10.5,9.5 1.5,9.5" {...props} />;
+    case "star": {
+      const pts = Array.from({ length: 10 }, (_, i) => {
+        const r = i % 2 === 0 ? 4.5 : 2;
+        const a = (Math.PI * i / 5) - Math.PI / 2;
+        return `${6 + Math.cos(a) * r},${6 + Math.sin(a) * r}`;
+      }).join(" ");
+      return <polygon points={pts} {...props} />;
+    }
+    case "hexagon": {
+      const pts = Array.from({ length: 6 }, (_, i) => {
+        const a = (Math.PI * i / 3) - Math.PI / 6;
+        return `${6 + Math.cos(a) * 4.5},${6 + Math.sin(a) * 4.5}`;
+      }).join(" ");
+      return <polygon points={pts} {...props} />;
+    }
+    case "cross":
+      return <><rect x="4" y="1.5" width="4" height="9" rx="0.5" {...props} /><rect x="1.5" y="4" width="9" height="4" rx="0.5" {...props} /></>;
+    case "compass":
+      return <><polygon points="6,1.5 7.5,6 6,10.5 4.5,6" {...props} /><polygon points="1.5,6 6,4.5 10.5,6 6,7.5" {...props} /></>;
+  }
+}
+const MARKER_CATEGORIES: { name: string; color: string; desc: string; shape: ShapeType }[] = [
+  { name: "정치/전쟁",    color: "#ae2012", desc: "전쟁·혁명·조약",  shape: "diamond" },
+  { name: "인물/문화",    color: "#0a9396", desc: "인물·예술·종교",  shape: "star" },
+  { name: "과학/발명",    color: "#6a4c93", desc: "발명·의학",       shape: "triangle" },
+  { name: "건축/유물",    color: "#ee9b00", desc: "건축·유적·유물",  shape: "square" },
+  { name: "자연재해/지질", color: "#ca6702", desc: "화산·지진·재해",  shape: "hexagon" },
+  { name: "탐험/발견",    color: "#2a9d8f", desc: "탐험·항해·발견",  shape: "compass" },
 ];
 
 // [cl] 스택/단독 마커 캐러셀: 커서 위치에 카드 배열, 클릭한 카드가 직접 확장
@@ -547,7 +579,7 @@ export default function Home() {
           {/* [cl] 아코디언: 카테고리 다중 선택 */}
           <div
             className="overflow-hidden transition-all duration-300 ease-in-out"
-            style={{ maxHeight: viewMode === "marker" ? "200px" : "0px", opacity: viewMode === "marker" ? 1 : 0 }}
+            style={{ maxHeight: viewMode === "marker" ? "240px" : "0px", opacity: viewMode === "marker" ? 1 : 0 }}
           >
             <div className="pl-5 pt-1 pb-1 flex flex-col gap-2">
               {MARKER_CATEGORIES.map((cat) => {
@@ -558,15 +590,10 @@ export default function Home() {
                     onClick={() => toggleCategory(cat.name)}
                     className="flex items-center gap-2 group text-left"
                   >
-                    {/* [cl] 컬러 도트 — 선택 시 글로우 */}
-                    <span
-                      className="w-2.5 h-2.5 rounded-full border flex-shrink-0 transition-all duration-200"
-                      style={{
-                        backgroundColor: selected ? cat.color : "transparent",
-                        borderColor: selected ? cat.color : "rgba(255,255,255,0.22)",
-                        boxShadow: selected ? `0 0 6px ${cat.color}90` : "none",
-                      }}
-                    />
+                    {/* [cl] 카테고리 도형 마커 — CesiumGlobe과 동일 */}
+                    <svg width="12" height="12" viewBox="0 0 12 12" className="flex-shrink-0 transition-all duration-200" style={{ filter: selected ? `drop-shadow(0 0 4px ${cat.color}90)` : "none" }}>
+                      <ShapeIcon shape={cat.shape} color={selected ? cat.color : "rgba(255,255,255,0.22)"} />
+                    </svg>
                     <span className={`text-xs transition-colors duration-200 ${selected ? "text-white/85" : "text-white/38 group-hover:text-white/65"}`}>
                       {cat.name}
                     </span>
