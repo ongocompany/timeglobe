@@ -697,9 +697,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] 마커 모드 진입: 도형 마커 엔티티 생성
     const bSize = 24;
     const nearScale = 2.0;
+    // [cl] 마커별 랜덤 위상 (heartbeat 비동기화용)
+    const phaseMap: Record<string, number> = {};
     events.forEach((ev) => {
       if (viewer.entities.getById(ev.id)) return; // 중복 방지
       const markerImage = getMarkerImage(ev.category);
+      phaseMap[ev.id] = Math.random() * Math.PI * 2;
 
       viewer.entities.add({
         id: ev.id,
@@ -710,14 +713,28 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           width: bSize,
           height: bSize,
           scale: 1.0,
-          // [cl] 5000km↑: 기본 고정 / 5000→3000km: 보간 확대 / 3000km↓: 최대
-          // [cl] 1500km↓: 2배(72px) / 8000km↑: 1배(36px) / 사이: 보간
           scaleByDistance: new NearFarScalar(1.5e6, nearScale, 8e6, 1.0),
         },
       });
     });
 
+    // [cl] heartbeat: 마커별 랜덤 위상으로 부드럽게 커졌다 작아졌다
+    let pulseRaf = 0;
+    const pulse = () => {
+      const t = performance.now() * 0.002; // [cl] 속도 조절 (낮을수록 느림)
+      events.forEach((ev) => {
+        const entity = viewer.entities.getById(ev.id);
+        if (!entity?.billboard) return;
+        const phase = phaseMap[ev.id] || 0;
+        const s = 1.0 + 0.12 * Math.sin(t + phase); // [cl] ±12% 스케일 변화
+        entity.billboard.scale = s as unknown as import("cesium").Property;
+      });
+      pulseRaf = requestAnimationFrame(pulse);
+    };
+    pulseRaf = requestAnimationFrame(pulse);
+
     return () => {
+      cancelAnimationFrame(pulseRaf);
       // [cl] 클린업: 모든 이벤트 마커 제거 (Viewer 파괴 후 접근 방지)
       if (viewer.isDestroyed()) return;
       events.forEach((ev) => {
