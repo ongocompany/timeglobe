@@ -926,14 +926,16 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       document.head.appendChild(styleTag);
     }
 
-    // [cl] 텍스트 툴팁 기본 스타일 (display 대신 opacity로 가시성 제어)
+    // [cl] 텍스트 툴팁: ControlBar와 동일한 글래스모피즘 스타일
     const TEXT_STYLES = [
-      "position:absolute", "pointer-events:none",
-      "background:rgba(8,8,18,0.92)", "color:#fff",
-      "padding:8px 14px", "border-radius:10px", "font-size:13px",
+      "position:absolute", "pointer-events:none", "color:#fff",
+      "background:linear-gradient(180deg, rgba(220,218,215,0.10) 0%, rgba(80,80,80,0.06) 100%)",
+      "padding:10px 16px", "border-radius:14px", "font-size:13px",
       "white-space:nowrap", "z-index:200",
-      "border:1px solid rgba(255,255,255,0.13)", "backdrop-filter:blur(12px)",
-      "letter-spacing:0.02em", "box-shadow:0 4px 20px rgba(0,0,0,0.55)",
+      "border:1px solid rgba(255,255,255,0.14)",
+      "backdrop-filter:blur(12px)", "-webkit-backdrop-filter:blur(12px)",
+      "letter-spacing:0.02em",
+      "box-shadow:0 0 20px rgba(255,255,255,0.04), 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.12)",
       "min-width:160px",
       "opacity:0", "transition:opacity 0.2s ease",
     ].join(";");
@@ -1001,21 +1003,21 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
         const shown = nearby.slice(0, MAX_DISPLAY);
         const extra = nearby.length - shown.length;
+        // [cl] 글래스 툴팁 row: 반투명 배경에 맞춘 밝은 톤
         const rows = shown.map(({ ev }, i) => {
           const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
-          // [cl] 각 row 순차 슬라이드인: 100ms 시차, 0.3s 듀레이션
           const delay = i * 100;
           return (
-            `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}animation:tgTooltipRowIn 0.3s ease ${delay}ms both;">` +
-            `<span style="color:${color};font-size:9px;flex-shrink:0;">●</span>` +
-            `<span style="font-weight:${i === 0 ? "600" : "400"};flex:1;">${ev.title.ko}</span>` +
-            `<span style="color:#777;font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
+            `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:6px;" : ""}animation:tgTooltipRowIn 0.3s ease ${delay}ms both;">` +
+            `<span style="color:${color};font-size:8px;flex-shrink:0;text-shadow:0 0 6px ${color}40;">●</span>` +
+            `<span style="font-weight:${i === 0 ? "600" : "400"};color:rgba(255,255,255,${i === 0 ? "0.95" : "0.75"});flex:1;">${ev.title.ko}</span>` +
+            `<span style="color:rgba(255,255,255,0.4);font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
             `</div>`
           );
         });
         if (extra > 0) {
           const extraDelay = shown.length * 100;
-          rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;animation:tgTooltipRowIn 0.3s ease ${extraDelay}ms both;">+${extra} more</div>`);
+          rows.push(`<div style="margin-top:7px;color:rgba(255,255,255,0.35);font-size:11px;border-top:1px solid rgba(255,255,255,0.1);padding-top:6px;animation:tgTooltipRowIn 0.3s ease ${extraDelay}ms both;">+${extra} more</div>`);
         }
         const newHtml = rows.join("");
         currentX = mx; currentY = my;

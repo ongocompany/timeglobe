@@ -130,9 +130,11 @@ function StackCarousel({
               cursor: isActive || scattering ? "default" : "pointer",
               opacity: slidePhase === "out" && !isActive ? 0 : 1,
               pointerEvents: "auto",
+              // [cl] 글래스 보더 + inset 하이라이트 → 플라스틱 카드 질감
+              border: "1px solid rgba(255,255,255,0.14)",
               boxShadow: isActive
                 ? "0 24px 64px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35)"
-                : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3)",
+                : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)",
               transition: "width 0.5s cubic-bezier(0.25,1,0.5,1), height 0.5s cubic-bezier(0.25,1,0.5,1), border-radius 0.5s ease, box-shadow 0.3s ease, opacity 0.3s ease",
             }}
             onClick={!isActive ? () => setActiveId(ev.id) : undefined}
@@ -238,11 +240,13 @@ function StackCarousel({
                 cursor: isActive || scattering ? "default" : "pointer",
                 opacity: isHidden ? 0 : 1,
                 pointerEvents: scattering ? "none" : "auto",
+                // [cl] 글래스 보더 + inset 하이라이트 → 플라스틱 카드 질감
+                border: "1px solid rgba(255,255,255,0.14)",
                 boxShadow: isActive
                   ? "0 24px 64px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35)"
                   : isHovered
-                  ? "0 12px 32px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.35)"
-                  : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3)",
+                  ? "0 12px 32px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.15)"
+                  : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)",
                 transform: isHovered ? "scale(1.08) translateY(-4px)" : "none",
                 // [cl] 등장 중에는 opacity/transform transition 제거 (animation 충돌 방지)
                 transition: animating
