@@ -694,3 +694,76 @@
 
 ### 문서 작성
 * `docs/develop/08_[cl]3d_model_guide.md` — 카테고리별 모델 목록, 시대 연결 흐름도, 모델 선택 로직(TypeScript), Meshy 생성 팁, 파일 네이밍 규칙
+
+## [2026-02-27] [co] 0~1899 수집 실행 종료 현황 (event/place)
+* 사용자(jn) 요청에 따라 장기 실행 중이던 `collect:bootstrap`(`--types event,place --year-from 0 --year-to 1899`)의 종료 시점 상태를 점검하고 결과를 기록.
+* 실행 상태:
+  * 관련 프로세스는 종료됨(`running=0`).
+  * 체크포인트 파일: `.cache/wikidata-checkpoint-remaining-0-1899.json`
+  * 체크포인트 최종 시각: `2026-02-27T08:31:29.628Z`
+* 체크포인트 집계:
+  * 총 task `760`, 처리 `760` (`progressPct=100`)
+  * `success=658`, `failed=102`, `running=0`
+  * success task 기준 누적 records `6522`
+* 타입별 결과:
+  * `event`: `tracked=380`, `success=380`, `failed=0`, `records=4385` (완료)
+  * `place`: `tracked=380`, `success=278`, `failed=102`, `records=2137` (WDQS 오류 다수)
+* DB 적재 현황(Supabase):
+  * `events=9079`
+  * `event_sources=9079`
+  * `event_summary_archive=1068`
+* 상태 메모:
+  * `place` 실패 건은 실행 중 반복 확인된 WDQS `429/500/503` 및 `AbortError` 영향으로 판단.
+  * 다음 스택(`person 0~1899`)은 아직 시작하지 않음.
+
+## [2026-02-27] [cl] 전쟁/조약/재해 좌표 없는 이벤트 수집 지원 + AI 큐레이션 스크립트
+
+### 문제 발견: 전쟁(war) 데이터 극소량
+* DB 내 event_kind 분포 확인: battle=5033, place=3960, war=58, treaty=17, disaster=7
+* **원인**: SPARQL 쿼리가 `wdt:P625 ?coord`(좌표 필수)로 되어 있어, 좌표 없는 전쟁/조약/재해가 대부분 누락
+* 전쟁은 여러 지역에 걸치는 다지역 이벤트라 Wikidata에 단일 좌표가 없는 경우가 대부분
+
+### DB 스키마 변경 (`20260227140000_event_significance_score.sql`)
+* `location_lat`, `location_lng` — NOT NULL 제약 해제 (좌표 없이도 이벤트 적재 가능)
+* `idx_events_needs_geocoding` — 좌표 미보유 이벤트 필터용 부분 인덱스
+* `significance_score SMALLINT (1~10)` — AI 역사적 중요도 점수 컬럼 추가 (CHECK 제약 + 인덱스)
+
+### SPARQL 쿼리 수정 (`scripts/wikidata/sparqlTemplates.mjs`)
+* event 쿼리: `?coord` 를 OPTIONAL로 변경
+* 좌표 fallback 체인 추가: P625(직접 좌표) → P276(장소의 좌표) → P17(국가의 좌표)
+* 국가 라벨(countryLabel_ko/en)도 함께 수집
+* person/place 쿼리는 기존 좌표 필수 유지
+
+### Normalizer 수정 (`scripts/wikidata/normalizer.mjs`)
+* `resolveCoord()` fallback 체인 함수 신규 추가
+* event는 좌표 null 허용 (`coord?.lat ?? null`), person/place는 좌표 필수 유지
+* `buildEventSelect()` 분리 — event 전용 SELECT 절 (locationCoord, countryCoord 포함)
+
+### AI Geocoder 스크립트 신규 생성 (`scripts/curation/aiGeocoder.mjs`)
+* Gemini 2.5 Flash 기반 좌표 없는 이벤트에 대략적 위치 추정
+* 대상: `location_lat IS NULL` 이벤트만 (기존 좌표 있는 데이터 건드리지 않음)
+* 배치 처리(10건씩), 429 Rate Limit 대응(지수 백오프), confidence(high/medium/low) 판정
+* `modern_country`도 없으면 함께 보강
+* `--dry-run`, `--limit`, `--model` 옵션 지원
+* 판정 로그: `.cache/ai-geocoder-{timestamp}.jsonl`
+
+### Battle Significance 스크립트 신규 생성 (`scripts/curation/battleSignificance.mjs`)
+* Gemini 2.5 Pro 기반 전투/전쟁의 역사적 중요도 1~10 스코어링
+* 대상: `is_curated_visible=true`, `significance_score IS NULL` 이벤트
+* 스코어링 기준: 10=세계사를 바꾼 전투(워털루, 적벽), 1=알려지지 않은 소규모 충돌
+* `--all-kinds` (비전투 포함), `--rescore` (재평가), `--dry-run` 옵션 지원
+
+### AI 큐레이션 스크립트 (`scripts/curation/aiCurator.mjs`) 실행 완료
+* Gemini 2.5 Flash 기반 place 이벤트 500건 큐레이션 실행
+* 결과: 412건 승인, 88건 거부, 0건 오류
+
+### 중복 방지 설계
+* Wikidata 수집: `on_conflict=id` + merge-duplicates (deterministic UUID)
+* AI Geocoder: `location_lat IS NULL` 필터 → 기존 좌표 데이터 보호
+* Battle Significance: `significance_score IS NULL` 필터 → 기존 스코어 보호
+
+### 실행 순서 (태훈(co)에게 인계)
+1. Supabase SQL Editor에서 마이그레이션 실행
+2. `node scripts/wikidata/run.mjs --types event --mode backfill` — 좌표 없는 이벤트 재수집
+3. `node scripts/curation/aiGeocoder.mjs` — AI 좌표 매핑
+4. `node scripts/curation/battleSignificance.mjs` — 전투 중요도 스코어링
