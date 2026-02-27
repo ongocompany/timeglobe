@@ -78,244 +78,98 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 const DEFAULT_MARKER_COLOR = "#6a4c93"; // purple (custom)
 
-// [cl] 마커 스타일: "dot" = 기존 글로우 도트 | "color" = 컬러 이모지 | "mono" = 단색 아이콘 | "svg" = recraft 3D SVG
-type MarkerStyle = "dot" | "color" | "mono" | "svg";
-const MARKER_STYLE: MarkerStyle = "svg";
-
-// [cl] 카테고리별 이모지 (컬러 스타일용 — svg 모드에서는 미사용)
-const CATEGORY_EMOJI: Record<string, string> = {
-  "정치/전쟁":    "⚔️",
-  "인물/문화":    "🌟",
-  "과학/발명":    "⚡",
-  "건축/유물":    "🏛️",
-  "자연재해/지질": "🌋",
-  문화:           "🎵",
-  지적유산:       "📜",
+// [cl] 카테고리별 도형 (의미 없이 시각 구별용)
+type ShapeType = "circle" | "square" | "diamond" | "triangle" | "star" | "hexagon" | "cross";
+const CATEGORY_SHAPE: Record<string, ShapeType> = {
+  "정치/전쟁":    "diamond",
+  "인물/문화":    "star",
+  "과학/발명":    "triangle",
+  "건축/유물":    "square",
+  "자연재해/지질": "hexagon",
+  문화:           "circle",
+  지적유산:       "cross",
 };
 
-// [cl] 카테고리별 recraft 3D 마커 (public/markers/)
-const CATEGORY_MARKER: Record<string, string> = {
-  "정치/전쟁":    "/markers/war.png",
-  "인물/문화":    "/markers/culture.png",
-  "과학/발명":    "/markers/science.png",
-  "건축/유물":    "/markers/temple.png",
-  "자연재해/지질": "/markers/nature.png",
-  "경제/사회":    "/markers/economy.png",
-  문화:           "/markers/culture.png",
-  지적유산:       "/markers/etc.png",
-};
-const DEFAULT_MARKER_IMG = "/markers/etc.png";
-
-// [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
-// size=64, billboard=24px → canvas:screen = 2.67x
-// 솔리드 코어 60% + 3px 글로우 링 (0.61→0.85 = 3px on screen)
-const glowImageCache: Record<string, string> = {};
-function createGlowImage(color: string, size = 64): string {
-  if (glowImageCache[color]) return glowImageCache[color];
-  const canvas = document.createElement("canvas");
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext("2d")!;
-  const half = size / 2;
-  const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
-  gradient.addColorStop(0,    color);
-  gradient.addColorStop(0.60, color);           // 솔리드 코어 끝
-  gradient.addColorStop(0.61, color + "88");    // 글로우 링 시작 (53% alpha)
-  gradient.addColorStop(0.85, color + "18");    // 글로우 빠르게 소멸
-  gradient.addColorStop(1.0,  "transparent");
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, size, size);
-  const dataUrl = canvas.toDataURL();
-  glowImageCache[color] = dataUrl;
-  return dataUrl;
-}
-
-// [cl] 컬러 이모지 마커 생성 (카테고리별 이모지 + 은은한 글로우 배경)
-function createColorMarkerImage(category: string, size = 96): string {
-  const cacheKey = `color_${category}`;
-  if (glowImageCache[cacheKey]) return glowImageCache[cacheKey];
-  const canvas = document.createElement("canvas");
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext("2d")!;
-  const half = size / 2;
-  // [cl] 드롭 섀도우 (아래쪽에 타원형 그림자)
-  const shadowY = half + size * 0.28;
-  const sg = ctx.createRadialGradient(half, shadowY, 0, half, shadowY, size * 0.22);
-  sg.addColorStop(0, "rgba(0,0,0,0.45)");
-  sg.addColorStop(0.5, "rgba(0,0,0,0.18)");
-  sg.addColorStop(1.0, "transparent");
-  ctx.save();
-  ctx.scale(1, 0.45);  // [cl] 타원형으로 눌러서 바닥 그림자 느낌
-  ctx.fillStyle = sg;
-  ctx.fillRect(0, 0, size, size / 0.45);
-  ctx.restore();
-  // [cl] 이모지 텍스트 렌더 (글로우 없이 아이콘만)
-  const emoji = CATEGORY_EMOJI[category] || "📌";
-  ctx.font = `${Math.floor(size * 0.42)}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(emoji, half, half - size * 0.05);
-  const url = canvas.toDataURL();
-  glowImageCache[cacheKey] = url;
-  return url;
-}
-
-// [cl] 카테고리별 심볼 아이콘 (캔버스 패스, 흰색)
-function drawCategoryIcon(
-  ctx: CanvasRenderingContext2D, category: string,
-  cx: number, cy: number, r: number,
-) {
-  ctx.save();
-  ctx.fillStyle = "#ffffff";
-  ctx.strokeStyle = "#ffffff";
-  ctx.lineWidth = r * 0.14;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-  switch (category) {
-    case "정치/전쟁": { // ⚔ 교차 검
-      const d = r * 0.9;
-      ctx.beginPath();
-      ctx.moveTo(cx - d, cy - d); ctx.lineTo(cx + d, cy + d);
-      ctx.moveTo(cx + d, cy - d); ctx.lineTo(cx - d, cy + d);
-      ctx.stroke();
-      const g = r * 0.35;
-      ctx.lineWidth = r * 0.12;
-      ctx.beginPath();
-      ctx.moveTo(cx - g, cy); ctx.lineTo(cx + g, cy);
-      ctx.moveTo(cx, cy - g); ctx.lineTo(cx, cy + g);
-      ctx.stroke();
-      break;
-    }
-    case "인물/문화": { // ★ 별
-      const spikes = 5, outerR = r, innerR = r * 0.4;
-      ctx.beginPath();
-      for (let i = 0; i < spikes * 2; i++) {
-        const rad = i % 2 === 0 ? outerR : innerR;
-        const angle = (Math.PI * i / spikes) - Math.PI / 2;
-        const x = cx + Math.cos(angle) * rad;
-        const y = cy + Math.sin(angle) * rad;
-        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-      }
-      ctx.closePath();
-      ctx.fill();
-      break;
-    }
-    case "과학/발명": { // ⚡ 번개
-      ctx.beginPath();
-      ctx.moveTo(cx + r * 0.15, cy - r);
-      ctx.lineTo(cx - r * 0.35, cy + r * 0.05);
-      ctx.lineTo(cx + r * 0.05, cy + r * 0.05);
-      ctx.lineTo(cx - r * 0.15, cy + r);
-      ctx.lineTo(cx + r * 0.35, cy - r * 0.05);
-      ctx.lineTo(cx - r * 0.05, cy - r * 0.05);
-      ctx.closePath();
-      ctx.fill();
-      break;
-    }
-    case "건축/유물": { // 🏛 신전
-      ctx.beginPath();
-      ctx.moveTo(cx, cy - r);
-      ctx.lineTo(cx - r * 0.9, cy - r * 0.15);
-      ctx.lineTo(cx + r * 0.9, cy - r * 0.15);
-      ctx.closePath();
-      ctx.fill();
-      const w = r * 0.18;
-      ctx.fillRect(cx - r * 0.6, cy - r * 0.15, w, r * 1.0);
-      ctx.fillRect(cx + r * 0.42, cy - r * 0.15, w, r * 1.0);
-      ctx.fillRect(cx - r * 0.9, cy + r * 0.7, r * 1.8, r * 0.2);
-      break;
-    }
-    case "자연재해/지질": { // 🌋 화산
-      ctx.beginPath();
-      ctx.moveTo(cx - r * 0.25, cy - r * 0.4);
-      ctx.lineTo(cx - r, cy + r);
-      ctx.lineTo(cx + r, cy + r);
-      ctx.lineTo(cx + r * 0.25, cy - r * 0.4);
-      ctx.closePath();
-      ctx.fill();
-      ctx.fillStyle = CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR;
-      ctx.beginPath();
-      ctx.moveTo(cx - r * 0.25, cy - r * 0.4);
-      ctx.lineTo(cx, cy - r * 0.05);
-      ctx.lineTo(cx + r * 0.25, cy - r * 0.4);
-      ctx.closePath();
-      ctx.fill();
-      ctx.fillStyle = "#ffffff";
-      for (const [dx, dy] of [[-0.1, -0.7], [0.12, -0.85], [-0.18, -0.92]]) {
-        ctx.beginPath();
-        ctx.arc(cx + r * dx, cy + r * dy, r * 0.07, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      break;
-    }
-    case "문화": { // 🎵 음표
-      ctx.beginPath();
-      ctx.arc(cx - r * 0.15, cy + r * 0.55, r * 0.28, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillRect(cx + r * 0.08, cy - r * 0.85, r * 0.12, r * 1.4);
-      ctx.beginPath();
-      ctx.moveTo(cx + r * 0.2, cy - r * 0.85);
-      ctx.quadraticCurveTo(cx + r * 0.7, cy - r * 0.55, cx + r * 0.2, cy - r * 0.25);
-      ctx.fill();
-      break;
-    }
-    case "지적유산": { // 📜 두루마리
-      ctx.beginPath();
-      ctx.roundRect(cx - r * 0.55, cy - r * 0.7, r * 1.1, r * 1.4, r * 0.12);
-      ctx.fill();
-      ctx.strokeStyle = CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR;
-      ctx.lineWidth = r * 0.08;
-      for (let i = -0.3; i <= 0.3; i += 0.2) {
-        ctx.beginPath();
-        ctx.moveTo(cx - r * 0.3, cy + r * i);
-        ctx.lineTo(cx + r * 0.3, cy + r * i);
-        ctx.stroke();
-      }
-      break;
-    }
-    default: {
-      ctx.beginPath();
-      ctx.arc(cx, cy, r * 0.5, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-  ctx.restore();
-}
-
-// [cl] 단색 아이콘 마커 생성 (카테고리 색상 글로우 + 흰색 심볼)
-function createMonoMarkerImage(category: string, size = 96): string {
-  const cacheKey = `mono_${category}`;
-  if (glowImageCache[cacheKey]) return glowImageCache[cacheKey];
+// [cl] 심플 도형 마커 생성 (카테고리 색상 + 글로우 + 기하 도형)
+const markerCache: Record<string, string> = {};
+function createShapeMarker(category: string, size = 64): string {
+  const cacheKey = `shape_${category}`;
+  if (markerCache[cacheKey]) return markerCache[cacheKey];
   const canvas = document.createElement("canvas");
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext("2d")!;
   const half = size / 2;
   const color = CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR;
-  // [cl] 카테고리 색상 글로우 원
-  const g = ctx.createRadialGradient(half, half, 0, half, half, half);
-  g.addColorStop(0, color);
-  g.addColorStop(0.30, color);
-  g.addColorStop(0.31, color + "99");
-  g.addColorStop(0.55, color + "33");
-  g.addColorStop(0.80, color + "0a");
-  g.addColorStop(1.0, "transparent");
-  ctx.fillStyle = g;
+  const shape = CATEGORY_SHAPE[category] || "circle";
+  const r = size * 0.25;
+
+  // [cl] 글로우 배경
+  const glow = ctx.createRadialGradient(half, half, r * 0.5, half, half, half);
+  glow.addColorStop(0, color + "55");
+  glow.addColorStop(0.6, color + "18");
+  glow.addColorStop(1.0, "transparent");
+  ctx.fillStyle = glow;
   ctx.fillRect(0, 0, size, size);
-  // [cl] 흰색 아이콘
-  drawCategoryIcon(ctx, category, half, half, size * 0.18);
+
+  // [cl] 도형 그리기
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  switch (shape) {
+    case "circle":
+      ctx.arc(half, half, r, 0, Math.PI * 2);
+      break;
+    case "square":
+      ctx.rect(half - r * 0.85, half - r * 0.85, r * 1.7, r * 1.7);
+      break;
+    case "diamond":
+      ctx.moveTo(half, half - r);
+      ctx.lineTo(half + r, half);
+      ctx.lineTo(half, half + r);
+      ctx.lineTo(half - r, half);
+      break;
+    case "triangle":
+      ctx.moveTo(half, half - r);
+      ctx.lineTo(half + r, half + r * 0.75);
+      ctx.lineTo(half - r, half + r * 0.75);
+      break;
+    case "star": {
+      const spikes = 5, outerR = r, innerR = r * 0.45;
+      for (let i = 0; i < spikes * 2; i++) {
+        const rad = i % 2 === 0 ? outerR : innerR;
+        const angle = (Math.PI * i / spikes) - Math.PI / 2;
+        const x = half + Math.cos(angle) * rad;
+        const y = half + Math.sin(angle) * rad;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      break;
+    }
+    case "hexagon":
+      for (let i = 0; i < 6; i++) {
+        const angle = (Math.PI * i / 3) - Math.PI / 6;
+        const x = half + Math.cos(angle) * r;
+        const y = half + Math.sin(angle) * r;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      break;
+    case "cross": {
+      const w = r * 0.4;
+      ctx.rect(half - w, half - r, w * 2, r * 2);
+      ctx.rect(half - r, half - w, r * 2, w * 2);
+      break;
+    }
+  }
+  ctx.closePath();
+  ctx.fill();
+
   const url = canvas.toDataURL();
-  glowImageCache[cacheKey] = url;
+  markerCache[cacheKey] = url;
   return url;
 }
 
-// [cl] 스타일별 마커 이미지 생성 (통합)
+// [cl] 마커 이미지 생성
 function getMarkerImage(category: string): string {
-  if (MARKER_STYLE === "svg") return CATEGORY_MARKER[category] || DEFAULT_MARKER_IMG;
-  if (MARKER_STYLE === "color") return createColorMarkerImage(category);
-  if (MARKER_STYLE === "mono") return createMonoMarkerImage(category);
-  return createGlowImage(CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR);
+  return createShapeMarker(category);
 }
 
 // [cl] 800px 지구 지름에 맞는 카메라 기본 높이 계산
@@ -836,11 +690,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       return;
     }
 
-    // [cl] 마커 모드 진입: 스타일별 마커 엔티티 생성
-    const isDot = MARKER_STYLE === "dot";
-    const bSize = isDot ? 12 : 36;          // [cl] 아이콘 마커 크기 (기본)
-    // [cl] 가까울수록 크게: 1500km↓ = 2배(72px) / 8000km↑ = 1배(36px)
-    const nearScale = isDot ? 20 / 12 : 2.0;
+    // [cl] 마커 모드 진입: 도형 마커 엔티티 생성
+    const bSize = 24;
+    const nearScale = 2.0;
     events.forEach((ev) => {
       if (viewer.entities.getById(ev.id)) return; // 중복 방지
       const markerImage = getMarkerImage(ev.category);
