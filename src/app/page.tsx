@@ -477,6 +477,12 @@ export default function Home() {
     requestAnimationFrame(animate);
   };
 
+  // [cl] 빠른 flick → 랜덤 타임워프
+  const handleSpinWarp = () => {
+    const randomYear = Math.floor(Math.random() * 5101) - 3000; // -3000 ~ 2100
+    handleWarp(randomYear);
+  };
+
   // [cl] 리셋 핸들러 (컨트롤 바용)
   const handleReset = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -516,6 +522,7 @@ export default function Home() {
           events={MOCK_EVENTS}
           onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
           warpPhase={warpPhase}
+          onSpinWarp={handleSpinWarp}
         />
       </div>
 

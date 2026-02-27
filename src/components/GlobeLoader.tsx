@@ -22,6 +22,7 @@ interface GlobeLoaderProps {
   events?: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
   warpPhase?: "idle" | "zoomout" | "hold" | "zoomin";
+  onSpinWarp?: (direction: "past" | "future") => void;
 }
 
 export default function GlobeLoader({
@@ -33,6 +34,7 @@ export default function GlobeLoader({
   events = [],
   onStackClick,
   warpPhase = "idle",
+  onSpinWarp,
 }: GlobeLoaderProps) {
   return (
     <CesiumGlobe
@@ -44,6 +46,7 @@ export default function GlobeLoader({
       events={events}
       onStackClick={onStackClick}
       warpPhase={warpPhase}
+      onSpinWarp={onSpinWarp}
     />
   );
 }

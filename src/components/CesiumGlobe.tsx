@@ -219,9 +219,10 @@ interface SceneSetupProps {
   events: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
   warpPhase?: WarpPhase;
+  onSpinWarp?: (direction: "past" | "future") => void;
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle" }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -257,6 +258,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] 워프 단계 ref: spin 루프에서 즉시 읽기 (클로저 갱신 없이)
   const warpPhaseRef = useRef<WarpPhase>("idle");
   useEffect(() => { warpPhaseRef.current = warpPhase; }, [warpPhase]);
+  // [cl] spinWarp 콜백 ref: 빠른 flick 감지 → 랜덤 타임워프
+  const onSpinWarpRef = useRef(onSpinWarp);
+  useEffect(() => { onSpinWarpRef.current = onSpinWarp; }, [onSpinWarp]);
   // [cl] 워프 스핀 배율: page.tsx rAF 루프에서 매 프레임 주입 (window global 경유)
   const warpSpinMultRef = useRef(0);
   // [cl] 워프 전 카메라 위치: zoomin 복귀 시 사용
@@ -310,7 +314,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     }).then((cloudProvider) => {
       if (viewer.isDestroyed()) return;
       const cloudLayer = viewer.imageryLayers.addImageryProvider(cloudProvider);
-      cloudLayer.alpha = 0.15;
+      cloudLayer.alpha = 0.3;
     });
 
     // [cl] ★ 초기 카메라: 적도 + orbit 기본 높이에서 시작
@@ -1150,15 +1154,54 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     const canvas = viewer.canvas;
 
-    const onStart = () => {
+    // [cl] ★ 빠른 flick 감지: 드래그 중 커서 위치를 버퍼에 기록 → pointerup 시 속도 계산
+    const SPIN_WARP_THRESHOLD = 1500; // [cl] px/sec — 이 속도 이상이면 타임워프 발동
+    const SPIN_WARP_COOLDOWN = 10_000; // [cl] ms — 워프 후 10초간 재트리거 방지
+    const BUFFER_WINDOW = 300; // [cl] ms — 속도 계산용 최근 샘플 윈도우
+    const flickBuffer: { x: number; t: number }[] = [];
+    let lastSpinWarpTime = 0;
+
+    const onStart = (e: PointerEvent) => {
       isInteracting.current = true;
+      flickBuffer.length = 0;
+      flickBuffer.push({ x: e.clientX, t: performance.now() });
+    };
+    const onMove = (e: PointerEvent) => {
+      if (!isInteracting.current) return;
+      const now = performance.now();
+      flickBuffer.push({ x: e.clientX, t: now });
+      // [cl] 오래된 샘플 제거 (300ms 윈도우만 유지)
+      while (flickBuffer.length > 1 && now - flickBuffer[0].t > BUFFER_WINDOW) {
+        flickBuffer.shift();
+      }
     };
     const onEnd = () => {
       isInteracting.current = false;
       lastInteraction.current = Date.now();
+
+      // [cl] flick 속도 판정: 버퍼에서 수평 속도 계산
+      if (
+        flickBuffer.length >= 2 &&
+        warpPhaseRef.current === "idle" &&
+        performance.now() - lastSpinWarpTime > SPIN_WARP_COOLDOWN
+      ) {
+        const first = flickBuffer[0];
+        const last = flickBuffer[flickBuffer.length - 1];
+        const dt = (last.t - first.t) / 1000; // sec
+        if (dt > 0.02) { // [cl] 최소 20ms 이상의 드래그만 판정
+          const speed = Math.abs(last.x - first.x) / dt; // px/sec
+          if (speed > SPIN_WARP_THRESHOLD) {
+            lastSpinWarpTime = performance.now();
+            const dir = Math.random() < 0.5 ? "past" : "future";
+            onSpinWarpRef.current?.(dir as "past" | "future");
+          }
+        }
+      }
+      flickBuffer.length = 0;
     };
 
     canvas.addEventListener("pointerdown", onStart);
+    canvas.addEventListener("pointermove", onMove);
     canvas.addEventListener("pointerup", onEnd);
     canvas.addEventListener("pointerleave", onEnd);
 
@@ -1292,6 +1335,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     return () => {
       canvas.removeEventListener("pointerdown", onStart);
+      canvas.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerup", onEnd);
       canvas.removeEventListener("pointerleave", onEnd);
       cancelAnimationFrame(frameId);
@@ -1311,6 +1355,7 @@ interface CesiumGlobeProps {
   events?: MockEvent[];
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
   warpPhase?: WarpPhase;
+  onSpinWarp?: (direction: "past" | "future") => void;
 }
 
 // [cl] ★ 모듈 레벨 상수: 렌더링마다 새 객체 생성 방지 → Viewer 재생성 차단
@@ -1325,6 +1370,7 @@ export default function CesiumGlobe({
   events = [],
   onStackClick,
   warpPhase = "idle",
+  onSpinWarp,
 }: CesiumGlobeProps) {
   return (
     <Viewer
@@ -1352,6 +1398,7 @@ export default function CesiumGlobe({
         events={events}
         onStackClick={onStackClick}
         warpPhase={warpPhase}
+        onSpinWarp={onSpinWarp}
       />
     </Viewer>
   );
