@@ -203,10 +203,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // -90° = 바로 위에서 내려다봄 (기본), -10° = 거의 수평 (지평선 근처)
     controller.minimumCollisionTerrainHeight = 500;
 
-    // [cl] 관성(inertia) 줄이기: 마우스 놓은 후 휙휙 도는 문제 해결
-    controller.inertiaSpin = 0.3;        // 기본 0.9 → 0.3으로 줄임
-    controller.inertiaTranslate = 0.3;   // 패닝 관성도 줄임
-    controller.inertiaZoom = 0.5;        // 줌 관성 약간 줄임
+    // [cl] 관성 완전 제거: 틸트 관성 중 휠 줌 시 360° 회전 방지
+    controller.inertiaSpin = 0;
+    controller.inertiaTranslate = 0;
+    controller.inertiaZoom = 0;
 
     // [cl] ★ 틸트 상태에서 휠 줌 시 heading 360° 회전 방지
     // 원인: CesiumJS가 기울어진 상태에서 줌할 때 지표면 포인트 중심으로 공전
