@@ -203,33 +203,35 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // -90° = 바로 위에서 내려다봄 (기본), -10° = 거의 수평 (지평선 근처)
     controller.minimumCollisionTerrainHeight = 500;
 
-    // [cl] 관성 완전 제거: 틸트 관성 중 휠 줌 시 360° 회전 방지
-    controller.inertiaSpin = 0;
-    controller.inertiaTranslate = 0;
-    controller.inertiaZoom = 0;
+    // [cl] 관성: CesiumJS 기본값 유지 (0.9, 0.9, 0.8)
 
     // [cl] ★ 틸트 상태에서 휠 줌 시 heading 360° 회전 방지
     // 원인: CesiumJS가 기울어진 상태에서 줌할 때 지표면 포인트 중심으로 공전
-    // 해결: 휠 이벤트 직전 heading 캡처 → postRender에서 즉시 복원
-    let savedHeading: number | null = null;
+    // 해결: 휠 줌 중 매 프레임 heading을 고정 (단발 복원으로는 부족)
+    let lockedHeading: number | null = null;
+    let wheelLockTimer: ReturnType<typeof setTimeout> | null = null;
     const onWheel = () => {
-      // [cl] pitch가 -90°(수직)가 아닌 기울어진 상태에서만 보정
       const pitch = viewer.camera.pitch;
       if (pitch > CesiumMath.toRadians(-85)) {
-        savedHeading = viewer.camera.heading;
+        // [cl] 최초 휠 시점의 heading 캡처 (연속 휠 중에는 갱신 안 함)
+        if (lockedHeading === null) {
+          lockedHeading = viewer.camera.heading;
+        }
+        // [cl] 마지막 휠 이벤트 후 300ms 뒤 잠금 해제
+        if (wheelLockTimer) clearTimeout(wheelLockTimer);
+        wheelLockTimer = setTimeout(() => { lockedHeading = null; }, 300);
       }
     };
     viewer.canvas.addEventListener("wheel", onWheel, { passive: true });
     const removePostRender = viewer.scene.postRender.addEventListener(() => {
-      if (savedHeading !== null) {
+      if (lockedHeading !== null) {
         viewer.camera.setView({
           orientation: {
-            heading: savedHeading,
+            heading: lockedHeading,
             pitch: viewer.camera.pitch,
             roll: viewer.camera.roll,
           },
         });
-        savedHeading = null;
       }
     });
 
