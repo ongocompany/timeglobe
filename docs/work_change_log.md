@@ -809,3 +809,45 @@
   * 복구 후 재개 순서:
     1. `node scripts/curation/battleSignificance.mjs --dry-run`
     2. `node scripts/curation/battleSignificance.mjs`
+
+## [2026-02-27] [cl] 인계사항 이어서 — AI Geocoder + Battle Significance 완료
+
+### 사전 점검
+* Supabase DB 상태 확인:
+  * 총 이벤트: 12,194건
+  * 좌표 미보유: 261건
+  * significance_score 보유: 0건 (마이그레이션 적용 확인됨)
+  * event_kind 분포: battle=7,313 / war=866 / place=3,960 / treaty=28 / disaster=7 / historical_event=20
+* 이전 세션의 backfill(0~1899)은 이미 완료 상태 — 추가 재수집 불필요
+
+### 3단계(재실행): AI Geocoder 좌표 매핑
+* 대상: 좌표 미보유 261건
+* Dry-run:
+  * `node scripts/curation/aiGeocoder.mjs --dry-run --limit 261`
+  * 결과: total=261, geocoded=260, skipped=1(Battle of Behgy), errors=0
+  * 신뢰도: high=171, medium=76, low=13
+* 본실행:
+  * `node scripts/curation/aiGeocoder.mjs --limit 261`
+  * 결과: total=261, geocoded=260, skipped=1(Battle of Behgy), errors=0
+  * 신뢰도: high=177, medium=70, low=13
+  * 로그: `.cache/ai-geocoder-1772201157722.jsonl`
+* 처리 후 좌표 미보유: 1건 (Battle of Behgy — 추정 불가)
+
+### 4단계: 전투 중요도 스코어링 (Battle Significance)
+* 대상: is_curated_visible=true & is_battle=true & significance_score IS NULL → 406건
+* Dry-run:
+  * `node scripts/curation/battleSignificance.mjs --dry-run --limit 500`
+  * 결과: 406건 중 386건 스코어링, 20건 오류(Gemini 503 서버 과부하 — 배치 12~13)
+  * 점수 분포: 10=19, 9=44, 8=75, 7=75, 6=98, 5=40, 4=28, 3=6, 2=1
+* 본실행:
+  * `node scripts/curation/battleSignificance.mjs --limit 500`
+  * 결과: **406건 전부 스코어링 성공, 오류 0건**
+  * 점수 분포: 10=18, 9=44, 8=77, 7=83, 6=97, 5=42, 4=35, 3=8, 2=2
+  * 로그: `.cache/battle-significance-1772203016346.jsonl`
+  * Rate limit 429 발생 2회 (배치 28, 35) — 자동 재시도로 해결
+
+### DB 최종 상태
+* 총 이벤트: 12,194건
+* 좌표 미보유: 1건 (Battle of Behgy)
+* significance_score 보유: 406건 (전투 이벤트 대상)
+* 10점 전투 예시: 적벽 대전, 밀비우스 다리, 카탈라우눔, 야르무크, 까디시야, 투르 푸아티에, 탈라스 등
