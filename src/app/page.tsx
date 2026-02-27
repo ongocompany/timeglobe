@@ -46,18 +46,12 @@ function StackCarousel({
   position: { x: number; y: number };
   onClose: () => void;
 }) {
+  const isSingle = events.length === 1;
   const [activeId, setActiveId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [scattering, setScattering] = useState(false);
-  // [cl] 흩어질 방향 벡터: 마운트 시 1회 생성
-  const scatterVecsRef = useState<Array<{ tx: number; ty: number; rot: number }>>(() =>
-    events.map(() => ({
-      tx: (Math.random() - 0.5) * 500,
-      ty: -(Math.random() * 300 + 80),
-      rot: (Math.random() - 0.5) * 60,
-    }))
-  )[0];
-
+  // [cl] 단독 마커: 슬라이드 상태 (mount → "in", 닫기 → "out" → onClose)
+  const [slidePhase, setSlidePhase] = useState<"in" | "out">("in");
   // [cl] 확장 카드 크기: 화면에 맞게 계산
   const CARD_W = typeof window !== "undefined" ? Math.min(500, Math.round(window.innerWidth * 0.88)) : 460;
   const MAX_H = typeof window !== "undefined" ? window.innerHeight - 80 : 600;
@@ -70,22 +64,140 @@ function StackCarousel({
   const clampedLeft = Math.max(16, Math.min(position.x - MINI_W / 2, vw - MINI_W - 16));
   const clampedTop = Math.max(16, Math.min(position.y - 140, vh - 180));
 
-  const scatter = () => {
-    if (scattering) return;
-    setScattering(true);
-    setTimeout(() => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).__timeglobe_flyBack?.();
-      onClose();
-    }, 420);
+  // [cl] 닫기: 단독=슬라이드아웃 / 스택=전체 페이드아웃
+  const dismiss = () => {
+    if (isSingle) {
+      setSlidePhase("out");
+      setTimeout(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_flyBack?.();
+        onClose();
+      }, 350);
+    } else {
+      if (scattering) return;
+      setScattering(true);
+      setTimeout(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).__timeglobe_flyBack?.();
+        onClose();
+      }, 300);
+    }
   };
 
+  // [cl] ── 단독 마커: 커서 위치에 미니 카드 + 슬라이드업 등장 ──
+  if (isSingle) {
+    const ev = events[0];
+    const isActive = activeId === ev.id;
+    return (
+      <>
+        {/* [cl] 오버레이: 밖 클릭 → 닫기 */}
+        <div className="fixed inset-0 z-[84]" onClick={isActive ? () => setActiveId(null) : dismiss} />
+        {isActive && (
+          <div className="fixed inset-0 z-[85] bg-black/60 backdrop-blur-sm pointer-events-none" />
+        )}
+
+        {/* [cl] 커서 위치 미니 카드 (슬라이드업 애니메이션) */}
+        <div
+          className="fixed z-[86] pointer-events-none"
+          style={{
+            left: isActive ? "50%" : clampedLeft - 24,
+            top: isActive ? "50%" : clampedTop - 24,
+            transform: isActive
+              ? "translate(-50%, -50%)"
+              : slidePhase === "out"
+              ? "translateY(30px)"
+              : "none",
+            transition: "left 0.5s cubic-bezier(0.25,1,0.5,1), top 0.5s cubic-bezier(0.25,1,0.5,1), transform 0.5s cubic-bezier(0.25,1,0.5,1)",
+            animation: slidePhase === "in" && !isActive ? "slideUpIn 0.45s cubic-bezier(0.34,1.56,0.64,1) both" : undefined,
+          }}
+        >
+          {/* [cl] 호버 영역: 카드 주변 24px 여유 패딩 (마우스 이탈 민감도 완화) */}
+          <div
+            style={{
+              padding: isActive ? 0 : 24,
+              pointerEvents: isActive ? "none" : "auto",
+            }}
+            onMouseLeave={!isActive ? dismiss : undefined}
+          >
+          <div
+            style={{
+              width: isActive ? CARD_W : 90,
+              height: isActive ? CARD_H : 120,
+              flexShrink: 0,
+              borderRadius: isActive ? 20 : 12,
+              overflow: "hidden",
+              position: "relative",
+              cursor: isActive || scattering ? "default" : "pointer",
+              opacity: slidePhase === "out" && !isActive ? 0 : 1,
+              pointerEvents: "auto",
+              boxShadow: isActive
+                ? "0 24px 64px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35)"
+                : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3)",
+              transition: "width 0.5s cubic-bezier(0.25,1,0.5,1), height 0.5s cubic-bezier(0.25,1,0.5,1), border-radius 0.5s ease, box-shadow 0.3s ease, opacity 0.3s ease",
+            }}
+            onClick={!isActive ? () => setActiveId(ev.id) : undefined}
+          >
+            {/* [cl] 미니 카드 */}
+            <div
+              className="absolute inset-0"
+              style={{
+                opacity: isActive ? 0 : 1,
+                transition: "opacity 0.2s ease",
+                pointerEvents: isActive ? "none" : "auto",
+              }}
+            >
+              <img src={ev.image_url} alt={ev.title.ko} className="w-full h-full object-cover" />
+              <div
+                className="absolute bottom-0 left-0 right-0 px-2 py-1.5"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}
+              >
+                <p className="text-white text-[10px] font-semibold leading-tight line-clamp-2">{ev.title.ko}</p>
+                <p className="text-white/50 text-[9px] mt-0.5">{ev.start_year}</p>
+              </div>
+            </div>
+
+            {/* [cl] 확장 콘텐츠 */}
+            {isActive && (
+              <div
+                className="absolute inset-0 overflow-y-auto bg-white"
+                style={{ animation: "fadeIn 0.3s 0.25s both" }}
+              >
+                <button
+                  className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-lg leading-none"
+                  onClick={(e) => { e.stopPropagation(); setActiveId(null); }}
+                >
+                  ✕
+                </button>
+                <EventDetailContent
+                  event={ev}
+                  theme="light"
+                  relatedEvents={MOCK_EVENTS.filter((e) => e.id !== ev.id).slice(0, 4)}
+                />
+              </div>
+            )}
+          </div>
+          </div>
+        </div>
+
+        {/* [cl] 슬라이드업 키프레임: 커서 위치에서 30px 아래→원위치 */}
+        <style>{`
+          @keyframes slideUpIn {
+            0%   { opacity: 0; transform: translateY(30px); }
+            60%  { opacity: 1; transform: translateY(-6px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+        `}</style>
+      </>
+    );
+  }
+
+  // [cl] ── 스택(2개 이상): 순차 슬라이드인 + 전체 페이드아웃 ──
   return (
     <>
-      {/* [cl] 전체화면 투명 오버레이: 밖 클릭 → scatter / 확장 카드 → 축소 */}
+      {/* [cl] 전체화면 투명 오버레이: 밖 클릭 → 페이드아웃 / 확장 카드 → 축소 */}
       <div
         className="fixed inset-0 z-[84]"
-        onClick={activeId ? () => setActiveId(null) : scatter}
+        onClick={activeId ? () => setActiveId(null) : dismiss}
       />
 
       {/* [cl] 확장 카드용 딤 레이어 */}
@@ -102,14 +214,16 @@ function StackCarousel({
           transform: activeId ? "translate(-50%, -50%)" : "none",
           display: "flex",
           gap: activeId ? 0 : 10,
-          transition: "left 0.5s cubic-bezier(0.25,1,0.5,1), top 0.5s cubic-bezier(0.25,1,0.5,1), transform 0.5s cubic-bezier(0.25,1,0.5,1), gap 0.5s cubic-bezier(0.25,1,0.5,1)",
+          opacity: scattering && !activeId ? 0 : 1,
+          transition: "left 0.5s cubic-bezier(0.25,1,0.5,1), top 0.5s cubic-bezier(0.25,1,0.5,1), transform 0.5s cubic-bezier(0.25,1,0.5,1), gap 0.5s cubic-bezier(0.25,1,0.5,1), opacity 0.25s ease",
         }}
       >
         {events.map((ev, i) => {
           const isActive = activeId === ev.id;
           const isHidden = !!activeId && !isActive;
           const isHovered = hoveredId === ev.id && !isActive && !scattering;
-          const vec = scatterVecsRef[i];
+          // [cl] 등장 애니메이션 활성 여부
+          const animating = !scattering && !activeId;
 
           return (
             <div
@@ -122,21 +236,20 @@ function StackCarousel({
                 overflow: "hidden",
                 position: "relative",
                 cursor: isActive || scattering ? "default" : "pointer",
-                opacity: isHidden || scattering ? 0 : 1,
+                opacity: isHidden ? 0 : 1,
                 pointerEvents: scattering ? "none" : "auto",
                 boxShadow: isActive
                   ? "0 24px 64px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35)"
                   : isHovered
                   ? "0 12px 32px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.35)"
                   : "0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3)",
-                transform: scattering
-                  ? `translate(${vec.tx}px, ${vec.ty}px) rotate(${vec.rot}deg)`
-                  : isHovered
-                  ? "scale(1.08) translateY(-4px)"
-                  : "none",
-                transition: scattering
-                  ? "transform 0.4s cubic-bezier(0.4,0,1,1), opacity 0.3s ease"
+                transform: isHovered ? "scale(1.08) translateY(-4px)" : "none",
+                // [cl] 등장 중에는 opacity/transform transition 제거 (animation 충돌 방지)
+                transition: animating
+                  ? "width 0.5s cubic-bezier(0.25,1,0.5,1), height 0.5s cubic-bezier(0.25,1,0.5,1), border-radius 0.5s ease, box-shadow 0.3s ease"
                   : "width 0.5s cubic-bezier(0.25,1,0.5,1), height 0.5s cubic-bezier(0.25,1,0.5,1), opacity 0.3s ease, border-radius 0.5s ease, box-shadow 0.3s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1)",
+                // [cl] 순차 슬라이드업 + 탄성: 왼→오 100ms 시차
+                animation: animating ? `stackBounceIn 0.45s cubic-bezier(0.34,1.56,0.64,1) ${i * 100}ms both` : undefined,
               }}
               onMouseEnter={() => !isActive && setHoveredId(ev.id)}
               onMouseLeave={() => setHoveredId(null)}
@@ -187,6 +300,15 @@ function StackCarousel({
           );
         })}
       </div>
+
+      {/* [cl] 스택 슬라이드업 + 탄성 키프레임: 아래→위 + 살짝 오버슈트 */}
+      <style>{`
+        @keyframes stackBounceIn {
+          0%   { opacity: 0; transform: translateY(30px); }
+          60%  { opacity: 1; transform: translateY(-6px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </>
   );
 }

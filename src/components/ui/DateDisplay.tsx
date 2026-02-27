@@ -4,12 +4,16 @@ import { useEffect, useState } from "react";
 
 // [cl] 타임바 상단 페이드 지점에서 50px 위에 위치하는 날짜/시간 표시 카드
 export default function DateDisplay() {
-    const [now, setNow] = useState(new Date());
+    // [cl] SSR hydration mismatch 방지: 초기값 null → 클라이언트에서만 시간 세팅
+    const [now, setNow] = useState<Date | null>(null);
 
     useEffect(() => {
+        setNow(new Date());
         const timer = setInterval(() => setNow(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
+
+    if (!now) return null;
 
     const year = now.getFullYear();
     const month = now.getMonth() + 1;

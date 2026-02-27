@@ -78,6 +78,21 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 const DEFAULT_MARKER_COLOR = "#6a4c93"; // purple (custom)
 
+// [cl] 마커 스타일: "dot" = 기존 글로우 도트 | "color" = 컬러 이모지 | "mono" = 단색 아이콘
+type MarkerStyle = "dot" | "color" | "mono";
+const MARKER_STYLE: MarkerStyle = "color";
+
+// [cl] 카테고리별 이모지 (컬러 스타일용)
+const CATEGORY_EMOJI: Record<string, string> = {
+  "정치/전쟁":    "⚔️",
+  "인물/문화":    "🌟",
+  "과학/발명":    "⚡",
+  "건축/유물":    "🏛️",
+  "자연재해/지질": "🌋",
+  문화:           "🎵",
+  지적유산:       "📜",
+};
+
 // [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
 // size=64, billboard=24px → canvas:screen = 2.67x
 // 솔리드 코어 60% + 3px 글로우 링 (0.61→0.85 = 3px on screen)
@@ -100,6 +115,193 @@ function createGlowImage(color: string, size = 64): string {
   const dataUrl = canvas.toDataURL();
   glowImageCache[color] = dataUrl;
   return dataUrl;
+}
+
+// [cl] 컬러 이모지 마커 생성 (카테고리별 이모지 + 은은한 글로우 배경)
+function createColorMarkerImage(category: string, size = 96): string {
+  const cacheKey = `color_${category}`;
+  if (glowImageCache[cacheKey]) return glowImageCache[cacheKey];
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  const half = size / 2;
+  // [cl] 드롭 섀도우 (아래쪽에 타원형 그림자)
+  const shadowY = half + size * 0.28;
+  const sg = ctx.createRadialGradient(half, shadowY, 0, half, shadowY, size * 0.22);
+  sg.addColorStop(0, "rgba(0,0,0,0.45)");
+  sg.addColorStop(0.5, "rgba(0,0,0,0.18)");
+  sg.addColorStop(1.0, "transparent");
+  ctx.save();
+  ctx.scale(1, 0.45);  // [cl] 타원형으로 눌러서 바닥 그림자 느낌
+  ctx.fillStyle = sg;
+  ctx.fillRect(0, 0, size, size / 0.45);
+  ctx.restore();
+  // [cl] 이모지 텍스트 렌더 (글로우 없이 아이콘만)
+  const emoji = CATEGORY_EMOJI[category] || "📌";
+  ctx.font = `${Math.floor(size * 0.42)}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(emoji, half, half - size * 0.05);
+  const url = canvas.toDataURL();
+  glowImageCache[cacheKey] = url;
+  return url;
+}
+
+// [cl] 카테고리별 심볼 아이콘 (캔버스 패스, 흰색)
+function drawCategoryIcon(
+  ctx: CanvasRenderingContext2D, category: string,
+  cx: number, cy: number, r: number,
+) {
+  ctx.save();
+  ctx.fillStyle = "#ffffff";
+  ctx.strokeStyle = "#ffffff";
+  ctx.lineWidth = r * 0.14;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  switch (category) {
+    case "정치/전쟁": { // ⚔ 교차 검
+      const d = r * 0.9;
+      ctx.beginPath();
+      ctx.moveTo(cx - d, cy - d); ctx.lineTo(cx + d, cy + d);
+      ctx.moveTo(cx + d, cy - d); ctx.lineTo(cx - d, cy + d);
+      ctx.stroke();
+      const g = r * 0.35;
+      ctx.lineWidth = r * 0.12;
+      ctx.beginPath();
+      ctx.moveTo(cx - g, cy); ctx.lineTo(cx + g, cy);
+      ctx.moveTo(cx, cy - g); ctx.lineTo(cx, cy + g);
+      ctx.stroke();
+      break;
+    }
+    case "인물/문화": { // ★ 별
+      const spikes = 5, outerR = r, innerR = r * 0.4;
+      ctx.beginPath();
+      for (let i = 0; i < spikes * 2; i++) {
+        const rad = i % 2 === 0 ? outerR : innerR;
+        const angle = (Math.PI * i / spikes) - Math.PI / 2;
+        const x = cx + Math.cos(angle) * rad;
+        const y = cy + Math.sin(angle) * rad;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fill();
+      break;
+    }
+    case "과학/발명": { // ⚡ 번개
+      ctx.beginPath();
+      ctx.moveTo(cx + r * 0.15, cy - r);
+      ctx.lineTo(cx - r * 0.35, cy + r * 0.05);
+      ctx.lineTo(cx + r * 0.05, cy + r * 0.05);
+      ctx.lineTo(cx - r * 0.15, cy + r);
+      ctx.lineTo(cx + r * 0.35, cy - r * 0.05);
+      ctx.lineTo(cx - r * 0.05, cy - r * 0.05);
+      ctx.closePath();
+      ctx.fill();
+      break;
+    }
+    case "건축/유물": { // 🏛 신전
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - r);
+      ctx.lineTo(cx - r * 0.9, cy - r * 0.15);
+      ctx.lineTo(cx + r * 0.9, cy - r * 0.15);
+      ctx.closePath();
+      ctx.fill();
+      const w = r * 0.18;
+      ctx.fillRect(cx - r * 0.6, cy - r * 0.15, w, r * 1.0);
+      ctx.fillRect(cx + r * 0.42, cy - r * 0.15, w, r * 1.0);
+      ctx.fillRect(cx - r * 0.9, cy + r * 0.7, r * 1.8, r * 0.2);
+      break;
+    }
+    case "자연재해/지질": { // 🌋 화산
+      ctx.beginPath();
+      ctx.moveTo(cx - r * 0.25, cy - r * 0.4);
+      ctx.lineTo(cx - r, cy + r);
+      ctx.lineTo(cx + r, cy + r);
+      ctx.lineTo(cx + r * 0.25, cy - r * 0.4);
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR;
+      ctx.beginPath();
+      ctx.moveTo(cx - r * 0.25, cy - r * 0.4);
+      ctx.lineTo(cx, cy - r * 0.05);
+      ctx.lineTo(cx + r * 0.25, cy - r * 0.4);
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      for (const [dx, dy] of [[-0.1, -0.7], [0.12, -0.85], [-0.18, -0.92]]) {
+        ctx.beginPath();
+        ctx.arc(cx + r * dx, cy + r * dy, r * 0.07, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      break;
+    }
+    case "문화": { // 🎵 음표
+      ctx.beginPath();
+      ctx.arc(cx - r * 0.15, cy + r * 0.55, r * 0.28, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillRect(cx + r * 0.08, cy - r * 0.85, r * 0.12, r * 1.4);
+      ctx.beginPath();
+      ctx.moveTo(cx + r * 0.2, cy - r * 0.85);
+      ctx.quadraticCurveTo(cx + r * 0.7, cy - r * 0.55, cx + r * 0.2, cy - r * 0.25);
+      ctx.fill();
+      break;
+    }
+    case "지적유산": { // 📜 두루마리
+      ctx.beginPath();
+      ctx.roundRect(cx - r * 0.55, cy - r * 0.7, r * 1.1, r * 1.4, r * 0.12);
+      ctx.fill();
+      ctx.strokeStyle = CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR;
+      ctx.lineWidth = r * 0.08;
+      for (let i = -0.3; i <= 0.3; i += 0.2) {
+        ctx.beginPath();
+        ctx.moveTo(cx - r * 0.3, cy + r * i);
+        ctx.lineTo(cx + r * 0.3, cy + r * i);
+        ctx.stroke();
+      }
+      break;
+    }
+    default: {
+      ctx.beginPath();
+      ctx.arc(cx, cy, r * 0.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  ctx.restore();
+}
+
+// [cl] 단색 아이콘 마커 생성 (카테고리 색상 글로우 + 흰색 심볼)
+function createMonoMarkerImage(category: string, size = 96): string {
+  const cacheKey = `mono_${category}`;
+  if (glowImageCache[cacheKey]) return glowImageCache[cacheKey];
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  const half = size / 2;
+  const color = CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR;
+  // [cl] 카테고리 색상 글로우 원
+  const g = ctx.createRadialGradient(half, half, 0, half, half, half);
+  g.addColorStop(0, color);
+  g.addColorStop(0.30, color);
+  g.addColorStop(0.31, color + "99");
+  g.addColorStop(0.55, color + "33");
+  g.addColorStop(0.80, color + "0a");
+  g.addColorStop(1.0, "transparent");
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, size, size);
+  // [cl] 흰색 아이콘
+  drawCategoryIcon(ctx, category, half, half, size * 0.18);
+  const url = canvas.toDataURL();
+  glowImageCache[cacheKey] = url;
+  return url;
+}
+
+// [cl] 스타일별 마커 이미지 생성 (통합)
+function getMarkerImage(category: string): string {
+  if (MARKER_STYLE === "color") return createColorMarkerImage(category);
+  if (MARKER_STYLE === "mono") return createMonoMarkerImage(category);
+  return createGlowImage(CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR);
 }
 
 // [cl] 800px 지구 지름에 맞는 카메라 기본 높이 계산
@@ -620,23 +822,27 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       return;
     }
 
-    // [cl] 마커 모드 진입: 글로우 도트 엔티티 생성
+    // [cl] 마커 모드 진입: 스타일별 마커 엔티티 생성
+    const isDot = MARKER_STYLE === "dot";
+    const bSize = isDot ? 12 : 36;          // [cl] 아이콘 마커 크기 (기본)
+    // [cl] 가까울수록 크게: 1500km↓ = 2배(72px) / 8000km↑ = 1배(36px)
+    const nearScale = isDot ? 20 / 12 : 2.0;
     events.forEach((ev) => {
       if (viewer.entities.getById(ev.id)) return; // 중복 방지
-      const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
-      const glowImage = createGlowImage(color);
+      const markerImage = getMarkerImage(ev.category);
 
       viewer.entities.add({
         id: ev.id,
         name: ev.title.ko,
         position: Cartesian3.fromDegrees(ev.location_lng, ev.location_lat, 0),
         billboard: {
-          image: glowImage,
-          width: 12,
-          height: 12,
+          image: markerImage,
+          width: bSize,
+          height: bSize,
           scale: 1.0,
-          // [cl] 5000km↑: 12px 고정 / 5000→3000km: 12→20px 보간 / 3000km↓: 20px 고정
-          scaleByDistance: new NearFarScalar(3e6, 20 / 12, 5e6, 1.0),
+          // [cl] 5000km↑: 기본 고정 / 5000→3000km: 보간 확대 / 3000km↓: 최대
+          // [cl] 1500km↓: 2배(72px) / 8000km↑: 1배(36px) / 사이: 보간
+          scaleByDistance: new NearFarScalar(1.5e6, nearScale, 8e6, 1.0),
         },
       });
     });
@@ -701,21 +907,35 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     if (!viewer || !markerMode) return;
 
     const HOVER_RADIUS       = 30;
-    const SHOW_DELAY         = 250;
-    const HIDE_DELAY         = 450;
+    const SHOW_DELAY         = 0;   // [cl] 딜레이 제거 → CSS 애니메이션으로 대체
+    const HIDE_DELAY         = 0;   // [cl] 딜레이 제거 → CSS 페이드아웃으로 대체
     const CONTENT_UPDATE_DELAY = 200;
     const MAX_DISPLAY        = 5;
     const ALT_THRESHOLD      = 1_500_000; // [cl] 1500km
 
-    // [cl] 텍스트 툴팁 기본 스타일
+    // [cl] 툴팁 row 슬라이드인 keyframes (글로벌에 1회만 추가)
+    if (!document.getElementById("tg-tooltip-keyframes")) {
+      const styleTag = document.createElement("style");
+      styleTag.id = "tg-tooltip-keyframes";
+      styleTag.textContent = `
+        @keyframes tgTooltipRowIn {
+          from { opacity: 0; transform: translateX(-12px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+      `;
+      document.head.appendChild(styleTag);
+    }
+
+    // [cl] 텍스트 툴팁 기본 스타일 (display 대신 opacity로 가시성 제어)
     const TEXT_STYLES = [
       "position:absolute", "pointer-events:none",
       "background:rgba(8,8,18,0.92)", "color:#fff",
       "padding:8px 14px", "border-radius:10px", "font-size:13px",
-      "white-space:nowrap", "display:none", "z-index:200",
+      "white-space:nowrap", "z-index:200",
       "border:1px solid rgba(255,255,255,0.13)", "backdrop-filter:blur(12px)",
       "letter-spacing:0.02em", "box-shadow:0 4px 20px rgba(0,0,0,0.55)",
       "min-width:160px",
+      "opacity:0", "transition:opacity 0.2s ease",
     ].join(";");
 
     const tooltipEl = document.createElement("div");
@@ -783,16 +1003,20 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         const extra = nearby.length - shown.length;
         const rows = shown.map(({ ev }, i) => {
           const color = CATEGORY_COLORS[ev.category] || DEFAULT_MARKER_COLOR;
-          const opacity = Math.max(0.45, 1.0 - i * 0.14);
+          // [cl] 각 row 순차 슬라이드인: 100ms 시차, 0.3s 듀레이션
+          const delay = i * 100;
           return (
-            `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}opacity:${opacity};">` +
+            `<div style="display:flex;align-items:center;gap:8px;${i > 0 ? "margin-top:5px;" : ""}animation:tgTooltipRowIn 0.3s ease ${delay}ms both;">` +
             `<span style="color:${color};font-size:9px;flex-shrink:0;">●</span>` +
             `<span style="font-weight:${i === 0 ? "600" : "400"};flex:1;">${ev.title.ko}</span>` +
             `<span style="color:#777;font-size:11px;margin-left:10px;">${ev.start_year}</span>` +
             `</div>`
           );
         });
-        if (extra > 0) rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;">+${extra} more</div>`);
+        if (extra > 0) {
+          const extraDelay = shown.length * 100;
+          rows.push(`<div style="margin-top:6px;color:#555;font-size:11px;border-top:1px solid rgba(255,255,255,0.08);padding-top:5px;animation:tgTooltipRowIn 0.3s ease ${extraDelay}ms both;">+${extra} more</div>`);
+        }
         const newHtml = rows.join("");
         currentX = mx; currentY = my;
 
@@ -827,17 +1051,17 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       if (forceHideTooltipRef.current) {
         forceHideTooltipRef.current = false;
         visible = false; shownHtml = ""; inRadius = false; enterTime = 0;
-        tooltipEl.style.display = "none";
+        tooltipEl.style.opacity = "0";
       }
 
-      // [cl] 표시 딜레이 (텍스트 툴팁만 — 이미지 모드 제거됨)
+      // [cl] 표시: 딜레이 없이 즉시 (CSS 슬라이드인 애니메이션이 각 row에 적용됨)
       if (inRadius && !visible && enterTime > 0 && (now - enterTime) >= SHOW_DELAY) {
         if (currentHtml) {
           visible = true; shownHtml = currentHtml;
           tooltipEl.innerHTML = shownHtml;
           tooltipEl.style.left = `${currentX + 20}px`;
           tooltipEl.style.top  = `${currentY - 16}px`;
-          tooltipEl.style.display = "block";
+          tooltipEl.style.opacity = "1";
         }
         enterTime = 0;
       }
@@ -850,10 +1074,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         contentChangedTime = 0;
       }
 
-      // [cl] 숨김 딜레이
+      // [cl] 숨김: CSS 페이드아웃 (transition: opacity 0.2s ease)
       if (!inRadius && visible && exitTime > 0 && (now - exitTime) >= HIDE_DELAY) {
         visible = false; shownHtml = ""; exitTime = 0;
-        tooltipEl.style.display = "none";
+        tooltipEl.style.opacity = "0";
       }
 
       rafId = requestAnimationFrame(tick);
