@@ -69,5 +69,8 @@ public/textures/clouds.png
 public/models/
 models_archive.tar.gz
 
+# Border GeoJSON (다운로드 스크립트로 재생성 가능)
+public/geo/borders/*.geojson
+
 # Cache files
 .cache/

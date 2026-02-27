@@ -13,7 +13,8 @@
     "collect:probe": "node scripts/wikidata/run.mjs --mode probe --dry-run",
     "collect:enrich-existing": "node scripts/wikidata/enrichExistingFromSources.mjs",
     "collect:classify-gaps": "node scripts/wikidata/classifyGapsForCuration.mjs",
-    "collect:archive-missing-summary": "node scripts/wikidata/archiveMissingSummaryEvents.mjs"
+    "collect:archive-missing-summary": "node scripts/wikidata/archiveMissingSummaryEvents.mjs",
+    "geo:download-borders": "node scripts/geo/downloadBorders.mjs"
   },
   "dependencies": {
     "@gltf-transform/core": "^4.3.0",

@@ -523,6 +523,7 @@ export default function Home() {
           onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
           warpPhase={warpPhase}
           onSpinWarp={handleSpinWarp}
+          currentYear={currentYear}
         />
       </div>
 

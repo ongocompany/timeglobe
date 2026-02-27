@@ -28,8 +28,11 @@ import {
   defined,
   DirectionalLight,
   CameraEventType,
+  CustomDataSource,
 } from "cesium";
 import type { MockEvent } from "@/data/mockEvents";
+import { loadBorderIndex, findClosestSnapshot } from "@/lib/borderIndex";
+import type { BorderSnapshot } from "@/lib/borderIndex";
 
 // [cl] Cesium Ion 토큰 설정 — Bing Maps 위성 타일 사용에 필요
 if (typeof window !== "undefined" && process.env.NEXT_PUBLIC_CESIUM_ION_TOKEN) {
@@ -220,9 +223,10 @@ interface SceneSetupProps {
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
+  currentYear: number; // [cl] 역사 국경선 표시용
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -1342,10 +1346,112 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     };
   }, [viewer]);
 
+  // ── [cl] 역사 국경선 — GeoJSON → Polyline 직접 변환 ──────────
+  // CesiumJS의 PolygonGeometry/PolygonOutlineGeometry가 복잡한 폴리곤에서 크래시
+  // → Polygon 엔티티를 완전히 우회, 좌표만 추출해서 Polyline으로 렌더링
+  const borderIndexRef = useRef<BorderSnapshot[] | null>(null);
+  const borderDsRef = useRef<InstanceType<typeof CustomDataSource> | null>(null);
+  const currentBorderFileRef = useRef<string | null>(null);
+  const borderLoadingRef = useRef(false);
+
+  // [cl] GeoJSON Feature에서 폴리곤 링 좌표 추출 → Cartesian3 배열
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function extractRings(geometry: any): Cartesian3[][] {
+    const rings: Cartesian3[][] = [];
+    if (!geometry) return rings;
+
+    if (geometry.type === "Polygon") {
+      for (const ring of geometry.coordinates) {
+        rings.push(ring.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+      }
+    } else if (geometry.type === "MultiPolygon") {
+      for (const polygon of geometry.coordinates) {
+        for (const ring of polygon) {
+          rings.push(ring.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+        }
+      }
+    }
+    return rings;
+  }
+
+  // [cl] GeoJSON fetch → CustomDataSource (Polyline only)
+  async function loadBordersAsPolylines(url: string): Promise<InstanceType<typeof CustomDataSource>> {
+    const res = await fetch(url);
+    const geojson = await res.json();
+    const ds = new CustomDataSource("borders");
+    const borderColor = Color.fromCssColorString("rgba(255, 255, 255, 0.3)");
+
+    for (const feature of geojson.features) {
+      const rings = extractRings(feature.geometry);
+      for (const positions of rings) {
+        if (positions.length < 2) continue;
+        ds.entities.add({
+          polyline: {
+            positions,
+            width: 1.2,
+            material: borderColor,
+          },
+        });
+      }
+    }
+    return ds;
+  }
+
+  // [cl] 인덱스 로드 (1회) + 즉시 첫 국경 로드
+  useEffect(() => {
+    if (!viewer) return;
+    loadBorderIndex().then(async (idx) => {
+      borderIndexRef.current = idx;
+      const snap = findClosestSnapshot(idx, currentYear);
+      borderLoadingRef.current = true;
+      try {
+        const ds = await loadBordersAsPolylines(`/geo/borders/${snap.file}`);
+        if (viewer.isDestroyed()) return;
+        viewer.dataSources.add(ds);
+        borderDsRef.current = ds;
+        currentBorderFileRef.current = snap.file;
+      } catch { /* GeoJSON 미다운로드 시 무시 */ }
+      borderLoadingRef.current = false;
+    }).catch(() => {});
+  }, [viewer]);
+
+  // [cl] 연도 변경 시 국경 스왑
+  useEffect(() => {
+    if (!viewer || !borderIndexRef.current) return;
+    const snap = findClosestSnapshot(borderIndexRef.current, currentYear);
+    if (snap.file === currentBorderFileRef.current) return;
+    if (borderLoadingRef.current) return;
+    borderLoadingRef.current = true;
+
+    loadBordersAsPolylines(`/geo/borders/${snap.file}`)
+      .then((ds) => {
+        if (viewer.isDestroyed()) return;
+        if (borderDsRef.current) {
+          viewer.dataSources.remove(borderDsRef.current, true);
+        }
+        viewer.dataSources.add(ds);
+        borderDsRef.current = ds;
+        currentBorderFileRef.current = snap.file;
+        borderLoadingRef.current = false;
+      })
+      .catch(() => {
+        borderLoadingRef.current = false;
+      });
+  }, [viewer, currentYear]);
+
+  // [cl] 언마운트 시 정리
+  useEffect(() => {
+    return () => {
+      if (viewer && !viewer.isDestroyed() && borderDsRef.current) {
+        viewer.dataSources.remove(borderDsRef.current, true);
+      }
+    };
+  }, [viewer]);
+
   return null;
 }
 
-// [cl] CesiumGlobe props: orbit + marker + 글로벌 자전 제어 + 워프 단계
+// [cl] CesiumGlobe props: orbit + marker + 글로벌 자전 제어 + 워프 단계 + 국경선
 interface CesiumGlobeProps {
   orbitActive?: boolean;
   orbitPaused?: boolean;
@@ -1356,6 +1462,7 @@ interface CesiumGlobeProps {
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
+  currentYear?: number; // [cl] 역사 국경선 표시용
 }
 
 // [cl] ★ 모듈 레벨 상수: 렌더링마다 새 객체 생성 방지 → Viewer 재생성 차단
@@ -1371,6 +1478,7 @@ export default function CesiumGlobe({
   onStackClick,
   warpPhase = "idle",
   onSpinWarp,
+  currentYear = 1875,
 }: CesiumGlobeProps) {
   return (
     <Viewer
@@ -1399,6 +1507,7 @@ export default function CesiumGlobe({
         onStackClick={onStackClick}
         warpPhase={warpPhase}
         onSpinWarp={onSpinWarp}
+        currentYear={currentYear}
       />
     </Viewer>
   );

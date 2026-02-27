@@ -23,6 +23,7 @@ interface GlobeLoaderProps {
   onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
   warpPhase?: "idle" | "zoomout" | "hold" | "zoomin";
   onSpinWarp?: (direction: "past" | "future") => void;
+  currentYear?: number; // [cl] 역사 국경선 표시용
 }
 
 export default function GlobeLoader({
@@ -35,6 +36,7 @@ export default function GlobeLoader({
   onStackClick,
   warpPhase = "idle",
   onSpinWarp,
+  currentYear = 1875,
 }: GlobeLoaderProps) {
   return (
     <CesiumGlobe
@@ -47,6 +49,7 @@ export default function GlobeLoader({
       onStackClick={onStackClick}
       warpPhase={warpPhase}
       onSpinWarp={onSpinWarp}
+      currentYear={currentYear}
     />
   );
 }
