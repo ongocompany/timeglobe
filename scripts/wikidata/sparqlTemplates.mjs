@@ -13,6 +13,31 @@ const PLACE_CLASSES = [
   "wd:Q6256", // country
 ];
 
+// [cl] event용 SELECT — coord OPTIONAL이므로 fallback 좌표 포함
+function buildEventSelect() {
+  return `
+    SELECT DISTINCT
+      (STRAFTER(STR(?item), "http://www.wikidata.org/entity/") AS ?qid)
+      (STRAFTER(STR(?class), "http://www.wikidata.org/entity/") AS ?classQid)
+      ?coord
+      ?locationCoord
+      ?countryCoord
+      (STR(?start) AS ?startRaw)
+      (STR(?end) AS ?endRaw)
+      (STR(?pointInTime) AS ?pointInTimeRaw)
+      (STR(?inception) AS ?inceptionRaw)
+      ?itemLabel_ko
+      ?itemLabel_en
+      ?itemDesc_ko
+      ?itemDesc_en
+      ?countryLabel_ko
+      ?countryLabel_en
+      ?koWikiTitle
+      ?enWikiTitle
+  `;
+}
+
+// [cl] person/place용 SELECT — 기존 유지
 function buildSelect() {
   return `
     SELECT DISTINCT
@@ -54,16 +79,25 @@ function buildSharedLabelOptionals() {
 }
 
 export function buildQuery({ entityType, yearFrom, yearTo, limit, offset }) {
-  const select = buildSelect();
   const sharedLabelOptionals = buildSharedLabelOptionals();
 
   if (entityType === "event") {
+    const select = buildEventSelect();
+    // [cl] coord를 OPTIONAL로 변경 — 전쟁(war) 등 좌표 없는 이벤트도 수집
+    // P625(직접 좌표) → P276(장소)의 좌표 → P17(국가)의 좌표 순서로 fallback
     return `
       ${select}
       WHERE {
         VALUES ?class { ${EVENT_CLASSES.join(" ")} }
         ?item wdt:P31 ?class .
-        ?item wdt:P625 ?coord .
+        OPTIONAL { ?item wdt:P625 ?coord . }
+        OPTIONAL { ?item wdt:P276 ?location . ?location wdt:P625 ?locationCoord . }
+        OPTIONAL {
+          ?item wdt:P17 ?country .
+          OPTIONAL { ?country wdt:P625 ?countryCoord . }
+          OPTIONAL { ?country rdfs:label ?countryLabel_ko FILTER(LANG(?countryLabel_ko) = "ko") }
+          OPTIONAL { ?country rdfs:label ?countryLabel_en FILTER(LANG(?countryLabel_en) = "en") }
+        }
         {
           ?item wdt:P580 ?start .
           FILTER(YEAR(?start) >= ${yearFrom} && YEAR(?start) <= ${yearTo})
@@ -91,6 +125,7 @@ export function buildQuery({ entityType, yearFrom, yearTo, limit, offset }) {
   }
 
   if (entityType === "person") {
+    const select = buildSelect();
     return `
       ${select}
       WHERE {
@@ -122,6 +157,7 @@ export function buildQuery({ entityType, yearFrom, yearTo, limit, offset }) {
   }
 
   if (entityType === "place") {
+    const select = buildSelect();
     return `
       ${select}
       WHERE {

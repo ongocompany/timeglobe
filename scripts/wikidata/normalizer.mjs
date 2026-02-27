@@ -46,6 +46,16 @@ function parseCoord(raw) {
   return { lat, lng };
 }
 
+// [cl] 좌표 fallback 체인: P625(직접) → P276(장소) → P17(국가) → null
+function resolveCoord(binding) {
+  return (
+    parseCoord(read(binding, "coord")) ||
+    parseCoord(read(binding, "locationCoord")) ||
+    parseCoord(read(binding, "countryCoord")) ||
+    null
+  );
+}
+
 function pickYear(binding, entityType) {
   const byPriority = {
     event: [
@@ -125,8 +135,12 @@ export function normalizeBinding(binding, entityType) {
   const year = pickYear(binding, entityType);
   if (year === null) return null;
 
-  const coord = parseCoord(read(binding, "coord"));
-  if (!coord) return null;
+  // [cl] event는 좌표 없어도 허용 (AI Geocoder가 나중에 채움)
+  // person/place는 좌표 필수 유지
+  const coord = entityType === "event"
+    ? resolveCoord(binding)
+    : parseCoord(read(binding, "coord"));
+  if (!coord && entityType !== "event") return null;
 
   const endYear = pickEndYear(binding, entityType);
   const koTitle = read(binding, "koWikiTitle");
@@ -139,8 +153,8 @@ export function normalizeBinding(binding, entityType) {
     start_year: year,
     end_year: endYear,
     category: categoryMap[entityType] ?? "인물/문화",
-    location_lat: coord.lat,
-    location_lng: coord.lng,
+    location_lat: coord?.lat ?? null,
+    location_lng: coord?.lng ?? null,
     is_fog_region: false,
     modern_country: buildJsonb(
       read(binding, "countryLabel_ko"),
