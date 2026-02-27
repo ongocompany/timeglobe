@@ -994,11 +994,32 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     if (!viewer) return;
 
     const TEST_MODELS = [
-      { id: "test-eiffel",   uri: "/models/landmark/eiffel_tower.glb",      lng: 2.2945,    lat: 48.8584,  name: "Eiffel Tower" },
-      { id: "test-colosseum", uri: "/models/landmark/colosseum.glb",        lng: 12.4922,   lat: 41.8902,  name: "Colosseum" },
-      { id: "test-liberty",   uri: "/models/landmark/statue_of_liberty.glb", lng: -74.0445,  lat: 40.6892,  name: "Statue of Liberty" },
-      { id: "test-tajmahal",  uri: "/models/landmark/taj_mahal.glb",        lng: 78.0421,   lat: 27.1751,  name: "Taj Mahal" },
-      { id: "test-bigben",    uri: "/models/landmark/big_ben.glb",          lng: -0.1246,   lat: 51.5007,  name: "Big Ben" },
+      // [cl] 유럽
+      { id: "lm-eiffel",        uri: "/models/landmark/eiffel_tower.glb",      lng: 2.2945,     lat: 48.8584,   name: "Eiffel Tower" },
+      { id: "lm-arc",           uri: "/models/landmark/arc_de_triomphe.glb",   lng: 2.2950,     lat: 48.8738,   name: "Arc de Triomphe" },
+      { id: "lm-notre-dame",    uri: "/models/landmark/notre_dame.glb",        lng: 2.3499,     lat: 48.8530,   name: "Notre-Dame" },
+      { id: "lm-colosseum",     uri: "/models/landmark/colosseum.glb",         lng: 12.4922,    lat: 41.8902,   name: "Colosseum" },
+      { id: "lm-pisa",          uri: "/models/landmark/leaning_tower_pisa.glb",lng: 10.3963,    lat: 43.7230,   name: "Leaning Tower of Pisa" },
+      { id: "lm-bigben",        uri: "/models/landmark/big_ben.glb",           lng: -0.1246,    lat: 51.5007,   name: "Big Ben" },
+      { id: "lm-parthenon",     uri: "/models/landmark/parthenon.glb",         lng: 23.7257,    lat: 37.9715,   name: "Parthenon" },
+      { id: "lm-brandenburg",   uri: "/models/landmark/brandenburg_gate.glb",  lng: 13.3777,    lat: 52.5163,   name: "Brandenburg Gate" },
+      { id: "lm-kremlin",       uri: "/models/landmark/kremlin.glb",           lng: 37.6173,    lat: 55.7520,   name: "Kremlin" },
+      // [cl] 아메리카
+      { id: "lm-liberty",       uri: "/models/landmark/statue_of_liberty.glb",  lng: -74.0445,  lat: 40.6892,   name: "Statue of Liberty" },
+      { id: "lm-empire",        uri: "/models/landmark/empire_state.glb",       lng: -73.9857,  lat: 40.7484,   name: "Empire State Building" },
+      { id: "lm-machu",         uri: "/models/landmark/machu_picchu.glb",       lng: -72.5450,  lat: -13.1631,  name: "Machu Picchu" },
+      // [cl] 아시아
+      { id: "lm-tajmahal",      uri: "/models/landmark/taj_mahal.glb",          lng: 78.0421,   lat: 27.1751,   name: "Taj Mahal" },
+      { id: "lm-greatwall",     uri: "/models/landmark/great_wall.glb",         lng: 116.5704,  lat: 40.4319,   name: "Great Wall" },
+      { id: "lm-angkor",        uri: "/models/landmark/angkor_wat.glb",         lng: 103.8670,  lat: 13.4125,   name: "Angkor Wat" },
+      { id: "lm-burj",          uri: "/models/landmark/burj_khalifa.glb",       lng: 55.2744,   lat: 25.1972,   name: "Burj Khalifa" },
+      // [cl] 아프리카
+      { id: "lm-pyramid",       uri: "/models/landmark/pyramid_giza.glb",       lng: 31.1342,   lat: 29.9792,   name: "Pyramid of Giza" },
+      { id: "lm-sphinx",        uri: "/models/landmark/sphinx.glb",             lng: 31.1376,   lat: 29.9753,   name: "Sphinx" },
+      // [cl] 오세아니아
+      { id: "lm-sydney",        uri: "/models/landmark/sydney_opera.glb",       lng: 151.2153,  lat: -33.8568,  name: "Sydney Opera House" },
+      // [cl] 태평양
+      { id: "lm-moai",          uri: "/models/landmark/moai.glb",               lng: -109.3497, lat: -27.1127,  name: "Moai" },
     ];
 
     TEST_MODELS.forEach((m) => {
