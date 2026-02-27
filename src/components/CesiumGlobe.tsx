@@ -1015,7 +1015,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         position: Cartesian3.fromDegrees(m.lng, m.lat, 0),
         model: {
           uri: m.uri,
-          minimumPixelSize: 64,
+          minimumPixelSize: 200,
+          maximumScale: 50000,
           scale: 30000,
           heightReference: HeightReference.CLAMP_TO_GROUND,
           imageBasedLighting: ibl,
