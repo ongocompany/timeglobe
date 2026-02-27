@@ -1374,24 +1374,120 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     return rings;
   }
 
-  // [cl] GeoJSON fetch → CustomDataSource (Polyline only)
-  async function loadBordersAsPolylines(url: string): Promise<InstanceType<typeof CustomDataSource>> {
+  // [cl] 폴리곤 외곽 링의 무게중심(centroid) 계산 (라벨 위치용)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function calcCentroid(geometry: any): [number, number] | null {
+    let coords: number[][] = [];
+    if (geometry.type === "Polygon") {
+      coords = geometry.coordinates[0]; // 외곽 링만
+    } else if (geometry.type === "MultiPolygon") {
+      // 가장 큰 폴리곤의 외곽 링 사용
+      let maxLen = 0;
+      for (const poly of geometry.coordinates) {
+        if (poly[0].length > maxLen) {
+          maxLen = poly[0].length;
+          coords = poly[0];
+        }
+      }
+    }
+    if (coords.length === 0) return null;
+    let sumLng = 0, sumLat = 0;
+    for (const [lng, lat] of coords) {
+      sumLng += lng;
+      sumLat += lat;
+    }
+    return [sumLng / coords.length, sumLat / coords.length];
+  }
+
+  // [cl] 메타데이터 캐시 (연도별 한 번만 fetch)
+  const metadataCacheRef = useRef<Record<number, Record<string, BorderMetadata>>>({});
+
+  // [cl] 메타데이터 타입 정의
+  interface BorderMetadata {
+    display_name: string;
+    display_name_en: string;
+    display_name_local: string;
+    is_colony: boolean;
+    fill_color: string;
+    confidence: string;
+    colonial_ruler?: string;
+    colonial_note?: string;
+    independence_year?: number;
+  }
+
+  // [cl] 스냅샷 연도에 해당하는 메타데이터 로드 (1880+ 전용)
+  async function loadMetadata(snapYear: number): Promise<Record<string, BorderMetadata> | null> {
+    if (metadataCacheRef.current[snapYear]) return metadataCacheRef.current[snapYear];
+    // [cl] 메타데이터는 1880~2010만 존재, 해당 연도 파일에 정확히 매칭
+    const metaYears = [1880, 1900, 1914, 1920, 1930, 1938, 1945, 1960, 1994, 2000, 2010];
+    // snapYear 이하의 가장 가까운 메타데이터 연도 찾기
+    let metaYear: number | null = null;
+    for (let i = metaYears.length - 1; i >= 0; i--) {
+      if (metaYears[i] <= snapYear) { metaYear = metaYears[i]; break; }
+    }
+    if (!metaYear) return null;
+    try {
+      const res = await fetch(`/geo/borders/metadata/${metaYear}.json`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      metadataCacheRef.current[metaYear] = data;
+      return data;
+    } catch { return null; }
+  }
+
+  // [cl] GeoJSON fetch → CustomDataSource (Polyline + 메타데이터 기반 라벨)
+  async function loadBordersAsPolylines(url: string, snapYear: number): Promise<InstanceType<typeof CustomDataSource>> {
     const res = await fetch(url);
     const geojson = await res.json();
     const ds = new CustomDataSource("borders");
-    const borderColor = Color.fromCssColorString("rgba(255, 255, 255, 0.3)");
+    const defaultBorderColor = Color.fromCssColorString("rgba(255, 255, 255, 0.3)");
+    const showLabels = snapYear >= 1880;
+
+    // [cl] 1880+ 스냅샷: 메타데이터 로드 (국명, 색상 등)
+    const metadata = showLabels ? await loadMetadata(snapYear) : null;
+
+    // [cl] 중복 라벨 방지 (같은 NAME이 여러 feature에 걸쳐 있을 수 있음)
+    const labeledNames = new Set<string>();
 
     for (const feature of geojson.features) {
+      const name = feature.properties?.NAME;
+      const meta = name && metadata ? metadata[name] : null;
+      // [cl] 메타데이터 있으면 문명권 색상으로 국경선 표시, 없으면 기본 흰색
+      const lineColor = meta
+        ? Color.fromCssColorString(meta.fill_color).withAlpha(0.45)
+        : defaultBorderColor;
+
       const rings = extractRings(feature.geometry);
       for (const positions of rings) {
         if (positions.length < 2) continue;
         ds.entities.add({
           polyline: {
             positions,
-            width: 1.2,
-            material: borderColor,
+            width: meta ? 1.5 : 1.2,
+            material: lineColor,
           },
         });
+      }
+
+      // [cl] 1880년 이후 스냅샷: 메타데이터의 display_name으로 라벨 표시
+      if (showLabels && name && !labeledNames.has(name)) {
+        labeledNames.add(name);
+        const center = calcCentroid(feature.geometry);
+        if (center) {
+          const labelText = meta ? meta.display_name : name;
+          ds.entities.add({
+            position: Cartesian3.fromDegrees(center[0], center[1]),
+            label: {
+              text: labelText,
+              font: "bold 14px sans-serif",
+              fillColor: Color.WHITE,
+              outlineColor: Color.BLACK,
+              outlineWidth: 2,
+              style: 2, // FILL_AND_OUTLINE
+              scaleByDistance: new NearFarScalar(5e6, 1.0, 15e6, 0.4),
+            },
+          });
+        }
       }
     }
     return ds;
@@ -1405,7 +1501,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const snap = findClosestSnapshot(idx, currentYear);
       borderLoadingRef.current = true;
       try {
-        const ds = await loadBordersAsPolylines(`/geo/borders/${snap.file}`);
+        const ds = await loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year);
         if (viewer.isDestroyed()) return;
         viewer.dataSources.add(ds);
         borderDsRef.current = ds;
@@ -1423,7 +1519,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     if (borderLoadingRef.current) return;
     borderLoadingRef.current = true;
 
-    loadBordersAsPolylines(`/geo/borders/${snap.file}`)
+    loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year)
       .then((ds) => {
         if (viewer.isDestroyed()) return;
         if (borderDsRef.current) {

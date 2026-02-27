@@ -25,6 +25,7 @@
     "lucide-react": "^0.575.0",
     "motion": "^12.34.3",
     "next": "16.1.6",
+    "oh-my-claude-sisyphus": "^4.5.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "resium": "^1.19.4"

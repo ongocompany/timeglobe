@@ -767,3 +767,45 @@
 2. `node scripts/wikidata/run.mjs --types event --mode backfill` — 좌표 없는 이벤트 재수집
 3. `node scripts/curation/aiGeocoder.mjs` — AI 좌표 매핑
 4. `node scripts/curation/battleSignificance.mjs` — 전투 중요도 스코어링
+
+## [2026-02-27] [cl] 이벤트 재수집(2단계)~AI 좌표 매핑(3단계) 재실행 결과 + 4단계 중단 사유
+
+### 배경
+* 사용자(jn) 요청에 따라 1단계(SQL 마이그레이션)는 사용자 측에서 직접 완료.
+* 본 세션에서는 2단계부터 재실행.
+
+### 2단계: 이벤트 재수집
+* 실행:
+  * `node scripts/wikidata/run.mjs --types event --mode backfill --year-from 0 --year-to 1899`
+* 1차 실행에서 후반 청크 네트워크성 실패 발생:
+  * `event:1750:1799`, `event:1800:1849`, `event:1850:1899` → `TypeError: fetch failed`
+* 실패 구간만 재실행:
+  * `node scripts/wikidata/run.mjs --types event --mode backfill --year-from 1750 --year-to 1899`
+* 체크포인트 최종 상태(`.cache/wikidata-checkpoint.json`):
+  * `event:1750:1799` = `success` (records=832)
+  * `event:1800:1849` = `success` (records=1242)
+  * `event:1850:1899` = `success` (records=1240)
+
+### 3단계: AI 좌표 매핑
+* Dry-run:
+  * `node scripts/curation/aiGeocoder.mjs --dry-run`
+  * 결과: total=500, geocoded=500, skipped=0, errors=0
+  * 로그: `.cache/ai-geocoder-1772196367503.jsonl`
+* 본실행:
+  * `node scripts/curation/aiGeocoder.mjs`
+  * 결과: total=500, geocoded=499, skipped=1, errors=0
+  * 미추정 1건: `Battle of Behgy`
+  * 로그: `.cache/ai-geocoder-1772197249185.jsonl`
+
+### 4단계: 전투 중요도 스코어링
+* Dry-run 시도:
+  * `node scripts/curation/battleSignificance.mjs --dry-run`
+  * 결과: 시작 직후 `TypeError: fetch failed` (2회 재시도 동일)
+* 원인 확인:
+  * DNS 해석 실패 (`Could not resolve host`)
+  * 대상: `generativelanguage.googleapis.com`, Supabase 도메인, `www.google.com`
+* 결론:
+  * 4단계는 네트워크(DNS) 복구 전까지 진행 불가
+  * 복구 후 재개 순서:
+    1. `node scripts/curation/battleSignificance.mjs --dry-run`
+    2. `node scripts/curation/battleSignificance.mjs`

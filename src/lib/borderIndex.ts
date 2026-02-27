@@ -17,8 +17,8 @@ export async function loadBorderIndex(): Promise<BorderSnapshot[]> {
 }
 
 /**
- * [cl] targetYear 이하의 가장 가까운 스냅샷을 이진탐색으로 찾기 (floor match)
- * - targetYear=1350 → world_1300.geojson
+ * [cl] targetYear에 가장 가까운 스냅샷을 이진탐색으로 찾기 (nearest match)
+ * - targetYear=1875 → world_1880.geojson (5년 차이 vs 1815의 60년)
  * - targetYear=1914 → world_1914.geojson (exact)
  * - targetYear=2026 → world_2010.geojson (범위 초과 → 마지막)
  */
@@ -30,6 +30,7 @@ export function findClosestSnapshot(
   if (targetYear <= index[0].year) return index[0];
   if (targetYear >= index[index.length - 1].year) return index[index.length - 1];
 
+  // [cl] 이진탐색으로 floor 위치 찾기
   let lo = 0;
   let hi = index.length - 1;
 
@@ -40,6 +41,13 @@ export function findClosestSnapshot(
     } else {
       hi = mid - 1;
     }
+  }
+
+  // [cl] floor(lo)와 ceil(lo+1) 중 더 가까운 쪽 선택
+  if (lo + 1 < index.length) {
+    const diffFloor = targetYear - index[lo].year;
+    const diffCeil = index[lo + 1].year - targetYear;
+    if (diffCeil < diffFloor) return index[lo + 1];
   }
 
   return index[lo];
