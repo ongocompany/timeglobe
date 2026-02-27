@@ -93,18 +93,18 @@ const CATEGORY_EMOJI: Record<string, string> = {
   지적유산:       "📜",
 };
 
-// [cl] 카테고리별 recraft 3D SVG 마커 (public/markers/)
-const CATEGORY_SVG: Record<string, string> = {
-  "정치/전쟁":    "/markers/war.svg",
-  "인물/문화":    "/markers/culture.svg",
-  "과학/발명":    "/markers/science.svg",
-  "건축/유물":    "/markers/temple.svg",
-  "자연재해/지질": "/markers/nature.svg",
-  "경제/사회":    "/markers/economy.svg",
-  문화:           "/markers/culture.svg",
-  지적유산:       "/markers/etc.svg",
+// [cl] 카테고리별 recraft 3D 마커 (public/markers/)
+const CATEGORY_MARKER: Record<string, string> = {
+  "정치/전쟁":    "/markers/war.png",
+  "인물/문화":    "/markers/culture.png",
+  "과학/발명":    "/markers/science.png",
+  "건축/유물":    "/markers/temple.png",
+  "자연재해/지질": "/markers/nature.png",
+  "경제/사회":    "/markers/economy.png",
+  문화:           "/markers/culture.png",
+  지적유산:       "/markers/etc.png",
 };
-const DEFAULT_SVG_MARKER = "/markers/etc.svg";
+const DEFAULT_MARKER_IMG = "/markers/etc.png";
 
 // [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
 // size=64, billboard=24px → canvas:screen = 2.67x
@@ -312,7 +312,7 @@ function createMonoMarkerImage(category: string, size = 96): string {
 
 // [cl] 스타일별 마커 이미지 생성 (통합)
 function getMarkerImage(category: string): string {
-  if (MARKER_STYLE === "svg") return CATEGORY_SVG[category] || DEFAULT_SVG_MARKER;
+  if (MARKER_STYLE === "svg") return CATEGORY_MARKER[category] || DEFAULT_MARKER_IMG;
   if (MARKER_STYLE === "color") return createColorMarkerImage(category);
   if (MARKER_STYLE === "mono") return createMonoMarkerImage(category);
   return createGlowImage(CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR);
