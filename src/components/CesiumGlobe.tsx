@@ -29,6 +29,8 @@ import {
   HeightReference,
   DirectionalLight,
   CameraEventType,
+  ImageBasedLighting,
+  ColorBlendMode,
 } from "cesium";
 import type { MockEvent } from "@/data/mockEvents";
 
@@ -184,9 +186,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     scene.globe.showGroundAtmosphere = false;
 
     // [cl] 3D 모델용 방향성 조명: 우측 상단에서 비추는 느낌
+    // intensity를 낮추고 globe 자체 조명(enableLighting=false)은 유지
     scene.light = new DirectionalLight({
       direction: new Cartesian3(0.3, -0.5, -0.7),
-      intensity: 3.0,
+      intensity: 2.0,
     });
 
     // [cl] 우클릭 → 틸트(기울기), 줌은 휠+미들버튼만
@@ -999,6 +1002,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       { id: "test-bigben",    uri: "/models/landmark/big_ben.glb",          lng: -0.1246,   lat: 51.5007,  name: "Big Ben" },
     ];
 
+    // [cl] PBR 모델의 회색톤 방지: IBL 팩터를 높여 환경광 보충
+    const ibl = new ImageBasedLighting({
+      imageBasedLightingFactor: new Cartesian2(1.0, 1.0),
+    });
+
     TEST_MODELS.forEach((m) => {
       if (viewer.entities.getById(m.id)) return;
       viewer.entities.add({
@@ -1010,6 +1018,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           minimumPixelSize: 64,
           scale: 30000,
           heightReference: HeightReference.CLAMP_TO_GROUND,
+          imageBasedLighting: ibl,
+          // [cl] 모델 색상을 약간 밝게 틴트 → 회색톤 상쇄
+          color: Color.fromCssColorString("#ffffff").withAlpha(1.0),
+          colorBlendMode: ColorBlendMode.MIX,
+          colorBlendAmount: 0.0, // 0=원본색 유지, 틴트만 IBL로 보정
         },
       });
     });
