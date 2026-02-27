@@ -726,7 +726,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         const entity = viewer.entities.getById(ev.id);
         if (!entity?.billboard) return;
         const phase = phaseMap[ev.id] || 0;
-        const s = 1.0 + 0.12 * Math.sin(t + phase); // [cl] ±12% 스케일 변화
+        const s = 1.0 + 0.5 * Math.sin(t + phase); // [cl] ±50% 스케일 변화
         entity.billboard.scale = s as unknown as import("cesium").Property;
       });
       pulseRaf = requestAnimationFrame(pulse);
