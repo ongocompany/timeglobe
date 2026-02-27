@@ -75,6 +75,7 @@ body {
   transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
               height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
               border-radius 0.5s ease,
+              border 0.3s ease,
               box-shadow 0.3s ease,
               transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -101,6 +102,9 @@ body {
   border-radius: 24px;
   pointer-events: auto;
   cursor: default;
+  /* [cl] 모달: 보더 2px로 키우고 밝기도 올림 (카드가 커지면 1px은 안 보임) */
+  border-width: 2px;
+  border-color: rgba(255,255,255,0.22);
   /* [cl] 기본(왼쪽) 시프트: inner 카드의 로컬 X = 화면 X (컨테이너 회전 후 정면이니까) */
   transform: translate(-50%, -50%) translateX(calc(-400px - 5vw));
   transition-duration: 1s;
