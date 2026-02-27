@@ -579,3 +579,48 @@ no background, centered, architectural model style
 | 건국/수립 | 2 |
 | 선사시대 | 3 |
 | **합계** | **38** |
+
+---
+
+## 8. Model Manager 웹 UI
+
+3D 모델 생성 파이프라인을 관리하는 웹 도구.
+
+### 접속
+```
+npm run dev -- --webpack
+→ http://localhost:3001/model-manager
+```
+
+### 사용 흐름
+1. 좌측 목록에서 모델 선택 → 우측에 프롬프트 표시
+2. 프롬프트 수정 가능 → **Copy** 버튼 클릭 → 클립보드 복사
+3. Meshy(meshy.ai) 접속 → Text-to-3D에 붙여넣기 → 생성
+4. 생성된 GLB 다운로드 → `public/models/{카테고리}/` 폴더에 넣기
+   - 예: 대포 → `public/models/war/cannon.glb`
+5. 페이지에서 **새로고침** → 3D 프리뷰 자동 표시 (회전/줌 가능)
+6. 상태 버튼으로 관리: **대기 → 생성완료 → 승인**
+
+### 주요 기능
+- 38개 모델 프롬프트 프리셋 + 실시간 편집/저장
+- 카테고리·상태별 필터
+- 클립보드 복사 (Meshy 바로 붙여넣기)
+- GLB 파일 자동 감지 + Google model-viewer 3D 프리뷰
+- 파일 크기 표시
+- 진행 현황 대시보드 (대기/생성/승인/GLB 수)
+
+### 파일 구조
+```
+src/data/modelRegistry.json    ← 38개 모델 데이터 (프롬프트, 상태, 메모)
+src/app/api/models/route.ts    ← API (GET 조회, PUT 수정)
+src/app/model-manager/page.tsx ← 관리 UI 페이지
+public/models/                 ← GLB 파일 저장 위치
+  ├── prehistoric/
+  ├── war/
+  ├── revolution/
+  ├── people/
+  ├── science/
+  ├── politics/
+  ├── establishment/
+  └── landmark/
+```
