@@ -65,5 +65,9 @@ public/textures/earth_daymap.jpg
 public/textures/earth_daymap_8k.jpg
 public/textures/clouds.png
 
+# 3D Models (archived to models_archive.tar.gz)
+public/models/
+models_archive.tar.gz
+
 # Cache files
 .cache/
