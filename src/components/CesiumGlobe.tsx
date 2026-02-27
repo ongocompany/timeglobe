@@ -854,10 +854,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             // 이전 타이머 정리
             if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
             hoverTriggeredId = ev.id;
-            const markerSx = nearby[0].sx, markerSy = nearby[0].sy;
+            // [cl] 커서 위치 기준 + 20px 아래에서 캐러셀 등장 (마커 위치 대신)
+            const cursorX = e.clientX, cursorY = e.clientY + 20;
             hoverTimer = setTimeout(() => {
               forceHideTooltipRef.current = true;
-              onStackClickRef.current?.([ev], { x: markerSx, y: markerSy });
+              onStackClickRef.current?.([ev], { x: cursorX, y: cursorY });
               hoverTimer = null;
             }, SHOW_DELAY);
           }
