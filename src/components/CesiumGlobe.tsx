@@ -74,7 +74,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   "건축/유물":    "#ee9b00", // golden-orange
   "자연재해/지질": "#ca6702", // burnt-caramel
   문화:           "#005f73", // dark-teal
-  지적유산:       "#e9d8a6", // vanilla-custard
+  지적유산:       "#e76f51", // orange
 };
 const DEFAULT_MARKER_COLOR = "#6a4c93"; // purple (custom)
 
