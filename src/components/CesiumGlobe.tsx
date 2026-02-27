@@ -208,6 +208,31 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     controller.inertiaTranslate = 0.3;   // 패닝 관성도 줄임
     controller.inertiaZoom = 0.5;        // 줌 관성 약간 줄임
 
+    // [cl] ★ 틸트 상태에서 휠 줌 시 heading 360° 회전 방지
+    // 원인: CesiumJS가 기울어진 상태에서 줌할 때 지표면 포인트 중심으로 공전
+    // 해결: 휠 이벤트 직전 heading 캡처 → postRender에서 즉시 복원
+    let savedHeading: number | null = null;
+    const onWheel = () => {
+      // [cl] pitch가 -90°(수직)가 아닌 기울어진 상태에서만 보정
+      const pitch = viewer.camera.pitch;
+      if (pitch > CesiumMath.toRadians(-85)) {
+        savedHeading = viewer.camera.heading;
+      }
+    };
+    viewer.canvas.addEventListener("wheel", onWheel, { passive: true });
+    const removePostRender = viewer.scene.postRender.addEventListener(() => {
+      if (savedHeading !== null) {
+        viewer.camera.setView({
+          orientation: {
+            heading: savedHeading,
+            pitch: viewer.camera.pitch,
+            roll: viewer.camera.roll,
+          },
+        });
+        savedHeading = null;
+      }
+    });
+
     // [cl] 기본 타일 색감 보정
     const baseLayer = viewer.imageryLayers.get(0);
     if (baseLayer) {
@@ -247,6 +272,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     );
     return () => {
       try { removeTileListener(); } catch { /* 이미 제거됨 */ }
+      viewer.canvas.removeEventListener("wheel", onWheel);
+      removePostRender();
     };
   }, [scene, viewer]);
 
