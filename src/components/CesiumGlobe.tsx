@@ -78,11 +78,11 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 const DEFAULT_MARKER_COLOR = "#6a4c93"; // purple (custom)
 
-// [cl] 마커 스타일: "dot" = 기존 글로우 도트 | "color" = 컬러 이모지 | "mono" = 단색 아이콘
-type MarkerStyle = "dot" | "color" | "mono";
-const MARKER_STYLE: MarkerStyle = "color";
+// [cl] 마커 스타일: "dot" = 기존 글로우 도트 | "color" = 컬러 이모지 | "mono" = 단색 아이콘 | "svg" = recraft 3D SVG
+type MarkerStyle = "dot" | "color" | "mono" | "svg";
+const MARKER_STYLE: MarkerStyle = "svg";
 
-// [cl] 카테고리별 이모지 (컬러 스타일용)
+// [cl] 카테고리별 이모지 (컬러 스타일용 — svg 모드에서는 미사용)
 const CATEGORY_EMOJI: Record<string, string> = {
   "정치/전쟁":    "⚔️",
   "인물/문화":    "🌟",
@@ -92,6 +92,19 @@ const CATEGORY_EMOJI: Record<string, string> = {
   문화:           "🎵",
   지적유산:       "📜",
 };
+
+// [cl] 카테고리별 recraft 3D SVG 마커 (public/markers/)
+const CATEGORY_SVG: Record<string, string> = {
+  "정치/전쟁":    "/markers/war.svg",
+  "인물/문화":    "/markers/culture.svg",
+  "과학/발명":    "/markers/science.svg",
+  "건축/유물":    "/markers/temple.svg",
+  "자연재해/지질": "/markers/nature.svg",
+  "경제/사회":    "/markers/economy.svg",
+  문화:           "/markers/culture.svg",
+  지적유산:       "/markers/etc.svg",
+};
+const DEFAULT_SVG_MARKER = "/markers/etc.svg";
 
 // [cl] Canvas API로 글로우 서클 이미지 생성 (카테고리별 캐싱)
 // size=64, billboard=24px → canvas:screen = 2.67x
@@ -299,6 +312,7 @@ function createMonoMarkerImage(category: string, size = 96): string {
 
 // [cl] 스타일별 마커 이미지 생성 (통합)
 function getMarkerImage(category: string): string {
+  if (MARKER_STYLE === "svg") return CATEGORY_SVG[category] || DEFAULT_SVG_MARKER;
   if (MARKER_STYLE === "color") return createColorMarkerImage(category);
   if (MARKER_STYLE === "mono") return createMonoMarkerImage(category);
   return createGlowImage(CATEGORY_COLORS[category] || DEFAULT_MARKER_COLOR);
