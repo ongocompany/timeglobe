@@ -3596,7 +3596,12 @@ def generate_entity_metadata(original_name, year, coords=None):
     # [cl] Tier 분류: 1=제국/왕국, 2=일반국가, 3=부족/문화
     _TIER1_KW = ("Empire", "Kingdom", "Dynasty", "Sultanate", "Caliphate",
                  "Shogunate", "Khanate")
-    if metadata["confidence"] == "high":
+    # [cl] 한국 콘텐츠 → 무조건 Tier 1 (고려, 조선, 신라, 백제, 고구려 등)
+    _TIER1_FORCE = {"Korea", "Korea_Koguryo", "Korea_Paekche", "Korea_Gaya"}
+    rule = ENTITY_RULES.get(original_name)
+    if rule and rule.get("palette", "") in _TIER1_FORCE:
+        metadata["tier"] = 1
+    elif metadata["confidence"] == "high":
         en = metadata["display_name_en"]
         metadata["tier"] = 1 if any(kw in en for kw in _TIER1_KW) else 2
     else:
