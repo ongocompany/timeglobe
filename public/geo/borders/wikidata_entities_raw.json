@@ -25918,5 +25918,17 @@
     "type": "historical",
     "lineage_id": null,
     "tier": null
+  },
+  {
+    "qid": "Q179293",
+    "name_en": "Crown of Castile",
+    "name_ko": "카스티야 연합왕국",
+    "start": "1230",
+    "end": "1402",
+    "lat": "40.4175",
+    "lon": "-3.715",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": null
   }
 ]
