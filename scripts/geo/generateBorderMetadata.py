@@ -430,7 +430,9 @@ ENTITY_RULES = {
     "Danzig":            {"name_local": "Gdańsk", "name_en": "Free City of Danzig", "palette": "Germanic"},
     "Austria":           {"name_local": "Österreich", "name_en": "Austria", "palette": "Germanic"},
     "Austria Hungary":   {"name_local": "Österreich-Ungarn", "name_en": "Austria-Hungary", "palette": "Germanic"},
+    "Austria-Hungary":   {"name_local": "Österreich-Ungarn", "name_en": "Austria-Hungary", "palette": "Germanic"},
     "Austro-Hungarian Empire": {"name_local": "Österreich-Ungarn", "name_en": "Austria-Hungary", "palette": "Germanic"},
+    "Germany (Prussia)": {"name_local": "Preußen", "name_en": "German Empire (Prussia)", "palette": "Germanic"},
     "Russia":            {"name_local": "Россия", "name_en": "Russia", "palette": "Russian"},
     "Russian Empire":    {"name_local": "Российская империя", "name_en": "Russian Empire", "palette": "Russian"},
     "USSR":              {"name_local": "СССР", "name_en": "Soviet Union", "palette": "Russian"},
@@ -455,6 +457,7 @@ ENTITY_RULES = {
     "Poland":            {"name_local": "Polska", "name_en": "Poland", "palette": "EastEurope"},
     "Hungary":           {"name_local": "Magyarország", "name_en": "Hungary", "palette": "EastEurope"},
     "Romania":           {"name_local": "România", "name_en": "Romania", "palette": "EastEurope"},
+    "Rumania":           {"name_local": "România", "name_en": "Romania", "palette": "EastEurope"},
     "Bulgaria":          {"name_local": "България", "name_en": "Bulgaria", "palette": "EastEurope"},
     "Serbia":            {"name_local": "Србија", "name_en": "Serbia", "palette": "EastEurope"},
     "Montenegro":        {"name_local": "Crna Gora", "name_en": "Montenegro", "palette": "EastEurope"},
@@ -533,6 +536,17 @@ ENTITY_RULES = {
     "Expansionist Kingdom of Merina": {"name_local": "Merina", "name_en": "Kingdom of Merina", "palette": "Africa_East"},
     "Khoiasan":             {"name_local": "Khoisan", "name_en": "Khoisan", "palette": "Africa_East"},
     "Guanches":             {"name_local": "Guanche", "name_en": "Guanches", "palette": "Africa_West"},
+    # [cl] 아프리카 중요 미매핑 보완
+    "Islamic city-states":  {"name_local": "مدن إسلامية", "name_en": "Islamic City-States", "palette": "Islamic_Arab"},
+    "Wadai":                {"name_local": "Wadai", "name_en": "Wadai Sultanate", "palette": "Africa_West"},
+    "Darfur":               {"name_local": "Darfur", "name_en": "Darfur Sultanate", "palette": "Africa_West"},
+    "Algiers":              {"name_local": "الجزائر", "name_en": "Regency of Algiers", "palette": "Islamic_Arab"},
+    "Tunis":                {"name_local": "تونس", "name_en": "Regency of Tunis", "palette": "Islamic_Arab"},
+    "Funj":                 {"name_local": "Funj", "name_en": "Funj Sultanate", "palette": "Africa_East"},
+    "Akan":                 {"name_local": "Akan", "name_en": "Akan States", "palette": "Africa_West"},
+    "Rozwi":                {"name_local": "Rozwi", "name_en": "Rozwi Empire", "palette": "Africa_East"},
+    "Bagirmi":              {"name_local": "Bagirmi", "name_en": "Bagirmi Sultanate", "palette": "Africa_West"},
+    "Oromo":                {"name_local": "Oromo", "name_en": "Oromo", "palette": "Africa_East"},
 
     # ━━━ 아메리카 ━━━
     "United States":        {"name_local": "United States", "name_en": "United States", "palette": "US"},
@@ -571,6 +585,7 @@ ENTITY_RULES = {
     "Dutch Guinea":         {"name_local": "Suriname", "name_en": "Suriname", "colony": True, "ruler": "Netherlands", "palette": "LatinAmerica"},
     "Suriname":             {"name_local": "Suriname", "name_en": "Suriname", "palette": "LatinAmerica"},
     "French Guiana":        {"name_local": "Guyane", "name_en": "French Guiana", "colony": True, "ruler": "France", "palette": "French"},
+    "French Guyana":        {"name_local": "Guyane", "name_en": "French Guiana", "colony": True, "ruler": "France", "palette": "French"},
     "Trinidad":             {"name_local": "Trinidad and Tobago", "name_en": "Trinidad and Tobago", "colony": True, "ruler": "British Empire", "palette": "LatinAmerica"},
 
     # ━━━ 카리브해 소도서 ━━━
@@ -692,6 +707,7 @@ ENTITY_RULES = {
     "Basutoland":           {"name_local": "Lesotho", "name_en": "Lesotho (1966)", "colony": True, "ruler": "British Empire", "independence": 1966, "palette": "Africa_East"},
     "Lesotho":              {"name_local": "Lesotho", "name_en": "Lesotho", "palette": "Africa_East"},
     "Swaziland":            {"name_local": "eSwatini", "name_en": "Eswatini", "palette": "Africa_East"},
+    "Swaziland (Eswatini)": {"name_local": "eSwatini", "name_en": "Eswatini", "palette": "Africa_East"},
     "Zimbabwe":             {"name_local": "Zimbabwe", "name_en": "Zimbabwe", "palette": "Africa_East"},
     "Rhodesia":             {"name_local": "Zimbabwe", "name_en": "Zimbabwe (Rhodesia)", "colony": True, "ruler": "British Empire", "palette": "Africa_East"},
     "Southern Rhodesia":    {"name_local": "Zimbabwe", "name_en": "Zimbabwe (Rhodesia)", "colony": True, "ruler": "British Empire", "palette": "Africa_East"},
@@ -778,6 +794,98 @@ ENTITY_RULES = {
     "Saipan":               {"name_local": "Saipan", "name_en": "Saipan", "colony": True, "ruler": "Japan", "palette": "Oceania"},
     "Sakhalin (RU)":        {"name_local": "Сахалин", "name_en": "Sakhalin", "palette": "Russian"},
     "Antarctica":           {"name_local": "Antarctica", "name_en": "Antarctica", "palette": "Default"},
+
+    # ━━━ [cl] CShapes 철자 변형 + 고빈도 미매핑 보완 ━━━
+    "Italy/Sardinia":       {"name_local": "Italia", "name_en": "Italy (Sardinia)", "palette": "Roman_Italy"},
+    "Cape Verde":           {"name_local": "Cabo Verde", "name_en": "Cape Verde", "palette": "Africa_West"},
+    "Madagascar (Malagasy)":{"name_local": "Madagasikara", "name_en": "Madagascar", "palette": "Africa_East"},
+    "Reunion":              {"name_local": "Réunion", "name_en": "Réunion", "colony": True, "ruler": "France", "palette": "French"},
+    "Maldives":             {"name_local": "ދިވެހިރާއްޖެ", "name_en": "Maldives", "palette": "SouthAsia"},
+    "Mauritius":            {"name_local": "Mauritius", "name_en": "Mauritius", "palette": "Africa_East"},
+    "Tanzania (Tanganyika)":{"name_local": "Tanzania", "name_en": "Tanzania", "palette": "Africa_East"},
+    "Solomon Islands":      {"name_local": "Solomon Islands", "name_en": "Solomon Islands", "palette": "Oceania"},
+    "East Timor":           {"name_local": "Timor-Leste", "name_en": "Timor-Leste", "palette": "SoutheastAsia"},
+    "French Polynesia":     {"name_local": "Polynésie française", "name_en": "French Polynesia", "colony": True, "ruler": "France", "palette": "Oceania"},
+    "New Caledonia and Dependencies": {"name_local": "Nouvelle-Calédonie", "name_en": "New Caledonia", "colony": True, "ruler": "France", "palette": "French"},
+    "Zanzibar":             {"name_local": "Zanzibar", "name_en": "Zanzibar", "palette": "Africa_East"},
+    "Sabah (North Borneo)": {"name_local": "Sabah", "name_en": "Sabah (North Borneo)", "colony": True, "ruler": "British Empire", "palette": "SoutheastAsia"},
+    "Sarawak":              {"name_local": "Sarawak", "name_en": "Sarawak", "colony": True, "ruler": "British Empire", "palette": "SoutheastAsia"},
+    "Alaska":               {"name_local": "Alaska", "name_en": "Alaska", "palette": "US"},
+    "Spanish West Africa":  {"name_local": "الصحراء", "name_en": "Spanish West Africa", "colony": True, "ruler": "Spain", "palette": "Spanish_Port"},
+    "Vietnam (Annam/Cochin China/Tonkin)": {"name_local": "Việt Nam", "name_en": "French Indochina", "colony": True, "ruler": "France", "palette": "SoutheastAsia"},
+    "Newfoundland":         {"name_local": "Newfoundland", "name_en": "Newfoundland", "palette": "British"},
+    "Hawaii":               {"name_local": "Hawaiʻi", "name_en": "Hawaii", "palette": "US"},
+    "Unfederated Malay States": {"name_local": "Malaya", "name_en": "Unfederated Malay States", "colony": True, "ruler": "British Empire", "palette": "SoutheastAsia"},
+    "Federated Malay States":   {"name_local": "Malaya", "name_en": "Federated Malay States", "colony": True, "ruler": "British Empire", "palette": "SoutheastAsia"},
+    "Straits Settlements":  {"name_local": "Malaya", "name_en": "Straits Settlements", "colony": True, "ruler": "British Empire", "palette": "SoutheastAsia"},
+    "Comoros":              {"name_local": "Komori", "name_en": "Comoros", "palette": "Africa_East"},
+    "Singapore":            {"name_local": "新加坡", "name_en": "Singapore", "palette": "SoutheastAsia"},
+    "Vietnam, Democratic Republic of": {"name_local": "Việt Nam", "name_en": "Vietnam", "palette": "SoutheastAsia"},
+    "British Cameroons":    {"name_local": "Cameroun", "name_en": "British Cameroons", "colony": True, "ruler": "British Empire", "palette": "Africa_West"},
+    "Rwanda-Urundi":        {"name_local": "Rwanda-Urundi", "name_en": "Rwanda-Urundi", "colony": True, "ruler": "Belgium", "palette": "Africa_East"},
+    "Southern Sakhalin Island": {"name_local": "南樺太", "name_en": "Southern Sakhalin", "colony": True, "ruler": "Japan", "palette": "Japan"},
+    "German Togoland":      {"name_local": "Togo", "name_en": "German Togoland", "colony": True, "ruler": "Germany", "palette": "Africa_West"},
+    "British Togoland":     {"name_local": "Togo", "name_en": "British Togoland", "colony": True, "ruler": "British Empire", "palette": "Africa_West"},
+    "Bahrain":              {"name_local": "البحرين", "name_en": "Bahrain", "palette": "Islamic_Arab"},
+    "Palestine":            {"name_local": "فلسطين", "name_en": "Palestine", "palette": "Islamic_Arab"},
+    "Bokhara":              {"name_local": "بخارا", "name_en": "Bukhara Emirate", "palette": "Islamic_Turk"},
+    "Khiva":                {"name_local": "خوارزم", "name_en": "Khanate of Khiva", "palette": "Islamic_Turk"},
+    "Papua":                {"name_local": "Papua", "name_en": "Papua", "colony": True, "ruler": "British Empire", "palette": "Oceania"},
+    "New Guinea (German New Guinea) (Kaiser Wilhelmsland)": {"name_local": "Neuguinea", "name_en": "German New Guinea", "colony": True, "ruler": "Germany", "palette": "Oceania"},
+
+    # ━━━ [cl] HB 중요 미매핑 보완 — 유럽/남아시아/동아시아 ━━━
+    # 유럽: 이탈리아 도시국가/소국
+    "Genoa":                {"name_local": "Genova", "name_en": "Republic of Genoa", "palette": "Roman_Italy"},
+    "Naples":               {"name_local": "Napoli", "name_en": "Kingdom of Naples", "palette": "Roman_Italy"},
+    "Tuscany":              {"name_local": "Toscana", "name_en": "Grand Duchy of Tuscany", "palette": "Roman_Italy"},
+    "Lombardy":             {"name_local": "Lombardia", "name_en": "Lombardy", "palette": "Roman_Italy"},
+    "Modena":               {"name_local": "Modena", "name_en": "Duchy of Modena", "palette": "Roman_Italy"},
+    "Parma":                {"name_local": "Parma", "name_en": "Duchy of Parma", "palette": "Roman_Italy"},
+    "Lucca":                {"name_local": "Lucca", "name_en": "Republic of Lucca", "palette": "Roman_Italy"},
+    "Massa":                {"name_local": "Massa", "name_en": "Duchy of Massa", "palette": "Roman_Italy"},
+    "Pontremoli":           {"name_local": "Pontremoli", "name_en": "Pontremoli", "palette": "Roman_Italy"},
+    "Fivizzano":            {"name_local": "Fivizzano", "name_en": "Fivizzano", "palette": "Roman_Italy"},
+    # 유럽: 스위스/기타
+    "Republic of the Seven Zenden": {"name_local": "Zenden", "name_en": "Republic of the Seven Zenden", "palette": "Nordic"},
+    # 유럽: 러시아 관련
+    "Novgorod":             {"name_local": "Новгород", "name_en": "Novgorod Republic", "palette": "Russian"},
+    "Kyivan Rus":           {"name_local": "Київська Русь", "name_en": "Kievan Rus", "palette": "Russian"},
+    "Tsardom of Muscovy":   {"name_local": "Москва", "name_en": "Tsardom of Muscovy", "palette": "Russian"},
+    "Nogai Horde":          {"name_local": "Ногайская Орда", "name_en": "Nogai Horde", "palette": "Mongol"},
+    "Khanate of the Golden Horde": {"name_local": "Золотая Орда", "name_en": "Golden Horde", "palette": "Mongol"},
+    "Principality of Wallachia": {"name_local": "Valahia", "name_en": "Wallachia", "palette": "EastEurope"},
+    # 동아시아: 미매핑 보완
+    "Empire of Japan":      {"name_local": "大日本帝国", "name_en": "Empire of Japan", "palette": "Japan"},
+    "Tokugawa Shogunate":   {"name_local": "徳川幕府", "name_en": "Tokugawa Shogunate", "palette": "Japan"},
+    "Great Khanate":        {"name_local": "大元", "name_en": "Yuan Dynasty (Great Khanate)", "palette": "Mongol"},
+    "Annam":                {"name_local": "安南", "name_en": "Annam", "colony": True, "ruler": "France", "palette": "SoutheastAsia"},
+    "Cochin China":         {"name_local": "交趾支那", "name_en": "Cochinchina", "colony": True, "ruler": "France", "palette": "SoutheastAsia"},
+    "French Indochina":     {"name_local": "Đông Dương", "name_en": "French Indochina", "colony": True, "ruler": "France", "palette": "SoutheastAsia"},
+    "French Indo-China":    {"name_local": "Đông Dương", "name_en": "French Indochina", "colony": True, "ruler": "France", "palette": "SoutheastAsia"},
+    "Dutch Formosa":        {"name_local": "福爾摩沙", "name_en": "Dutch Formosa", "colony": True, "ruler": "Netherlands", "palette": "EastAsia"},
+    "Middag Kingdom":       {"name_local": "大肚", "name_en": "Middag Kingdom", "palette": "SoutheastAsia"},
+    "Rattanakosin Kingdom": {"name_local": "รัตนโกสินทร์", "name_en": "Rattanakosin (Siam)", "palette": "SoutheastAsia"},
+    "Pagan":                {"name_local": "ပုဂံ", "name_en": "Pagan Kingdom", "palette": "SoutheastAsia"},
+    "Sukhothai":            {"name_local": "สุโขทัย", "name_en": "Sukhothai Kingdom", "palette": "SoutheastAsia"},
+    "Lan Na":               {"name_local": "ล้านนา", "name_en": "Lan Na Kingdom", "palette": "SoutheastAsia"},
+    "Kediri":               {"name_local": "Kediri", "name_en": "Kingdom of Kediri", "palette": "Maritime_SEA"},
+    "Vietnam":              {"name_local": "Việt Nam", "name_en": "Vietnam", "palette": "SoutheastAsia"},
+    "Malaysia":             {"name_local": "Malaysia", "name_en": "Malaysia", "palette": "SoutheastAsia"},
+    # 남아시아: 주요 왕국/제국
+    "British Raj":          {"name_local": "ब्रिटिश राज", "name_en": "British India", "colony": True, "ruler": "British Empire", "palette": "SouthAsia"},
+    "Ceylon":               {"name_local": "ශ්‍රී ලංකා", "name_en": "Ceylon", "colony": True, "ruler": "British Empire", "palette": "SouthAsia"},
+    "Magadha":              {"name_local": "मगध", "name_en": "Magadha", "palette": "SouthAsia"},
+    "Kalinga":              {"name_local": "कलिंग", "name_en": "Kalinga", "palette": "SouthAsia"},
+    "Kandy":                {"name_local": "මහනුවර", "name_en": "Kingdom of Kandy", "palette": "SouthAsia"},
+    # 서아시아/중앙아시아
+    "Bosporan Kingdom":     {"name_local": "Βόσπορος", "name_en": "Bosporan Kingdom", "palette": "Greek"},
+    "Bosporian Kingdom":    {"name_local": "Βόσπορος", "name_en": "Bosporan Kingdom", "palette": "Greek"},
+    "Trebizond":            {"name_local": "Τραπεζούς", "name_en": "Empire of Trebizond", "palette": "Byzantine"},
+    "Khiva Khanate":        {"name_local": "خوارزم", "name_en": "Khanate of Khiva", "palette": "Islamic_Turk"},
+    "Quazaq Khanate":       {"name_local": "Қазақ", "name_en": "Kazakh Khanate", "palette": "Islamic_Turk"},
+    "Kuwait":               {"name_local": "الكويت", "name_en": "Kuwait", "palette": "Islamic_Arab"},
+    "Trucial Oman":         {"name_local": "عمان", "name_en": "Trucial States (UAE)", "palette": "Islamic_Arab"},
+    "Mahra":                {"name_local": "المهرة", "name_en": "Mahra Sultanate", "palette": "Islamic_Arab"},
 }
 
 # ── 한국어 국명 매핑 (name_en → Korean) ──
@@ -1117,6 +1225,49 @@ KOREAN_NAMES = {
     "Kingdom of Ireland": "아일랜드 왕국",
     "Croatian Kingdom": "크로아티아 왕국",
     "Lombard Duchies": "롬바르드 공국",
+    # [cl] 게르만/로마 추가
+    "Ostrogothic Kingdom": "동고트 왕국",
+    "Vandal Kingdom": "반달 왕국",
+    "Lombard Principalities": "롬바르드 공국",
+    "Republic of Genoa": "제노바 공화국",
+    "Kingdom of Naples": "나폴리 왕국",
+    "Grand Duchy of Tuscany": "토스카나 대공국",
+    "Duchy of Modena": "모데나 공국",
+    "Duchy of Parma": "파르마 공국",
+    "Republic of Lucca": "루카 공화국",
+    "Novgorod Republic": "노브고로드 공화국",
+    "Kievan Rus": "키예프 루스",
+    "Tsardom of Muscovy": "모스크바 차르국",
+    "Golden Horde": "킵차크 칸국",
+    "Wallachia": "왈라키아",
+    "Empire of Trebizond": "트라페주스 제국",
+    "Bosporan Kingdom": "보스포루스 왕국",
+    # [cl] 동아시아/동남아
+    "Empire of Japan": "대일본제국",
+    "Tokugawa Shogunate": "도쿠가와 막부",
+    "Yuan Dynasty (Great Khanate)": "원나라 (대칸국)",
+    "Pagan Kingdom": "파간 왕국",
+    "Sukhothai Kingdom": "수코타이 왕국",
+    "Lan Na Kingdom": "란나 왕국",
+    "Rattanakosin (Siam)": "랏따나꼬신 (시암)",
+    "Kingdom of Kediri": "크디리 왕국",
+    # [cl] 남아시아
+    "British India": "영국령 인도",
+    "Magadha": "마가다",
+    "Kalinga": "칼링가",
+    "Kingdom of Kandy": "캔디 왕국",
+    # [cl] 서아시아/중동/아프리카
+    "Wadai Sultanate": "와다이 술탄국",
+    "Darfur Sultanate": "다르푸르 술탄국",
+    "Regency of Algiers": "알제리 총독부",
+    "Regency of Tunis": "튀니스 총독부",
+    "Funj Sultanate": "푼지 술탄국",
+    "Islamic City-States": "이슬람 도시국가",
+    "Bukhara Emirate": "부하라 토후국",
+    "Khanate of Khiva": "히바 칸국",
+    "Kazakh Khanate": "카자흐 칸국",
+    "Trucial States (UAE)": "트루셜 오만 (UAE)",
+    "German Empire (Prussia)": "독일 제국 (프로이센)",
     # ━━━ 유럽: 기타 ━━━
     "Netherlands": "네덜란드",
     "Belgium": "벨기에",
@@ -1757,8 +1908,10 @@ YEAR_RANGE_OVERRIDES = {
 }
 
 
-def generate_entity_metadata(original_name, year):
-    """단일 Entity의 메타데이터를 규칙에 따라 생성."""
+def generate_entity_metadata(original_name, year, coords=None):
+    """단일 Entity의 메타데이터를 규칙에 따라 생성.
+    coords: (lng, lat) 좌표 — 미매핑 엔티티의 지역 팔레트 결정용.
+    """
     if original_name in ENTITY_RULES:
         rule = ENTITY_RULES[original_name]
         is_colony = rule.get("colony", False)
@@ -1803,11 +1956,18 @@ def generate_entity_metadata(original_name, year):
             metadata["capital_coords"] = CAPITAL_COORDS[original_name]
 
     else:
+        # [cl] 좌표 기반 지역 팔레트 자동 배정 — 회색 대신 해당 지역 색상 사용
+        auto_palette = "Default"
+        if coords:
+            lng, lat = coords
+            region = classify_region_by_coords(lat, lng)
+            if region and region in REGION_PALETTE_MAP:
+                auto_palette = REGION_PALETTE_MAP[region]
         metadata = {
             "display_name_en": original_name,
             "display_name_local": original_name,
             "is_colony": False,
-            "fill_color": PALETTES["Default"],
+            "fill_color": PALETTES.get(auto_palette, PALETTES["Default"]),
             "confidence": "low",
         }
 
@@ -1826,26 +1986,78 @@ def generate_entity_metadata(original_name, year):
     return metadata
 
 
+def _get_centroid(geometry):
+    """GeoJSON geometry에서 대략적 중심점(lng, lat) 추출."""
+    coords = geometry.get("coordinates", [])
+    if not coords:
+        return (0, 0)
+    # 가장 깊은 좌표 리스트까지 파고들기
+    flat = coords
+    while flat and isinstance(flat[0], list):
+        flat = flat[0]
+    if len(flat) >= 2:
+        return (flat[0], flat[1])  # (lng, lat)
+    return (0, 0)
+
+
+# [cl] 좌표 기반 지역 자동 분류 → 미매핑 엔티티에 회색 대신 지역 팔레트 배정
+REGION_PALETTE_MAP = {
+    "EastAsia":     "EastAsia",
+    "SoutheastAsia":"SoutheastAsia",
+    "SouthAsia":    "SouthAsia",
+    "WestAsia":     "Islamic_Arab",
+    "Europe":       "EastEurope",
+    "EastEurope":   "Russian",
+    "Africa":       "Africa_West",
+    "NorthAmerica": "US",
+    "SouthAmerica": "LatinAmerica",
+    "Oceania":      "Oceania",
+    "Arctic":       "Nordic",
+}
+
+def classify_region_by_coords(lat, lng):
+    """위경도로 지역 분류 → REGION_PALETTE_MAP 키 반환."""
+    if lat > 65: return "Arctic"
+    if 20 < lat < 55 and 100 < lng < 145: return "EastAsia"
+    if -10 < lat < 25 and 95 < lng < 145: return "SoutheastAsia"
+    if 5 < lat < 40 and 60 < lng < 100: return "SouthAsia"
+    if 10 < lat < 50 and 25 < lng < 65: return "WestAsia"
+    if 35 < lat < 72 and -12 < lng < 30: return "Europe"
+    if 35 < lat < 65 and 30 < lng < 65: return "EastEurope"
+    if -35 < lat < 38 and -20 < lng < 55: return "Africa"
+    if 5 < lat < 72 and -170 < lng < -50: return "NorthAmerica"
+    if -60 < lat < 15 and -90 < lng < -30: return "SouthAmerica"
+    if -50 < lat < 5 and 100 < lng < 180: return "Oceania"
+    return None
+
+
 def extract_names_from_geojson(geojson_path):
-    """GeoJSON 파일에서 고유 NAME 목록 추출."""
+    """GeoJSON 파일에서 고유 NAME 목록 + 중심 좌표 추출."""
     with open(geojson_path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    names = set()
+    entities = {}  # name → (lng, lat)
     for feature in data.get("features", []):
         name = feature.get("properties", {}).get("NAME")
-        if name:
-            names.add(name)
-    return sorted(names)
+        if name and name not in entities:
+            lng, lat = _get_centroid(feature.get("geometry", {}))
+            entities[name] = (lng, lat)
+    return entities
 
 
-def create_snapshot_json(year, name_list, output_dir):
-    """특정 연도의 메타데이터 JSON 생성."""
+def create_snapshot_json(year, entities, output_dir):
+    """특정 연도의 메타데이터 JSON 생성.
+    entities: dict {name: (lng, lat)} 또는 list [name, ...]
+    """
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
+    # 하위호환: list면 좌표 없음
+    if isinstance(entities, list):
+        entities = {n: None for n in entities}
+
     snapshot_data = {}
-    for name in name_list:
-        snapshot_data[name] = generate_entity_metadata(name, year)
+    for name, coords in entities.items():
+        snapshot_data[name] = generate_entity_metadata(name, year, coords)
 
     # [cl] 식민지 가상 엔트리 삽입 (피지배국 이름 우선 표기 원칙)
     virtual_count = 0
@@ -1875,7 +2087,7 @@ def create_snapshot_json(year, name_list, output_dir):
     low = sum(1 for v in snapshot_data.values() if v.get("confidence") == "low")
     size_kb = os.path.getsize(output_path) / 1024
     virt_str = f" virtual:{virtual_count}" if virtual_count else ""
-    print(f"  [{year}] {len(name_list)} entities | high:{high} low:{low}{virt_str} | {size_kb:.1f}KB")
+    print(f"  [{year}] {len(entities)} entities | high:{high} low:{low}{virt_str} | {size_kb:.1f}KB")
     return high, low
 
 
@@ -1921,8 +2133,8 @@ if __name__ == "__main__":
         if not os.path.exists(geojson_path):
             print(f"  [{year}] SKIP - {filename} not found")
             continue
-        names = extract_names_from_geojson(geojson_path)
-        h, l = create_snapshot_json(year, names, OUTPUT_DIR)
+        entities = extract_names_from_geojson(geojson_path)
+        h, l = create_snapshot_json(year, entities, OUTPUT_DIR)
         total_high += h
         total_low += l
 
