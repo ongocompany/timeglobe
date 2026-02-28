@@ -1014,6 +1014,74 @@
   * 추가 분할 적용:
     * WDQS seed를 `source-lang`별 실제 sitelink(`ko` 또는 `en`)에서 시작하도록 변경.
     * `--max-sitelinks` 옵션을 추가해 sitelinks 상단 구간만 잘라서 초소형 dry-run 가능하게 조정.
+  * 초소형 dry-run 결과 (`source_lang=ko`, `limit=3`):
+    * `5000~200000 sitelinks`: `0건`
+    * `1000~5000 sitelinks`: `0건`
+    * `100~1000 sitelinks`: `3건` 성공
+      * `찰스 다윈`(Q1035, sitelinks=275, anchor=1809)
+      * `엑토르 베를리오즈`(Q1151, sitelinks=133, anchor=1803)
+      * `이븐 알하이삼`(Q11104, sitelinks=104, anchor=965)
+  * 현재 판단:
+    * `ko` seed 기준으로는 상단 고sitelinks 구간보다 `100~1000` 같은 중간 밴드부터 점진 수집하는 편이 현실적.
+  * 추가 검증 (`2026-02-28 15:21 KST`):
+    * `source_lang=en`, `1000~5000 sitelinks`, `limit=3` dry-run은 `WDQS 504`로 실패.
+    * fallback으로 `source_lang=ko`, `100~1000 sitelinks`, `offset=3`, `limit=3` dry-run 실행 시 `3건` 정상 응답.
+      * `움 쿨숨`(Q1110560, sitelinks=106, anchor=1898)
+      * `존 매케인`(Q10390, sitelinks=132, anchor=1936)
+      * `데이비드 베컴`(Q10520, sitelinks=135, anchor=1975)
+    * 결론: 당장은 `en` 중간 밴드보다 `ko` 중간 밴드를 `offset`으로 넘기며 잘게 수집하는 쪽이 안정적.
+  * 추가 dry-run 재현 확인:
+    * `source_lang=ko`, `100~1000 sitelinks`, `limit=3`에서 `offset=6/9/12` 모두 정상 응답.
+      * `offset=6`: `빌 클린턴`, `마하트마 간디`, `율리우스 카이사르`
+      * `offset=9`: `세리나 윌리엄스`, `고든 브라운`, `바하올라`
+      * `offset=12`: `카멀라 해리스`, `자와할랄 네루`, `아일톤 세나`
+    * 따라서 현재 시간대에도 `ko 100~1000` 밴드는 초소형 표본 수집이 재현됨을 확인.
+  * 실제 적재 시도:
+    * `source_lang=ko`, `100~1000 sitelinks`, `limit=5`, `offset=0` 실제 실행에서는 WDQS 수집 자체는 통과했으나,
+      PostgREST가 `public.person_candidates`를 schema cache에서 찾지 못해 `404(PGRST205)`로 실패.
+    * 결론: 다음 단계는 쿼리 안정화보다 먼저 Supabase에 `20260228170000_person_candidates.sql` 반영 여부를 맞추는 것.
+  * 원격 migration 적용 경로 점검:
+    * 서비스 롤 키로 `POST /pg/v1/query` 호출을 시도했으나 현재 프로젝트에서는 `404 requested path is invalid`.
+    * 로컬 환경에 `SUPABASE_ACCESS_TOKEN`은 없어서 Supabase Management API 기반 원격 SQL 실행은 바로 사용할 수 없는 상태.
+    * 후속 조치로 `scripts/supabase/applyMigration.mjs`와 `npm run supabase:apply-migration` 스크립트를 추가.
+      * `SUPABASE_ACCESS_TOKEN` + `SUPABASE_URL` 기준으로 project ref를 유도해 management API로 migration SQL 파일을 실행하는 용도.
+      * PAT가 없으면 기존처럼 Supabase SQL Editor 수동 실행이 필요.
+  * 사용자(jn)가 Supabase SQL Editor에서 `20260228170000_person_candidates.sql` 실행 완료.
+  * 실행 직후 live 적재 재검증:
+    * `source_lang=ko`, `100~1000 sitelinks`, `limit=5`, `offset=0` 실제 적재 성공.
+      * 적재 샘플: `찰스 다윈`, `엑토르 베를리오즈`, `이븐 알하이삼`, `움 쿨숨`, `존 매케인`
+    * 이어서 `limit=5`, `offset=5` 실제 적재도 성공.
+      * 적재 샘플: `데이비드 베컴`, `빌 클린턴`, `마하트마 간디`, `율리우스 카이사르`, `세리나 윌리엄스`
+    * 원격 확인 결과 `public.person_candidates` 총 `10`건 적재 확인.
+  * pagination 안정화 조치:
+    * `collectPersonCandidates.mjs`의 WDQS seed 쿼리를 subquery로 감싸고 `ORDER BY ?item`을 추가.
+    * 목적: optional label join 전에 `LIMIT/OFFSET`을 적용해 batch 경계가 흔들리지 않도록 고정.
+    * 주의: 기존 무정렬 상태에서 들어간 10건이 있어, 안정 정렬 기준 전환 후 `offset=0/5`를 다시 실행해 앞페이지를 재정렬 기준으로 보정.
+  * 안정 정렬 기준 live 적재 결과:
+    * `offset=0`: `프랑수아 올랑드`, `지미 웨일스`, `래리 생어`, `데이비드 캐머런`, `스티븐 하퍼`
+    * `offset=5`: `조지 워싱턴`, `더글러스 애덤스`, `조지 W. 부시`, `볼프강 아마데우스 모차르트`, `루트비히 판 베토벤`
+    * `offset=10`: `버락 오바마`, `팀 버너스리`, `에이브러햄 링컨`, `프레드 아스테어`, `레이철 카슨`
+    * `offset=15`: `바하올라`, `타보 음베키`, `메리 울스턴크래프트`, `시고니 위버`, `마르그레테 2세`
+    * 원격 확인 결과 `public.person_candidates` 총 `30`건 적재 확인.
+  * 운영 메모:
+    * 안정 정렬 이후 batch 1회당 소요 시간이 대략 `30~55초`로 증가.
+    * 현재 프로필(`WDQS_TIMEOUT_MS=90000`, `limit=5`)에서는 timeout 없이 완료되므로, 오프피크 시간대 소배치 반복에는 사용 가능.
+  * 장기 배치 래퍼 추가:
+    * `scripts/wikidata/runPersonCandidateBatches.mjs`
+    * package script: `npm run collect:person-candidates-batch`
+    * 기능:
+      * `start-offset`, `batch-count`, `offset-step`, `state-file`, `report-dir` 지원
+      * `collect:person-candidates`를 순차 호출하며 batch별 report와 `nextOffset` 상태를 저장
+      * runner 레벨 `max-batch-attempts`, `batch-retry-delay-ms`로 같은 offset 재시도 지원
+  * live 검증:
+    * `offset=20`, `batch-count=1`로 런너 진입 자체는 정상 확인.
+    * 다만 `2026-02-28 15:54~15:57 KST` 구간 WDQS 연결이 불안정해 `TypeError: fetch failed`가 연속 발생.
+    * 단일 수집(`collect:person-candidates`)과 배치 런너 모두 같은 증상을 보여, 런너 결함이 아니라 시점상 WDQS 연결 상태 문제로 판단.
+    * 배치 런너는 실패 후 같은 offset(`20`)을 재시도하는 동작까지 확인.
+  * 현재 결론:
+    * 백그라운드 장기 배치 명령 자체는 준비 완료.
+    * 실제 상시 실행은 `WDQS_MAX_RETRIES=3`, `WDQS_BASE_DELAY_MS=2000`, `WDQS_REQUEST_DELAY_MS=1200`,
+      `max-batch-attempts=3`, `batch-retry-delay-ms=15000` 프로필로 오프피크 시간대에 시작하는 편이 안전.
 
 ## [2026-02-28] [cl] BORDERPRECISION 기반 고대 국경 블러 셰이더 구현
 
@@ -1043,3 +1111,84 @@
 * BC 1000년 (100% BP=1): 반투명 영역 + 가우시안 블러 → "시간의 안개"
 * AD 1650년 (혼합): 도쿠가와=실선, 호주원주민=블러
 * AD 1920년 (100% BP=3): 블러 OFF, 선명한 국경선
+
+## [2026-02-28] [cl] 문명권 색상 팔레트 세분화 (18→31개)
+
+### 문제
+* 인접 국가가 동일 문명권 팔레트를 공유하여 지도상 구분 불가
+* 예: 송/요/금이 모두 같은 EastAsia 색상, 이슬람권 국가 전체 동색
+
+### PALETTES 확장 (`generateBorderMetadata.py`)
+* 기존 18개 → 28개 → 최종 31개 팔레트로 세분화
+* 신규 팔레트:
+  * `EastAsia_Alt` (#D4AC0D) — 요/금 등 북방 왕조 대체색
+  * `Manchuria` (#D68910) — 여진/만주 계열
+  * `Islamic_Arab` (#1ABC9C) — 아랍 이슬람
+  * `Islamic_Turk` (#48C9B0) — 튀르크 이슬람 (셀주크, 오스만 등)
+  * `Persian` (#76D7C4) — 페르시아 계열
+  * `Africa_East` (#A569BD) — 동/남아프리카
+  * `Africa_West` (#8E44AD) — 서아프리카
+  * `Maritime_SEA` (#27AE60) — 해양 동남아 (스리비자야, 마자파힛 등)
+  * `Korea_Koguryo` (#884EA0) — 고구려 (보라)
+  * `Korea_Paekche` (#E59866) — 백제 (살구색)
+  * `Korea_Gaya` (#F0B27A) — 가야 (앰버)
+
+### ENTITY_RULES 대규모 재배정
+* `Islamic` → `Islamic_Arab` / `Islamic_Turk` / `Persian` 분리
+* `Africa` → `Africa_West` / `Africa_East` 분리
+* `SoutheastAsia` → `Maritime_SEA` (해양 국가) 분리
+* 특정 엔티티: 사산→Persian, 프톨레마이오스→Greek, 나바테아/사바/히미아르→AncientNE, 가즈나비→Islamic_Turk 등
+
+### 결과
+* 161개 메타데이터 파일 재생성
+* 1200년: 송(#F4D03F), 몽골(#A93226), 요(#D68910), 티벳(#AF7AC5), 크메르(#27AE60) — 인접국 색상 구분 확인
+
+## [2026-02-28] [cl] 고려/조선 라벨 오류 수정 + 한국어 라벨 우선 표시
+
+### 문제
+* 1135년에 고려가 "조선"으로 표시 — HB GeoJSON이 918~1392년 고려 시기에 `NAME=Korea` 사용 → ENTITY_RULES가 "Korea"→"조선" 매핑
+* 신라가 가끔 영어 "Silla"로 표시
+
+### 수정 (`generateBorderMetadata.py`)
+* **YEAR_RANGE_OVERRIDES 추가**: `("Korea", 918, 1392)` → 고려
+* 메타데이터 재생성
+
+### 수정 (`CesiumGlobe.tsx`)
+* 라벨 텍스트 우선순위: `display_name_ko` → `display_name` → 원본 NAME
+* 가상 엔티티 라벨도 동일 적용
+
+## [2026-02-28] [cl] 삼국시대 색상 분리 + 통일신라 구별
+
+### 문제
+* 고구려, 백제, 신라, 가야가 모두 동일한 Korea 팔레트(#45B39D) 사용
+* 신라와 통일신라(668~935) 구분 없음
+
+### 수정 (`generateBorderMetadata.py`)
+* **삼국시대 전용 팔레트 3개 추가**:
+  * `Korea_Koguryo` (#884EA0, 보라) — 고구려, 발해(후계국)
+  * `Korea_Paekche` (#E59866, 살구색) — 백제
+  * `Korea_Gaya` (#F0B27A, 앰버) — 가야
+  * 신라는 기존 `Korea` (#45B39D) 유지
+* **YEAR_RANGE_OVERRIDES 추가**: `("Silla", 668, 935)` → "통일신라"
+
+## [2026-02-28] [cl] 위진남북조 시대 엔티티 매핑 + palette override 기능
+
+### 문제
+* 340년경 "Jin" 엔티티가 회색(미매핑) — ENTITY_RULES에 없음
+* 500년대 "Jin Empire"가 여진 금나라(Manchuria 색상)로 잘못 매핑 — 실제로는 동진(東晉)
+* 오호십육국, 유연, 돌궐, 야마토 등 미매핑 엔티티 다수
+
+### 수정 (`generateBorderMetadata.py`)
+* **ENTITY_RULES 추가** (7개):
+  * `Jin` → 晉 (EastAsia), `Jin Empire` → 晉 (EastAsia 기본값으로 변경)
+  * `Northern Liang` → 北涼, `Sixteen Kingdoms` → 五胡十六國
+  * `Ruanruan` → 柔然 (Mongol), `Göktürks` → 突厥 (Mongol)
+  * `Yamato` → 大和 (Japan)
+* **YEAR_RANGE_OVERRIDES 추가** (Jin 시대별 분기):
+  * `("Jin", 265, 316)` → 西晉 (서진)
+  * `("Jin", 317, 420)` → 東晉 (동진)
+  * `("Jin Empire", 265, 600)` → 東晉 (동진)
+  * `("Jin Empire", 1115, 1234)` → 金 (금나라) + **palette: "Manchuria"**
+* **palette override 기능 신규**: YEAR_RANGE_OVERRIDES에 `"palette"` 키 지원 → 시대별 색상 변경 가능
+* **KOREAN_NAMES 추가**: 서진, 동진, 진나라, 금나라, 북량, 유연, 돌궐, 야마토
+* **Jin Dynasty 충돌 해결**: "Jin Dynasty (Sima)"→진나라, "Jin Dynasty (Jurchen)"→금나라로 분리
