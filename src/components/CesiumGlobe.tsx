@@ -1627,8 +1627,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       let labelText: string;
 
       if (entity.is_colony && entity.colony_label) {
-        // [cl] 특수 식민지 라벨 (일제강점기 등): 태그만 표시
-        labelText = `[${entity.colony_label}]`;
+        // [cl] 특수 식민지 라벨 (일제강점기 등): 국명 + 태그
+        labelText = `${koName}\n[${entity.colony_label}]`;
       } else {
         // 일반: 한글 + 영문 서브라인
         const needsEnSub = koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName);
@@ -1641,9 +1641,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
 
       // ── 스타일 결정 ──
-      // 특수 식민지 라벨(일제강점기 등)은 Tier 기반 크기로 눈에 띄게,
-      // 일반 식민지(영국령 인도 등)는 이탤릭 작은 글씨
-      const hasSpecialColonyLabel = entity.is_colony && !!entity.colony_label;
+      // [cl] 일반 식민지(영국령 인도 등)는 이탤릭 작은 글씨,
+      // 특수 식민지(일제강점기 등) + 일반 국가는 Tier 기반 동일 스타일
       const isPlainColony = entity.is_colony && !entity.colony_label;
 
       ds.entities.add({
@@ -1652,8 +1651,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           text: labelText,
           font: isPlainColony
             ? "italic 12px sans-serif"
-            : hasSpecialColonyLabel
-            ? (tier === 1 ? "bold italic 16px sans-serif" : "italic 14px sans-serif")
             : tier === 1 ? "bold 18px sans-serif"
             : tier === 2 ? "bold 14px sans-serif"
             : "12px sans-serif",

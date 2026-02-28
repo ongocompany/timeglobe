@@ -245,8 +245,8 @@ FORCED_ENTITIES = [
     {
         "id": "__forced__korea_japanese_rule",
         "name_en": "Korea (Japanese Rule)",
-        "name_ko": "일제강점기",
-        "name_local": "日帝強占期",
+        "name_ko": "한국",
+        "name_local": "朝鮮",
         "start_year": 1910, "end_year": 1945, "tier": 1,
         "fill_color": "#922B21", "coords": [126.98, 37.57],
         "is_colony": True, "colonial_ruler_ko": "일본",
