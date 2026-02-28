@@ -1766,15 +1766,16 @@ export default function CesiumGlobe({
         currentYear={currentYear}
         onBlurRatioChange={handleBlurRatioChange}
       />
-      {/* [cl] "시간의 안개" — BP=1 비율에 비례하는 Gaussian blur
-          고대(100% BP=1): sigma=3.0 (강한 블러)
-          혼합(1650년대): sigma~1.5 (중간 블러)
+      {/* [cl] "시간의 안개" — BP=1 비율에 비례하는 미세 Gaussian blur
+          주의: PostProcessStage는 화면 전체에 적용 → 강도를 최소화해야 가독성 유지
+          고대(100% BP=1): sigma=0.6 (미세한 안개)
+          혼합(1650년대): sigma~0.3
           근대(100% BP=3): 블러 OFF */}
       <BlurStage
-        enabled={blurRatio > 0.05}
+        enabled={blurRatio > 0.1}
         delta={1.0}
-        sigma={blurRatio * 3.0}
-        stepSize={blurRatio * 2.0}
+        sigma={blurRatio * 0.6}
+        stepSize={blurRatio * 0.5}
       />
     </Viewer>
   );
