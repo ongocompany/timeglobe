@@ -1406,6 +1406,24 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] 메타데이터 캐시 (연도별 한 번만 fetch)
   const metadataCacheRef = useRef<Record<number, Record<string, BorderMetadata>>>({});
 
+  // [cl] 엔티티 타임라인 (라벨 전용, GeoJSON과 독립)
+  interface EntityTimelineEntry {
+    id: string;              // HB GeoJSON NAME 매칭 키
+    name_en: string;
+    name_ko: string;
+    name_local: string;
+    start_year: number;      // 존속 시작 (BC = 음수)
+    end_year: number;        // 존속 종료
+    tier: number;            // 1=제국, 2=국가, 3=부족
+    fill_color: string;
+    coords: [number, number]; // [lng, lat]
+    is_colony: boolean;
+    colonial_ruler_ko: string | null;
+    source: string;
+  }
+  const entityTimelineRef = useRef<EntityTimelineEntry[] | null>(null);
+  const labelDsRef = useRef<InstanceType<typeof CustomDataSource> | null>(null);
+
   // [cl] 메타데이터 타입 정의
   interface BorderMetadata {
     display_name: string;
@@ -1482,8 +1500,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] 메타데이터 로드 (1880+ 있으면 색상+현지이름, 없으면 GeoJSON NAME 그대로)
     const metadata = await loadMetadata(snapYear);
 
-    // [cl] 중복 라벨 방지 (같은 NAME이 여러 feature에 걸쳐 있을 수 있음)
-    const labeledNames = new Set<string>();
+    // [cl] 라벨은 entity_timeline.json 기반으로 별도 렌더링 (loadBordersAsPolylines에서 제거됨)
 
     // [cl] BP=1 비율 집계 (블러 강도 결정용)
     let bp1Count = 0;
@@ -1568,96 +1585,73 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         }
       }
 
-      // [cl] 라벨 위치 결정 (우선순위):
-      // 1. 메타데이터 capital_coords
-      // 2. CShapes GeoJSON의 caplong/caplat (CShapes 전용)
-      // 3. 가상 자식 엔트리 있으면 스킵 (centroid가 자식 영토에 떨어지는 문제 방지)
-      // 4. centroid 폴백
-      if (name && !labeledNames.has(name)) {
-        labeledNames.add(name);
-        const hasVirtualChildren = metadata && Object.entries(metadata).some(
-          ([k, v]) => k.startsWith("__virtual__") && v.colonial_ruler === name);
-        const props = feature.properties;
-        const center = meta?.capital_coords
-          ? meta.capital_coords as [number, number]
-          : (isCShapes && props.caplong != null && props.caplat != null)
-            ? [props.caplong, props.caplat] as [number, number]
-            : hasVirtualChildren ? null : calcCentroid(feature.geometry);
-        if (center) {
-          // [cl] 라벨: 한글 위 + 영문 아래 (2줄) — 한글=영문이면 1줄만
-          const koName = meta?.display_name_ko || meta?.display_name || name;
-          const enName = meta?.display_name_en || name;
-          // 한글과 영문이 같으면 1줄, 다르면 2줄 (한글 위 + 영문 아래)
-          const needsEnSub = koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName);
-          let labelText = koName;
-          if (needsEnSub) labelText += `\n${enName}`;
-          if (meta?.is_colony && meta.colonial_ruler) {
-            labelText += `\n[${meta.colonial_ruler_ko || meta.colonial_ruler}]`;
-          }
-          // [cl] Tier별 라벨 스타일: 1=제국(크고 선명), 2=국가(현행), 3=부족(작고 흐림)
-          const tier = meta?.tier ?? 3;
-          ds.entities.add({
-            position: Cartesian3.fromDegrees(center[0], center[1]),
-            label: {
-              text: labelText,
-              font: tier === 1 ? "bold 18px sans-serif"
-                  : tier === 2 ? "bold 14px sans-serif"
-                  : "12px sans-serif",
-              fillColor: tier <= 2 ? Color.WHITE : Color.WHITE.withAlpha(0.55),
-              outlineColor: tier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
-              outlineWidth: tier === 1 ? 3 : tier === 2 ? 2 : 1,
-              style: 2, // FILL_AND_OUTLINE
-              scaleByDistance: tier === 1
-                ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
-                : tier === 2
-                ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)
-                : new NearFarScalar(5e6, 0.7, 2e7, 0),
-            },
-          });
-        }
-      }
-    }
-
-    // [cl] GeoJSON에 없지만 메타데이터에 존재하는 엔티티 라벨 추가
-    // __virtual__ 접두사 키 또는 GeoJSON에서 라벨 안 그려진 엔티티 (capital_coords 필수)
-    if (metadata) {
-      for (const [key, vm] of Object.entries(metadata)) {
-        if ((key.startsWith("__virtual__") || !labeledNames.has(key)) && vm.capital_coords) {
-          // [cl] 가상 식민지도 한글+영문 2줄 포맷
-          const vKo = vm.display_name_ko || vm.display_name;
-          const vEn = vm.display_name_en || key.replace("__virtual__", "");
-          const vNeedsEn = vKo !== vEn && !/^[A-Za-z\s\-'().]+$/.test(vKo);
-          let vLabel = vKo;
-          if (vNeedsEn) vLabel += `\n${vEn}`;
-          if (vm.colonial_ruler) vLabel += `\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`;
-          // [cl] 가상 식민지도 Tier별 라벨 스타일 적용
-          const vTier = vm.tier ?? 2;
-          ds.entities.add({
-            position: Cartesian3.fromDegrees(vm.capital_coords[0], vm.capital_coords[1]),
-            label: {
-              text: vLabel,
-              font: vTier === 1 ? "bold 18px sans-serif"
-                  : vTier === 2 ? "bold 14px sans-serif"
-                  : "12px sans-serif",
-              fillColor: vTier <= 2
-                ? Color.fromCssColorString(vm.fill_color || "#FFFFFF")
-                : Color.fromCssColorString(vm.fill_color || "#FFFFFF").withAlpha(0.55),
-              outlineColor: vTier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
-              outlineWidth: vTier === 1 ? 3 : vTier === 2 ? 2 : 1,
-              style: 2,
-              scaleByDistance: vTier === 1
-                ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
-                : vTier === 2
-                ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)
-                : new NearFarScalar(5e6, 0.7, 2e7, 0),
-            },
-          });
-        }
-      }
+      // [cl] 라벨은 entity_timeline.json 기반 별도 렌더링으로 이관됨 (renderLabelsForYear)
     }
 
     const bp1Ratio = totalCount > 0 ? bp1Count / totalCount : 0;
     return { ds, bp1Ratio };
+  }
+
+  // [cl] ★ 엔티티 타임라인 로드 (1회)
+  async function loadEntityTimeline(): Promise<EntityTimelineEntry[]> {
+    if (entityTimelineRef.current) return entityTimelineRef.current;
+    const res = await fetch("/geo/borders/entity_timeline.json");
+    const data = await res.json();
+    entityTimelineRef.current = data;
+    return data;
+  }
+
+  // [cl] ★ 연도 기반 라벨 렌더링 (entity_timeline에서 필터링, GeoJSON 무관)
+  function renderLabelsForYear(targetYear: number) {
+    if (!viewer || viewer.isDestroyed() || !entityTimelineRef.current) return;
+
+    // 기존 라벨 DataSource 제거
+    if (labelDsRef.current) {
+      viewer.dataSources.remove(labelDsRef.current, true);
+      labelDsRef.current = null;
+    }
+
+    const ds = new CustomDataSource("labels");
+    const timeline = entityTimelineRef.current;
+
+    // targetYear에 존속하는 엔티티 필터링
+    for (const entity of timeline) {
+      if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
+
+      // 한글 + 영문 2줄 포맷 (기존 로직 유지)
+      const koName = entity.name_ko || entity.name_en;
+      const enName = entity.name_en;
+      const needsEnSub = koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName);
+      let labelText = koName;
+      if (needsEnSub) labelText += `\n${enName}`;
+      if (entity.is_colony && entity.colonial_ruler_ko) {
+        labelText += `\n[${entity.colonial_ruler_ko}]`;
+      }
+
+      // Tier별 스타일 (기존 그대로)
+      const tier = entity.tier;
+      ds.entities.add({
+        position: Cartesian3.fromDegrees(entity.coords[0], entity.coords[1]),
+        label: {
+          text: labelText,
+          font: tier === 1 ? "bold 18px sans-serif"
+              : tier === 2 ? "bold 14px sans-serif"
+              : "12px sans-serif",
+          fillColor: tier <= 2 ? Color.WHITE : Color.WHITE.withAlpha(0.55),
+          outlineColor: tier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
+          outlineWidth: tier === 1 ? 3 : tier === 2 ? 2 : 1,
+          style: 2,
+          scaleByDistance: tier === 1
+            ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
+            : tier === 2
+            ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)
+            : new NearFarScalar(5e6, 0.7, 2e7, 0),
+        },
+      });
+    }
+
+    viewer.dataSources.add(ds);
+    labelDsRef.current = ds;
   }
 
   // [cl] 인덱스 로드 (1회) + 즉시 첫 국경 로드
@@ -1668,6 +1662,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] HMR/StrictMode 리마운트 시 stale 메타데이터 캐시 방지
     metadataCacheRef.current = {};
 
+    // [cl] 국경선 인덱스 로드 + 첫 렌더링
     loadBorderIndex().then(async (idx) => {
       if (cancelled) return;
       borderIndexRef.current = idx;
@@ -1676,17 +1671,20 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       try {
         const { ds, bp1Ratio } = await loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year);
         if (cancelled || viewer.isDestroyed()) return;
-        // [cl] StrictMode 중복 방지: 기존 ds가 있으면 먼저 제거
         if (borderDsRef.current) {
           viewer.dataSources.remove(borderDsRef.current, true);
         }
         viewer.dataSources.add(ds);
         borderDsRef.current = ds;
         currentBorderFileRef.current = snap.file;
-        // [cl] 블러 강도 전달 (BP=1 비율 → 부모 CesiumGlobe의 BlurStage)
-
       } catch { /* GeoJSON 미다운로드 시 무시 */ }
       borderLoadingRef.current = false;
+    }).catch(() => {});
+
+    // [cl] ★ 엔티티 타임라인 로드 + 첫 라벨 렌더링 (국경선과 독립)
+    loadEntityTimeline().then(() => {
+      if (cancelled || viewer.isDestroyed()) return;
+      renderLabelsForYear(currentYear);
     }).catch(() => {});
 
     // [cl] 클린업: StrictMode 첫 번째 실행의 비동기 취소 + 데이터소스 정리
@@ -1696,6 +1694,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         viewer.dataSources.remove(borderDsRef.current, true);
         borderDsRef.current = null;
         currentBorderFileRef.current = null;
+      }
+      // [cl] 라벨 DataSource도 정리
+      if (labelDsRef.current && !viewer.isDestroyed()) {
+        viewer.dataSources.remove(labelDsRef.current, true);
+        labelDsRef.current = null;
       }
       borderLoadingRef.current = false;
     };
@@ -1727,7 +1730,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       });
   }, [viewer, currentYear]);
 
-  // [cl] 언마운트 정리: 초기 로드 effect의 cleanup에서 처리 (별도 effect 불필요)
+  // [cl] ★ 연도 변경 시 라벨 업데이트 (국경선 스왑과 독립, 매 연도 반응)
+  useEffect(() => {
+    if (!viewer || !entityTimelineRef.current) return;
+    renderLabelsForYear(currentYear);
+  }, [currentYear]);
 
   return null;
 }

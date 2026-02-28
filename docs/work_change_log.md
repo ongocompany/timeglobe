@@ -1099,6 +1099,48 @@
     * `/ops` 로그/에러/리포트 리스트에서 같은 문자열이 반복될 때 React duplicate key 경고가 발생.
     * `tailLines`, `checkpoint.recentErrors`, `report.sampleTitles`, `recentErrors` 렌더링 key를 index 조합 형태로 변경.
     * 수정 후 `npm run build` 재통과.
+  * person 후보 장기 배치 재검증 (`2026-02-28 17:57~18:28 KST`):
+    * `offset=20`, `batch-count=1`을 foreground로 붙어서 재실행.
+    * 기본 샌드박스 실행에서는 `TypeError: fetch failed`가 반복되어 진행 불가.
+    * 원인 분리 결과:
+      * 아주 작은 WDQS 쿼리는 `curl`/`node fetch` 모두 응답.
+      * 실제 `person_candidates` seed 쿼리(`ko`, `100~1000 sitelinks`, `offset=20`)는 `curl`로는 정상 응답 확인.
+      * 같은 쿼리를 agent 일반 샌드박스에서 실행하면 `fetch failed`가 반복되어, agent 실행 환경의 네트워크 제약이 크게 작용하는 것으로 판단.
+    * 대응:
+      * `scripts/wikidata/wdqsClient.mjs`에 transport 실패(`fetch failed`, `AbortError`) 시 `curl` fallback 추가.
+      * 이후 `권한 상승` 실행 기준으로는 `WDQS 504` 1회 재시도 후 `offset=20` batch 성공.
+      * 결과:
+        * state file `nextOffset=25`
+        * `person_candidates` 원격 row count `30 -> 35`
+    * 추가 관찰:
+      * `nohup` 기반 detached background resume(`offset=25`부터 11 batch)는 agent 도구 환경에서는 로그 시작까지만 남고 실제 진행/상태 갱신이 이어지지 않음.
+      * state file, remote row count 모두 `35`에서 정지.
+    * 현재 판단:
+      * 실제 수집 로직은 살아 있음.
+      * agent가 띄운 detached background job은 신뢰하기 어려워, 다음 실행은 foreground 모니터링 또는 사용자의 로컬 터미널 직접 실행이 더 안전.
+  * person 후보 장기 배치 추가 진행 (`2026-02-28 18:38~18:44 KST`):
+    * 사용자가 로컬에서 직접 돌릴 시간이 없어, 같은 프로필로 foreground 모니터링을 이어서 수행.
+    * 실행:
+      * `--resume --batch-count 4 --limit 5 --min-sitelinks 100 --max-sitelinks 1000 --source-lang ko`
+      * `WDQS_TIMEOUT_MS=90000`, `WDQS_MAX_RETRIES=3`, `WDQS_BASE_DELAY_MS=2000`, `WDQS_REQUEST_DELAY_MS=1200`
+    * 결과:
+      * `offset=45` 성공 -> `nextOffset=50`
+      * `offset=50` 성공 -> `nextOffset=55`
+      * `offset=55`는 `WDQS 504` 1회 재시도 후 성공 -> `nextOffset=60`
+      * `offset=60`도 `WDQS 504` 1회 재시도 후 성공 -> `nextOffset=65`
+    * state file:
+      * `.cache/person-candidates-ko-low-state.json`
+      * `completedBatches=9`, `lastOffset=60`, `nextOffset=65`
+    * 원격 적재 현황:
+      * Supabase `person_candidates` row count `54 -> 74`
+    * 샘플 report:
+      * `offset=45`: 마이클 케인, 게오르기 주코프, 도나시앵 알퐁스 프랑수아 드 사드, 싱클레어 루이스, 우마 서먼
+      * `offset=50`: 살마 아예크, 아레사 프랭클린, 윌리엄 제임스, 그나이우스 폼페이우스 마그누스, 파르메니데스
+      * `offset=55`: 토머스 페인, 크리스틴 스튜어트, 앨버트 에이브러햄 마이컬슨, 조지 3세, 프랭크 자파
+      * `offset=60`: 샬럿 브론테, 더글러스 맥아더, 마이모니데스, 콘스탄틴 체르넨코, 모하마드 레자 팔라비
+    * 결론:
+      * foreground + 권한 상승 + 보수적 retry 프로필은 현재 시점에서 안정적으로 동작.
+      * 공개 WDQS `504`는 간헐적으로 발생하지만, 현재 프로필에선 1회 재시도로 회복 가능.
 
 ## [2026-02-28] [cl] BORDERPRECISION 기반 고대 국경 블러 셰이더 구현
 
