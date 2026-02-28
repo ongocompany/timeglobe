@@ -1519,12 +1519,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
               text: vm.colonial_ruler
                 ? `${vm.display_name}\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`
                 : vm.display_name,
-              font: "bold 12px sans-serif",
+              font: "bold 14px sans-serif",
               fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
               outlineColor: Color.BLACK,
               outlineWidth: 2,
               style: 2,
-              scaleByDistance: new NearFarScalar(5e6, 0.9, 15e6, 0.3),
+              scaleByDistance: new NearFarScalar(5e6, 1.0, 15e6, 0.4),
             },
           });
         }
