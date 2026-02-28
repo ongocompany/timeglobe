@@ -190,6 +190,99 @@ MANUAL_COORDS = {
 }
 
 
+# ─── 중복 엔티티 제거 목록 ─────────────────────────────────────
+# [cl] HB 데이터에 같은 나라가 다른 ID로 등록된 경우, 하나만 남기고 제거
+DEDUP_REMOVE = {
+    "Manchu Empire",          # → Qing Empire (청나라 중복)
+    "United States",          # → United States of America
+    "United Kingdom of Great Britain and Ireland",  # → United Kingdom
+    "Ainus",                  # → Ainu
+    "M?ori",                  # → Maori (ā가 ?로 깨진 인코딩 문제)
+    "Khoiasan",               # → Khoisan (오타)
+    "Bantou",                 # → Bantu (프랑스어 표기)
+    "Bukara Khanate",         # → Bokhara Khanate (오타)
+    "Sultinate of Zanzibar",  # → Zanzibar (오타+중복)
+    "Barbados (UK)",          # → Barbados와 시기 겹침
+    "Saint Kitts and Nevis (UK)",  # → Saint Kitts and Nevis와 시기 겹침
+    "Mysore (Indian princely state)",  # → Mysore와 중복
+}
+
+# ─── 한국어 이름 충돌 해소 ─────────────────────────────────────
+# [cl] 서로 다른 엔티티인데 번역이 같아진 경우 구별
+NAME_KO_OVERRIDES = {
+    "Imperial Hungary": "헝가리 (오스트리아-헝가리)",
+    "Swedes and Goths": "스웨덴 (중세)",
+    "Dahomey": "다호메이 왕국",
+    "Burmese": "버마족",
+    "Imerina": "이메리나 왕국",
+    "Angola (Portugal)": "앙골라 (포르투갈령)",
+    "Senegal (FR)": "세네갈 (프랑스령)",
+    "Guyana (Netherlands)": "가이아나 (네덜란드령)",
+    "Aché": "아체족 (파라과이)",
+}
+
+# ─── 대국 라벨 좌표: 수도 → 국토 중심 ─────────────────────────
+# [cl] 국토가 넓은데 수도가 구석에 있는 나라들의 라벨 위치 보정
+LABEL_COORDS_OVERRIDE = {
+    # 미국: DC → 미 대륙 중부 (캔자스)
+    "United States of America": (-98.5, 39.5),
+    # 캐나다: 오타와 → 캐나다 중부 (서스캐처원)
+    "Canada": (-96.0, 56.0),
+    # 러시아 제국: 모스크바 → 시베리아 방향
+    "Russian Empire": (80.0, 60.0),
+    # 러시아 차르국
+    "Tsardom of Russia": (55.0, 57.0),
+    # 청나라: 베이징 → 중국 중부
+    "Qing Empire": (103.0, 35.0),
+    # 명나라
+    "Ming Empire": (108.0, 33.0),
+    # 원나라
+    "Yuan Dynasty": (108.0, 42.0),
+    # 당나라
+    "Tang Empire": (105.0, 35.0),
+    # 한나라
+    "Han Empire": (108.0, 34.0),
+    # 몽골 제국
+    "Mongol Empire": (100.0, 47.0),
+    # 호주 (가장 넓은 식민지)
+    "New South Wales (UK)": (147.0, -30.0),
+    "Queensland (UK)": (146.0, -22.0),
+    "South Australia (UK)": (136.0, -30.0),
+    "Western Australia (UK)": (122.0, -26.0),
+    "Northern Territory (UK)": (134.0, -20.0),
+    "Victoria (UK)": (145.0, -37.0),
+    # 브라질 제국
+    "Kingdom of Brazil": (-50.0, -14.0),
+    "Vice-Royalty of Brazil": (-50.0, -14.0),
+    "Viceroyalty of Brazil": (-50.0, -14.0),
+    # 영국령 인도
+    "British Raj": (80.0, 22.0),
+    "British East India Company": (80.0, 22.0),
+    # 인도 (무굴 등)
+    "Mughal Empire": (80.0, 24.0),
+    "India": (80.0, 22.0),
+    # 페르시아/이란
+    "Achaemenid Empire": (52.0, 32.0),
+    "Safavid Empire": (52.0, 33.0),
+    "Qajar Empire": (52.0, 33.0),
+    # 오스만 제국
+    "Ottoman Empire": (33.0, 39.0),
+    # 로마 제국
+    "Roman Empire": (15.0, 42.0),
+    # 아르헨티나
+    "Argentina": (-64.0, -34.0),
+    # 콩고
+    "Belgian Congo": (23.0, -3.0),
+    "Congo Free State": (23.0, -3.0),
+    # 수단
+    "Anglo-Egyptian Sudan": (30.0, 15.0),
+    # 알제리
+    "Algeria (FR)": (3.0, 28.0),
+    # 리비아
+    "Italian Libya": (17.0, 27.0),
+}
+
+
 # ─── 메인 빌드 로직 ───────────────────────────────────────────
 
 def main():
@@ -284,7 +377,13 @@ def main():
     matched_gemini = 0
     unmatched = 0
 
+    dedup_count = 0
     for key, ls in lifespans.items():
+        # 중복 엔티티 제거
+        if key in DEDUP_REMOVE:
+            dedup_count += 1
+            continue
+
         # 메타데이터 조회
         meta = meta_all.get(key, {})
 
@@ -303,9 +402,11 @@ def main():
             source = "hb_lifespan"
             unmatched += 1
 
-        # 좌표 결정: capital_coords > centroid > None
+        # 좌표 결정: LABEL_COORDS_OVERRIDE > capital_coords > centroid
         coords = None
-        if meta.get("capital_coords"):
+        if key in LABEL_COORDS_OVERRIDE:
+            coords = list(LABEL_COORDS_OVERRIDE[key])
+        elif meta.get("capital_coords"):
             coords = meta["capital_coords"]
         elif key in centroids:
             coords = list(centroids[key])
@@ -317,10 +418,13 @@ def main():
             # 좌표 없으면 스킵 (렌더링 불가)
             continue
 
+        # 한국어 이름 결정: NAME_KO_OVERRIDES > 메타 > lifespan
+        name_ko = NAME_KO_OVERRIDES.get(key) or meta.get("display_name_ko") or ls.get("ko") or ""
+
         entry = {
             "id": key,
             "name_en": meta.get("display_name_en") or ls.get("en") or key,
-            "name_ko": meta.get("display_name_ko") or ls.get("ko") or "",
+            "name_ko": name_ko,
             "name_local": meta.get("display_name_local", ""),
             "start_year": start,
             "end_year": end,
@@ -332,6 +436,8 @@ def main():
             "source": source,
         }
         timeline.append(entry)
+
+    print(f"  중복 제거: {dedup_count}개")
 
     print(f"  Gemini 매칭: {matched_gemini}개, 미매칭(HB 원본): {unmatched}개")
 
@@ -353,7 +459,7 @@ def main():
         if not start or not end:
             continue
 
-        coords = MANUAL_COORDS.get(ename)
+        coords = LABEL_COORDS_OVERRIDE.get(ename) or MANUAL_COORDS.get(ename)
         if not coords:
             continue
 
