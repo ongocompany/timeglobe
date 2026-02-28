@@ -244,7 +244,7 @@
     "name_en": "Assyrian Empire",
     "name_ko": "아시리아",
     "start": "BC 2024",
-    "end": "BC 608",
+    "end": "BC 910",
     "lon": "43.3",
     "lat": "36.0",
     "type": "historical",
@@ -304,23 +304,11 @@
     "name_en": "Babylonia",
     "name_ko": "바빌로니아",
     "start": "BC 1900",
-    "end": "BC 538",
+    "end": "BC 625",
     "lon": "44.5",
     "lat": "32.5",
     "type": "historical",
     "lineage_id": "L0005",
-    "tier": null
-  },
-  {
-    "qid": "Q733897",
-    "name_en": "Old Babylonian Empire",
-    "name_ko": "고바빌로니아 제국",
-    "start": "BC 1829",
-    "end": "BC 1749",
-    "lon": "44.42",
-    "lat": "32.54",
-    "type": "historical",
-    "lineage_id": null,
     "tier": null
   },
   {
@@ -1540,7 +1528,7 @@
     "name_en": "Roman Republic",
     "name_ko": "로마 공화국",
     "start": "BC 508",
-    "end": "BC 26",
+    "end": "BC 27",
     "lon": "12.5",
     "lat": "41.9",
     "type": "historical",
@@ -2428,7 +2416,7 @@
     "name_en": "Silla",
     "name_ko": "신라",
     "start": "BC 56",
-    "end": "892",
+    "end": "668",
     "lon": "129.42",
     "lat": "35.96",
     "type": "historical",
@@ -2553,18 +2541,6 @@
     "lat": "22.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
-  },
-  {
-    "qid": "Q28084",
-    "name_en": "Gaya confederacy",
-    "name_ko": "가야",
-    "start": "42",
-    "end": "562",
-    "lon": "128.23",
-    "lat": "35.16",
-    "type": "historical",
-    "lineage_id": "L0045",
     "tier": null
   },
   {
@@ -3724,7 +3700,7 @@
     "name_en": "Gaelic Ireland",
     "name_ko": "게일 아일랜드",
     "start": "500",
-    "end": "1603",
+    "end": "1542",
     "lon": "-6.25",
     "lat": "53.333333333",
     "type": "historical",
@@ -3760,7 +3736,7 @@
     "name_en": "Principality of Kyiv",
     "name_ko": "키예프 공국",
     "start": "500",
-    "end": "1471",
+    "end": "882",
     "lon": "30.52",
     "lat": "50.45",
     "type": "historical",
@@ -4804,7 +4780,7 @@
     "name_en": "Kanem Empire",
     "name_ko": "카넴 제국",
     "start": "700",
-    "end": "1376",
+    "end": "1100",
     "lon": "14.533",
     "lat": "13.099",
     "type": "historical",
@@ -6268,7 +6244,7 @@
     "name_en": "Duchy of Bavaria",
     "name_ko": "바이에른 공국",
     "start": "907",
-    "end": "1805",
+    "end": "1623",
     "lon": "11.58",
     "lat": "48.14",
     "type": "historical",
@@ -7366,18 +7342,6 @@
     "type": "historical",
     "lineage_id": null,
     "tier": "low"
-  },
-  {
-    "qid": "Q577867",
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "start": "1025",
-    "end": "1385",
-    "lon": "21.01",
-    "lat": "52.23",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
   },
   {
     "qid": "Q22686515",
@@ -8572,7 +8536,7 @@
     "name_en": "Duchy of Austria",
     "name_ko": "오스트리아 공국",
     "start": "1156",
-    "end": "1453",
+    "end": "1358",
     "lon": "16.366666666",
     "lat": "48.216666666",
     "type": "historical",
@@ -8752,7 +8716,7 @@
     "name_en": "Duchy of Opole",
     "name_ko": "",
     "start": "1172",
-    "end": "1532",
+    "end": "1202",
     "lon": "17.916666666",
     "lat": "50.666666666",
     "type": "historical",
@@ -9862,18 +9826,6 @@
     "type": "historical",
     "lineage_id": null,
     "tier": "low"
-  },
-  {
-    "qid": "Q1656775",
-    "name_en": "Kingdom of Lithuania",
-    "name_ko": "리투아니아 왕국",
-    "start": "1251",
-    "end": "1263",
-    "lon": "24.85",
-    "lat": "54.883333333",
-    "type": "historical",
-    "lineage_id": "L0132",
-    "tier": null
   },
   {
     "qid": "Q6750512",
@@ -11104,7 +11056,7 @@
     "name_en": "Kingdom of Sardinia",
     "name_ko": "사르데냐 왕국",
     "start": "1324",
-    "end": "1861",
+    "end": "1720",
     "lon": "7.69",
     "lat": "45.07",
     "type": "historical",
@@ -11704,7 +11656,7 @@
     "name_en": "Archduchy of Austria",
     "name_ko": "오스트리아 대공국",
     "start": "1358",
-    "end": "1918",
+    "end": "1804",
     "lon": "16.3667",
     "lat": "48.2167",
     "type": "historical",
@@ -11803,18 +11755,6 @@
     "end": "1371",
     "lon": "106.55",
     "lat": "29.56",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
-  },
-  {
-    "qid": "Q7882199",
-    "name_en": "Burgundian State",
-    "name_ko": "부르고뉴 공작 영지",
-    "start": "1363",
-    "end": "1559",
-    "lon": "5.04",
-    "lat": "47.32",
     "type": "historical",
     "lineage_id": null,
     "tier": null
@@ -12070,18 +12010,6 @@
     "type": "historical",
     "lineage_id": null,
     "tier": "low"
-  },
-  {
-    "qid": "Q171348",
-    "name_en": "Crown of the Kingdom of Poland",
-    "name_ko": "폴란드 왕국 왕관령",
-    "start": "1386",
-    "end": "1795",
-    "lon": "19.94",
-    "lat": "50.06",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
   },
   {
     "qid": "Q7245103",
@@ -14076,18 +14004,6 @@
     "tier": null
   },
   {
-    "qid": "Q600093",
-    "name_en": "Habsburg Spain",
-    "name_ko": "스페인 합스부르크",
-    "start": "1516",
-    "end": "1700",
-    "lon": "-3.7",
-    "lat": "40.42",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
-  },
-  {
     "qid": "Q7245108",
     "name_en": "Mount Lebanon Emirate",
     "name_ko": "",
@@ -14217,18 +14133,6 @@
     "lat": "48.2",
     "type": "historical",
     "lineage_id": "L0118",
-    "tier": null
-  },
-  {
-    "qid": "Q253094",
-    "name_en": "Kingdom of Hungary",
-    "name_ko": "헝가리 왕국",
-    "start": "1526",
-    "end": "1867",
-    "lon": "19.04",
-    "lat": "47.5",
-    "type": "historical",
-    "lineage_id": null,
     "tier": null
   },
   {
@@ -15240,18 +15144,6 @@
     "tier": null
   },
   {
-    "qid": "Q157367",
-    "name_en": "Brandenburg-Prussia",
-    "name_ko": "브란덴부르크-프로이센",
-    "start": "1618",
-    "end": "1701",
-    "lon": "13.4",
-    "lat": "52.516666666",
-    "type": "historical",
-    "lineage_id": "L0152",
-    "tier": null
-  },
-  {
     "qid": "Q2817348",
     "name_en": "Bima Sultanate",
     "name_ko": "",
@@ -15540,18 +15432,6 @@
     "tier": "low"
   },
   {
-    "qid": "Q1407718",
-    "name_en": "Confederate Ireland",
-    "name_ko": "아일랜드 맹방",
-    "start": "1642",
-    "end": "1652",
-    "lon": "-7.25",
-    "lat": "52.65",
-    "type": "historical",
-    "lineage_id": "L0068",
-    "tier": null
-  },
-  {
     "qid": "Q3960459",
     "name_en": "Kingdom of Sikkim",
     "name_ko": "시킴 왕국",
@@ -15621,18 +15501,6 @@
     "lat": "54.083333333",
     "type": "historical",
     "lineage_id": "L0152",
-    "tier": null
-  },
-  {
-    "qid": "Q330362",
-    "name_en": "Commonwealth of England",
-    "name_ko": "잉글랜드 연방",
-    "start": "1649",
-    "end": "1660",
-    "lon": "-0.11666667",
-    "lat": "51.5",
-    "type": "historical",
-    "lineage_id": "L0060",
     "tier": null
   },
   {
@@ -16000,7 +15868,7 @@
     "name_en": "Omani Empire",
     "name_ko": "오만 제국",
     "start": "1692",
-    "end": "1856",
+    "end": "1820",
     "lon": "58.59",
     "lat": "23.61",
     "type": "historical",
@@ -16440,18 +16308,6 @@
     "tier": "low"
   },
   {
-    "qid": "Q2577303",
-    "name_en": "Kingdom of Sardinia",
-    "name_ko": "피에몬테-사르데냐",
-    "start": "1720",
-    "end": "1861",
-    "lon": "7.69",
-    "lat": "45.07",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
-  },
-  {
     "qid": "Q102133106",
     "name_en": "Kingdom of Nafana",
     "name_ko": "",
@@ -16864,7 +16720,7 @@
     "name_en": "Sikh Confederacy",
     "name_ko": "시크 연맹",
     "start": "1748",
-    "end": "1799",
+    "end": "1733",
     "lon": "74.9",
     "lat": "31.6",
     "type": "historical",
@@ -17044,7 +16900,7 @@
     "name_en": "Hesse-Hanau",
     "name_ko": "헤센하나우 백국",
     "start": "1760",
-    "end": "1821",
+    "end": "1806",
     "lon": "8.92",
     "lat": "50.13",
     "type": "historical",
@@ -17592,18 +17448,6 @@
     "tier": "low"
   },
   {
-    "qid": "Q877619",
-    "name_en": "French Consulate",
-    "name_ko": "프랑스 통령정부",
-    "start": "1799",
-    "end": "1804",
-    "lon": "2.35",
-    "lat": "48.86",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
-  },
-  {
     "qid": "Q188161",
     "name_en": "Dutch East Indies",
     "name_ko": "네덜란드령 동인도",
@@ -18118,18 +17962,6 @@
     "type": "historical",
     "lineage_id": null,
     "tier": "low"
-  },
-  {
-    "qid": "Q48779892",
-    "name_en": "Kingdom of Naples",
-    "name_ko": "나폴리 왕국 (1806년~1815년)",
-    "start": "1806",
-    "end": "1815",
-    "lon": "14.27",
-    "lat": "40.85",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
   },
   {
     "qid": "Q698089",
@@ -18880,7 +18712,7 @@
     "name_en": "Provisional Government of Mexico",
     "name_ko": "멕시코 임시정부",
     "start": "1823",
-    "end": "1824",
+    "end": "1823",
     "lon": "-99.13",
     "lat": "19.43",
     "type": "historical",
@@ -20148,18 +19980,6 @@
     "tier": null
   },
   {
-    "qid": "Q497777",
-    "name_en": "First Spanish Republic",
-    "name_ko": "스페인 제1공화국",
-    "start": "1873",
-    "end": "1874",
-    "lon": "-3.5",
-    "lat": "40.2",
-    "type": "historical",
-    "lineage_id": "L0069",
-    "tier": null
-  },
-  {
     "qid": "Q135235625",
     "name_en": "Republic of Maganja da Costa",
     "name_ko": "",
@@ -20361,18 +20181,6 @@
     "lat": "-22.0",
     "type": "historical",
     "lineage_id": "L0189",
-    "tier": null
-  },
-  {
-    "qid": "Q329618",
-    "name_en": "German colonial empire",
-    "name_ko": "독일 식민제국",
-    "start": "1884",
-    "end": "1920",
-    "lon": "13.383333333",
-    "lat": "52.516666666",
-    "type": "historical",
-    "lineage_id": "L0152",
     "tier": null
   },
   {
@@ -25372,7 +25180,7 @@
     "name_en": "Kingdom of Denmark",
     "name_ko": "덴마크 왕국",
     "start": "936",
-    "end": "Present",
+    "end": "1536",
     "lat": "55.7",
     "lon": "12.6",
     "type": "historical",
