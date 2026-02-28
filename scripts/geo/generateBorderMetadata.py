@@ -35,7 +35,9 @@ PALETTES = {
     "British":       "#F5B7B1",  # 대영제국 (핑크)
     "French":        "#5DADE2",  # 프랑스 (블루)
     "Spanish_Port":  "#EB984E",  # 스페인/포르투갈 (테라코타)
-    "Roman_Italy":   "#8E44AD",  # 로마/이탈리아 (보라)
+    "Roman_Italy":   "#8E44AD",  # 로마 공화국/제국/이탈리아 (보라)
+    "Byzantine":     "#2E86C1",  # 동로마/비잔틴 제국 (파란색) — 그리스정교 계열
+    "Roman_West":    "#C39BD3",  # 서로마 제국 (연보라) — 쇠퇴하는 서방
     "Germanic":      "#CD6155",  # 독일/오스트리아 (다크 레드)
     "Russian":       "#7FB3D8",  # 러시아 (라이트 블루)
     "Nordic":        "#85C1E9",  # 북유럽 스칸디나비아 (스카이)
@@ -315,21 +317,37 @@ ENTITY_RULES = {
     "central Asian khanates": {"name_local": "وسط آسیا", "name_en": "Central Asian Khanates", "palette": "Islamic_Turk"},
     "Bokhara Khanate":   {"name_local": "بخارا", "name_en": "Bukhara Khanate", "palette": "Islamic_Turk"},
 
-    # ━━━ 유럽: 고대/중세 ━━━
+    # ━━━ 유럽: 로마 ━━━
     "Roman Republic":    {"name_local": "SPQR", "name_en": "Roman Republic", "palette": "Roman_Italy"},
     "Roman Empire":      {"name_local": "SPQR", "name_en": "Roman Empire", "palette": "Roman_Italy"},
-    "Rome":              {"name_local": "Roma", "name_en": "Rome", "palette": "Roman_Italy"},
-    "Byzantine Empire":  {"name_local": "Βασιλεία Ῥωμαίων", "name_en": "Byzantine Empire", "palette": "Roman_Italy"},
-    "Eastern Roman Empire": {"name_local": "Βασιλεία Ῥωμαίων", "name_en": "Eastern Roman Empire", "palette": "Roman_Italy"},
-    "Western Roman Empire": {"name_local": "SPQR", "name_en": "Western Roman Empire", "palette": "Roman_Italy"},
-    "Visigothic Kingdom": {"name_local": "Regnum Visigothorum", "name_en": "Visigothic Kingdom", "palette": "Germanic"},
+    "Rome":              {"name_local": "SPQR", "name_en": "Rome", "palette": "Roman_Italy"},
+    # [cl] 300년 사분통치 (Tetrarchy) — 4개 분할 통치 영역
+    "Rome (Constantinus)":  {"name_local": "SPQR", "name_en": "Roman Empire (Constantine)", "palette": "Roman_Italy"},
+    "Rome (Diocletianus)":  {"name_local": "SPQR", "name_en": "Roman Empire (Diocletian)", "palette": "Roman_Italy"},
+    "Rome (Galerius)":      {"name_local": "SPQR", "name_en": "Roman Empire (Galerius)", "palette": "Roman_Italy"},
+    "Rome (Maximian)":      {"name_local": "SPQR", "name_en": "Roman Empire (Maximian)", "palette": "Roman_Italy"},
+    # [cl] 동로마/서로마 분리 — 색상 구분
+    "Byzantine Empire":  {"name_local": "Βασιλεία Ῥωμαίων", "name_en": "Byzantine Empire", "palette": "Byzantine"},
+    "Eastern Roman Empire": {"name_local": "Βασιλεία Ῥωμαίων", "name_en": "Eastern Roman Empire", "palette": "Byzantine"},
+    "Western Roman Empire": {"name_local": "SPQR", "name_en": "Western Roman Empire", "palette": "Roman_West"},
+    # [cl] 게르만 민족 대이동기 (400-600)
+    "Franks":            {"name_local": "Franci", "name_en": "Franks", "palette": "French"},
+    "Ostrogoths":        {"name_local": "Ostrogothi", "name_en": "Ostrogothic Kingdom", "palette": "Germanic"},
+    "Visigoths":         {"name_local": "Visigothi", "name_en": "Visigothic Kingdom", "palette": "Spanish_Port"},
+    "Vandals":           {"name_local": "Vandali", "name_en": "Vandal Kingdom", "palette": "Africa_West"},
+    "Lombard principalities": {"name_local": "Longobardi", "name_en": "Lombard Principalities", "palette": "Germanic"},
+    # [cl] BC 미매핑 보완
+    "Carthage":          {"name_local": "Qart-ḥadašt", "name_en": "Carthage", "palette": "Africa_West"},
+    "Macedon and Hellenic League": {"name_local": "Μακεδονία", "name_en": "Macedon", "palette": "Greek"},
+    # ━━━ 유럽: 중세 ━━━
+    "Visigothic Kingdom": {"name_local": "Regnum Visigothorum", "name_en": "Visigothic Kingdom", "palette": "Spanish_Port"},
     "Hunnic Empire":     {"name_local": "Hún", "name_en": "Hunnic Empire", "palette": "Mongol"},
     "Sasanian Empire":   {"name_local": "ساسانیان", "name_en": "Sasanian Empire", "palette": "Persian"},
     "Carolingian Empire":{"name_local": "Karolinger", "name_en": "Carolingian Empire", "palette": "French"},
     "Frankish Kingdom":  {"name_local": "Francia", "name_en": "Frankish Kingdom", "palette": "French"},
     "Holy Roman Empire": {"name_local": "Heiliges Römisches Reich", "name_en": "Holy Roman Empire", "palette": "Germanic"},
-    "Papal States":      {"name_local": "Stato Pontificio", "name_en": "Papal States", "palette": "Roman_Italy"},
-    "Venice":            {"name_local": "Venezia", "name_en": "Venice", "palette": "Roman_Italy"},
+    "Papal States":      {"name_local": "Stato Pontificio", "name_en": "Papal States", "palette": "AncientNE"},
+    "Venice":            {"name_local": "Venezia", "name_en": "Venice", "palette": "EastEurope"},
     "Carthaginian Empire": {"name_local": "Carthago", "name_en": "Carthage", "palette": "Africa_West"},
     "Greek city-states": {"name_local": "Ελληνικές πόλεις", "name_en": "Greek City-States", "palette": "Greek"},
     "Greek colonies":    {"name_local": "Ελληνικές αποικίες", "name_en": "Greek Colonies", "palette": "Greek"},
@@ -398,7 +416,7 @@ ENTITY_RULES = {
     "Kingdom of Hungary": {"name_local": "Magyarország", "name_en": "Kingdom of Hungary", "palette": "EastEurope"},
     "Kingdom of Ireland": {"name_local": "Éire", "name_en": "Kingdom of Ireland", "palette": "British"},
     "Croatian kingdom":  {"name_local": "Hrvatska", "name_en": "Croatian Kingdom", "palette": "EastEurope"},
-    "Lombard duchies":   {"name_local": "Longobardi", "name_en": "Lombard Duchies", "palette": "Roman_Italy"},
+    "Lombard duchies":   {"name_local": "Longobardi", "name_en": "Lombard Duchies", "palette": "Germanic"},
 
     # ━━━ 유럽: 주요 열강 ━━━
     "United Kingdom":    {"name_local": "United Kingdom", "name_en": "United Kingdom", "palette": "British"},
@@ -1019,6 +1037,18 @@ KOREAN_NAMES = {
     "Rome": "로마",
     "Byzantine Empire": "비잔틴 제국",
     "Eastern Roman Empire": "동로마 제국",
+    "Western Roman Empire": "서로마 제국",
+    "Roman Empire (Constantine)": "로마 제국 (콘스탄티누스)",
+    "Roman Empire (Diocletian)": "로마 제국 (디오클레티아누스)",
+    "Roman Empire (Galerius)": "로마 제국 (갈레리우스)",
+    "Roman Empire (Maximian)": "로마 제국 (막시미아누스)",
+    # [cl] 게르만 민족 대이동
+    "Franks": "프랑크족",
+    "Ostrogothic Kingdom": "동고트 왕국",
+    "Visigothic Kingdom": "서고트 왕국",
+    "Vandal Kingdom": "반달 왕국",
+    "Lombard Principalities": "롬바르드 공국",
+    "Macedon": "마케도니아",
     "Carolingian Empire": "카롤링거 제국",
     "Frankish Kingdom": "프랑크 왕국",
     "Holy Roman Empire": "신성 로마 제국",
@@ -1706,6 +1736,23 @@ YEAR_RANGE_OVERRIDES = {
     ("Taiwan", 1895, 1945): {
         "name_local": "臺灣", "name_en": "Taiwan",
         "colony": True, "ruler": "大日本帝国",
+    },
+    # ━━━ 로마: BC 시기 "Rome" → 로마 공화국 (HB 데이터가 "Rome"과 "Roman Republic"을 혼용) ━━━
+    ("Rome", -753, -27): {
+        "name_local": "SPQR", "name_en": "Roman Republic", "name_ko": "로마 공화국",
+    },
+    # ━━━ 로마: 300년 사분통치 → 한국어 이름 ━━━
+    ("Rome (Constantinus)", 250, 340): {
+        "name_local": "SPQR", "name_en": "Roman Empire (Constantine)", "name_ko": "로마 제국 (콘스탄티누스)",
+    },
+    ("Rome (Diocletianus)", 250, 340): {
+        "name_local": "SPQR", "name_en": "Roman Empire (Diocletian)", "name_ko": "로마 제국 (디오클레티아누스)",
+    },
+    ("Rome (Galerius)", 250, 340): {
+        "name_local": "SPQR", "name_en": "Roman Empire (Galerius)", "name_ko": "로마 제국 (갈레리우스)",
+    },
+    ("Rome (Maximian)", 250, 340): {
+        "name_local": "SPQR", "name_en": "Roman Empire (Maximian)", "name_ko": "로마 제국 (막시미아누스)",
     },
 }
 
