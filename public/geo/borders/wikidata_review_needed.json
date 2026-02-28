@@ -1,0 +1,57 @@
+[
+ {
+  "qid": "Q11768",
+  "name_en": "Ancient Egypt",
+  "name_ko": "고대 이집트",
+  "start": "BC 4000",
+  "end": "BC 29",
+  "lon": "31.3",
+  "lat": "29.8",
+  "type": "historical",
+  "review_note": "umbrella_entity_deleted: 하위 왕조 개별 등록됨, 빈 시대 보충 필요"
+ },
+ {
+  "qid": "Q1747689",
+  "name_en": "Ancient Rome",
+  "name_ko": "고대 로마",
+  "start": "BC 752",
+  "end": "476",
+  "lon": "12.48",
+  "lat": "41.89",
+  "type": "historical",
+  "review_note": "umbrella_entity_deleted: 하위 왕조 개별 등록됨, 빈 시대 보충 필요"
+ },
+ {
+  "qid": "Q19276517",
+  "name_en": "Kingdom of Persia",
+  "name_ko": "",
+  "start": "BC 299",
+  "end": "BC 211",
+  "lon": "",
+  "lat": "",
+  "type": "historical",
+  "review_note": "umbrella_entity_deleted: 하위 왕조 개별 등록됨, 빈 시대 보충 필요"
+ },
+ {
+  "qid": "Q12060881",
+  "name_en": "Chinese Empire",
+  "name_ko": "중국 제국",
+  "start": "BC 219",
+  "end": "1912",
+  "lon": "110.0",
+  "lat": "40.0",
+  "type": "historical",
+  "review_note": "umbrella_entity_deleted: 하위 왕조 개별 등록됨, 빈 시대 보충 필요"
+ },
+ {
+  "qid": "Q3181749",
+  "name_en": "Arab Caliphate",
+  "name_ko": "",
+  "start": "632",
+  "end": "1517",
+  "lon": "",
+  "lat": "",
+  "type": "historical",
+  "review_note": "umbrella_entity_deleted: 하위 왕조 개별 등록됨, 빈 시대 보충 필요"
+ }
+]

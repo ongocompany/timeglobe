@@ -1,0 +1,1522 @@
+[
+ {
+  "qid": "Q19336869",
+  "name_en": "County of Blois",
+  "name_ko": "",
+  "start": "500",
+  "end": "1660",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2991433",
+  "name_en": "County of Sobrarbe",
+  "name_ko": "",
+  "start": "724",
+  "end": "1045",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2037817",
+  "name_en": "County of Girona",
+  "name_ko": "",
+  "start": "785",
+  "end": "897",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1541779",
+  "name_en": "County of Osona",
+  "name_ko": "",
+  "start": "798",
+  "end": "1364",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q652275",
+  "name_en": "County of Cerdanya",
+  "name_ko": "",
+  "start": "798",
+  "end": "1403",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1406277",
+  "name_en": "Viscounts of Béarn",
+  "name_ko": "",
+  "start": "801",
+  "end": "1607",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3556993",
+  "name_en": "Viscounty of Léon",
+  "name_ko": "",
+  "start": "801",
+  "end": "1276",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1235737",
+  "name_en": "County of Aragon",
+  "name_ko": "",
+  "start": "802",
+  "end": "1035",
+  "lon": "-0.55",
+  "lat": "42.55",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1541699",
+  "name_en": "County of Empúries",
+  "name_ko": "",
+  "start": "812",
+  "end": "1402",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1541813",
+  "name_en": "County of Roussillon",
+  "name_ko": "",
+  "start": "812",
+  "end": "1172",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1541812",
+  "name_en": "County of Troyes",
+  "name_ko": "",
+  "start": "820",
+  "end": "1101",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2991382",
+  "name_en": "County of Provence",
+  "name_ko": "",
+  "start": "855",
+  "end": "1487",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1139807",
+  "name_en": "County of Portugal",
+  "name_ko": "포르투갈 백작령",
+  "start": "868",
+  "end": "1139",
+  "lon": "-8.42",
+  "lat": "41.53",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1541787",
+  "name_en": "County of Pallars",
+  "name_ko": "",
+  "start": "870",
+  "end": "1011",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q762943",
+  "name_en": "County of Holland",
+  "name_ko": "홀란트 백국",
+  "start": "880",
+  "end": "1795",
+  "lon": "4.536777777",
+  "lat": "52.16325",
+  "type": "historical"
+ },
+ {
+  "qid": "Q574644",
+  "name_en": "Prince-Bishopric of Speyer",
+  "name_ko": "",
+  "start": "888",
+  "end": "1803",
+  "lon": "8.41666667",
+  "lat": "49.31666667",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2067314",
+  "name_en": "County of Bigorre",
+  "name_ko": "",
+  "start": "900",
+  "end": "1425",
+  "lon": "0.075802",
+  "lat": "43.232678",
+  "type": "historical"
+ },
+ {
+  "qid": "Q544636",
+  "name_en": "County of Verdun",
+  "name_ko": "",
+  "start": "900",
+  "end": "1134",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q657448",
+  "name_en": "County of Conflent",
+  "name_ko": "",
+  "start": "900",
+  "end": "1126",
+  "lon": "2.348327777",
+  "lat": "42.595775",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1297894",
+  "name_en": "County of Ribagorza",
+  "name_ko": "",
+  "start": "900",
+  "end": "1598",
+  "lon": "0.483333333",
+  "lat": "42.116944444",
+  "type": "historical"
+ },
+ {
+  "qid": "Q572222",
+  "name_en": "County of Horne",
+  "name_ko": "",
+  "start": "920",
+  "end": "1795",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1541613",
+  "name_en": "County of Astarac",
+  "name_ko": "",
+  "start": "920",
+  "end": "1300",
+  "lon": "0.4",
+  "lat": "43.51",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3845403",
+  "name_en": "March of Milan",
+  "name_ko": "",
+  "start": "951",
+  "end": "1193",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q868222",
+  "name_en": "County of Coimbra",
+  "name_ko": "",
+  "start": "959",
+  "end": "1093",
+  "lon": "-8.407739",
+  "lat": "40.201272",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1411349",
+  "name_en": "County of Armagnac",
+  "name_ko": "",
+  "start": "960",
+  "end": "1607",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q5177890",
+  "name_en": "County of Luxembourg",
+  "name_ko": "",
+  "start": "963",
+  "end": "1354",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q426488",
+  "name_en": "March of Turin",
+  "name_ko": "토리노 변경",
+  "start": "964",
+  "end": "1091",
+  "lon": "7.7",
+  "lat": "45.07",
+  "type": "historical"
+ },
+ {
+  "qid": "Q170180",
+  "name_en": "Margraviate of Meissen",
+  "name_ko": "",
+  "start": "965",
+  "end": "1423",
+  "lon": "13.4775",
+  "lat": "51.163611111",
+  "type": "historical"
+ },
+ {
+  "qid": "Q546266",
+  "name_en": "County of Champagne",
+  "name_ko": "",
+  "start": "967",
+  "end": "1314",
+  "lon": "4.0716",
+  "lat": "48.2956",
+  "type": "historical"
+ },
+ {
+  "qid": "Q283627",
+  "name_en": "Margraviate of Austria",
+  "name_ko": "오스트리아 변경백국",
+  "start": "976",
+  "end": "1156",
+  "lon": "16.366666666",
+  "lat": "48.216666666",
+  "type": "historical"
+ },
+ {
+  "qid": "Q599613",
+  "name_en": "County of Namur",
+  "name_ko": "",
+  "start": "981",
+  "end": "1795",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q158835",
+  "name_en": "Prince-Bishopric of Liège",
+  "name_ko": "리에주 주교후국",
+  "start": "985",
+  "end": "1795",
+  "lon": "5.5",
+  "lat": "50.66666667",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1541642",
+  "name_en": "County of Besalú",
+  "name_ko": "",
+  "start": "988",
+  "end": "1111",
+  "lon": "2.699525",
+  "lat": "42.198925",
+  "type": "historical"
+ },
+ {
+  "qid": "Q20103241",
+  "name_en": "County of Ripoll",
+  "name_ko": "",
+  "start": "988",
+  "end": "1111",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q17015016",
+  "name_en": "Prince-Bishopric of Verdun",
+  "name_ko": "",
+  "start": "997",
+  "end": "1552",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q322763",
+  "name_en": "County of Dagsburg",
+  "name_ko": "",
+  "start": "1001",
+  "end": "1793",
+  "lon": "7.2372",
+  "lat": "48.602",
+  "type": "historical"
+ },
+ {
+  "qid": "Q276841",
+  "name_en": "Taifa of Badajoz",
+  "name_ko": "",
+  "start": "1009",
+  "end": "1151",
+  "lon": "-6.97167",
+  "lat": "38.8772",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2670895",
+  "name_en": "Taifa of Alpuente",
+  "name_ko": "",
+  "start": "1009",
+  "end": "1106",
+  "lon": "-1.01389",
+  "lat": "39.8778",
+  "type": "historical"
+ },
+ {
+  "qid": "Q252323",
+  "name_en": "Taifa of Dénia",
+  "name_ko": "",
+  "start": "1010",
+  "end": "1227",
+  "lon": "-0.166666666",
+  "lat": "38.75",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2580032",
+  "name_en": "Taifa of Almería",
+  "name_ko": "",
+  "start": "1010",
+  "end": "1147",
+  "lon": "-2.45",
+  "lat": "36.83333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2666791",
+  "name_en": "Taifa of Morón",
+  "name_ko": "",
+  "start": "1010",
+  "end": "1066",
+  "lon": "-5.451667",
+  "lat": "37.122222",
+  "type": "historical"
+ },
+ {
+  "qid": "Q605930",
+  "name_en": "Taifa of Tortosa",
+  "name_ko": "",
+  "start": "1010",
+  "end": "1099",
+  "lon": "0.519167",
+  "lat": "40.8128",
+  "type": "historical"
+ },
+ {
+  "qid": "Q13534654",
+  "name_en": "Taifa of Toledo",
+  "name_ko": "",
+  "start": "1010",
+  "end": "1085",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q676811",
+  "name_en": "Taifa of Valencia",
+  "name_ko": "",
+  "start": "1010",
+  "end": "1094",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2390604",
+  "name_en": "Taifa of Arcos",
+  "name_ko": "",
+  "start": "1011",
+  "end": "1145",
+  "lon": "-5.8",
+  "lat": "36.75",
+  "type": "historical"
+ },
+ {
+  "qid": "Q921067",
+  "name_en": "Taifa of Murcia",
+  "name_ko": "",
+  "start": "1011",
+  "end": "1266",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2060937",
+  "name_en": "Taifa of Albarracín",
+  "name_ko": "",
+  "start": "1012",
+  "end": "1104",
+  "lon": "-1.45",
+  "lat": "40.4",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2081763",
+  "name_en": "Taifa of Saltés and Huelva",
+  "name_ko": "",
+  "start": "1012",
+  "end": "1051",
+  "lon": "-6.95",
+  "lat": "37.216666666",
+  "type": "historical"
+ },
+ {
+  "qid": "Q205708",
+  "name_en": "Taifa of Granada",
+  "name_ko": "",
+  "start": "1013",
+  "end": "1090",
+  "lon": "-3.58333",
+  "lat": "37.1667",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2668584",
+  "name_en": "Taifa of Carmona",
+  "name_ko": "",
+  "start": "1013",
+  "end": "1150",
+  "lon": "-5.63333",
+  "lat": "37.4667",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2077765",
+  "name_en": "Taifa of Santa Maria do Algarve",
+  "name_ko": "",
+  "start": "1018",
+  "end": "1051",
+  "lon": "-7.91666667",
+  "lat": "37.03333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q33061",
+  "name_en": "Taifa of Zaragoza",
+  "name_ko": "",
+  "start": "1018",
+  "end": "1110",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2620565",
+  "name_en": "Taifa of Lisbon",
+  "name_ko": "",
+  "start": "1022",
+  "end": "1093",
+  "lon": "-9.139336833",
+  "lat": "38.722251833",
+  "type": "historical"
+ },
+ {
+  "qid": "Q276951",
+  "name_en": "Taifa of Seville",
+  "name_ko": "",
+  "start": "1023",
+  "end": "1091",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2668600",
+  "name_en": "Taifa of Niebla",
+  "name_ko": "",
+  "start": "1023",
+  "end": "1053",
+  "lon": "-6.66667",
+  "lat": "37.35",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2976571",
+  "name_en": "County of Drenthe",
+  "name_ko": "",
+  "start": "1024",
+  "end": "1046",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q707767",
+  "name_en": "Prince-Bishopric of Utrecht",
+  "name_ko": "위트레흐트 주교국",
+  "start": "1024",
+  "end": "1528",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q267484",
+  "name_en": "Taifa of Málaga",
+  "name_ko": "",
+  "start": "1026",
+  "end": "1239",
+  "lon": "-4.4",
+  "lat": "36.73",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1994569",
+  "name_en": "Taifa of Silves",
+  "name_ko": "",
+  "start": "1027",
+  "end": "1063",
+  "lon": "-8.433333333",
+  "lat": "37.183333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q13496558",
+  "name_en": "Prince-Bishopric of Brixen",
+  "name_ko": "",
+  "start": "1027",
+  "end": "1803",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2191428",
+  "name_en": "Taifa of Jérica",
+  "name_ko": "",
+  "start": "1027",
+  "end": "1065",
+  "lon": "-0.571944444",
+  "lat": "39.910833333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q17176539",
+  "name_en": "County of Aversa",
+  "name_ko": "",
+  "start": "1030",
+  "end": "1156",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2285679",
+  "name_en": "Taifa of Córdoba",
+  "name_ko": "",
+  "start": "1031",
+  "end": "1070",
+  "lon": "-4.76667",
+  "lat": "37.8833",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2436604",
+  "name_en": "Taifa of Mértola",
+  "name_ko": "",
+  "start": "1033",
+  "end": "1151",
+  "lon": "-7.66666667",
+  "lat": "37.63333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1183407",
+  "name_en": "Taifa of Algeciras",
+  "name_ko": "",
+  "start": "1035",
+  "end": "1058",
+  "lon": "-5.45",
+  "lat": "36.1333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2524715",
+  "name_en": "Taifa of Ronda",
+  "name_ko": "",
+  "start": "1039",
+  "end": "1065",
+  "lon": "-5.16667",
+  "lat": "36.7333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2166417",
+  "name_en": "Taifa of Lérida",
+  "name_ko": "",
+  "start": "1039",
+  "end": "1110",
+  "lon": "0.61666667",
+  "lat": "41.61666667",
+  "type": "historical"
+ },
+ {
+  "qid": "Q589251",
+  "name_en": "County of Montbéliard",
+  "name_ko": "",
+  "start": "1042",
+  "end": "1793",
+  "lon": "6.79888889",
+  "lat": "47.51027778",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2324047",
+  "name_en": "County of Apulia",
+  "name_ko": "아풀리아 공작위",
+  "start": "1042",
+  "end": "1077",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2671329",
+  "name_en": "Taifa of Calatayud",
+  "name_ko": "",
+  "start": "1046",
+  "end": "1055",
+  "lon": "-1.633333333",
+  "lat": "41.35",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2235609",
+  "name_en": "Taifa of Huesca",
+  "name_ko": "",
+  "start": "1046",
+  "end": "1048",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2153653",
+  "name_en": "Taifa of Segorbe",
+  "name_ko": "",
+  "start": "1055",
+  "end": "1075",
+  "lon": "-9.1393",
+  "lat": "38.7223",
+  "type": "historical"
+ },
+ {
+  "qid": "Q5947557",
+  "name_en": "Taifa of Ceuta (1061-1084)",
+  "name_ko": "",
+  "start": "1061",
+  "end": "1084",
+  "lon": "-5.3",
+  "lat": "35.886669444",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1917014",
+  "name_en": "County of Sicily",
+  "name_ko": "시칠리아 백국",
+  "start": "1071",
+  "end": "1130",
+  "lon": "13.35",
+  "lat": "38.116666666",
+  "type": "historical"
+ },
+ {
+  "qid": "Q4899887",
+  "name_en": "Beylik of Tanrıbermiş",
+  "name_ko": "",
+  "start": "1074",
+  "end": "1098",
+  "lon": "27.35944444",
+  "lat": "37.92916667",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3315525",
+  "name_en": "Taifa of Majorca",
+  "name_ko": "",
+  "start": "1076",
+  "end": "1203",
+  "lon": "2.74667",
+  "lat": "39.6331",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2232777",
+  "name_en": "Taifa of Molina",
+  "name_ko": "",
+  "start": "1080",
+  "end": "1129",
+  "lon": "-1.883333333",
+  "lat": "40.85",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2991474",
+  "name_en": "County of Württemberg",
+  "name_ko": "",
+  "start": "1083",
+  "end": "1495",
+  "lon": "9.183333333",
+  "lat": "48.783333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2501055",
+  "name_en": "Beylik of Dilmaç",
+  "name_ko": "",
+  "start": "1085",
+  "end": "1394",
+  "lon": "42.108333333",
+  "lat": "38.4",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3775345",
+  "name_en": "Beylik of Çubukoğulları",
+  "name_ko": "",
+  "start": "1085",
+  "end": "1112",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2398434",
+  "name_en": "Taifa of Murviedro and Sagunto",
+  "name_ko": "",
+  "start": "1086",
+  "end": "1092",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q170390",
+  "name_en": "County of Oldenburg",
+  "name_ko": "",
+  "start": "1091",
+  "end": "1774",
+  "lon": "8.21594444",
+  "lat": "53.138",
+  "type": "historical"
+ },
+ {
+  "qid": "Q15714699",
+  "name_en": "Lordship of Valencia",
+  "name_ko": "",
+  "start": "1094",
+  "end": "1102",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1608299",
+  "name_en": "Lordship of Caesarea",
+  "name_ko": "",
+  "start": "1101",
+  "end": "1265",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q16631011",
+  "name_en": "Lordship of Arsuf",
+  "name_ko": "",
+  "start": "1101",
+  "end": "1265",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q9304513",
+  "name_en": "Lordship of Nablus",
+  "name_ko": "",
+  "start": "1106",
+  "end": "1187",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q9713085",
+  "name_en": "Lordship of Gibelet",
+  "name_ko": "",
+  "start": "1109",
+  "end": "1302",
+  "lon": "35.6464",
+  "lat": "34.12",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2048712",
+  "name_en": "Taifa of Rueda",
+  "name_ko": "",
+  "start": "1110",
+  "end": "1139",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q131545583",
+  "name_en": "Margraviate of Baden",
+  "name_ko": "",
+  "start": "1112",
+  "end": "1535",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3877418",
+  "name_en": "Lordship of Ibelin",
+  "name_ko": "",
+  "start": "1141",
+  "end": "1187",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2463081",
+  "name_en": "Taifa of Constantina and Hornachuelos",
+  "name_ko": "",
+  "start": "1143",
+  "end": "1150",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2643374",
+  "name_en": "Taifa of Santarém",
+  "name_ko": "",
+  "start": "1144",
+  "end": "1145",
+  "lon": "-9.1393",
+  "lat": "38.7223",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2548724",
+  "name_en": "Taifa of Jaén",
+  "name_ko": "",
+  "start": "1145",
+  "end": "1168",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3032694",
+  "name_en": "Taifa of Purchena",
+  "name_ko": "",
+  "start": "1145",
+  "end": "1150",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2327139",
+  "name_en": "Taifa of Guadix and Baza",
+  "name_ko": "",
+  "start": "1145",
+  "end": "1151",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2522604",
+  "name_en": "Taifa of Tejada",
+  "name_ko": "",
+  "start": "1146",
+  "end": "1150",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2250546",
+  "name_en": "Taifa of Tavira",
+  "name_ko": "",
+  "start": "1146",
+  "end": "1150",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q104192511",
+  "name_en": "Taifa of Valencia (second period)",
+  "name_ko": "",
+  "start": "1147",
+  "end": "1171",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2328476",
+  "name_en": "Taifa of Segura",
+  "name_ko": "",
+  "start": "1147",
+  "end": "1150",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q896856",
+  "name_en": "Prince-Bishopric of Konstanz",
+  "name_ko": "",
+  "start": "1155",
+  "end": "1803",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q527527",
+  "name_en": "Prince-Bishopric of Lübeck",
+  "name_ko": "",
+  "start": "1160",
+  "end": "1803",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3572054",
+  "name_en": "Lordship of Albarracin",
+  "name_ko": "",
+  "start": "1167",
+  "end": "1379",
+  "lon": "-1.444166666",
+  "lat": "40.405277777",
+  "type": "historical"
+ },
+ {
+  "qid": "Q844250",
+  "name_en": "Lordship of Ireland",
+  "name_ko": "아일랜드 영지",
+  "start": "1171",
+  "end": "1542",
+  "lon": "-6.25",
+  "lat": "53.333333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2670751",
+  "name_en": "Margraviate of Moravia",
+  "name_ko": "모라바 변경백국",
+  "start": "1182",
+  "end": "1918",
+  "lon": "17.0",
+  "lat": "50.0",
+  "type": "historical"
+ },
+ {
+  "qid": "Q885304",
+  "name_en": "Margraviate of Baden-Hachberg",
+  "name_ko": "",
+  "start": "1190",
+  "end": "1415",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2390694",
+  "name_en": "Lordship of Rappoltstein",
+  "name_ko": "",
+  "start": "1200",
+  "end": "1790",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q21077045",
+  "name_en": "Landgraviate of Upper Alsace",
+  "name_ko": "",
+  "start": "1200",
+  "end": "1648",
+  "lon": "7.3525",
+  "lat": "47.865555555",
+  "type": "historical"
+ },
+ {
+  "qid": "Q58942549",
+  "name_en": "Landgraviate of Lower Alsace",
+  "name_ko": "",
+  "start": "1200",
+  "end": "1646",
+  "lon": "7.783333333",
+  "lat": "48.816666666",
+  "type": "historical"
+ },
+ {
+  "qid": "Q428634",
+  "name_en": "Lordship of Negroponte",
+  "name_ko": "",
+  "start": "1204",
+  "end": "1470",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q19545518",
+  "name_en": "Lordship of Ferrara",
+  "name_ko": "",
+  "start": "1209",
+  "end": "1471",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q736217",
+  "name_en": "County of Molise",
+  "name_ko": "",
+  "start": "1221",
+  "end": "1861",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2684394",
+  "name_en": "Taifa of Baeza",
+  "name_ko": "",
+  "start": "1224",
+  "end": "1226",
+  "lon": "-3.46667",
+  "lat": "37.9833",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1614435",
+  "name_en": "Lordship of Rostock",
+  "name_ko": "",
+  "start": "1226",
+  "end": "1323",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1949209",
+  "name_en": "Taifa of Lorca",
+  "name_ko": "",
+  "start": "1228",
+  "end": "1250",
+  "lon": "-1.7",
+  "lat": "37.68333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2958284",
+  "name_en": "Taifa of Menorca",
+  "name_ko": "",
+  "start": "1228",
+  "end": "1287",
+  "lon": "4.033333333",
+  "lat": "39.966666666",
+  "type": "historical"
+ },
+ {
+  "qid": "Q104192518",
+  "name_en": "Taifa of Valencia (third period)",
+  "name_ko": "",
+  "start": "1228",
+  "end": "1238",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q11704201",
+  "name_en": "Taifa of Arjona",
+  "name_ko": "",
+  "start": "1232",
+  "end": "1244",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q764697",
+  "name_en": "Taifa of Orihuela",
+  "name_ko": "",
+  "start": "1239",
+  "end": "1249",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q11909242",
+  "name_en": "Beylik of Sinop",
+  "name_ko": "",
+  "start": "1247",
+  "end": "1330",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1469100",
+  "name_en": "Beylik of Karaman",
+  "name_ko": "",
+  "start": "1250",
+  "end": "1487",
+  "lon": "32.883333333",
+  "lat": "36.633333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q21027413",
+  "name_en": "County of Piedmont",
+  "name_ko": "",
+  "start": "1255",
+  "end": "1382",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q18590086",
+  "name_en": "County of Loano",
+  "name_ko": "",
+  "start": "1255",
+  "end": "1770",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q717451",
+  "name_en": "Beylik of Lâdik",
+  "name_ko": "",
+  "start": "1262",
+  "end": "1368",
+  "lon": "29.083333333",
+  "lat": "37.766666666",
+  "type": "historical"
+ },
+ {
+  "qid": "Q695322",
+  "name_en": "Landgraviate of Hesse",
+  "name_ko": "헤센 방백령",
+  "start": "1264",
+  "end": "1567",
+  "lon": "9.497778",
+  "lat": "51.319722",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1254667",
+  "name_en": "Beylik of Erzincan",
+  "name_ko": "",
+  "start": "1279",
+  "end": "1410",
+  "lon": "39.491388888",
+  "lat": "39.746388888",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2410637",
+  "name_en": "Beylik of Hamid",
+  "name_ko": "",
+  "start": "1280",
+  "end": "1391",
+  "lon": "30.448333333",
+  "lat": "38.078888888",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2830724",
+  "name_en": "Beylik of Alaiye",
+  "name_ko": "",
+  "start": "1293",
+  "end": "1471",
+  "lon": "31.99813",
+  "lat": "36.54566",
+  "type": "historical"
+ },
+ {
+  "qid": "Q941887",
+  "name_en": "Beylik of Karasi",
+  "name_ko": "",
+  "start": "1297",
+  "end": "1361",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q4338046",
+  "name_en": "Beylik of Osman",
+  "name_ko": "",
+  "start": "1299",
+  "end": "1363",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q717112",
+  "name_en": "Beylik of Aydın",
+  "name_ko": "",
+  "start": "1300",
+  "end": "1426",
+  "lon": "27.73777778",
+  "lat": "38.08916667",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1324889",
+  "name_en": "Beylik of Germiyan",
+  "name_ko": "",
+  "start": "1300",
+  "end": "1429",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q6680233",
+  "name_en": "Lordship of Chios",
+  "name_ko": "",
+  "start": "1304",
+  "end": "1329",
+  "lon": "26.016666666",
+  "lat": "38.4",
+  "type": "historical"
+ },
+ {
+  "qid": "Q318987",
+  "name_en": "Prince-Bishopric of Eichstätt",
+  "name_ko": "",
+  "start": "1305",
+  "end": "1802",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1968654",
+  "name_en": "Beylik of Saruhan",
+  "name_ko": "",
+  "start": "1313",
+  "end": "1412",
+  "lon": "27.422222222",
+  "lat": "38.630555555",
+  "type": "historical"
+ },
+ {
+  "qid": "Q106395492",
+  "name_en": "Lordship of Padua",
+  "name_ko": "",
+  "start": "1318",
+  "end": "1405",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q373988",
+  "name_en": "Beylik of Teke",
+  "name_ko": "",
+  "start": "1321",
+  "end": "1423",
+  "lon": "30.683333333",
+  "lat": "36.9",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3477825",
+  "name_en": "Lordship of Carpi",
+  "name_ko": "",
+  "start": "1336",
+  "end": "1527",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q64576860",
+  "name_en": "Lordship of Bologna",
+  "name_ko": "",
+  "start": "1337",
+  "end": "1506",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1264808",
+  "name_en": "Beylik of Dulkadir",
+  "name_ko": "둘카디르 왕조",
+  "start": "1337",
+  "end": "1522",
+  "lon": "37.188333333",
+  "lat": "38.201388888",
+  "type": "historical"
+ },
+ {
+  "qid": "Q4449685",
+  "name_en": "Beylik of Tacettin",
+  "name_ko": "",
+  "start": "1348",
+  "end": "1428",
+  "lon": "36.966666666",
+  "lat": "40.583333333",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2261321",
+  "name_en": "Beylik of Adana",
+  "name_ko": "라마잔 왕조",
+  "start": "1352",
+  "end": "1608",
+  "lon": "35.321333333",
+  "lat": "37.0",
+  "type": "historical"
+ },
+ {
+  "qid": "Q16187935",
+  "name_en": "Barony of Castalla",
+  "name_ko": "",
+  "start": "1364",
+  "end": "1889",
+  "lon": "-0.624502777",
+  "lat": "38.556069444",
+  "type": "historical"
+ },
+ {
+  "qid": "Q2665520",
+  "name_en": "Lordship of Prilep",
+  "name_ko": "",
+  "start": "1371",
+  "end": "1395",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q4834782",
+  "name_en": "Beylik of Kadi Burhan al-Din",
+  "name_ko": "",
+  "start": "1381",
+  "end": "1398",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q706553",
+  "name_en": "County of Nice",
+  "name_ko": "니스 백작령",
+  "start": "1388",
+  "end": "1818",
+  "lon": "7.27",
+  "lat": "43.7",
+  "type": "historical"
+ },
+ {
+  "qid": "Q3845763",
+  "name_en": "Margravate of Mantua",
+  "name_ko": "만토바 변경백국",
+  "start": "1433",
+  "end": "1530",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q673837",
+  "name_en": "Landgraviate of Hesse-Marburg",
+  "name_ko": "",
+  "start": "1458",
+  "end": "1604",
+  "lon": "8.770833333",
+  "lat": "50.81",
+  "type": "historical"
+ },
+ {
+  "qid": "Q560771",
+  "name_en": "Margraviate of Baden-Baden",
+  "name_ko": "",
+  "start": "1515",
+  "end": "1771",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q650370",
+  "name_en": "Margraviate of Baden-Durlach",
+  "name_ko": "",
+  "start": "1515",
+  "end": "1771",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q1900717",
+  "name_en": "Margraviate of Brandenburg-Küstrin",
+  "name_ko": "",
+  "start": "1535",
+  "end": "1571",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q463845",
+  "name_en": "Landgraviate of Hesse-Rotenburg",
+  "name_ko": "",
+  "start": "1627",
+  "end": "1834",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ },
+ {
+  "qid": "Q4899891",
+  "name_en": "Beylik of Tunis",
+  "name_ko": "튀니지 지방장관령",
+  "start": "1705",
+  "end": "1881",
+  "lon": "",
+  "lat": "",
+  "type": "historical"
+ }
+]
