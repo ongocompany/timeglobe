@@ -522,7 +522,7 @@ export default function Home() {
           events={MOCK_EVENTS}
           onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
           warpPhase={warpPhase}
-          onSpinWarp={handleSpinWarp}
+          // onSpinWarp={handleSpinWarp} // [cl] 랜덤 타임머신 임시 비활성화 (리뷰 중 오작동 방지)
           currentYear={currentYear}
         />
       </div>
