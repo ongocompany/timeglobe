@@ -1581,11 +1581,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             ? [props.caplong, props.caplat] as [number, number]
             : hasVirtualChildren ? null : calcCentroid(feature.geometry);
         if (center) {
-          // [cl] 식민지: 피지배국명 + 줄바꿈 + [지배국(한국어)] 표시
+          // [cl] 라벨: 한국어 우선 → display_name_ko → display_name → 원본 name
+          const displayLabel = meta?.display_name_ko || meta?.display_name || name;
           const labelText = meta
             ? (meta.is_colony && meta.colonial_ruler
-              ? `${meta.display_name}\n[${meta.colonial_ruler_ko || meta.colonial_ruler}]`
-              : meta.display_name)
+              ? `${displayLabel}\n[${meta.colonial_ruler_ko || meta.colonial_ruler}]`
+              : displayLabel)
             : name;
           ds.entities.add({
             position: Cartesian3.fromDegrees(center[0], center[1]),
@@ -1613,8 +1614,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             position: Cartesian3.fromDegrees(vm.capital_coords[0], vm.capital_coords[1]),
             label: {
               text: vm.colonial_ruler
-                ? `${vm.display_name}\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`
-                : vm.display_name,
+                ? `${vm.display_name_ko || vm.display_name}\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`
+                : (vm.display_name_ko || vm.display_name),
               font: "bold 18px sans-serif",
               fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
               outlineColor: Color.BLACK,

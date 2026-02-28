@@ -1637,6 +1637,10 @@ COLONIAL_OVERLAYS = {
 # [cl] (NAME, start_year, end_year): { 오버라이드 필드 }
 # colony=True + ruler 지정 시 식민지 표시 오버라이드 가능
 YEAR_RANGE_OVERRIDES = {
+    # ━━━ 한국: 고려 (918-1392, HB에서 "Korea"로 표기되는 시기) ━━━
+    ("Korea", 918, 1392): {
+        "name_local": "고려", "name_en": "Goryeo", "name_ko": "고려",
+    },
     # ━━━ 한국: 대한제국 (1897-1910, 독립) ━━━
     ("Korea", 1897, 1910): {
         "name_local": "대한제국", "name_en": "Korean Empire",
