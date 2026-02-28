@@ -1491,6 +1491,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     for (const feature of geojson.features) {
       const name = feature.properties?.NAME;
+      // [cl] NAME 없는 feature는 렌더링 스킵 (HB 원본 데이터에 이름 없는 영역)
+      if (!name) continue;
       const meta = name && metadata ? metadata[name] : null;
       // [cl] BORDERPRECISION 읽기: CShapes는 항상 3(확정), HB는 필드값 (없으면 1=근사치)
       const bp: number = isCShapes ? 3 : (feature.properties?.BORDERPRECISION ?? 1);
@@ -1616,11 +1618,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
     }
 
-    // [cl] 가상 식민지 엔트리 라벨 (피지배국 이름 우선 표기)
-    // __virtual__ 접두사 키: GeoJSON에 없지만 지도에 별도 라벨로 표시
+    // [cl] GeoJSON에 없지만 메타데이터에 존재하는 엔티티 라벨 추가
+    // __virtual__ 접두사 키 또는 GeoJSON에서 라벨 안 그려진 엔티티 (capital_coords 필수)
     if (metadata) {
       for (const [key, vm] of Object.entries(metadata)) {
-        if (key.startsWith("__virtual__") && vm.capital_coords) {
+        if ((key.startsWith("__virtual__") || !labeledNames.has(key)) && vm.capital_coords) {
           // [cl] 가상 식민지도 한글+영문 2줄 포맷
           const vKo = vm.display_name_ko || vm.display_name;
           const vEn = vm.display_name_en || key.replace("__virtual__", "");

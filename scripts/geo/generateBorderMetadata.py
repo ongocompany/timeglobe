@@ -3711,6 +3711,23 @@ def create_snapshot_json(year, entities, output_dir):
                     snapshot_data[key] = entry
                     virtual_count += 1
 
+    # [cl] GeoJSON에 없지만 해당 연도에 반드시 존재해야 하는 엔티티 강제 삽입
+    # (HB 원본 데이터의 한계 보완 — Korea가 Great Khanate에 흡수된 경우 등)
+    FORCED_ENTITIES = [
+        # (key, start_year, end_year, entity_data)
+        ("Korea", -300, 1897, {
+            "display_name_en": "Korea", "display_name_local": "한국",
+            "is_colony": False, "fill_color": PALETTES["Korea"],
+            "confidence": "high", "capital_coords": [126.98, 37.57],
+        }),
+    ]
+    for fkey, fstart, fend, fdata in FORCED_ENTITIES:
+        if fstart <= year <= fend and fkey not in snapshot_data:
+            entry = dict(fdata)
+            entry_meta = generate_entity_metadata(fkey, year, tuple(entry["capital_coords"]))
+            entry.update({k: v for k, v in entry_meta.items() if k not in ("fill_color",)})
+            snapshot_data[fkey] = entry
+
     output_path = os.path.join(output_dir, f"{year}.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(snapshot_data, f, ensure_ascii=False, separators=(",", ":"))
