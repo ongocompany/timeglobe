@@ -447,6 +447,405 @@ ENTITY_RULES = {
     "Antarctica":           {"name_local": "Antarctica", "name_en": "Antarctica", "palette": "Default"},
 }
 
+# ── 한국어 국명 매핑 (name_en → Korean) ──
+# [cl] 1차 오픈이 한국어 서비스이므로, 모든 국명을 한국어(영어) 형식으로 표시
+# 기존 name_local(자국어), name_en(영어) 데이터는 100% 보존 (향후 영문 서비스용)
+KOREAN_NAMES = {
+    # ━━━ 동아시아: 중국 ━━━
+    "Qing Dynasty": "청나라",
+    "China": "중국",
+    "China (Warlord Era)": "중국 (군벌시대)",
+    "Manchuria": "만주",
+    "Xinjiang": "신장",
+    "Taiwan": "대만",
+    "Hong Kong": "홍콩",
+    "Tibet": "티베트",
+    "Mongolia": "몽골",
+    "Republic of China": "중화민국",
+    # ━━━ 동아시아: 한국 ━━━
+    "Joseon": "조선",
+    "Korea": "한국",
+    "Korean Empire": "대한제국",
+    "Korea (US Zone)": "한국 (미군정)",
+    "Korea (Soviet Zone)": "한국 (소군정)",
+    "Republic of Korea": "대한민국",
+    "DPRK": "북한",
+    # ━━━ 동아시아: 일본 ━━━
+    "Empire of Japan": "대일본제국",
+    "Japan": "일본",
+    "Japan (Allied Occupation)": "일본 (연합국 점령)",
+    # ━━━ 동남아시아 ━━━
+    "Siam": "시암",
+    "Thailand": "태국",
+    "Vietnam": "베트남",
+    "Vietnam (Annam)": "베트남 (안남)",
+    "Vietnam (Cochinchina)": "베트남 (남기)",
+    "Vietnam (Tonkin)": "베트남 (북기)",
+    "Cambodia": "캄보디아",
+    "Laos": "라오스",
+    "Myanmar (Burma)": "미얀마",
+    "Philippines": "필리핀",
+    "Indonesia": "인도네시아",
+    "Indonesia (1945)": "인도네시아",
+    "Malaya": "말라야",
+    "Malaysia": "말레이시아",
+    "Brunei": "브루나이",
+    # ━━━ 남아시아 ━━━
+    "India": "인도",
+    "Pakistan": "파키스탄",
+    "Bangladesh": "방글라데시",
+    "Nepal": "네팔",
+    "Bhutan": "부탄",
+    "Sri Lanka": "스리랑카",
+    "Sri Lanka (Ceylon)": "스리랑카 (실론)",
+    # ━━━ 중동 / 서아시아 ━━━
+    "Ottoman Empire": "오스만 제국",
+    "Ottoman Sultanate": "오스만 술탄국",
+    "Turkey": "튀르키예",
+    "Persia": "페르시아",
+    "Iran": "이란",
+    "Iraq": "이라크",
+    "Saudi Arabia": "사우디아라비아",
+    "Arabia": "아라비아",
+    "Nejd": "네지드",
+    "Hejaz": "헤자즈",
+    "Ha'il Emirate": "하일 토후국",
+    "Rashidi Emirate": "라시드 토후국",
+    "Yemen": "예멘",
+    "Yemen (Aden)": "예멘 (아덴)",
+    "Oman": "오만",
+    "Oman (Muscat)": "오만 (무스카트)",
+    "Trucial States": "트루셜 오만",
+    "UAE": "아랍에미리트",
+    "Qatar": "카타르",
+    "Kuwait": "쿠웨이트",
+    "Jordan": "요르단",
+    "Israel/Palestine": "이스라엘/팔레스타인",
+    "Lebanon": "레바논",
+    "Syria": "시리아",
+    "Palestine": "팔레스타인",
+    "Afghanistan": "아프가니스탄",
+    "Egypt": "이집트",
+    "Central Asian Khanates": "중앙아시아 칸국",
+    "Bukhara Khanate": "부하라 칸국",
+    # ━━━ 유럽: 주요 열강 ━━━
+    "United Kingdom": "영국",
+    "France": "프랑스",
+    "Germany": "독일",
+    "German Empire": "독일 제국",
+    "East Germany": "동독",
+    "West Germany": "서독",
+    "East Prussia": "동프로이센",
+    "Free City of Danzig": "단치히 자유시",
+    "Austria": "오스트리아",
+    "Austria-Hungary": "오스트리아-헝가리",
+    "Russia": "러시아",
+    "Russian Empire": "러시아 제국",
+    "Soviet Union": "소련",
+    "Italy": "이탈리아",
+    "Kingdom of Italy": "이탈리아 왕국",
+    "Spain": "스페인",
+    "Portugal": "포르투갈",
+    # ━━━ 유럽: 기타 ━━━
+    "Netherlands": "네덜란드",
+    "Belgium": "벨기에",
+    "Luxembourg": "룩셈부르크",
+    "Switzerland": "스위스",
+    "Sweden": "스웨덴",
+    "Sweden-Norway": "스웨덴-노르웨이",
+    "Norway": "노르웨이",
+    "Denmark": "덴마크",
+    "Iceland": "아이슬란드",
+    "Finland": "핀란드",
+    "Ireland": "아일랜드",
+    "Greece": "그리스",
+    "Poland": "폴란드",
+    "Hungary": "헝가리",
+    "Romania": "루마니아",
+    "Bulgaria": "불가리아",
+    "Serbia": "세르비아",
+    "Montenegro": "몬테네그로",
+    "Albania": "알바니아",
+    "Croatia": "크로아티아",
+    "Slovenia": "슬로베니아",
+    "Bosnia and Herzegovina": "보스니아 헤르체고비나",
+    "Bosnia-Herzegovina": "보스니아-헤르체고비나",
+    "Yugoslavia": "유고슬라비아",
+    "Czechoslovakia": "체코슬로바키아",
+    "Czech Republic": "체코",
+    "Slovakia": "슬로바키아",
+    "Estonia": "에스토니아",
+    "Latvia": "라트비아",
+    "Lithuania": "리투아니아",
+    "Moldova": "몰도바",
+    "Ukraine": "우크라이나",
+    "Belarus": "벨라루스",
+    "Belarus (SSR)": "벨라루스 (소비에트)",
+    "Georgia": "조지아",
+    "Armenia": "아르메니아",
+    "Azerbaijan": "아제르바이잔",
+    "Kazakhstan": "카자흐스탄",
+    "Uzbekistan": "우즈베키스탄",
+    "Turkmenistan": "투르크메니스탄",
+    "Kyrgyzstan": "키르기스스탄",
+    "Tajikistan": "타지키스탄",
+    "Far Eastern Republic": "극동공화국",
+    "South Russia": "남러시아",
+    "Andorra": "안도라",
+    "Liechtenstein": "리히텐슈타인",
+    "Malta": "몰타",
+    "North Macedonia": "북마케도니아",
+    "Cyprus": "키프로스",
+    "Northern Cyprus": "북키프로스",
+    "Greenland": "그린란드",
+    "Saar Protectorate": "자르 보호령",
+    "Newfoundland": "뉴펀들랜드",
+    "Germany (French Zone)": "독일 (프랑스 점령지)",
+    "Germany (Soviet Zone)": "독일 (소련 점령지)",
+    "Germany (British Zone)": "독일 (영국 점령지)",
+    "Germany (US Zone)": "독일 (미국 점령지)",
+    # ━━━ 아메리카 ━━━
+    "United States": "미국",
+    "US Virgin Islands": "미국령 버진아일랜드",
+    "Canada": "캐나다",
+    "Puerto Rico": "푸에르토리코",
+    "Guam": "괌",
+    "Mexico": "멕시코",
+    "Guatemala": "과테말라",
+    "Honduras": "온두라스",
+    "El Salvador": "엘살바도르",
+    "Nicaragua": "니카라과",
+    "Costa Rica": "코스타리카",
+    "Panama": "파나마",
+    "Cuba": "쿠바",
+    "Haiti": "아이티",
+    "Dominican Republic": "도미니카 공화국",
+    "Jamaica": "자메이카",
+    "Colombia": "콜롬비아",
+    "Venezuela": "베네수엘라",
+    "Ecuador": "에콰도르",
+    "Peru": "페루",
+    "Bolivia": "볼리비아",
+    "Brazil": "브라질",
+    "Empire of Brazil": "브라질 제국",
+    "Argentina": "아르헨티나",
+    "Uruguay": "우루과이",
+    "Paraguay": "파라과이",
+    "Chile": "칠레",
+    "Belize": "벨리즈",
+    "Guyana": "가이아나",
+    "Guyana (1966)": "가이아나",
+    "Suriname": "수리남",
+    "Suriname (1975)": "수리남",
+    "French Guiana": "프랑스령 기아나",
+    "Trinidad and Tobago": "트리니다드 토바고",
+    # ━━━ 카리브해 소도서 ━━━
+    "Anguilla": "앵귈라",
+    "Antigua and Barbuda": "앤티가 바부다",
+    "Barbados": "바베이도스",
+    "Bahamas": "바하마",
+    "Dominica": "도미니카",
+    "Grenada": "그레나다",
+    "Guadeloupe": "과들루프",
+    "Martinique": "마르티니크",
+    "Montserrat": "몬트세라트",
+    "Saint Barthélemy": "생바르텔레미",
+    "Saint Kitts and Nevis": "세인트키츠 네비스",
+    "Saint Lucia": "세인트루시아",
+    "Saint Martin": "생마르탱",
+    "Saint Vincent and the Grenadines": "세인트빈센트 그레나딘",
+    "Netherlands Antilles": "네덜란드령 안틸레스",
+    "Turks and Caicos": "터크스 케이커스",
+    "Wallis and Futuna": "왈리스 푸투나",
+    # ━━━ 아프리카: 북부 ━━━
+    "Algeria": "알제리",
+    "Morocco": "모로코",
+    "Morocco (Spanish Zone)": "모로코 (스페인 보호령)",
+    "Tunisia": "튀니지",
+    "Libya": "리비아",
+    "Libya (Cyrenaica)": "리비아 (키레나이카)",
+    "Libya (Tripolitania)": "리비아 (트리폴리타니아)",
+    "Libya (Fezzan)": "리비아 (페잔)",
+    "Western Sahara": "서사하라",
+    "Sudan": "수단",
+    # ━━━ 아프리카: 동부 ━━━
+    "Ethiopia": "에티오피아",
+    "Ethiopia (Abyssinia)": "에티오피아",
+    "Eritrea": "에리트레아",
+    "Somalia": "소말리아",
+    "Somalia (1960)": "소말리아",
+    "Djibouti": "지부티",
+    "Djibouti (1977)": "지부티",
+    "Kenya": "케냐",
+    "Kenya (1963)": "케냐",
+    "Uganda": "우간다",
+    "Tanzania": "탄자니아",
+    "Tanzania (1961)": "탄자니아",
+    "Rwanda": "르완다",
+    "Burundi": "부룬디",
+    "Madagascar": "마다가스카르",
+    "Madagascar (Merina)": "마다가스카르",
+    # ━━━ 아프리카: 서부 ━━━
+    "Nigeria": "나이지리아",
+    "Ghana": "가나",
+    "Ghana (1957)": "가나",
+    "Sierra Leone": "시에라리온",
+    "Liberia": "라이베리아",
+    "Senegal": "세네갈",
+    "Gambia": "감비아",
+    "Guinea": "기니",
+    "Guinea-Bissau": "기니비사우",
+    "Guinea-Bissau (1974)": "기니비사우",
+    "Mozambique (1975)": "모잠비크",
+    "Côte d'Ivoire": "코트디부아르",
+    "Burkina Faso": "부르키나파소",
+    "Mali": "말리",
+    "Niger": "니제르",
+    "Chad": "차드",
+    "Mauritania": "모리타니",
+    "Benin": "베냉",
+    "Benin (Dahomey)": "베냉",
+    "Togo": "토고",
+    "Togo (Togoland)": "토고",
+    "Cameroon": "카메룬",
+    "Cameroon (Kamerun)": "카메룬",
+    "Cameroon (Southern)": "카메룬 (남부)",
+    "Gabon": "가봉",
+    "Equatorial Guinea": "적도 기니",
+    "Central African Republic": "중앙아프리카 공화국",
+    "Congo": "콩고",
+    "Congo (French)": "콩고 (프랑스령)",
+    "DR Congo (1960)": "콩고민주공화국",
+    "DR Congo": "콩고민주공화국",
+    "French West Africa": "프랑스령 서아프리카",
+    "French Equatorial Africa": "프랑스령 적도아프리카",
+    # ━━━ 아프리카: 남부 ━━━
+    "South Africa": "남아프리카 공화국",
+    "South Africa (Cape Colony)": "남아프리카 (케이프)",
+    "South Africa (Natal)": "남아프리카 (나탈)",
+    "South Africa (Transvaal)": "남아프리카 (트란스발)",
+    "South Africa (Orange Free State)": "남아프리카 (오렌지 자유국)",
+    "South Africa (Griqualand)": "남아프리카 (그리콸란드)",
+    "Namibia": "나미비아",
+    "Namibia (1990)": "나미비아",
+    "Walvis Bay": "월비스베이",
+    "Botswana": "보츠와나",
+    "Lesotho": "레소토",
+    "Lesotho (1966)": "레소토",
+    "Eswatini": "에스와티니",
+    "Zimbabwe": "짐바브웨",
+    "Zimbabwe (Rhodesia)": "짐바브웨",
+    "Zambia": "잠비아",
+    "Zambia (1964)": "잠비아",
+    "Malawi": "말라위",
+    "Malawi (1964)": "말라위",
+    "Mozambique": "모잠비크",
+    "Angola": "앙골라",
+    # ━━━ 아프리카: 왕국/소국 ━━━
+    "Ashanti Empire": "아샨티 제국",
+    "Sokoto Caliphate": "소코토 칼리프국",
+    "Buganda Kingdom": "부간다 왕국",
+    "Bunyoro Kingdom": "부뇨로 왕국",
+    "Lozi Kingdom": "로지 왕국",
+    "Luba Kingdom": "루바 왕국",
+    "Lunda Empire": "룬다 제국",
+    "Kuba Kingdom": "쿠바 왕국",
+    "Ndebele Kingdom": "은데벨레 왕국",
+    "Shona": "쇼나",
+    "Nguni": "응구니",
+    "Ngwato": "응와토",
+    "Oyo Empire": "오요 제국",
+    "Ibadan": "이바단",
+    "Lagos": "라고스",
+    "Kanem-Bornu": "카넴-보르누",
+    "Mossi States": "모시",
+    "Zululand": "줄루란트",
+    "Zanzibar": "잔지바르",
+    "Harar (Egyptian)": "하라르",
+    "Teke Kingdom": "테케 왕국",
+    "Yaka Kingdom": "야카 왕국",
+    "Yeke Kingdom": "예케 왕국",
+    "Mbailundu Kingdom": "음바일룬두 왕국",
+    "Ovimbundu": "오빔분두",
+    "Calabar": "칼라바르",
+    "Opobo": "오포보",
+    "Barotse": "바로체",
+    "Cotonou": "코토누",
+    "Borgu States": "보르구",
+    "Dendi Kingdom": "덴디 왕국",
+    "Futa Jalon": "푸타잘론",
+    "Futa Toro": "푸타토로",
+    "Kong Empire": "콩 제국",
+    "Kong": "콩",
+    "Samori Empire": "사모리 제국",
+    "Samori Empire (2nd)": "사모리 제국 (2차)",
+    "Wassoulou Empire": "와술루 제국",
+    "Tukular Empire": "투쿨로르 제국",
+    "Wadai Empire": "와다이 제국",
+    "Damagaram": "다마가람",
+    "Utetera": "우테테라",
+    "Ato Confederacy": "아토 연맹",
+    "Mirambo's Empire": "미람보 제국",
+    "Rabih's Empire": "라비흐 제국",
+    "Accra": "아크라",
+    "British Protectorate": "영국 보호령",
+    # ━━━ 오세아니아 ━━━
+    "Australia": "호주",
+    "Australia (NSW)": "호주 (뉴사우스웨일스)",
+    "Australia (QLD)": "호주 (퀸즐랜드)",
+    "Australia (VIC)": "호주 (빅토리아)",
+    "Australia (SA)": "호주 (남호주)",
+    "Australia (WA)": "호주 (서호주)",
+    "Australia (NT)": "호주 (노던준주)",
+    "New Zealand": "뉴질랜드",
+    "Māori": "마오리",
+    "Polynesia": "폴리네시아",
+    "Papua New Guinea": "파푸아뉴기니",
+    "Fiji": "피지",
+    "Samoa": "사모아",
+    "American Samoa": "미국령 사모아",
+    "Tonga": "통가",
+    "Niue": "니우에",
+    "Kingdom of Hawaii": "하와이 왕국",
+    "Easter Island": "이스터섬",
+    "New Caledonia": "누벨칼레도니",
+    "Vanuatu (1980)": "바누아투",
+    "Kiribati/Tuvalu": "키리바시/투발루",
+    "Saipan": "사이판",
+    "Sakhalin": "사할린",
+    "Antarctica": "남극",
+}
+
+# ── 식민지 지배국명 한국어 매핑 ──
+# [cl] colonial_ruler 필드에 사용되는 이름 → 한국어
+RULER_NAMES_KO = {
+    "British Empire": "대영제국",
+    "France": "프랑스",
+    "United States": "미국",
+    "Netherlands": "네덜란드",
+    "Spain": "스페인",
+    "Italy": "이탈리아",
+    "Germany": "독일",
+    "Belgium": "벨기에",
+    "Portugal": "포르투갈",
+    "Japan": "일본",
+    "Egypt": "이집트",
+    "USSR": "소련",
+    "Empire of Japan": "대일본제국",
+    "Imperial Japan": "대일본제국",
+    "大日本帝国": "대일본제국",
+}
+
+
+def get_korean_name(name_en):
+    """[cl] name_en → 한국어 변환. 매칭 없으면 영어 그대로 반환."""
+    if name_en in KOREAN_NAMES:
+        return KOREAN_NAMES[name_en]
+    # "(1960)" 등 연도 접미사 제거 후 재시도
+    base = name_en.split(" (")[0]
+    return KOREAN_NAMES.get(base, name_en)
+
+
 # ── 주요 국가 수도/중심 좌표 (라벨 위치 결정용) ──
 # [cl] centroid 대신 수도 좌표를 사용하여 정확한 라벨 배치
 CAPITAL_COORDS = {
@@ -647,7 +1046,7 @@ YEAR_RANGE_OVERRIDES = {
     },
     # ━━━ 한국: 일제강점기 (1910-1945, 식민지) ━━━
     ("Korea", 1910, 1945): {
-        "name_local": "대한제국", "name_en": "Korea",
+        "name_local": "대한제국", "name_en": "Korea", "name_ko": "대한제국",
         "colony": True, "ruler": "大日本帝国",
     },
     # ━━━ 일본: 대일본제국 (1868-1947) ━━━
@@ -689,6 +1088,9 @@ def generate_entity_metadata(original_name, year):
             if oname == original_name and start <= year <= end:
                 metadata["display_name_en"] = override["name_en"]
                 metadata["display_name_local"] = override["name_local"]
+                # [cl] 한국어 이름 오버라이드 (name_en → KOREAN_NAMES 매핑이 부정확할 때)
+                if override.get("name_ko"):
+                    metadata["_ko_override"] = override["name_ko"]
                 # 오버라이드에 식민지 정보가 있으면 적용
                 if override.get("colony"):
                     metadata["is_colony"] = True
@@ -697,9 +1099,6 @@ def generate_entity_metadata(original_name, year):
                         metadata["colonial_ruler"] = override["ruler"]
                         metadata["colonial_note"] = f"Under {override['ruler']} Rule"
                 break  # 첫 매칭만 적용
-
-        # display_name = "현지어 (영문)" 형태
-        metadata["display_name"] = f"{metadata['display_name_local']} ({metadata['display_name_en'].split('(')[0].strip()})"
 
         # [cl] ENTITY_RULES 기본 ruler (오버라이드가 없을 때만)
         if rule.get("ruler") and "colonial_ruler" not in metadata:
@@ -714,13 +1113,24 @@ def generate_entity_metadata(original_name, year):
 
     else:
         metadata = {
-            "display_name": original_name,
             "display_name_en": original_name,
             "display_name_local": original_name,
             "is_colony": False,
             "fill_color": PALETTES["Default"],
             "confidence": "low",
         }
+
+    # [cl] 한국어 국명 추가 + display_name을 "한국어 (영어)" 형식으로 생성
+    # _ko_override가 있으면 우선 사용 (YEAR_RANGE_OVERRIDES의 name_ko)
+    ko_name = metadata.pop("_ko_override", None) or get_korean_name(metadata["display_name_en"])
+    metadata["display_name_ko"] = ko_name
+    en_base = metadata["display_name_en"].split("(")[0].strip()
+    metadata["display_name"] = f"{ko_name} ({en_base})" if ko_name != en_base else ko_name
+
+    # [cl] 식민지 지배국명 한국어 추가
+    if metadata.get("colonial_ruler"):
+        metadata["colonial_ruler_ko"] = RULER_NAMES_KO.get(
+            metadata["colonial_ruler"], metadata["colonial_ruler"])
 
     return metadata
 
@@ -753,7 +1163,17 @@ def create_snapshot_json(year, name_list, output_dir):
             for overlay in overlays:
                 key = overlay["key"]
                 if key not in snapshot_data:
-                    snapshot_data[key] = {k: v for k, v in overlay.items() if k != "key"}
+                    entry = {k: v for k, v in overlay.items() if k != "key"}
+                    # [cl] 가상 엔트리에도 한국어 필드 추가
+                    en_name = entry.get("display_name_en", "")
+                    ko_name = get_korean_name(en_name)
+                    entry["display_name_ko"] = ko_name
+                    en_base = en_name.split("(")[0].strip()
+                    entry["display_name"] = f"{ko_name} ({en_base})" if ko_name != en_base else ko_name
+                    if entry.get("colonial_ruler"):
+                        entry["colonial_ruler_ko"] = RULER_NAMES_KO.get(
+                            entry["colonial_ruler"], entry["colonial_ruler"])
+                    snapshot_data[key] = entry
                     virtual_count += 1
 
     output_path = os.path.join(output_dir, f"{year}.json")

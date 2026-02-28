@@ -1407,10 +1407,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     display_name: string;
     display_name_en: string;
     display_name_local: string;
+    display_name_ko?: string;       // [cl] 한국어 국명
     is_colony: boolean;
     fill_color: string;
     confidence: string;
     colonial_ruler?: string;
+    colonial_ruler_ko?: string;     // [cl] 식민지 지배국명 한국어
     colonial_note?: string;
     independence_year?: number;
     capital_coords?: [number, number]; // [cl] 수도 좌표 (라벨 위치)
@@ -1498,10 +1500,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             ? [props.caplong, props.caplat] as [number, number]
             : hasVirtualChildren ? null : calcCentroid(feature.geometry);
         if (center) {
-          // [cl] 식민지: 피지배국명 + 줄바꿈 + [지배국] 표시
+          // [cl] 식민지: 피지배국명 + 줄바꿈 + [지배국(한국어)] 표시
           const labelText = meta
             ? (meta.is_colony && meta.colonial_ruler
-              ? `${meta.display_name}\n[${meta.colonial_ruler}]`
+              ? `${meta.display_name}\n[${meta.colonial_ruler_ko || meta.colonial_ruler}]`
               : meta.display_name)
             : name;
           ds.entities.add({
@@ -1529,7 +1531,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             position: Cartesian3.fromDegrees(vm.capital_coords[0], vm.capital_coords[1]),
             label: {
               text: vm.colonial_ruler
-                ? `${vm.display_name}\n[${vm.colonial_ruler}]`
+                ? `${vm.display_name}\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`
                 : vm.display_name,
               font: "bold 12px sans-serif",
               fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
