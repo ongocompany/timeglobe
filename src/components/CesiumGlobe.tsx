@@ -1413,6 +1413,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     colonial_ruler?: string;
     colonial_note?: string;
     independence_year?: number;
+    capital_coords?: [number, number]; // [cl] 수도 좌표 (라벨 위치)
   }
 
   // [cl] 스냅샷 연도에 해당하는 메타데이터 로드 (1880+ 전용)
@@ -1468,10 +1469,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         });
       }
 
-      // [cl] 모든 스냅샷: 메타데이터 있으면 display_name, 없으면 GeoJSON NAME 그대로 라벨
+      // [cl] 라벨: capital_coords 우선, 없으면 centroid 폴백
       if (name && !labeledNames.has(name)) {
         labeledNames.add(name);
-        const center = calcCentroid(feature.geometry);
+        const center = meta?.capital_coords
+          ? meta.capital_coords as [number, number]
+          : calcCentroid(feature.geometry);
         if (center) {
           const labelText = meta ? meta.display_name : name;
           ds.entities.add({
@@ -1489,6 +1492,28 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         }
       }
     }
+
+    // [cl] 가상 식민지 엔트리 라벨 (피지배국 이름 우선 표기)
+    // __virtual__ 접두사 키: GeoJSON에 없지만 지도에 별도 라벨로 표시
+    if (metadata) {
+      for (const [key, vm] of Object.entries(metadata)) {
+        if (key.startsWith("__virtual__") && vm.capital_coords) {
+          ds.entities.add({
+            position: Cartesian3.fromDegrees(vm.capital_coords[0], vm.capital_coords[1]),
+            label: {
+              text: vm.display_name,
+              font: "bold 12px sans-serif",
+              fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
+              outlineColor: Color.BLACK,
+              outlineWidth: 2,
+              style: 2,
+              scaleByDistance: new NearFarScalar(5e6, 0.9, 15e6, 0.3),
+            },
+          });
+        }
+      }
+    }
+
     return ds;
   }
 

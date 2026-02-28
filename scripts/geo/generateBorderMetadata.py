@@ -447,6 +447,196 @@ ENTITY_RULES = {
     "Antarctica":           {"name_local": "Antarctica", "name_en": "Antarctica", "palette": "Default"},
 }
 
+# ── 주요 국가 수도/중심 좌표 (라벨 위치 결정용) ──
+# [cl] centroid 대신 수도 좌표를 사용하여 정확한 라벨 배치
+CAPITAL_COORDS = {
+    # ━━━ 동아시아 ━━━
+    "Manchu Empire":    [116.40, 39.90],  # 북경
+    "China":            [116.40, 39.90],
+    "Chinese Warlords": [116.40, 39.90],
+    "Chinese warlords": [116.40, 39.90],
+    "Manchuria":        [125.32, 43.88],  # 장춘
+    "Xinjiang":         [87.62, 43.79],   # 우루무치
+    "Taiwan":           [121.56, 25.03],  # 타이베이
+    "Tibet":            [91.11, 29.65],   # 라사
+    "Mongolia":         [106.91, 47.92],  # 울란바토르
+    "Hong Kong":        [114.17, 22.32],
+    "Korea":            [126.98, 37.57],  # 서울
+    "Korea (USA)":      [126.98, 37.57],
+    "Korea (USSR)":     [125.75, 39.02],  # 평양
+    "Korea, Republic of":                    [126.98, 37.57],
+    "Korea, Democratic People's Republic of":[125.75, 39.02],
+    "Imperial Japan":   [139.76, 35.68],  # 도쿄
+    "Empire of Japan":  [139.76, 35.68],
+    "Japan":            [139.76, 35.68],
+    "Japan (USA)":      [139.76, 35.68],
+    # ━━━ 동남아시아 ━━━
+    "Rattanakosin Kingdom": [100.50, 13.75],  # 방콕
+    "Siam":             [100.50, 13.75],
+    "Thailand":         [100.50, 13.75],
+    "French Indochina": [105.85, 21.03],  # 하노이
+    "French Indo-China":[105.85, 21.03],
+    "Vietnam":          [105.85, 21.03],
+    "Annam":            [106.63, 16.46],  # 후에
+    "Cochin China":     [106.63, 10.82],  # 사이공
+    "Tonkin":           [105.85, 21.03],  # 하노이
+    "Cambodia":         [104.92, 11.56],  # 프놈펜
+    "Laos":             [102.63, 17.97],  # 비엔티안
+    "Burma":            [96.20, 16.87],   # 양곤
+    "Philippines":      [120.98, 14.60],  # 마닐라
+    "Dutch East Indies":[106.85, -6.21],  # 자카르타
+    "Netherlands Indies":[106.85, -6.21],
+    "Indonesia":        [106.85, -6.21],
+    "Malaya":           [101.69, 3.14],   # 쿠알라룸푸르
+    "Malaysia":         [101.69, 3.14],
+    "Brunei":           [114.95, 4.94],
+    # ━━━ 남아시아 ━━━
+    "British Raj":      [77.21, 28.61],   # 델리
+    "India":            [77.21, 28.61],
+    "Pakistan":         [73.05, 33.69],   # 이슬라마바드
+    "Bangladesh":       [90.41, 23.81],   # 다카
+    "Nepal":            [85.32, 27.72],   # 카트만두
+    "Bhutan":           [89.64, 27.47],
+    "Sri Lanka":        [79.86, 6.93],    # 콜롬보
+    "Ceylon":           [79.86, 6.93],
+    # ━━━ 중동 / 서아시아 ━━━
+    "Ottoman Empire":   [28.98, 41.01],   # 이스탄불
+    "Ottoman Sultanate":[28.98, 41.01],
+    "Turkey":           [32.87, 39.93],   # 앙카라
+    "Persia":           [51.39, 35.69],   # 테헤란
+    "Iran":             [51.39, 35.69],
+    "Iraq":             [44.37, 33.31],   # 바그다드
+    "Mesopotamia (GB)": [44.37, 33.31],
+    "Saudi Arabia":     [46.72, 24.71],   # 리야드
+    "Arabia":           [46.72, 24.71],
+    "Egypt":            [31.24, 30.04],   # 카이로
+    "Afghanistan":      [69.17, 34.53],   # 카불
+    "Mandatory Palestine (GB)": [35.22, 31.77],  # 예루살렘
+    "Syria (France)":   [36.29, 33.51],   # 다마스쿠스
+    # ━━━ 유럽 ━━━
+    "United Kingdom":   [-0.13, 51.51],   # 런던
+    "United Kingdom of Great Britain and Ireland": [-0.13, 51.51],
+    "France":           [2.35, 48.86],    # 파리
+    "Germany":          [13.40, 52.52],   # 베를린
+    "German Empire":    [13.40, 52.52],
+    "Russia":           [37.62, 55.75],   # 모스크바
+    "Russian Empire":   [37.62, 55.75],
+    "USSR":             [37.62, 55.75],
+    "Italy":            [12.50, 41.90],   # 로마
+    "Kingfom of Italy": [12.50, 41.90],
+    "Spain":            [-3.70, 40.42],   # 마드리드
+    "Portugal":         [-9.14, 38.74],   # 리스본
+    "Austria Hungary":  [16.37, 48.21],   # 빈
+    "Austro-Hungarian Empire": [16.37, 48.21],
+    "Austria":          [16.37, 48.21],
+    "Netherlands":      [4.90, 52.37],    # 암스테르담
+    "Belgium":          [4.35, 50.85],    # 브뤼셀
+    "Switzerland":      [7.45, 46.95],    # 베른
+    "Sweden":           [18.07, 59.33],   # 스톡홀름
+    "Sweden–Norway":    [18.07, 59.33],
+    "Norway":           [10.75, 59.91],   # 오슬로
+    "Denmark":          [12.57, 55.68],   # 코펜하겐
+    "Finland":          [24.94, 60.17],   # 헬싱키
+    "Greece":           [23.73, 37.97],   # 아테네
+    "Poland":           [21.01, 52.23],   # 바르샤바
+    "Romania":          [26.10, 44.43],   # 부쿠레슈티
+    "Bulgaria":         [23.32, 42.70],   # 소피아
+    "Serbia":           [20.46, 44.79],   # 베오그라드
+    "Yugoslavia":       [20.46, 44.79],
+    "Czechoslovakia":   [14.42, 50.08],   # 프라하
+    "Hungary":          [19.04, 47.50],   # 부다페스트
+    "Estonia":          [24.75, 59.44],   # 탈린
+    "Latvia":           [24.11, 56.95],   # 리가
+    "Lithuania":        [25.28, 54.69],   # 빌뉴스
+    "Far Eastern SSR":  [131.89, 43.12],  # 블라디보스토크
+    "South Russia":     [39.72, 47.24],   # 로스토프
+    "White Russia":     [27.57, 53.90],   # 민스크
+    "Ukraine":          [30.52, 50.45],   # 키이우
+    # ━━━ 아메리카 ━━━
+    "United States":    [-77.04, 38.90],  # 워싱턴 DC
+    "United States of America": [-77.04, 38.90],
+    "Canada":           [-75.70, 45.42],  # 오타와
+    "Mexico":           [-99.13, 19.43],  # 멕시코시티
+    "Brazil":           [-47.93, -15.78], # 브라질리아
+    "Kingdom of Brazil":[-43.17, -22.91], # 리우
+    "Argentina":        [-58.38, -34.60], # 부에노스아이레스
+    "Colombia":         [-74.07, 4.71],   # 보고타
+    "Peru":             [-77.04, -12.05], # 리마
+    "Chile":            [-70.67, -33.45], # 산티아고
+    "Cuba":             [-82.38, 23.13],  # 하바나
+    "Venezuela":        [-66.90, 10.50],  # 카라카스
+    # ━━━ 아프리카 ━━━
+    "Ethiopia":         [38.75, 9.02],    # 아디스아바바
+    "Abyssinia":        [38.75, 9.02],
+    "South Africa":     [28.23, -25.75],  # 프리토리아
+    "Union of South Africa": [28.23, -25.75],
+    "Nigeria":          [7.49, 9.06],     # 아부자
+    "Angola":           [13.23, -8.84],   # 루안다
+    "Mozambique":       [32.59, -25.97],  # 마푸토
+    # ━━━ 오세아니아 ━━━
+    "Australia":        [149.13, -35.28], # 캔버라
+    "New Zealand":      [174.78, -41.29], # 웰링턴
+}
+
+# ── 식민지 가상 엔트리 (피지배국 이름 우선 표기 원칙) ──
+# [cl] GeoJSON에 별도 feature가 없지만, 지도상 독립적으로 라벨을 표시해야 하는 영토
+# (parent_name, start_year, end_year): [가상 엔트리들]
+COLONIAL_OVERLAYS = {
+    # 일본 제국 → 한국, 대만 별도 라벨
+    ("Empire of Japan", 1910, 1945): [
+        {
+            "key": "__virtual__Korea_under_Japan",
+            "display_name": "한국 (Korea)",
+            "display_name_en": "Korea",
+            "display_name_local": "한국",
+            "is_colony": True,
+            "colonial_ruler": "Empire of Japan",
+            "colonial_note": "Under Empire of Japan Rule",
+            "capital_coords": [126.98, 37.57],
+            "fill_color": "#45B39D",
+            "confidence": "high",
+        },
+        {
+            "key": "__virtual__Taiwan_under_Japan",
+            "display_name": "臺灣 (Taiwan)",
+            "display_name_en": "Taiwan",
+            "display_name_local": "臺灣",
+            "is_colony": True,
+            "colonial_ruler": "Empire of Japan",
+            "colonial_note": "Under Empire of Japan Rule",
+            "capital_coords": [121.56, 25.03],
+            "fill_color": "#F4D03F",
+            "confidence": "high",
+        },
+    ],
+    ("Imperial Japan", 1910, 1945): [
+        {
+            "key": "__virtual__Korea_under_Japan",
+            "display_name": "한국 (Korea)",
+            "display_name_en": "Korea",
+            "display_name_local": "한국",
+            "is_colony": True,
+            "colonial_ruler": "Imperial Japan",
+            "colonial_note": "Under Imperial Japan Rule",
+            "capital_coords": [126.98, 37.57],
+            "fill_color": "#45B39D",
+            "confidence": "high",
+        },
+        {
+            "key": "__virtual__Taiwan_under_Japan",
+            "display_name": "臺灣 (Taiwan)",
+            "display_name_en": "Taiwan",
+            "display_name_local": "臺灣",
+            "is_colony": True,
+            "colonial_ruler": "Imperial Japan",
+            "colonial_note": "Under Imperial Japan Rule",
+            "capital_coords": [121.56, 25.03],
+            "fill_color": "#F4D03F",
+            "confidence": "high",
+        },
+    ],
+}
+
 # ── 연도별 특수 처리 (같은 NAME이 시대별로 의미가 다를 때) ──
 YEAR_OVERRIDES = {
     ("Korea", 1900): {"name_local": "대한제국", "name_en": "Korean Empire"},
@@ -483,6 +673,10 @@ def generate_entity_metadata(original_name, year):
         if rule.get("independence"):
             metadata["independence_year"] = rule["independence"]
 
+        # [cl] capital_coords 추가 (라벨 위치 결정용)
+        if original_name in CAPITAL_COORDS:
+            metadata["capital_coords"] = CAPITAL_COORDS[original_name]
+
     else:
         metadata = {
             "display_name": original_name,
@@ -517,6 +711,16 @@ def create_snapshot_json(year, name_list, output_dir):
     for name in name_list:
         snapshot_data[name] = generate_entity_metadata(name, year)
 
+    # [cl] 식민지 가상 엔트리 삽입 (피지배국 이름 우선 표기 원칙)
+    virtual_count = 0
+    for (parent, start, end), overlays in COLONIAL_OVERLAYS.items():
+        if parent in snapshot_data and start <= year <= end:
+            for overlay in overlays:
+                key = overlay["key"]
+                if key not in snapshot_data:
+                    snapshot_data[key] = {k: v for k, v in overlay.items() if k != "key"}
+                    virtual_count += 1
+
     output_path = os.path.join(output_dir, f"{year}.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(snapshot_data, f, ensure_ascii=False, separators=(",", ":"))
@@ -524,7 +728,8 @@ def create_snapshot_json(year, name_list, output_dir):
     high = sum(1 for v in snapshot_data.values() if v.get("confidence") == "high")
     low = sum(1 for v in snapshot_data.values() if v.get("confidence") == "low")
     size_kb = os.path.getsize(output_path) / 1024
-    print(f"  [{year}] {len(name_list)} entities | high:{high} low:{low} | {size_kb:.1f}KB")
+    virt_str = f" virtual:{virtual_count}" if virtual_count else ""
+    print(f"  [{year}] {len(name_list)} entities | high:{high} low:{low}{virt_str} | {size_kb:.1f}KB")
     return high, low
 
 
