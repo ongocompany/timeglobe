@@ -15,7 +15,10 @@ PALETTES = {
     "Mongol":        "#A93226",  # 몽골/유목 제국 (짙은 적갈) — 몽골/흉노/돌궐
     "Tibet":         "#AF7AC5",  # 티베트 (라벤더) — 토번/티베트
     "Manchuria":     "#D68910",  # 만주/여진 계열 (진한 앰버) — 요/금/서하
-    "Korea":         "#45B39D",  # 한국 (청자색)
+    "Korea":         "#45B39D",  # 한국: 통일신라/고려/조선 (청자색)
+    "Korea_Koguryo": "#884EA0",  # 고구려 (보라) — 북방 강국
+    "Korea_Paekche": "#E59866",  # 백제 (살구색) — 서남방 문화국
+    "Korea_Gaya":    "#F0B27A",  # 가야 (연한 앰버) — 남부 연맹
     "Japan":         "#E74C3C",  # 일본 (적색)
     # ── 동남아 ──
     "SoutheastAsia": "#27AE60",  # 동남아 대륙부 (녹색) — 크메르/참파/바간
@@ -108,15 +111,15 @@ ENTITY_RULES = {
     "Korea, Republic of":                       {"name_local": "대한민국", "name_en": "Republic of Korea", "palette": "Korea"},
     "Korea, Democratic People's Republic of":    {"name_local": "조선민주주의인민공화국", "name_en": "DPRK", "palette": "Korea"},
 
-    # [cl] 고대 한국 (HB)
+    # [cl] 고대 한국 (HB) — 삼국 색상 분리
     "Paleo-Koreans":    {"name_local": "고조선", "name_en": "Proto-Koreans", "palette": "Korea"},
     "Koreans":          {"name_local": "한국인", "name_en": "Koreans", "palette": "Korea"},
-    "Koguryo":          {"name_local": "고구려", "name_en": "Goguryeo", "palette": "Korea"},
-    "Paekche":          {"name_local": "백제", "name_en": "Baekje", "palette": "Korea"},
+    "Koguryo":          {"name_local": "고구려", "name_en": "Goguryeo", "palette": "Korea_Koguryo"},
+    "Paekche":          {"name_local": "백제", "name_en": "Baekje", "palette": "Korea_Paekche"},
     "Silla":            {"name_local": "신라", "name_en": "Silla", "palette": "Korea"},
-    "Gaya":             {"name_local": "가야", "name_en": "Gaya", "palette": "Korea"},
-    "Parhae":           {"name_local": "발해", "name_en": "Balhae", "palette": "Korea"},
-    "Balhae":           {"name_local": "발해", "name_en": "Balhae", "palette": "Korea"},
+    "Gaya":             {"name_local": "가야", "name_en": "Gaya", "palette": "Korea_Gaya"},
+    "Parhae":           {"name_local": "발해", "name_en": "Balhae", "palette": "Korea_Koguryo"},
+    "Balhae":           {"name_local": "발해", "name_en": "Balhae", "palette": "Korea_Koguryo"},
     "Goryeo":           {"name_local": "고려", "name_en": "Goryeo", "palette": "Korea"},
 
     # ━━━ 동아시아: 일본 ━━━
@@ -1637,6 +1640,10 @@ COLONIAL_OVERLAYS = {
 # [cl] (NAME, start_year, end_year): { 오버라이드 필드 }
 # colony=True + ruler 지정 시 식민지 표시 오버라이드 가능
 YEAR_RANGE_OVERRIDES = {
+    # ━━━ 한국: 신라→통일신라 (668-935, 삼국통일 이후) ━━━
+    ("Silla", 668, 935): {
+        "name_local": "통일신라", "name_en": "Unified Silla", "name_ko": "통일신라",
+    },
     # ━━━ 한국: 고려 (918-1392, HB에서 "Korea"로 표기되는 시기) ━━━
     ("Korea", 918, 1392): {
         "name_local": "고려", "name_en": "Goryeo", "name_ko": "고려",
