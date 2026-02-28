@@ -1141,6 +1141,104 @@
     * 결론:
       * foreground + 권한 상승 + 보수적 retry 프로필은 현재 시점에서 안정적으로 동작.
       * 공개 WDQS `504`는 간헐적으로 발생하지만, 현재 프로필에선 1회 재시도로 회복 가능.
+  * person 후보 장기 배치 추가 진행 (`2026-02-28 18:49~18:58 KST`):
+    * 사용자의 요청에 따라 같은 foreground 모니터링 전략을 한 번 더 연속 수행.
+    * 실행:
+      * `--resume --batch-count 4 --limit 5 --min-sitelinks 100 --max-sitelinks 1000 --source-lang ko`
+      * 동일 프로필 유지: `WDQS_TIMEOUT_MS=90000`, `WDQS_MAX_RETRIES=3`, `WDQS_BASE_DELAY_MS=2000`, `WDQS_REQUEST_DELAY_MS=1200`
+    * 결과:
+      * `offset=65`는 첫 라운드에서 `WDQS 504` 3회 후 실패 -> 런너가 same offset batch-level retry 수행
+      * 같은 `offset=65` 재실행에서 `WDQS 504` 2회 후 성공 -> `nextOffset=70`
+      * `offset=70`, `75`, `80`은 추가 batch-level retry 없이 연속 성공
+    * state file:
+      * `.cache/person-candidates-ko-low-state.json`
+      * `completedBatches=13`, `lastOffset=80`, `nextOffset=85`
+    * 원격 적재 현황:
+      * Supabase `person_candidates` row count `74 -> 94`
+    * 샘플 report:
+      * `offset=65`: 샤를 페로, 그레이엄 그린, 존 포브스 내시, 클레멘트 애틀리, 로제 마르탱 뒤 가르
+      * `offset=70`: 니콜라이 로바쳅스키, 비비언 리, 크세노폰, 러셀 크로, 휴 잭맨
+      * `offset=75`: 조지 마이클, 니콜라이 1세, 로버트 앤드루스 밀리컨, 프랑수아 라블레, 마리아 몬테소리
+      * `offset=80`: 헨리 데이비드 소로, 시린 에바디, 리콴유, 후안 라몬 히메네스, 재닛 잭슨
+    * 결론:
+      * 현재 시점의 WDQS는 `offset=65` 구간처럼 같은 offset에서 연속 `504`가 나올 수 있음.
+      * 그래도 `runPersonCandidateBatches.mjs`의 batch-level retry가 있어 foreground 운영은 계속 가능.
+  * person 후보 limit 상향 소량 검증 (`2026-02-28 19:05~19:06 KST`):
+    * 사용자의 요청에 따라 속도 상향 가능성 검증을 위해 batch runner가 아닌 단일 수집으로 `limit=10` 실수집을 수행.
+    * 실행:
+      * `npm run collect:person-candidates -- --limit 10 --offset 85 --min-sitelinks 100 --max-sitelinks 1000 --source-lang ko`
+      * report: `.cache/person-candidates-ko-100-1000-offset85-limit10-live.json`
+    * 결과:
+      * `fetchedRows=10`, `normalizedRows=10`, `withAnchor=10`, `withCoord=10`
+      * WDQS timeout/504 재시도 없이 단일 실행 성공
+      * 실행 시간은 약 48초로, 최근 `limit=5` 단일 배치(대체로 30~55초)와 비슷한 수준
+    * 원격 적재 현황:
+      * Supabase `person_candidates` row count `94 -> 104`
+    * 의미:
+      * 현재 시점/쿼리 조건에서는 `limit=10`이 `limit=5` 대비 처리량이 거의 2배
+      * 따라서 이후 운영은 `상시 보수 프로필(limit=10)`과 `오프피크 공격 프로필(limit>10)`의 2단계로 나누는 것이 현실적
+  * person 후보 adaptive probe 기반 자동 조절 도입 (`2026-02-28 19:16~19:19 KST`):
+    * 사용자의 요청에 따라, WDQS 상태를 보고 `person_candidates` batch `limit`을 자동으로 조절하는 운영 경로를 구현.
+  * 구현:
+    * `scripts/wikidata/personCandidateQuery.mjs`
+      * `collectPersonCandidates`와 probe가 같은 seed query를 쓰도록 공용 query builder 분리
+    * `scripts/wikidata/wdqsProbe.mjs`
+      * `transport probe`: `ASK { wd:Q42 wdt:P31 wd:Q5 }`
+      * `shape probe`: 실제 `person_candidates` seed query와 동일한 조건으로 `LIMIT 1`
+      * 결과를 바탕으로 `safe / normal / burst / pause` 프로파일 판정
+      * `.cache/wdqs-probe-history.jsonl`에 JSONL 누적 기록 지원
+    * `scripts/wikidata/runPersonCandidateBatches.mjs`
+      * `--adaptive` 모드 추가
+      * `--safe-limit`, `--normal-limit`, `--burst-limit` 지원
+      * probe 결과에 따라 batch별 `limit` 자동 변경
+      * `nextOffset`을 고정 `limit` 대신 실제 `fetchedRows` 기준으로 갱신하도록 변경
+      * transport/shape probe가 모두 실패하면 같은 offset에서 pause 후 재probe
+    * `package.json`
+      * `npm run collect:wdqs-probe` 추가
+  * 검증:
+    * `node --check`
+      * `personCandidateQuery.mjs`
+      * `wdqsProbe.mjs`
+      * `collectPersonCandidates.mjs`
+      * `runPersonCandidateBatches.mjs`
+      * 모두 통과
+    * live WDQS probe (`offset=85`, `ko`, `100~1000 sitelinks`)
+      * transport: `988ms`
+      * shape: `15414ms`
+      * 판정: `normal`
+      * 추천 limit: `10`
+      * report: `.cache/wdqs-probe-offset85.json`
+    * adaptive smoke run
+      * `--adaptive --dry-run --start-offset 85 --batch-count 1`
+      * probe가 `normal -> limit=10`을 선택
+      * 실제 batch도 `fetchedRows=10`, `normalizedRows=10`으로 성공
+      * smoke state: `.cache/person-candidates-adaptive-smoke-state.json`
+      * smoke report: `.cache/person-candidate-batches/adaptive-smoke/person-candidates-ko-100-1000-offset85-limit10-dry.json`
+  * 결론:
+    * 이제 `person_candidates`는 수동으로 `limit`을 바꾸지 않아도, probe 결과에 따라 `5 / 10 / 20` 범위에서 자동 운영 가능
+    * `.cache/wdqs-probe-history.jsonl`을 쌓으면 이후 시간대별 성공률/지연시간 기반으로 off-peak를 더 정확히 잡을 수 있음
+  * person 후보 main state 정렬 + adaptive live 검증 (`2026-02-28 19:24~19:27 KST`):
+    * 배경:
+      * `offset=85`, `limit=10` live 단일 수집은 이미 끝났지만 메인 state file은 아직 `nextOffset=85`에 머물러 있어 중복 수집 위험이 있었음.
+    * 조치:
+      * `.cache/person-candidates-ko-low-state.json`을 `offset=85` live report 기준으로 정렬
+      * `nextOffset=95`, `lastOffset=85`, `completedBatches=14`로 맞춤
+    * adaptive live 실행:
+      * `--resume --batch-count 4 --adaptive`
+      * `safe-limit=5`, `normal-limit=10`, `burst-limit=20`
+    * 실제 동작:
+      * `offset=95`: probe `normal` -> `limit=10` -> `10건` 성공
+      * `offset=105`: probe `safe` (`shape via curl`, `45223ms`) -> `limit=5` -> `5건` 성공
+      * `offset=110`: probe `burst` -> `limit=20` -> `20건` 성공
+      * `offset=130`: probe `normal` -> `limit=10` -> `10건` 성공
+    * 결과:
+      * state file `nextOffset=140`, `completedBatches=18`
+      * `lastProbe`가 state에 기록되어 마지막 adaptive 판정 근거 확인 가능
+      * Supabase `person_candidates` row count `104 -> 149`
+    * 의미:
+      * adaptive가 단순 판정 로그만 남기는 수준이 아니라, live 운영에서 실제로 `5 / 10 / 20`을 오가며 batch 크기를 조절하는 것 확인
+      * 특히 `offset=105`에서 느린 shape probe를 감지해 `safe`로 내리고, 직후 `offset=110`에서 다시 `burst`로 올린 점이 핵심
+      * 따라서 이후 person 후보 수집은 기본적으로 adaptive 모드로 굴리는 것이 수동 조절보다 합리적
 
 ## [2026-02-28] [cl] BORDERPRECISION 기반 고대 국경 블러 셰이더 구현
 
@@ -1320,3 +1418,95 @@
 * Gemini 웹 UI에 복사-붙여넣기하여 위키피디아 기반 교차검증 가능
 * 400년 이상 스냅샷 공백 자동 감지(⚠️ 표시)
 * 출력: `scripts/geo/validation/` 폴더에 JSON + 마크다운 프롬프트
+
+## [2026-02-28] [cl] 국가명 라벨 시스템: GeoJSON → entity_timeline 분리
+
+### 배경
+* HB GeoJSON은 43개 스냅샷(100~1000년 간격)만 존재하여 국가명 표시가 불가능한 연도 다수 (일본 AD800~1492 gap 등)
+* Gemini 검증 결과 699개 엔티티 중 correct 20개뿐 — HB 데이터 신뢰도 심각
+* 진형(jn) 방침: "국경선은 HB GeoJSON 유지, 국가명 라벨은 별도 데이터에서 1년 단위 정밀 표시"
+
+### entity_timeline.json 시스템 구축
+* **`scripts/geo/buildEntityTimeline.py`** 신규: Gemini 결과 + HB 존속기간 + 메타데이터 병합 빌드 스크립트
+* **`public/geo/borders/entity_timeline.json`** 신규: 라벨 전용 독립 데이터 (2,864개 엔티티)
+* **`CesiumGlobe.tsx`** 수정: `renderLabelsForYear()` 함수 추가, 라벨을 별도 CustomDataSource로 렌더링
+  - 기존 loadBordersAsPolylines에서 라벨 코드 분리 (labeledNames, 가상 엔티티 루프 등 제거)
+  - `EntityTimelineEntry` 인터페이스 + entityTimelineRef 캐싱
+  - 연도 변경 시 라벨만 독립 업데이트 (국경선 스왑과 무관)
+
+### 이후 진행된 반복 수정들 (문제 → 수정 → 새 문제 반복)
+
+#### 1차: 중복 + 좌표 + 티어 수정
+* 청나라 두 개 표시 (Manchu Empire + Qing Empire) → `DEDUP_REMOVE` 12개 추가
+* 미국/캐나다/러시아 등 대국의 라벨이 수도 좌표에 표시 → `LABEL_COORDS_OVERRIDE` 30개 추가
+* 하와이 왕국(Tier 1) > 미국(Tier 2) 크기 역전 → `TIER_OVERRIDES` 37개 추가
+
+#### 2차: 식민지 라벨 시스템
+* 진형 요청: "대일본제국" → "일본" (한국인 정서), "대영제국" → "영국"
+* 식민지 렌더링: `[영국 식민지배]` italic 12px, 일제시대는 `[일제강점기]`
+* `NAME_KO_OVERRIDES`, `COLONIAL_RULER_FIX`, `FORCED_ENTITIES` 도입
+
+#### 3차: 식민지 렌더링 버그 연속
+* 1차 버그: 식민지 국명이 완전히 사라지고 태그만 표시 → 국명+태그 합체로 수정
+* 2차 버그: 일제강점기 라벨이 너무 작음 (일반 식민지와 동일 12px) → hasSpecialColonyLabel 분기 추가
+* 3차 버그: 국명은 작고 태그만 큼 (CesiumJS가 span/mixed font 미지원) → 합체 텍스트 + Tier 통일 스타일
+
+#### 4차: 누락 국가 188개 보강
+* 뉴질랜드 등 주요국 누락 발견 → 원인: HB lifespan에 없는 엔티티는 빌드 자체가 안 됨
+* 해결: buildEntityTimeline.py에 Step 4.5 "메타데이터 스캔" 단계 추가
+* 161개 메타데이터 스냅샷 전수 스캔 → 188개 국가 자동 추가
+
+#### 5차: 중복 라벨 문제 (근본적 결함 노출)
+* 인도: British Raj + India 동시 표시, 호주: 식민지 7개 + 독립호주 겹침
+* Italy/Italy/Sardinia, Romania/Rumania, Persia/Iran, Siam/Thailand 등 이름 중복
+* 해결 시도: 3단계 dedup 시스템 도입
+  1. DEDUP_REMOVE 확장 (호주 식민지 7개, India, Ceylon(Dutch) 등)
+  2. 메타데이터 스캔 스마트화 (좌표 기반 start_year 조정)
+  3. 좌표 기반 자동 중복제거 후처리 (2° 그리드, 50% 시간 겹침 기준)
+* 결과: 1935년 겹침 0개 달성
+
+#### 6차: 근본 문제 발견 — entity_timeline 아키텍처 자체의 한계
+* **1925년 중국 = "청나라" + "중화민국" 동시 표시** → 청나라는 1912년 멸망인데?
+  - 원인: metadata_scan이 "China"를 1886~2015 전체 기간 하나의 엔티티로 만들고,
+    1886년 메타데이터의 name_ko("청나라")를 전 기간에 적용
+* **1875년 호주 완전 누락** → DEDUP_REMOVE로 식민지 제거했는데 1875년엔 대체할 데이터가 없음
+* **근본 원인**: entity_timeline.json은 엔티티 하나에 이름 하나 → 시대별 이름 변화 표현 불가
+  - "China" = 1886년엔 청나라, 1912년엔 중화민국, 1950년엔 중국
+  - "Japan" = 1897년엔 대일본제국, 1948년엔 일본
+  - flat list 구조로는 이런 변천을 담을 수 없음
+
+### ★ 아키텍처 재설계 결정 (진형 주도)
+
+**진형의 진단:**
+> "우리 데이터 방식 자체가 문제야. 기초 데이터가 엉망이니까 이리저리 땜빵하다가 문제가 된 거야.
+> 아예 빈 데이터셋을 만들어서 테이블만 만들어놓고 연도별로 채워넣는 식으로 가야 돼.
+> 스냅샷 방식도 버려야 하고."
+
+**새 데이터 모델 방향:**
+1. **지역(Region) 중심**: "이 지역을 어느 시기에 누가 지배했는가" (≠ 엔티티 중심)
+2. **정확한 시대별 이름**: 그 당시 우리가 부르는 이름 (청나라/중화민국/중국 구분)
+3. **빈 테이블 → 채워넣기**: 깨끗한 스키마에 검증된 데이터만 삽입
+4. **핵심 난제**: 지역(Region) 자체가 시대별로 경계가 변함 — 고구려 영역 ≠ 조선 영역
+
+**세력 분류 기준:**
+* 정치적 실체가 있었는가 (수장/왕/정부 체계)
+* 영토를 실효 지배했는가
+* 일반인이 세계사에서 한번쯤 들어봤을 수준인가
+* Wikidata 등재 여부를 1차 필터로 활용
+
+### Wikidata 기초 데이터 수집
+
+* Wikidata SPARQL로 전체 historical country(Q3024240) + country(Q6256) 조회
+* **결과: 3,985개** (historical 3,770 + modern 215)
+  - 시작일 있음: 2,967개 (74%)
+  - 종료일 있음: 2,830개 (71%)
+  - 한국어명 있음: 1,602개 (40%)
+  - 좌표 있음: 1,580개 (39%)
+* **`public/geo/borders/wikidata_entities_raw.json`**에 전체 저장 (시작일순 정렬)
+* 고조선(BC 2332), 탐라(BC 2336), 우가리트(BC 6000)부터 현대 국가까지 포함
+* ethnic group(10,516개)은 별도 — 정치적 실체 있는 것만 추후 선별 필요
+
+### 현재 상태 및 다음 단계
+* entity_timeline.json 기반 시스템은 **한계가 확인됨** — 구조적 재설계 필요
+* Wikidata 3,985개 엔티티 raw 데이터 수집 완료 — 진형(jn)이 검토 후 방향 결정 예정
+* **기존 코드(buildEntityTimeline.py, CesiumGlobe.tsx 라벨 렌더링)는 당분간 유지** — 새 시스템 구축 후 교체
