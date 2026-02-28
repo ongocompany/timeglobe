@@ -705,6 +705,73 @@ def main():
 
     print(f"  Missing 엔티티 추가: {missing_added}개")
 
+    # ── 4.5. 메타데이터 스캔: HB lifespan에 없지만 메타데이터에 존재하는 엔티티 보강 ──
+    print("\n[4.5] 메타데이터 스캔 (누락 엔티티 보강)...")
+    existing_names_for_meta = {e["name_en"] for e in timeline} | {e["id"] for e in timeline}
+
+    # 모든 메타데이터 파일에서 엔티티 등장 연도 수집
+    meta_appearances: dict[str, dict] = {}
+    for fp in sorted(glob.glob(os.path.join(META_DIR, "*.json"))):
+        fname = os.path.basename(fp).replace(".json", "")
+        # 숫자 연도 파일만 (1800.json, 1966.json 등)
+        if not fname.lstrip("-").isdigit():
+            continue
+        snap_year = int(fname)
+        with open(fp, encoding="utf-8") as f:
+            snap_data = json.load(f)
+        for ename, einfo in snap_data.items():
+            if ename not in meta_appearances:
+                meta_appearances[ename] = {
+                    "first_year": snap_year, "last_year": snap_year,
+                    "info": einfo, "count": 0,
+                }
+            ma = meta_appearances[ename]
+            ma["first_year"] = min(ma["first_year"], snap_year)
+            ma["last_year"] = max(ma["last_year"], snap_year)
+            ma["count"] += 1
+
+    meta_added = 0
+    for ename, ma in meta_appearances.items():
+        if ename in existing_names_for_meta or ename in DEDUP_REMOVE:
+            continue
+        info = ma["info"]
+        coords = None
+        if ename in LABEL_COORDS_OVERRIDE:
+            coords = list(LABEL_COORDS_OVERRIDE[ename])
+        elif info.get("capital_coords"):
+            coords = info["capital_coords"]
+        elif ename in centroids:
+            coords = list(centroids[ename])
+        if not coords:
+            continue
+
+        name_ko = NAME_KO_OVERRIDES.get(ename) or info.get("display_name_ko", "")
+        ruler_ko = info.get("colonial_ruler_ko")
+        if ruler_ko:
+            ruler_ko = COLONIAL_RULER_FIX.get(ruler_ko, ruler_ko)
+
+        entry = {
+            "id": ename,
+            "name_en": info.get("display_name_en") or ename,
+            "name_ko": name_ko,
+            "name_local": info.get("display_name_local", ""),
+            "start_year": ma["first_year"],
+            "end_year": ma["last_year"],
+            "tier": TIER_OVERRIDES.get(ename) or info.get("tier") or 3,
+            "fill_color": info.get("fill_color", "#AAAAAA"),
+            "coords": coords,
+            "is_colony": info.get("is_colony", False),
+            "colonial_ruler_ko": ruler_ko,
+            "source": "metadata_scan",
+        }
+        if entry["is_colony"] and entry["colonial_ruler_ko"]:
+            entry["colony_label"] = f"{entry['colonial_ruler_ko']} 식민지배"
+        timeline.append(entry)
+        existing_names_for_meta.add(ename)
+        meta_added += 1
+
+    print(f"  메타데이터 스캔 추가: {meta_added}개")
+
     # ── 5. 강제 추가 엔티티 (대한제국, 일제강점기 등) ──
     print("\n[5] 강제 추가 엔티티...")
     for fe in FORCED_ENTITIES:
