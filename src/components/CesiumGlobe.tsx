@@ -9,8 +9,8 @@ if (typeof window !== "undefined") {
   (window as any).CESIUM_BASE_URL = "/cesium";
 }
 
-import { useEffect, useRef, useState, useCallback } from "react";
-import { Viewer, useCesium, BlurStage } from "resium";
+import { useEffect, useRef } from "react";
+import { Viewer, useCesium } from "resium";
 import {
   Cartesian3,
   Cartesian2,
@@ -227,10 +227,10 @@ interface SceneSetupProps {
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear: number; // [cl] 역사 국경선 표시용
-  onBlurRatioChange?: (ratio: number) => void; // [cl] BP=1 비율 → 블러 강도 제어
+  // [cl] BlurStage 비활성화됨 — 향후 커스텀 셰이더 구현 시 재활용 가능
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear, onBlurRatioChange }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -1655,7 +1655,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         borderDsRef.current = ds;
         currentBorderFileRef.current = snap.file;
         // [cl] 블러 강도 전달 (BP=1 비율 → 부모 CesiumGlobe의 BlurStage)
-        onBlurRatioChange?.(bp1Ratio);
+
       } catch { /* GeoJSON 미다운로드 시 무시 */ }
       borderLoadingRef.current = false;
     }).catch(() => {});
@@ -1691,7 +1691,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         currentBorderFileRef.current = snap.file;
         borderLoadingRef.current = false;
         // [cl] 블러 강도 업데이트
-        onBlurRatioChange?.(bp1Ratio);
+
       })
       .catch(() => {
         borderLoadingRef.current = false;
@@ -1732,10 +1732,6 @@ export default function CesiumGlobe({
   onSpinWarp,
   currentYear = 1875,
 }: CesiumGlobeProps) {
-  // [cl] 고대 국경 블러 강도 (BP=1 비율: 0=근대/실선, 1=고대/최대블러)
-  const [blurRatio, setBlurRatio] = useState(0);
-  const handleBlurRatioChange = useCallback((ratio: number) => setBlurRatio(ratio), []);
-
   return (
     <Viewer
       full
@@ -1764,19 +1760,11 @@ export default function CesiumGlobe({
         warpPhase={warpPhase}
         onSpinWarp={onSpinWarp}
         currentYear={currentYear}
-        onBlurRatioChange={handleBlurRatioChange}
       />
-      {/* [cl] "시간의 안개" — BP=1 비율에 비례하는 미세 Gaussian blur
-          주의: PostProcessStage는 화면 전체에 적용 → 강도를 최소화해야 가독성 유지
-          고대(100% BP=1): sigma=0.6 (미세한 안개)
-          혼합(1650년대): sigma~0.3
-          근대(100% BP=3): 블러 OFF */}
-      <BlurStage
-        enabled={blurRatio > 0.1}
-        delta={1.0}
-        sigma={blurRatio * 0.6}
-        stepSize={blurRatio * 0.5}
-      />
+      {/* [cl] BlurStage 비활성화 — PostProcessStage는 화면 전체(지구본+라벨+배경)에
+          적용되므로 개별 폴리곤 엣지 블러 불가. CesiumJS 기본 API 한계.
+          BP=1 시각화는 filled polygon(반투명, 경계선 없음)만으로 처리.
+          향후 커스텀 Primitive + GLSL shader로 엣지 페이드아웃 구현 시 대체 가능. */}
     </Viewer>
   );
 }
