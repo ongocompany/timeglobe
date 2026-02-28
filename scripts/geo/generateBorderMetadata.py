@@ -734,10 +734,13 @@ def create_snapshot_json(year, name_list, output_dir):
 
 
 if __name__ == "__main__":
+    import glob
+
     GEOJSON_DIR = os.path.join(os.getcwd(), "public", "geo", "borders")
     OUTPUT_DIR = os.path.join(GEOJSON_DIR, "metadata")
 
-    SNAPSHOTS = [
+    # [cl] historical-basemaps 스냅샷 (world_*.geojson)
+    HB_SNAPSHOTS = [
         (1880, "world_1880.geojson"),
         (1900, "world_1900.geojson"),
         (1914, "world_1914.geojson"),
@@ -751,11 +754,22 @@ if __name__ == "__main__":
         (2010, "world_2010.geojson"),
     ]
 
-    print(f"=== 역사 국경 메타데이터 생성 (규칙: {len(ENTITY_RULES)}개) ===\n")
+    # [cl] CShapes 2.0 스냅샷 (cshapes_*.geojson) 자동 탐색
+    CS_SNAPSHOTS = []
+    for path in sorted(glob.glob(os.path.join(GEOJSON_DIR, "cshapes_*.geojson"))):
+        fname = os.path.basename(path)
+        year = int(fname.replace("cshapes_", "").replace(".geojson", ""))
+        CS_SNAPSHOTS.append((year, fname))
+
+    ALL_SNAPSHOTS = HB_SNAPSHOTS + CS_SNAPSHOTS
+    ALL_SNAPSHOTS.sort(key=lambda x: x[0])
+
+    print(f"=== 역사 국경 메타데이터 생성 (규칙: {len(ENTITY_RULES)}개) ===")
+    print(f"    HB: {len(HB_SNAPSHOTS)}개 | CShapes: {len(CS_SNAPSHOTS)}개 | 총: {len(ALL_SNAPSHOTS)}개\n")
 
     total_high = 0
     total_low = 0
-    for year, filename in SNAPSHOTS:
+    for year, filename in ALL_SNAPSHOTS:
         geojson_path = os.path.join(GEOJSON_DIR, filename)
         if not os.path.exists(geojson_path):
             print(f"  [{year}] SKIP - {filename} not found")

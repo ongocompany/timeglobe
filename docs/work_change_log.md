@@ -851,3 +851,43 @@
 * 좌표 미보유: 1건 (Battle of Behgy)
 * significance_score 보유: 406건 (전투 이벤트 대상)
 * 10점 전투 예시: 적벽 대전, 밀비우스 다리, 카탈라우눔, 야르무크, 까디시야, 투르 푸아티에, 탈라스 등
+
+## [2026-02-28] [cl] CShapes 2.0 하이브리드 국경 시스템 통합
+
+### 배경
+* 기존 historical-basemaps는 BC~AD 2010 53개 스냅샷이나 1815→1880(65년 갭), 1960→1994(34년 갭) 등 근대 시기 정밀도 부족
+* CShapes 2.0 (ETH ICR, CC-BY-NC-SA 4.0): 1886~2019, 이벤트 기반(시작/종료 연도), 710개 폴리곤 레코드
+
+### CShapes 2.0 다운로드 + 추출 (`scripts/geo/extractCShapes.py`)
+* 원본 25MB GeoJSON (710 레코드, 252개 고유 국가명) 다운로드
+* `CSHAPES_TO_NAME` 매핑 (CShapes cntry_name → 기존 ENTITY_RULES NAME): 50개 변환 규칙
+* 좌표 경량화: precision=2 (~1km), decimate_ring nth=3 (3점마다 1점 추출)
+* **117개 transition year** GeoJSON 파일 생성 (총 111.7MB)
+* 파일: `public/geo/borders/cshapes_YYYY.geojson`
+
+### 하이브리드 인덱스 (`public/geo/borders/index.json`)
+* historical-basemaps: BC 123000 ~ AD 1880 (43개 엔트리)
+* CShapes 2.0: AD 1886 ~ 2015 (117개 엔트리)
+* 총 160개 엔트리 (기존 53개 → 3배 증가)
+
+### borderIndex.ts 하이브리드 매칭
+* **CShapes (1886+)**: floor match — 이벤트 기반 데이터이므로 직전 변동 연도가 정확한 국경
+* **historical-basemaps (<1886)**: nearest match — 스냅샷 기반이므로 가장 가까운 연도 사용
+* 이진탐색으로 O(log n) 매칭
+
+### CesiumGlobe.tsx CShapes 데이터 연동
+* CShapes GeoJSON의 `caplong`/`caplat` 속성을 라벨 위치에 직접 사용 (metadata capital_coords 불필요)
+* 라벨 위치 우선순위: 1.metadata capital_coords → 2.CShapes caplong/caplat → 3.가상자식 있으면 스킵 → 4.centroid 폴백
+* 메타데이터 로더: 정확한 연도 시도 → 실패 시 기존 HB 메타데이터 폴백
+
+### 메타데이터 일괄 생성 (`scripts/geo/generateBorderMetadata.py`)
+* CShapes 파일 자동 탐색(glob) 추가: HB 11개 + CShapes 117개 = 총 128개 연도
+* 매핑 결과: 규칙 매칭 17,494건, 미매핑 3,469건 (대부분 소규모 영토)
+* 미매핑 주요 엔티티: Alaska, Maldives, Palestine, Reunion 등 → 향후 점진 추가 예정
+
+### 수정된 파일
+* `scripts/geo/extractCShapes.py` — CShapes 연도별 GeoJSON 추출
+* `scripts/geo/generateBorderMetadata.py` — CShapes 메타데이터 자동 생성
+* `src/lib/borderIndex.ts` — 하이브리드 매칭 (floor/nearest)
+* `src/components/CesiumGlobe.tsx` — CShapes caplong/caplat 라벨, 메타데이터 로더 개선
+* `public/geo/borders/index.json` — 160개 하이브리드 인덱스

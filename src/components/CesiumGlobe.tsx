@@ -1416,17 +1416,27 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     capital_coords?: [number, number]; // [cl] 수도 좌표 (라벨 위치)
   }
 
-  // [cl] 스냅샷 연도에 해당하는 메타데이터 로드 (1880+ 전용)
+  // [cl] 스냅샷 연도에 해당하는 메타데이터 로드
+  // 메타데이터 파일이 있으면 정확히 로드, 없으면 가장 가까운 연도 폴백
   async function loadMetadata(snapYear: number): Promise<Record<string, BorderMetadata> | null> {
     if (metadataCacheRef.current[snapYear]) return metadataCacheRef.current[snapYear];
-    // [cl] 메타데이터는 1880~2010만 존재, 해당 연도 파일에 정확히 매칭
+    // [cl] 먼저 정확한 연도 시도
+    try {
+      const res = await fetch(`/geo/borders/metadata/${snapYear}.json`);
+      if (res.ok) {
+        const data = await res.json();
+        metadataCacheRef.current[snapYear] = data;
+        return data;
+      }
+    } catch { /* 파일 없음 → 폴백 */ }
+    // [cl] 폴백: 기존 메타데이터 연도에서 가장 가까운 것 (floor)
     const metaYears = [1880, 1900, 1914, 1920, 1930, 1938, 1945, 1960, 1994, 2000, 2010];
-    // snapYear 이하의 가장 가까운 메타데이터 연도 찾기
     let metaYear: number | null = null;
     for (let i = metaYears.length - 1; i >= 0; i--) {
       if (metaYears[i] <= snapYear) { metaYear = metaYears[i]; break; }
     }
     if (!metaYear) return null;
+    if (metadataCacheRef.current[metaYear]) return metadataCacheRef.current[metaYear];
     try {
       const res = await fetch(`/geo/borders/metadata/${metaYear}.json`);
       if (!res.ok) return null;
@@ -1442,6 +1452,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const geojson = await res.json();
     const ds = new CustomDataSource("borders");
     const defaultBorderColor = Color.fromCssColorString("rgba(255, 255, 255, 0.3)");
+
+    // [cl] CShapes 파일 여부 (caplong/caplat 사용 가능)
+    const isCShapes = url.includes("cshapes_");
 
     // [cl] 메타데이터 로드 (1880+ 있으면 색상+현지이름, 없으면 GeoJSON NAME 그대로)
     const metadata = await loadMetadata(snapYear);
@@ -1469,15 +1482,21 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         });
       }
 
-      // [cl] 라벨: capital_coords 우선, 없으면 centroid 폴백
-      // 가상 자식 엔트리가 있는 경우(예: Empire of Japan → Korea, Taiwan) capital_coords 필수
+      // [cl] 라벨 위치 결정 (우선순위):
+      // 1. 메타데이터 capital_coords
+      // 2. CShapes GeoJSON의 caplong/caplat (CShapes 전용)
+      // 3. 가상 자식 엔트리 있으면 스킵 (centroid가 자식 영토에 떨어지는 문제 방지)
+      // 4. centroid 폴백
       if (name && !labeledNames.has(name)) {
         labeledNames.add(name);
         const hasVirtualChildren = metadata && Object.entries(metadata).some(
           ([k, v]) => k.startsWith("__virtual__") && v.colonial_ruler === name);
+        const props = feature.properties;
         const center = meta?.capital_coords
           ? meta.capital_coords as [number, number]
-          : hasVirtualChildren ? null : calcCentroid(feature.geometry);
+          : (isCShapes && props.caplong != null && props.caplat != null)
+            ? [props.caplong, props.caplat] as [number, number]
+            : hasVirtualChildren ? null : calcCentroid(feature.geometry);
         if (center) {
           // [cl] 식민지: 피지배국명 + 줄바꿈 + [지배국] 표시
           const labelText = meta
