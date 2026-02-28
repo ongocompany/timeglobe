@@ -9528,18 +9528,6 @@
     "tier": null
   },
   {
-    "qid": "Q217196",
-    "name_en": "Crown of Castile",
-    "name_ko": "카스티야 연합왕국",
-    "start": "1230",
-    "end": "1715",
-    "lon": "-3.715",
-    "lat": "40.4175",
-    "type": "historical",
-    "lineage_id": "L0069",
-    "tier": null
-  },
-  {
     "qid": "Q3818611",
     "name_en": "Usfurids",
     "name_ko": "",
@@ -13281,18 +13269,6 @@
     "lat": "-6.88361",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
-  },
-  {
-    "qid": "Q766543",
-    "name_en": "Hispanic Monarchy",
-    "name_ko": "이스파니아 군주국",
-    "start": "1479",
-    "end": "1700",
-    "lon": "-3.5",
-    "lat": "40.2",
-    "type": "historical",
-    "lineage_id": "L0069",
     "tier": null
   },
   {
