@@ -210,6 +210,7 @@ DEDUP_REMOVE = {
 # ─── 한국어 이름 충돌 해소 ─────────────────────────────────────
 # [cl] 서로 다른 엔티티인데 번역이 같아진 경우 구별
 NAME_KO_OVERRIDES = {
+    "Imperial Japan": "일본",               # "대일본제국" → "일본" (한국인 정서 고려)
     "Imperial Hungary": "헝가리 (오스트리아-헝가리)",
     "Swedes and Goths": "스웨덴 (중세)",
     "Dahomey": "다호메이 왕국",
@@ -220,6 +221,46 @@ NAME_KO_OVERRIDES = {
     "Guyana (Netherlands)": "가이아나 (네덜란드령)",
     "Aché": "아체족 (파라과이)",
 }
+
+# ─── 식민 본국 이름 정규화 ─────────────────────────────────────
+# [cl] "대영제국" 같은 표현 대신 간결한 국명으로 통일
+COLONIAL_RULER_FIX = {
+    "대영제국": "영국",
+}
+
+# ─── 강제 추가 엔티티 ──────────────────────────────────────────
+# [cl] HB/Gemini에 없지만 반드시 표시해야 하는 엔티티
+FORCED_ENTITIES = [
+    {
+        "id": "__forced__korean_empire",
+        "name_en": "Korean Empire",
+        "name_ko": "대한제국",
+        "name_local": "大韓帝國",
+        "start_year": 1897,
+        "end_year": 1910,
+        "tier": 1,
+        "fill_color": "#C0392B",
+        "coords": [126.98, 37.57],   # 한양(서울)
+        "is_colony": False,
+        "colonial_ruler_ko": None,
+        "source": "forced",
+    },
+    {
+        "id": "__forced__korea_japanese_rule",
+        "name_en": "Korea (Japanese Rule)",
+        "name_ko": "일제강점기",
+        "name_local": "日帝強占期",
+        "start_year": 1910,
+        "end_year": 1945,
+        "tier": 1,
+        "fill_color": "#922B21",
+        "coords": [126.98, 37.57],   # 서울
+        "is_colony": True,
+        "colonial_ruler_ko": "일본",
+        "colony_label": "일제강점기",       # 특수 라벨 (CesiumGlobe에서 사용)
+        "source": "forced",
+    },
+]
 
 # ─── 대국 라벨 좌표: 수도 → 국토 중심 ─────────────────────────
 # [cl] 국토가 넓은데 수도가 구석에 있는 나라들의 라벨 위치 보정
@@ -486,9 +527,14 @@ def main():
             "fill_color": meta.get("fill_color", "#AAAAAA"),
             "coords": coords,
             "is_colony": meta.get("is_colony", False),
-            "colonial_ruler_ko": meta.get("colonial_ruler_ko"),
+            "colonial_ruler_ko": COLONIAL_RULER_FIX.get(
+                meta.get("colonial_ruler_ko", ""), meta.get("colonial_ruler_ko")
+            ),
             "source": source,
         }
+        # 식민지 라벨 생성: [영국 식민지배] 형식
+        if entry["is_colony"] and entry["colonial_ruler_ko"]:
+            entry["colony_label"] = f"{entry['colonial_ruler_ko']} 식민지배"
         timeline.append(entry)
 
     print(f"  중복 제거: {dedup_count}개")
@@ -535,14 +581,20 @@ def main():
 
     print(f"  Missing 엔티티 추가: {missing_added}개")
 
-    # ── 5. 정렬 및 저장 ──
+    # ── 5. 강제 추가 엔티티 (대한제국, 일제강점기 등) ──
+    print("\n[5] 강제 추가 엔티티...")
+    for fe in FORCED_ENTITIES:
+        timeline.append(dict(fe))  # 복사해서 추가
+    print(f"  강제 추가: {len(FORCED_ENTITIES)}개")
+
+    # ── 6. 정렬 및 저장 ──
     timeline.sort(key=lambda e: (e["start_year"], e["name_en"]))
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(timeline, f, ensure_ascii=False)
     file_size = os.path.getsize(OUTPUT_PATH)
 
-    # ── 6. 요약 ──
+    # ── 7. 요약 ──
     print("\n" + "=" * 60)
     print("[결과 요약]")
     print(f"  총 엔트리: {len(timeline)}개")

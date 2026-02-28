@@ -1419,6 +1419,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     coords: [number, number]; // [lng, lat]
     is_colony: boolean;
     colonial_ruler_ko: string | null;
+    colony_label?: string;           // [cl] 식민지 특수 라벨 (예: "일제강점기")
     source: string;
   }
   const entityTimelineRef = useRef<EntityTimelineEntry[] | null>(null);
@@ -1618,18 +1619,38 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     for (const entity of timeline) {
       if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
 
-      // 한글 + 영문 2줄 포맷 (기존 로직 유지)
+      const tier = entity.tier;
+
+      // ── 식민지 엔티티: [영국 식민지배] 형식, 이탤릭 작은 글씨 ──
+      if (entity.is_colony) {
+        // colony_label이 있으면 특수 라벨 (예: "일제강점기")
+        // 없으면 "{지배국} 식민지배"
+        const colonyText = entity.colony_label
+          || (entity.colonial_ruler_ko ? `${entity.colonial_ruler_ko} 식민지배` : null);
+        if (!colonyText) continue;
+
+        ds.entities.add({
+          position: Cartesian3.fromDegrees(entity.coords[0], entity.coords[1]),
+          label: {
+            text: `[${colonyText}]`,
+            font: "italic 12px sans-serif",
+            fillColor: Color.WHITE.withAlpha(0.7),
+            outlineColor: Color.BLACK.withAlpha(0.5),
+            outlineWidth: 1,
+            style: 2,
+            scaleByDistance: new NearFarScalar(5e6, 0.9, 2e7, 0.4),
+          },
+        });
+        continue;
+      }
+
+      // ── 일반 국가: 한글 + 영문 2줄 포맷 ──
       const koName = entity.name_ko || entity.name_en;
       const enName = entity.name_en;
       const needsEnSub = koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName);
       let labelText = koName;
       if (needsEnSub) labelText += `\n${enName}`;
-      if (entity.is_colony && entity.colonial_ruler_ko) {
-        labelText += `\n[${entity.colonial_ruler_ko}]`;
-      }
 
-      // Tier별 스타일 (기존 그대로)
-      const tier = entity.tier;
       ds.entities.add({
         position: Cartesian3.fromDegrees(entity.coords[0], entity.coords[1]),
         label: {
