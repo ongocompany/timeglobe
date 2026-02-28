@@ -1266,7 +1266,7 @@ KOREAN_NAMES = {
     "Bukhara Emirate": "부하라 토후국",
     "Khanate of Khiva": "히바 칸국",
     "Kazakh Khanate": "카자흐 칸국",
-    "Trucial States (UAE)": "트루셜 오만 (UAE)",
+    "Trucial States (UAE)": "트루셜 오만 (아랍에미리트)",
     "German Empire (Prussia)": "독일 제국 (프로이센)",
     # ━━━ 유럽: 기타 ━━━
     "Netherlands": "네덜란드",
@@ -1718,6 +1718,13 @@ _SUFFIX_MAP = {
     "states and chiefdoms":  "국가 및 추장국",
     "states and kingdoms":   "국가 및 왕국",
     "hunting and fishing peoples": "수렵어로민",
+    "hunter gatherers":  "수렵채집민",
+    "hunter-gatherers and maïze farmers": "수렵채집민 및 옥수수 농경민",
+    "foraging, hunting and fishing peoples": "채집·수렵·어로민",
+    "civilization":     "문명",
+    "Civilization":     "문명",
+    "civilizations":    "문명",
+    "Civilizations":    "문명",
 }
 
 # 방향/지역 접두사 (원어 → 한국어)
@@ -1835,6 +1842,101 @@ _ADJECTIVE_MAP = {
     "White":         "백",
     "Sheep":         "양",
     "Turks":         "투르크",
+    # [cl] 지리/자연 용어
+    "New":           "뉴",
+    "Lake":          "호",
+    "River":         "강",
+    "Mountain":      "산",
+    "Mountains":     "산맥",
+    "Bay":           "만",
+    "Coast":         "해안",
+    "Islands":       "제도",
+    "Island":        "섬",
+    "Peninsula":     "반도",
+    "Valley":        "계곡",
+    "Plains":        "평원",
+    "plain":         "평원",
+    "Plateau":       "고원",
+    "plateau":       "고원",
+    "Taiga":         "타이가",
+    "taiga":         "타이가",
+    "Tundra":        "툰드라",
+    "tundra":        "툰드라",
+    "Savanna":       "사바나",
+    "savanna":       "사바나",
+    "Steppe":        "초원",
+    "steppe":        "초원",
+    "Oasis":         "오아시스",
+    "oasis":         "오아시스",
+    "Strait":        "해협",
+    "Cape":          "곶",
+    "Gulf":          "만",
+    "Reservoir":     "저수지",
+    "Delta":         "델타",
+    "delta":         "델타",
+    "Canal":         "운하",
+    "Jungle":        "밀림",
+    "jungle":        "밀림",
+    "Swamp":         "늪지",
+    "swamp":         "늪지",
+    # [cl] 정치/행정 용어
+    "princely":      "토후",
+    "Princely":      "토후",
+    "Vice-Royalty":  "부왕령",
+    "Viceroyalty":   "부왕령",
+    "Commonwealth":  "연방",
+    "Settlement":    "정착지",
+    "Reservation":   "보호구역",
+    "Rancheria":     "란체리아",
+    "Treaty":        "조약",
+    "Council":       "의회",
+    "First":         "원주민",
+    "Federation":    "연방",
+    "Horde":         "오르다",
+    "Complex":       "복합체",
+    "Age":           "시대",
+    # [cl] 언어/민족 형용사 추가
+    "Finno-Ugric":   "핀우그르",
+    "Finno":         "핀",
+    "Ugric":         "우그르",
+    "Paleo":         "팔레오",
+    "paleo":         "팔레오",
+    "Paleo-Siberian":"팔레오시베리아",
+    "Uralic":        "우랄",
+    "Altaic":        "알타이",
+    "Tungusic":      "퉁구스",
+    "Samoyedic":     "사모예드",
+    "Yeniseian":     "예니세이",
+    "Dravidian":     "드라비다",
+    "Austroasiatic":  "오스트로아시아",
+    "Indo-European": "인도유럽",
+    "Afro-Asiatic":  "아프로아시아",
+    "Polynesian":    "폴리네시아",
+    "Melanesian":    "멜라네시아",
+    "Micronesian":   "미크로네시아",
+    "Bantu":         "반투",
+    "Cushitic":      "쿠시",
+    "Nilotic":       "나일",
+    "Khoisan":       "코이산",
+    "San":           "산",
+    "Pygmy":         "피그미",
+    "Negrito":       "네그리토",
+    "Ainu":          "아이누",
+    "Dutch":         "네덜란드",
+    "British":       "영국",
+    "Spanish":       "스페인",
+    "French":        "프랑스",
+    "Portuguese":    "포르투갈",
+    "Italian":       "이탈리아",
+    "Cycladic":      "키클라데스",
+    "Minoan":        "미노아",
+    "Mycenaean":     "미케네",
+    "Hellenistic":   "헬레니즘",
+    "Masurian":      "마주리아",
+    "Iranian":       "이란",
+    "Oghuz":         "오구즈",
+    "Kipchak":       "킵차크",
+    "Chagatai":      "차가타이",
 }
 
 # 고유명사 한글 음역 사전 (외래어 표기법 기반, 자주 등장하는 것만)
@@ -2076,6 +2178,724 @@ _PHONETIC_MAP = {
     "Niger":      "니제르",
     "Sudan":      "수단",
     "Zambezi":    "잠베지",
+    # ── [cl] 대량 확장: 빈도 2+ 고유명사 전수 음역 ──
+    # 북아메리카 원주민 부족 (빈도 2+)
+    "Kawahib":    "카와이브",
+    "Emberá":     "엠베라",
+    "Osage":      "오세이지",
+    "Sauk":       "소크",
+    "Pima":       "피마",
+    "Umpqua":     "엄프콰",
+    "Chontal":    "촌탈",
+    "Guna":       "구나",
+    "Tonkawa":    "톤카와",
+    "Kiowa":      "카이오와",
+    "Mandan":     "만단",
+    "Siletz":     "실레츠",
+    "Kalapuya":   "칼라푸야",
+    "Jicarilla":  "히카리야",
+    "Peoria":     "피오리아",
+    "Zuni":       "주니",
+    "Yaqui":      "야키",
+    "Kansa":      "캔자",
+    "Cayuse":     "카유스",
+    "Havasupai":  "하바수파이",
+    "Muscogee":   "머스코기",
+    "Flathead":   "플랫헤드",
+    "Potawatomi": "포타와토미",
+    "Kickapoo":   "킥카푸",
+    "Yuchi":      "유치",
+    "Lipan":      "리판",
+    "Mescalero":  "메스칼레로",
+    "Chiricahua": "치리카우아",
+    "Okanagan":   "오카나간",
+    "Yurok":      "유록",
+    "Siuslaw":    "시우슬로",
+    "Ponca":      "폰카",
+    "Omaha":      "오마하",
+    "Miami":      "마이애미",
+    "Iowa":       "아이오와",
+    "Kaw":        "코",
+    "Atakapa":    "아타카파",
+    "Ditidaht":   "디티다트",
+    "Hoopa":      "후파",
+    "Tuscarora":  "터스카로라",
+    "Tanana":     "타나나",
+    "Caloosahatchee": "칼루사하치",
+    "Kootenai":   "쿠테나이",
+    "Naskapi":    "나스카피",
+    "Umatilla":   "유머틸라",
+    "Kalinago":   "칼리나고",
+    "Canela":     "카넬라",
+    "Adena":      "아데나",
+    "Hopewell":   "호프웰",
+    "Tohono":     "토호노",
+    "O'odham":    "오오담",
+    "Fox":        "폭스",
+    "Walla":      "왈라",
+    "Arikara":    "아리카라",
+    "Teslin":     "테슬린",
+    "Carcross":   "카크로스",
+    "Nehântick":  "네한틱",
+    "Mono":       "모노",
+    "Monache":    "모나치",
+    "Yuki":       "유키",
+    # 남아메리카 원주민
+    "Tekohá":     "테코하",
+    "Pataxó":     "파타소",
+    "Awaeté":     "아와에테",
+    "Awá":        "아와",
+    "Ishir":      "이시르",
+    "Weenhayek":  "웨엔하옉",
+    "Günün":      "귀눈",
+    "Eperara":    "에페라라",
+    # 호주/오세아니아 원주민
+    "Gubbi":      "구비",
+    "Gureng":     "구렝",
+    "Nyul":       "눌",
+    "Winda":      "윈다",
+    "Latje":      "라체",
+    "Yorta":      "요르타",
+    "Yitha":      "이타",
+    "Waka":       "와카",
+    "Wemba":      "웸바",
+    # 중앙아시아/시베리아
+    "Baraba":     "바라바",
+    "Kelteminar": "켈테미나르",
+    "Qhara":      "카라",
+    # 아프리카
+    "Madi":       "마디",
+    "Dau":        "다우",
+    # 중동
+    "Sind":       "신드",
+    "Aden":       "아덴",
+    "Kashmir":    "카슈미르",
+    "Wadi":       "와디",
+    # 유럽
+    "Swabia":     "슈바벤",
+    "Hesse":      "헤센",
+    "Macedonia":  "마케도니아",
+    "Granada":    "그라나다",
+    "Rhodesia":   "로디지아",
+    "Francia":    "프랑키아",
+    # 지리/기타
+    "Yukon":      "유콘",
+    "Sahtu":      "사투",
+    "Métis":      "메티",
+    "Metis":      "메티",
+    "Innu":       "이누",
+    "Me-Wuk":     "미웍",
+    "Pom":        "포모",
+    "Got'ine":    "고틴",
+    "Veracruz":   "베라크루스",
+    "Guerrero":   "게레로",
+    "Norte":      "노르테",
+    "Plata":      "플라타",
+    "Brazil":     "브라질",
+    "Peru":       "페루",
+    "Morocco":    "모로코",
+    "Nigeria":    "나이지리아",
+    "Australia":  "호주",
+    "Getaes":     "게타이",
+    "Chalukyas":  "찰루키아",
+    "Nahuas":     "나우아",
+    "Thai":       "타이",
+    "Virgin":     "버진",
+    "Grand":      "그랜드",
+    "Sierra":     "시에라",
+    "Monte":      "몬테",
+    "Río":        "리오",
+    "Lagunero":   "라구네로",
+    "Matlatzinco":"마틀라친코",
+    "Winik":      "위닉",
+    "Muteamasa":  "무테아마사",
+    "Irritilas":  "이리틸라스",
+    "Dadi":       "다디",
+    "Nari":       "나리",
+    "Nom":        "놈",
+    "Dja":        "자",
+    "Oro":        "오로",
+    "Salmon":     "새먼",
+    "Beaver":     "비버",
+    "Big":        "빅",
+    "Deg":        "데그",
+    "Xit'an":     "시탄",
+    "Gitga'at":   "기트가트",
+    # ── [cl] 빈도 1: 핵심 고유명사 음역 대량 추가 ──
+    # 북미 원주민
+    "Quinnipiac": "퀴니피악",
+    "Coahuiltecan":"코아우일텍",
+    "Seneca":     "세네카",
+    "Wampanoag":  "왐파노아그",
+    "Spokane":    "스포캔",
+    "Quechan":    "케찬",
+    "Eyak":       "에야크",
+    "Swinomish":  "스위노미시",
+    "Quileute":   "퀼류트",
+    "Chinookan":  "치누칸",
+    "Alsea":      "앨시아",
+    "Tataviam":   "타타비암",
+    "Coquille":   "코킬",
+    "Heiltsuk":   "헤일추크",
+    "Nomlaki":    "놈라키",
+    "Wappo":      "와포",
+    "Accomack":   "아코맥",
+    "Chitimacha": "치티마차",
+    "Chatot":     "차토트",
+    "Nipmuc":     "닙먹",
+    "Pawtucket":  "포터킷",
+    "Lenca":      "렌카",
+    "Tenino":     "테니노",
+    "Itelmen":    "이텔멘",
+    "Huarpe":     "우아르페",
+    "Waccamaw":   "와카모",
+    "Tonkawan":   "톤카완",
+    "Timucua":    "티무쿠아",
+    "Abenaki":    "아베나키",
+    "Abnaki":     "아베나키",
+    "Achomawi":   "아초마위",
+    "Achumawi":   "아추마위",
+    "Atsugewi":   "아추게위",
+    "Aleut":      "알류트",
+    "Anishinaabe":"아니시나베",
+    "Assiniboine":"어시니보인",
+    "Blackfeet":  "블랙피트",
+    "Caddo":      "캐도",
+    "Catawba":    "카토바",
+    "Coeur":      "쾨르",
+    "Colville":   "콜빌",
+    "Delaware":   "델라웨어",
+    "Duwamish":   "두와미시",
+    "Erie":       "이리",
+    "Hopi":       "호피",
+    "Hupa":       "후파",
+    "Karuk":      "카루크",
+    "Lakota":     "라코타",
+    "Lummi":      "럼미",
+    "Makah":      "마카",
+    "Menominee":  "메노미니",
+    "Modoc":      "모독",
+    "Mohegan":    "모히건",
+    "Narragansett":"내러갠셋",
+    "Nez":        "네즈",
+    "Nisqually":  "니스콸리",
+    "Nootka":     "누트카",
+    "Oneida":     "오나이다",
+    "Onondaga":   "오논다가",
+    "Osage":      "오세이지",
+    "Ottawa":     "오타와",
+    "Paiute":     "파이유트",
+    "Penobscot":  "페놉스콧",
+    "Pequot":     "피쿼트",
+    "Puyallup":   "퓨얼럽",
+    "Saginaw":    "새기노",
+    "Salish":     "세일리시",
+    "Sauk":       "소크",
+    "Shasta":     "샤스타",
+    "Snohomish":  "스노호미시",
+    "Snoqualmie": "스노콸미",
+    "Squaxin":    "스콰신",
+    "Susquehannock":"서스퀘해녹",
+    "Taos":       "타오스",
+    "Tulalip":    "툴레일립",
+    "Wasco":      "와스코",
+    "Wenatchee":  "워내치",
+    "Winnebago":  "위니베이고",
+    "Wyandot":    "와이언돗",
+    "Yakama":     "야카마",
+    "Yokuts":     "요쿠츠",
+    "Yuma":       "유마",
+    "Zia":        "지아",
+    "Anasazi":    "아나사지",
+    "Hohokam":    "호호캄",
+    "Mogollon":   "모골론",
+    "Mississippian": "미시시피",
+    # 남미 원주민
+    "Guaraní":    "과라니",
+    "Tupinambá":  "투피남바",
+    "Yanomami":   "야노마미",
+    "Shipibo":    "시피보",
+    "Matsigenka": "마치겡카",
+    "Asháninka":  "아샤닌카",
+    "Achuar":     "아추아르",
+    "Aguaruna":   "아구아루나",
+    "Shuar":      "슈아르",
+    "Waorani":    "와오라니",
+    "Cofán":      "코판",
+    "Kofán":      "코판",
+    "Huaorani":   "후아오라니",
+    "Siona":      "시오나",
+    "Secoya":     "세코야",
+    "Cubeo":      "쿠베오",
+    "Desana":     "데사나",
+    "Tukano":     "투카노",
+    "Baniwa":     "바니와",
+    "Yanomamö":   "야노마모",
+    "Kayapó":     "카야포",
+    "Xavante":    "샤반치",
+    "Bororo":     "보로로",
+    "Terena":     "테레나",
+    "Kadiwéu":    "카디웨우",
+    "Apinajé":    "아피나제",
+    "Krahô":      "크라오",
+    "Gavião":     "가비앙",
+    "Munduruku":  "문두루쿠",
+    "Mbyá":       "음뱌",
+    "Mbya":       "음뱌",
+    "Toromona":   "토로모나",
+    "Vilela":     "빌렐라",
+    "Abipones":   "아비포네스",
+    "Charrúa":    "차루아",
+    "Tehuelche":  "테우엘체",
+    "Selk'nam":   "셀크남",
+    "Yaghan":     "야간",
+    "Diaguita":   "디아기타",
+    "Aymara":     "아이마라",
+    "Wichi":      "위치",
+    "Toba":       "토바",
+    "Pilagá":     "필라가",
+    "Chamacoco":  "차마코코",
+    "Ayoreo":     "아요레오",
+    "Waiwai":     "와이와이",
+    "Wapishana":  "와피샤나",
+    "Macuxi":     "마쿠시",
+    "Kaiabi":     "카이아비",
+    "Enawene":    "에나웨네",
+    "Parintintin":"파린틴틴",
+    "Pirahã":     "피라한",
+    "Karajá":     "카라자",
+    "Kamayurá":   "카마유라",
+    "Kuikuro":    "쿠이쿠로",
+    "Mehinako":   "메이나쿠",
+    "Wauja":      "와우자",
+    "Arara":      "아라라",
+    "Leco":       "레코",
+    "Sharanahua": "샤라나우아",
+    # 호주 원주민
+    "Warlpiri":   "와를피리",
+    "Pitjantjatjara":"피찬차차라",
+    "Arrernte":   "아런타",
+    "Yolngu":     "욜응우",
+    "Tiwi":       "티위",
+    "Noongar":    "눈가르",
+    "Wiradjuri":  "위라주리",
+    "Kamilaroi":  "카밀라로이",
+    "Bundjalung": "번잘룽",
+    "Murri":      "머리",
+    "Koori":      "쿠리",
+    "Palawa":     "팔라와",
+    "Kokatha":    "코카타",
+    "Gangulu":    "강굴루",
+    "Yuin":       "유인",
+    "Bardi":      "바르디",
+    "Waanyi":     "와니",
+    "Alyawarre":  "알야와르",
+    "Andyamathanha":"안디아마탄하",
+    "Warlmanpa":  "와를만파",
+    "Yarluyandi": "야를루얀디",
+    "Dharawala":  "다라왈라",
+    "Wangkamana": "왕카마나",
+    "Worimi":     "워리미",
+    "Iningai":    "이닝가이",
+    "Yindjibarndi":"인지바른디",
+    "Umpila":     "움필라",
+    "Kooma":      "쿠마",
+    # 시베리아/중앙아시아
+    "Evenk":      "에벤크",
+    "Evenki":     "에벤키",
+    "Even":       "에벤",
+    "Koryak":     "코랴크",
+    "Chukchi":    "축치",
+    "Nenets":     "네네츠",
+    "Khanty":     "한티",
+    "Mansi":      "만시",
+    "Selkup":     "셀쿠프",
+    "Nganasan":   "응가나산",
+    "Dolgan":     "돌간",
+    "Ket":        "케트",
+    "Yukagir":    "유카기르",
+    "Tuvans":     "투바",
+    "Khakass":    "하카스",
+    "Altai":      "알타이",
+    "Buryat":     "부랴트",
+    "Yakut":      "야쿠트",
+    "Sakha":      "사하",
+    "Kamchadal":  "캄차달",
+    "Ainu":       "아이누",
+    "Nivkh":      "니브흐",
+    "Udege":      "우데게",
+    "Nanai":      "나나이",
+    "Ulchi":      "울치",
+    "Oroch":      "오로치",
+    "Negidal":    "네기달",
+    "Orok":       "오로크",
+    "Saami":      "사미",
+    "Sámi":       "사미",
+    # 고대 문명/국가
+    "Lysimachus": "리시마코스",
+    "Dardania":   "다르다니아",
+    "Numidia":    "누미디아",
+    "Canaan":     "가나안",
+    "Nabataean":  "나바테아",
+    "Palmyra":    "팔미라",
+    "Colchis":    "콜키스",
+    "Iberia":     "이베리아",
+    "Armenia":    "아르메니아",
+    "Cappadocia": "카파도키아",
+    "Galatia":    "갈라티아",
+    "Cilicia":    "킬리키아",
+    "Commagene":  "콤마게네",
+    "Osroene":    "오스로에네",
+    "Adiabene":   "아디아베네",
+    "Characene":  "카라세네",
+    "Kushan":     "쿠샨",
+    "Sogdia":     "소그디아나",
+    "Bactria":    "박트리아",
+    "Gandhara":   "간다라",
+    "Magadha":    "마가다",
+    "Kalinga":    "칼링가",
+    "Satavahana": "사타바하나",
+    "Pallava":    "팔라바",
+    "Pandya":     "판디아",
+    "Pandyas":    "판디아",
+    "Chera":      "체라",
+    "Chola":      "촐라",
+    "Vakataka":   "바카타카",
+    "Kadamba":    "카담바",
+    "Harsha":     "하르샤",
+    "Rashtrakuta":"라슈트라쿠타",
+    "Pratihara":  "프라티하라",
+    "Shahi":      "샤히",
+    "Zunbil":     "준빌",
+    "Ahmadnagar": "아흐마드나가르",
+    # 유럽 중세
+    "Savoy":      "사보이",
+    "Bremen":     "브레멘",
+    "Benevento":  "베네벤토",
+    "Amsterdam":  "암스테르담",
+    "Narva":      "나르바",
+    "Batavian":   "바타비아",
+    "Alamans":    "알레만",
+    "Durdzuks":   "두르주크",
+    "Catacomb":   "카타콤",
+    "Afanasevo":  "아파나세보",
+    "Andronovo":  "안드로노보",
+    "Karasuk":    "카라수크",
+    # 태평양/오세아니아
+    "Malagasy":   "말라가시",
+    "Tlingit":    "틀링깃",
+    "Haida":      "하이다",
+    "Kwakiutl":   "콰키우틀",
+    # 중동/이슬람
+    "Aghlabid":   "아글라브",
+    "Buwayhid":   "부와이흐",
+    "Soomra":     "소므라",
+    "Beylik":     "베이",
+    "Aydin":      "아이든",
+    "Watassid":   "와타스",
+    "Kwarizm":    "호라즘",
+    "Shah":       "샤",
+    # 멕시코/중미 원주민
+    "Tepehua":    "테페우아",
+    "Tzeltal":    "첼탈",
+    "Mixe":       "믹세",
+    "Huasteco":   "우아스테코",
+    "Teenek":     "테에넥",
+    "Ixil":       "이실",
+    "Cora":       "코라",
+    "Yupik":      "유픽",
+    "Yup'ik":     "유픽",
+    "Cup'ik":     "쿠픽",
+    # 캐나다 퍼스트 네이션
+    "Tsleil":     "츨레일",
+    "Waututh":    "와우투스",
+    "Saugeen":    "소진",
+    "Eeyou":      "이유",
+    "Istchee":    "이스치",
+    # 기타
+    "Homo":       "호모",
+    "erectus":    "에렉투스",
+    "sapiens":    "사피엔스",
+    "neanderthalensis": "네안데르탈렌시스",
+    "Tokugawa":   "도쿠가와",
+    "Cuba":       "쿠바",
+    "Hispaniola": "이스파니올라",
+    "Quebec":     "퀘벡",
+    "Volta":      "볼타",
+    "Kuril":      "쿠릴",
+    "Taiwan":     "대만",
+    "Taiwanese":  "대만",
+    "Muscat":     "무스카트",
+    "Copena":     "코페나",
+    "Glades":     "글레이즈",
+    "Immokalee":  "이모칼리",
+    "Tampa":      "탬파",
+    "Salasaka":   "살라사카",
+    "Karanki":    "카란키",
+    "Otavalo":    "오타발로",
+    "Waranka":    "와란카",
+    "Popti'":     "폽티",
+    "Acaxea":     "아칵세아",
+    "Guamares":   "과마레스",
+    "Chango":     "찬고",
+    "Laotian":    "라오",
+    "Papous":     "파푸아",
+    "Sabini":     "사비니",
+    "Akwa'ala":   "아콸라",
+    "Paipai":     "파이파이",
+    "Saka":       "사카",
+    "Werowocomoco":"웨로워코모코",
+    "Massawomeck":"마사우멕",
+    "Yamhill":    "얌힐",
+    "Yankton":    "양크턴",
+    "Yanktonai":  "양크토나이",
+    "Wahpeton":   "와페턴",
+    "Sisseton":   "시세턴",
+    "Teton":      "테턴",
+    "Mdewakanton":"므데와칸턴",
+    "Wahpekute":  "와페쿠테",
+    "Santee":     "산티",
+    "Brulé":      "브룰레",
+    "Oglala":     "오글랄라",
+    "Miniconjou": "미니콘주",
+    "Hunkpapa":   "훈크파파",
+    "Itazipco":   "이타지프코",
+    "Sihasapa":   "시하사파",
+    "Oohenumpa":  "우헤눔파",
+    "Acjachemen": "아하체멘",
+    "Ahtna":      "아트나",
+    "Akawaio":    "아카와이오",
+    "Wanano":     "와나노",
+    "Kotiria":    "코티리아",
+    "Kuripako":   "쿠리파코",
+    "Wakuenai":   "와쿠에나이",
+    "Cabiyari":   "카비야리",
+    "Koreguaje":  "코레과헤",
+    "Shiwilu":    "시윌루",
+    "Kandozi":    "칸도시",
+    "Vacacocha":  "바카코차",
+    "Aché":       "아체",
+    "Achí":       "아치",
+    "Angaité":    "앙가이테",
+    "Ambaló":     "암발로",
+    "Amorúa":     "아모루아",
+    "Anambé":     "아남베",
+    "Amuq":       "아무크",
+    "Achagua":    "아차과",
+    # [cl] 잔여 영어 단어 소거를 위한 추가 음역
+    "Subarctic":  "아북극",
+    "Spain":      "스페인",
+    "Patagonian": "파타고니아",
+    "Patagonia":  "파타고니아",
+    "shellfish":  "조개",
+    "Dwelling":   "주거지",
+    "dwelling":   "주거지",
+    "Chico":      "치코",
+    "zoque":      "소케",
+    "Zoque":      "소케",
+    "mixe":       "믹세",
+    "Mixe":       "믹세",
+    "maize":      "옥수수",
+    "maïze":      "옥수수",
+    "Maize":      "옥수수",
+    "Maïze":      "옥수수",
+    # 빈도 1 보충: 유럽 지명/정치체
+    "Dacia":      "다키아",
+    "Savoy":      "사보이",
+    "Bohemia":    "보헤미아",
+    "Moravia":    "모라비아",
+    "Silesia":    "슐레지엔",
+    "Lusatia":    "루사티아",
+    "Pomerania":  "포메라니아",
+    "Saxony":     "작센",
+    "Bavaria":    "바이에른",
+    "Thuringia":  "튀링겐",
+    "Franconia":  "프랑코니아",
+    "Westphalia": "베스트팔렌",
+    "Rhineland":  "라인란트",
+    "Holstein":   "홀슈타인",
+    "Hanover":    "하노버",
+    "Oldenburg":  "올덴부르크",
+    "Brunswick":  "브라운슈바이크",
+    "Mecklenburg":"메클렌부르크",
+    "Brandenburg":"브란덴부르크",
+    "Wurtemberg": "뷔르템베르크",
+    "Württemberg":"뷔르템베르크",
+    "Baden":      "바덴",
+    "Anhalt":     "안할트",
+    "Nassau":     "나사우",
+    "Lippe":      "리페",
+    "Alsace":     "알자스",
+    "Lorraine":   "로렌",
+    "Lombardy":   "롬바르디아",
+    "Piedmont":   "피에몬테",
+    "Tuscany":    "토스카나",
+    "Parma":      "파르마",
+    "Modena":     "모데나",
+    "Lucca":      "루카",
+    "Genoa":      "제노바",
+    "Naples":     "나폴리",
+    "Catalonia":  "카탈루냐",
+    "Galicia":    "갈리시아",
+    "Aragon":     "아라곤",
+    "Castile":    "카스티야",
+    "Navarre":    "나바라",
+    "Flanders":   "플랑드르",
+    "Brabant":    "브라반트",
+    "Holland":    "홀란트",
+    "Zealand":    "젤란트",
+    "Friesland":  "프리슬란트",
+    "Utrecht":    "위트레흐트",
+    "Gelderland": "헬데를란트",
+    "Overijssel": "오버레이설",
+    "Groningen":  "흐로닝언",
+    "Burgundy":   "부르고뉴",
+    "Champagne":  "샹파뉴",
+    "Normandy":   "노르망디",
+    "Aquitaine":  "아키텐",
+    "Gascony":    "가스코뉴",
+    "Provence":   "프로방스",
+    "Languedoc":  "랑그도크",
+    "Dauphine":   "도피네",
+    "Bohemian":   "보헤미아",
+    "Moravian":   "모라비아",
+    "Silesian":   "슐레지엔",
+    # 아프리카 추가
+    "Benin":      "베냉",
+    "Dahomey":    "다호메이",
+    "Songhai":    "송가이",
+    "Bornu":      "보르누",
+    "Kanem":      "카넴",
+    "Hausa":      "하우사",
+    "Nupe":       "누페",
+    "Igala":      "이갈라",
+    "Tiv":        "티브",
+    "Edo":        "에도",
+    "Ife":        "이페",
+    "Wolof":      "월로프",
+    "Mandinka":   "만딩카",
+    "Bambara":    "밤바라",
+    "Dogon":      "도곤",
+    "Mossi":      "모시",
+    "Lobi":       "로비",
+    "Serer":      "세레르",
+    "Jola":       "졸라",
+    "Temne":      "템네",
+    "Mende":      "멘데",
+    "Kru":        "크루",
+    "Baoule":     "바울레",
+    "Akan":       "아칸",
+    "Ewe":        "에웨",
+    "Fon":        "폰",
+    "Shona":      "쇼나",
+    "Ndebele":    "은데벨레",
+    "Kikuyu":     "키쿠유",
+    "Luo":        "루오",
+    "Kalenjin":   "칼렌진",
+    "Maasai":     "마사이",
+    "Sukuma":     "수쿠마",
+    "Nyamwezi":   "냠웨지",
+    "Makonde":    "마콘데",
+    "Makua":      "마쿠아",
+    "Yao":        "야오",
+    "Tswana":     "츠와나",
+    "Herero":     "헤레로",
+    "Nama":       "나마",
+    "San":        "산",
+    "Ovambo":     "오밤보",
+    "Mbundu":     "음분두",
+    "Kongo":      "콩고",
+    "Luba":       "루바",
+    "Lunda":      "룬다",
+    "Chokwe":     "초크웨",
+    "Bemba":      "벰바",
+    "Tonga":      "통가",
+    "Ngoni":      "응고니",
+    "Nyanja":     "냔자",
+    "Acholi":     "아촐리",
+    "Baganda":    "바간다",
+    "Banyankole": "바냔콜레",
+    "Tutsi":      "투치",
+    "Hutu":       "후투",
+    # 동남아 추가
+    "Lawa":       "라와",
+    "Hmong":      "몽",
+    "Mien":       "미엔",
+    "Karen":      "카렌",
+    "Chin":       "친",
+    "Kachin":     "카친",
+    "Shan":       "샨",
+    "Rakhine":    "라카인",
+    "Lao":        "라오",
+    "Khmu":       "크무",
+    "Cham":       "참",
+    "Jarai":      "자라이",
+    "Ede":        "에데",
+    "Bahnar":     "바나르",
+    "Mnong":      "므농",
+    "Muong":      "므엉",
+    "Tay":        "타이",
+    "Nung":       "눙",
+    "Dayak":      "다야크",
+    "Toraja":     "토라자",
+    "Bugis":      "부기스",
+    "Minangkabau":"미낭카바우",
+    "Batak":      "바탁",
+    "Igorot":     "이고로트",
+    "Tagalog":    "타갈로그",
+    "Visayan":    "비사얀",
+    "Moro":       "모로",
+    # 기타 음역
+    "foraging":   "채집",
+    "hunting":    "수렵",
+    "fishing":    "어로",
+    "herding":    "목축",
+    "farming":    "농경",
+    "gathering":  "채집",
+    "societies":  "사회",
+    "territory":  "영토",
+    "Habitat":    "거주지",
+    "peoples":    "민족",
+    "Peoples":    "민족",
+    # [cl] HB 데이터 오타/변형 대응
+    "Pacifi":     "태평양",    # Pacific 오타
+    "fichers":    "어로민",    # fishers 오타
+    "Aramaean":   "아람",      # Aramean 변형
+    "Chacoan":    "차코",
+    "Puebloan":   "푸에블로",
+    "Calusa":     "칼루사",
+    "Apalachee":  "아팔래치",
+    "Cahokia":    "카호키아",
+    "Algonquian": "알곤킨",
+    "Iroquoian":  "이로쿼이",
+    "Athapaskan": "아타바스칸",
+    "Athabascan": "아타바스칸",
+    "Salishan":   "세일리시",
+    "Muskogean":  "머스코기",
+    "Siouan":     "수",
+    "Caddoan":    "캐도",
+    # [cl] 괄호 안 고유명사 보충
+    "Borneo":      "보르네오",
+    "FYROM":       "마케도니아",
+    "Bindal":      "빈달",
+    "Azad":        "아자드",
+    "Chetco":      "체트코",
+    "Chaplino":    "차플리노",
+    "Okaina":      "오카이나",
+    "Chemehuevi":  "체메후에비",
+    "Borrados":    "보라도스",
+    "Haisla":      "하이슬라",
+    "Mixtecapan":  "믹스테카판",
+    "Washoe":      "와쇼",
+    "Amah":        "아마",
+    "Mutsun":      "무춘",
+    "Mojave":      "모하비",
+    "Mazateco":    "마사테코",
+    "Oweekeno":    "오위케노",
+    "Sugpiaq":     "수그피아크",
+    "Lenni":       "레나페",
+    "Tla":         "틀라",
+    "Carib":       "카리브",
 }
 
 
@@ -2112,12 +2932,14 @@ def auto_korean_name(name_en):
 
 
 def _translate_paren(text):
-    """[cl] 괄호 안 내용 번역 (지역명, UK, Spain 등)."""
+    """[cl] 괄호 안 내용 번역 (지역명, UK, Spain 등).
+    복합 구문(North Borneo 등)도 _translate_phrase()로 위임."""
     simple = {
         "UK": "영국", "Britain": "영국", "Spain": "스페인",
         "France": "프랑스", "Portugal": "포르투갈",
         "Netherlands": "네덜란드", "Germany": "독일",
         "Japan": "일본", "China": "중국",
+        "UAE": "아랍에미리트",
     }
     if text in simple:
         return simple[text]
@@ -2125,11 +2947,16 @@ def _translate_paren(text):
         return KOREAN_NAMES[text]
     if text in _PHONETIC_MAP:
         return _PHONETIC_MAP[text]
-    # "Oklahoma" 등 미국 주 이름
-    for word in text.split():
-        if word in _PHONETIC_MAP:
-            text = text.replace(word, _PHONETIC_MAP[word])
-    return text
+    # "/" 구분 (FYROM/North Macedonia) → 각각 번역
+    if "/" in text:
+        parts = [_translate_paren(p.strip()) for p in text.split("/")]
+        return "/".join(parts)
+    # ", " 구분 (North, Azad) → 각각 번역
+    if ", " in text:
+        parts = [_translate_paren(p.strip()) for p in text.split(", ")]
+        return ", ".join(parts)
+    # 복합 구문 → _translate_phrase()로 위임
+    return _translate_phrase(text)
 
 
 def _translate_phrase(phrase):
@@ -2224,9 +3051,18 @@ def _translate_phrase(phrase):
 
 def _translate_word(w):
     """[cl] 단일 단어 번역 — 관계사/형용사/고유명사/하이픈 처리."""
-    # "and", "of", "the" 등 관계사 → 빈 문자열
+    # [cl] 쉼표/구두점 제거 후 처리
+    stripped = w.rstrip(".,;:")
+    if stripped != w and stripped:
+        return _translate_word(stripped)
+    # [cl] 선행/후행 아포스트로피·대괄호 제거
+    cleaned = w.strip("''\u2018\u2019[]")
+    if cleaned != w and cleaned:
+        return _translate_word(cleaned)
+    # "and", "of", "the" 등 관계사 + 스페인어/포르투갈어 관사 → 빈 문자열
     if w.lower() in ("and", "of", "the", "de", "du", "des", "le", "la",
-                      "el", "von", "van", "di", "/", "&", "minor"):
+                      "el", "von", "van", "di", "do", "da", "del", "los",
+                      "las", "al", "/", "&", "minor"):
         return ""
     # 하이픈 단어: "Anglo-Saxons" → "앵글로-색슨족"
     if "-" in w and w not in _SUFFIX_MAP and w not in _ADJECTIVE_MAP:
@@ -2234,19 +3070,187 @@ def _translate_word(w):
         translated = [_translate_word(p) for p in parts]
         translated = [p for p in translated if p]  # 빈 문자열 제거
         return "-".join(translated) if translated else w
-    # 형용사 매핑
+    # 형용사 매핑 (정확한 키 → 소문자 키)
     if w in _ADJECTIVE_MAP:
         return _ADJECTIVE_MAP[w]
     if w.lower() in _ADJECTIVE_MAP:
         return _ADJECTIVE_MAP[w.lower()]
+    # 접미사가 단어 자체인 경우 (예: "state" → "국가")
+    if w in _SUFFIX_MAP:
+        return _SUFFIX_MAP[w]
+    if w.lower() in _SUFFIX_MAP:
+        return _SUFFIX_MAP[w.lower()]
     # 고유명사 음역
     if w in _PHONETIC_MAP:
         return _PHONETIC_MAP[w]
     # 복수형 -s 제거 후 재시도
     if w.endswith("s") and len(w) > 2 and w[:-1] in _PHONETIC_MAP:
         return _PHONETIC_MAP[w[:-1]] + "족"
-    # 미등록 고유명사: 영어 그대로 유지
+    # 접미사에서 복수형 -s 제거 후 시도
+    if w.endswith("s") and len(w) > 2 and w[:-1] in _ADJECTIVE_MAP:
+        return _ADJECTIVE_MAP[w[:-1]]
+    if w.endswith("s") and len(w) > 2 and w[:-1].lower() in _ADJECTIVE_MAP:
+        return _ADJECTIVE_MAP[w[:-1].lower()]
+    # [cl] 미등록 고유명사: 자동 음역 시도 (3글자 이상 라틴 알파벳)
+    if len(w) >= 3 and w[0].isalpha():
+        return _auto_transliterate(w)
     return w
+
+
+# [cl] 규칙 기반 라틴→한글 자동 음역 (외래어 표기법 근사)
+# 자음+모음 조합으로 음절 분리 → 한글 음절로 변환
+_CONSONANT_MAP = {
+    "b": "브", "c": "크", "ch": "치", "ck": "크",
+    "d": "드", "f": "프", "g": "그", "gh": "그",
+    "h": "흐", "j": "주", "k": "크", "kh": "크",
+    "l": "르", "ll": "이", "m": "므", "n": "느",
+    "p": "프", "ph": "프", "q": "크", "r": "르",
+    "s": "스", "sh": "시", "sch": "시", "t": "트",
+    "th": "스", "ts": "츠", "tch": "치", "tz": "츠",
+    "v": "브", "w": "우", "x": "크스", "y": "이",
+    "z": "즈", "zh": "지", "ng": "응", "nk": "응크",
+    "mb": "음브", "nd": "은드", "nt": "은트", "mp": "음프",
+}
+
+_VOWEL_MAP = {
+    "a": "아", "e": "에", "i": "이", "o": "오", "u": "우",
+    "á": "아", "é": "에", "í": "이", "ó": "오", "ú": "우",
+    "à": "아", "è": "에", "ì": "이", "ò": "오", "ù": "우",
+    "â": "아", "ê": "에", "î": "이", "ô": "오", "û": "우",
+    "ã": "아", "ä": "에", "ë": "에", "ï": "이", "ö": "외", "ü": "위",
+    "å": "오", "ø": "외", "æ": "에", "œ": "외",
+    "ñ": "니", "ý": "이", "ÿ": "이",
+    "ai": "아이", "au": "아우", "ay": "아이",
+    "ea": "이아", "ee": "이", "ei": "에이",
+    "eu": "에우", "ey": "에이",
+    "ia": "이아", "ie": "이에", "io": "이오", "iu": "이우",
+    "oa": "오아", "oi": "오이", "oo": "우", "ou": "우",
+    "ua": "우아", "ue": "우에", "ui": "우이", "uo": "우오",
+}
+
+# 자음+모음 결합 음절 (초성+중성)
+_CV_MAP = {
+    "ba": "바", "be": "베", "bi": "비", "bo": "보", "bu": "부",
+    "ca": "카", "ce": "세", "ci": "시", "co": "코", "cu": "쿠",
+    "cha": "차", "che": "체", "chi": "치", "cho": "초", "chu": "추",
+    "da": "다", "de": "데", "di": "디", "do": "도", "du": "두",
+    "fa": "파", "fe": "페", "fi": "피", "fo": "포", "fu": "푸",
+    "ga": "가", "ge": "게", "gi": "기", "go": "고", "gu": "구",
+    "ha": "하", "he": "헤", "hi": "히", "ho": "호", "hu": "후",
+    "ja": "자", "je": "제", "ji": "지", "jo": "조", "ju": "주",
+    "ka": "카", "ke": "케", "ki": "키", "ko": "코", "ku": "쿠",
+    "la": "라", "le": "레", "li": "리", "lo": "로", "lu": "루",
+    "ma": "마", "me": "메", "mi": "미", "mo": "모", "mu": "무",
+    "na": "나", "ne": "네", "ni": "니", "no": "노", "nu": "누",
+    "pa": "파", "pe": "페", "pi": "피", "po": "포", "pu": "푸",
+    "ra": "라", "re": "레", "ri": "리", "ro": "로", "ru": "루",
+    "sa": "사", "se": "세", "si": "시", "so": "소", "su": "수",
+    "sha": "샤", "she": "셰", "shi": "시", "sho": "쇼", "shu": "슈",
+    "ta": "타", "te": "테", "ti": "티", "to": "토", "tu": "투",
+    "tha": "타", "the": "테", "thi": "티", "tho": "토", "thu": "투",
+    "tsa": "차", "tse": "체", "tsi": "치", "tso": "초", "tsu": "추",
+    "va": "바", "ve": "베", "vi": "비", "vo": "보", "vu": "부",
+    "wa": "와", "we": "웨", "wi": "위", "wo": "워", "wu": "우",
+    "ya": "야", "ye": "예", "yi": "이", "yo": "요", "yu": "유",
+    "za": "자", "ze": "제", "zi": "지", "zo": "조", "zu": "주",
+    # 이중모음 결합
+    "bai": "바이", "kai": "카이", "tai": "타이", "mai": "마이",
+    "nai": "나이", "lai": "라이", "rai": "라이", "sai": "사이",
+    "gai": "가이", "dai": "다이", "hai": "하이", "pai": "파이",
+    "bau": "바우", "kau": "카우", "tau": "타우", "mau": "마우",
+    "nau": "나우", "lau": "라우", "rau": "라우",
+    "gui": "기", "gue": "게", "que": "케", "qui": "키",
+    # kw 조합 (qu→kw 전처리 후)
+    "kwa": "콰", "kwe": "퀘", "kwi": "퀴", "kwo": "쿼", "kwu": "쿠",
+    # ng+모음 (비강 연결)
+    "nga": "응가", "nge": "응게", "ngi": "응기", "ngo": "응고", "ngu": "응구",
+}
+
+
+def _auto_transliterate(word):
+    """[cl] 라틴 문자열을 한글로 자동 음역 (외래어 표기법 근사).
+
+    규칙: 왼쪽부터 최장 매칭으로 음절 소비.
+    CV(자음+모음) → _CV_MAP 우선, 없으면 C→_CONSONANT_MAP + V→_VOWEL_MAP.
+    후처리: 연속 동일 모음 축약, 어말 정리.
+    """
+    result = []
+    s = word.lower()
+    # 특수문자 전처리
+    s = s.replace("'", "").replace("'", "").replace("`", "").replace("ʷ", "")
+    s = s.replace("ŋ", "ng").replace("ɲ", "ny").replace("ʔ", "")
+
+    # [cl] 특수 전처리
+    # qu+모음 → 콰/퀴/쿼/쿠에... (영어 음가 반영)
+    import re
+    s = re.sub(r'qua', 'kwa', s)
+    s = re.sub(r'que', 'ke', s)
+    s = re.sub(r'qui', 'ki', s)
+    s = re.sub(r'quo', 'kwo', s)
+    s = re.sub(r'quu', 'ku', s)
+    s = re.sub(r'qu', 'k', s)  # fallback
+    # [cl] 이중자음 → 단일자음 (nn→n, ss→s, tt→t 등)
+    s = re.sub(r'([bcdfgklmnprstvz])\1', r'\1', s)
+
+    i = 0
+    n = len(s)
+
+    while i < n:
+        matched = False
+
+        # 1) 최장 CV 매칭 (4글자→3글자→2글자)
+        for length in (4, 3, 2):
+            chunk = s[i:i+length]
+            if chunk in _CV_MAP:
+                result.append(_CV_MAP[chunk])
+                i += length
+                matched = True
+                break
+
+        if matched:
+            continue
+
+        # 2) 이중모음 매칭
+        for length in (2, 1):
+            chunk = s[i:i+length]
+            if chunk in _VOWEL_MAP:
+                result.append(_VOWEL_MAP[chunk])
+                i += length
+                matched = True
+                break
+
+        if matched:
+            continue
+
+        # 3) 자음 매칭 (3글자→2글자→1글자)
+        for length in (3, 2, 1):
+            chunk = s[i:i+length]
+            if chunk in _CONSONANT_MAP:
+                result.append(_CONSONANT_MAP[chunk])
+                i += length
+                matched = True
+                break
+
+        if matched:
+            continue
+
+        # 4) 미매핑 문자: 스킵 (비라틴 문자, 숫자 등)
+        i += 1
+
+    text = "".join(result)
+
+    # [cl] 후처리: 연속 동일 음절 축약 (아아→아, 이이이→이 등)
+    import re
+    text = re.sub(r'(아|에|이|오|우|으){2,}', lambda m: m.group(0)[0], text)
+    # "느스" 어말 → "인스" 등 어색한 어미 정리
+    # 어말 "느" 제거 (자연스러운 한글 종결)
+    if text.endswith("느"):
+        text = text[:-1] + "은"
+    if text.endswith("르"):
+        text = text[:-1] + "르"
+    # "크스" 어말 → "크스" (유지)
+
+    return text
 
 
 # ── 주요 국가 수도/중심 좌표 (라벨 위치 결정용) ──

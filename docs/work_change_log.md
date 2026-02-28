@@ -1082,6 +1082,23 @@
     * 백그라운드 장기 배치 명령 자체는 준비 완료.
     * 실제 상시 실행은 `WDQS_MAX_RETRIES=3`, `WDQS_BASE_DELAY_MS=2000`, `WDQS_REQUEST_DELAY_MS=1200`,
       `max-batch-attempts=3`, `batch-retry-delay-ms=15000` 프로필로 오프피크 시간대에 시작하는 편이 안전.
+  * 운영 UI 추가:
+    * `src/app/api/ops/pipeline-status/route.ts`
+      * `.cache` 전체 스캔
+      * `.log`, `*state.json`, `*checkpoint*.json`, recent report JSON 요약
+      * `ps aux` 기반 현재 실행 중인 wikidata/curation 프로세스 감지
+      * Supabase `events`, `event_sources`, `person_candidates` 카운트와 최신 row 요약 제공
+    * `src/app/ops/page.tsx`
+      * 5/15/30초 자동 새로고침 지원
+      * 원격 테이블 현황, 실행 중인 스크립트, 체크포인트 진행률, state 파일, 로그 tail, 최근 리포트, 최근 경고/에러를 한 화면에 표시
+      * `/data-check`에서 바로 진입할 수 있도록 링크 추가
+  * 검증:
+    * `npm run build` 통과
+    * 생성 라우트: `/ops`, `/api/ops/pipeline-status`
+  * 후속 hotfix:
+    * `/ops` 로그/에러/리포트 리스트에서 같은 문자열이 반복될 때 React duplicate key 경고가 발생.
+    * `tailLines`, `checkpoint.recentErrors`, `report.sampleTitles`, `recentErrors` 렌더링 key를 index 조합 형태로 변경.
+    * 수정 후 `npm run build` 재통과.
 
 ## [2026-02-28] [cl] BORDERPRECISION 기반 고대 국경 블러 셰이더 구현
 
@@ -1192,3 +1209,26 @@
 * **palette override 기능 신규**: YEAR_RANGE_OVERRIDES에 `"palette"` 키 지원 → 시대별 색상 변경 가능
 * **KOREAN_NAMES 추가**: 서진, 동진, 진나라, 금나라, 북량, 유연, 돌궐, 야마토
 * **Jin Dynasty 충돌 해결**: "Jin Dynasty (Sima)"→진나라, "Jin Dynasty (Jurchen)"→금나라로 분리
+
+## [2026-02-28] [cl] 자동 음역 엔진 + 한글화 100% 달성
+
+### 배경
+* 이전 세션에서 한글 라벨 2줄 표시(한국어 위 / 영어 아래) 구현했으나, 27,458개 엔티티 중 ~2,400개가 미번역 영어 상태
+* 진형(jn)의 피드백: "공식 음역이 있으면 따르고, 없으면 음역 규칙에 맞춰서 전부 하자"
+
+### 구현 (`generateBorderMetadata.py`)
+* **_SUFFIX_MAP** (~80항목): 정치체(왕국/제국/칸국 등) + 사회(부족/민족) + 생계(수렵채집민/농경민/유목민) + 문화/문명
+* **_PREFIX_MAP** (~15항목): 방향(서/동/북/남) + 지역(상/하/대/중앙)
+* **_ADJECTIVE_MAP** (~130항목): 지리(호/강/산/타이가/반도) + 정치(부왕령/보호구역) + 언어학(핀우그르/팔레오/우랄) + 시대(신석기/청동기)
+* **_PHONETIC_MAP** (~550항목): 북미 원주민(~100), 남미(~50), 호주 원주민(~30), 시베리아/중앙아시아(~30), 고대문명(~40), 유럽(~60), 아프리카(~50), 동남아(~30), HB 오타 대응(~20), 괄호 안 고유명사 보충(~20)
+* **auto_korean_name()**: 패턴 기반 자동 한국어 번역 — 괄호/접미사/접두사/형용사/고유명사 분해 후 조합
+* **_auto_transliterate()**: 규칙 기반 라틴→한글 자동 음역 엔진 (CV/V/C 매핑, qu→kw 변환, 이중자음 축약, 연속모음 제거)
+* **_translate_paren()**: 괄호 안 복합 구문(North Borneo 등)도 _translate_phrase()로 위임하도록 개선
+* **_translate_word()**: 아포스트로피/대괄호 선행 제거 처리 추가
+
+### 결과
+* **한글화 커버리지**: 206개 영어 단어 잔존 → **0개** (100.0%)
+* 27,458개 전체 엔티티에서 3글자 이상 영어 단어 완전 제거
+* "Finno-Ugric taiga hunter-gatherers" → "핀우그르 타이가 수렵채집민"
+* "Anglo-Saxons" → "앵글로-색슨족"
+* "French Guiana" → "프랑스령 기아나"
