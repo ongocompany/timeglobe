@@ -1,0 +1,3436 @@
+{
+  "period": "AD 507 ~ AD 1007",
+  "entity_count": 315,
+  "entities": {
+    "Abbasid Caliphate": {
+      "name_en": "Abbasid Caliphate",
+      "name_ko": "아바스 칼리프국",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Paekche": {
+      "name_en": "Baekje",
+      "name_ko": "백제",
+      "tier": 1,
+      "in_data_from": 100,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Parhae": {
+      "name_en": "Balhae",
+      "name_ko": "발해",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Balhae": {
+      "name_en": "Balhae",
+      "name_ko": "발해",
+      "tier": 1,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Bulgar Khanate": {
+      "name_en": "Bulgarian Khanate",
+      "name_ko": "불가리아 칸국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Byzantine Empire": {
+      "name_en": "Byzantine Empire",
+      "name_ko": "비잔틴 제국",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Caliphate of Córdoba": {
+      "name_en": "Caliphate of Cordoba",
+      "name_ko": "코르도바 칼리프국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Carolingian Empire": {
+      "name_en": "Carolingian Empire",
+      "name_ko": "카롤링거 제국",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Celtic kingdoms": {
+      "name_en": "Celtic Kingdoms",
+      "name_ko": "켈트 왕국",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Chimú Empire": {
+      "name_en": "Chimu Empire",
+      "name_ko": "치무 제국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Croatian kingdom": {
+      "name_en": "Croatian Kingdom",
+      "name_ko": "크로아티아 왕국",
+      "tier": 1,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Eastern Roman Empire": {
+      "name_en": "Eastern Roman Empire",
+      "name_ko": "동로마 제국",
+      "tier": 1,
+      "in_data_from": 400,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Fatimid Caliphate": {
+      "name_en": "Fatimid Caliphate",
+      "name_ko": "파티마 칼리프국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Frankish Kingdom": {
+      "name_en": "Frankish Kingdom",
+      "name_ko": "프랑크 왕국",
+      "tier": 1,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Empire of Ghana": {
+      "name_en": "Ghana Empire",
+      "name_ko": "가나 제국",
+      "tier": 1,
+      "in_data_from": 300,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Koguryo": {
+      "name_en": "Goguryeo",
+      "name_ko": "고구려",
+      "tier": 1,
+      "in_data_from": -1,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Hindu kingdoms": {
+      "name_en": "Hindu Kingdoms",
+      "name_ko": "힌두 왕국",
+      "tier": 1,
+      "in_data_from": -500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Holy Roman Empire": {
+      "name_en": "Holy Roman Empire",
+      "name_ko": "신성 로마 제국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1715,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Idrisid Caliphate": {
+      "name_en": "Idrisid Caliphate",
+      "name_ko": "이드리스 왕조",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Korea": {
+      "name_en": "Joseon",
+      "name_ko": "조선",
+      "tier": 1,
+      "in_data_from": -300,
+      "in_data_until": 1880,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Khmer Empire": {
+      "name_en": "Khmer Empire",
+      "name_ko": "크메르 제국",
+      "tier": 1,
+      "in_data_from": 900,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        900,
+        1000
+      ]
+    },
+    "Kingdom of France": {
+      "name_en": "Kingdom of France",
+      "name_ko": "프랑스 왕국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Expansionist Kingdom of Merina": {
+      "name_en": "Kingdom of Merina",
+      "name_ko": "메리나 왕국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Liao": {
+      "name_en": "Liao Dynasty",
+      "name_ko": "요나라",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Ostrogoths": {
+      "name_en": "Ostrogothic Kingdom",
+      "name_ko": "동고트 왕국",
+      "tier": 1,
+      "in_data_from": 400,
+      "in_data_until": 600,
+      "snapshots_in_period": [
+        600
+      ]
+    },
+    "Pagan": {
+      "name_en": "Pagan Kingdom",
+      "name_ko": "파간 왕국",
+      "tier": 1,
+      "in_data_from": 900,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Rajput kingdoms": {
+      "name_en": "Rajput Kingdoms",
+      "name_ko": "라지푸트 왕국",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Sasanian Empire": {
+      "name_en": "Sasanian Empire",
+      "name_ko": "사산 제국",
+      "tier": 1,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Sinhalese kingdoms": {
+      "name_en": "Sinhalese Kingdoms",
+      "name_ko": "싱할라 왕국",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Song Empire": {
+      "name_en": "Song Dynasty",
+      "name_ko": "송나라",
+      "tier": 1,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Sui Empire": {
+      "name_en": "Sui Dynasty",
+      "name_ko": "수나라",
+      "tier": 1,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Tang Empire": {
+      "name_en": "Tang Dynasty",
+      "name_ko": "당나라",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Tibetan Empire": {
+      "name_en": "Tibetan Empire",
+      "name_ko": "토번 제국",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Tiahuanaco Empire": {
+      "name_en": "Tiwanaku Empire",
+      "name_ko": "티와나쿠 제국",
+      "tier": 1,
+      "in_data_from": 600,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Toltec Empire": {
+      "name_en": "Toltec Empire",
+      "name_ko": "톨텍 제국",
+      "tier": 1,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Tuʻi Tonga Empire": {
+      "name_en": "Tongan Empire",
+      "name_ko": "통가 제국",
+      "tier": 1,
+      "in_data_from": 500,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        600,
+        1000
+      ]
+    },
+    "Umayyad Caliphate": {
+      "name_en": "Umayyad Caliphate",
+      "name_ko": "우마이야 칼리프국",
+      "tier": 1,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Silla": {
+      "name_en": "Unified Silla",
+      "name_ko": "통일신라",
+      "tier": 1,
+      "in_data_from": -1,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        600,
+        700,
+        900
+      ]
+    },
+    "Visigothic Kingdom": {
+      "name_en": "Visigothic Kingdom",
+      "name_ko": "서고트 왕국",
+      "tier": 1,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Huari Empire": {
+      "name_en": "Wari Empire",
+      "name_ko": "와리 제국",
+      "tier": 1,
+      "in_data_from": 600,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Ainu": {
+      "name_en": "Ainu",
+      "name_ko": "아이누",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": 1700,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Alwa": {
+      "name_en": "Alwa",
+      "name_ko": "알와",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Annam": {
+      "name_en": "Annam",
+      "name_ko": "아나므",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1880,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Aragón": {
+      "name_en": "Aragon",
+      "name_ko": "아라곤",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Arakan": {
+      "name_en": "Arakan",
+      "name_ko": "아라칸",
+      "tier": 2,
+      "in_data_from": -200,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        600,
+        900
+      ]
+    },
+    "Armenia": {
+      "name_en": "Armenia",
+      "name_ko": "아르메니아",
+      "tier": 2,
+      "in_data_from": -323,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        700,
+        1000
+      ]
+    },
+    "Asturias": {
+      "name_en": "Asturias",
+      "name_ko": "아스투리아스",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Avars": {
+      "name_en": "Avars",
+      "name_ko": "아바르",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900
+      ]
+    },
+    "Axum": {
+      "name_en": "Axum",
+      "name_ko": "악숨",
+      "tier": 2,
+      "in_data_from": -1,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900
+      ]
+    },
+    "Bantou": {
+      "name_en": "Bantu",
+      "name_ko": "반투",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Britany": {
+      "name_en": "Brittany",
+      "name_ko": "브르타뉴",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1530,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Bulgars": {
+      "name_en": "Bulgars",
+      "name_ko": "불가르",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900
+      ]
+    },
+    "Castilla": {
+      "name_en": "Castile",
+      "name_ko": "카스티야",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Chalukya Empire": {
+      "name_en": "Chalukya",
+      "name_ko": "찰루키아",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Champa": {
+      "name_en": "Champa",
+      "name_ko": "참파",
+      "tier": 2,
+      "in_data_from": 500,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Chen-La": {
+      "name_en": "Chenla",
+      "name_ko": "진랍",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        600,
+        700,
+        800
+      ]
+    },
+    "Chola state": {
+      "name_en": "Chola",
+      "name_ko": "촐라",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Cholas": {
+      "name_en": "Chola",
+      "name_ko": "촐라",
+      "tier": 2,
+      "in_data_from": 500,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        700,
+        900
+      ]
+    },
+    "Corsica": {
+      "name_en": "Corsica",
+      "name_ko": "코르시카",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Croatia": {
+      "name_en": "Croatia",
+      "name_ko": "크로아티아",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Cyprus": {
+      "name_en": "Cyprus",
+      "name_ko": "키프로스",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Danes": {
+      "name_en": "Danes",
+      "name_ko": "덴마크인",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900
+      ]
+    },
+    "Denmark-Norway": {
+      "name_en": "Denmark-Norway",
+      "name_ko": "덴마크-노르웨이",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1800,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Dvaravati": {
+      "name_en": "Dvaravati",
+      "name_ko": "드바라바티",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        1000
+      ]
+    },
+    "East Java": {
+      "name_en": "East Java",
+      "name_ko": "동자바",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Emirate of Córdoba": {
+      "name_en": "Emirate of Cordoba",
+      "name_ko": "코르도바 토후국",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "England": {
+      "name_en": "England",
+      "name_ko": "잉글랜드",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Essex": {
+      "name_en": "Essex",
+      "name_ko": "에섹스",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Georgia": {
+      "name_en": "Georgia",
+      "name_ko": "조지아",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Ghana": {
+      "name_en": "Ghana",
+      "name_ko": "가나",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Ghaznavid Emirate": {
+      "name_en": "Ghaznavid Emirate",
+      "name_ko": "가즈나 왕조",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Great Zimbabwe": {
+      "name_en": "Great Zimbabwe",
+      "name_ko": "그레이트 짐바브웨",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Guanches": {
+      "name_en": "Guanches",
+      "name_ko": "과나체",
+      "tier": 2,
+      "in_data_from": -1500,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Göktürks": {
+      "name_en": "Göktürk Khaganate",
+      "name_ko": "돌궐",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Hadramaut": {
+      "name_en": "Hadramaut",
+      "name_ko": "하드라마우트",
+      "tier": 2,
+      "in_data_from": -323,
+      "in_data_until": 1700,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Hainan": {
+      "name_en": "Hainan",
+      "name_ko": "하이난",
+      "tier": 2,
+      "in_data_from": -1,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Hejaz": {
+      "name_en": "Hejaz",
+      "name_ko": "헤자즈",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Hindu states": {
+      "name_en": "Hindu States",
+      "name_ko": "힌두 국가",
+      "tier": 2,
+      "in_data_from": 700,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        700,
+        800,
+        900
+      ]
+    },
+    "Irlanda": {
+      "name_en": "Ireland",
+      "name_ko": "아일랜드",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Islamic city-states": {
+      "name_en": "Islamic City-States",
+      "name_ko": "이슬람 도시국가",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1600,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Japan": {
+      "name_en": "Japan",
+      "name_ko": "일본",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Imperial Japan (Fujiwara)": {
+      "name_en": "Japan (Fujiwara)",
+      "name_ko": "일본 (후지와라)",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Kalinga": {
+      "name_en": "Kalinga",
+      "name_ko": "칼링가",
+      "tier": 2,
+      "in_data_from": -1,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        900,
+        1000
+      ]
+    },
+    "Kanem": {
+      "name_en": "Kanem",
+      "name_ko": "카넴",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Kent": {
+      "name_en": "Kent",
+      "name_ko": "켄트",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Khazars": {
+      "name_en": "Khazars",
+      "name_ko": "하자르",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Khoiasan": {
+      "name_en": "Khoisan",
+      "name_ko": "코이산",
+      "tier": 2,
+      "in_data_from": -1500,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Kyivan Rus": {
+      "name_en": "Kievan Rus",
+      "name_ko": "키예프 루스",
+      "tier": 2,
+      "in_data_from": 900,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        900,
+        1000
+      ]
+    },
+    "Rus' Khaganate": {
+      "name_en": "Kievan Rus",
+      "name_ko": "키예프 루스",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "León": {
+      "name_en": "Leon",
+      "name_ko": "레온",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Lombard duchies": {
+      "name_en": "Lombard Duchies",
+      "name_ko": "롬바르드 공국",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Lombard principalities": {
+      "name_en": "Lombard Principalities",
+      "name_ko": "롬바르드 공국",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Madagascar": {
+      "name_en": "Madagascar",
+      "name_ko": "마다가스카르",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1880,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Magyars": {
+      "name_en": "Magyars",
+      "name_ko": "마자르",
+      "tier": 2,
+      "in_data_from": 700,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Makkura": {
+      "name_en": "Makuria",
+      "name_ko": "마쿠리아",
+      "tier": 2,
+      "in_data_from": 500,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Mali": {
+      "name_en": "Mali",
+      "name_ko": "말리",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1715,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Mataram": {
+      "name_en": "Mataram",
+      "name_ko": "마타람",
+      "tier": 2,
+      "in_data_from": 600,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900
+      ]
+    },
+    "Maya city-states": {
+      "name_en": "Maya City-States",
+      "name_ko": "마야 도시국가",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Maya states": {
+      "name_en": "Maya States",
+      "name_ko": "마야 국가",
+      "tier": 2,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Mercia": {
+      "name_en": "Mercia",
+      "name_ko": "머시아",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Mesoamerican city-states and chiefdoms": {
+      "name_en": "Mesoamerican States",
+      "name_ko": "메소아메리카 국가",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Mixtecs": {
+      "name_en": "Mixtecs",
+      "name_ko": "믹스텍",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Moche": {
+      "name_en": "Moche",
+      "name_ko": "모체",
+      "tier": 2,
+      "in_data_from": -1,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Mon state": {
+      "name_en": "Mon",
+      "name_ko": "몬",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Nan Chao": {
+      "name_en": "Nanzhao",
+      "name_ko": "남조",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Navarre": {
+      "name_en": "Navarre",
+      "name_ko": "나바라",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Northmen": {
+      "name_en": "Norsemen",
+      "name_ko": "노르만",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Nothumbria": {
+      "name_en": "Northumbria",
+      "name_ko": "노섬브리아",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Orissa": {
+      "name_en": "Orissa",
+      "name_ko": "오리사",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1600,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Palas": {
+      "name_en": "Pala",
+      "name_ko": "팔라",
+      "tier": 2,
+      "in_data_from": 700,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Pallavas": {
+      "name_en": "Pallava",
+      "name_ko": "팔라바",
+      "tier": 2,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Pallava state": {
+      "name_en": "Pallava",
+      "name_ko": "팔라바",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Pallava": {
+      "name_en": "Pallava",
+      "name_ko": "팔라바",
+      "tier": 2,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Papal States": {
+      "name_en": "Papal States",
+      "name_ko": "교황령",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Picts": {
+      "name_en": "Picts",
+      "name_ko": "픽트족",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Poland": {
+      "name_en": "Poland",
+      "name_ko": "폴란드",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1783,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Polynesians": {
+      "name_en": "Polynesia",
+      "name_ko": "폴리네시아",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1880,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Pyu state": {
+      "name_en": "Pyu",
+      "name_ko": "퓨",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Rajput Clans and Small States": {
+      "name_en": "Rajput States",
+      "name_ko": "라지푸트 국가",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Rashtrakuta state": {
+      "name_en": "Rashtrakuta",
+      "name_ko": "라슈트라쿠타",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Sardinia": {
+      "name_en": "Sardinia",
+      "name_ko": "사르데냐",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1715,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Scotland": {
+      "name_en": "Scotland",
+      "name_ko": "스코틀랜드",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1600,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Scots": {
+      "name_en": "Scots",
+      "name_ko": "스코트족",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Serbia": {
+      "name_en": "Serbia",
+      "name_ko": "세르비아",
+      "tier": 2,
+      "in_data_from": 900,
+      "in_data_until": 1880,
+      "snapshots_in_period": [
+        900,
+        1000
+      ]
+    },
+    "Simhala": {
+      "name_en": "Sinhalese",
+      "name_ko": "싱할라",
+      "tier": 2,
+      "in_data_from": -500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Srivijaya Empire": {
+      "name_en": "Srivijaya",
+      "name_ko": "스리비자야",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Sweden": {
+      "name_en": "Sweden",
+      "name_ko": "스웨덴",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1800,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Swedes and Goths": {
+      "name_en": "Sweden",
+      "name_ko": "스웨덴",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Tibet": {
+      "name_en": "Tibet",
+      "name_ko": "티베트",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1715,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Venice": {
+      "name_en": "Venice",
+      "name_ko": "베네치아",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1715,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Volga Bulgars": {
+      "name_en": "Volga Bulgars",
+      "name_ko": "볼가 불가르",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Welsh": {
+      "name_en": "Welsh",
+      "name_ko": "웨일스인",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Wessex": {
+      "name_en": "Wessex",
+      "name_ko": "웨섹스",
+      "tier": 2,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Xixia": {
+      "name_en": "Western Xia",
+      "name_ko": "서하",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Yamato": {
+      "name_en": "Yamato",
+      "name_ko": "야마토",
+      "tier": 2,
+      "in_data_from": 500,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        600,
+        700,
+        900
+      ]
+    },
+    "Yemen": {
+      "name_en": "Yemen",
+      "name_ko": "예멘",
+      "tier": 2,
+      "in_data_from": 1000,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "           ": {
+      "name_en": "           ",
+      "name_ko": "           ",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Aghlabid Emirate": {
+      "name_en": "Aghlabid Emirate",
+      "name_ko": "아글라브 토후국",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Alans": {
+      "name_en": "Alans",
+      "name_ko": "알란족",
+      "tier": 3,
+      "in_data_from": 100,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        700,
+        1000
+      ]
+    },
+    "Amazon hunter-gatherers": {
+      "name_en": "Amazon hunter-gatherers",
+      "name_ko": "아마존 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1783,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Anasazi": {
+      "name_en": "Anasazi",
+      "name_ko": "아나사지",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Andean hunter-gatherers": {
+      "name_en": "Andean hunter-gatherers",
+      "name_ko": "안데스 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1783,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Arawaks": {
+      "name_en": "Arawaks",
+      "name_ko": "아라왁족",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1300,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Arctic marine mammal hunters": {
+      "name_en": "Arctic marine mammal hunters",
+      "name_ko": "북극 해양 포유류 수렵민",
+      "tier": 3,
+      "in_data_from": -2000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Arran": {
+      "name_en": "Arran",
+      "name_ko": "아라은",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Athabaskan": {
+      "name_en": "Athabaskan",
+      "name_ko": "아타바스카은",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1650,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Aures": {
+      "name_en": "Aures",
+      "name_ko": "아레스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Australian aboriginal hunter-gatherers": {
+      "name_en": "Australian aboriginal hunter-gatherers",
+      "name_ko": "호주 원주민 수렵채집민",
+      "tier": 3,
+      "in_data_from": -2000,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Azandes": {
+      "name_en": "Azandes",
+      "name_ko": "아자은드에스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Baltic Tribes": {
+      "name_en": "Baltic Tribes",
+      "name_ko": "발트 부족",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Baltic tribes": {
+      "name_en": "Baltic tribes",
+      "name_ko": "발트 부족",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Balts": {
+      "name_en": "Balts",
+      "name_ko": "바르츠",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Banas": {
+      "name_en": "Banas",
+      "name_ko": "바나스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Barghawata": {
+      "name_en": "Barghawata",
+      "name_ko": "바르그아와타",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Bashkirs": {
+      "name_en": "Bashkirs",
+      "name_ko": "바시키르스",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Bedouins": {
+      "name_en": "Bedouins",
+      "name_ko": "베두인족",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Bega": {
+      "name_en": "Bega",
+      "name_ko": "베가",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Bejas": {
+      "name_en": "Bejas",
+      "name_ko": "베자스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Beothuk": {
+      "name_en": "Beothuk",
+      "name_ko": "베오투크",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1600,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Berbers": {
+      "name_en": "Berbers",
+      "name_ko": "베르베르",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Blemmyes": {
+      "name_en": "Blemmyes",
+      "name_ko": "브레므예스",
+      "tier": 3,
+      "in_data_from": -500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Boethuk": {
+      "name_en": "Boethuk",
+      "name_ko": "보에투크",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Broërec": {
+      "name_en": "Broërec",
+      "name_ko": "브로에레크",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Burgandy": {
+      "name_en": "Burgandy",
+      "name_ko": "부르가은드이",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Buwayhid Emirates": {
+      "name_en": "Buwayhid Emirates",
+      "name_ko": "부와이흐 토후국",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Buyid Emirate": {
+      "name_en": "Buyid Emirate",
+      "name_ko": "부이 토후국",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Caloosahatchee cultureure": {
+      "name_en": "Caloosahatchee cultureure",
+      "name_ko": "칼루사하치 쿠르투레우레",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Cantia": {
+      "name_en": "Cantia",
+      "name_ko": "카은트이",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Caribbean hunter-gatherers": {
+      "name_en": "Caribbean hunter-gatherers",
+      "name_ko": "카리브 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1650,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Chalukyas": {
+      "name_en": "Chalukyas",
+      "name_ko": "찰루키아",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Chauhans": {
+      "name_en": "Chauhans",
+      "name_ko": "차우하느스",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Chelmia": {
+      "name_en": "Chelmia",
+      "name_ko": "체르미아",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Cheras": {
+      "name_en": "Cheras",
+      "name_ko": "체라족",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Chuds": {
+      "name_en": "Chuds",
+      "name_ko": "추드스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        900,
+        1000
+      ]
+    },
+    "Ciboney": {
+      "name_en": "Ciboney",
+      "name_ko": "시보네이",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Cuacasian Albania": {
+      "name_en": "Cuacasian Albania",
+      "name_ko": "쿠아카시아은 아르바니아",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Cushites": {
+      "name_en": "Cushites",
+      "name_ko": "쿠시테스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Czechs": {
+      "name_en": "Czechs",
+      "name_ko": "크제치스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        700,
+        800
+      ]
+    },
+    "Danube Bulgars": {
+      "name_en": "Danube Bulgars",
+      "name_ko": "다누베 불가르족",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Desert hunter-gatherers": {
+      "name_en": "Desert hunter-gatherers",
+      "name_ko": "사막 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Dorset": {
+      "name_en": "Dorset",
+      "name_ko": "도르셋",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Duchy of Swabia": {
+      "name_en": "Duchy of Swabia",
+      "name_ko": "슈바벤 공국",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Dumnonia": {
+      "name_en": "Dumnonia",
+      "name_ko": "두므노니아",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Dutchy of Benevento": {
+      "name_en": "Dutchy of Benevento",
+      "name_ko": "두치이 베네벤토",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "East Francia": {
+      "name_en": "East Francia",
+      "name_ko": "동프랑키아",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "East Getaes": {
+      "name_en": "East Getaes",
+      "name_ko": "동게타이",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Eastern North Amercian hunter-gatherers": {
+      "name_en": "Eastern North Amercian hunter-gatherers",
+      "name_ko": "동노르스 아메르시아은 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Emirate of Sicily": {
+      "name_en": "Emirate of Sicily",
+      "name_ko": "시칠리아 토후국",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        900,
+        1000
+      ]
+    },
+    "Ests": {
+      "name_en": "Ests",
+      "name_ko": "에스츠",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Ethiopian HIghland Peoples": {
+      "name_en": "Ethiopian HIghland Peoples",
+      "name_ko": "에티오피아 고지대 민족",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Finno-Ugric taiga hunter-gatherers": {
+      "name_en": "Finno-Ugric taiga hunter-gatherers",
+      "name_ko": "핀우그르 타이가 수렵채집민",
+      "tier": 3,
+      "in_data_from": -2000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Finns": {
+      "name_en": "Finns",
+      "name_ko": "피느스",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Frisians": {
+      "name_en": "Frisians",
+      "name_ko": "프리지아족",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Funan": {
+      "name_en": "Funan",
+      "name_ko": "푸나은",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 600,
+      "snapshots_in_period": [
+        600
+      ]
+    },
+    "Georgian Kingdom": {
+      "name_en": "Georgian Kingdom",
+      "name_ko": "조지아 왕국",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Goths": {
+      "name_en": "Goths",
+      "name_ko": "고스스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Great Moravia": {
+      "name_en": "Great Moravia",
+      "name_ko": "그레아트 모라비아",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Guanahatabeyes": {
+      "name_en": "Guanahatabeyes",
+      "name_ko": "구아나하타베예스",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Gurjara Pratihara": {
+      "name_en": "Gurjara Pratihara",
+      "name_ko": "구르자라 프라티하라",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Guta": {
+      "name_en": "Guta",
+      "name_ko": "구타",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Haripunjaya": {
+      "name_en": "Haripunjaya",
+      "name_ko": "하리푸느자야",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Hindu Shahis": {
+      "name_en": "Hindu Shahis",
+      "name_ko": "힌두 샤히족",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Huns": {
+      "name_en": "Huns",
+      "name_ko": "훈족",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Icelandic Commonwealth": {
+      "name_en": "Icelandic Commonwealth",
+      "name_ko": "이세라은드이크 연방",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Innu": {
+      "name_en": "Innu",
+      "name_ko": "이누",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Kamarupa": {
+      "name_en": "Kamarupa",
+      "name_ko": "카마루파",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        600
+      ]
+    },
+    "Kanauj": {
+      "name_en": "Kanauj",
+      "name_ko": "카나우주",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Karelians": {
+      "name_en": "Karelians",
+      "name_ko": "카레리아느스",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        800,
+        1000
+      ]
+    },
+    "Karluks": {
+      "name_en": "Karluks",
+      "name_ko": "카르루크스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        700,
+        900
+      ]
+    },
+    "Khitans": {
+      "name_en": "Khitans",
+      "name_ko": "거란족",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Kimek-Kipchak khaganate": {
+      "name_en": "Kimek-Kipchak khaganate",
+      "name_ko": "키메크-킵차크 크아가나테",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Kingdom of Georgia": {
+      "name_en": "Kingdom of Georgia",
+      "name_ko": "조지아 왕국",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Kingdom of Kapisa": {
+      "name_en": "Kingdom of Kapisa",
+      "name_ko": "카피사 왕국",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Kingdom of Kashmir": {
+      "name_en": "Kingdom of Kashmir",
+      "name_ko": "카슈미르 왕국",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Kingdom of Norway": {
+      "name_en": "Kingdom of Norway",
+      "name_ko": "노르웨이 왕국",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Kingdom of Pagan": {
+      "name_en": "Kingdom of Pagan",
+      "name_ko": "바간 왕국",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Kingdom of Sind": {
+      "name_en": "Kingdom of Sind",
+      "name_ko": "신드 왕국",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Kingdom of Zunbil": {
+      "name_en": "Kingdom of Zunbil",
+      "name_ko": "준빌 왕국",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Kryvichs": {
+      "name_en": "Kryvichs",
+      "name_ko": "크르이비치스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Kurs": {
+      "name_en": "Kurs",
+      "name_ko": "쿠르스",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Kushites": {
+      "name_en": "Kushites",
+      "name_ko": "쿠시테스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Kwarezm": {
+      "name_en": "Kwarezm",
+      "name_ko": "콰레즈므",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Lake Segozerskoye": {
+      "name_en": "Lake Segozerskoye",
+      "name_ko": "호 세고제르스코예",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Lake Vygozero": {
+      "name_en": "Lake Vygozero",
+      "name_ko": "호 브이고제로",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Lambakannas": {
+      "name_en": "Lambakannas",
+      "name_ko": "라음브아카나스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Maitraka Kingdom": {
+      "name_en": "Maitraka Kingdom",
+      "name_ko": "마이트라카 왕국",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Malagasy": {
+      "name_en": "Malagasy",
+      "name_ko": "말라가시",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Malay": {
+      "name_en": "Malay",
+      "name_ko": "말레이",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Mandes": {
+      "name_en": "Mandes",
+      "name_ko": "마은드에스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Mari": {
+      "name_en": "Mari",
+      "name_ko": "마리",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Mauri": {
+      "name_en": "Mauri",
+      "name_ko": "마우리",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Mazun": {
+      "name_en": "Mazun",
+      "name_ko": "마주은",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Mogollon": {
+      "name_en": "Mogollon",
+      "name_ko": "모골론",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Mon States": {
+      "name_en": "Mon States",
+      "name_ko": "몬 국가",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Monte Alb?n": {
+      "name_en": "Monte Alb?n",
+      "name_ko": "몬테 아르브은",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Moravians": {
+      "name_en": "Moravians",
+      "name_ko": "모라비아족",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Mordvinians": {
+      "name_en": "Mordvinians",
+      "name_ko": "모르드비니아느스",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Multan": {
+      "name_en": "Multan",
+      "name_ko": "무르타은",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 1783,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Muscat": {
+      "name_en": "Muscat",
+      "name_ko": "무스카트",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Nan-Zhao": {
+      "name_en": "Nan-Zhao",
+      "name_ko": "나은-지아",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Neustria": {
+      "name_en": "Neustria",
+      "name_ko": "네우스트리아",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Nobatia": {
+      "name_en": "Nobatia",
+      "name_ko": "노바티아",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "North American Pacifi foraging, hunting and fishing peoples": {
+      "name_en": "North American Pacifi foraging, hunting and fishing peoples",
+      "name_ko": "북아메리카 태평양 채집 수렵 어로 민족",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Oghuz Turks": {
+      "name_en": "Oghuz Turks",
+      "name_ko": "오구즈 투르크",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Ouighurs": {
+      "name_en": "Ouighurs",
+      "name_ko": "우그우르스",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Paleo-Siberian hunter-gatherers": {
+      "name_en": "Paleo-Siberian hunter-gatherers",
+      "name_ko": "팔레오시베리아 수렵채집민",
+      "tier": 3,
+      "in_data_from": -2000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Pampas cultures": {
+      "name_en": "Pampas cultures",
+      "name_ko": "파음프아스 문화",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Pandya state": {
+      "name_en": "Pandya state",
+      "name_ko": "판디아 스타테",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1400,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Pandyas": {
+      "name_en": "Pandyas",
+      "name_ko": "판디아",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Papou": {
+      "name_en": "Papou",
+      "name_ko": "파포우",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Patagonian shellfish and marine mammal hunters": {
+      "name_en": "Patagonian shellfish and marine mammal hunters",
+      "name_ko": "파타고니아 조개 해양 포유류 수렵민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1815,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Pechenegs": {
+      "name_en": "Pechenegs",
+      "name_ko": "페체네그족",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Permians": {
+      "name_en": "Permians",
+      "name_ko": "페르미아느스",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Peshemegs": {
+      "name_en": "Peshemegs",
+      "name_ko": "페셰메그스",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Plain bison hunters": {
+      "name_en": "Plain bison hunters",
+      "name_ko": "평원 비소은 수렵민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Plateau fichers and hunter gatherers": {
+      "name_en": "Plateau fichers and hunter gatherers",
+      "name_ko": "고원 어로민 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1530,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Polanes": {
+      "name_en": "Polanes",
+      "name_ko": "포라네스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Polyanians": {
+      "name_en": "Polyanians",
+      "name_ko": "포르야니아느스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Pomerania": {
+      "name_en": "Pomerania",
+      "name_ko": "포메라니아",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Pratiharas": {
+      "name_en": "Pratiharas",
+      "name_ko": "프라티하라족",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Proto-Slavs": {
+      "name_en": "Proto-Slavs",
+      "name_ko": "원시-스라브스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Prussians": {
+      "name_en": "Prussians",
+      "name_ko": "프루시아느스",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Rashtrakuta": {
+      "name_en": "Rashtrakuta",
+      "name_ko": "라슈트라쿠타",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Saami": {
+      "name_en": "Saami",
+      "name_ko": "사미족",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Sabirs": {
+      "name_en": "Sabirs",
+      "name_ko": "사비르스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Saffarids": {
+      "name_en": "Saffarids",
+      "name_ko": "사파리드스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Saharan Nomadic Tribes": {
+      "name_en": "Saharan Nomadic Tribes",
+      "name_ko": "사하라 유목 부족",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Samanid Empire": {
+      "name_en": "Samanid Empire",
+      "name_ko": "사만 제국",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Sami": {
+      "name_en": "Sami",
+      "name_ko": "사미",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Samis": {
+      "name_en": "Samis",
+      "name_ko": "사미스",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1300,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Samoyèdes": {
+      "name_en": "Samoyèdes",
+      "name_ko": "사모이데스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Sasanian dependencies": {
+      "name_en": "Sasanian dependencies",
+      "name_ko": "사사니아은 데페은드에느시에스",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Savanna hunter-gatherers": {
+      "name_en": "Savanna hunter-gatherers",
+      "name_ko": "사바나 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1783,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Saxons": {
+      "name_en": "Saxons",
+      "name_ko": "색슨족",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Senas": {
+      "name_en": "Senas",
+      "name_ko": "세나스",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Severians": {
+      "name_en": "Severians",
+      "name_ko": "세베리아느스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Shaskanka": {
+      "name_en": "Shaskanka",
+      "name_ko": "샤스카응크아",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 600,
+      "snapshots_in_period": [
+        600
+      ]
+    },
+    "Shellfish gatherers": {
+      "name_en": "Shellfish gatherers",
+      "name_ko": "셰르피시 가테레르스",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        600,
+        700,
+        800
+      ]
+    },
+    "Shirvan": {
+      "name_en": "Shirvan",
+      "name_ko": "시르바은",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1100,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Silia": {
+      "name_en": "Silia",
+      "name_ko": "시리아",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Sindh": {
+      "name_en": "Sindh",
+      "name_ko": "시은드흐",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 1800,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Slavic tribes": {
+      "name_en": "Slavic tribes",
+      "name_ko": "슬라브 부족",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Slavonic tribes": {
+      "name_en": "Slavonic tribes",
+      "name_ko": "슬라브 부족",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Slavs": {
+      "name_en": "Slavs",
+      "name_ko": "스라브스",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Somvamsis": {
+      "name_en": "Somvamsis",
+      "name_ko": "소므바므시스",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Subarctic forest hunter-gatherers": {
+      "name_en": "Subarctic forest hunter-gatherers",
+      "name_ko": "아북극 삼림 수렵채집민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1715,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Suomi": {
+      "name_en": "Suomi",
+      "name_ko": "수오미",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1000,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Swedes": {
+      "name_en": "Swedes",
+      "name_ko": "스웨데스",
+      "tier": 3,
+      "in_data_from": 400,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Sámi": {
+      "name_en": "Sámi",
+      "name_ko": "사미족",
+      "tier": 3,
+      "in_data_from": 200,
+      "in_data_until": 1530,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Taino": {
+      "name_en": "Taino",
+      "name_ko": "타이노",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1492,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Takrur": {
+      "name_en": "Takrur",
+      "name_ko": "타크루르",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "Tasmanian hunter-gatherers": {
+      "name_en": "Tasmanian hunter-gatherers",
+      "name_ko": "타스마니아은 수렵채집민",
+      "tier": 3,
+      "in_data_from": -2000,
+      "in_data_until": 1715,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "Teotihuacàn": {
+      "name_en": "Teotihuacàn",
+      "name_ko": "테오티후아크아은",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Thai Kingdoms": {
+      "name_en": "Thai Kingdoms",
+      "name_ko": "타이 왕국",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Thule": {
+      "name_en": "Thule",
+      "name_ko": "툴레",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        800,
+        900,
+        1000
+      ]
+    },
+    "Tuaregs": {
+      "name_en": "Tuaregs",
+      "name_ko": "투아레그족",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Tufan Empire": {
+      "name_en": "Tufan Empire",
+      "name_ko": "토번 제국",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Tungus": {
+      "name_en": "Tungus",
+      "name_ko": "투응구스",
+      "tier": 3,
+      "in_data_from": -200,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        700,
+        800,
+        900
+      ]
+    },
+    "Tupis": {
+      "name_en": "Tupis",
+      "name_ko": "투피족",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Uyghurs": {
+      "name_en": "Uyghurs",
+      "name_ko": "위구르족",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Vallabhi": {
+      "name_en": "Vallabhi",
+      "name_ko": "바라브히",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "Vasconia": {
+      "name_en": "Vasconia",
+      "name_ko": "바스코니아",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Vazimba": {
+      "name_en": "Vazimba",
+      "name_ko": "바지음브아",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Vengi": {
+      "name_en": "Vengi",
+      "name_ko": "베응기",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "Veps": {
+      "name_en": "Veps",
+      "name_ko": "베프스",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 800,
+      "snapshots_in_period": [
+        800
+      ]
+    },
+    "Veracruz civilization": {
+      "name_en": "Veracruz civilization",
+      "name_ko": "베라크루스 문명",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    },
+    "Warsenis": {
+      "name_en": "Warsenis",
+      "name_ko": "와르세니스",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "West African cereal farmers": {
+      "name_en": "West African cereal farmers",
+      "name_ko": "서아프리카 곡물 농경민",
+      "tier": 3,
+      "in_data_from": -1500,
+      "in_data_until": 1500,
+      "snapshots_in_period": [
+        600,
+        700,
+        800,
+        900,
+        1000
+      ]
+    },
+    "West Francia": {
+      "name_en": "West Francia",
+      "name_ko": "서프랑키아",
+      "tier": 3,
+      "in_data_from": 900,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        900
+      ]
+    },
+    "West Getaes": {
+      "name_en": "West Getaes",
+      "name_ko": "서게타이",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Western Gangas": {
+      "name_en": "Western Gangas",
+      "name_ko": "서가응가스",
+      "tier": 3,
+      "in_data_from": 500,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "Western Gokturk Khaganate": {
+      "name_en": "Western Gokturk Khaganate",
+      "name_ko": "서고크투르크 크아가나테",
+      "tier": 3,
+      "in_data_from": 700,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        700
+      ]
+    },
+    "minor Hindu & Buddhist states": {
+      "name_en": "minor Hindu & Buddhist states",
+      "name_ko": "힌두 불교 국가",
+      "tier": 3,
+      "in_data_from": 800,
+      "in_data_until": 900,
+      "snapshots_in_period": [
+        800,
+        900
+      ]
+    },
+    "minor Hindu and Buddhist states": {
+      "name_en": "minor Hindu and Buddhist states",
+      "name_ko": "힌두 불교 국가",
+      "tier": 3,
+      "in_data_from": 1000,
+      "in_data_until": 1200,
+      "snapshots_in_period": [
+        1000
+      ]
+    },
+    "minor states under Indian influence": {
+      "name_en": "minor states under Indian influence",
+      "name_ko": "국가 우은드에르 인도 이느프루에느세",
+      "tier": 3,
+      "in_data_from": 600,
+      "in_data_until": 700,
+      "snapshots_in_period": [
+        600,
+        700
+      ]
+    }
+  }
+}

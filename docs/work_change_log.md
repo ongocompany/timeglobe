@@ -1232,3 +1232,49 @@
 * "Finno-Ugric taiga hunter-gatherers" → "핀우그르 타이가 수렵채집민"
 * "Anglo-Saxons" → "앵글로-색슨족"
 * "French Guiana" → "프랑스령 기아나"
+
+## [2026-02-28] [cl] 국가 3티어 라벨 차별화 시스템
+
+### 배경
+* 진형(jn): "지금 모든 나라가 똑같은 폰트/색깔이라 로마제국이나 수렵채집민이나 구분이 안 돼"
+* 중요도에 따라 시각적 위계를 부여하여 중요 국가가 잘 보이도록 개선 필요
+
+### 구현
+* **Tier 분류** (`generateBorderMetadata.py`):
+  - Tier 1 (제국/왕국): confidence=high + Empire/Kingdom/Dynasty/Sultanate/Caliphate/Shogunate/Khanate → 148개
+  - Tier 2 (일반국가): confidence=high 나머지 → 381개
+  - Tier 3 (부족/문화): confidence=low → 2,298개
+* **한국 엔티티 강제 Tier 1**: `_TIER1_FORCE` 셋에 Korea 팔레트 계열 엔티티 추가 (고려/조선/신라/백제/고구려/발해/가야)
+* **라벨 스타일** (`CesiumGlobe.tsx`):
+  - Tier 1: bold 18px, 아웃라인 3, scaleByDistance(5e6→1.2, 2e7→0.6)
+  - Tier 2: bold 14px (현행), 아웃라인 2
+  - Tier 3: 12px (bold 없음), 투명도 0.55, scaleByDistance(5e6→0.7, 2e7→0)
+* **가상/강제 엔티티 라벨에도 동일 적용**: `__virtual__` 식민지 + FORCED_ENTITIES
+
+## [2026-02-28] [cl] HB 데이터 결함 수정 (NAME=null, 조선 누락, 원나라 기간)
+
+### 발견된 문제
+* 1435년 기준: 호주/북미에 색칠된 영역인데 라벨 없음 (NAME=null 피처 111개)
+* 한국이 HB 1400 GeoJSON에 누락 — "Great Khanate"(원나라)가 한반도 포함
+* Great Khanate가 1400년에도 "원나라"로 표시 (원나라는 1368년 멸망)
+
+### 수정
+* `CesiumGlobe.tsx`: `if (!name) continue;` — NAME=null 피처 렌더링 건너뜀
+* `generateBorderMetadata.py` YEAR_RANGE_OVERRIDES:
+  - Great Khanate (1206~1368) → 원나라
+  - Great Khanate (1369~1500) → 명나라
+* `generateBorderMetadata.py` FORCED_ENTITIES:
+  - Korea (BC300~AD1897) — GeoJSON에 없을 때 강제 삽입 (수도: 서울 좌표)
+
+## [2026-02-28] [cl] HB 데이터 검증 워크플로우 구축
+
+### 배경
+* 인접 스냅샷 비교 결과 심각한 데이터 갭 발견: 일본(800~1492 누락), 이집트(-700~1715 누락) 등
+* 진형(jn): "함수로는 못 발견해. 제미나이한테 위키피디아 참고해서 검증시켜야 돼"
+
+### 구현 (`extractEntityLifespans.py`)
+* 161개 메타데이터 파일에서 2,827개 엔티티의 존속기간 추출
+* 500년 단위 전체 프롬프트(10개) + 1000년 단위 Tier1+2 핵심 프롬프트(5개) 자동 생성
+* Gemini 웹 UI에 복사-붙여넣기하여 위키피디아 기반 교차검증 가능
+* 400년 이상 스냅샷 공백 자동 감지(⚠️ 표시)
+* 출력: `scripts/geo/validation/` 폴더에 JSON + 마크다운 프롬프트

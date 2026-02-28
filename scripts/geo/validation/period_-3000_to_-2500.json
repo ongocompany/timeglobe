@@ -1,0 +1,256 @@
+{
+  "period": "BC 3000 ~ BC 2500",
+  "entity_count": 25,
+  "entities": {
+    "Ainu": {
+      "name_en": "Ainu",
+      "name_ko": "아이누",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": 1700,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Dravidians": {
+      "name_en": "Dravidians",
+      "name_ko": "드라비다",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": -700,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Egypt": {
+      "name_en": "Egypt",
+      "name_ko": "이집트",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": 1880,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Elam": {
+      "name_en": "Elam",
+      "name_ko": "엘람",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": -700,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Indus valley civilization": {
+      "name_en": "Indus Valley",
+      "name_ko": "인더스 문명",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Jōmon": {
+      "name_en": "Jomon",
+      "name_ko": "조몬",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Kerma": {
+      "name_en": "Kerma",
+      "name_ko": "케르마",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Ur": {
+      "name_en": "Ur",
+      "name_ko": "우르",
+      "tier": 2,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Aboriginal Tasmanians": {
+      "name_en": "Aboriginal Tasmanians",
+      "name_ko": "원주민 타스마니아느스",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": 1800,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Aboriginal tribes": {
+      "name_en": "Aboriginal tribes",
+      "name_ko": "원주민 부족",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -3000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Afanasevo": {
+      "name_en": "Afanasevo",
+      "name_ko": "아파나세보",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Austronesians": {
+      "name_en": "Austronesians",
+      "name_ko": "오스트로네시아인",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -400,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Bantu": {
+      "name_en": "Bantu",
+      "name_ko": "반투",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Cycladic": {
+      "name_en": "Cycladic",
+      "name_ko": "키클라데스",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Dapenkeng culture": {
+      "name_en": "Dapenkeng culture",
+      "name_ko": "다페응크에응 문화",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -3000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Hunters-gatherers": {
+      "name_en": "Hunters-gatherers",
+      "name_ko": "수렵민-가테레르스",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Hurrian Kingdoms": {
+      "name_en": "Hurrian Kingdoms",
+      "name_ko": "후르리 왕국",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Khoisan": {
+      "name_en": "Khoisan",
+      "name_ko": "코이산",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Minoan": {
+      "name_en": "Minoan",
+      "name_ko": "미노아",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Namazga": {
+      "name_en": "Namazga",
+      "name_ko": "나마즈가",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Norte Chico": {
+      "name_en": "Norte Chico",
+      "name_ko": "노르테 치코",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Semites": {
+      "name_en": "Semites",
+      "name_ko": "세미테스",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Valdivia": {
+      "name_en": "Valdivia",
+      "name_ko": "바르디비아",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "Yamnaya culture": {
+      "name_en": "Yamnaya culture",
+      "name_ko": "야므나야 문화",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -3000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    },
+    "city-states": {
+      "name_en": "city-states",
+      "name_ko": "도시국가",
+      "tier": 3,
+      "in_data_from": -3000,
+      "in_data_until": -2000,
+      "snapshots_in_period": [
+        -3000
+      ]
+    }
+  }
+}
