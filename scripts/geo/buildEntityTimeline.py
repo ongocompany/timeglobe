@@ -16,6 +16,7 @@ import os
 import glob
 import re
 import sys
+from collections import defaultdict
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), "../..")
 META_DIR = os.path.join(BASE_DIR, "public/geo/borders/metadata")
@@ -206,6 +207,18 @@ DEDUP_REMOVE = {
     "Saint Kitts and Nevis (UK)",  # → Saint Kitts and Nevis와 시기 겹침
     "Mysore (Indian princely state)",  # → Mysore와 중복
     "Imperial Japan",         # → Japan이 660~2025 전체 커버 (name_ko도 '일본'으로 동일)
+    # ── 호주 식민지 (end_year=2025 잘못된 데이터, __forced__australia가 1901+ 커버) ──
+    "New South Wales (UK)",
+    "Victoria (UK)",
+    "South Australia (UK)",
+    "Queensland (UK)",
+    "Western Australia (UK)",
+    "Northern Territory (UK)",
+    "Tasmania (UK)",
+    # ── 같은 나라 다른 이름 (중복) ──
+    "India",                  # → British Raj(1757~1947) + __forced__republic_of_india(1947+)
+    "Ceylon (Dutch)",         # → Ceylon이 같은 기간 커버
+    "Rajputana",              # → Rajastan과 동일 엔티티
 }
 
 # ─── 한국어 이름 충돌 해소 ─────────────────────────────────────
@@ -730,9 +743,21 @@ def main():
             ma["last_year"] = max(ma["last_year"], snap_year)
             ma["count"] += 1
 
+    # FORCED_ENTITIES의 name_en도 중복 체크에 포함
+    forced_names = {fe["name_en"] for fe in FORCED_ENTITIES}
+    # 기존 타임라인 엔티티를 좌표로 인덱싱 (겹침 방지용)
+    existing_by_coord: dict[tuple, list] = defaultdict(list)
+    for e in timeline:
+        gk = (round(e["coords"][0] / 2) * 2, round(e["coords"][1] / 2) * 2)
+        existing_by_coord[gk].append(e)
+
     meta_added = 0
+    meta_trimmed = 0
     for ename, ma in meta_appearances.items():
         if ename in existing_names_for_meta or ename in DEDUP_REMOVE:
+            continue
+        # FORCED_ENTITIES와 이름 중복 방지
+        if ename in forced_names:
             continue
         info = ma["info"]
         coords = None
@@ -745,6 +770,21 @@ def main():
         if not coords:
             continue
 
+        # 같은 좌표 그리드에 기존 엔티티가 있으면 start_year 조정
+        start_year = ma["first_year"]
+        end_year = ma["last_year"]
+        gk = (round(coords[0] / 2) * 2, round(coords[1] / 2) * 2)
+        for existing in existing_by_coord.get(gk, []):
+            # 시간 겹침 확인
+            if existing["end_year"] >= start_year and existing["start_year"] <= end_year:
+                # 기존 엔티티 종료 이후로 시작 조정
+                new_start = existing["end_year"] + 1
+                if new_start > start_year:
+                    start_year = new_start
+                    meta_trimmed += 1
+        if start_year > end_year:
+            continue  # 완전히 덮여서 불필요
+
         name_ko = NAME_KO_OVERRIDES.get(ename) or info.get("display_name_ko", "")
         ruler_ko = info.get("colonial_ruler_ko")
         if ruler_ko:
@@ -755,8 +795,8 @@ def main():
             "name_en": info.get("display_name_en") or ename,
             "name_ko": name_ko,
             "name_local": info.get("display_name_local", ""),
-            "start_year": ma["first_year"],
-            "end_year": ma["last_year"],
+            "start_year": start_year,
+            "end_year": end_year,
             "tier": TIER_OVERRIDES.get(ename) or info.get("tier") or 3,
             "fill_color": info.get("fill_color", "#AAAAAA"),
             "coords": coords,
@@ -770,13 +810,58 @@ def main():
         existing_names_for_meta.add(ename)
         meta_added += 1
 
-    print(f"  메타데이터 스캔 추가: {meta_added}개")
+    print(f"  메타데이터 스캔 추가: {meta_added}개 (시간 조정: {meta_trimmed}개)")
 
     # ── 5. 강제 추가 엔티티 (대한제국, 일제강점기 등) ──
     print("\n[5] 강제 추가 엔티티...")
     for fe in FORCED_ENTITIES:
         timeline.append(dict(fe))  # 복사해서 추가
     print(f"  강제 추가: {len(FORCED_ENTITIES)}개")
+
+    # ── 5.5. 좌표 기반 자동 중복제거 ──
+    # [cl] 같은 위치(2° 이내) + 시간 겹침(50% 이상) → 우선순위 높은 것만 남김
+    print("\n[5.5] 좌표 기반 자동 중복제거...")
+    SOURCE_RANK = {"forced": 0, "gemini_corrected": 1, "gemini_missing": 2, "metadata_scan": 3, "hb_lifespan": 4}
+
+    coord_grid: dict[tuple, list] = defaultdict(list)
+    for e in timeline:
+        gkey = (round(e["coords"][0] / 2) * 2, round(e["coords"][1] / 2) * 2)
+        coord_grid[gkey].append(e)
+
+    before_dedup = len(timeline)
+    deduped_timeline = []
+    for gkey, group in coord_grid.items():
+        if len(group) == 1:
+            deduped_timeline.append(group[0])
+            continue
+
+        # 우선순위 정렬: source 좋은 순 → tier 낮은 순(중요) → 비식민지 우선
+        group.sort(key=lambda e: (
+            SOURCE_RANK.get(e["source"], 5),
+            e["tier"],
+            0 if not e.get("is_colony") else 1,
+        ))
+
+        kept = []
+        for entity in group:
+            dominated = False
+            for k in kept:
+                # 시간 겹침 확인
+                overlap_start = max(k["start_year"], entity["start_year"])
+                overlap_end = min(k["end_year"], entity["end_year"])
+                if overlap_start <= overlap_end:
+                    overlap = overlap_end - overlap_start
+                    entity_span = max(entity["end_year"] - entity["start_year"], 1)
+                    if overlap / entity_span > 0.5:
+                        dominated = True
+                        break
+            if not dominated:
+                kept.append(entity)
+        deduped_timeline.extend(kept)
+
+    removed_count = before_dedup - len(deduped_timeline)
+    timeline = deduped_timeline
+    print(f"  자동 중복제거: {removed_count}개 제거 → {len(timeline)}개 남음")
 
     # ── 6. 정렬 및 저장 ──
     timeline.sort(key=lambda e: (e["start_year"], e["name_en"]))
