@@ -1415,6 +1415,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     is_colony: boolean;
     fill_color: string;
     confidence: string;
+    tier?: number;                  // [cl] 1=제국/왕국, 2=일반국가, 3=부족/문화
     colonial_ruler?: string;
     colonial_ruler_ko?: string;     // [cl] 식민지 지배국명 한국어
     colonial_note?: string;
@@ -1591,16 +1592,24 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           if (meta?.is_colony && meta.colonial_ruler) {
             labelText += `\n[${meta.colonial_ruler_ko || meta.colonial_ruler}]`;
           }
+          // [cl] Tier별 라벨 스타일: 1=제국(크고 선명), 2=국가(현행), 3=부족(작고 흐림)
+          const tier = meta?.tier ?? 3;
           ds.entities.add({
             position: Cartesian3.fromDegrees(center[0], center[1]),
             label: {
               text: labelText,
-              font: "bold 14px sans-serif",
-              fillColor: Color.WHITE,
-              outlineColor: Color.BLACK,
-              outlineWidth: 2,
+              font: tier === 1 ? "bold 18px sans-serif"
+                  : tier === 2 ? "bold 14px sans-serif"
+                  : "12px sans-serif",
+              fillColor: tier <= 2 ? Color.WHITE : Color.WHITE.withAlpha(0.55),
+              outlineColor: tier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
+              outlineWidth: tier === 1 ? 3 : tier === 2 ? 2 : 1,
               style: 2, // FILL_AND_OUTLINE
-              scaleByDistance: new NearFarScalar(5e6, 1.0, 2e7, 0.55),
+              scaleByDistance: tier === 1
+                ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
+                : tier === 2
+                ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)
+                : new NearFarScalar(3e6, 0.8, 1.5e7, 0),
             },
           });
         }
@@ -1619,16 +1628,26 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           let vLabel = vKo;
           if (vNeedsEn) vLabel += `\n${vEn}`;
           if (vm.colonial_ruler) vLabel += `\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`;
+          // [cl] 가상 식민지도 Tier별 라벨 스타일 적용
+          const vTier = vm.tier ?? 2;
           ds.entities.add({
             position: Cartesian3.fromDegrees(vm.capital_coords[0], vm.capital_coords[1]),
             label: {
               text: vLabel,
-              font: "bold 14px sans-serif",
-              fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
-              outlineColor: Color.BLACK,
-              outlineWidth: 2,
+              font: vTier === 1 ? "bold 18px sans-serif"
+                  : vTier === 2 ? "bold 14px sans-serif"
+                  : "12px sans-serif",
+              fillColor: vTier <= 2
+                ? Color.fromCssColorString(vm.fill_color || "#FFFFFF")
+                : Color.fromCssColorString(vm.fill_color || "#FFFFFF").withAlpha(0.55),
+              outlineColor: vTier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
+              outlineWidth: vTier === 1 ? 3 : vTier === 2 ? 2 : 1,
               style: 2,
-              scaleByDistance: new NearFarScalar(5e6, 1.0, 2e7, 0.55),
+              scaleByDistance: vTier === 1
+                ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
+                : vTier === 2
+                ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)
+                : new NearFarScalar(3e6, 0.8, 1.5e7, 0),
             },
           });
         }

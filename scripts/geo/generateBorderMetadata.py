@@ -3593,6 +3593,15 @@ def generate_entity_metadata(original_name, year, coords=None):
         metadata["colonial_ruler_ko"] = RULER_NAMES_KO.get(
             metadata["colonial_ruler"], metadata["colonial_ruler"])
 
+    # [cl] Tier 분류: 1=제국/왕국, 2=일반국가, 3=부족/문화
+    _TIER1_KW = ("Empire", "Kingdom", "Dynasty", "Sultanate", "Caliphate",
+                 "Shogunate", "Khanate")
+    if metadata["confidence"] == "high":
+        en = metadata["display_name_en"]
+        metadata["tier"] = 1 if any(kw in en for kw in _TIER1_KW) else 2
+    else:
+        metadata["tier"] = 3
+
     return metadata
 
 
