@@ -1908,18 +1908,6 @@
     "tier": "low"
   },
   {
-    "qid": "Q151148",
-    "name_en": "Chola dynasty",
-    "name_ko": "촐라",
-    "start": "BC 299",
-    "end": "1279",
-    "lon": "79.0",
-    "lat": "10.8",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
-  },
-  {
     "qid": "Q844910",
     "name_en": "Pandya dynasty",
     "name_ko": "판드야",
@@ -7440,18 +7428,6 @@
     "tier": null
   },
   {
-    "qid": "Q199442",
-    "name_en": "Kingdom of Aragon",
-    "name_ko": "아라곤 왕국",
-    "start": "1035",
-    "end": "1707",
-    "lon": "-0.9",
-    "lat": "41.65",
-    "type": "historical",
-    "lineage_id": "L0107",
-    "tier": null
-  },
-  {
     "qid": "Q3708094",
     "name_en": "Seljuk Empire",
     "name_ko": "셀주크 제국",
@@ -11520,18 +11496,6 @@
     "tier": "low"
   },
   {
-    "qid": "Q686971",
-    "name_en": "Lands of the Bohemian Crown",
-    "name_ko": "보헤미아 왕관령",
-    "start": "1348",
-    "end": "1918",
-    "lon": "14.41666667",
-    "lat": "50.08333333",
-    "type": "historical",
-    "lineage_id": "L0093",
-    "tier": null
-  },
-  {
     "qid": "Q760893",
     "name_en": "Jolof Empire",
     "name_ko": "졸로프",
@@ -12670,18 +12634,6 @@
     "type": "historical",
     "lineage_id": null,
     "tier": "low"
-  },
-  {
-    "qid": "Q200464",
-    "name_en": "Portuguese Empire",
-    "name_ko": "포르투갈 제국",
-    "start": "1415",
-    "end": "1999",
-    "lon": "-9.13333333",
-    "lat": "38.71666667",
-    "type": "historical",
-    "lineage_id": "L0116",
-    "tier": null
   },
   {
     "qid": "Q2365048",
@@ -20136,18 +20088,6 @@
     "tier": null
   },
   {
-    "qid": "Q1322181",
-    "name_en": "Government of Meiji Japan",
-    "name_ko": "메이지 일본 정부",
-    "start": "1868",
-    "end": "1912",
-    "lon": "139.77",
-    "lat": "35.68",
-    "type": "historical",
-    "lineage_id": "L0125",
-    "tier": null
-  },
-  {
     "qid": "Q1395929",
     "name_en": "Fante Confederacy",
     "name_ko": "",
@@ -20196,18 +20136,6 @@
     "tier": "low"
   },
   {
-    "qid": "Q1206012",
-    "name_en": "German Reich",
-    "name_ko": "독일국",
-    "start": "1871",
-    "end": "1949",
-    "lon": "13.375",
-    "lat": "52.52",
-    "type": "historical",
-    "lineage_id": "L0152",
-    "tier": null
-  },
-  {
     "qid": "Q43287",
     "name_en": "German Empire",
     "name_ko": "독일 제국",
@@ -20242,18 +20170,6 @@
     "type": "historical",
     "lineage_id": null,
     "tier": "low"
-  },
-  {
-    "qid": "Q1044536",
-    "name_en": "Spain under the Restoration",
-    "name_ko": "스페인 왕정복고",
-    "start": "1874",
-    "end": "1931",
-    "lon": "-3.5",
-    "lat": "40.2",
-    "type": "historical",
-    "lineage_id": "L0069",
-    "tier": null
   },
   {
     "qid": "Q815731",
@@ -25416,18 +25332,6 @@
     "tier": null
   },
   {
-    "qid": "Q170541",
-    "name_en": "Safavid dynasty",
-    "name_ko": "사파비 왕조",
-    "start": "1501",
-    "end": "1736",
-    "lat": "32.7",
-    "lon": "51.7",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
-  },
-  {
     "qid": "Q295587",
     "name_en": "Afsharid dynasty",
     "name_ko": "아프샤르 왕조",
@@ -25435,18 +25339,6 @@
     "end": "1796",
     "lat": "36.3",
     "lon": "59.6",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": null
-  },
-  {
-    "qid": "Q170548",
-    "name_en": "Qajar dynasty",
-    "name_ko": "카자르 왕조",
-    "start": "1789",
-    "end": "1925",
-    "lat": "35.7",
-    "lon": "51.4",
     "type": "historical",
     "lineage_id": null,
     "tier": null
