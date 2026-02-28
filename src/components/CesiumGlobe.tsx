@@ -1621,48 +1621,48 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       const tier = entity.tier;
 
-      // ── 식민지 엔티티: [영국 식민지배] 형식, 이탤릭 작은 글씨 ──
-      if (entity.is_colony) {
-        // colony_label이 있으면 특수 라벨 (예: "일제강점기")
-        // 없으면 "{지배국} 식민지배"
-        const colonyText = entity.colony_label
-          || (entity.colonial_ruler_ko ? `${entity.colonial_ruler_ko} 식민지배` : null);
-        if (!colonyText) continue;
-
-        ds.entities.add({
-          position: Cartesian3.fromDegrees(entity.coords[0], entity.coords[1]),
-          label: {
-            text: `[${colonyText}]`,
-            font: "italic 12px sans-serif",
-            fillColor: Color.WHITE.withAlpha(0.7),
-            outlineColor: Color.BLACK.withAlpha(0.5),
-            outlineWidth: 1,
-            style: 2,
-            scaleByDistance: new NearFarScalar(5e6, 0.9, 2e7, 0.4),
-          },
-        });
-        continue;
-      }
-
-      // ── 일반 국가: 한글 + 영문 2줄 포맷 ──
+      // ── 라벨 텍스트 구성 ──
       const koName = entity.name_ko || entity.name_en;
       const enName = entity.name_en;
-      const needsEnSub = koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName);
-      let labelText = koName;
-      if (needsEnSub) labelText += `\n${enName}`;
+      let labelText: string;
+
+      if (entity.is_colony && entity.colony_label) {
+        // [cl] 특수 식민지 라벨 (일제강점기 등): 태그만 표시
+        labelText = `[${entity.colony_label}]`;
+      } else {
+        // 일반: 한글 + 영문 서브라인
+        const needsEnSub = koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName);
+        labelText = koName;
+        if (needsEnSub) labelText += `\n${enName}`;
+        // 식민지: 나라 이름 아래에 [영국 식민지배] 태그 추가
+        if (entity.is_colony && entity.colonial_ruler_ko) {
+          labelText += `\n[${entity.colonial_ruler_ko} 식민지배]`;
+        }
+      }
+
+      // ── 식민지 vs 일반 국가 스타일 분기 ──
+      const isColonyStyle = entity.is_colony;
 
       ds.entities.add({
         position: Cartesian3.fromDegrees(entity.coords[0], entity.coords[1]),
         label: {
           text: labelText,
-          font: tier === 1 ? "bold 18px sans-serif"
-              : tier === 2 ? "bold 14px sans-serif"
-              : "12px sans-serif",
-          fillColor: tier <= 2 ? Color.WHITE : Color.WHITE.withAlpha(0.55),
-          outlineColor: tier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
-          outlineWidth: tier === 1 ? 3 : tier === 2 ? 2 : 1,
+          font: isColonyStyle
+            ? "italic 12px sans-serif"
+            : tier === 1 ? "bold 18px sans-serif"
+            : tier === 2 ? "bold 14px sans-serif"
+            : "12px sans-serif",
+          fillColor: isColonyStyle
+            ? Color.WHITE.withAlpha(0.65)
+            : tier <= 2 ? Color.WHITE : Color.WHITE.withAlpha(0.55),
+          outlineColor: isColonyStyle
+            ? Color.BLACK.withAlpha(0.4)
+            : tier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
+          outlineWidth: isColonyStyle ? 1 : tier === 1 ? 3 : tier === 2 ? 2 : 1,
           style: 2,
-          scaleByDistance: tier === 1
+          scaleByDistance: isColonyStyle
+            ? new NearFarScalar(5e6, 0.85, 2e7, 0.35)
+            : tier === 1
             ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
             : tier === 2
             ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)

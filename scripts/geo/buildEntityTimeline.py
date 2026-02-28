@@ -205,6 +205,7 @@ DEDUP_REMOVE = {
     "Barbados (UK)",          # → Barbados와 시기 겹침
     "Saint Kitts and Nevis (UK)",  # → Saint Kitts and Nevis와 시기 겹침
     "Mysore (Indian princely state)",  # → Mysore와 중복
+    "Imperial Japan",         # → Japan이 660~2025 전체 커버 (name_ko도 '일본'으로 동일)
 }
 
 # ─── 한국어 이름 충돌 해소 ─────────────────────────────────────
@@ -231,34 +232,157 @@ COLONIAL_RULER_FIX = {
 # ─── 강제 추가 엔티티 ──────────────────────────────────────────
 # [cl] HB/Gemini에 없지만 반드시 표시해야 하는 엔티티
 FORCED_ENTITIES = [
+    # ── 한국 ──
     {
         "id": "__forced__korean_empire",
         "name_en": "Korean Empire",
         "name_ko": "대한제국",
         "name_local": "大韓帝國",
-        "start_year": 1897,
-        "end_year": 1910,
-        "tier": 1,
-        "fill_color": "#C0392B",
-        "coords": [126.98, 37.57],   # 한양(서울)
-        "is_colony": False,
-        "colonial_ruler_ko": None,
-        "source": "forced",
+        "start_year": 1897, "end_year": 1910, "tier": 1,
+        "fill_color": "#C0392B", "coords": [126.98, 37.57],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
     },
     {
         "id": "__forced__korea_japanese_rule",
         "name_en": "Korea (Japanese Rule)",
         "name_ko": "일제강점기",
         "name_local": "日帝強占期",
-        "start_year": 1910,
-        "end_year": 1945,
-        "tier": 1,
-        "fill_color": "#922B21",
-        "coords": [126.98, 37.57],   # 서울
-        "is_colony": True,
-        "colonial_ruler_ko": "일본",
-        "colony_label": "일제강점기",       # 특수 라벨 (CesiumGlobe에서 사용)
-        "source": "forced",
+        "start_year": 1910, "end_year": 1945, "tier": 1,
+        "fill_color": "#922B21", "coords": [126.98, 37.57],
+        "is_colony": True, "colonial_ruler_ko": "일본",
+        "colony_label": "일제강점기", "source": "forced",
+    },
+    {
+        "id": "__forced__south_korea",
+        "name_en": "South Korea",
+        "name_ko": "대한민국",
+        "name_local": "大韓民國",
+        "start_year": 1948, "end_year": 2025, "tier": 1,
+        "fill_color": "#2E86C1", "coords": [127.77, 36.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    {
+        "id": "__forced__north_korea",
+        "name_en": "North Korea",
+        "name_ko": "북한",
+        "name_local": "朝鮮民主主義人民共和國",
+        "start_year": 1948, "end_year": 2025, "tier": 2,
+        "fill_color": "#C0392B", "coords": [126.0, 40.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    # ── 중국 ──
+    {
+        "id": "__forced__republic_of_china",
+        "name_en": "Republic of China",
+        "name_ko": "중화민국",
+        "name_local": "中華民國",
+        "start_year": 1912, "end_year": 1949, "tier": 1,
+        "fill_color": "#E74C3C", "coords": [108.0, 34.0],  # 중국 중부
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    {
+        "id": "__forced__prc",
+        "name_en": "People's Republic of China",
+        "name_ko": "중국",
+        "name_local": "中華人民共和國",
+        "start_year": 1949, "end_year": 2025, "tier": 1,
+        "fill_color": "#E74C3C", "coords": [103.0, 35.0],  # 중국 중부
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    # ── 러시아 ──
+    {
+        "id": "__forced__soviet_union",
+        "name_en": "Soviet Union",
+        "name_ko": "소련",
+        "name_local": "СССР",
+        "start_year": 1922, "end_year": 1991, "tier": 1,
+        "fill_color": "#C0392B", "coords": [80.0, 60.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    {
+        "id": "__forced__russian_federation",
+        "name_en": "Russian Federation",
+        "name_ko": "러시아",
+        "name_local": "Российская Федерация",
+        "start_year": 1991, "end_year": 2025, "tier": 1,
+        "fill_color": "#2980B9", "coords": [80.0, 60.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    # ── 인도 ──
+    {
+        "id": "__forced__republic_of_india",
+        "name_en": "India",
+        "name_ko": "인도",
+        "name_local": "भारत गणराज्य",
+        "start_year": 1947, "end_year": 2025, "tier": 1,
+        "fill_color": "#F39C12", "coords": [80.0, 22.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    # ── 브라질 ──
+    {
+        "id": "__forced__brazil_republic",
+        "name_en": "Brazil",
+        "name_ko": "브라질",
+        "name_local": "República Federativa do Brasil",
+        "start_year": 1889, "end_year": 2025, "tier": 1,
+        "fill_color": "#27AE60", "coords": [-50.0, -14.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    # ── 호주 ──
+    {
+        "id": "__forced__australia",
+        "name_en": "Australia",
+        "name_ko": "호주",
+        "name_local": "Commonwealth of Australia",
+        "start_year": 1901, "end_year": 2025, "tier": 1,
+        "fill_color": "#2E86C1", "coords": [134.0, -25.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    # ── 기타 근현대 주요국 (HB→현대 연결 누락분) ──
+    {
+        "id": "__forced__mexico",
+        "name_en": "Mexico",
+        "name_ko": "멕시코",
+        "name_local": "Estados Unidos Mexicanos",
+        "start_year": 1821, "end_year": 2025, "tier": 1,
+        "fill_color": "#27AE60", "coords": [-102.0, 24.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    {
+        "id": "__forced__south_africa",
+        "name_en": "South Africa",
+        "name_ko": "남아프리카공화국",
+        "name_local": "Republic of South Africa",
+        "start_year": 1910, "end_year": 2025, "tier": 1,
+        "fill_color": "#27AE60", "coords": [25.0, -29.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    {
+        "id": "__forced__pakistan",
+        "name_en": "Pakistan",
+        "name_ko": "파키스탄",
+        "name_local": "اسلامی جمہوریۂ پاکستان",
+        "start_year": 1947, "end_year": 2025, "tier": 2,
+        "fill_color": "#27AE60", "coords": [69.0, 30.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    {
+        "id": "__forced__indonesia",
+        "name_en": "Indonesia",
+        "name_ko": "인도네시아",
+        "name_local": "Republik Indonesia",
+        "start_year": 1945, "end_year": 2025, "tier": 1,
+        "fill_color": "#E74C3C", "coords": [118.0, -2.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
+    },
+    {
+        "id": "__forced__egypt_modern",
+        "name_en": "Egypt",
+        "name_ko": "이집트",
+        "name_local": "جمهورية مصر العربية",
+        "start_year": 1922, "end_year": 2025, "tier": 1,
+        "fill_color": "#F4D03F", "coords": [30.0, 27.0],
+        "is_colony": False, "colonial_ruler_ko": None, "source": "forced",
     },
 ]
 
