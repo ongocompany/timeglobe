@@ -1420,9 +1420,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // 메타데이터 파일이 있으면 정확히 로드, 없으면 가장 가까운 연도 폴백
   async function loadMetadata(snapYear: number): Promise<Record<string, BorderMetadata> | null> {
     if (metadataCacheRef.current[snapYear]) return metadataCacheRef.current[snapYear];
-    // [cl] 먼저 정확한 연도 시도
+    // [cl] 먼저 정확한 연도 시도 (cache: no-cache → 브라우저가 서버에 재검증 요청)
     try {
-      const res = await fetch(`/geo/borders/metadata/${snapYear}.json`);
+      const res = await fetch(`/geo/borders/metadata/${snapYear}.json`, { cache: "no-cache" });
       if (res.ok) {
         const data = await res.json();
         metadataCacheRef.current[snapYear] = data;
@@ -1438,7 +1438,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     if (!metaYear) return null;
     if (metadataCacheRef.current[metaYear]) return metadataCacheRef.current[metaYear];
     try {
-      const res = await fetch(`/geo/borders/metadata/${metaYear}.json`);
+      const res = await fetch(`/geo/borders/metadata/${metaYear}.json`, { cache: "no-cache" });
       if (!res.ok) return null;
       const data = await res.json();
       metadataCacheRef.current[metaYear] = data;
@@ -1547,21 +1547,42 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   }
 
   // [cl] 인덱스 로드 (1회) + 즉시 첫 국경 로드
+  // StrictMode 이중 실행 + HMR stale 캐시 방지를 위해 cancelled 플래그 + cleanup 사용
   useEffect(() => {
     if (!viewer) return;
+    let cancelled = false;
+    // [cl] HMR/StrictMode 리마운트 시 stale 메타데이터 캐시 방지
+    metadataCacheRef.current = {};
+
     loadBorderIndex().then(async (idx) => {
+      if (cancelled) return;
       borderIndexRef.current = idx;
       const snap = findClosestSnapshot(idx, currentYear);
       borderLoadingRef.current = true;
       try {
         const ds = await loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year);
-        if (viewer.isDestroyed()) return;
+        if (cancelled || viewer.isDestroyed()) return;
+        // [cl] StrictMode 중복 방지: 기존 ds가 있으면 먼저 제거
+        if (borderDsRef.current) {
+          viewer.dataSources.remove(borderDsRef.current, true);
+        }
         viewer.dataSources.add(ds);
         borderDsRef.current = ds;
         currentBorderFileRef.current = snap.file;
       } catch { /* GeoJSON 미다운로드 시 무시 */ }
       borderLoadingRef.current = false;
     }).catch(() => {});
+
+    // [cl] 클린업: StrictMode 첫 번째 실행의 비동기 취소 + 데이터소스 정리
+    return () => {
+      cancelled = true;
+      if (borderDsRef.current && !viewer.isDestroyed()) {
+        viewer.dataSources.remove(borderDsRef.current, true);
+        borderDsRef.current = null;
+        currentBorderFileRef.current = null;
+      }
+      borderLoadingRef.current = false;
+    };
   }, [viewer]);
 
   // [cl] 연도 변경 시 국경 스왑
@@ -1588,14 +1609,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       });
   }, [viewer, currentYear]);
 
-  // [cl] 언마운트 시 정리
-  useEffect(() => {
-    return () => {
-      if (viewer && !viewer.isDestroyed() && borderDsRef.current) {
-        viewer.dataSources.remove(borderDsRef.current, true);
-      }
-    };
-  }, [viewer]);
+  // [cl] 언마운트 정리: 초기 로드 effect의 cleanup에서 처리 (별도 effect 불필요)
 
   return null;
 }
