@@ -1609,7 +1609,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
                 ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
                 : tier === 2
                 ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)
-                : new NearFarScalar(3e6, 0.8, 1.5e7, 0),
+                : new NearFarScalar(5e6, 0.7, 2e7, 0),
             },
           });
         }
@@ -1647,7 +1647,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
                 ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
                 : vTier === 2
                 ? new NearFarScalar(5e6, 1.0, 2e7, 0.55)
-                : new NearFarScalar(3e6, 0.8, 1.5e7, 0),
+                : new NearFarScalar(5e6, 0.7, 2e7, 0),
             },
           });
         }
