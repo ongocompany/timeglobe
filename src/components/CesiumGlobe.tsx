@@ -1506,8 +1506,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         // [cl] BP=1 (근사치): 경계선 제거, 반투명 filled polygon으로 영역 표시
         // "시간의 안개" — 국경 개념 없는 시대의 대략적 세력 범위
         const fillColor = meta
-          ? Color.fromCssColorString(meta.fill_color).withAlpha(0.25)
-          : Color.WHITE.withAlpha(0.12);
+          ? Color.fromCssColorString(meta.fill_color).withAlpha(0.45)
+          : Color.WHITE.withAlpha(0.30);
         try {
           const hierarchies = extractPolygonHierarchies(feature.geometry);
           for (const hierarchy of hierarchies) {
