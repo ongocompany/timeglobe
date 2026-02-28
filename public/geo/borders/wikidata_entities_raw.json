@@ -3,7 +3,7 @@
     "qid": "Q191369",
     "name_en": "Ugarit",
     "name_ko": "우가리트",
-    "start": "BC 6000",
+    "start": "BC 1450",
     "end": "BC 1190",
     "lon": "35.785556",
     "lat": "35.601944",
@@ -15,7 +15,7 @@
     "qid": "Q1739282",
     "name_en": "Kerma kingdom",
     "name_ko": "케르마 왕국",
-    "start": "BC 3499",
+    "start": "BC 2500",
     "end": "BC 1499",
     "lon": "30.409731",
     "lat": "19.600802",
@@ -69,7 +69,7 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": "low"
+    "tier": "investigate"
   },
   {
     "qid": "Q177819",
@@ -141,7 +141,7 @@
     "lat": "36.113054",
     "type": "historical",
     "lineage_id": null,
-    "tier": "low"
+    "tier": null
   },
   {
     "qid": "Q282350",
@@ -165,7 +165,7 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": "low"
+    "tier": null
   },
   {
     "qid": "Q28057",
@@ -177,7 +177,7 @@
     "lat": "33.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "investigate"
   },
   {
     "qid": "Q4461035",
@@ -201,13 +201,13 @@
     "lat": "39.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "investigate"
   },
   {
     "qid": "Q241790",
     "name_en": "Kingdom of Kush",
     "name_ko": "쿠시 왕국",
-    "start": "BC 2179",
+    "start": "BC 1070",
     "end": "350",
     "lon": "33.83",
     "lat": "17.18",
@@ -273,7 +273,7 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": "low"
+    "tier": null
   },
   {
     "qid": "Q1193806",
@@ -285,7 +285,7 @@
     "lat": "30.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "investigate"
   },
   {
     "qid": "Q283680",
@@ -981,7 +981,7 @@
     "lat": "15.45",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "low"
   },
   {
     "qid": "Q230407",
@@ -1444,12 +1444,12 @@
     "name_en": "Kingdom of Rajarata",
     "name_ko": "라자라타",
     "start": "BC 600",
-    "end": "1300",
+    "end": "1017",
     "lon": "80.4",
     "lat": "8.35",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "low"
   },
   {
     "qid": "Q6427080",
@@ -1461,7 +1461,7 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": "low"
+    "tier": "investigate"
   },
   {
     "qid": "Q10888424",
@@ -1647,7 +1647,7 @@
     "qid": "Q139377",
     "name_en": "Kingdom of Aksum",
     "name_ko": "악숨 왕국",
-    "start": "BC 400",
+    "start": "BC 100",
     "end": "960",
     "lon": "38.717256944",
     "lat": "14.128396944",
@@ -1857,7 +1857,7 @@
     "lat": "8.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "investigate"
   },
   {
     "qid": "Q1150706",
@@ -1905,7 +1905,7 @@
     "lat": "9.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "investigate"
   },
   {
     "qid": "Q1651832",
@@ -1917,7 +1917,7 @@
     "lat": "16.928844457",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "investigate"
   },
   {
     "qid": "Q19083",
@@ -2913,7 +2913,7 @@
     "lat": "34.69",
     "type": "historical",
     "lineage_id": null,
-    "tier": null
+    "tier": "low"
   },
   {
     "qid": "Q605292",
@@ -4886,7 +4886,7 @@
   {
     "qid": "Q30253177",
     "name_en": "Imperial Court of Japan",
-    "name_ko": "이음프에리아르 코우르트 자파은",
+    "name_ko": "일본 조정",
     "start": "701",
     "end": "1868",
     "lon": "",
@@ -5270,7 +5270,7 @@
   {
     "qid": "Q11680900",
     "name_en": "Imperial Court in Kyoto",
-    "name_ko": "이음프에리아르 코우르트 in 크요토",
+    "name_ko": "교토 조정",
     "start": "794",
     "end": "1868",
     "lon": "",
@@ -5834,7 +5834,7 @@
   {
     "qid": "Q132868834",
     "name_en": "Japan during the Rekkan Politics period",
-    "name_ko": "자파은 두리응 레카은 포리티크스 페리오드",
+    "name_ko": "일본 섭관정치 시대",
     "start": "866",
     "end": "1086",
     "lon": "",
@@ -7790,7 +7790,7 @@
   {
     "qid": "Q132869051",
     "name_en": "Japan during the Insei period",
-    "name_ko": "자파은 두리응 이느세이 페리오드",
+    "name_ko": "일본 원정(院政) 시대",
     "start": "1086",
     "end": "1167",
     "lon": "",
@@ -8991,7 +8991,7 @@
     "qid": "Q736839",
     "name_en": "Kamakura shogunate",
     "name_ko": "가마쿠라 막부",
-    "start": "1200",
+    "start": "1185",
     "end": "1333",
     "lon": "139.55",
     "lat": "35.316666666",
@@ -11714,11 +11714,11 @@
   {
     "qid": "Q6669561",
     "name_en": "Chen Han",
-    "name_ko": "진한",
+    "name_ko": "진한(陳漢)",
     "start": "1360",
     "end": "1364",
-    "lon": "129.2",
-    "lat": "35.85",
+    "lon": "114.27",
+    "lat": "30.58",
     "type": "historical",
     "lineage_id": null,
     "tier": null
@@ -15038,7 +15038,7 @@
   {
     "qid": "Q382593",
     "name_en": "New Netherland",
-    "name_ko": "니우네데를란트",
+    "name_ko": "뉴네덜란드",
     "start": "1609",
     "end": "1667",
     "lon": "-73.98333333",
@@ -16635,8 +16635,8 @@
     "qid": "Q2578028",
     "name_en": "Sikh Confederacy",
     "name_ko": "시크 연맹",
-    "start": "1748",
-    "end": "1733",
+    "start": "1733",
+    "end": "1799",
     "lon": "74.9",
     "lat": "31.6",
     "type": "historical",
@@ -18434,7 +18434,7 @@
   {
     "qid": "Q3267672",
     "name_en": "Republic of Entre Ríos",
-    "name_ko": "에은트레 리오족 공화국",
+    "name_ko": "엔트레리오스 공화국",
     "start": "1820",
     "end": "1821",
     "lon": "-59.0",
@@ -18626,7 +18626,7 @@
   {
     "qid": "Q9063401",
     "name_en": "United Provinces of Central America",
-    "name_ko": "우니테드 프로비느세스 세은트라르 아메리카",
+    "name_ko": "중앙아메리카 연합주",
     "start": "1823",
     "end": "1824",
     "lon": "-90.51666667",
@@ -19130,7 +19130,7 @@
   {
     "qid": "Q671658",
     "name_en": "Republic of Yucatán",
-    "name_ko": "유카트아은 공화국",
+    "name_ko": "유카탄 공화국",
     "start": "1841",
     "end": "1848",
     "lon": "-89.61666667",
@@ -19310,7 +19310,7 @@
   {
     "qid": "Q2979717",
     "name_en": "Second Empire of Haiti",
-    "name_ko": "세코은드 제국 하이티",
+    "name_ko": "아이티 제2제국",
     "start": "1849",
     "end": "1859",
     "lon": "-72.33333333",
@@ -19526,7 +19526,7 @@
   {
     "qid": "Q2424187",
     "name_en": "Kingdom of Rarotonga",
-    "name_ko": "라로토응가 왕국",
+    "name_ko": "라로통가 왕국",
     "start": "1858",
     "end": "1893",
     "lon": "-159.766666666",
@@ -19586,7 +19586,7 @@
   {
     "qid": "Q999381",
     "name_en": "Jefferson Territory",
-    "name_ko": "제페르소은 영토",
+    "name_ko": "제퍼슨 영토",
     "start": "1859",
     "end": "1861",
     "lon": "-105.5",
@@ -20210,7 +20210,7 @@
   {
     "qid": "Q2975232",
     "name_en": "Republic of Independent Guyana",
-    "name_ko": "이은드에페은드에은트 구야나 공화국",
+    "name_ko": "독립 가이아나 공화국",
     "start": "1886",
     "end": "1887",
     "lon": "-51.125",
@@ -20438,7 +20438,7 @@
   {
     "qid": "Q11133153",
     "name_en": "Japanese Concession of Hankou",
-    "name_ko": "일본 코느세시오은 하응크우",
+    "name_ko": "일본 한커우 조계",
     "start": "1898",
     "end": "1938",
     "lon": "114.279167",
@@ -26247,7 +26247,7 @@
     "qid": "",
     "name_en": "State of Yue",
     "name_ko": "월(越)나라",
-    "start": "BC 2032",
+    "start": "BC 600",
     "end": "BC 222",
     "lat": "29.88",
     "lon": "120.58",
@@ -26427,7 +26427,7 @@
     "qid": "",
     "name_en": "Usan-guk",
     "name_ko": "우산국",
-    "start": "512",
+    "start": "400",
     "end": "512",
     "lat": "37.49",
     "lon": "130.87",
