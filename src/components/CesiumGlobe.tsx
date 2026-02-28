@@ -9,8 +9,8 @@ if (typeof window !== "undefined") {
   (window as any).CESIUM_BASE_URL = "/cesium";
 }
 
-import { useEffect, useRef } from "react";
-import { Viewer, useCesium } from "resium";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { Viewer, useCesium, BlurStage } from "resium";
 import {
   Cartesian3,
   Cartesian2,
@@ -29,6 +29,9 @@ import {
   DirectionalLight,
   CameraEventType,
   CustomDataSource,
+  ClassificationType,
+  PolylineDashMaterialProperty,
+  PolygonHierarchy,
 } from "cesium";
 import type { MockEvent } from "@/data/mockEvents";
 import { loadBorderIndex, findClosestSnapshot } from "@/lib/borderIndex";
@@ -224,9 +227,10 @@ interface SceneSetupProps {
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear: number; // [cl] 역사 국경선 표시용
+  onBlurRatioChange?: (ratio: number) => void; // [cl] BP=1 비율 → 블러 강도 제어
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear, onBlurRatioChange }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -1434,8 +1438,38 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     return null;
   }
 
-  // [cl] GeoJSON fetch → CustomDataSource (Polyline + 메타데이터 기반 라벨)
-  async function loadBordersAsPolylines(url: string, snapYear: number): Promise<InstanceType<typeof CustomDataSource>> {
+  // [cl] GeoJSON Feature에서 PolygonHierarchy 추출 (BP=1 filled polygon용)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function extractPolygonHierarchies(geometry: any): PolygonHierarchy[] {
+    const hierarchies: PolygonHierarchy[] = [];
+    if (!geometry) return hierarchies;
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const toCartesians = (ring: any[]) => ring.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat));
+
+    if (geometry.type === "Polygon") {
+      const outer = toCartesians(geometry.coordinates[0]);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const holes = geometry.coordinates.slice(1).map((ring: any[]) =>
+        new PolygonHierarchy(toCartesians(ring))
+      );
+      hierarchies.push(new PolygonHierarchy(outer, holes));
+    } else if (geometry.type === "MultiPolygon") {
+      for (const polygon of geometry.coordinates) {
+        const outer = toCartesians(polygon[0]);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const holes = polygon.slice(1).map((ring: any[]) =>
+          new PolygonHierarchy(toCartesians(ring))
+        );
+        hierarchies.push(new PolygonHierarchy(outer, holes));
+      }
+    }
+    return hierarchies;
+  }
+
+  // [cl] GeoJSON fetch → CustomDataSource (BP 기반 분기 렌더링 + 메타데이터 라벨)
+  // BORDERPRECISION: 1=근사치(블러), 2=중간(점선), 3=확정(실선)
+  async function loadBordersAsPolylines(url: string, snapYear: number): Promise<{ ds: InstanceType<typeof CustomDataSource>; bp1Ratio: number }> {
     const res = await fetch(url);
     const geojson = await res.json();
     const ds = new CustomDataSource("borders");
@@ -1450,24 +1484,85 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] 중복 라벨 방지 (같은 NAME이 여러 feature에 걸쳐 있을 수 있음)
     const labeledNames = new Set<string>();
 
+    // [cl] BP=1 비율 집계 (블러 강도 결정용)
+    let bp1Count = 0;
+    let totalCount = 0;
+
     for (const feature of geojson.features) {
       const name = feature.properties?.NAME;
       const meta = name && metadata ? metadata[name] : null;
-      // [cl] 메타데이터 있으면 문명권 색상으로 국경선 표시, 없으면 기본 흰색
+      // [cl] BORDERPRECISION 읽기: CShapes는 항상 3(확정), HB는 필드값 (없으면 1=근사치)
+      const bp: number = isCShapes ? 3 : (feature.properties?.BORDERPRECISION ?? 1);
+      totalCount++;
+      if (bp <= 1) bp1Count++;
+
+      // [cl] 메타데이터 있으면 문명권 색상, 없으면 기본 흰색
       const lineColor = meta
         ? Color.fromCssColorString(meta.fill_color).withAlpha(0.45)
         : defaultBorderColor;
 
-      const rings = extractRings(feature.geometry);
-      for (const positions of rings) {
-        if (positions.length < 2) continue;
-        ds.entities.add({
-          polyline: {
-            positions,
-            width: meta ? 1.5 : 1.2,
-            material: lineColor,
-          },
-        });
+      // ── [cl] BP 값에 따른 렌더링 분기 ──
+      if (bp <= 1) {
+        // [cl] BP=1 (근사치): 경계선 제거, 반투명 filled polygon으로 영역 표시
+        // "시간의 안개" — 국경 개념 없는 시대의 대략적 세력 범위
+        const fillColor = meta
+          ? Color.fromCssColorString(meta.fill_color).withAlpha(0.25)
+          : Color.WHITE.withAlpha(0.12);
+        try {
+          const hierarchies = extractPolygonHierarchies(feature.geometry);
+          for (const hierarchy of hierarchies) {
+            ds.entities.add({
+              polygon: {
+                hierarchy,
+                material: fillColor,
+                outline: false,
+                classificationType: ClassificationType.BOTH,
+              },
+            });
+          }
+        } catch {
+          // [cl] PolygonGraphics 크래시 시 polyline fallback (매우 얇고 투명)
+          const rings = extractRings(feature.geometry);
+          for (const positions of rings) {
+            if (positions.length < 2) continue;
+            ds.entities.add({
+              polyline: {
+                positions,
+                width: 0.5,
+                material: fillColor.withAlpha(0.15),
+              },
+            });
+          }
+        }
+      } else if (bp === 2) {
+        // [cl] BP=2 (중간): 점선 polyline — 경계 존재하나 불확실
+        const rings = extractRings(feature.geometry);
+        for (const positions of rings) {
+          if (positions.length < 2) continue;
+          ds.entities.add({
+            polyline: {
+              positions,
+              width: 1.2,
+              material: new PolylineDashMaterialProperty({
+                color: lineColor,
+                dashLength: 12,
+              }),
+            },
+          });
+        }
+      } else {
+        // [cl] BP=3 (확정 국경): 기존 solid polyline 유지
+        const rings = extractRings(feature.geometry);
+        for (const positions of rings) {
+          if (positions.length < 2) continue;
+          ds.entities.add({
+            polyline: {
+              positions,
+              width: meta ? 1.5 : 1.2,
+              material: lineColor,
+            },
+          });
+        }
       }
 
       // [cl] 라벨 위치 결정 (우선순위):
@@ -1532,7 +1627,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
     }
 
-    return ds;
+    const bp1Ratio = totalCount > 0 ? bp1Count / totalCount : 0;
+    return { ds, bp1Ratio };
   }
 
   // [cl] 인덱스 로드 (1회) + 즉시 첫 국경 로드
@@ -1549,7 +1645,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const snap = findClosestSnapshot(idx, currentYear);
       borderLoadingRef.current = true;
       try {
-        const ds = await loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year);
+        const { ds, bp1Ratio } = await loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year);
         if (cancelled || viewer.isDestroyed()) return;
         // [cl] StrictMode 중복 방지: 기존 ds가 있으면 먼저 제거
         if (borderDsRef.current) {
@@ -1558,6 +1654,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         viewer.dataSources.add(ds);
         borderDsRef.current = ds;
         currentBorderFileRef.current = snap.file;
+        // [cl] 블러 강도 전달 (BP=1 비율 → 부모 CesiumGlobe의 BlurStage)
+        onBlurRatioChange?.(bp1Ratio);
       } catch { /* GeoJSON 미다운로드 시 무시 */ }
       borderLoadingRef.current = false;
     }).catch(() => {});
@@ -1583,7 +1681,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     borderLoadingRef.current = true;
 
     loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year)
-      .then((ds) => {
+      .then(({ ds, bp1Ratio }) => {
         if (viewer.isDestroyed()) return;
         if (borderDsRef.current) {
           viewer.dataSources.remove(borderDsRef.current, true);
@@ -1592,6 +1690,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         borderDsRef.current = ds;
         currentBorderFileRef.current = snap.file;
         borderLoadingRef.current = false;
+        // [cl] 블러 강도 업데이트
+        onBlurRatioChange?.(bp1Ratio);
       })
       .catch(() => {
         borderLoadingRef.current = false;
@@ -1632,6 +1732,10 @@ export default function CesiumGlobe({
   onSpinWarp,
   currentYear = 1875,
 }: CesiumGlobeProps) {
+  // [cl] 고대 국경 블러 강도 (BP=1 비율: 0=근대/실선, 1=고대/최대블러)
+  const [blurRatio, setBlurRatio] = useState(0);
+  const handleBlurRatioChange = useCallback((ratio: number) => setBlurRatio(ratio), []);
+
   return (
     <Viewer
       full
@@ -1660,6 +1764,17 @@ export default function CesiumGlobe({
         warpPhase={warpPhase}
         onSpinWarp={onSpinWarp}
         currentYear={currentYear}
+        onBlurRatioChange={handleBlurRatioChange}
+      />
+      {/* [cl] "시간의 안개" — BP=1 비율에 비례하는 Gaussian blur
+          고대(100% BP=1): sigma=3.0 (강한 블러)
+          혼합(1650년대): sigma~1.5 (중간 블러)
+          근대(100% BP=3): 블러 OFF */}
+      <BlurStage
+        enabled={blurRatio > 0.05}
+        delta={1.0}
+        sigma={blurRatio * 3.0}
+        stepSize={blurRatio * 2.0}
       />
     </Viewer>
   );

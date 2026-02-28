@@ -941,3 +941,105 @@
 ### 미번역 잔여 (2,435개)
 * 대부분 원주민/부족명 (Aaniiih, Abenaki, Algonquin 등) — 표준 한국어 번역 없음
 * 향후 필요 시 점진적 추가 가능
+
+## [2026-02-28] [co] person 수집 쿼리 수정 + 다음 크롤링 순서 재정의
+* 사용자(jn)의 요청에 따라 다음 데이터 수집 스케줄을 바로 이어서 진행할 수 있도록 `person` 쿼리 병목과 좌표 조건을 우선 수정.
+* 배경:
+  * 기존 `person` 수집은 `wdt:P625 ?coord` 직접 좌표를 강제하고 있어 역사 인물 대부분이 제외되거나 WDQS에서 비효율적인 넓은 스캔이 발생.
+  * `person 0~1899` 체크포인트도 초반 구간(`0~64`)에서 `AbortError`가 연속 발생한 상태였음.
+* 변경 파일:
+  * `scripts/wikidata/sparqlTemplates.mjs`
+    * `person` 전용 SELECT 절 분리.
+    * 좌표 fallback 추가: `P625(직접)` → `P19(출생지)의 P625` → `출생지의 P17 국가 좌표` → `P27(시민권 국가) 좌표`.
+    * 메인 `person` 적재도 `birth`만 보지 않고 `death/floruit(P2031/P2032)`까지 연도 앵커로 허용.
+    * 기존 `EXISTS` 중복 sitelink 필터를 `BOUND(?koWikiTitle) || BOUND(?enWikiTitle)` 형태로 단순화.
+    * `person`은 좌표 fallback 중 하나라도 있어야 통과하도록 필터 추가.
+  * `scripts/wikidata/normalizer.mjs`
+    * 엔티티 타입별 좌표 해석 우선순위 분리(`event/person/place`).
+    * `person.start_year`는 `birth -> death -> floruit_start -> floruit_end` 순으로 fallback.
+    * `person`의 `modern_country`는 시민권 국가 라벨 우선, 없으면 출생국가 라벨 fallback 사용.
+  * `docs/develop/06_[co]wikidata_pipeline_runbook.md`
+    * 보수적 `person probe` 실행 예시 추가.
+    * 현재 권장 후속 순서(`place 복구 → person probe/적재 → enrich 후처리`) 반영.
+* 운영 판단:
+  * `event`는 이미 완료 범위가 충분하므로 다음 배치는 `place 0~1899` 실패 구간 복구가 우선.
+  * `person`은 쿼리 수정 후 small-window `probe`로 품질/속도를 재검증하고, 통과 시에만 실제 적재를 진행하는 것이 안전.
+  * `collect:enrich-existing`는 필수 선행 단계가 아니라 후처리로 유지.
+* 검증 메모:
+  * 로컬 문법 체크: `node --check scripts/wikidata/sparqlTemplates.mjs`, `node --check scripts/wikidata/normalizer.mjs` 통과.
+  * 로컬 단위 검증: `buildQuery(person)`에 fallback 필드가 포함되는 것과 `normalizeBinding(person)`이 `birthPlaceCoord`를 정상 채택하는 것 확인.
+  * 실네트워크 probe (`person 0~10`, `WDQS_TIMEOUT_MS=30000`) 재실행 결과:
+    * 샌드박스 네트워크 차단 상태에서는 `TypeError: fetch failed`
+    * 네트워크 허용 상태에서는 WDQS까지 요청은 나가지만 각 5년 청크가 `AbortError`로 타임아웃
+    * 결론: 다음 live run은 `WDQS_TIMEOUT_MS 60000~90000` + `1~5년 window`로 더 보수적으로 시작 필요
+* 권장 다음 실행 순서:
+  1. `place` 실패 구간 backfill (`5~139`, `315~464`, `470~704`, `895~899`, `1855~1884`)
+  2. `person` probe (`0~200`, 보수적 WDQS 설정)
+  3. probe 안정 시 `person` bootstrap/backfill 범위 확대
+  4. 마지막에 `collect:classify-gaps`, 필요 시 `collect:enrich-existing`
+
+## [2026-02-28] [co] person 후보 큐(`person_candidates`) 도입
+* 사용자(jn)와 논의한 정책에 따라, `birth/death/floruit`가 전혀 없더라도 중요한 인물일 가능성을 남겨두기 위해 본 타임라인 적재와 별도의 후보 큐를 추가.
+* 핵심 결정:
+  * `events` 본테이블은 계속 `start_year`가 있는 엔터티만 적재.
+  * 연도 앵커가 없는 `person`은 버리지 않고 `person_candidates`에 별도 적재.
+  * 이후 Gemini 기반 역사 검증/중요도 판정 단계에서 `review_status`를 갱신해 승격/제외 판단.
+  * `birth`가 없어도 `death`나 `floruit`가 있으면 메인 `person` 적재 후보로 본다.
+* 신규 마이그레이션:
+  * `supabase/migrations/20260228170000_person_candidates.sql`
+  * 필드:
+    * `qid`, `title`, `description`, `birth_year`, `death_year`, `floruit_start_year`, `floruit_end_year`
+    * `anchor_year`, `anchor_type` (있으면 메인 타임라인 편입 후보로 활용 가능)
+    * `location_lat/lng`, `modern_country`, `external_link`, `ko_wiki_title`, `en_wiki_title`
+    * `sitelinks_count` (Wikidata sitelinks 수 기반 중요도 프록시)
+    * `review_status/review_reason/review_confidence`, `source_payload`
+* 신규 스크립트:
+  * `scripts/wikidata/collectPersonCandidates.mjs`
+  * package script: `npm run collect:person-candidates`
+  * 동작:
+    * `Q5(인간)` + `ko/en wiki sitelink` 기반으로 후보 수집
+    * `wikibase:sitelinks`를 중요도 프록시로 저장하고, 수집 시에는 `--min-sitelinks` threshold로 후보를 압축
+    * `birth/death/floruit(P2031/P2032)`는 있으면 저장, 없어도 적재 가능
+    * 좌표는 `P625 -> P19 출생지 -> 출생국가 -> 시민권 국가` fallback 사용
+* 운영 메모:
+  * live WDQS 확인 시 `Q5 + ko.wikipedia sitelink`만으로도 약 17만 건 규모여서, `person`을 이벤트 테이블처럼 그대로 넣는 건 과도함.
+  * 초기 구현에서 `ORDER BY sitelinks`는 WDQS timeout을 유발해 제거했고, 이후에는 `가벼운 WDQS 목록 조회 -> wbgetentities 상세 보강` 2단계 수집으로 전환.
+  * `--min-sitelinks`로 후보를 걸러 DB 적재 후 `sitelinks_count DESC`로 우선순위를 보는 방식이 기본.
+  * 메인 `person` 수집은 여전히 anchor year가 있는 경우에만 유지하는 것이 타임라인 품질 측면에서 안전.
+* 검증 메모:
+  * `node --check scripts/wikidata/collectPersonCandidates.mjs` 통과.
+  * live dry-run(`limit=5`, `source_lang=ko`, `min_sitelinks=1000`)은 기본 timeout 25초에서 `AbortError` 반복.
+  * 2단계 수집 구조로 경량화 후에도 `WDQS_TIMEOUT_MS=90000` 환경에서 최종 `WDQS 504: upstream request timeout` 확인.
+  * 결론: 후보 큐 구현 자체는 완료됐지만, 실제 수집은 오프피크 시간대 장기 배치 또는 추가 분할 전략이 필요.
+  * 추가 분할 적용:
+    * WDQS seed를 `source-lang`별 실제 sitelink(`ko` 또는 `en`)에서 시작하도록 변경.
+    * `--max-sitelinks` 옵션을 추가해 sitelinks 상단 구간만 잘라서 초소형 dry-run 가능하게 조정.
+
+## [2026-02-28] [cl] BORDERPRECISION 기반 고대 국경 블러 셰이더 구현
+
+### 배경
+* 지훈(gm)이 제안한 "고대=블러/근대=실선" 국경 시각화 미적용 상태
+* HB GeoJSON에 이미 `BORDERPRECISION` 필드 존재 (BP=1 근사치, BP=2 중간, BP=3 확정)
+* 연도 기반이 아닌 **엔티티별 태그** → 같은 연도에도 도쿠가와=실선, 호주원주민=블러 가능
+* 외부 리서치: 베스트팔렌 조약(1648)이 학술 표준, BP 전환점=1650년과 일치
+
+### CesiumGlobe.tsx 변경 내역
+* **import 추가**: `ClassificationType`, `PolylineDashMaterialProperty`, `PolygonHierarchy`, `BlurStage`(Resium), `useState`, `useCallback`
+* **`extractPolygonHierarchies()` 신규 함수**: GeoJSON Polygon/MultiPolygon → `PolygonHierarchy[]` 변환 (BP=1 filled polygon용)
+* **`loadBordersAsPolylines()` 리팩토링**:
+  * 반환 타입: `CustomDataSource` → `{ ds, bp1Ratio }` (블러 강도 제어용)
+  * `BORDERPRECISION` 읽기: CShapes=항상 3, HB=필드값(기본 1)
+  * BP=1 (근사치): filled polygon + alpha 0.25, outline 없음 (PolygonGraphics 크래시 시 polyline fallback)
+  * BP=2 (중간): dashed polyline (`PolylineDashMaterialProperty`, dashLength=12)
+  * BP=3 (확정): 기존 solid polyline 유지
+  * BP=1 비율(bp1Ratio) 집계 → `onBlurRatioChange` 콜백으로 부모에 전달
+* **Resium `<BlurStage>` 추가** (CesiumGlobe Viewer 내부):
+  * `enabled={blurRatio > 0.05}` — BP=1 5% 초과 시 블러 활성화
+  * `sigma={blurRatio * 3.0}` — 100% BP=1일 때 최대 블러
+  * `stepSize={blurRatio * 2.0}` — 블러 확산 범위
+* **SceneSetupProps**: `onBlurRatioChange` 콜백 추가
+
+### 예상 시각 효과
+* BC 1000년 (100% BP=1): 반투명 영역 + 가우시안 블러 → "시간의 안개"
+* AD 1650년 (혼합): 도쿠가와=실선, 호주원주민=블러
+* AD 1920년 (100% BP=3): 블러 OFF, 선명한 국경선
