@@ -1496,12 +1496,13 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             position: Cartesian3.fromDegrees(center[0], center[1]),
             label: {
               text: labelText,
-              font: "bold 14px sans-serif",
+              font: "bold 18px sans-serif",
               fillColor: Color.WHITE,
               outlineColor: Color.BLACK,
               outlineWidth: 2,
               style: 2, // FILL_AND_OUTLINE
-              scaleByDistance: new NearFarScalar(5e6, 1.0, 15e6, 0.4),
+              // [cl] 5000km 이하: 18px, 5000~20000km: 선형 축소, 20000km+: 10px
+              scaleByDistance: new NearFarScalar(5e6, 1.0, 2e7, 0.55),
             },
           });
         }
@@ -1519,12 +1520,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
               text: vm.colonial_ruler
                 ? `${vm.display_name}\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`
                 : vm.display_name,
-              font: "bold 14px sans-serif",
+              font: "bold 18px sans-serif",
               fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
               outlineColor: Color.BLACK,
               outlineWidth: 2,
               style: 2,
-              scaleByDistance: new NearFarScalar(5e6, 1.0, 15e6, 0.4),
+              scaleByDistance: new NearFarScalar(5e6, 1.0, 2e7, 0.55),
             },
           });
         }
