@@ -1422,7 +1422,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // 메타데이터 파일이 있으면 정확히 로드, 없으면 가장 가까운 연도 폴백
   async function loadMetadata(snapYear: number): Promise<Record<string, BorderMetadata> | null> {
     if (metadataCacheRef.current[snapYear]) return metadataCacheRef.current[snapYear];
-    // [cl] 먼저 정확한 연도 시도 (cache: no-cache → 브라우저가 서버에 재검증 요청)
+    // [cl] 모든 스냅샷 연도(BC~AD 2015)에 대해 메타데이터 존재 (음수 연도 포함)
     try {
       const res = await fetch(`/geo/borders/metadata/${snapYear}.json`, { cache: "no-cache" });
       if (res.ok) {
@@ -1430,22 +1430,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         metadataCacheRef.current[snapYear] = data;
         return data;
       }
-    } catch { /* 파일 없음 → 폴백 */ }
-    // [cl] 폴백: 기존 메타데이터 연도에서 가장 가까운 것 (floor)
-    const metaYears = [1880, 1900, 1914, 1920, 1930, 1938, 1945, 1960, 1994, 2000, 2010];
-    let metaYear: number | null = null;
-    for (let i = metaYears.length - 1; i >= 0; i--) {
-      if (metaYears[i] <= snapYear) { metaYear = metaYears[i]; break; }
-    }
-    if (!metaYear) return null;
-    if (metadataCacheRef.current[metaYear]) return metadataCacheRef.current[metaYear];
-    try {
-      const res = await fetch(`/geo/borders/metadata/${metaYear}.json`, { cache: "no-cache" });
-      if (!res.ok) return null;
-      const data = await res.json();
-      metadataCacheRef.current[metaYear] = data;
-      return data;
-    } catch { return null; }
+    } catch { /* 파일 없음 */ }
+    return null;
   }
 
   // [cl] GeoJSON fetch → CustomDataSource (Polyline + 메타데이터 기반 라벨)
