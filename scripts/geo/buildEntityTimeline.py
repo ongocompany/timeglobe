@@ -282,6 +282,60 @@ LABEL_COORDS_OVERRIDE = {
     "Italian Libya": (17.0, 27.0),
 }
 
+# ─── 티어 수동 보정 ────────────────────────────────────────────
+# [cl] HB는 "Kingdom/Empire" 이름 기준으로 Tier를 매겨서
+# 하와이 왕국=Tier1, 미국=Tier2 같은 역전이 발생.
+# 지정학적 중요도 기준으로 수동 보정.
+TIER_OVERRIDES = {
+    # ── Tier 2 → Tier 1로 승격 (근현대 열강/대국) ──
+    "United States of America": 1,
+    "France": 1,
+    "Germany": 1,
+    "Italy": 1,
+    "Austria Hungary": 1,
+    "Spain": 1,
+    "Canada": 1,
+    "Netherlands": 1,
+    "Sweden": 1,
+    "Sweden–Norway": 1,
+    "Japan": 1,
+    "Belgium": 1,
+    "Switzerland": 1,
+    "Poland": 1,
+    "Kingdom of Brazil": 1,   # 이미 Tier 1이지만 확인용
+    "British Raj": 1,
+    "British East India Company": 1,
+    # ── 고대/중세 주요국 ──
+    "Carthage": 1,
+    "Sparta": 1,
+    "Athens": 1,
+    "Persia": 1,
+    "Seleucid Empire": 1,
+    "Ptolemaic Egypt": 1,
+    # ── Tier 1 → Tier 2로 강등 (소규모 왕국/칸국) ──
+    "Kingdom of Hawaii": 2,
+    "Bagirmi": 2,
+    "Buganda": 2,
+    "Bunyoro": 2,
+    "Dendi Kingdom": 2,
+    "Kong Empire": 2,
+    "Kuba": 2,
+    "Lozi": 2,
+    "Luba": 2,
+    "Lunda": 2,
+    "Mahra": 2,
+    "Mbailundu": 2,
+    "Mirambo Unyanyembe Ukimbu": 2,
+    "Ndebele": 2,
+    "Oyo": 2,
+    "Teke": 2,
+    "Yaka": 2,
+    "Yeke": 2,
+    "central Asian khanates": 2,
+    "Wadai": 2,
+    "Expansionist Kingdom of Merina": 2,
+}
+
 
 # ─── 메인 빌드 로직 ───────────────────────────────────────────
 
@@ -428,7 +482,7 @@ def main():
             "name_local": meta.get("display_name_local", ""),
             "start_year": start,
             "end_year": end,
-            "tier": ls.get("tier") or meta.get("tier") or 3,
+            "tier": TIER_OVERRIDES.get(key) or ls.get("tier") or meta.get("tier") or 3,
             "fill_color": meta.get("fill_color", "#AAAAAA"),
             "coords": coords,
             "is_colony": meta.get("is_colony", False),
