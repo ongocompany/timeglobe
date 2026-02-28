@@ -3498,6 +3498,14 @@ YEAR_RANGE_OVERRIDES = {
         "name_local": "臺灣", "name_en": "Taiwan",
         "colony": True, "ruler": "大日本帝国",
     },
+    # ━━━ 몽골: Great Khanate → 1368년 이후 명나라로 전환 (원 멸망) ━━━
+    ("Great Khanate", 1206, 1368): {
+        "name_local": "大元", "name_en": "Yuan Dynasty (Great Khanate)", "name_ko": "원나라 (대칸국)",
+    },
+    ("Great Khanate", 1369, 1500): {
+        "name_local": "大明", "name_en": "Ming Dynasty", "name_ko": "명나라",
+        "palette": "EastAsia",
+    },
     # ━━━ 로마: BC 시기 "Rome" → 로마 공화국 (HB 데이터가 "Rome"과 "Roman Republic"을 혼용) ━━━
     ("Rome", -753, -27): {
         "name_local": "SPQR", "name_en": "Roman Republic", "name_ko": "로마 공화국",
