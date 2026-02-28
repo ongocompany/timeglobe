@@ -1470,11 +1470,14 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
 
       // [cl] 라벨: capital_coords 우선, 없으면 centroid 폴백
+      // 가상 자식 엔트리가 있는 경우(예: Empire of Japan → Korea, Taiwan) capital_coords 필수
       if (name && !labeledNames.has(name)) {
         labeledNames.add(name);
+        const hasVirtualChildren = metadata && Object.entries(metadata).some(
+          ([k, v]) => k.startsWith("__virtual__") && v.colonial_ruler === name);
         const center = meta?.capital_coords
           ? meta.capital_coords as [number, number]
-          : calcCentroid(feature.geometry);
+          : hasVirtualChildren ? null : calcCentroid(feature.geometry);
         if (center) {
           // [cl] 식민지: 피지배국명 + 줄바꿈 + [지배국] 표시
           const labelText = meta
