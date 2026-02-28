@@ -1,0 +1,3964 @@
+```json
+[
+  {
+    "entity": "Almohad Caliphate",
+    "entity_ko": "알모하드 왕조",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1121",
+    "actual_until": "AD 1269",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1121년경부터 1269년까지로, 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Almoravid Dynasty",
+    "entity_ko": "알모라비드 왕조",
+    "data_from": "AD 1100",
+    "data_until": "AD 1100",
+    "actual_from": "AD 1040",
+    "actual_until": "AD 1147",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1040년경부터 1147년까지로, 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Angevin Empire",
+    "entity_ko": "앙주 제국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1154",
+    "actual_until": "AD 1214",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1154년부터 1214년(또는 1242년)까지로, 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Ashanti Empire",
+    "entity_ko": "아샨티 제국",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1701",
+    "actual_until": "AD 1901",
+    "status": "wrong_start",
+    "note": "실제 시작은 1701년경."
+  },
+  {
+    "entity": "Austrian Empire",
+    "entity_ko": "오스트리아 제국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1804",
+    "actual_until": "AD 1867",
+    "status": "wrong_start",
+    "note": "오스트리아 제국은 1804년에 공식 수립되었으며 1867년까지 존속. 데이터는 합스부르크 군주국 시기를 포함하는 것으로 보임."
+  },
+  {
+    "entity": "Aztec Empire",
+    "entity_ko": "아즈텍 제국",
+    "data_from": "AD 1500",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1428",
+    "actual_until": "AD 1521",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1428년부터 1521년까지로, 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Bagirmi Sultanate",
+    "entity_ko": "바기르미 술탄국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1522",
+    "actual_until": "AD 1897",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1522년부터 1897년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Buganda Kingdom",
+    "entity_ko": "부간다 왕국",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1966",
+    "status": "wrong_start",
+    "note": "실제 시작은 1400년경. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Bukhara Khanate",
+    "entity_ko": "부하라 칸국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1500",
+    "actual_until": "AD 1920",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1500년부터 1920년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Bulgarian Khanate",
+    "entity_ko": "불가리아 칸국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1185",
+    "actual_until": "AD 1396",
+    "status": "wrong_both",
+    "note": "불가리아 제국은 1018년(제1차)과 1185-1396년(제2차)에 존재. 데이터는 두 시기를 아우르지만 중간에 큰 공백이 있으며, '칸국'이라는 명칭은 부적절."
+  },
+  {
+    "entity": "Bunyoro Kingdom",
+    "entity_ko": "부뇨로 왕국",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1967",
+    "status": "wrong_start",
+    "note": "실제 시작은 1600년경. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Burmese Kingdoms",
+    "entity_ko": "미얀마 왕국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1531",
+    "actual_until": "AD 1752",
+    "status": "wrong_both",
+    "note": "데이터 기간은 따웅우 왕조(1531-1752)의 일부를 포함하나, 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Byzantine Empire",
+    "entity_ko": "비잔틴 제국",
+    "data_from": "AD 800",
+    "data_until": "AD 1400",
+    "actual_from": "AD 330",
+    "actual_until": "AD 1453",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 330년(또는 395년)부터 1453년까지. 데이터 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Celtic Kingdoms",
+    "entity_ko": "켈트 왕국",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 400",
+    "actual_until": "AD 1200",
+    "status": "wrong_start",
+    "note": "켈트 왕국은 이보다 훨씬 이전부터 존재했음. 800년은 픽트 왕국 등 일부 켈트계 왕국이 존재하던 시기이나, 시작이 늦음."
+  },
+  {
+    "entity": "Central Asian Khanates",
+    "entity_ko": "중앙아시아 칸국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1500",
+    "actual_until": "AD 1920",
+    "status": "wrong_start",
+    "note": "중앙아시아 칸국들은 1500년대 초부터 존재했음 (예: 부하라 칸국, 히바 칸국). 데이터 시작이 약간 늦음."
+  },
+  {
+    "entity": "Chagatai Khanate",
+    "entity_ko": "차가타이 칸국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1225",
+    "actual_until": "AD 1687",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1225년부터 1687년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Chimu Empire",
+    "entity_ko": "치무 제국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 900",
+    "actual_until": "AD 1470",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 900년경부터 1470년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Crimean Khanate",
+    "entity_ko": "크림 칸국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1441",
+    "actual_until": "AD 1783",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1441년부터 1783년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Darfur Sultanate",
+    "entity_ko": "다르푸르 술탄국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1603",
+    "actual_until": "AD 1874",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1603년부터 1874년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Delhi Sultanate",
+    "entity_ko": "델리 술탄국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1206",
+    "actual_until": "AD 1526",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1206년부터 1526년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Dendi Kingdom",
+    "entity_ko": "덴디 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1492",
+    "actual_until": "AD 1901",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1492년부터 1901년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Empire of Brazil",
+    "entity_ko": "브라질 제국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1822",
+    "actual_until": "AD 1889",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1822년부터 1889년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Empire of Japan",
+    "entity_ko": "대일본제국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1868",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "대일본제국(메이지 유신 이후)은 1868년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Empire of Trebizond",
+    "entity_ko": "트라페주스 제국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1204",
+    "actual_until": "AD 1461",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1204년부터 1461년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Fatimid Caliphate",
+    "entity_ko": "파티마 칼리프국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 909",
+    "actual_until": "AD 1171",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 909년부터 1171년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Funj Sultanate",
+    "entity_ko": "푼지 술탄국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1504",
+    "actual_until": "AD 1821",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1504년부터 1821년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Goryeo",
+    "entity_ko": "고려",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 918",
+    "actual_until": "AD 1392",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 918년부터 1392년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Hafsid Caliphate",
+    "entity_ko": "하프스 왕조",
+    "data_from": "AD 1279",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1229",
+    "actual_until": "AD 1574",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1229년부터 1574년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Holy Roman Empire",
+    "entity_ko": "신성 로마 제국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 962",
+    "actual_until": "AD 1806",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 962년부터 1806년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Inca Empire",
+    "entity_ko": "잉카 제국",
+    "data_from": "AD 1500",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1438",
+    "actual_until": "AD 1532",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1438년부터 1532년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Joseon",
+    "entity_ko": "조선",
+    "data_from": "BC 300",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1392",
+    "actual_until": "AD 1897",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1392년부터 1897년까지. 데이터 시작이 크게 잘못됨."
+  },
+  {
+    "entity": "Kazakh Khanate",
+    "entity_ko": "카자흐 칸국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1465",
+    "actual_until": "AD 1847",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1465년부터 1847년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Khanate of Khiva",
+    "entity_ko": "히바 칸국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1511",
+    "actual_until": "AD 1920",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1511년부터 1920년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Khmer Empire",
+    "entity_ko": "크메르 제국",
+    "data_from": "AD 900",
+    "data_until": "AD 1400",
+    "actual_from": "AD 802",
+    "actual_until": "AD 1431",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 802년부터 1431년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Kingdom of France",
+    "entity_ko": "프랑스 왕국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 987",
+    "actual_until": "AD 1792",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 987년부터 1792년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Kingdom of Hawaii",
+    "entity_ko": "하와이 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1795",
+    "actual_until": "AD 1893",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1795년부터 1893년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Kingdom of Hungary",
+    "entity_ko": "헝가리 왕국",
+    "data_from": "AD 1400",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1000",
+    "actual_until": "AD 1918",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1000년부터 1918년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Kingdom of Ireland",
+    "entity_ko": "아일랜드 왕국",
+    "data_from": "AD 1715",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1542",
+    "actual_until": "AD 1800",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1542년부터 1800년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Kingdom of Kandy",
+    "entity_ko": "캔디 왕국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1469",
+    "actual_until": "AD 1815",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1469년부터 1815년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Kingdom of Kediri",
+    "entity_ko": "크디리 왕국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1042",
+    "actual_until": "AD 1222",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1042년부터 1222년까지. 데이터 기간이 실제와 일치하지 않음."
+  },
+  {
+    "entity": "Kingdom of Merina",
+    "entity_ko": "메리나 왕국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1540",
+    "actual_until": "AD 1897",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1540년경부터 1897년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Kingdom of Naples",
+    "entity_ko": "나폴리 왕국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1282",
+    "actual_until": "AD 1816",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1282년부터 1816년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Kong Empire",
+    "entity_ko": "콩 제국",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1710",
+    "actual_until": "AD 1898",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1710년부터 1898년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Kuba Kingdom",
+    "entity_ko": "쿠바 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1625",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1625년경부터 1900년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Lan Na Kingdom",
+    "entity_ko": "란나 왕국",
+    "data_from": "AD 1600",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1292",
+    "actual_until": "AD 1775",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1292년부터 1775년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Liao Dynasty",
+    "entity_ko": "요나라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 907",
+    "actual_until": "AD 1125",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 907년부터 1125년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Lozi Kingdom",
+    "entity_ko": "로지 왕국",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1964",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1600년경부터 1964년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Luba Kingdom",
+    "entity_ko": "루바 왕국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1585",
+    "actual_until": "AD 1889",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1585년경부터 1889년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Lunda Empire",
+    "entity_ko": "룬다 제국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1887",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1600년경부터 1887년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Mahra Sultanate",
+    "entity_ko": "마흐라 술탄국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1500",
+    "actual_until": "AD 1967",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1500년경부터 1967년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Mamluk Sultanate",
+    "entity_ko": "맘루크 술탄국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1250",
+    "actual_until": "AD 1517",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1250년부터 1517년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Mbailundu Kingdom",
+    "entity_ko": "음바일룬두 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1902",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1400년경부터 1902년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Middag Kingdom",
+    "entity_ko": "미다그 왕국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1730",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1600년경부터 1730년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Ming Dynasty",
+    "entity_ko": "명나라",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1368",
+    "actual_until": "AD 1644",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1368년부터 1644년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Ming Dynasty",
+    "entity_ko": "명나라",
+    "data_from": "AD 1492",
+    "data_until": "AD 1492",
+    "actual_from": "AD 1368",
+    "actual_until": "AD 1644",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1368년부터 1644년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Ming Dynasty",
+    "entity_ko": "명나라",
+    "data_from": "AD 1500",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1368",
+    "actual_until": "AD 1644",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1368년부터 1644년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Mirambo's Empire",
+    "entity_ko": "미람보 제국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1870",
+    "actual_until": "AD 1884",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1870년부터 1884년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Mixtec Empire",
+    "entity_ko": "믹스텍 제국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1500",
+    "actual_from": "AD 900",
+    "actual_until": "AD 1521",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 900년경부터 1521년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Mongol Empire",
+    "entity_ko": "몽골 제국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1206",
+    "actual_until": "AD 1368",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1206년부터 1368년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Mughal Empire",
+    "entity_ko": "무굴 제국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1526",
+    "actual_until": "AD 1857",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1526년부터 1857년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Ndebele Kingdom",
+    "entity_ko": "은데벨레 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1823",
+    "actual_until": "AD 1894",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1823년부터 1894년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ottoman Empire",
+    "entity_ko": "오스만 제국",
+    "data_from": "AD 1400",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1299",
+    "actual_until": "AD 1922",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1299년부터 1922년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Oyo Empire",
+    "entity_ko": "오요 제국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1896",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1400년경부터 1896년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Pagan Kingdom",
+    "entity_ko": "파간 왕국",
+    "data_from": "AD 900",
+    "data_until": "AD 1400",
+    "actual_from": "AD 849",
+    "actual_until": "AD 1297",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 849년부터 1297년까지. 데이터 종료가 늦음."
+  },
+  {
+    "entity": "Qing Dynasty",
+    "entity_ko": "청나라",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1636",
+    "actual_until": "AD 1912",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1636년부터 1912년까지. 데이터 시작이 약간 늦음."
+  },
+  {
+    "entity": "Qing Dynasty",
+    "entity_ko": "청나라",
+    "data_from": "AD 1783",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1636",
+    "actual_until": "AD 1912",
+    "status": "correct",
+    "note": "청나라의 존속 기간 내에 포함되는 기간으로, 이 자체로는 정확함."
+  },
+  {
+    "entity": "Rabih's Empire",
+    "entity_ko": "라비흐 제국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1879",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1879년부터 1900년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Rajput Kingdoms",
+    "entity_ko": "라지푸트 왕국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 700",
+    "actual_until": "AD 1947",
+    "status": "wrong_both",
+    "note": "라지푸트 왕국들은 7세기부터 20세기까지 존재했음. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Rozwi Empire",
+    "entity_ko": "로즈위 제국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1660",
+    "actual_until": "AD 1866",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1660년부터 1866년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Russian Empire",
+    "entity_ko": "러시아 제국",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1721",
+    "actual_until": "AD 1917",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1721년부터 1917년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Safavid Empire",
+    "entity_ko": "사파비 제국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1501",
+    "actual_until": "AD 1736",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1501년부터 1736년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Seljuk Empire",
+    "entity_ko": "셀주크 제국",
+    "data_from": "AD 1100",
+    "data_until": "AD 1100",
+    "actual_from": "AD 1037",
+    "actual_until": "AD 1194",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1037년부터 1194년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Seljuk Empire",
+    "entity_ko": "셀주크 제국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1037",
+    "actual_until": "AD 1194",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1037년부터 1194년까지. 데이터 기간이 실제와 일치하지 않음."
+  },
+  {
+    "entity": "Sinhalese Kingdoms",
+    "entity_ko": "싱할라 왕국",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1055",
+    "actual_until": "AD 1815",
+    "status": "gap",
+    "note": "다양한 싱할라 왕국들이 존재했으나, 데이터 스냅샷에 800년부터 1492년까지의 긴 공백이 있으며, 실제 존속 기간도 불연속적임. (예: 폴론나루와 1055-1232, 코테 1412-1597, 캔디 1469-1815)"
+  },
+  {
+    "entity": "Sokoto Caliphate",
+    "entity_ko": "소코토 칼리프국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1804",
+    "actual_until": "AD 1903",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1804년부터 1903년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Song Dynasty",
+    "entity_ko": "송나라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 960",
+    "actual_until": "AD 1279",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 960년부터 1279년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Sukhothai Kingdom",
+    "entity_ko": "수코타이 왕국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1238",
+    "actual_until": "AD 1438",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1238년부터 1438년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Teke Kingdom",
+    "entity_ko": "테케 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1500",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1500년경부터 1900년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Timurid Empire",
+    "entity_ko": "티무르 제국",
+    "data_from": "AD 1400",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1370",
+    "actual_until": "AD 1507",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1370년부터 1507년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Tiwanaku Empire",
+    "entity_ko": "티와나쿠 제국",
+    "data_from": "AD 600",
+    "data_until": "AD 1200",
+    "actual_from": "AD 300",
+    "actual_until": "AD 1000",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 300년경부터 1000년경까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Tokugawa Shogunate",
+    "entity_ko": "도쿠가와 막부",
+    "data_from": "AD 1650",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1603",
+    "actual_until": "AD 1868",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1603년부터 1868년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Toltec Empire",
+    "entity_ko": "톨텍 제국",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 900",
+    "actual_until": "AD 1168",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 900년경부터 1168년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Tongan Empire",
+    "entity_ko": "통가 제국",
+    "data_from": "AD 500",
+    "data_until": "AD 1815",
+    "actual_from": "AD 950",
+    "actual_until": "AD 1865",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 950년경부터 1865년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Tukular Empire",
+    "entity_ko": "투쿨로르 제국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1861",
+    "actual_until": "AD 1890",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1861년부터 1890년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "United Kingdom",
+    "entity_ko": "영국",
+    "data_from": "AD 1715",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1707",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "실제 시작은 1707년 (잉글랜드와 스코틀랜드 연합)."
+  },
+  {
+    "entity": "United Kingdom",
+    "entity_ko": "영국",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1707",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "실제 시작은 1707년 (잉글랜드와 스코틀랜드 연합)."
+  },
+  {
+    "entity": "Wadai Empire",
+    "entity_ko": "와다이 제국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1912",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1600년경부터 1912년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Wadai Sultanate",
+    "entity_ko": "와다이 술탄국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1912",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1600년경부터 1912년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Wari Empire",
+    "entity_ko": "와리 제국",
+    "data_from": "AD 600",
+    "data_until": "AD 1200",
+    "actual_from": "AD 600",
+    "actual_until": "AD 1100",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 600년경부터 1100년경까지. 데이터 종료가 늦음."
+  },
+  {
+    "entity": "Wassoulou Empire",
+    "entity_ko": "와술루 제국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1878",
+    "actual_until": "AD 1898",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1878년부터 1898년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Wattasid Caliphate",
+    "entity_ko": "와타스 왕조",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1472",
+    "actual_until": "AD 1554",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1472년부터 1554년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Yaka Kingdom",
+    "entity_ko": "야카 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1500",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1500년경부터 1900년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Yeke Kingdom",
+    "entity_ko": "예케 왕국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1856",
+    "actual_until": "AD 1891",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1856년부터 1891년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Zayyanid Caliphate",
+    "entity_ko": "자이얀 왕조",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1235",
+    "actual_until": "AD 1557",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1235년부터 1557년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Aceh",
+    "entity_ko": "아체",
+    "data_from": "AD 1279",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1496",
+    "actual_until": "AD 1903",
+    "status": "wrong_both",
+    "note": "아체 술탄국은 1496년에 건국되어 1903년까지 존속. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Afghanistan",
+    "entity_ko": "아프가니스탄",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1747",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "아프가니스탄은 1747년 두라니 제국으로 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ainu",
+    "entity_ko": "아이누",
+    "data_from": "BC 3000",
+    "data_until": "AD 1700",
+    "actual_from": "BC 1000",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "아이누족은 BC 1000년경부터 존재했으나, '국가' 형태는 아니었음. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Ainu",
+    "entity_ko": "아이누",
+    "data_from": "AD 1279",
+    "data_until": "AD 1500",
+    "actual_from": "BC 1000",
+    "actual_until": "Present",
+    "status": "wrong_both",
+    "note": "아이누족은 BC 1000년경부터 존재했으나, '국가' 형태는 아니었음. 데이터 기간이 실제와 일치하지 않음."
+  },
+  {
+    "entity": "Akan States",
+    "entity_ko": "아칸 국가",
+    "data_from": "AD 1492",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1300",
+    "actual_until": "AD 1900",
+    "status": "wrong_both",
+    "note": "아칸 국가들은 1300년경부터 존재했음. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Algeria",
+    "entity_ko": "알제리",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1830",
+    "actual_until": "AD 1962",
+    "status": "wrong_start",
+    "note": "프랑스령 알제리는 1830년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Alwa",
+    "entity_ko": "알와",
+    "data_from": "AD 600",
+    "data_until": "AD 1500",
+    "actual_from": "AD 500",
+    "actual_until": "AD 1504",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 500년경부터 1504년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "American Samoa",
+    "entity_ko": "미국령 사모아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1900",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "미국령 사모아는 1900년에 설립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Angola",
+    "entity_ko": "앙골라",
+    "data_from": "AD 1815",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1575",
+    "actual_until": "AD 1975",
+    "status": "wrong_start",
+    "note": "포르투갈령 앙골라는 1575년부터 시작. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Angola",
+    "entity_ko": "앙골라",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1575",
+    "actual_until": "AD 1975",
+    "status": "wrong_start",
+    "note": "포르투갈령 앙골라는 1575년부터 시작. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Anguilla",
+    "entity_ko": "앵귈라",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1650",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 앵귈라는 1650년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Annam",
+    "entity_ko": "아나므",
+    "data_from": "AD 1000",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1802",
+    "actual_until": "AD 1945",
+    "status": "gap",
+    "note": "안남은 1802년 응우옌 왕조의 베트남 통일 이후의 명칭으로, 데이터 시작이 너무 이르고 1000년부터 1815년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "Antigua and Barbuda",
+    "entity_ko": "앤티가 바부다",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1632",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 앤티가와 바부다는 1632년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Arabia",
+    "entity_ko": "아라비아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1744",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "아라비아는 여러 국가와 부족으로 구성되었으며, 1880년은 오스만 제국과 여러 토후국이 존재하던 시기. '아라비아'라는 단일 국가로 보기 어려움."
+  },
+  {
+    "entity": "Aragon",
+    "entity_ko": "아라곤",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1035",
+    "actual_until": "AD 1716",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1035년부터 1716년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Arakan",
+    "entity_ko": "아라칸",
+    "data_from": "BC 200",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1430",
+    "actual_until": "AD 1785",
+    "status": "gap",
+    "note": "아라칸 왕국은 1430년부터 1785년까지 존속. 데이터 시작이 너무 이르고 중간에 긴 공백이 있음."
+  },
+  {
+    "entity": "Argentina",
+    "entity_ko": "아르헨티나",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1810",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "아르헨티나는 1810년 5월 혁명 이후 독립 과정을 거쳐 1816년 독립 선언. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Armenia",
+    "entity_ko": "아르메니아",
+    "data_from": "BC 323",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1045",
+    "actual_until": "AD 1375",
+    "status": "wrong_both",
+    "note": "이 시기 아르메니아는 주로 킬리키아 아르메니아 왕국(1080-1375)을 의미. 데이터 시작이 너무 이르고 종료가 이름."
+  },
+  {
+    "entity": "Ato Confederacy",
+    "entity_ko": "아토 연맹",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1700",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "아토 연맹은 1700년대부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Australia (NSW)",
+    "entity_ko": "호주 (뉴사우스웨일스)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1788",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "뉴사우스웨일스 식민지는 1788년에 설립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Australia (NT)",
+    "entity_ko": "호주 (노던준주)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1863",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "노던 준주는 1863년부터 남호주에 의해 관리. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Australia (QLD)",
+    "entity_ko": "호주 (퀸즐랜드)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1859",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "퀸즐랜드 식민지는 1859년에 설립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Australia (SA)",
+    "entity_ko": "호주 (남호주)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1836",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "남호주 식민지는 1836년에 설립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Australia (VIC)",
+    "entity_ko": "호주 (빅토리아)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1851",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "빅토리아 식민지는 1851년에 설립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Australia (WA)",
+    "entity_ko": "호주 (서호주)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1829",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "서호주 식민지는 1829년에 설립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Austria-Hungary",
+    "entity_ko": "오스트리아-헝가리",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1867",
+    "actual_until": "AD 1918",
+    "status": "wrong_start",
+    "note": "오스트리아-헝가리 제국은 1867년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Austrian Netherlands",
+    "entity_ko": "오스트리아령 네덜란드",
+    "data_from": "AD 1715",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1714",
+    "actual_until": "AD 1797",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1714년부터 1797년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Ayutthaya",
+    "entity_ko": "아유타야",
+    "data_from": "AD 1400",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1351",
+    "actual_until": "AD 1767",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1351년부터 1767년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Bagan",
+    "entity_ko": "바간",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 849",
+    "actual_until": "AD 1297",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 849년부터 1297년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Bahamas",
+    "entity_ko": "바하마",
+    "data_from": "AD 1783",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1648",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 바하마는 1648년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Bantu",
+    "entity_ko": "반투",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "BC 1000",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "반투족은 '국가'가 아닌 언어-문화 집단으로, 이주가 BC 1000년경부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Barbados",
+    "entity_ko": "바베이도스",
+    "data_from": "AD 1815",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1627",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 바베이도스는 1627년부터 시작. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Barotse",
+    "entity_ko": "바로체",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1964",
+    "status": "wrong_start",
+    "note": "바로체 왕국은 1600년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Belgium",
+    "entity_ko": "벨기에",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1830",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "벨기에는 1830년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Belize",
+    "entity_ko": "벨리즈",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1638",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 벨리즈는 1638년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Bengal",
+    "entity_ko": "벵골",
+    "data_from": "AD 1492",
+    "data_until": "AD 1783",
+    "actual_from": "AD 1352",
+    "actual_until": "AD 1757",
+    "status": "wrong_both",
+    "note": "벵골 술탄국은 1352년부터 1757년까지 존속. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Benin",
+    "entity_ko": "베냉",
+    "data_from": "AD 1279",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1180",
+    "actual_until": "AD 1897",
+    "status": "wrong_start",
+    "note": "베냉 왕국은 1180년경부터 1897년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Benin (Dahomey)",
+    "entity_ko": "베냉 (다호메이)",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1894",
+    "status": "wrong_start",
+    "note": "다호메이 왕국은 1600년경부터 1894년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Bhutan",
+    "entity_ko": "부탄",
+    "data_from": "AD 1200",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1616",
+    "actual_until": "Present",
+    "status": "gap",
+    "note": "부탄은 1616년 샤브드룽 응아왕 남걀에 의해 통일. 데이터 시작이 너무 이르고 1200년부터 1650년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "Bolivia",
+    "entity_ko": "볼리비아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1825",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "볼리비아는 1825년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Borgu States",
+    "entity_ko": "보르구",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "보르구 국가들은 1400년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Bornu-Kanem",
+    "entity_ko": "보르누-카넴",
+    "data_from": "AD 1279",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1380",
+    "actual_until": "AD 1893",
+    "status": "wrong_both",
+    "note": "카넴-보르누 제국은 1380년경부터 1893년까지 존속. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Bosnia-Herzegovina",
+    "entity_ko": "보스니아-헤르체고비나",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1878",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "오스트리아-헝가리 제국의 보스니아-헤르체고비나 점령은 1878년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "British East India Company",
+    "entity_ko": "영국 동인도회사",
+    "data_from": "AD 1815",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1874",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1600년부터 1874년까지. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "British India",
+    "entity_ko": "영국령 인도",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1757",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "영국령 인도는 1757년 플라시 전투 이후 실질적으로 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Brittany",
+    "entity_ko": "브르타뉴",
+    "data_from": "AD 800",
+    "data_until": "AD 1530",
+    "actual_from": "AD 851",
+    "actual_until": "AD 1532",
+    "status": "wrong_start",
+    "note": "브르타뉴 공국은 851년에 건국되어 1532년 프랑스에 합병. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Brunei",
+    "entity_ko": "브루나이",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1368",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "브루나이 술탄국은 1368년부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Bulgaria",
+    "entity_ko": "불가리아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1878",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "불가리아 공국은 1878년에 오스만 제국으로부터 자치권을 획득. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Burundi",
+    "entity_ko": "부룬디",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1962",
+    "status": "wrong_start",
+    "note": "부룬디 왕국은 1600년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Calabar",
+    "entity_ko": "칼라바르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1884",
+    "status": "wrong_start",
+    "note": "칼라바르 시국은 1600년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Cambodia",
+    "entity_ko": "캄보디아",
+    "data_from": "AD 1492",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1431",
+    "actual_until": "AD 1863",
+    "status": "wrong_both",
+    "note": "캄보디아 왕국은 1431년부터 1863년까지 존속. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Canada",
+    "entity_ko": "캐나다",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1867",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "캐나다 자치령은 1867년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Castile",
+    "entity_ko": "카스티야",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1065",
+    "actual_until": "AD 1479",
+    "status": "wrong_both",
+    "note": "카스티야 왕국은 1065년부터 1479년까지 존속. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Castile",
+    "entity_ko": "카스티야",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1065",
+    "actual_until": "AD 1479",
+    "status": "wrong_start",
+    "note": "카스티야 왕국은 1065년부터 1479년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Castile",
+    "entity_ko": "카스티야",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1065",
+    "actual_until": "AD 1479",
+    "status": "wrong_both",
+    "note": "카스티야 왕국은 1479년 아라곤과 통합하여 스페인 왕국이 됨. 데이터 종료가 늦음."
+  },
+  {
+    "entity": "Ceylon",
+    "entity_ko": "세이로은",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1815",
+    "actual_until": "AD 1948",
+    "status": "wrong_start",
+    "note": "영국령 실론은 1815년부터 시작. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Champa",
+    "entity_ko": "참파",
+    "data_from": "AD 500",
+    "data_until": "AD 1500",
+    "actual_from": "AD 192",
+    "actual_until": "AD 1832",
+    "status": "wrong_start",
+    "note": "참파는 192년부터 1832년까지 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Champa",
+    "entity_ko": "참파",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 192",
+    "actual_until": "AD 1832",
+    "status": "wrong_both",
+    "note": "참파는 192년부터 1832년까지 존재. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Chile",
+    "entity_ko": "칠레",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1818",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "칠레는 1818년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Chola",
+    "entity_ko": "촐라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 848",
+    "actual_until": "AD 1279",
+    "status": "wrong_both",
+    "note": "촐라 왕조는 848년부터 1279년까지 존속. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Chola",
+    "entity_ko": "촐라",
+    "data_from": "AD 500",
+    "data_until": "AD 1100",
+    "actual_from": "AD 848",
+    "actual_until": "AD 1279",
+    "status": "wrong_start",
+    "note": "촐라 왕조는 848년부터 1279년까지 존속. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Cochinchina",
+    "entity_ko": "코친차이나",
+    "data_from": "AD 1783",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1698",
+    "actual_until": "AD 1862",
+    "status": "wrong_start",
+    "note": "코친차이나는 1698년부터 응우옌 왕조의 지배를 받음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Colombia",
+    "entity_ko": "콜롬비아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1810",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "콜롬비아는 1810년 독립 선언 이후 그란콜롬비아를 거쳐 1830년 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Congo",
+    "entity_ko": "콩고",
+    "data_from": "AD 1492",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1390",
+    "actual_until": "AD 1914",
+    "status": "wrong_start",
+    "note": "콩고 왕국은 1390년경부터 1914년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Corsica",
+    "entity_ko": "코르시카",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1077",
+    "actual_until": "AD 1769",
+    "status": "wrong_both",
+    "note": "코르시카는 1077년부터 피사, 제노바 등의 지배를 받음. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Costa Rica",
+    "entity_ko": "코스타리카",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "코스타리카는 1821년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Cotonou",
+    "entity_ko": "코토누",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1851",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "코토누는 1851년 프랑스와 조약을 맺음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Croatia",
+    "entity_ko": "크로아티아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 925",
+    "actual_until": "AD 1102",
+    "status": "wrong_both",
+    "note": "크로아티아 왕국은 925년부터 1102년까지 독립 왕국으로 존재. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Cyprus",
+    "entity_ko": "키프로스",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1192",
+    "actual_until": "AD 1571",
+    "status": "wrong_both",
+    "note": "키프로스 왕국은 1192년부터 1489년까지 존속. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Côte d'Ivoire",
+    "entity_ko": "코트디부아르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1843",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 코트디부아르는 1843년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Dai Viet",
+    "entity_ko": "대월",
+    "data_from": "AD 1100",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1054",
+    "actual_until": "AD 1804",
+    "status": "wrong_start",
+    "note": "대월은 1054년부터 1804년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Damagaram",
+    "entity_ko": "다마가람",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1731",
+    "actual_until": "AD 1899",
+    "status": "wrong_start",
+    "note": "다마가람 술탄국은 1731년부터 1899년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Denmark",
+    "entity_ko": "덴마크",
+    "data_from": "AD 1100",
+    "data_until": "AD 1880",
+    "actual_from": "AD 958",
+    "actual_until": "Present",
+    "status": "gap",
+    "note": "덴마크 왕국은 958년부터 존재. 데이터 시작이 늦고 1300년부터 1815년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "Denmark-Norway",
+    "entity_ko": "덴마크-노르웨이",
+    "data_from": "AD 1000",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1536",
+    "actual_until": "AD 1814",
+    "status": "gap",
+    "note": "덴마크-노르웨이 연합 왕국은 1536년부터 1814년까지 존속. 데이터 시작이 너무 이르고 1000년부터 1492년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "Dominica",
+    "entity_ko": "도미니카",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1763",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 도미니카는 1763년부터 시작. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Dominican Republic",
+    "entity_ko": "도미니카 공화국",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1844",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "도미니카 공화국은 1844년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Duchy of Massa",
+    "entity_ko": "마사 공국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1664",
+    "actual_until": "AD 1829",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1664년부터 1829년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Duchy of Modena",
+    "entity_ko": "모데나 공국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1452",
+    "actual_until": "AD 1859",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1452년부터 1859년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Duchy of Parma",
+    "entity_ko": "파르마 공국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1545",
+    "actual_until": "AD 1859",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1545년부터 1859년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Dutch Formosa",
+    "entity_ko": "네덜란드 포르모사",
+    "data_from": "AD 1650",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1624",
+    "actual_until": "AD 1662",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1624년부터 1662년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Dutch Republic",
+    "entity_ko": "네덜란드 공화국",
+    "data_from": "AD 1600",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1581",
+    "actual_until": "AD 1795",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1581년부터 1795년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "East Java",
+    "entity_ko": "동자바",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 929",
+    "actual_until": "AD 1222",
+    "status": "wrong_start",
+    "note": "동자바의 왕국들은 929년부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ecuador",
+    "entity_ko": "에콰도르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1830",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "에콰도르는 1830년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Egypt",
+    "entity_ko": "이집트",
+    "data_from": "BC 3000",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1805",
+    "actual_until": "AD 1953",
+    "status": "gap",
+    "note": "이집트는 고대부터 존재했으나, 이 기간에는 오스만 제국의 속주였고 1805년 무함마드 알리 왕조가 수립. 데이터 시작이 너무 이르고 700년경부터 1715년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "El Salvador",
+    "entity_ko": "엘살바도르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "엘살바도르는 1821년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "England",
+    "entity_ko": "잉글랜드",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 927",
+    "actual_until": "AD 1707",
+    "status": "wrong_both",
+    "note": "잉글랜드 왕국은 927년부터 1707년까지 존속. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "England and Ireland",
+    "entity_ko": "잉글랜드-아일랜드",
+    "data_from": "AD 1530",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1542",
+    "actual_until": "AD 1707",
+    "status": "wrong_start",
+    "note": "아일랜드 왕국은 1542년에 수립되어 잉글랜드와 동군연합을 이룸. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Equatorial Guinea",
+    "entity_ko": "적도 기니",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1778",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "스페인 식민지 적도 기니는 1778년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Eswatini",
+    "entity_ko": "에스와티니",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1750",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "스와질란드 왕국은 1750년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ethiopia",
+    "entity_ko": "에티오피아",
+    "data_from": "AD 1279",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1270",
+    "actual_until": "AD 1974",
+    "status": "wrong_start",
+    "note": "에티오피아 제국은 1270년 솔로몬 왕조에 의해 재건. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Fiji",
+    "entity_ko": "피지",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1874",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 피지는 1874년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Fivizzano",
+    "entity_ko": "피비자노",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1477",
+    "actual_until": "AD 1847",
+    "status": "wrong_start",
+    "note": "피비자노는 1477년부터 피렌체 공화국의 지배를 받음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "France",
+    "entity_ko": "프랑스",
+    "data_from": "AD 1279",
+    "data_until": "AD 1880",
+    "actual_from": "AD 987",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 왕국은 987년부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "French Guiana",
+    "entity_ko": "프랑스령 기아나",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1604",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스령 기아나는 1604년부터 식민지화 시작. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "French Indochina",
+    "entity_ko": "프랑스 이은드오치나",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1887",
+    "actual_until": "AD 1954",
+    "status": "wrong_start",
+    "note": "프랑스령 인도차이나는 1887년에 공식적으로 설립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Futa Jalon",
+    "entity_ko": "푸타잘론",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1725",
+    "actual_until": "AD 1896",
+    "status": "wrong_start",
+    "note": "푸타잘론 이맘국은 1725년부터 1896년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Futa Toro",
+    "entity_ko": "푸타토로",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1776",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "푸타토로 이맘국은 1776년부터 1900년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Gabon",
+    "entity_ko": "가봉",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1839",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 가봉은 1839년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Gambia",
+    "entity_ko": "감비아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1816",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 감비아는 1816년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Georgia",
+    "entity_ko": "조지아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1008",
+    "actual_until": "AD 1490",
+    "status": "wrong_start",
+    "note": "조지아 왕국은 1008년부터 1490년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Germany",
+    "entity_ko": "독일",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1871",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "독일 제국은 1871년에 통일. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ghana",
+    "entity_ko": "가나",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 300",
+    "actual_until": "AD 1100",
+    "status": "wrong_start",
+    "note": "가나 제국은 300년경부터 1100년경까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ghana (1957)",
+    "entity_ko": "가나",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1957",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "현대 가나는 1957년에 독립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Ghaznavid Emirate",
+    "entity_ko": "가즈나 왕조",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 977",
+    "actual_until": "AD 1186",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 977년부터 1186년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Golden Horde",
+    "entity_ko": "킵차크 칸국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1300",
+    "actual_from": "AD 1240",
+    "actual_until": "AD 1502",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1240년부터 1502년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Golden Horde",
+    "entity_ko": "킵차크 칸국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1240",
+    "actual_until": "AD 1502",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1240년부터 1502년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Grand Duchy of Moscow",
+    "entity_ko": "모스크바 대공국",
+    "data_from": "AD 1300",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1283",
+    "actual_until": "AD 1547",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1283년부터 1547년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Grand Duchy of Tuscany",
+    "entity_ko": "토스카나 대공국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1569",
+    "actual_until": "AD 1859",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1569년부터 1859년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Great Zimbabwe",
+    "entity_ko": "그레이트 짐바브웨",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1100",
+    "actual_until": "AD 1450",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1100년경부터 1450년경까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Greece",
+    "entity_ko": "그리스",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "그리스는 1821년 독립 전쟁을 시작하여 1830년 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Greenland",
+    "entity_ko": "그린란드",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1721",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "덴마크 식민지 그린란드는 1721년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Grenada",
+    "entity_ko": "그레나다",
+    "data_from": "AD 1715",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1650",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 그레나다는 1650년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Guadeloupe",
+    "entity_ko": "과들루프",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1635",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 과들루프는 1635년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Guanches",
+    "entity_ko": "과나체",
+    "data_from": "BC 1500",
+    "data_until": "AD 1815",
+    "actual_from": "BC 1000",
+    "actual_until": "AD 1500",
+    "status": "wrong_start",
+    "note": "과나체족은 BC 1000년경부터 존재했으나, 1500년경 스페인 정복으로 소멸. 데이터 시작이 너무 이르고 종료가 늦음."
+  },
+  {
+    "entity": "Guatemala",
+    "entity_ko": "과테말라",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "과테말라는 1821년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Guinea-Bissau (1974)",
+    "entity_ko": "기니비사우",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1446",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "포르투갈 식민지 기니비사우는 1446년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Guyana (1966)",
+    "entity_ko": "가이아나",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1616",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "네덜란드 식민지 가이아나는 1616년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Habsburg Netherlands",
+    "entity_ko": "합스부르크 네덜란드",
+    "data_from": "AD 1530",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1482",
+    "actual_until": "AD 1795",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1482년부터 1795년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Hadramaut",
+    "entity_ko": "하드라마우트",
+    "data_from": "BC 323",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1967",
+    "status": "gap",
+    "note": "하드라마우트는 고대부터 존재했으나, 이 기간에는 여러 술탄국이 존재. 데이터 시작이 너무 이르고 400년부터 1000년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "Hainan",
+    "entity_ko": "하이난",
+    "data_from": "BC 1",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1000",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "하이난은 중국의 일부로, 이 기간 동안 여러 왕조의 지배를 받음. 데이터 시작이 너무 이르고 종료가 이름."
+  },
+  {
+    "entity": "Haiti",
+    "entity_ko": "아이티",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1804",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "아이티는 1804년에 독립. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Harar (Egyptian)",
+    "entity_ko": "하라르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1875",
+    "actual_until": "AD 1885",
+    "status": "wrong_start",
+    "note": "이집트의 하라르 점령은 1875년부터 1885년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Hausa States",
+    "entity_ko": "하우사 국가",
+    "data_from": "AD 1492",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1000",
+    "actual_until": "AD 1808",
+    "status": "wrong_start",
+    "note": "하우사 국가들은 1000년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Honduras",
+    "entity_ko": "온두라스",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "온두라스는 1821년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Hong Kong",
+    "entity_ko": "홍콩",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1841",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국령 홍콩은 1841년에 설립. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Hungary",
+    "entity_ko": "헝가리",
+    "data_from": "AD 1100",
+    "data_until": "AD 1300",
+    "actual_from": "AD 1000",
+    "actual_until": "AD 1918",
+    "status": "wrong_start",
+    "note": "헝가리 왕국은 1000년부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ibadan",
+    "entity_ko": "이바단",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1829",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "이바단은 1829년에 설립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Iceland",
+    "entity_ko": "아이슬란드",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 930",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "아이슬란드는 930년 의회 설립 이후 덴마크의 지배를 받음. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Imperial Hungary",
+    "entity_ko": "헝가리 왕국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1000",
+    "actual_until": "AD 1918",
+    "status": "wrong_start",
+    "note": "헝가리 왕국은 1000년부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "India",
+    "entity_ko": "인도",
+    "data_from": "AD 1783",
+    "data_until": "AD 1783",
+    "actual_from": "AD 1757",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "영국령 인도는 1757년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Indonesia (1945)",
+    "entity_ko": "인도네시아",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1945",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "현대 인도네시아는 1945년에 독립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Indonesia (1945)",
+    "entity_ko": "인도네시아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1945",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "현대 인도네시아는 1945년에 독립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Islamic City-States",
+    "entity_ko": "이슬람 도시국가",
+    "data_from": "AD 1000",
+    "data_until": "AD 1600",
+    "actual_from": "AD 700",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "이슬람 도시국가들은 700년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Italy",
+    "entity_ko": "이탈리아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1861",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "이탈리아 왕국은 1861년에 통일. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Jamaica",
+    "entity_ko": "자메이카",
+    "data_from": "AD 1715",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1655",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 자메이카는 1655년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Japan",
+    "entity_ko": "일본",
+    "data_from": "AD 800",
+    "data_until": "AD 1815",
+    "actual_from": "AD 660",
+    "actual_until": "Present",
+    "status": "correct",
+    "note": "일본은 이 기간 동안 지속적으로 존재했음. 스냅샷에 공백이 있으나 국가 자체의 존속 기간은 정확함."
+  },
+  {
+    "entity": "Japan (Fujiwara)",
+    "entity_ko": "일본 (후지와라)",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 794",
+    "actual_until": "AD 1185",
+    "status": "wrong_start",
+    "note": "후지와라 섭정기는 794년부터 1185년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Japan (Kamakura)",
+    "entity_ko": "일본 (가마쿠라)",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1185",
+    "actual_until": "AD 1333",
+    "status": "wrong_start",
+    "note": "가마쿠라 막부는 1185년부터 1333년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Japan (Warring States)",
+    "entity_ko": "일본 (전국시대)",
+    "data_from": "AD 1530",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1467",
+    "actual_until": "AD 1615",
+    "status": "wrong_start",
+    "note": "일본 전국시대는 1467년부터 1615년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Kalmar Union",
+    "entity_ko": "칼마르 동맹",
+    "data_from": "AD 1400",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1397",
+    "actual_until": "AD 1523",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1397년부터 1523년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Kanem",
+    "entity_ko": "카넴",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 700",
+    "actual_until": "AD 1380",
+    "status": "wrong_start",
+    "note": "카넴 제국은 700년경부터 1380년경까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Kanem-Bornu",
+    "entity_ko": "카넴-보르누",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1380",
+    "actual_until": "AD 1893",
+    "status": "wrong_start",
+    "note": "카넴-보르누 제국은 1380년경부터 1893년까지 존속. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Kara Khitai",
+    "entity_ko": "서요",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1124",
+    "actual_until": "AD 1218",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1124년부터 1218년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Khoisan",
+    "entity_ko": "코이산",
+    "data_from": "BC 1500",
+    "data_until": "AD 1500",
+    "actual_from": "BC 2000",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "코이산족은 '국가'가 아닌 언어-문화 집단으로, BC 2000년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Lagos",
+    "entity_ko": "라고스",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1861",
+    "status": "wrong_start",
+    "note": "라고스 왕국은 1400년경부터 1861년까지 존속. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Laos",
+    "entity_ko": "라오스",
+    "data_from": "AD 1492",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1353",
+    "actual_until": "AD 1893",
+    "status": "wrong_start",
+    "note": "란쌍 왕국(라오스의 전신)은 1353년부터 1893년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Leon",
+    "entity_ko": "레온",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 910",
+    "actual_until": "AD 1230",
+    "status": "wrong_start",
+    "note": "레온 왕국은 910년부터 1230년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Lesotho (1966)",
+    "entity_ko": "레소토",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1822",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "레소토 왕국은 1822년에 설립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Liberia",
+    "entity_ko": "라이베리아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1847",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "라이베리아는 1847년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Lithuania",
+    "entity_ko": "리투아니아",
+    "data_from": "AD 1279",
+    "data_until": "AD 1300",
+    "actual_from": "AD 1236",
+    "actual_until": "AD 1795",
+    "status": "wrong_both",
+    "note": "리투아니아 대공국은 1236년부터 1795년까지 존속. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Lombardy",
+    "entity_ko": "롬바르디아",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1535",
+    "actual_until": "AD 1859",
+    "status": "wrong_start",
+    "note": "롬바르디아는 1535년부터 합스부르크 지배를 받음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Luxembourg",
+    "entity_ko": "룩셈부르크",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 963",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "룩셈부르크는 963년부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Madagascar",
+    "entity_ko": "마다가스카르",
+    "data_from": "AD 1000",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1540",
+    "actual_until": "AD 1897",
+    "status": "wrong_start",
+    "note": "마다가스카르의 주요 왕국(메리나)은 1540년경부터 존재. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Madagascar (Merina)",
+    "entity_ko": "마다가스카르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1540",
+    "actual_until": "AD 1897",
+    "status": "wrong_start",
+    "note": "메리나 왕국은 1540년경부터 1897년까지 존속. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Makuria",
+    "entity_ko": "마쿠리아",
+    "data_from": "AD 500",
+    "data_until": "AD 1400",
+    "actual_from": "AD 350",
+    "actual_until": "AD 1500",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 350년경부터 1500년경까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Malacca",
+    "entity_ko": "말라카",
+    "data_from": "AD 1492",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1511",
+    "status": "wrong_both",
+    "note": "말라카 술탄국은 1400년부터 1511년까지 존속. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Malay Islamic States",
+    "entity_ko": "말레이 이슬람 국가",
+    "data_from": "AD 1492",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1400",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "말레이 이슬람 국가들은 1400년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Malaya",
+    "entity_ko": "말라야",
+    "data_from": "AD 1650",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1826",
+    "actual_until": "AD 1957",
+    "status": "wrong_start",
+    "note": "영국령 말라야는 1826년부터 시작. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Mali",
+    "entity_ko": "말리",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1235",
+    "actual_until": "AD 1670",
+    "status": "wrong_both",
+    "note": "말리 제국은 1235년부터 1670년까지 존속. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Malta",
+    "entity_ko": "몰타",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1800",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국령 몰타는 1800년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Maratha",
+    "entity_ko": "마라타",
+    "data_from": "AD 1715",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1674",
+    "actual_until": "AD 1818",
+    "status": "wrong_start",
+    "note": "마라타 제국은 1674년부터 1818년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Maratha Confederacy",
+    "entity_ko": "마라타 연맹",
+    "data_from": "AD 1783",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1713",
+    "actual_until": "AD 1818",
+    "status": "wrong_start",
+    "note": "마라타 연맹은 1713년부터 1818년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Martinique",
+    "entity_ko": "마르티니크",
+    "data_from": "AD 1715",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1635",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 마르티니크는 1635년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Maya",
+    "entity_ko": "마야",
+    "data_from": "AD 1530",
+    "data_until": "AD 1600",
+    "actual_from": "AD 250",
+    "actual_until": "AD 1697",
+    "status": "wrong_start",
+    "note": "마야 문명은 250년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Maya",
+    "entity_ko": "마야",
+    "data_from": "AD 1600",
+    "data_until": "AD 1815",
+    "actual_from": "AD 250",
+    "actual_until": "AD 1697",
+    "status": "wrong_start",
+    "note": "마야 문명은 250년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Maya City-States",
+    "entity_ko": "마야 도시국가",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "AD 250",
+    "actual_until": "AD 1697",
+    "status": "wrong_start",
+    "note": "마야 도시국가들은 250년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Mesoamerican States",
+    "entity_ko": "메소아메리카 국가",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "BC 2000",
+    "actual_until": "AD 1521",
+    "status": "wrong_start",
+    "note": "메소아메리카 문명은 BC 2000년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Mexico",
+    "entity_ko": "멕시코",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "멕시코는 1821년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Minangkabau",
+    "entity_ko": "미낭카바우",
+    "data_from": "AD 1600",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1347",
+    "actual_until": "AD 1833",
+    "status": "wrong_start",
+    "note": "미낭카바우 왕국은 1347년부터 1833년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Moldova",
+    "entity_ko": "몰도바",
+    "data_from": "AD 1400",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1359",
+    "actual_until": "AD 1859",
+    "status": "wrong_both",
+    "note": "몰도바 공국은 1359년부터 1859년까지 존속. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Mon",
+    "entity_ko": "몬",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 600",
+    "actual_until": "AD 1757",
+    "status": "wrong_start",
+    "note": "몬 왕국들은 600년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Mongols",
+    "entity_ko": "몽골인",
+    "data_from": "AD 1100",
+    "data_until": "AD 1100",
+    "actual_from": "AD 1206",
+    "actual_until": "AD 1368",
+    "status": "wrong_start",
+    "note": "몽골 제국은 1206년에 건국. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Montenegro",
+    "entity_ko": "몬테네그로",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1696",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "몬테네그로 공국은 1696년부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Montserrat",
+    "entity_ko": "몬트세라트",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1632",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 몬트세라트는 1632년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Morocco",
+    "entity_ko": "모로코",
+    "data_from": "AD 1300",
+    "data_until": "AD 1880",
+    "actual_from": "AD 788",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "모로코는 788년 이드리스 왕조부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Mossi States",
+    "entity_ko": "모시",
+    "data_from": "AD 1492",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1100",
+    "actual_until": "AD 1896",
+    "status": "wrong_start",
+    "note": "모시 왕국들은 1100년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Mozambique",
+    "entity_ko": "모잠비크",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1498",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "포르투갈 식민지 모잠비크는 1498년부터 시작. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Mozambique (1975)",
+    "entity_ko": "모잠비크",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1975",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "현대 모잠비크는 1975년에 독립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Myanmar (Burma)",
+    "entity_ko": "미얀마",
+    "data_from": "AD 1783",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1752",
+    "actual_until": "AD 1885",
+    "status": "wrong_start",
+    "note": "꼰바웅 왕조(미얀마)는 1752년부터 1885년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Mysore",
+    "entity_ko": "마이소르",
+    "data_from": "AD 1783",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1399",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "마이소르 왕국은 1399년부터 1947년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Māori",
+    "entity_ko": "마오리",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1250",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "마오리족은 1250년경부터 뉴질랜드에 정착. '국가' 형태는 아니었음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Nanzhao",
+    "entity_ko": "남조",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 737",
+    "actual_until": "AD 902",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 737년부터 902년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Navarre",
+    "entity_ko": "나바라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 824",
+    "actual_until": "AD 1620",
+    "status": "wrong_start",
+    "note": "나바라 왕국은 824년부터 1620년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Nepal",
+    "entity_ko": "네팔",
+    "data_from": "AD 1200",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1768",
+    "actual_until": "AD 2008",
+    "status": "wrong_start",
+    "note": "네팔 왕국은 1768년 구르카 왕조에 의해 통일. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Netherlands",
+    "entity_ko": "네덜란드",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1815",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "네덜란드 왕국은 1815년에 수립. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Netherlands Antilles",
+    "entity_ko": "네덜란드령 안틸레스",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1634",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "네덜란드령 안틸레스는 1634년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Nguni",
+    "entity_ko": "응구니",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1500",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "응구니족은 1500년경부터 존재. '국가' 형태는 아니었음. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Ngwato",
+    "entity_ko": "응와토",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1700",
+    "actual_until": "AD 1966",
+    "status": "wrong_start",
+    "note": "응와토 왕국은 1700년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Nicaragua",
+    "entity_ko": "니카라과",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "니카라과는 1821년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Niue",
+    "entity_ko": "니우에",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1774",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "니우에는 1774년 제임스 쿡에 의해 발견. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Nogai Horde",
+    "entity_ko": "노가이 오르다",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1440",
+    "actual_until": "AD 1860",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1440년부터 1860년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Norway",
+    "entity_ko": "노르웨이",
+    "data_from": "AD 1100",
+    "data_until": "AD 1300",
+    "actual_from": "AD 872",
+    "actual_until": "AD 1397",
+    "status": "wrong_start",
+    "note": "노르웨이 왕국은 872년부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Novgorod Republic",
+    "entity_ko": "노브고로드 공화국",
+    "data_from": "AD 1279",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1136",
+    "actual_until": "AD 1478",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1136년부터 1478년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Novgorod-Seversky",
+    "entity_ko": "노브고로드-세베르스키",
+    "data_from": "AD 1500",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1097",
+    "actual_until": "AD 1523",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1097년부터 1523년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Oirat Confederation",
+    "entity_ko": "오이라트",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1399",
+    "actual_until": "AD 1757",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1399년부터 1757년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Oman",
+    "entity_ko": "오만",
+    "data_from": "AD 1530",
+    "data_until": "AD 1880",
+    "actual_from": "AD 751",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "오만 이맘국은 751년부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Opobo",
+    "entity_ko": "오포보",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1869",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "오포보 왕국은 1869년부터 1900년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Orissa",
+    "entity_ko": "오리사",
+    "data_from": "AD 1000",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1038",
+    "actual_until": "AD 1568",
+    "status": "wrong_start",
+    "note": "오리사의 동강가 왕조는 1038년부터 1434년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Oromo",
+    "entity_ko": "오로모",
+    "data_from": "AD 1530",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1500",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "오로모족은 1500년경부터 존재. '국가' 형태는 아니었음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Ovimbundu",
+    "entity_ko": "오빔분두",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1600",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "오빔분두 왕국들은 1600년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Pala",
+    "entity_ko": "팔라",
+    "data_from": "AD 700",
+    "data_until": "AD 1100",
+    "actual_from": "AD 750",
+    "actual_until": "AD 1161",
+    "status": "wrong_start",
+    "note": "팔라 제국은 750년부터 1161년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Papal States",
+    "entity_ko": "교황령",
+    "data_from": "AD 800",
+    "data_until": "AD 1815",
+    "actual_from": "AD 754",
+    "actual_until": "AD 1870",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 754년부터 1870년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Papua New Guinea",
+    "entity_ko": "파푸아뉴기니",
+    "data_from": "AD 1492",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1884",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "파푸아뉴기니는 1884년 독일과 영국에 의해 식민지화 시작. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Paraguay",
+    "entity_ko": "파라과이",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1811",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "파라과이는 1811년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Pegu",
+    "entity_ko": "페구",
+    "data_from": "AD 1492",
+    "data_until": "AD 1600",
+    "actual_from": "AD 1287",
+    "actual_until": "AD 1757",
+    "status": "wrong_start",
+    "note": "페구 왕국은 1287년부터 1757년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Persia",
+    "entity_ko": "페르시아",
+    "data_from": "AD 400",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1794",
+    "actual_until": "AD 1925",
+    "status": "gap",
+    "note": "페르시아는 여러 왕조를 거쳐 지속되었으나, 데이터 기간은 너무 광범위하며 400년부터 1783년까지의 긴 공백이 있음. 이 기간에는 사파비 제국(1501-1736), 아프샤르 왕조(1736-1796), 잔드 왕조(1751-1794), 카자르 왕조(1794-1925) 등이 존재."
+  },
+  {
+    "entity": "Peru",
+    "entity_ko": "페루",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1821",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "페루는 1821년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Philippines",
+    "entity_ko": "필리핀",
+    "data_from": "AD 1492",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1565",
+    "actual_until": "AD 1898",
+    "status": "wrong_start",
+    "note": "스페인 식민지 필리핀은 1565년부터 시작. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Poland",
+    "entity_ko": "폴란드",
+    "data_from": "AD 1000",
+    "data_until": "AD 1783",
+    "actual_from": "AD 1025",
+    "actual_until": "AD 1795",
+    "status": "gap",
+    "note": "폴란드 왕국은 1025년부터 1795년까지 존속. 데이터 시작이 늦고 1300년부터 1783년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "Poland-Lithuania",
+    "entity_ko": "폴란드-리투아니아",
+    "data_from": "AD 1400",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1569",
+    "actual_until": "AD 1795",
+    "status": "wrong_start",
+    "note": "폴란드-리투아니아 연방은 1569년에 수립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Polynesia",
+    "entity_ko": "폴리네시아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1880",
+    "actual_from": "BC 1000",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "폴리네시아는 '국가'가 아닌 지리적-문화적 지역. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Pontremoli",
+    "entity_ko": "포은트레모리",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1400",
+    "actual_until": "AD 1847",
+    "status": "wrong_start",
+    "note": "폰트레몰리는 1400년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Portugal",
+    "entity_ko": "포르투갈",
+    "data_from": "AD 1200",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1139",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "포르투갈 왕국은 1139년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Post-Ming Warlords",
+    "entity_ko": "명말 군벌",
+    "data_from": "AD 1650",
+    "data_until": "AD 1700",
+    "actual_from": "AD 1644",
+    "actual_until": "AD 1683",
+    "status": "wrong_start",
+    "note": "명말청초 군벌들은 1644년부터 1683년까지 활동. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Principality of Galicia",
+    "entity_ko": "갈리치아 공국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1087",
+    "actual_until": "AD 1349",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1087년부터 1349년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Principality of Kyiv",
+    "entity_ko": "키예프 공국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1132",
+    "actual_until": "AD 1471",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1132년부터 1471년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Principality of Novgorod",
+    "entity_ko": "노브고로드 공국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1136",
+    "actual_until": "AD 1478",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1136년부터 1478년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Principality of Vladimir",
+    "entity_ko": "블라디미르 공국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1157",
+    "actual_until": "AD 1389",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1157년부터 1389년까지. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Prussia",
+    "entity_ko": "프로이센",
+    "data_from": "AD 1530",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1525",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "프로이센 공국은 1525년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Pskov",
+    "entity_ko": "프스코프",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1348",
+    "actual_until": "AD 1510",
+    "status": "wrong_start",
+    "note": "프스코프 공화국은 1348년부터 1510년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Pyu",
+    "entity_ko": "퓨",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "BC 200",
+    "actual_until": "AD 1000",
+    "status": "wrong_both",
+    "note": "퓨 도시국가들은 BC 200년경부터 1000년경까지 존재. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "Qatar",
+    "entity_ko": "카타르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1868",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "카타르는 1868년 영국과 조약을 맺음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Rajasthan",
+    "entity_ko": "라자스탄",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 700",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "라자스탄 지역의 라지푸트 왕국들은 700년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Rajputana",
+    "entity_ko": "라지푸타나",
+    "data_from": "AD 1530",
+    "data_until": "AD 1600",
+    "actual_from": "AD 700",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "라지푸타나 지역의 라지푸트 왕국들은 700년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Rajputs",
+    "entity_ko": "라지푸트",
+    "data_from": "AD 1800",
+    "data_until": "AD 1800",
+    "actual_from": "AD 700",
+    "actual_until": "AD 1947",
+    "status": "wrong_start",
+    "note": "라지푸트족은 700년경부터 존재. '국가' 형태는 아니었음. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Rattanakosin (Siam)",
+    "entity_ko": "랏따나꼬신 (시암)",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1782",
+    "actual_until": "AD 1932",
+    "status": "wrong_start",
+    "note": "랏따나꼬신 왕국은 1782년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Regency of Algiers",
+    "entity_ko": "알제리 총독부",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1516",
+    "actual_until": "AD 1830",
+    "status": "wrong_start",
+    "note": "알제리 총독부는 1516년부터 1830년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Regency of Tunis",
+    "entity_ko": "튀니스 총독부",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1574",
+    "actual_until": "AD 1881",
+    "status": "wrong_start",
+    "note": "튀니스 총독부는 1574년부터 1881년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Republic of Genoa",
+    "entity_ko": "제노바 공화국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1000",
+    "actual_until": "AD 1797",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1000년경부터 1797년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Republic of Lucca",
+    "entity_ko": "루카 공화국",
+    "data_from": "AD 1650",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1160",
+    "actual_until": "AD 1805",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1160년부터 1805년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Republic of the Seven Zenden",
+    "entity_ko": "세베은 제은드에은 공화국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1783",
+    "actual_from": "AD 1581",
+    "actual_until": "AD 1795",
+    "status": "wrong_start",
+    "note": "네덜란드 공화국(일곱 연합주 공화국)은 1581년부터 1795년까지 존속. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Romania",
+    "entity_ko": "루마니아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1859",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "루마니아는 1859년 왈라키아와 몰다비아의 연합으로 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Rus Principalities",
+    "entity_ko": "루스 공국",
+    "data_from": "AD 1200",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1132",
+    "actual_until": "AD 1547",
+    "status": "wrong_both",
+    "note": "루스 공국들은 1132년 키예프 루스의 분열 이후 존재. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Rwanda",
+    "entity_ko": "르완다",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1000",
+    "actual_until": "AD 1962",
+    "status": "wrong_start",
+    "note": "르완다 왕국은 1000년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Ryazan",
+    "entity_ko": "랴잔",
+    "data_from": "AD 1279",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1129",
+    "actual_until": "AD 1521",
+    "status": "wrong_start",
+    "note": "랴잔 공국은 1129년부터 1521년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Saint Barthélemy",
+    "entity_ko": "생바르텔레미",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1648",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 생바르텔레미는 1648년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Saint Kitts and Nevis",
+    "entity_ko": "세인트키츠 네비스",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1623",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 세인트키츠 네비스는 1623년부터 시작. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Saint Lucia",
+    "entity_ko": "세인트루시아",
+    "data_from": "AD 1715",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1660",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 세인트루시아는 1660년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Saint Martin",
+    "entity_ko": "생마르탱",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1648",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스-네덜란드 분할 통치 생마르탱은 1648년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Saint Vincent and the Grenadines",
+    "entity_ko": "세인트빈센트 그레나딘",
+    "data_from": "AD 1715",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1763",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 세인트빈센트 그레나딘은 1763년부터 시작. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Samoa",
+    "entity_ko": "사모아",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1889",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "사모아는 1889년 삼국 조약으로 분할. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Sardinia",
+    "entity_ko": "사르데냐",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1297",
+    "actual_until": "AD 1861",
+    "status": "wrong_start",
+    "note": "사르데냐 왕국은 1297년에 수립. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Scotland",
+    "entity_ko": "스코틀랜드",
+    "data_from": "AD 1000",
+    "data_until": "AD 1600",
+    "actual_from": "AD 843",
+    "actual_until": "AD 1707",
+    "status": "wrong_start",
+    "note": "스코틀랜드 왕국은 843년부터 1707년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Scotland",
+    "entity_ko": "스코틀랜드",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 843",
+    "actual_until": "AD 1707",
+    "status": "wrong_start",
+    "note": "스코틀랜드 왕국은 843년부터 1707년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Senegal",
+    "entity_ko": "세네갈",
+    "data_from": "AD 1530",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1659",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 세네갈은 1659년부터 시작. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Senegal",
+    "entity_ko": "세네갈",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1659",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "프랑스 식민지 세네갈은 1659년부터 시작. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Serbia",
+    "entity_ko": "세르비아",
+    "data_from": "AD 900",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1166",
+    "actual_until": "AD 1918",
+    "status": "gap",
+    "note": "세르비아는 1166년 네마니치 왕조에 의해 통일. 데이터 시작이 너무 이르고 1279년부터 1880년까지의 긴 공백이 있음."
+  },
+  {
+    "entity": "Shan States",
+    "entity_ko": "샨족",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1287",
+    "actual_until": "AD 1948",
+    "status": "wrong_start",
+    "note": "샨족 국가들은 1287년 파간 왕국 멸망 이후 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Shona",
+    "entity_ko": "쇼나",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1000",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "쇼나족은 1000년경부터 존재. '국가' 형태는 아니었음. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Siam",
+    "entity_ko": "시암",
+    "data_from": "AD 1800",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1782",
+    "actual_until": "AD 1939",
+    "status": "wrong_start",
+    "note": "시암(랏따나꼬신 왕국)은 1782년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Sicily",
+    "entity_ko": "시칠리아",
+    "data_from": "AD 1279",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1130",
+    "actual_until": "AD 1816",
+    "status": "wrong_start",
+    "note": "시칠리아 왕국은 1130년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Sierra Leone",
+    "entity_ko": "시에라리온",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1787",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 시에라리온은 1787년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Somalia",
+    "entity_ko": "소말리아",
+    "data_from": "AD 1815",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1884",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "소말리아는 1884년 유럽 식민지화 시작. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Songhai",
+    "entity_ko": "송가이 제국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1464",
+    "actual_until": "AD 1591",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 1464년부터 1591년까지. 데이터 시작이 늦고 종료가 이름."
+  },
+  {
+    "entity": "South Africa (Cape Colony)",
+    "entity_ko": "남아프리카 (케이프)",
+    "data_from": "AD 1715",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1652",
+    "actual_until": "AD 1910",
+    "status": "wrong_start",
+    "note": "케이프 식민지는 1652년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "South Africa (Griqualand)",
+    "entity_ko": "남아프리카 (그리콸란드)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1871",
+    "actual_until": "AD 1880",
+    "status": "wrong_start",
+    "note": "그리콸란드 서부는 1871년부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "South Africa (Natal)",
+    "entity_ko": "남아프리카 (나탈)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1843",
+    "actual_until": "AD 1910",
+    "status": "wrong_start",
+    "note": "나탈 식민지는 1843년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "South Africa (Orange Free State)",
+    "entity_ko": "남아프리카 (오렌지 자유국)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1854",
+    "actual_until": "AD 1902",
+    "status": "wrong_start",
+    "note": "오렌지 자유국은 1854년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "South Africa (Transvaal)",
+    "entity_ko": "남아프리카 (트란스발)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1852",
+    "actual_until": "AD 1902",
+    "status": "wrong_start",
+    "note": "트란스발 공화국은 1852년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Spain",
+    "entity_ko": "스페인",
+    "data_from": "AD 1530",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1479",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "스페인 왕국은 1479년 카스티야와 아라곤의 통합으로 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Sri Lanka (Ceylon)",
+    "entity_ko": "스리랑카 (실론)",
+    "data_from": "AD 1650",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1815",
+    "actual_until": "AD 1948",
+    "status": "wrong_start",
+    "note": "영국령 실론은 1815년부터 시작. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Srivijaya",
+    "entity_ko": "스리비자야",
+    "data_from": "AD 800",
+    "data_until": "AD 1400",
+    "actual_from": "AD 670",
+    "actual_until": "AD 1377",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 670년경부터 1377년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Suriname (1975)",
+    "entity_ko": "수리남",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1975",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "현대 수리남은 1975년에 독립. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Sweden",
+    "entity_ko": "스웨덴",
+    "data_from": "AD 1000",
+    "data_until": "AD 1800",
+    "actual_from": "AD 970",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "스웨덴 왕국은 970년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Sweden-Norway",
+    "entity_ko": "스웨덴-노르웨이",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1814",
+    "actual_until": "AD 1905",
+    "status": "wrong_start",
+    "note": "스웨덴-노르웨이 연합 왕국은 1814년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Swiss Confederation",
+    "entity_ko": "스위스 연방",
+    "data_from": "AD 1492",
+    "data_until": "AD 1783",
+    "actual_from": "AD 1291",
+    "actual_until": "AD 1798",
+    "status": "wrong_start",
+    "note": "스위스 연방은 1291년에 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Switzerland",
+    "entity_ko": "스위스",
+    "data_from": "AD 1815",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1848",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "현대 스위스 연방은 1848년에 수립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Taiwan",
+    "entity_ko": "대만",
+    "data_from": "AD 1492",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1624",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "대만은 1624년 네덜란드 식민지화 이후 국가 형태로 발전. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Teutonic Knights",
+    "entity_ko": "튜턴 기사단",
+    "data_from": "AD 1279",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1190",
+    "actual_until": "AD 1525",
+    "status": "wrong_start",
+    "note": "튜턴 기사단국은 1190년부터 1525년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Tibet",
+    "entity_ko": "티베트",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 618",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "티베트는 618년 토번 왕국부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Timurid Emirates",
+    "entity_ko": "티무르 토후국",
+    "data_from": "AD 1492",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1370",
+    "actual_until": "AD 1507",
+    "status": "wrong_start",
+    "note": "티무르 제국은 1370년부터 1507년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Tonga",
+    "entity_ko": "통가",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 950",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "통가 왕국은 950년경부터 존재. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Trinidad and Tobago",
+    "entity_ko": "트리니다드 토바고",
+    "data_from": "AD 1715",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1797",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 트리니다드 토바고는 1797년부터 시작. 데이터 시작이 너무 이름."
+  },
+  {
+    "entity": "Trucial States (UAE)",
+    "entity_ko": "트루셜 오만 (아랍에미리트)",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1820",
+    "actual_until": "AD 1971",
+    "status": "wrong_start",
+    "note": "트루셜 오만은 1820년 영국과 조약을 맺음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Tsardom of Muscovy",
+    "entity_ko": "모스크바 차르국",
+    "data_from": "AD 1530",
+    "data_until": "AD 1715",
+    "actual_from": "AD 1547",
+    "actual_until": "AD 1721",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1547년부터 1721년까지. 데이터 시작이 이르고 종료가 이름."
+  },
+  {
+    "entity": "Turks and Caicos",
+    "entity_ko": "터크스 케이커스",
+    "data_from": "AD 1783",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1670",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "영국 식민지 터크스 케이커스는 1670년부터 시작. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "US Virgin Islands",
+    "entity_ko": "미국령 버진아일랜드",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1917",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "미국령 버진아일랜드는 1917년에 미국에 매각. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "United States",
+    "entity_ko": "미국",
+    "data_from": "AD 1783",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1776",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "미국은 1776년에 독립 선언. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "United States",
+    "entity_ko": "미국",
+    "data_from": "AD 1815",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1776",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "미국은 1776년에 독립 선언. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Uruguay",
+    "entity_ko": "우루과이",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1828",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "우루과이는 1828년에 독립. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Utetera",
+    "entity_ko": "우테테라",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1800",
+    "actual_until": "AD 1900",
+    "status": "wrong_start",
+    "note": "우테테라 왕국은 1800년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Venezuela",
+    "entity_ko": "베네수엘라",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1811",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "베네수엘라는 1811년에 독립 선언. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Venice",
+    "entity_ko": "베네치아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 697",
+    "actual_until": "AD 1797",
+    "status": "wrong_start",
+    "note": "베네치아 공화국은 697년부터 1797년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Vijayanagara",
+    "entity_ko": "비자야나가라",
+    "data_from": "AD 1492",
+    "data_until": "AD 1650",
+    "actual_from": "AD 1336",
+    "actual_until": "AD 1646",
+    "status": "wrong_start",
+    "note": "비자야나가라 제국은 1336년부터 1646년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Volga Bulgars",
+    "entity_ko": "볼가 불가르",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 660",
+    "actual_until": "AD 1236",
+    "status": "wrong_start",
+    "note": "볼가 불가르족은 660년경부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Wallachia",
+    "entity_ko": "왈라키아",
+    "data_from": "AD 1400",
+    "data_until": "AD 1400",
+    "actual_from": "AD 1330",
+    "actual_until": "AD 1859",
+    "status": "wrong_both",
+    "note": "왈라키아 공국은 1330년부터 1859년까지 존속. 데이터 기간이 너무 짧고 시작과 종료가 부정확함."
+  },
+  {
+    "entity": "Wallis and Futuna",
+    "entity_ko": "왈리스 푸투나",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1887",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "왈리스 푸투나는 1887년 프랑스 보호령이 됨. 데이터 기간이 실제보다 이름."
+  },
+  {
+    "entity": "Western Xia",
+    "entity_ko": "서하",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1038",
+    "actual_until": "AD 1227",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 1038년부터 1227년까지. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Yemen",
+    "entity_ko": "예멘",
+    "data_from": "AD 1000",
+    "data_until": "AD 1815",
+    "actual_from": "AD 897",
+    "actual_until": "Present",
+    "status": "wrong_start",
+    "note": "예멘은 897년 라시드 왕조부터 존재. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Zanzibar",
+    "entity_ko": "잔지바르",
+    "data_from": "AD 1715",
+    "data_until": "AD 1815",
+    "actual_from": "AD 1698",
+    "actual_until": "AD 1964",
+    "status": "wrong_start",
+    "note": "잔지바르는 1698년부터 오만 술탄국의 지배를 받음. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Zanzibar",
+    "entity_ko": "잔지바르",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1698",
+    "actual_until": "AD 1964",
+    "status": "wrong_start",
+    "note": "잔지바르는 1698년부터 오만 술탄국의 지배를 받음. 데이터 시작이 크게 늦음."
+  },
+  {
+    "entity": "Zululand",
+    "entity_ko": "줄루란트",
+    "data_from": "AD 1880",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1816",
+    "actual_until": "AD 1897",
+    "status": "wrong_start",
+    "note": "줄루 왕국은 1816년부터 1897년까지 존속. 데이터 시작이 늦음."
+  },
+  {
+    "entity": "Kingdom of England",
+    "entity_ko": "잉글랜드 왕국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 927",
+    "actual_until": "AD 1707",
+    "status": "missing",
+    "note": "영국 연합 이전의 주요 왕국으로, 데이터에 별도 엔티티로 존재해야 함."
+  },
+  {
+    "entity": "Kingdom of Scotland",
+    "entity_ko": "스코틀랜드 왕국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 843",
+    "actual_until": "AD 1707",
+    "status": "missing",
+    "note": "영국 연합 이전의 주요 왕국으로, 데이터에 별도 엔티티로 존재해야 함."
+  },
+  {
+    "entity": "Kievan Rus'",
+    "entity_ko": "키예프 루스",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 882",
+    "actual_until": "AD 1240",
+    "status": "missing",
+    "note": "이 기간 초반 동유럽의 주요 국가였으나 목록에 없음."
+  },
+  {
+    "entity": "Jin Dynasty (Jurchen)",
+    "entity_ko": "금나라 (여진)",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 1115",
+    "actual_until": "AD 1234",
+    "status": "missing",
+    "note": "중국 북부를 지배했던 주요 왕조였으나 목록에 없음."
+  },
+  {
+    "entity": "Yuan Dynasty",
+    "entity_ko": "원나라",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 1271",
+    "actual_until": "AD 1368",
+    "status": "missing",
+    "note": "몽골 제국의 중국 지배 왕조로, 이 기간의 주요 국가였으나 목록에 없음."
+  },
+  {
+    "entity": "Majapahit Empire",
+    "entity_ko": "마자파힛 제국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 1293",
+    "actual_until": "AD 1527",
+    "status": "missing",
+    "note": "동남아시아의 주요 해상 제국이었으나 목록에 없음."
+  },
+  {
+    "entity": "Khwarezmian Empire",
+    "entity_ko": "호라즘 제국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 1077",
+    "actual_until": "AD 1231",
+    "status": "missing",
+    "note": "중앙아시아와 페르시아를 지배했던 주요 제국이었으나 목록에 없음."
+  },
+  {
+    "entity": "Kingdom of Bohemia",
+    "entity_ko": "보헤미아 왕국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 1198",
+    "actual_until": "AD 1918",
+    "status": "missing",
+    "note": "중앙 유럽의 주요 왕국이었으나 목록에 없음."
+  },
+  {
+    "entity": "Kingdom of Poland",
+    "entity_ko": "폴란드 왕국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 1025",
+    "actual_until": "AD 1569",
+    "status": "missing",
+    "note": "폴란드-리투아니아 연방 이전의 독립 왕국으로, 데이터에 별도 엔티티로 존재해야 함."
+  },
+  {
+    "entity": "Kingdom of Portugal",
+    "entity_ko": "포르투갈 왕국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "AD 1139",
+    "actual_until": "AD 1910",
+    "status": "missing",
+    "note": "데이터에 'Portugal'로 존재하지만, 'Kingdom of Portugal'로 명확히 구분되어야 할 수 있음. 현재 데이터는 'Portugal'로 포괄하고 있어 'missing'으로 추가하지 않음."
+  }
+]
+```

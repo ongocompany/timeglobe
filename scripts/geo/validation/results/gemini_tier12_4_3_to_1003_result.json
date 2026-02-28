@@ -1,0 +1,1852 @@
+[
+  {
+    "entity": "Abbasid Caliphate",
+    "entity_ko": "아바스 칼리프국",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 750",
+    "actual_until": "AD 1258",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 750년 ~ AD 1258년 (바그다드 칼리프국 기준) 입니다. 데이터 시작과 종료가 모두 실제와 다릅니다."
+  },
+  {
+    "entity": "Baekje",
+    "entity_ko": "백제",
+    "data_from": "AD 100",
+    "data_until": "AD 700",
+    "actual_from": "BC 18",
+    "actual_until": "AD 660",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 BC 18년 ~ AD 660년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Balhae",
+    "entity_ko": "발해",
+    "data_from": "AD 800",
+    "data_until": "AD 800",
+    "actual_from": "AD 698",
+    "actual_until": "AD 926",
+    "status": "gap",
+    "note": "실제 존속 기간은 AD 698년 ~ AD 926년 입니다. 데이터는 AD 800년과 AD 900년만 표시되어 있어 중간에 큰 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Balhae",
+    "entity_ko": "발해",
+    "data_from": "AD 900",
+    "data_until": "AD 900",
+    "actual_from": "AD 698",
+    "actual_until": "AD 926",
+    "status": "gap",
+    "note": "실제 존속 기간은 AD 698년 ~ AD 926년 입니다. 데이터는 AD 800년과 AD 900년만 표시되어 있어 중간에 큰 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Bosporan Kingdom",
+    "entity_ko": "보스포루스 왕국",
+    "data_from": "BC 1",
+    "data_until": "AD 200",
+    "actual_from": "BC 438",
+    "actual_until": "AD 370",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 BC 438년 ~ AD 370년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Bulgarian Khanate",
+    "entity_ko": "불가리아 칸국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 681",
+    "actual_until": "AD 1018",
+    "status": "wrong_start",
+    "note": "제1차 불가리아 제국은 AD 681년 ~ AD 1018년, 제2차 불가리아 제국은 AD 1185년 ~ AD 1396년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Byzantine Empire",
+    "entity_ko": "비잔틴 제국",
+    "data_from": "AD 800",
+    "data_until": "AD 1400",
+    "actual_from": "AD 330",
+    "actual_until": "AD 1453",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 330년 (콘스탄티노폴리스 건국) 또는 AD 395년 (로마 제국 분할) ~ AD 1453년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Caliphate of Cordoba",
+    "entity_ko": "코르도바 칼리프국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1000",
+    "actual_from": "AD 929",
+    "actual_until": "AD 1031",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 929년 ~ AD 1031년 입니다. 데이터는 AD 1000년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Carolingian Empire",
+    "entity_ko": "카롤링거 제국",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 800",
+    "actual_until": "AD 843",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 AD 800년 ~ AD 843년 (베르됭 조약) 입니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Celtic Kingdoms",
+    "entity_ko": "켈트 왕국",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "BC 800",
+    "actual_until": "AD 1700",
+    "status": "wrong_both",
+    "note": "켈트 왕국은 광범위한 용어로, 다양한 켈트계 정치체가 훨씬 이전부터 존재했습니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Chimu Empire",
+    "entity_ko": "치무 제국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 900",
+    "actual_until": "AD 1470",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 900년 ~ AD 1470년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Croatian Kingdom",
+    "entity_ko": "크로아티아 왕국",
+    "data_from": "AD 900",
+    "data_until": "AD 900",
+    "actual_from": "AD 925",
+    "actual_until": "AD 1102",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 925년 ~ AD 1102년 입니다. 데이터는 AD 900년만 표시되어 있어 전체 기간을 포괄하지 못하며, 왕국 건국 이전입니다."
+  },
+  {
+    "entity": "Eastern Roman Empire",
+    "entity_ko": "동로마 제국",
+    "data_from": "AD 400",
+    "data_until": "AD 700",
+    "actual_from": "AD 330",
+    "actual_until": "AD 1453",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 330년 ~ AD 1453년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Fatimid Caliphate",
+    "entity_ko": "파티마 칼리프국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 909",
+    "actual_until": "AD 1171",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 909년 ~ AD 1171년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Frankish Kingdom",
+    "entity_ko": "프랑크 왕국",
+    "data_from": "AD 600",
+    "data_until": "AD 700",
+    "actual_from": "AD 481",
+    "actual_until": "AD 843",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 481년 ~ AD 843년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Gaya",
+    "entity_ko": "가야",
+    "data_from": "AD 100",
+    "data_until": "AD 400",
+    "actual_from": "AD 42",
+    "actual_until": "AD 562",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 42년 ~ AD 562년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Ghana Empire",
+    "entity_ko": "가나 제국",
+    "data_from": "AD 300",
+    "data_until": "AD 700",
+    "actual_from": "c. AD 300",
+    "actual_until": "c. AD 1100",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 대략 AD 300년 ~ AD 1100년 입니다. 데이터 종료가 이릅니다."
+  },
+  {
+    "entity": "Goguryeo",
+    "entity_ko": "고구려",
+    "data_from": "BC 1",
+    "data_until": "AD 700",
+    "actual_from": "BC 37",
+    "actual_until": "AD 668",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 BC 37년 ~ AD 668년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Gupta Empire",
+    "entity_ko": "굽타 제국",
+    "data_from": "AD 300",
+    "data_until": "AD 500",
+    "actual_from": "c. AD 320",
+    "actual_until": "AD 550",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 대략 AD 320년 ~ AD 550년 입니다. 데이터 종료가 이릅니다."
+  },
+  {
+    "entity": "Han Dynasty",
+    "entity_ko": "한나라",
+    "data_from": "BC 1",
+    "data_until": "AD 200",
+    "actual_from": "BC 206",
+    "actual_until": "AD 220",
+    "status": "wrong_both",
+    "note": "전체 한나라 존속 기간은 BC 206년 ~ AD 220년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Himyarite Kingdom",
+    "entity_ko": "힘야르 왕국",
+    "data_from": "BC 1",
+    "data_until": "AD 500",
+    "actual_from": "c. BC 110",
+    "actual_until": "AD 525",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 BC 110년 ~ AD 525년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Hindu Kingdoms",
+    "entity_ko": "힌두 왕국",
+    "data_from": "BC 500",
+    "data_until": "AD 700",
+    "actual_from": "BC 600",
+    "actual_until": "AD 1800",
+    "status": "wrong_both",
+    "note": "힌두 왕국은 광범위한 용어로, 다양한 힌두계 정치체가 훨씬 이전부터 존재했으며 이후에도 계속되었습니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Holy Roman Empire",
+    "entity_ko": "신성 로마 제국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 962",
+    "actual_until": "AD 1806",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 962년 ~ AD 1806년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Hunnic Empire",
+    "entity_ko": "훈 제국",
+    "data_from": "AD 400",
+    "data_until": "AD 400",
+    "actual_from": "c. AD 370",
+    "actual_until": "AD 469",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 370년 ~ AD 469년 입니다. 데이터는 AD 400년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Idrisid Caliphate",
+    "entity_ko": "이드리스 왕조",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 788",
+    "actual_until": "AD 974",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 788년 ~ AD 974년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Joseon",
+    "entity_ko": "조선",
+    "data_from": "BC 300",
+    "data_until": "AD 1880",
+    "actual_from": "AD 1392",
+    "actual_until": "AD 1897",
+    "status": "wrong_both",
+    "note": "조선 왕조의 실제 존속 기간은 AD 1392년 ~ AD 1897년 입니다. 데이터 기간은 고조선 등 다른 한국의 초기 국가와 혼동된 것으로 보이며 완전히 잘못되었습니다."
+  },
+  {
+    "entity": "Khmer Empire",
+    "entity_ko": "크메르 제국",
+    "data_from": "AD 900",
+    "data_until": "AD 1400",
+    "actual_from": "AD 802",
+    "actual_until": "AD 1431",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 802년 ~ AD 1431년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Kingdom of France",
+    "entity_ko": "프랑스 왕국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 987",
+    "actual_until": "AD 1792",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 AD 987년 ~ AD 1792년 입니다. 데이터 종료가 이릅니다."
+  },
+  {
+    "entity": "Kingdom of Merina",
+    "entity_ko": "메리나 왕국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1815",
+    "actual_from": "c. AD 1540",
+    "actual_until": "AD 1897",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 1540년 ~ AD 1897년 입니다. 데이터 시작이 너무 이릅니다."
+  },
+  {
+    "entity": "Kushan Empire",
+    "entity_ko": "쿠샨 제국",
+    "data_from": "BC 100",
+    "data_until": "AD 100",
+    "actual_from": "c. AD 30",
+    "actual_until": "AD 375",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 30년 ~ AD 375년 입니다. 데이터 시작이 이르고 종료가 이릅니다."
+  },
+  {
+    "entity": "Liao Dynasty",
+    "entity_ko": "요나라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 907",
+    "actual_until": "AD 1125",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 907년 ~ AD 1125년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Nabataean Kingdom",
+    "entity_ko": "나바테아",
+    "data_from": "BC 300",
+    "data_until": "AD 100",
+    "actual_from": "c. BC 168",
+    "actual_until": "AD 106",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 BC 168년 ~ AD 106년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Ostrogothic Kingdom",
+    "entity_ko": "동고트 왕국",
+    "data_from": "AD 400",
+    "data_until": "AD 600",
+    "actual_from": "AD 493",
+    "actual_until": "AD 553",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 493년 ~ AD 553년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Pagan Kingdom",
+    "entity_ko": "파간 왕국",
+    "data_from": "AD 900",
+    "data_until": "AD 1400",
+    "actual_from": "AD 849",
+    "actual_until": "AD 1297",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 AD 849년 ~ AD 1297년 입니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Parthian Empire",
+    "entity_ko": "파르티아 제국",
+    "data_from": "BC 1",
+    "data_until": "AD 300",
+    "actual_from": "BC 247",
+    "actual_until": "AD 224",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 BC 247년 ~ AD 224년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Rajput Kingdoms",
+    "entity_ko": "라지푸트 왕국",
+    "data_from": "AD 1000",
+    "data_until": "AD 1000",
+    "actual_from": "c. AD 700",
+    "actual_until": "AD 1800",
+    "status": "wrong_both",
+    "note": "라지푸트 왕국은 7세기부터 수세기 동안 존재했던 다양한 국가들을 지칭하는 광범위한 용어입니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Roman Empire",
+    "entity_ko": "로마 제국",
+    "data_from": "BC 1",
+    "data_until": "AD 200",
+    "actual_from": "BC 27",
+    "actual_until": "AD 395",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 BC 27년 ~ AD 395년 (분할) 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Roman Empire (Constantine)",
+    "entity_ko": "로마 제국 (콘스탄티누스)",
+    "data_from": "AD 300",
+    "data_until": "AD 300",
+    "actual_from": "AD 306",
+    "actual_until": "AD 337",
+    "status": "wrong_both",
+    "note": "콘스탄티누스 1세의 실제 재위 기간은 AD 306년 ~ AD 337년 입니다. 데이터는 AD 300년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Roman Empire (Diocletian)",
+    "entity_ko": "로마 제국 (디오클레티아누스)",
+    "data_from": "AD 300",
+    "data_until": "AD 300",
+    "actual_from": "AD 284",
+    "actual_until": "AD 305",
+    "status": "wrong_both",
+    "note": "디오클레티아누스의 실제 재위 기간은 AD 284년 ~ AD 305년 입니다. 데이터는 AD 300년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Roman Empire (Galerius)",
+    "entity_ko": "로마 제국 (갈레리우스)",
+    "data_from": "AD 300",
+    "data_until": "AD 300",
+    "actual_from": "AD 293",
+    "actual_until": "AD 311",
+    "status": "wrong_both",
+    "note": "갈레리우스의 실제 재위 기간은 AD 293년 ~ AD 311년 입니다. 데이터는 AD 300년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Roman Empire (Maximian)",
+    "entity_ko": "로마 제국 (막시미아누스)",
+    "data_from": "AD 300",
+    "data_until": "AD 300",
+    "actual_from": "AD 286",
+    "actual_until": "AD 305",
+    "status": "wrong_both",
+    "note": "막시미아누스의 실제 재위 기간은 AD 286년 ~ AD 305년 입니다. 데이터는 AD 300년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Sasanian Empire",
+    "entity_ko": "사산 제국",
+    "data_from": "AD 500",
+    "data_until": "AD 700",
+    "actual_from": "AD 224",
+    "actual_until": "AD 651",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 224년 ~ AD 651년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Sinhalese Kingdoms",
+    "entity_ko": "싱할라 왕국",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "BC 377",
+    "actual_until": "AD 1815",
+    "status": "gap",
+    "note": "다양한 싱할라 왕국이 고대부터 존재했습니다. 데이터는 AD 800년만 스냅샷으로 제공하고 AD 800년에서 AD 1492년까지의 공백이 의심되어 실제 기간을 제대로 반영하지 못합니다."
+  },
+  {
+    "entity": "Sixteen Kingdoms",
+    "entity_ko": "오호십육국",
+    "data_from": "AD 400",
+    "data_until": "AD 400",
+    "actual_from": "AD 304",
+    "actual_until": "AD 439",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 304년 ~ AD 439년 입니다. 데이터는 AD 400년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Song Dynasty",
+    "entity_ko": "송나라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 960",
+    "actual_until": "AD 1279",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 960년 ~ AD 1279년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Sui Dynasty",
+    "entity_ko": "수나라",
+    "data_from": "AD 600",
+    "data_until": "AD 700",
+    "actual_from": "AD 581",
+    "actual_until": "AD 618",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 AD 581년 ~ AD 618년 입니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Tang Dynasty",
+    "entity_ko": "당나라",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 618",
+    "actual_until": "AD 907",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 618년 ~ AD 907년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Tibetan Empire",
+    "entity_ko": "토번 제국",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 618",
+    "actual_until": "AD 842",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 618년 ~ AD 842년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Tiwanaku Empire",
+    "entity_ko": "티와나쿠 제국",
+    "data_from": "AD 600",
+    "data_until": "AD 1200",
+    "actual_from": "c. AD 500",
+    "actual_until": "c. AD 1000",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 500년 ~ AD 1000년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Toltec Empire",
+    "entity_ko": "톨텍 제국",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "c. AD 900",
+    "actual_until": "c. AD 1168",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 900년 ~ AD 1168년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Tongan Empire",
+    "entity_ko": "통가 제국",
+    "data_from": "AD 500",
+    "data_until": "AD 1815",
+    "actual_from": "c. AD 950",
+    "actual_until": "AD 1865",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 950년 ~ AD 1865년 입니다. 데이터 시작이 너무 이릅니다."
+  },
+  {
+    "entity": "Umayyad Caliphate",
+    "entity_ko": "우마이야 칼리프국",
+    "data_from": "AD 700",
+    "data_until": "AD 700",
+    "actual_from": "AD 661",
+    "actual_until": "AD 750",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 661년 ~ AD 750년 입니다. 데이터는 AD 700년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Unified Silla",
+    "entity_ko": "통일신라",
+    "data_from": "BC 1",
+    "data_until": "AD 900",
+    "actual_from": "AD 668",
+    "actual_until": "AD 935",
+    "status": "wrong_both",
+    "note": "통일신라의 실제 존속 기간은 AD 668년 ~ AD 935년 입니다. 데이터 기간은 신라 또는 다른 한국의 초기 국가와 혼동된 것으로 보이며 완전히 잘못되었습니다."
+  },
+  {
+    "entity": "Vandal Kingdom",
+    "entity_ko": "반달 왕국",
+    "data_from": "AD 500",
+    "data_until": "AD 500",
+    "actual_from": "AD 435",
+    "actual_until": "AD 534",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 435년 ~ AD 534년 입니다. 데이터는 AD 500년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Visigothic Kingdom",
+    "entity_ko": "서고트 왕국",
+    "data_from": "AD 400",
+    "data_until": "AD 500",
+    "actual_from": "AD 418",
+    "actual_until": "AD 711",
+    "status": "gap",
+    "note": "실제 존속 기간은 AD 418년 ~ AD 711년 입니다. 데이터는 두 개의 분리된 기간(AD 400-500, AD 600-700)을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Visigothic Kingdom",
+    "entity_ko": "서고트 왕국",
+    "data_from": "AD 600",
+    "data_until": "AD 700",
+    "actual_from": "AD 418",
+    "actual_until": "AD 711",
+    "status": "gap",
+    "note": "실제 존속 기간은 AD 418년 ~ AD 711년 입니다. 데이터는 두 개의 분리된 기간(AD 400-500, AD 600-700)을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Wari Empire",
+    "entity_ko": "와리 제국",
+    "data_from": "AD 600",
+    "data_until": "AD 1200",
+    "actual_from": "c. AD 600",
+    "actual_until": "c. AD 1000",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 대략 AD 600년 ~ AD 1000년 입니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Western Roman Empire",
+    "entity_ko": "서로마 제국",
+    "data_from": "AD 400",
+    "data_until": "AD 500",
+    "actual_from": "AD 395",
+    "actual_until": "AD 476",
+    "status": "correct",
+    "note": "실제 존속 기간은 AD 395년 ~ AD 476년 입니다. 데이터 기간은 실제 기간을 합리적으로 포함합니다."
+  },
+  {
+    "entity": "Ainu",
+    "entity_ko": "아이누",
+    "data_from": "BC 3000",
+    "data_until": "AD 1700",
+    "actual_from": "BC 10000",
+    "actual_until": "현재",
+    "status": "wrong_both",
+    "note": "아이누는 통일된 국가가 아닌 원주민족입니다. 문화는 수천 년 동안 존재했습니다. 데이터 기간은 너무 광범위하며 정치적 실체로 보기 어렵습니다."
+  },
+  {
+    "entity": "Alwa",
+    "entity_ko": "알와",
+    "data_from": "AD 600",
+    "data_until": "AD 1500",
+    "actual_from": "c. AD 500",
+    "actual_until": "AD 1504",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 500년 ~ AD 1504년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Annam",
+    "entity_ko": "아나므",
+    "data_from": "AD 1000",
+    "data_until": "AD 1880",
+    "actual_from": "AD 938",
+    "actual_until": "AD 1804",
+    "status": "wrong_both",
+    "note": "안남은 중국의 베트남 북부 명칭입니다. 독립 국가인 대월(Đại Việt)은 AD 938년 ~ AD 1804년에 존재했습니다. 데이터 기간은 용어 사용이 부정확하며, 스냅샷에 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Aragon",
+    "entity_ko": "아라곤",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1035",
+    "actual_until": "AD 1716",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 1035년 ~ AD 1716년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Arakan",
+    "entity_ko": "아라칸",
+    "data_from": "BC 200",
+    "data_until": "AD 1815",
+    "actual_from": "c. AD 327",
+    "actual_until": "AD 1785",
+    "status": "gap",
+    "note": "다양한 아라칸 왕국이 존재했습니다. 데이터 기간은 너무 광범위하며, 스냅샷에 AD 100년에서 AD 600년, AD 900년에서 AD 1492년까지의 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Armenia",
+    "entity_ko": "아르메니아",
+    "data_from": "BC 323",
+    "data_until": "AD 1200",
+    "actual_from": "BC 190",
+    "actual_until": "AD 1375",
+    "status": "gap",
+    "note": "다양한 아르메니아 왕국/국가가 존재했습니다. 데이터 기간은 너무 광범위하며, 스냅샷에 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Asturias",
+    "entity_ko": "아스투리아스",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 718",
+    "actual_until": "AD 925",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 718년 ~ AD 925년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Avars",
+    "entity_ko": "아바르",
+    "data_from": "AD 600",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 567",
+    "actual_until": "c. AD 822",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 대략 AD 567년 ~ AD 822년 입니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Axum",
+    "entity_ko": "악숨",
+    "data_from": "BC 1",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 100",
+    "actual_until": "c. AD 940",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 100년 ~ AD 940년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Bantu",
+    "entity_ko": "반투",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "BC 3000",
+    "actual_until": "현재",
+    "status": "wrong_both",
+    "note": "반투는 통일된 국가가 아닌 언어 집단 및 이주를 지칭합니다. 데이터 기간은 너무 광범위하며 정치적 실체로 보기 어렵습니다."
+  },
+  {
+    "entity": "Brittany",
+    "entity_ko": "브르타뉴",
+    "data_from": "AD 800",
+    "data_until": "AD 1530",
+    "actual_from": "c. AD 939",
+    "actual_until": "AD 1532",
+    "status": "wrong_start",
+    "note": "브르타뉴 공국의 실제 존속 기간은 대략 AD 939년 ~ AD 1532년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Bulgars",
+    "entity_ko": "불가르",
+    "data_from": "AD 600",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 632",
+    "actual_until": "AD 1236",
+    "status": "wrong_end",
+    "note": "불가르족은 여러 국가를 형성했습니다. 데이터 종료가 제1차 불가리아 제국(AD 1018년)과 볼가 불가르(AD 1236년)보다 이릅니다."
+  },
+  {
+    "entity": "Castile",
+    "entity_ko": "카스티야",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 9세기",
+    "actual_until": "AD 1715",
+    "status": "wrong_start",
+    "note": "카스티야 백국은 9세기부터, 카스티야 왕국은 AD 1065년부터 존재했습니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Chalukya",
+    "entity_ko": "찰루키아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1000",
+    "actual_from": "AD 973",
+    "actual_until": "AD 1189",
+    "status": "wrong_both",
+    "note": "서찰루키아 제국의 실제 존속 기간은 AD 973년 ~ AD 1189년 입니다. 데이터는 AD 1000년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Champa",
+    "entity_ko": "참파",
+    "data_from": "AD 500",
+    "data_until": "AD 1500",
+    "actual_from": "c. AD 192",
+    "actual_until": "AD 1832",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 192년 ~ AD 1832년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Chenla",
+    "entity_ko": "진랍",
+    "data_from": "AD 600",
+    "data_until": "AD 800",
+    "actual_from": "c. AD 550",
+    "actual_until": "c. AD 800",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 550년 ~ AD 800년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Chola",
+    "entity_ko": "촐라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "c. BC 300",
+    "actual_until": "AD 1279",
+    "status": "gap",
+    "note": "촐라 왕조는 초기 촐라와 제국 촐라로 나뉩니다. 데이터는 여러 분리된 기간을 보여주며 실제 기간을 정확히 반영하지 못합니다."
+  },
+  {
+    "entity": "Chola",
+    "entity_ko": "촐라",
+    "data_from": "AD 500",
+    "data_until": "AD 1100",
+    "actual_from": "c. BC 300",
+    "actual_until": "AD 1279",
+    "status": "gap",
+    "note": "촐라 왕조는 초기 촐라와 제국 촐라로 나뉩니다. 데이터는 여러 분리된 기간을 보여주며 실제 기간을 정확히 반영하지 못합니다."
+  },
+  {
+    "entity": "Chola",
+    "entity_ko": "촐라",
+    "data_from": "AD 200",
+    "data_until": "AD 200",
+    "actual_from": "c. BC 300",
+    "actual_until": "AD 1279",
+    "status": "gap",
+    "note": "촐라 왕조는 초기 촐라와 제국 촐라로 나뉩니다. 데이터는 여러 분리된 기간을 보여주며 실제 기간을 정확히 반영하지 못합니다."
+  },
+  {
+    "entity": "Corsica",
+    "entity_ko": "코르시카",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "AD 828",
+    "actual_until": "AD 1769",
+    "status": "extra",
+    "note": "코르시카는 이 기간 동안 피사, 제노바 등 다양한 외세의 지배를 받았습니다. 독립적인 통일 국가가 아니었습니다."
+  },
+  {
+    "entity": "Croatia",
+    "entity_ko": "크로아티아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 925",
+    "actual_until": "AD 1102",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 925년 ~ AD 1102년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Cyprus",
+    "entity_ko": "키프로스",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "AD 7세기",
+    "actual_until": "AD 1489",
+    "status": "wrong_both",
+    "note": "키프로스는 이 기간 동안 비잔틴 제국의 지배를 받다가 AD 1192년부터 키프로스 왕국이 되었습니다. 데이터는 독립적인 통일 국가로 잘못 표현하고 있습니다."
+  },
+  {
+    "entity": "Danes",
+    "entity_ko": "덴마크인",
+    "data_from": "AD 600",
+    "data_until": "AD 900",
+    "actual_from": "AD 8세기",
+    "actual_until": "현재",
+    "status": "wrong_end",
+    "note": "덴마크인들은 8세기부터 덴마크 왕국을 형성하여 현재까지 이어지고 있습니다. 데이터 종료가 이릅니다."
+  },
+  {
+    "entity": "Denmark-Norway",
+    "entity_ko": "덴마크-노르웨이",
+    "data_from": "AD 1000",
+    "data_until": "AD 1800",
+    "actual_from": "AD 1536",
+    "actual_until": "AD 1814",
+    "status": "wrong_start",
+    "note": "덴마크-노르웨이 연합은 AD 1536년에 공식적으로 수립되었습니다. 데이터 시작이 너무 이릅니다. 스냅샷에 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Dvaravati",
+    "entity_ko": "드바라바티",
+    "data_from": "AD 600",
+    "data_until": "AD 1000",
+    "actual_from": "c. AD 6세기",
+    "actual_until": "AD 11세기",
+    "status": "correct",
+    "note": "실제 존속 기간은 대략 6세기 ~ 11세기 입니다. 데이터 기간은 합리적인 근사치입니다."
+  },
+  {
+    "entity": "East Java",
+    "entity_ko": "동자바",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 8세기",
+    "actual_until": "AD 1527",
+    "status": "wrong_start",
+    "note": "동자바에는 메당 왕국(8-10세기), 카후리판(1000년대), 케디리(AD 1042-1222) 등 다양한 왕국이 존재했습니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Eastern Jin",
+    "entity_ko": "동진",
+    "data_from": "AD 300",
+    "data_until": "AD 400",
+    "actual_from": "AD 317",
+    "actual_until": "AD 420",
+    "status": "gap",
+    "note": "실제 존속 기간은 AD 317년 ~ AD 420년 입니다. 데이터는 두 개의 분리된 기간(AD 300-400, AD 500)을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Eastern Jin",
+    "entity_ko": "동진",
+    "data_from": "AD 500",
+    "data_until": "AD 500",
+    "actual_from": "AD 317",
+    "actual_until": "AD 420",
+    "status": "gap",
+    "note": "실제 존속 기간은 AD 317년 ~ AD 420년 입니다. 데이터는 두 개의 분리된 기간(AD 300-400, AD 500)을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Emirate of Cordoba",
+    "entity_ko": "코르도바 토후국",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 756",
+    "actual_until": "AD 929",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 756년 ~ AD 929년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "England",
+    "entity_ko": "잉글랜드",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 927",
+    "actual_until": "AD 1707",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 927년 ~ AD 1707년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Essex",
+    "entity_ko": "에섹스",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 6세기",
+    "actual_until": "AD 825",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 6세기 ~ AD 825년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Franks",
+    "entity_ko": "프랑크족",
+    "data_from": "AD 400",
+    "data_until": "AD 500",
+    "actual_from": "AD 3세기",
+    "actual_until": "AD 843",
+    "status": "wrong_start",
+    "note": "프랑크족은 3세기부터 존재했습니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Georgia",
+    "entity_ko": "조지아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 1008",
+    "actual_until": "AD 1490",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 1008년 ~ AD 1490년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Ghana",
+    "entity_ko": "가나",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "c. AD 300",
+    "actual_until": "c. AD 1100",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 300년 ~ AD 1100년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Ghaznavid Emirate",
+    "entity_ko": "가즈나 왕조",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 977",
+    "actual_until": "AD 1186",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 977년 ~ AD 1186년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Great Zimbabwe",
+    "entity_ko": "그레이트 짐바브웨",
+    "data_from": "AD 1000",
+    "data_until": "AD 1400",
+    "actual_from": "c. AD 1100",
+    "actual_until": "AD 1450",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 1100년 ~ AD 1450년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Guanches",
+    "entity_ko": "과나체",
+    "data_from": "BC 1500",
+    "data_until": "AD 1815",
+    "actual_from": "BC 1000",
+    "actual_until": "AD 15세기",
+    "status": "wrong_both",
+    "note": "과나체는 통일된 국가가 아닌 카나리아 제도의 원주민족입니다. 데이터 기간은 너무 광범위하며 정치적 실체로 보기 어렵습니다."
+  },
+  {
+    "entity": "Göktürk Khaganate",
+    "entity_ko": "돌궐",
+    "data_from": "AD 600",
+    "data_until": "AD 700",
+    "actual_from": "AD 552",
+    "actual_until": "AD 744",
+    "status": "wrong_both",
+    "note": "제1돌궐 제국은 AD 552년 ~ AD 659년, 제2돌궐 제국은 AD 682년 ~ AD 744년 입니다. 데이터 기간은 너무 짧고 정확하지 않습니다."
+  },
+  {
+    "entity": "Hadramaut",
+    "entity_ko": "하드라마우트",
+    "data_from": "BC 323",
+    "data_until": "AD 1700",
+    "actual_from": "c. BC 8세기",
+    "actual_until": "AD 4세기",
+    "status": "gap",
+    "note": "하드라마우트 왕국은 대략 BC 8세기 ~ AD 4세기까지 존재했습니다. 데이터 기간은 너무 광범위하며, 스냅샷에 AD 400년에서 AD 1000년까지의 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Hainan",
+    "entity_ko": "하이난",
+    "data_from": "BC 1",
+    "data_until": "AD 1400",
+    "actual_from": "BC 110",
+    "actual_until": "AD 1912",
+    "status": "wrong_both",
+    "note": "하이난은 대부분 중국 왕조의 지배를 받거나 지역 정치체였습니다. 이 기간 동안 단일한 독립 국가가 아니었습니다."
+  },
+  {
+    "entity": "Han Zhao",
+    "entity_ko": "한조",
+    "data_from": "AD 300",
+    "data_until": "AD 300",
+    "actual_from": "AD 304",
+    "actual_until": "AD 329",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 304년 ~ AD 329년 입니다. 데이터는 AD 300년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Hejaz",
+    "entity_ko": "헤자즈",
+    "data_from": "AD 600",
+    "data_until": "AD 700",
+    "actual_from": "AD 622",
+    "actual_until": "AD 1925",
+    "status": "extra",
+    "note": "헤자즈는 지역 명칭이며, 이 기간 동안 초기 이슬람 칼리프국의 지배를 받았습니다. 독립적인 국가가 아니었습니다."
+  },
+  {
+    "entity": "Hindu States",
+    "entity_ko": "힌두 국가",
+    "data_from": "AD 700",
+    "data_until": "AD 900",
+    "actual_from": "AD 600",
+    "actual_until": "AD 1800",
+    "status": "wrong_both",
+    "note": "힌두 국가는 광범위한 용어로, 다양한 힌두계 국가가 훨씬 이전부터 존재했으며 이후에도 계속되었습니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Ireland",
+    "entity_ko": "아일랜드",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 5세기",
+    "actual_until": "AD 1169",
+    "status": "wrong_both",
+    "note": "아일랜드는 이 기간 동안 통일된 국가가 아닌 다양한 게일 왕국으로 구성되었습니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Islamic City-States",
+    "entity_ko": "이슬람 도시국가",
+    "data_from": "AD 1000",
+    "data_until": "AD 1600",
+    "actual_from": "AD 7세기",
+    "actual_until": "AD 19세기",
+    "status": "wrong_both",
+    "note": "이슬람 도시국가는 다양한 지역에서 존재했던 여러 정치체를 지칭하는 일반적인 용어입니다. 단일한 실체가 아니며 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Japan",
+    "entity_ko": "일본",
+    "data_from": "AD 800",
+    "data_until": "AD 1815",
+    "actual_from": "BC 660",
+    "actual_until": "현재",
+    "status": "gap",
+    "note": "일본은 이 기간 동안 지속적인 국가로 존재했습니다. 데이터는 AD 800년만 스냅샷으로 제공하고 AD 800년에서 AD 1492년까지의 공백이 의심되어 실제 기간을 제대로 반영하지 못합니다."
+  },
+  {
+    "entity": "Japan (Fujiwara)",
+    "entity_ko": "일본 (후지와라)",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 9세기",
+    "actual_until": "AD 12세기",
+    "status": "wrong_both",
+    "note": "후지와라 씨는 헤이안 시대(AD 794년 ~ AD 1185년)에 궁정 정치를 지배한 강력한 씨족이었지, 별도의 제국이나 왕국이 아니었습니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Kalinga",
+    "entity_ko": "칼링가",
+    "data_from": "BC 1",
+    "data_until": "AD 1000",
+    "actual_from": "BC 4세기",
+    "actual_until": "AD 11세기",
+    "status": "gap",
+    "note": "칼링가는 고대 인도 왕국으로, BC 4세기부터 11세기까지 존재했습니다. 데이터 기간은 너무 광범위하며, 스냅샷에 AD 300년에서 AD 900년까지의 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Kanem",
+    "entity_ko": "카넴",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "c. AD 700",
+    "actual_until": "c. AD 1376",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 700년 ~ AD 1376년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Kent",
+    "entity_ko": "켄트",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 450",
+    "actual_until": "AD 825",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 450년 ~ AD 825년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Khazars",
+    "entity_ko": "하자르",
+    "data_from": "AD 600",
+    "data_until": "AD 1000",
+    "actual_from": "c. AD 650",
+    "actual_until": "c. AD 969",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 650년 ~ AD 969년 입니다. 데이터 시작이 이르고 종료가 늦습니다."
+  },
+  {
+    "entity": "Khoisan",
+    "entity_ko": "코이산",
+    "data_from": "BC 1500",
+    "data_until": "AD 1500",
+    "actual_from": "BC 20000",
+    "actual_until": "현재",
+    "status": "wrong_both",
+    "note": "코이산은 통일된 국가가 아닌 남아프리카의 원주민족입니다. 문화는 수만 년 동안 존재했습니다. 데이터 기간은 너무 광범위하며 정치적 실체로 보기 어렵습니다."
+  },
+  {
+    "entity": "Kievan Rus",
+    "entity_ko": "키예프 루스",
+    "data_from": "AD 900",
+    "data_until": "AD 1000",
+    "actual_from": "c. AD 882",
+    "actual_until": "AD 1240",
+    "status": "gap",
+    "note": "실제 존속 기간은 대략 AD 882년 ~ AD 1240년 입니다. 데이터는 두 개의 분리된 기간(AD 800년, AD 900-1000년)을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Kievan Rus",
+    "entity_ko": "키예프 루스",
+    "data_from": "AD 800",
+    "data_until": "AD 800",
+    "actual_from": "c. AD 882",
+    "actual_until": "AD 1240",
+    "status": "gap",
+    "note": "실제 존속 기간은 대략 AD 882년 ~ AD 1240년 입니다. 데이터는 두 개의 분리된 기간(AD 800년, AD 900-1000년)을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Kushan Principalities",
+    "entity_ko": "쿠샨 소국",
+    "data_from": "AD 500",
+    "data_until": "AD 500",
+    "actual_from": "c. AD 375",
+    "actual_until": "AD 6세기",
+    "status": "wrong_both",
+    "note": "쿠샨 제국 멸망 후 다양한 쿠샨 또는 에프탈의 영향을 받은 소국들이 존재했습니다. 데이터는 AD 500년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Leon",
+    "entity_ko": "레온",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 910",
+    "actual_until": "AD 1230",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 910년 ~ AD 1230년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Lombard Duchies",
+    "entity_ko": "롬바르드 공국",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 6세기",
+    "actual_until": "AD 11세기",
+    "status": "wrong_both",
+    "note": "롬바르드 공국(베네벤토, 스폴레토)은 6세기부터 존재했으며, 베네벤토는 11세기까지 지속되었습니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Lombard Principalities",
+    "entity_ko": "롬바르드 공국",
+    "data_from": "AD 600",
+    "data_until": "AD 700",
+    "actual_from": "AD 568",
+    "actual_until": "AD 774",
+    "status": "wrong_both",
+    "note": "롬바르드 왕국의 실제 존속 기간은 AD 568년 ~ AD 774년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Madagascar",
+    "entity_ko": "마다가스카르",
+    "data_from": "AD 1000",
+    "data_until": "AD 1880",
+    "actual_from": "AD 7세기",
+    "actual_until": "AD 1897",
+    "status": "wrong_both",
+    "note": "마다가스카르에는 이 기간 동안 다양한 지역 정치체와 왕국이 존재했습니다. 단일한 통일 국가가 아니었습니다."
+  },
+  {
+    "entity": "Magadha",
+    "entity_ko": "마가다",
+    "data_from": "BC 500",
+    "data_until": "AD 200",
+    "actual_from": "c. BC 684",
+    "actual_until": "BC 320",
+    "status": "gap",
+    "note": "마가다는 고대 인도 왕국으로, 대략 BC 684년 ~ BC 320년대까지 존재했습니다. 데이터 기간은 너무 광범위하며, 스냅샷에 BC 323년에서 AD 200년까지의 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Magyars",
+    "entity_ko": "마자르",
+    "data_from": "AD 700",
+    "data_until": "AD 1000",
+    "actual_from": "c. AD 895",
+    "actual_until": "AD 1000",
+    "status": "wrong_start",
+    "note": "마자르족은 9세기 후반 카르파티아 분지에 정착하여 헝가리 공국(대략 AD 895년 ~ AD 1000년)을 형성했습니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Makuria",
+    "entity_ko": "마쿠리아",
+    "data_from": "AD 500",
+    "data_until": "AD 1400",
+    "actual_from": "c. AD 340",
+    "actual_until": "AD 1312",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 340년 ~ AD 1312년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Mali",
+    "entity_ko": "말리",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "c. AD 1235",
+    "actual_until": "AD 1670",
+    "status": "wrong_start",
+    "note": "말리 제국의 실제 존속 기간은 대략 AD 1235년 ~ AD 1670년 입니다. 데이터 시작이 너무 이릅니다."
+  },
+  {
+    "entity": "Mataram",
+    "entity_ko": "마타람",
+    "data_from": "AD 600",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 732",
+    "actual_until": "c. AD 1006",
+    "status": "wrong_start",
+    "note": "메당 왕국(마타람 왕국으로도 알려짐)의 실제 존속 기간은 대략 AD 732년 ~ AD 1006년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Maya City-States",
+    "entity_ko": "마야 도시국가",
+    "data_from": "AD 800",
+    "data_until": "AD 1500",
+    "actual_from": "c. AD 250",
+    "actual_until": "AD 1539",
+    "status": "wrong_start",
+    "note": "마야 도시국가는 고전기(대략 AD 250년 ~ AD 900년)부터 번성했습니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Maya States",
+    "entity_ko": "마야 국가",
+    "data_from": "BC 323",
+    "data_until": "AD 400",
+    "actual_from": "c. BC 2000",
+    "actual_until": "AD 1539",
+    "status": "gap",
+    "note": "마야 문명은 대략 BC 2000년부터 번성했습니다. 데이터는 두 개의 분리된 기간을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Maya States",
+    "entity_ko": "마야 국가",
+    "data_from": "AD 500",
+    "data_until": "AD 700",
+    "actual_from": "c. BC 2000",
+    "actual_until": "AD 1539",
+    "status": "gap",
+    "note": "마야 문명은 대략 BC 2000년부터 번성했습니다. 데이터는 두 개의 분리된 기간을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Mercia",
+    "entity_ko": "머시아",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 6세기",
+    "actual_until": "AD 879",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 6세기 ~ AD 879년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Meroe",
+    "entity_ko": "메로에",
+    "data_from": "BC 500",
+    "data_until": "AD 400",
+    "actual_from": "c. BC 300",
+    "actual_until": "AD 350",
+    "status": "wrong_both",
+    "note": "쿠시 왕국(메로에 시대)의 실제 존속 기간은 대략 BC 300년 ~ AD 350년 입니다. 데이터 시작이 이르고 종료가 늦습니다."
+  },
+  {
+    "entity": "Mesoamerican States",
+    "entity_ko": "메소아메리카 국가",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "BC 2000",
+    "actual_until": "AD 16세기",
+    "status": "wrong_both",
+    "note": "메소아메리카에는 고대부터 스페인 정복까지 수많은 국가가 존재했습니다. 데이터 기간은 너무 짧고 일반적인 용어입니다."
+  },
+  {
+    "entity": "Mixtecs",
+    "entity_ko": "믹스텍",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "c. BC 1500",
+    "actual_until": "AD 16세기",
+    "status": "wrong_both",
+    "note": "믹스텍 문명은 대략 BC 1500년부터 번성했으며, 도시국가는 대략 AD 900년부터 두드러졌습니다. 데이터 시작이 이르고 종료가 이릅니다."
+  },
+  {
+    "entity": "Moche",
+    "entity_ko": "모체",
+    "data_from": "BC 1",
+    "data_until": "AD 700",
+    "actual_from": "c. AD 100",
+    "actual_until": "AD 800",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 100년 ~ AD 800년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Mon",
+    "entity_ko": "몬",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 6세기",
+    "actual_until": "AD 18세기",
+    "status": "wrong_start",
+    "note": "몬 왕국은 6세기부터 존재했습니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Monte Alban",
+    "entity_ko": "몬테알반",
+    "data_from": "BC 300",
+    "data_until": "AD 400",
+    "actual_from": "c. BC 500",
+    "actual_until": "c. AD 800",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 BC 500년 ~ AD 800년 입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Nanzhao",
+    "entity_ko": "남조",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "AD 737",
+    "actual_until": "AD 902",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 AD 737년 ~ AD 902년 입니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Navarre",
+    "entity_ko": "나바라",
+    "data_from": "AD 1000",
+    "data_until": "AD 1500",
+    "actual_from": "AD 824",
+    "actual_until": "AD 1620",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 824년 ~ AD 1620년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Nazca",
+    "entity_ko": "나스카",
+    "data_from": "BC 100",
+    "data_until": "AD 500",
+    "actual_from": "c. BC 100",
+    "actual_until": "c. AD 800",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 대략 BC 100년 ~ AD 800년 입니다. 데이터 종료가 이릅니다."
+  },
+  {
+    "entity": "Norsemen",
+    "entity_ko": "노르만",
+    "data_from": "AD 800",
+    "data_until": "AD 800",
+    "actual_from": "AD 8세기 후반",
+    "actual_until": "AD 11세기",
+    "status": "wrong_both",
+    "note": "노르만족은 통일된 국가가 아닌 민족입니다. 활동 기간은 8세기 후반부터 11세기까지였습니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Northern Liang",
+    "entity_ko": "북량",
+    "data_from": "AD 400",
+    "data_until": "AD 400",
+    "actual_from": "AD 397",
+    "actual_until": "AD 439",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 397년 ~ AD 439년 입니다. 데이터는 AD 400년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Northern Wei",
+    "entity_ko": "북위",
+    "data_from": "AD 500",
+    "data_until": "AD 500",
+    "actual_from": "AD 386",
+    "actual_until": "AD 535",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 386년 ~ AD 535년 입니다. 데이터는 AD 500년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Northumbria",
+    "entity_ko": "노섬브리아",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 653",
+    "actual_until": "AD 867",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 653년 ~ AD 867년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Orissa",
+    "entity_ko": "오리사",
+    "data_from": "AD 1000",
+    "data_until": "AD 1600",
+    "actual_from": "AD 4세기",
+    "actual_until": "AD 18세기",
+    "status": "wrong_start",
+    "note": "오리사 지역에는 4세기부터 다양한 왕국이 존재했습니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Pala",
+    "entity_ko": "팔라",
+    "data_from": "AD 700",
+    "data_until": "AD 1100",
+    "actual_from": "c. AD 750",
+    "actual_until": "AD 1161",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 750년 ~ AD 1161년 입니다. 데이터 시작이 이릅니다."
+  },
+  {
+    "entity": "Pallava",
+    "entity_ko": "팔라바",
+    "data_from": "AD 500",
+    "data_until": "AD 700",
+    "actual_from": "c. AD 275",
+    "actual_until": "AD 897",
+    "status": "gap",
+    "note": "실제 존속 기간은 대략 AD 275년 ~ AD 897년 입니다. 데이터는 여러 분리된 기간을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Pallava",
+    "entity_ko": "팔라바",
+    "data_from": "AD 800",
+    "data_until": "AD 800",
+    "actual_from": "c. AD 275",
+    "actual_until": "AD 897",
+    "status": "gap",
+    "note": "실제 존속 기간은 대략 AD 275년 ~ AD 897년 입니다. 데이터는 여러 분리된 기간을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Pallava",
+    "entity_ko": "팔라바",
+    "data_from": "AD 900",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 275",
+    "actual_until": "AD 897",
+    "status": "gap",
+    "note": "실제 존속 기간은 대략 AD 275년 ~ AD 897년 입니다. 데이터는 여러 분리된 기간을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Papal States",
+    "entity_ko": "교황령",
+    "data_from": "AD 800",
+    "data_until": "AD 1815",
+    "actual_from": "AD 756",
+    "actual_until": "AD 1870",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 756년 ~ AD 1870년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Persia",
+    "entity_ko": "페르시아",
+    "data_from": "AD 400",
+    "data_until": "AD 1880",
+    "actual_from": "BC 550",
+    "actual_until": "현재",
+    "status": "gap",
+    "note": "페르시아는 지역과 여러 제국을 지칭합니다. AD 400년에는 사산 제국이 존재했습니다. 데이터 기간은 너무 광범위하며, 스냅샷에 AD 400년에서 AD 1783년까지의 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Picts",
+    "entity_ko": "픽트족",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 3세기",
+    "actual_until": "AD 9세기 중반",
+    "status": "wrong_end",
+    "note": "픽트족은 9세기 중반 스코트족과 합쳐져 알바 왕국을 형성했습니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Poland",
+    "entity_ko": "폴란드",
+    "data_from": "AD 1000",
+    "data_until": "AD 1783",
+    "actual_from": "c. AD 966",
+    "actual_until": "AD 1795",
+    "status": "wrong_start",
+    "note": "폴란드 공국은 대략 AD 966년부터, 폴란드 왕국은 AD 1025년부터 존재했습니다. 데이터 시작이 늦습니다. 스냅샷에 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Polynesia",
+    "entity_ko": "폴리네시아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1880",
+    "actual_from": "BC 1000",
+    "actual_until": "현재",
+    "status": "wrong_both",
+    "note": "폴리네시아는 지리적 지역과 원주민족을 지칭합니다. 단일한 통일 국가가 아니었습니다. 데이터 기간은 너무 광범위하며 정치적 실체로 보기 어렵습니다."
+  },
+  {
+    "entity": "Pyu",
+    "entity_ko": "퓨",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "c. BC 2세기",
+    "actual_until": "AD 11세기",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 BC 2세기 ~ AD 11세기 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Rajput States",
+    "entity_ko": "라지푸트 국가",
+    "data_from": "AD 800",
+    "data_until": "AD 800",
+    "actual_from": "c. AD 700",
+    "actual_until": "AD 1800",
+    "status": "wrong_both",
+    "note": "라지푸트 국가는 7세기부터 수세기 동안 존재했던 다양한 국가들을 지칭하는 광범위한 용어입니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Rashtrakuta",
+    "entity_ko": "라슈트라쿠타",
+    "data_from": "AD 800",
+    "data_until": "AD 800",
+    "actual_from": "c. AD 753",
+    "actual_until": "AD 982",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 753년 ~ AD 982년 입니다. 데이터는 AD 800년만 표시되어 있어 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Rouran Khaganate",
+    "entity_ko": "유연",
+    "data_from": "AD 400",
+    "data_until": "AD 500",
+    "actual_from": "AD 330",
+    "actual_until": "AD 555",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 AD 330년 ~ AD 555년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Sardinia",
+    "entity_ko": "사르데냐",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 9세기",
+    "actual_until": "AD 1720",
+    "status": "wrong_both",
+    "note": "사르데냐는 9-10세기부터 4개의 주디카티(왕국)로 나뉘어 존재했으며, 이후 아라곤/스페인의 지배를 받았습니다. 단일한 통일 국가가 아니었습니다."
+  },
+  {
+    "entity": "Scotland",
+    "entity_ko": "스코틀랜드",
+    "data_from": "AD 1000",
+    "data_until": "AD 1600",
+    "actual_from": "AD 843",
+    "actual_until": "AD 1707",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 843년 ~ AD 1707년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Scots",
+    "entity_ko": "스코트족",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 6세기",
+    "actual_until": "AD 9세기 중반",
+    "status": "wrong_end",
+    "note": "스코트족은 9세기 중반 픽트족과 합쳐져 알바 왕국을 형성했습니다. 데이터 종료가 늦습니다."
+  },
+  {
+    "entity": "Scythians",
+    "entity_ko": "스키타이",
+    "data_from": "BC 400",
+    "data_until": "AD 100",
+    "actual_from": "c. BC 9세기",
+    "actual_until": "AD 4세기",
+    "status": "wrong_both",
+    "note": "스키타이족은 대략 BC 9세기 ~ AD 4세기까지 존재했던 유목 민족입니다. 데이터 시작이 늦고 종료가 이릅니다."
+  },
+  {
+    "entity": "Serbia",
+    "entity_ko": "세르비아",
+    "data_from": "AD 900",
+    "data_until": "AD 1880",
+    "actual_from": "AD 7세기",
+    "actual_until": "AD 1918",
+    "status": "wrong_start",
+    "note": "다양한 세르비아 공국이 7세기부터 존재했습니다. 데이터 시작이 늦습니다. 스냅샷에 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Sinhalese",
+    "entity_ko": "싱할라",
+    "data_from": "BC 500",
+    "data_until": "AD 700",
+    "actual_from": "BC 4세기",
+    "actual_until": "현재",
+    "status": "wrong_start",
+    "note": "싱할라족은 민족 집단입니다. 다양한 싱할라 왕국이 BC 4세기부터 존재했습니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Southern Xiongnu",
+    "entity_ko": "남흉노",
+    "data_from": "AD 100",
+    "data_until": "AD 200",
+    "actual_from": "c. AD 48",
+    "actual_until": "AD 304",
+    "status": "wrong_end",
+    "note": "실제 존속 기간은 대략 AD 48년 ~ AD 304년 입니다. 데이터 종료가 이릅니다."
+  },
+  {
+    "entity": "Srivijaya",
+    "entity_ko": "스리비자야",
+    "data_from": "AD 800",
+    "data_until": "AD 1400",
+    "actual_from": "c. AD 670",
+    "actual_until": "c. AD 1377",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 670년 ~ AD 1377년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Sweden",
+    "entity_ko": "스웨덴",
+    "data_from": "AD 1000",
+    "data_until": "AD 1800",
+    "actual_from": "c. AD 970",
+    "actual_until": "현재",
+    "status": "gap",
+    "note": "스웨덴 왕국은 대략 AD 970년부터 존재했습니다. 데이터는 두 개의 분리된 기간을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Sweden",
+    "entity_ko": "스웨덴",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 970",
+    "actual_until": "현재",
+    "status": "gap",
+    "note": "스웨덴 왕국은 대략 AD 970년부터 존재했습니다. 데이터는 두 개의 분리된 기간을 보여주며 중간에 공백이 있고 전체 기간을 포괄하지 못합니다."
+  },
+  {
+    "entity": "Teotihuacan",
+    "entity_ko": "테오티우아칸",
+    "data_from": "BC 300",
+    "data_until": "AD 400",
+    "actual_from": "c. BC 100",
+    "actual_until": "c. AD 650",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 BC 100년 ~ AD 650년 입니다. 데이터 시작이 이르고 종료가 이릅니다."
+  },
+  {
+    "entity": "Tibet",
+    "entity_ko": "티베트",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "AD 618",
+    "actual_until": "AD 842",
+    "status": "wrong_start",
+    "note": "티베트 제국의 실제 존속 기간은 AD 618년 ~ AD 842년 입니다. 데이터 시작이 너무 늦습니다."
+  },
+  {
+    "entity": "Venice",
+    "entity_ko": "베네치아",
+    "data_from": "AD 1000",
+    "data_until": "AD 1715",
+    "actual_from": "c. AD 697",
+    "actual_until": "AD 1797",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 AD 697년 ~ AD 1797년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Volga Bulgars",
+    "entity_ko": "볼가 불가르",
+    "data_from": "AD 800",
+    "data_until": "AD 1200",
+    "actual_from": "c. AD 7세기",
+    "actual_until": "AD 1236",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 대략 7세기 ~ AD 1236년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Welsh",
+    "entity_ko": "웨일스인",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "AD 5세기",
+    "actual_until": "AD 13세기",
+    "status": "wrong_both",
+    "note": "웨일스는 5세기부터 잉글랜드에 정복될 때까지 다양한 왕국으로 구성되었습니다. 단일한 통일 국가가 아니었습니다. 데이터 기간은 너무 짧습니다."
+  },
+  {
+    "entity": "Wessex",
+    "entity_ko": "웨섹스",
+    "data_from": "AD 800",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 519",
+    "actual_until": "AD 927",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 519년 ~ AD 927년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Western Xia",
+    "entity_ko": "서하",
+    "data_from": "AD 1000",
+    "data_until": "AD 1200",
+    "actual_from": "AD 1038",
+    "actual_until": "AD 1227",
+    "status": "wrong_start",
+    "note": "실제 존속 기간은 AD 1038년 ~ AD 1227년 입니다. 데이터 시작이 늦습니다."
+  },
+  {
+    "entity": "Yamato",
+    "entity_ko": "야마토",
+    "data_from": "AD 500",
+    "data_until": "AD 900",
+    "actual_from": "c. AD 250",
+    "actual_until": "AD 710",
+    "status": "wrong_both",
+    "note": "야마토 시대의 실제 존속 기간은 대략 AD 250년 ~ AD 710년 입니다. 데이터 시작이 늦고 종료가 늦습니다."
+  },
+  {
+    "entity": "Yayoi",
+    "entity_ko": "야요이",
+    "data_from": "BC 400",
+    "data_until": "AD 100",
+    "actual_from": "c. BC 1000",
+    "actual_until": "AD 300",
+    "status": "wrong_both",
+    "note": "야요이 시대는 통일된 국가가 아닌 문화 시대입니다. 실제 존속 기간은 대략 BC 1000년 ~ AD 300년 입니다. 데이터 기간은 너무 짧고 스냅샷에 큰 공백이 있습니다."
+  },
+  {
+    "entity": "Yemen",
+    "entity_ko": "예멘",
+    "data_from": "AD 1000",
+    "data_until": "AD 1815",
+    "actual_from": "AD 819",
+    "actual_until": "AD 1962",
+    "status": "wrong_both",
+    "note": "예멘에는 이 기간 동안 다양한 왕조와 국가가 존재했습니다. 단일한 통일 국가가 아니었습니다."
+  },
+  {
+    "entity": "Yueban",
+    "entity_ko": "열반",
+    "data_from": "AD 100",
+    "data_until": "AD 400",
+    "actual_from": "c. AD 160",
+    "actual_until": "AD 490",
+    "status": "wrong_both",
+    "note": "실제 존속 기간은 대략 AD 160년 ~ AD 490년 입니다. 데이터 시작이 이르고 종료가 이릅니다."
+  },
+  {
+    "entity": "Silla",
+    "entity_ko": "신라",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "BC 57",
+    "actual_until": "AD 668",
+    "status": "missing",
+    "note": "통일신라 이전의 신라 왕국은 AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Kingdom of Denmark",
+    "entity_ko": "덴마크 왕국",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "c. AD 950",
+    "actual_until": "AD 1814",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Kingdom of Norway",
+    "entity_ko": "노르웨이 왕국",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "c. AD 872",
+    "actual_until": "AD 1397",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Kingdom of Hungary",
+    "entity_ko": "헝가리 왕국",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 1000",
+    "actual_until": "AD 1918",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Cao Wei",
+    "entity_ko": "조위",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 220",
+    "actual_until": "AD 265",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가(중국 삼국시대)이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Shu Han",
+    "entity_ko": "촉한",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 221",
+    "actual_until": "AD 263",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가(중국 삼국시대)이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Eastern Wu",
+    "entity_ko": "동오",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 229",
+    "actual_until": "AD 280",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가(중국 삼국시대)이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Western Jin Dynasty",
+    "entity_ko": "서진",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 265",
+    "actual_until": "AD 316",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Northern Dynasties",
+    "entity_ko": "북조",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 386",
+    "actual_until": "AD 589",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가(중국 남북조 시대)이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Southern Dynasties",
+    "entity_ko": "남조",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 420",
+    "actual_until": "AD 589",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가(중국 남북조 시대)이지만 목록에 없습니다."
+  },
+  {
+    "entity": "Goryeo",
+    "entity_ko": "고려",
+    "data_from": "N/A",
+    "data_until": "N/A",
+    "actual_from": "AD 918",
+    "actual_until": "AD 1392",
+    "status": "missing",
+    "note": "AD 3년 ~ AD 1003년 기간에 존재했던 주요 국가이지만 목록에 없습니다."
+  }
+]

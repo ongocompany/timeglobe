@@ -1,0 +1,142 @@
+[
+  {
+    "entity": "Koreans",
+    "entity_ko": "한국인",
+    "data_from": "BC 2000",
+    "data_until": "BC 2000",
+    "actual_from": "BC 2333",
+    "actual_until": "BC 108",
+    "status": "wrong_both",
+    "note": "BC 2000년에 '한국인'이라는 통일된 국가나 제국이 존재했다는 것은 시대착오적입니다. 만약 고조선을 의미한다면, 실제 시작(BC 2333)과 종료(BC 108) 기간이 데이터와 크게 다릅니다."
+  },
+  {
+    "entity": "Ainu",
+    "entity_ko": "아이누",
+    "data_from": "BC 3000",
+    "data_until": "AD 1700",
+    "actual_from": "BC 10000",
+    "actual_until": "Present",
+    "status": "correct",
+    "note": "아이누족의 조상(조몬인)의 존재는 BC 10000년경부터 시작되었으며, AD 1700년은 근대 일본의 동화 정책 이전의 시기로, 데이터 기간은 아이누족의 연속적인 존재를 합리적으로 포괄합니다."
+  },
+  {
+    "entity": "Dravidians",
+    "entity_ko": "드라비다",
+    "data_from": "BC 3000",
+    "data_until": "BC 700",
+    "actual_from": "BC 3000",
+    "actual_until": "Present",
+    "status": "wrong_end",
+    "note": "드라비다족과 드라비다어는 현재까지 존재합니다. BC 700년은 임의적인 종료 시점입니다."
+  },
+  {
+    "entity": "Egypt",
+    "entity_ko": "이집트",
+    "data_from": "BC 3000",
+    "data_until": "AD 1880",
+    "actual_from": "BC 3100",
+    "actual_until": "AD 1882",
+    "status": "correct",
+    "note": "통일 이집트의 시작(BC 3100년경)과 데이터 시작(BC 3000년)이 근접하며, AD 1880년은 영국 보호령 직전으로, 이집트라는 지정학적 실체의 연속성을 나타내는 합리적인 기간입니다."
+  },
+  {
+    "entity": "Elam",
+    "entity_ko": "엘람",
+    "data_from": "BC 3000",
+    "data_until": "BC 700",
+    "actual_from": "BC 3200",
+    "actual_until": "BC 539",
+    "status": "wrong_end",
+    "note": "엘람 문명은 BC 539년 아케메네스 페르시아에 의해 정복될 때까지 독립적인 실체로 존재했습니다. 데이터 종료 시점이 실제보다 이릅니다."
+  },
+  {
+    "entity": "Hittites",
+    "entity_ko": "히타이트",
+    "data_from": "BC 2000",
+    "data_until": "BC 700",
+    "actual_from": "BC 1750",
+    "actual_until": "BC 700",
+    "status": "wrong_start",
+    "note": "히타이트 왕국은 BC 1750년경에 시작되었습니다. BC 2000년은 히타이트 왕국 이전의 하티족 시기입니다."
+  },
+  {
+    "entity": "Indus Valley",
+    "entity_ko": "인더스 문명",
+    "data_from": "BC 3000",
+    "data_until": "BC 2000",
+    "actual_from": "BC 3300",
+    "actual_until": "BC 1300",
+    "status": "wrong_end",
+    "note": "인더스 문명(하라파 문명)은 후기 하라파 시대(Late Harappan)인 BC 1300년경까지 지속되었습니다. 데이터 종료 시점이 실제보다 이릅니다."
+  },
+  {
+    "entity": "Jomon",
+    "entity_ko": "조몬",
+    "data_from": "BC 3000",
+    "data_until": "BC 2000",
+    "actual_from": "BC 10000",
+    "actual_until": "BC 300",
+    "status": "wrong_both",
+    "note": "조몬 시대는 훨씬 이전인 BC 10000년경에 시작하여 BC 300년경까지 지속되었습니다. 데이터는 전체 기간 중 일부만을 포함합니다."
+  },
+  {
+    "entity": "Kerma",
+    "entity_ko": "케르마",
+    "data_from": "BC 3000",
+    "data_until": "BC 2000",
+    "actual_from": "BC 2500",
+    "actual_until": "BC 1450",
+    "status": "wrong_both",
+    "note": "케르마 왕국은 BC 2500년경에 시작하여 BC 1450년경 이집트에 정복될 때까지 지속되었습니다. 데이터 시작은 왕국 형성 이전이며, 종료는 실제보다 이릅니다."
+  },
+  {
+    "entity": "Ur",
+    "entity_ko": "우르",
+    "data_from": "BC 3000",
+    "data_until": "BC 2000",
+    "actual_from": "BC 2900",
+    "actual_until": "BC 2004",
+    "status": "correct",
+    "note": "우르는 수메르의 주요 도시국가로, BC 2900년경부터 중요성을 가지기 시작하여 우르 제3왕조의 멸망(BC 2004년)까지 번성했습니다. 데이터 기간은 우르의 주요 시기를 잘 반영합니다."
+  },
+  {
+    "entity": "Akkadian Empire",
+    "entity_ko": "아카드 제국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "BC 2334",
+    "actual_until": "BC 2154",
+    "status": "missing",
+    "note": "메소포타미아의 주요 제국으로, 수메르 도시국가들을 통일했습니다. 이 기간에 존재했어야 할 중요한 국가입니다."
+  },
+  {
+    "entity": "Sumerian City-States",
+    "entity_ko": "수메르 도시국가들",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "BC 2900",
+    "actual_until": "BC 2004",
+    "status": "missing",
+    "note": "우르 외에도 우루크, 라가시, 키시 등 여러 수메르 도시국가들이 이 시기 메소포타미아의 주요 세력이었습니다. '우르'만으로는 수메르 문명 전체를 대표하기 어렵습니다."
+  },
+  {
+    "entity": "Xia Dynasty",
+    "entity_ko": "하 왕조",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "BC 2070",
+    "actual_until": "BC 1600",
+    "status": "missing",
+    "note": "중국의 첫 번째 전통 왕조로, 비록 역사성에 대한 논쟁이 있지만 중국 역사에서 중요한 위치를 차지하며 이 기간에 시작되었습니다."
+  },
+  {
+    "entity": "Old Kingdom of Egypt",
+    "entity_ko": "이집트 고왕국",
+    "data_from": null,
+    "data_until": null,
+    "actual_from": "BC 2686",
+    "actual_until": "BC 2181",
+    "status": "missing",
+    "note": "'이집트'는 포함되어 있지만, 고왕국은 피라미드 건설과 강력한 중앙집권으로 특징지어지는 고대 이집트의 독자적이고 중요한 제국 시기입니다."
+  }
+]
