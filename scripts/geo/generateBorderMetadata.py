@@ -1635,12 +1635,618 @@ RULER_NAMES_KO = {
 
 
 def get_korean_name(name_en):
-    """[cl] name_en → 한국어 변환. 매칭 없으면 영어 그대로 반환."""
+    """[cl] name_en → 한국어 변환. 매칭 없으면 auto_korean_name으로 자동 번역 시도."""
     if name_en in KOREAN_NAMES:
         return KOREAN_NAMES[name_en]
     # "(1960)" 등 연도 접미사 제거 후 재시도
     base = name_en.split(" (")[0]
-    return KOREAN_NAMES.get(base, name_en)
+    if base in KOREAN_NAMES:
+        return KOREAN_NAMES[base]
+    # [cl] 자동 한국어 번역 시도
+    return auto_korean_name(name_en)
+
+
+# ── [cl] 패턴 기반 자동 한국어 번역 (외래어 표기법 준수) ──
+
+# 번역 가능한 접미사/타입 (원어 → 한국어)
+_SUFFIX_MAP = {
+    # 정치체 유형
+    "Empire":           "제국",
+    "Kingdom":          "왕국",
+    "Sultanate":        "술탄국",
+    "Caliphate":        "칼리프국",
+    "Khanate":          "칸국",
+    "Emirate":          "토후국",
+    "Republic":         "공화국",
+    "Principality":     "공국",
+    "Duchy":            "공국",
+    "Grand Duchy":      "대공국",
+    "Confederation":    "연맹",
+    "Confederacy":      "연맹",
+    "Federation":       "연방",
+    "Dynasty":          "왕조",
+    "Shogunate":        "막부",
+    "Protectorate":     "보호령",
+    "Colony":           "식민지",
+    "Territory":        "영토",
+    "Province":         "속주",
+    "City-States":      "도시국가",
+    "City-State":       "도시국가",
+    "city-states":      "도시국가",
+    # 사회 유형
+    "Tribes":           "부족",
+    "Tribe":            "부족",
+    "tribes":           "부족",
+    "Nation":           "부족",
+    "Peoples":          "민족",
+    "people":           "민족",
+    # 생계 유형
+    "hunter-gatherers": "수렵채집민",
+    "Hunter-Gatherers": "수렵채집민",
+    "Hunter-Foragers":  "수렵채집민",
+    "hunter-foragers":  "수렵채집민",
+    "hunters":          "수렵민",
+    "foragers":         "채집민",
+    "farmers":          "농경민",
+    "herders":          "목축민",
+    "pastoralists":     "유목민",
+    "fishers":          "어로민",
+    "nomads":           "유목민",
+    # 문화/시대
+    "Culture":          "문화",
+    "culture":          "문화",
+    "cultures":         "문화",
+    # 복합 수식
+    "kingdoms":         "왕국",
+    "states":           "국가",
+    "States":           "국가",
+    "emirates":         "토후국",
+    "Emirates":         "토후국",
+    "principalities":   "공국",
+    "Principalities":   "공국",
+    "Duchies":          "공국",
+    "Khanates":         "칸국",
+    "khanates":         "칸국",
+    "Kingdoms":         "왕국",
+    "Empires":          "제국",
+    "Republics":        "공화국",
+    "republics":        "공화국",
+    "chiefdoms":        "추장국",
+    "Chiefdoms":        "추장국",
+    # [cl] "and" 연결 복합 접미사
+    "kingdoms and republics": "왕국 및 공화국",
+    "states and chiefdoms":  "국가 및 추장국",
+    "states and kingdoms":   "국가 및 왕국",
+    "hunting and fishing peoples": "수렵어로민",
+}
+
+# 방향/지역 접두사 (원어 → 한국어)
+_PREFIX_MAP = {
+    "Western":   "서",
+    "Eastern":   "동",
+    "Northern":  "북",
+    "Southern":  "남",
+    "Central":   "중앙",
+    "West":      "서",
+    "East":      "동",
+    "North":     "북",
+    "South":     "남",
+    "Upper":     "상",
+    "Lower":     "하",
+    "Greater":   "대",
+    "Lesser":    "소",
+    "Inner":     "내",
+    "Outer":     "외",
+}
+
+# 지역/민족 형용사 → 한국어 (영어 형용사 → 한국어 명사)
+_ADJECTIVE_MAP = {
+    "African":       "아프리카",
+    "American":      "아메리카",
+    "Amerindian":    "아메리카 원주민",
+    "Andean":        "안데스",
+    "Arctic":        "북극",
+    "Asian":         "아시아",
+    "Australian":    "호주",
+    "Caribbean":     "카리브",
+    "European":      "유럽",
+    "Indian":        "인도",
+    "Mediterranean": "지중해",
+    "Mesoamerican":  "메소아메리카",
+    "Pacific":       "태평양",
+    "Siberian":      "시베리아",
+    "Polynesian":    "폴리네시아",
+    "Papuan":        "파푸아",
+    "Neolithic":     "신석기",
+    "Mesolithic":    "중석기",
+    "Paleolithic":   "구석기",
+    "Archaic":       "고기",
+    "Pre-Columbian": "콜럼버스 이전",
+    "Islamic":       "이슬람",
+    "Hindu":         "힌두",
+    "Buddhist":      "불교",
+    "Christian":     "기독교",
+    "Celtic":        "켈트",
+    "Germanic":      "게르만",
+    "Slavonic":      "슬라브",
+    "Slavic":        "슬라브",
+    "Baltic":        "발트",
+    "Berber":        "베르베르",
+    "Bantu":         "반투",
+    "Ethiopian":     "에티오피아",
+    "Levantine":     "레반트",
+    "Austronesian":  "오스트로네시아",
+    "Austro-Asiatic": "오스트로아시아",
+    "Austroasian":   "오스트로아시아",
+    # 생산방식 수식
+    "rice":          "벼",
+    "cereal":        "곡물",
+    "maize":         "옥수수",
+    "manioc":        "카사바",
+    "marine":        "해양",
+    "coastal":       "해안",
+    "aboriginal":    "원주민",
+    "Aboriginal":    "원주민",
+    "highland":      "고지대",
+    "lowland":       "저지대",
+    "woodland":      "삼림",
+    "neolithic":     "신석기",
+    # 추가 수식어 (자동번역 보강)
+    "Alluvial":      "충적지",
+    "alluvial":      "충적지",
+    "Coastal":       "해안",
+    "Woodland":      "삼림",
+    "Tropical":      "열대",
+    "tropical":      "열대",
+    "Steppe":        "초원",
+    "steppe":        "초원",
+    "Desert":        "사막",
+    "desert":        "사막",
+    "Forest":        "삼림",
+    "forest":        "삼림",
+    "Riverine":      "하천",
+    "riverine":      "하천",
+    "mammal":        "포유류",
+    "Pottery":       "토기",
+    "pottery":       "토기",
+    "Bronze":        "청동기",
+    "bronze":        "청동기",
+    "Iron":          "철기",
+    "iron":          "철기",
+    "Copper":        "동기",
+    "copper":        "동기",
+    "Proto":         "원시",
+    "proto":         "원시",
+    "Pre":           "전기",
+    "post":          "후기",
+    "Post":          "후기",
+    "Late":          "후기",
+    "late":          "후기",
+    "Early":         "초기",
+    "early":         "초기",
+    "Middle":        "중기",
+    "middle":        "중기",
+    "Ancient":       "고대",
+    "ancient":       "고대",
+    "Nomadic":       "유목",
+    "nomadic":       "유목",
+    "Pastoral":      "목축",
+    "pastoral":      "목축",
+    "White":         "백",
+    "Sheep":         "양",
+    "Turks":         "투르크",
+}
+
+# 고유명사 한글 음역 사전 (외래어 표기법 기반, 자주 등장하는 것만)
+_PHONETIC_MAP = {
+    # 어미 패턴용 (정확한 매칭)
+    "Amazon":     "아마존",
+    "Cree":       "크리",
+    "Dene":       "데네",
+    "Apache":     "아파치",
+    "Seminole":   "세미놀",
+    "Navajo":     "나바호",
+    "Cherokee":   "체로키",
+    "Sioux":      "수",
+    "Comanche":   "코만치",
+    "Iroquois":   "이로쿼이",
+    "Mohawk":     "모호크",
+    "Shawnee":    "쇼니",
+    "Cheyenne":   "샤이엔",
+    "Algonquin":  "알곤킨",
+    "Ojibwe":     "오지브웨",
+    "Pawnee":     "포니",
+    "Inuit":      "이누이트",
+    "Mapuche":    "마푸체",
+    "Guarani":    "과라니",
+    "Quechua":    "케추아",
+    "Aymara":     "아이마라",
+    "Tupi":       "투피",
+    "Mayan":      "마야",
+    "Nahua":      "나우아",
+    "Kichwa":     "키츠와",
+    "Aztec":      "아즈텍",
+    "Inca":       "잉카",
+    "Olmec":      "올멕",
+    "Toltec":     "톨텍",
+    "Zapotec":    "사포텍",
+    "Mixtec":     "믹스텍",
+    "Zulu":       "줄루",
+    "Xhosa":      "코사",
+    "Maasai":     "마사이",
+    "Yoruba":     "요루바",
+    "Igbo":       "이그보",
+    "Hausa":      "하우사",
+    "Fulani":     "풀라니",
+    "Swahili":    "스와힐리",
+    "Ashanti":    "아샨티",
+    "Akan":       "아칸",
+    "Tswana":     "츠와나",
+    "Sotho":      "소토",
+    "Khmer":      "크메르",
+    "Champa":     "참파",
+    "Saxon":      "작센",
+    "Norman":     "노르만",
+    "Viking":     "바이킹",
+    "Vandal":     "반달",
+    "Visigoth":   "서고트",
+    "Ostrogoth":  "동고트",
+    "Lombard":    "롬바르드",
+    "Frank":      "프랑크",
+    "Gaul":       "골",
+    "Scythian":   "스키타이",
+    "Sarmatian":  "사르마트",
+    "Huns":       "훈족",
+    "Hun":        "훈",
+    "Alan":       "알란",
+    "Alans":      "알란족",
+    "Cuman":      "쿠만",
+    "Pecheneg":   "페체네그",
+    "Bulgar":     "불가르",
+    "Khazar":     "하자르",
+    "Avar":       "아바르",
+    "Magyar":     "마자르",
+    "Seljuk":     "셀주크",
+    "Timurid":    "티무르",
+    "Safavid":    "사파비",
+    "Mughal":     "무굴",
+    "Mamluk":     "맘루크",
+    "Abbasid":    "아바스",
+    "Umayyad":    "우마이야",
+    "Fatimid":    "파티마",
+    "Ayyubid":    "아이유브",
+    "Ottoman":    "오스만",
+    "Persian":    "페르시아",
+    "Sassanid":   "사산",
+    "Akkadian":   "아카드",
+    "Sumerian":   "수메르",
+    "Babylonian": "바빌로니아",
+    "Assyrian":   "아시리아",
+    "Hittite":    "히타이트",
+    "Phoenician": "페니키아",
+    "Minoan":     "미노아",
+    "Mycenaean":  "미케네",
+    "Greek":      "그리스",
+    "Roman":      "로마",
+    "Byzantine":  "비잔틴",
+    "Ptolemaic":  "프톨레마이오스",
+    "Florida":    "플로리다",
+    "Oklahoma":   "오클라호마",
+    "Texas":      "텍사스",
+    "California": "캘리포니아",
+    "Oregon":     "오리건",
+    "Ohio":       "오하이오",
+    "Michigan":   "미시간",
+    "Mississippi":"미시시피",
+    "Louisiana":  "루이지애나",
+    "Virginia":   "버지니아",
+    "Carolina":   "캐롤라이나",
+    "Georgia":    "조지아",
+    "Alabama":    "앨라배마",
+    "Pomo":       "포모",
+    "Wintu":      "윈투",
+    "Miwok":      "미웍",
+    "Yokut":      "요쿠트",
+    "Wintun":     "윈툰",
+    "Maidu":      "마이두",
+    "Modoc":      "모독",
+    "Klamath":    "클래머스",
+    "Nez":        "네즈",
+    "Blackfoot":  "블랙풋",
+    "Crow":       "크로",
+    "Arapaho":    "아라파호",
+    "Ute":        "유트",
+    "Paiute":     "파이유트",
+    "Shoshone":   "쇼쇼니",
+    "Chinook":    "치누크",
+    "Tlingit":    "틀링깃",
+    "Haida":      "하이다",
+    "Kwakiutl":   "콰키우틀",
+    "Salish":     "세일리시",
+    "Huron":      "휴런",
+    "Lenape":     "레나페",
+    "Powhatan":   "포와탄",
+    "Creek":      "크리크",
+    "Choctaw":    "촉토",
+    "Chickasaw":  "치카소",
+    "Natchez":    "내치즈",
+    "Timucua":    "티무쿠아",
+    "Calusa":     "칼루사",
+    "Taino":      "타이노",
+    "Carib":      "카리브",
+    "Arawak":     "아라왁",
+    "Tupinamba":  "투피남바",
+    "Yanomami":   "야노마미",
+    "Araucanian": "아라우카니아",
+    "Oirat":      "오이라트",
+    "Jurchen":    "여진",
+    "Khitan":     "거란",
+    "Tangut":     "탕구트",
+    "Uighur":     "위구르",
+    "Uyghur":     "위구르",
+    "Sogdian":    "소그드",
+    "Tocharian":  "토하르",
+    "Xiongnu":    "흉노",
+    "Wusun":      "오손",
+    "Xianbei":    "선비",
+    "Rouran":     "유연",
+    "Göktürk":    "돌궐",
+    "Turkic":     "투르크",
+    "Mongol":     "몽골",
+    "Manchu":     "만주",
+    "Korean":     "한국",
+    "Japanese":   "일본",
+    "Chinese":    "중국",
+    "Tai":        "타이",
+    "Burmese":    "미얀마",
+    "Khmer":      "크메르",
+    "Malay":      "말레이",
+    "Javanese":   "자바",
+    "Tamil":      "타밀",
+    "Telugu":     "텔루구",
+    "Rajput":     "라지푸트",
+    "Maratha":    "마라타",
+    "Sikh":       "시크",
+    "Bengal":     "벵골",
+    "Oriya":      "오리야",
+    "Gujarat":    "구자라트",
+    "Sindhi":     "신디",
+    "Pathan":     "파탄",
+    "Afghan":     "아프간",
+    "Kurdish":    "쿠르드",
+    "Arab":       "아랍",
+    "Bedouin":    "베두인",
+    "Druze":      "드루즈",
+    "Copt":       "콥트",
+    "Nubian":     "누비아",
+    "Tuareg":     "투아레그",
+    "Somali":     "소말리",
+    "Oromo":      "오로모",
+    "Amhara":     "암하라",
+    "Tigray":     "티그라이",
+    # 추가 음역 (자동번역 보강)
+    "Anglo":      "앵글로",
+    "Saxon":      "색슨",
+    "Saxons":     "색슨족",
+    "Anatolian":  "아나톨리아",
+    "Dacian":     "다키아",
+    "Illyrian":   "일리리아",
+    "Thracian":   "트라키아",
+    "Iberian":    "이베리아",
+    "Etruscan":   "에트루리아",
+    "Pictish":    "픽트",
+    "Gallic":     "갈리아",
+    "Frankish":   "프랑크",
+    "Burgundian": "부르고뉴",
+    "Frisian":    "프리지아",
+    "Bavarian":   "바이에른",
+    "Alemannic":  "알레만",
+    "Catalan":    "카탈루냐",
+    "Basque":     "바스크",
+    "Welsh":      "웨일스",
+    "Breton":     "브르타뉴",
+    "Gaelic":     "게일",
+    "Nordic":     "북유럽",
+    "Finnic":     "핀",
+    "Sibir":      "시비르",
+    "Astrakhan":  "아스트라한",
+    "Kazan":      "카잔",
+    "Bukhara":    "부하라",
+    "Bukara":     "부하라",
+    "Antigonus":  "안티고누스",
+    "Seleucid":   "셀레우코스",
+    "Pontus":     "폰투스",
+    "Bithynia":   "비티니아",
+    "Lydia":      "리디아",
+    "Phrygia":    "프리기아",
+    "Sicily":     "시칠리아",
+    "Tiflis":     "트빌리시",
+    "Aghlabid":   "아글라브",
+    "Buwayhid":   "부와이흐",
+    "Buyid":      "부이",
+    "Ilkhanate":  "일칸국",
+    "Soomra":     "소므라",
+    "Bahmani":    "바흐마니",
+    "Hurrian":    "후르리",
+    "Gala":       "갈라",
+    "Congo":      "콩고",
+    "Nile":       "나일",
+    "Saharan":    "사하라",
+    "Sahel":      "사헬",
+    "Niger":      "니제르",
+    "Sudan":      "수단",
+    "Zambezi":    "잠베지",
+}
+
+
+def auto_korean_name(name_en):
+    """[cl] 패턴 기반 자동 한국어 번역 (외래어 표기법 준수).
+
+    전략:
+    1. 괄호 내용 (Oklahoma) 등은 별도 처리
+    2. 접미사 타입(Kingdom, Empire...) 분리 → 한국어 번역
+    3. 방향 접두사(Western, Eastern...) 분리 → 한국어 번역
+    4. 형용사(African, Neolithic...) → 한국어 번역
+    5. 고유명사 → _PHONETIC_MAP으로 음역, 없으면 영어 유지
+    6. 조합하여 한국어 문자열 생성
+    """
+    if not name_en or name_en.strip() == "":
+        return name_en
+
+    # 괄호 내용 분리: "Seminole (Oklahoma)" → base="Seminole", paren="Oklahoma"
+    paren = ""
+    base = name_en
+    if "(" in name_en and ")" in name_en:
+        idx = name_en.index("(")
+        paren_content = name_en[idx+1:name_en.rindex(")")]
+        base = name_en[:idx].strip()
+        # 괄호 안도 번역 시도
+        paren = _translate_paren(paren_content)
+
+    result = _translate_phrase(base)
+
+    if paren:
+        result = f"{result} ({paren})"
+
+    return result
+
+
+def _translate_paren(text):
+    """[cl] 괄호 안 내용 번역 (지역명, UK, Spain 등)."""
+    simple = {
+        "UK": "영국", "Britain": "영국", "Spain": "스페인",
+        "France": "프랑스", "Portugal": "포르투갈",
+        "Netherlands": "네덜란드", "Germany": "독일",
+        "Japan": "일본", "China": "중국",
+    }
+    if text in simple:
+        return simple[text]
+    if text in KOREAN_NAMES:
+        return KOREAN_NAMES[text]
+    if text in _PHONETIC_MAP:
+        return _PHONETIC_MAP[text]
+    # "Oklahoma" 등 미국 주 이름
+    for word in text.split():
+        if word in _PHONETIC_MAP:
+            text = text.replace(word, _PHONETIC_MAP[word])
+    return text
+
+
+def _translate_phrase(phrase):
+    """[cl] 구문 단위 번역 — 접미사+접두사+형용사+고유명사 조합."""
+    if not phrase:
+        return phrase
+
+    # "Kingdom of X" / "Emirate of X" 등 선행 타입 패턴 처리
+    for prefix_type in ("Kingdom of", "Emirate of", "Empire of", "Republic of",
+                        "Duchy of", "Principality of", "Sultanate of",
+                        "Khanate of", "Caliphate of"):
+        if phrase.startswith(prefix_type + " "):
+            remainder = phrase[len(prefix_type)+1:]
+            type_ko = _SUFFIX_MAP.get(prefix_type.split()[0], prefix_type.split()[0])
+            name_ko = _translate_phrase(remainder) if " " in remainder else _translate_word(remainder)
+            if not name_ko:
+                name_ko = remainder
+            return f"{name_ko} {type_ko}"
+
+    # "Confederated Tribes of X" 패턴
+    if phrase.startswith("Confederated Tribes of "):
+        remainder = phrase[len("Confederated Tribes of "):]
+        name_ko = _translate_phrase(remainder)
+        return f"{name_ko} 연합부족"
+
+    words = phrase.split()
+    if not words:
+        return phrase
+
+    # 1) 멀티워드 접미사 먼저 체크 ("City-States", "Grand Duchy" 등)
+    suffix_ko = ""
+    # 뒤에서부터 2단어, 1단어 순으로 접미사 매칭
+    for n in (3, 2, 1):
+        if len(words) >= n + 1:  # 접미사 외에 최소 1단어 필요
+            candidate = " ".join(words[-n:])
+            if candidate in _SUFFIX_MAP:
+                suffix_ko = _SUFFIX_MAP[candidate]
+                words = words[:-n]
+                break
+
+    # 접미사 매칭 안 됐으면 마지막 단어 대소문자 무관 체크
+    if not suffix_ko and len(words) >= 2:
+        last = words[-1]
+        if last.lower() in _SUFFIX_MAP:
+            suffix_ko = _SUFFIX_MAP[last.lower()]
+            words = words[:-1]
+        elif last in _SUFFIX_MAP:
+            suffix_ko = _SUFFIX_MAP[last]
+            words = words[:-1]
+
+    # 단일 단어이고 접미사가 단어 자체인 경우 (예: "farmers" 단독)
+    if not suffix_ko and len(words) == 1:
+        w = words[0]
+        if w in _SUFFIX_MAP:
+            return _SUFFIX_MAP[w]
+        if w.lower() in _SUFFIX_MAP:
+            return _SUFFIX_MAP[w.lower()]
+
+    # 2) 접두사 (방향)
+    prefix_ko = ""
+    if words and words[0] in _PREFIX_MAP:
+        prefix_ko = _PREFIX_MAP[words[0]]
+        words = words[1:]
+
+    # 3) 나머지 단어들: 형용사 + 고유명사 조합
+    translated_parts = []
+    for w in words:
+        t = _translate_word(w)
+        if t:  # 빈 문자열(관계사) 제외
+            translated_parts.append(t)
+
+    # 4) 조합
+    body = " ".join(translated_parts) if translated_parts else ""
+
+    # "서 + 아프리카 + 수렵채집민" → "서아프리카 수렵채집민"
+    if prefix_ko and body:
+        # 방향+첫 단어는 붙여쓰기 (서아프리카, 동유럽 등)
+        parts = body.split(" ", 1)
+        body = prefix_ko + parts[0] + (" " + parts[1] if len(parts) > 1 else "")
+    elif prefix_ko:
+        body = prefix_ko
+
+    if body and suffix_ko:
+        return f"{body} {suffix_ko}"
+    elif suffix_ko:
+        return suffix_ko
+    elif body:
+        return body
+    else:
+        return phrase
+
+
+def _translate_word(w):
+    """[cl] 단일 단어 번역 — 관계사/형용사/고유명사/하이픈 처리."""
+    # "and", "of", "the" 등 관계사 → 빈 문자열
+    if w.lower() in ("and", "of", "the", "de", "du", "des", "le", "la",
+                      "el", "von", "van", "di", "/", "&", "minor"):
+        return ""
+    # 하이픈 단어: "Anglo-Saxons" → "앵글로-색슨족"
+    if "-" in w and w not in _SUFFIX_MAP and w not in _ADJECTIVE_MAP:
+        parts = w.split("-")
+        translated = [_translate_word(p) for p in parts]
+        translated = [p for p in translated if p]  # 빈 문자열 제거
+        return "-".join(translated) if translated else w
+    # 형용사 매핑
+    if w in _ADJECTIVE_MAP:
+        return _ADJECTIVE_MAP[w]
+    if w.lower() in _ADJECTIVE_MAP:
+        return _ADJECTIVE_MAP[w.lower()]
+    # 고유명사 음역
+    if w in _PHONETIC_MAP:
+        return _PHONETIC_MAP[w]
+    # 복수형 -s 제거 후 재시도
+    if w.endswith("s") and len(w) > 2 and w[:-1] in _PHONETIC_MAP:
+        return _PHONETIC_MAP[w[:-1]] + "족"
+    # 미등록 고유명사: 영어 그대로 유지
+    return w
 
 
 # ── 주요 국가 수도/중심 좌표 (라벨 위치 결정용) ──

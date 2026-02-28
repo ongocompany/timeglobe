@@ -1581,23 +1581,25 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             ? [props.caplong, props.caplat] as [number, number]
             : hasVirtualChildren ? null : calcCentroid(feature.geometry);
         if (center) {
-          // [cl] 라벨: 한국어 우선 → display_name_ko → display_name → 원본 name
-          const displayLabel = meta?.display_name_ko || meta?.display_name || name;
-          const labelText = meta
-            ? (meta.is_colony && meta.colonial_ruler
-              ? `${displayLabel}\n[${meta.colonial_ruler_ko || meta.colonial_ruler}]`
-              : displayLabel)
-            : name;
+          // [cl] 라벨: 한글 위 + 영문 아래 (2줄) — 한글=영문이면 1줄만
+          const koName = meta?.display_name_ko || meta?.display_name || name;
+          const enName = meta?.display_name_en || name;
+          // 한글과 영문이 같으면 1줄, 다르면 2줄 (한글 위 + 영문 아래)
+          const needsEnSub = koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName);
+          let labelText = koName;
+          if (needsEnSub) labelText += `\n${enName}`;
+          if (meta?.is_colony && meta.colonial_ruler) {
+            labelText += `\n[${meta.colonial_ruler_ko || meta.colonial_ruler}]`;
+          }
           ds.entities.add({
             position: Cartesian3.fromDegrees(center[0], center[1]),
             label: {
               text: labelText,
-              font: "bold 18px sans-serif",
+              font: "bold 14px sans-serif",
               fillColor: Color.WHITE,
               outlineColor: Color.BLACK,
               outlineWidth: 2,
               style: 2, // FILL_AND_OUTLINE
-              // [cl] 5000km 이하: 18px, 5000~20000km: 선형 축소, 20000km+: 10px
               scaleByDistance: new NearFarScalar(5e6, 1.0, 2e7, 0.55),
             },
           });
@@ -1610,13 +1612,18 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     if (metadata) {
       for (const [key, vm] of Object.entries(metadata)) {
         if (key.startsWith("__virtual__") && vm.capital_coords) {
+          // [cl] 가상 식민지도 한글+영문 2줄 포맷
+          const vKo = vm.display_name_ko || vm.display_name;
+          const vEn = vm.display_name_en || key.replace("__virtual__", "");
+          const vNeedsEn = vKo !== vEn && !/^[A-Za-z\s\-'().]+$/.test(vKo);
+          let vLabel = vKo;
+          if (vNeedsEn) vLabel += `\n${vEn}`;
+          if (vm.colonial_ruler) vLabel += `\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`;
           ds.entities.add({
             position: Cartesian3.fromDegrees(vm.capital_coords[0], vm.capital_coords[1]),
             label: {
-              text: vm.colonial_ruler
-                ? `${vm.display_name_ko || vm.display_name}\n[${vm.colonial_ruler_ko || vm.colonial_ruler}]`
-                : (vm.display_name_ko || vm.display_name),
-              font: "bold 18px sans-serif",
+              text: vLabel,
+              font: "bold 14px sans-serif",
               fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
               outlineColor: Color.BLACK,
               outlineWidth: 2,
