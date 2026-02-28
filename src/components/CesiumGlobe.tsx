@@ -1640,27 +1640,32 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         }
       }
 
-      // ── 식민지 vs 일반 국가 스타일 분기 ──
-      const isColonyStyle = entity.is_colony;
+      // ── 스타일 결정 ──
+      // 특수 식민지 라벨(일제강점기 등)은 Tier 기반 크기로 눈에 띄게,
+      // 일반 식민지(영국령 인도 등)는 이탤릭 작은 글씨
+      const hasSpecialColonyLabel = entity.is_colony && !!entity.colony_label;
+      const isPlainColony = entity.is_colony && !entity.colony_label;
 
       ds.entities.add({
         position: Cartesian3.fromDegrees(entity.coords[0], entity.coords[1]),
         label: {
           text: labelText,
-          font: isColonyStyle
+          font: isPlainColony
             ? "italic 12px sans-serif"
+            : hasSpecialColonyLabel
+            ? (tier === 1 ? "bold italic 16px sans-serif" : "italic 14px sans-serif")
             : tier === 1 ? "bold 18px sans-serif"
             : tier === 2 ? "bold 14px sans-serif"
             : "12px sans-serif",
-          fillColor: isColonyStyle
+          fillColor: isPlainColony
             ? Color.WHITE.withAlpha(0.65)
             : tier <= 2 ? Color.WHITE : Color.WHITE.withAlpha(0.55),
-          outlineColor: isColonyStyle
+          outlineColor: isPlainColony
             ? Color.BLACK.withAlpha(0.4)
             : tier <= 2 ? Color.BLACK : Color.BLACK.withAlpha(0.4),
-          outlineWidth: isColonyStyle ? 1 : tier === 1 ? 3 : tier === 2 ? 2 : 1,
+          outlineWidth: isPlainColony ? 1 : tier === 1 ? 3 : tier === 2 ? 2 : 1,
           style: 2,
-          scaleByDistance: isColonyStyle
+          scaleByDistance: isPlainColony
             ? new NearFarScalar(5e6, 0.85, 2e7, 0.35)
             : tier === 1
             ? new NearFarScalar(5e6, 1.2, 2e7, 0.6)
