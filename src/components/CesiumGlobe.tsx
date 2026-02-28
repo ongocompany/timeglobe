@@ -1441,10 +1441,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const geojson = await res.json();
     const ds = new CustomDataSource("borders");
     const defaultBorderColor = Color.fromCssColorString("rgba(255, 255, 255, 0.3)");
-    const showLabels = snapYear >= 1880;
 
-    // [cl] 1880+ 스냅샷: 메타데이터 로드 (국명, 색상 등)
-    const metadata = showLabels ? await loadMetadata(snapYear) : null;
+    // [cl] 메타데이터 로드 (1880+ 있으면 색상+현지이름, 없으면 GeoJSON NAME 그대로)
+    const metadata = await loadMetadata(snapYear);
 
     // [cl] 중복 라벨 방지 (같은 NAME이 여러 feature에 걸쳐 있을 수 있음)
     const labeledNames = new Set<string>();
@@ -1469,8 +1468,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         });
       }
 
-      // [cl] 1880년 이후 스냅샷: 메타데이터의 display_name으로 라벨 표시
-      if (showLabels && name && !labeledNames.has(name)) {
+      // [cl] 모든 스냅샷: 메타데이터 있으면 display_name, 없으면 GeoJSON NAME 그대로 라벨
+      if (name && !labeledNames.has(name)) {
         labeledNames.add(name);
         const center = calcCentroid(feature.geometry);
         if (center) {
