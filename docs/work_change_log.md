@@ -891,3 +891,24 @@
 * `src/lib/borderIndex.ts` — 하이브리드 매칭 (floor/nearest)
 * `src/components/CesiumGlobe.tsx` — CShapes caplong/caplat 라벨, 메타데이터 로더 개선
 * `public/geo/borders/index.json` — 160개 하이브리드 인덱스
+
+## [2026-02-28] [cl] 동아시아 시대별 라벨 수정 (YEAR_RANGE_OVERRIDES)
+### 문제
+* 1920년 한국: "조선 (Joseon)"으로 표시 → 일제강점기(1910-1945)인데 식민지 표시 없음
+* 1920년 중국: "中国 (China)" → 중화민국 시기(1912-1949)인데 시대 반영 안 됨
+* 1920년 일본: "日本 (Japan)" → 대일본제국 시기(1868-1947)인데 시대 반영 안 됨
+
+### 수정 (`scripts/geo/generateBorderMetadata.py`)
+* **YEAR_RANGE_OVERRIDES 시스템 신규 도입**: 기존 단일 연도 YEAR_OVERRIDES를 연도 범위 기반으로 교체
+  * 한국: 1897-1910 대한제국(독립) / 1910-1945 대한제국(일본 식민지)
+  * 일본: 1868-1947 大日本帝国 (Empire of Japan)
+  * 중국: 1886-1911 大清帝國 (Qing Dynasty) / 1912-1949 中華民國 (Republic of China) / 1950+ 中国
+  * 대만: 1895-1945 일본 식민지 표시
+* **generate_entity_metadata()**: 범위 오버라이드 지원 + colony/ruler 오버라이드 가능
+* **중복 스냅샷 제거**: CShapes가 있는 연도는 HB 메타데이터 생성 스킵 (HB 11→2개로 축소)
+
+### 결과
+* 1920년 Korea = "대한제국 (Korea) [大日本帝国]" ✓
+* 1920년 China = "中華民國 (Republic of China)" ✓
+* 1920년 Japan = "大日本帝国 (Empire of Japan)" ✓
+* 1920년 Taiwan = "臺灣 (Taiwan) [大日本帝国]" ✓

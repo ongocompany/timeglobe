@@ -637,9 +637,36 @@ COLONIAL_OVERLAYS = {
     ],
 }
 
-# ── 연도별 특수 처리 (같은 NAME이 시대별로 의미가 다를 때) ──
-YEAR_OVERRIDES = {
-    ("Korea", 1900): {"name_local": "대한제국", "name_en": "Korean Empire"},
+# ── 연도 범위별 오버라이드 (같은 NAME이 시대별로 의미가 다를 때) ──
+# [cl] (NAME, start_year, end_year): { 오버라이드 필드 }
+# colony=True + ruler 지정 시 식민지 표시 오버라이드 가능
+YEAR_RANGE_OVERRIDES = {
+    # ━━━ 한국: 대한제국 (1897-1910, 독립) ━━━
+    ("Korea", 1897, 1910): {
+        "name_local": "대한제국", "name_en": "Korean Empire",
+    },
+    # ━━━ 한국: 일제강점기 (1910-1945, 식민지) ━━━
+    ("Korea", 1910, 1945): {
+        "name_local": "대한제국", "name_en": "Korea",
+        "colony": True, "ruler": "大日本帝国",
+    },
+    # ━━━ 일본: 대일본제국 (1868-1947) ━━━
+    ("Japan", 1868, 1947): {
+        "name_local": "大日本帝国", "name_en": "Empire of Japan",
+    },
+    # ━━━ 중국: 대청제국 (CShapes "China" 1886-1911) ━━━
+    ("China", 1886, 1911): {
+        "name_local": "大清帝國", "name_en": "Qing Dynasty",
+    },
+    # ━━━ 중국: 중화민국 (1912-1949) ━━━
+    ("China", 1912, 1949): {
+        "name_local": "中華民國", "name_en": "Republic of China",
+    },
+    # ━━━ 대만: 일본 식민지 (1895-1945) ━━━
+    ("Taiwan", 1895, 1945): {
+        "name_local": "臺灣", "name_en": "Taiwan",
+        "colony": True, "ruler": "大日本帝国",
+    },
 }
 
 
@@ -657,17 +684,25 @@ def generate_entity_metadata(original_name, year):
             "confidence": "high",
         }
 
-        # 연도별 오버라이드 적용
-        key = (original_name, year)
-        if key in YEAR_OVERRIDES:
-            override = YEAR_OVERRIDES[key]
-            metadata["display_name_en"] = override["name_en"]
-            metadata["display_name_local"] = override["name_local"]
+        # [cl] 연도 범위 오버라이드 적용 (시대별 국명/식민지 상태 변경)
+        for (oname, start, end), override in YEAR_RANGE_OVERRIDES.items():
+            if oname == original_name and start <= year <= end:
+                metadata["display_name_en"] = override["name_en"]
+                metadata["display_name_local"] = override["name_local"]
+                # 오버라이드에 식민지 정보가 있으면 적용
+                if override.get("colony"):
+                    metadata["is_colony"] = True
+                    is_colony = True
+                    if override.get("ruler"):
+                        metadata["colonial_ruler"] = override["ruler"]
+                        metadata["colonial_note"] = f"Under {override['ruler']} Rule"
+                break  # 첫 매칭만 적용
 
         # display_name = "현지어 (영문)" 형태
         metadata["display_name"] = f"{metadata['display_name_local']} ({metadata['display_name_en'].split('(')[0].strip()})"
 
-        if rule.get("ruler"):
+        # [cl] ENTITY_RULES 기본 ruler (오버라이드가 없을 때만)
+        if rule.get("ruler") and "colonial_ruler" not in metadata:
             metadata["colonial_ruler"] = rule["ruler"]
             metadata["colonial_note"] = f"Under {rule['ruler']} Rule"
         if rule.get("independence"):
@@ -761,11 +796,15 @@ if __name__ == "__main__":
         year = int(fname.replace("cshapes_", "").replace(".geojson", ""))
         CS_SNAPSHOTS.append((year, fname))
 
-    ALL_SNAPSHOTS = HB_SNAPSHOTS + CS_SNAPSHOTS
+    # [cl] CShapes가 있는 연도는 HB 제외 (index.json도 CShapes를 사용)
+    cs_years = {y for y, _ in CS_SNAPSHOTS}
+    HB_FILTERED = [(y, f) for y, f in HB_SNAPSHOTS if y not in cs_years]
+    ALL_SNAPSHOTS = HB_FILTERED + CS_SNAPSHOTS
     ALL_SNAPSHOTS.sort(key=lambda x: x[0])
 
     print(f"=== 역사 국경 메타데이터 생성 (규칙: {len(ENTITY_RULES)}개) ===")
-    print(f"    HB: {len(HB_SNAPSHOTS)}개 | CShapes: {len(CS_SNAPSHOTS)}개 | 총: {len(ALL_SNAPSHOTS)}개\n")
+    print(f"    HB: {len(HB_FILTERED)}개 (원본 {len(HB_SNAPSHOTS)}개, CShapes 중복 {len(HB_SNAPSHOTS)-len(HB_FILTERED)}개 제외)")
+    print(f"    CShapes: {len(CS_SNAPSHOTS)}개 | 총: {len(ALL_SNAPSHOTS)}개\n")
 
     total_high = 0
     total_low = 0
