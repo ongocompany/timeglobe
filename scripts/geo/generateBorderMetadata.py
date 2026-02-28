@@ -88,8 +88,16 @@ ENTITY_RULES = {
     "Tang Empire":      {"name_local": "唐", "name_en": "Tang Dynasty", "palette": "EastAsia"},
     "Song Empire":      {"name_local": "宋", "name_en": "Song Dynasty", "palette": "EastAsia"},
     "Liao":             {"name_local": "遼", "name_en": "Liao Dynasty", "palette": "Manchuria"},
-    "Jin Empire":       {"name_local": "金", "name_en": "Jin Dynasty", "palette": "Manchuria"},
+    # [cl] Jin Empire: 기본=진(晉) EastAsia, 여진 금(1115~)은 YEAR_RANGE_OVERRIDES로 Manchuria
+    "Jin Empire":       {"name_local": "晉", "name_en": "Jin Dynasty (Sima)", "palette": "EastAsia"},
     "Xixia":            {"name_local": "西夏", "name_en": "Western Xia", "palette": "Manchuria"},
+    # [cl] 위진남북조 시대 (265~589)
+    "Jin":              {"name_local": "晉", "name_en": "Jin Dynasty", "palette": "EastAsia"},
+    "Northern Liang":   {"name_local": "北涼", "name_en": "Northern Liang", "palette": "EastAsia"},
+    "Sixteen Kingdoms": {"name_local": "五胡十六國", "name_en": "Sixteen Kingdoms", "palette": "EastAsia"},
+    "Ruanruan":         {"name_local": "柔然", "name_en": "Rouran Khaganate", "palette": "Mongol"},
+    "Göktürks":         {"name_local": "突厥", "name_en": "Göktürk Khaganate", "palette": "Mongol"},
+    "Yamato":           {"name_local": "大和", "name_en": "Yamato", "palette": "Japan"},
     "Ming Chinese Empire": {"name_local": "明", "name_en": "Ming Dynasty", "palette": "EastAsia"},
     "Ming Empire":      {"name_local": "明", "name_en": "Ming Dynasty", "palette": "EastAsia"},
     "Wu":               {"name_local": "吳", "name_en": "Wu", "palette": "EastAsia"},
@@ -785,7 +793,11 @@ KOREAN_NAMES = {
     "Tang Dynasty": "당나라",
     "Song Dynasty": "송나라",
     "Liao Dynasty": "요나라",
-    "Jin Dynasty": "금나라",
+    "Jin Dynasty": "진나라",
+    "Jin Dynasty (Sima)": "진나라",
+    "Jin Dynasty (Jurchen)": "금나라",
+    "Western Jin": "서진",
+    "Eastern Jin": "동진",
     "Western Xia": "서하",
     "Ming Dynasty": "명나라",
     "Wu": "오나라",
@@ -803,6 +815,10 @@ KOREAN_NAMES = {
     "Kara Khitai": "서요",
     "Oirat Confederation": "오이라트",
     "Sixteen Kingdoms": "오호십육국",
+    "Northern Liang": "북량",
+    "Rouran Khaganate": "유연",
+    "Göktürk Khaganate": "돌궐",
+    "Yamato": "야마토",
     # ━━━ 동아시아: 한국 ━━━
     "Joseon": "조선",
     "Korea": "한국",
@@ -1644,6 +1660,23 @@ YEAR_RANGE_OVERRIDES = {
     ("Silla", 668, 935): {
         "name_local": "통일신라", "name_en": "Unified Silla", "name_ko": "통일신라",
     },
+    # ━━━ 진(晉): 서진 (265-316) ━━━
+    ("Jin", 265, 316): {
+        "name_local": "西晉", "name_en": "Western Jin", "name_ko": "서진",
+    },
+    # ━━━ 진(晉): 동진 (317-420) ━━━
+    ("Jin", 317, 420): {
+        "name_local": "東晉", "name_en": "Eastern Jin", "name_ko": "동진",
+    },
+    # ━━━ Jin Empire: 동진/남조 (265-600, HB에서 "Jin Empire"로 표기) ━━━
+    ("Jin Empire", 265, 600): {
+        "name_local": "東晉", "name_en": "Eastern Jin", "name_ko": "동진",
+    },
+    # ━━━ Jin Empire: 여진 금(金) (1115-1234, 만주 팔레트로 전환) ━━━
+    ("Jin Empire", 1115, 1234): {
+        "name_local": "金", "name_en": "Jin Dynasty (Jurchen)", "name_ko": "금나라",
+        "palette": "Manchuria",
+    },
     # ━━━ 한국: 고려 (918-1392, HB에서 "Korea"로 표기되는 시기) ━━━
     ("Korea", 918, 1392): {
         "name_local": "고려", "name_en": "Goryeo", "name_ko": "고려",
@@ -1699,6 +1732,9 @@ def generate_entity_metadata(original_name, year):
                 # [cl] 한국어 이름 오버라이드 (name_en → KOREAN_NAMES 매핑이 부정확할 때)
                 if override.get("name_ko"):
                     metadata["_ko_override"] = override["name_ko"]
+                # [cl] 팔레트 오버라이드 (같은 이름이 시대별로 다른 세력일 때)
+                if override.get("palette"):
+                    metadata["fill_color"] = PALETTES.get(override["palette"], metadata["fill_color"])
                 # 오버라이드에 식민지 정보가 있으면 적용
                 if override.get("colony"):
                     metadata["is_colony"] = True
