@@ -1476,7 +1476,12 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           ? meta.capital_coords as [number, number]
           : calcCentroid(feature.geometry);
         if (center) {
-          const labelText = meta ? meta.display_name : name;
+          // [cl] 식민지: 피지배국명 + 줄바꿈 + [지배국] 표시
+          const labelText = meta
+            ? (meta.is_colony && meta.colonial_ruler
+              ? `${meta.display_name}\n[${meta.colonial_ruler}]`
+              : meta.display_name)
+            : name;
           ds.entities.add({
             position: Cartesian3.fromDegrees(center[0], center[1]),
             label: {
@@ -1501,7 +1506,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           ds.entities.add({
             position: Cartesian3.fromDegrees(vm.capital_coords[0], vm.capital_coords[1]),
             label: {
-              text: vm.display_name,
+              text: vm.colonial_ruler
+                ? `${vm.display_name}\n[${vm.colonial_ruler}]`
+                : vm.display_name,
               font: "bold 12px sans-serif",
               fillColor: Color.fromCssColorString(vm.fill_color || "#FFFFFF"),
               outlineColor: Color.BLACK,
