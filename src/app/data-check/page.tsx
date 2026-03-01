@@ -202,6 +202,9 @@ export default function DataCheckPage() {
           <Link href="/" className="rounded border border-white/30 px-3 py-2 text-sm hover:bg-white/10">
             홈으로
           </Link>
+          <Link href="/ops" className="rounded border border-cyan-300/30 px-3 py-2 text-sm text-cyan-200 hover:bg-cyan-300/10">
+            배치 모니터
+          </Link>
         </div>
 
         {!ready && (

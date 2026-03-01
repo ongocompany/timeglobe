@@ -1673,13 +1673,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const circles = wikidataCirclesRef.current;
     const RADIUS = 50000; // 50km
 
-    // [cl] 1886 이상이면 CShapes 폴리곤이 국경선 담당 → 원형 없이 라벨만
-    const isCShapesEra = targetYear >= CSHAPES_START_YEAR;
-
+    // [cl] CShapes 비활성화 — 전 구간 OHM + 원형으로 통일
     for (const entity of circles) {
       if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
       // [cl] OHM 폴리곤이 있는 엔티티는 원형 스킵 (실제 국경선으로 대체)
-      if (!isCShapesEra && ohmQidsRef.current.has(entity.qid)) continue;
+      if (ohmQidsRef.current.has(entity.qid)) continue;
 
       const position = Cartesian3.fromDegrees(entity.lon, entity.lat);
 
@@ -1692,51 +1690,31 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
 
       const style = getLabelStyle(entity.tier);
-
-      if (isCShapesEra) {
-        // [cl] 1886+ CShapes 구간: 라벨만 표시 (원형 없음, 국경선은 CShapes가 담당)
-        ds.entities.add({
-          position,
-          label: {
-            text: labelText,
-            font: style.font,
-            fillColor: Color.WHITE,
-            outlineColor: Color.BLACK,
-            outlineWidth: 4,
-            style: 2, // FILL_AND_OUTLINE
-            pixelOffset: new Cartesian2(0, 0),
-            scaleByDistance: style.scale,
-            translucencyByDistance: style.translucency,
-          },
-        });
-      } else {
-        // [cl] 1886 이전: 원형 + 라벨 (기존 방식)
-        const fillColor = Color.fromCssColorString(entity.color).withAlpha(0.35);
-        const outlineColor = Color.fromCssColorString(entity.color).withAlpha(0.7);
-        ds.entities.add({
-          position,
-          ellipse: {
-            semiMajorAxis: RADIUS,
-            semiMinorAxis: RADIUS,
-            material: fillColor,
-            outline: true,
-            outlineColor,
-            outlineWidth: 1,
-            classificationType: ClassificationType.BOTH,
-          },
-          label: {
-            text: labelText,
-            font: style.font,
-            fillColor: Color.WHITE,
-            outlineColor: Color.BLACK,
-            outlineWidth: 4,
-            style: 2, // FILL_AND_OUTLINE
-            pixelOffset: new Cartesian2(0, -20),
-            scaleByDistance: style.scale,
-            translucencyByDistance: style.translucency,
-          },
-        });
-      }
+      const fillColor = Color.fromCssColorString(entity.color).withAlpha(0.35);
+      const outlineColor = Color.fromCssColorString(entity.color).withAlpha(0.7);
+      ds.entities.add({
+        position,
+        ellipse: {
+          semiMajorAxis: RADIUS,
+          semiMinorAxis: RADIUS,
+          material: fillColor,
+          outline: true,
+          outlineColor,
+          outlineWidth: 1,
+          classificationType: ClassificationType.BOTH,
+        },
+        label: {
+          text: labelText,
+          font: style.font,
+          fillColor: Color.WHITE,
+          outlineColor: Color.BLACK,
+          outlineWidth: 4,
+          style: 2, // FILL_AND_OUTLINE
+          pixelOffset: new Cartesian2(0, -20),
+          scaleByDistance: style.scale,
+          translucencyByDistance: style.translucency,
+        },
+      });
     }
 
     viewer.dataSources.add(ds);
@@ -1926,26 +1904,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] HMR/StrictMode 리마운트 시 stale 메타데이터 캐시 방지
     metadataCacheRef.current = {};
 
-    // [cl] 국경선 인덱스 로드 + 첫 렌더링 (1886+ CShapes만)
-    loadBorderIndex().then(async (idx) => {
-      if (cancelled) return;
-      borderIndexRef.current = idx;
-      // [cl] 1886 이전이면 CShapes 로드 스킵 (Wikidata 원형이 담당)
-      if (currentYear < CSHAPES_START_YEAR) return;
-      const snap = findClosestSnapshot(idx, currentYear);
-      borderLoadingRef.current = true;
-      try {
-        const { ds, bp1Ratio } = await loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year);
-        if (cancelled || viewer.isDestroyed()) return;
-        if (borderDsRef.current) {
-          viewer.dataSources.remove(borderDsRef.current, true);
-        }
-        viewer.dataSources.add(ds);
-        borderDsRef.current = ds;
-        currentBorderFileRef.current = snap.file;
-      } catch { /* GeoJSON 미다운로드 시 무시 */ }
-      borderLoadingRef.current = false;
-    }).catch(() => {});
+    // [cl] ★ CShapes 비활성화 — OHM + 원형으로 통일 (진형 결정 2026-03-02)
+    // CShapes 국경선 로드를 스킵. OHM 폴리곤이 없는 나라는 원형으로 표시.
+    // 나중에 CShapes 복원 시 이 블록 주석 해제.
+    // loadBorderIndex().then(async (idx) => { ... }).catch(() => {});
 
     // [cl] ★ OHM 인덱스 먼저 로드 → 원형 데이터 로드 (OHM QID 제외를 위해 순서 중요)
     loadOhmIndex().then(() => {
@@ -1988,40 +1950,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     };
   }, [viewer]);
 
-  // [cl] 연도 변경 시 국경 스왑 (1886+ CShapes만, 이전은 Wikidata 원형이 담당)
-  useEffect(() => {
-    if (!viewer || !borderIndexRef.current) return;
-
-    // [cl] 1886 이전이면 CShapes 국경선 제거 (원형만 표시)
-    if (currentYear < CSHAPES_START_YEAR) {
-      if (borderDsRef.current) {
-        viewer.dataSources.remove(borderDsRef.current, true);
-        borderDsRef.current = null;
-        currentBorderFileRef.current = null;
-      }
-      return;
-    }
-
-    const snap = findClosestSnapshot(borderIndexRef.current, currentYear);
-    if (snap.file === currentBorderFileRef.current) return;
-    if (borderLoadingRef.current) return;
-    borderLoadingRef.current = true;
-
-    loadBordersAsPolylines(`/geo/borders/${snap.file}`, snap.year)
-      .then(({ ds, bp1Ratio }) => {
-        if (viewer.isDestroyed()) return;
-        if (borderDsRef.current) {
-          viewer.dataSources.remove(borderDsRef.current, true);
-        }
-        viewer.dataSources.add(ds);
-        borderDsRef.current = ds;
-        currentBorderFileRef.current = snap.file;
-        borderLoadingRef.current = false;
-      })
-      .catch(() => {
-        borderLoadingRef.current = false;
-      });
-  }, [viewer, currentYear]);
+  // [cl] ★ CShapes 비활성화 — 연도 변경 시 CShapes 스왑 스킵 (진형 결정 2026-03-02)
+  // OHM + 원형으로 전 구간 통일. CShapes 복원 시 이 블록 교체.
+  // useEffect(() => { ... CShapes swap logic ... }, [viewer, currentYear]);
 
   // [cl] ★ 연도 변경 시 원형+라벨 업데이트 (국경선 스왑과 독립, 매 연도 반응)
   useEffect(() => {

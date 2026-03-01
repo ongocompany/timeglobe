@@ -46,13 +46,40 @@ function parseCoord(raw) {
   return { lat, lng };
 }
 
-// [cl] 좌표 fallback 체인: P625(직접) → P276(장소) → P17(국가) → null
-function resolveCoord(binding) {
-  return (
-    parseCoord(read(binding, "coord")) ||
-    parseCoord(read(binding, "locationCoord")) ||
-    parseCoord(read(binding, "countryCoord")) ||
-    null
+function firstNonEmpty(binding, keys) {
+  for (const key of keys) {
+    const value = read(binding, key);
+    if (value) return value;
+  }
+  return "";
+}
+
+function resolveCoord(binding, entityType) {
+  const byPriority = {
+    event: ["coord", "locationCoord", "countryCoord"],
+    person: ["coord", "birthPlaceCoord", "birthCountryCoord", "countryCoord"],
+    place: ["coord"],
+  };
+
+  for (const key of byPriority[entityType] ?? []) {
+    const coord = parseCoord(read(binding, key));
+    if (coord) return coord;
+  }
+
+  return null;
+}
+
+function resolveModernCountry(binding, entityType) {
+  if (entityType === "person") {
+    return buildJsonb(
+      firstNonEmpty(binding, ["countryLabel_ko", "birthCountryLabel_ko"]),
+      firstNonEmpty(binding, ["countryLabel_en", "birthCountryLabel_en"]),
+    );
+  }
+
+  return buildJsonb(
+    read(binding, "countryLabel_ko"),
+    read(binding, "countryLabel_en"),
   );
 }
 
@@ -65,7 +92,9 @@ function pickYear(binding, entityType) {
     ],
     person: [
       yearFromRaw(read(binding, "birthRaw")),
-      yearFromRaw(read(binding, "pointInTimeRaw")),
+      yearFromRaw(read(binding, "deathRaw")),
+      yearFromRaw(read(binding, "floruitStartRaw")),
+      yearFromRaw(read(binding, "floruitEndRaw")),
     ],
     place: [
       yearFromRaw(read(binding, "inceptionRaw")),
@@ -136,10 +165,8 @@ export function normalizeBinding(binding, entityType) {
   if (year === null) return null;
 
   // [cl] event는 좌표 없어도 허용 (AI Geocoder가 나중에 채움)
-  // person/place는 좌표 필수 유지
-  const coord = entityType === "event"
-    ? resolveCoord(binding)
-    : parseCoord(read(binding, "coord"));
+  // person/place는 fallback 체인 포함 좌표를 확보해야 적재
+  const coord = resolveCoord(binding, entityType);
   if (!coord && entityType !== "event") return null;
 
   const endYear = pickEndYear(binding, entityType);
@@ -156,10 +183,7 @@ export function normalizeBinding(binding, entityType) {
     location_lat: coord?.lat ?? null,
     location_lng: coord?.lng ?? null,
     is_fog_region: false,
-    modern_country: buildJsonb(
-      read(binding, "countryLabel_ko"),
-      read(binding, "countryLabel_en"),
-    ),
+    modern_country: resolveModernCountry(binding, entityType),
     image_url: null,
     summary: null,
     external_link: buildExternalLink(koTitle, enTitle, qid) || null,

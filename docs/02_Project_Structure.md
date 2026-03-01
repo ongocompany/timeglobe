@@ -1,6 +1,6 @@
 # 🌲 TimeGlobe 프로젝트 구조도 (Project Architecture Tree)
 > 💡 AI 에이전트(Claude 등)가 파일 구조 변경 시 실시간으로 스캔하고 업데이트하는 문서입니다.
-> 📅 마지막 업데이트: 2026-02-28 (cl)
+> 📅 마지막 업데이트: 2026-03-01 (co)
 
 ```text
 TimeGlobe/
@@ -11,10 +11,12 @@ TimeGlobe/
 │   │   ├── globals.css               # 글로벌 스타일
 │   │   ├── favicon.ico
 │   │   ├── api/
-│   │   │   └── models/route.ts       # 3D 모델 API
+│   │   │   ├── models/route.ts       # 3D 모델 API
+│   │   │   └── ops/pipeline-status/route.ts # 운영 모니터 스냅샷 API
 │   │   ├── curation/page.tsx         # AI 큐레이션 대시보드
 │   │   ├── data-check/page.tsx       # 데이터 현황 확인 페이지
-│   │   └── model-manager/page.tsx    # 3D 모델 관리 페이지
+│   │   ├── model-manager/page.tsx    # 3D 모델 관리 페이지
+│   │   └── ops/page.tsx              # 배치/적재 운영 모니터 페이지
 │   │
 │   ├── components/
 │   │   ├── CesiumGlobe.tsx           # ★ 핵심: CesiumJS 3D 지구본 + 국경선 + 마커
@@ -79,15 +81,24 @@ TimeGlobe/
 │   │
 │   ├── wikidata/                     # Wikidata 수집 파이프라인
 │   │   ├── run.mjs                   #   메인 실행 스크립트
+│   │   ├── collectPersonCandidates.mjs # person 후보 큐 수집 (min-sitelinks 필터)
+│   │   ├── runPersonCandidateBatches.mjs # person 후보 큐 장기 배치 래퍼 + 중앙 heartbeat publish
+│   │   ├── runAdaptivePersonCandidatesOnce.mjs # adaptive 배치 재기동/lock 래퍼
+│   │   ├── personCandidateQuery.mjs  #   person 후보 seed query 공용 빌더
 │   │   ├── config.mjs                #   설정 (기간, 카테고리)
 │   │   ├── sparqlTemplates.mjs       #   SPARQL 쿼리 템플릿
 │   │   ├── wdqsClient.mjs            #   Wikidata SPARQL 클라이언트
+│   │   ├── wdqsProbe.mjs             #   WDQS 상태 probe + adaptive 프로파일 판정
+│   │   ├── workerMonitor.mjs         #   Supabase 기반 워커 heartbeat/batch 이력 publish
 │   │   ├── wikiEnricher.mjs          #   Wikipedia 보충 데이터
 │   │   ├── normalizer.mjs            #   데이터 정규화
 │   │   ├── supabaseLoader.mjs        #   Supabase DB 적재
 │   │   ├── checkpoint.mjs            #   중단점 복원
 │   │   ├── logger.mjs                #   로거
 │   │   └── planner.mjs               #   수집 계획
+│   │
+│   ├── supabase/                     # Supabase 운영 보조
+│   │   └── applyMigration.mjs        #   Management API 기반 원격 마이그레이션 실행
 │   │
 │   └── curation/                     # AI 큐레이션
 │       ├── aiCurator.mjs             #   AI 자동 큐레이션
@@ -113,13 +124,19 @@ TimeGlobe/
 │   └── 디자인샘플/                    # UI/UX 디자인 레퍼런스
 │       └── modal-design/             #   모달 디자인 프로토타입 (React+Vite)
 │
+├── ops/
+│   └── systemd/
+│       └── timeglobe-person-candidates.service # Linux 상시 collector systemd 템플릿
+│
 ├── supabase/migrations/              # Supabase DB 마이그레이션
 │   ├── ..._initial_schema.sql        #   초기 스키마
 │   ├── ..._event_sources*.sql        #   이벤트 소스 테이블
 │   ├── ..._event_curation*.sql       #   큐레이션 필드
 │   ├── ..._event_gap_cases.sql       #   갭 케이스
 │   ├── ..._event_summary_archive.sql #   요약 아카이브
-│   └── ..._event_significance*.sql   #   중요도 스코어
+│   ├── ..._event_significance*.sql   #   중요도 스코어
+│   ├── ..._person_candidates.sql     #   person 후보 큐
+│   └── ..._collector_monitoring.sql  #   중앙 워커 heartbeat + batch 이력
 │
 ├── .cache/                           # AI 처리 캐시/로그 (gitignore)
 ├── CLAUDE.md                         # 민철(Claude) 페르소나 설정
@@ -136,9 +153,13 @@ TimeGlobe/
 |------|------|------|
 | `src/components/CesiumGlobe.tsx` | CesiumJS 3D 지구본 핵심 (국경선, 마커, 글로우, 자전) | cl |
 | `src/lib/borderIndex.ts` | 하이브리드 국경 인덱스 (HB nearest + CShapes floor 매칭) | cl |
+| `src/app/ops/page.tsx` | 중앙 워커 상태 + fetch 추이 운영 대시보드 | co |
+| `src/app/api/ops/pipeline-status/route.ts` | 로컬 `.cache` fallback + Supabase 기반 운영 스냅샷 API | co |
 | `public/geo/borders/` | 역사 국경 GeoJSON 160개 + 메타데이터 119개 | cl |
 | `scripts/geo/` | CShapes 추출 + 메타데이터 생성 스크립트 | cl |
 | `scripts/wikidata/` | Wikidata SPARQL 기반 이벤트 수집 파이프라인 | co |
+| `ops/systemd/` | Linux 상시 수집용 systemd 서비스 템플릿 | co |
+| `scripts/supabase/` | Supabase 원격 마이그레이션/운영 보조 스크립트 | co |
 | `scripts/curation/` | AI 큐레이션/지오코딩/요약 보충 | cl |
 | `supabase/migrations/` | Supabase PostgreSQL 스키마 마이그레이션 | gm, co |
 | `docs/` | 기획, 스펙, PM 모니터링 문서 | all |

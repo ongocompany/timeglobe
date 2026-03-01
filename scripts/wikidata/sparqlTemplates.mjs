@@ -37,8 +37,33 @@ function buildEventSelect() {
   `;
 }
 
-// [cl] person/place용 SELECT — 기존 유지
-function buildSelect() {
+function buildPersonSelect() {
+  return `
+    SELECT DISTINCT
+      (STRAFTER(STR(?item), "http://www.wikidata.org/entity/") AS ?qid)
+      (STRAFTER(STR(?class), "http://www.wikidata.org/entity/") AS ?classQid)
+      ?coord
+      ?birthPlaceCoord
+      ?birthCountryCoord
+      ?countryCoord
+      (STR(?birth) AS ?birthRaw)
+      (STR(?death) AS ?deathRaw)
+      (STR(?floruitStart) AS ?floruitStartRaw)
+      (STR(?floruitEnd) AS ?floruitEndRaw)
+      ?itemLabel_ko
+      ?itemLabel_en
+      ?itemDesc_ko
+      ?itemDesc_en
+      ?countryLabel_ko
+      ?countryLabel_en
+      ?birthCountryLabel_ko
+      ?birthCountryLabel_en
+      ?koWikiTitle
+      ?enWikiTitle
+  `;
+}
+
+function buildPlaceSelect() {
   return `
     SELECT DISTINCT
       (STRAFTER(STR(?item), "http://www.wikidata.org/entity/") AS ?qid)
@@ -125,30 +150,62 @@ export function buildQuery({ entityType, yearFrom, yearTo, limit, offset }) {
   }
 
   if (entityType === "person") {
-    const select = buildSelect();
+    const select = buildPersonSelect();
     return `
       ${select}
       WHERE {
-        ?item wdt:P31 wd:Q5 .
-        ?item wdt:P625 ?coord .
-        ?item wdt:P569 ?birth .
+        ?item wdt:P31 ?class .
+        FILTER(?class = wd:Q5)
+        OPTIONAL { ?item wdt:P569 ?birth . }
+        OPTIONAL { ?item wdt:P625 ?coord . }
         OPTIONAL { ?item wdt:P570 ?death. }
-        BIND(YEAR(?birth) AS ?yearRef)
-        FILTER(?yearRef >= ${yearFrom} && ?yearRef <= ${yearTo})
+        OPTIONAL { ?item wdt:P2031 ?floruitStart . }
+        OPTIONAL { ?item wdt:P2032 ?floruitEnd . }
+        OPTIONAL {
+          ?item wdt:P19 ?birthPlace .
+          OPTIONAL { ?birthPlace wdt:P625 ?birthPlaceCoord . }
+          OPTIONAL {
+            ?birthPlace wdt:P17 ?birthCountry .
+            OPTIONAL { ?birthCountry wdt:P625 ?birthCountryCoord . }
+            OPTIONAL {
+              ?birthCountry rdfs:label ?birthCountryLabel_ko
+              FILTER(LANG(?birthCountryLabel_ko) = "ko")
+            }
+            OPTIONAL {
+              ?birthCountry rdfs:label ?birthCountryLabel_en
+              FILTER(LANG(?birthCountryLabel_en) = "en")
+            }
+          }
+        }
+        OPTIONAL {
+          ?item wdt:P27 ?country .
+          OPTIONAL { ?country wdt:P625 ?countryCoord . }
+          OPTIONAL {
+            ?country rdfs:label ?countryLabel_ko
+            FILTER(LANG(?countryLabel_ko) = "ko")
+          }
+          OPTIONAL {
+            ?country rdfs:label ?countryLabel_en
+            FILTER(LANG(?countryLabel_en) = "en")
+          }
+        }
         FILTER(
-          EXISTS {
-            ?koWiki schema:about ?item ;
-                    schema:isPartOf <https://ko.wikipedia.org/> ;
-                    schema:name ?koWikiTitle .
-          }
+          (BOUND(?birth) && YEAR(?birth) >= ${yearFrom} && YEAR(?birth) <= ${yearTo})
           ||
-          EXISTS {
-            ?enWiki schema:about ?item ;
-                    schema:isPartOf <https://en.wikipedia.org/> ;
-                    schema:name ?enWikiTitle .
-          }
+          (BOUND(?death) && YEAR(?death) >= ${yearFrom} && YEAR(?death) <= ${yearTo})
+          ||
+          (BOUND(?floruitStart) && YEAR(?floruitStart) >= ${yearFrom} && YEAR(?floruitStart) <= ${yearTo})
+          ||
+          (BOUND(?floruitEnd) && YEAR(?floruitEnd) >= ${yearFrom} && YEAR(?floruitEnd) <= ${yearTo})
         )
         ${sharedLabelOptionals}
+        FILTER(BOUND(?koWikiTitle) || BOUND(?enWikiTitle))
+        FILTER(
+          BOUND(?coord) ||
+          BOUND(?birthPlaceCoord) ||
+          BOUND(?birthCountryCoord) ||
+          BOUND(?countryCoord)
+        )
       }
       ORDER BY ?item
       LIMIT ${limit}
@@ -157,7 +214,7 @@ export function buildQuery({ entityType, yearFrom, yearTo, limit, offset }) {
   }
 
   if (entityType === "place") {
-    const select = buildSelect();
+    const select = buildPlaceSelect();
     return `
       ${select}
       WHERE {

@@ -393,6 +393,13 @@ export default function Home() {
   //   4200ms → LightSpeed fade-out
   //   4700ms → 스카이박스 ON + idle 복귀
   const handleWarp = (targetYear: number) => {
+    // [cl] ★ 이펙트 임시 비활성화: 즉시 연도 전환만 수행 (데이터 검증용)
+    // 복원 시 아래 early return 2줄 삭제하면 원래대로 동작
+    if (targetYear === currentYear) return;
+    setCurrentYear(targetYear);
+    return; // ← [cl] 임시: 아래 이펙트 전체 스킵
+
+    // eslint-disable-next-line no-unreachable
     if (warpingRef.current || targetYear === currentYear) return;
     warpingRef.current = true;
     // [cl] 워프 방향 캡처: currentYear 변경 전에 결정 (TimeDial 스크롤 방향용)
