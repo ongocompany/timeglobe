@@ -6069,7 +6069,7 @@
     "lineage_id": "L0126",
     "color": "hsl(194, 70%, 55%)",
     "qid": "Q640010",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Zakarid Armenia",
@@ -8004,18 +8004,6 @@
     "tier": 3
   },
   {
-    "name_en": "Bornu Empire",
-    "name_ko": "보르누 제국",
-    "lon": 12.227778,
-    "lat": 13.047222,
-    "start_year": 1387,
-    "end_year": 1893,
-    "lineage_id": null,
-    "color": "hsl(216, 70%, 55%)",
-    "qid": "Q894030",
-    "tier": 2
-  },
-  {
     "name_en": "Kingdom of Kaffa",
     "name_ko": "카파 왕국",
     "lon": 36.24,
@@ -8316,18 +8304,6 @@
     "tier": 2
   },
   {
-    "name_en": "Buganda",
-    "name_ko": "간다인",
-    "lon": 32.4181,
-    "lat": 0.331944,
-    "start_year": 1420,
-    "end_year": 1966,
-    "lineage_id": null,
-    "color": "hsl(294, 70%, 55%)",
-    "qid": "Q473748",
-    "tier": 1
-  },
-  {
     "name_en": "Circassia",
     "name_ko": "체르케스",
     "lon": 39.720278,
@@ -8338,18 +8314,6 @@
     "color": "hsl(156, 70%, 55%)",
     "qid": "Q1408764",
     "tier": 2
-  },
-  {
-    "name_en": "Aztec Triple Alliance",
-    "name_ko": "아스테카 제국",
-    "lon": -99.13333333,
-    "lat": 19.43333333,
-    "start_year": 1428,
-    "end_year": 1521,
-    "lineage_id": "L0138",
-    "color": "hsl(168, 70%, 55%)",
-    "qid": "Q794210",
-    "tier": 3
   },
   {
     "name_en": "Later Lê dynasty",
@@ -10125,7 +10089,7 @@
     "lineage_id": "L0161",
     "color": "hsl(26, 70%, 55%)",
     "qid": "Q15824804",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Colony of Jamaica",
@@ -10305,7 +10269,7 @@
     "lineage_id": null,
     "color": "hsl(252, 70%, 55%)",
     "qid": "Q21530380",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Geledi Sultanate",
@@ -10353,7 +10317,7 @@
     "lineage_id": null,
     "color": "hsl(68, 70%, 55%)",
     "qid": "Q1232141",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Kingdom of Luang Phrabang",
@@ -12297,7 +12261,7 @@
     "lineage_id": null,
     "color": "hsl(166, 70%, 55%)",
     "qid": "Q544630",
-    "tier": 3
+    "tier": 5
   },
   {
     "name_en": "Sultanate of Zanzibar",
@@ -13056,18 +13020,6 @@
     "tier": 4
   },
   {
-    "name_en": "Union of South Africa",
-    "name_ko": "남아프리카 연방",
-    "lon": 24,
-    "lat": -29,
-    "start_year": 1910,
-    "end_year": 1961,
-    "lineage_id": "L0188",
-    "color": "hsl(76, 70%, 55%)",
-    "qid": "Q193619",
-    "tier": 2
-  },
-  {
     "name_en": "Kingdom of Montenegro",
     "name_ko": "몬테네그로 왕국",
     "lon": 19.5333,
@@ -13608,18 +13560,6 @@
     "tier": 4
   },
   {
-    "name_en": "Kingdom of Hungary",
-    "name_ko": "헝가리 왕국",
-    "lon": 19.040277777,
-    "lat": 47.498333333,
-    "start_year": 1920,
-    "end_year": 1946,
-    "lineage_id": "L0101",
-    "color": "hsl(128, 70%, 55%)",
-    "qid": "Q600018",
-    "tier": 3
-  },
-  {
     "name_en": "Alawite Territory",
     "name_ko": "아라위테 영토",
     "lon": 35.791666666,
@@ -13702,18 +13642,6 @@
     "color": "hsl(209, 70%, 55%)",
     "qid": "Q31747",
     "tier": 3
-  },
-  {
-    "name_en": "Ruanda-Urundi",
-    "name_ko": "루안다-우룬디",
-    "lon": 29.9,
-    "lat": -2.7,
-    "start_year": 1922,
-    "end_year": 1962,
-    "lineage_id": "L0167",
-    "color": "hsl(120, 70%, 55%)",
-    "qid": "Q590743",
-    "tier": 2
   },
   {
     "name_en": "Mongolian People's Republic",
@@ -14352,18 +14280,6 @@
     "tier": 4
   },
   {
-    "name_en": "Federation of Ethiopia and Eritrea",
-    "name_ko": "에티오피아-에리트레아 연방",
-    "lon": 38.74,
-    "lat": 9.03,
-    "start_year": 1952,
-    "end_year": 1962,
-    "lineage_id": null,
-    "color": "hsl(235, 70%, 55%)",
-    "qid": "Q2603305",
-    "tier": 4
-  },
-  {
     "name_en": "Kingdom of Cambodia",
     "name_ko": "캄보디아 왕국 (1953년-1970년)",
     "lon": 104.92,
@@ -14436,42 +14352,6 @@
     "tier": 4
   },
   {
-    "name_en": "Republic of Upper Volta",
-    "name_ko": "오트볼타 공화국",
-    "lon": -1.7,
-    "lat": 12.1,
-    "start_year": 1958,
-    "end_year": 1984,
-    "lineage_id": null,
-    "color": "hsl(224, 70%, 55%)",
-    "qid": "Q797422",
-    "tier": 2
-  },
-  {
-    "name_en": "Republic of Dahomey",
-    "name_ko": "다호메이 공화국",
-    "lon": 2.6,
-    "lat": 6.466666666,
-    "start_year": 1958,
-    "end_year": 1975,
-    "lineage_id": "L0127",
-    "color": "hsl(194, 70%, 55%)",
-    "qid": "Q798431",
-    "tier": 3
-  },
-  {
-    "name_en": "Malagasy Republic",
-    "name_ko": "마다가스카르 공화국",
-    "lon": 47.516666666,
-    "lat": -18.933333333,
-    "start_year": 1958,
-    "end_year": 1975,
-    "lineage_id": "L0153",
-    "color": "hsl(341, 70%, 55%)",
-    "qid": "Q6740997",
-    "tier": 4
-  },
-  {
     "name_en": "West Indies Federation",
     "name_ko": "서인도 연방",
     "lon": -61.6333,
@@ -14496,54 +14376,6 @@
     "tier": 2
   },
   {
-    "name_en": "Mali Federation",
-    "name_ko": "말리 연방",
-    "lon": -12.206694444,
-    "lat": 14.459888888,
-    "start_year": 1959,
-    "end_year": 1960,
-    "lineage_id": null,
-    "color": "hsl(205, 70%, 55%)",
-    "qid": "Q216632",
-    "tier": 3
-  },
-  {
-    "name_en": "Republic of the Congo (Léopoldville)",
-    "name_ko": "콩고 공화국 (레오폴드빌)",
-    "lon": 15.4,
-    "lat": -4.4,
-    "start_year": 1960,
-    "end_year": 1971,
-    "lineage_id": "L0199",
-    "color": "hsl(131, 70%, 55%)",
-    "qid": "Q618399",
-    "tier": 4
-  },
-  {
-    "name_en": "Somali Republic",
-    "name_ko": "소말리 공화국",
-    "lon": 45.35,
-    "lat": 2.033333333,
-    "start_year": 1960,
-    "end_year": 1969,
-    "lineage_id": null,
-    "color": "hsl(232, 70%, 55%)",
-    "qid": "Q7559152",
-    "tier": 4
-  },
-  {
-    "name_en": "South Kasai",
-    "name_ko": "남가사이",
-    "lon": 23.6,
-    "lat": -6.15,
-    "start_year": 1960,
-    "end_year": 1961,
-    "lineage_id": null,
-    "color": "hsl(111, 70%, 55%)",
-    "qid": "Q639073",
-    "tier": 4
-  },
-  {
     "name_en": "Tanganyika",
     "name_ko": "탕가니카",
     "lon": 39.28333333,
@@ -14565,7 +14397,7 @@
     "lineage_id": null,
     "color": "hsl(194, 70%, 55%)",
     "qid": "Q14920623",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Yemen Republic",
@@ -14601,7 +14433,7 @@
     "lineage_id": null,
     "color": "hsl(332, 70%, 55%)",
     "qid": "Q7735661",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Socialist Republic of Romania",
@@ -14649,19 +14481,7 @@
     "lineage_id": null,
     "color": "hsl(28, 70%, 55%)",
     "qid": "Q14759030",
-    "tier": 3
-  },
-  {
-    "name_en": "Somali Democratic Republic",
-    "name_ko": "소말리아 민주공화국",
-    "lon": 45.34,
-    "lat": 2.05,
-    "start_year": 1969,
-    "end_year": 1991,
-    "lineage_id": null,
-    "color": "hsl(232, 70%, 55%)",
-    "qid": "Q1477220",
-    "tier": 3
+    "tier": 5
   },
   {
     "name_en": "Provisional Revolutionary Government of the Republic of South Vietnam",
@@ -14674,18 +14494,6 @@
     "color": "hsl(115, 70%, 55%)",
     "qid": "Q1072362",
     "tier": 4
-  },
-  {
-    "name_en": "People's Republic of the Congo",
-    "name_ko": "콩고 인민공화국",
-    "lon": 15.283333333,
-    "lat": -4.266666666,
-    "start_year": 1969,
-    "end_year": 1992,
-    "lineage_id": "L0199",
-    "color": "hsl(131, 70%, 55%)",
-    "qid": "Q1152126",
-    "tier": 3
   },
   {
     "name_en": "Khmer Republic",
@@ -14712,18 +14520,6 @@
     "tier": 4
   },
   {
-    "name_en": "Zaire",
-    "name_ko": "자이르",
-    "lon": 15.4,
-    "lat": -4.4,
-    "start_year": 1971,
-    "end_year": 1997,
-    "lineage_id": "L0199",
-    "color": "hsl(131, 70%, 55%)",
-    "qid": "Q6500954",
-    "tier": 1
-  },
-  {
     "name_en": "Republic of Afghanistan",
     "name_ko": "아프가니스탄 공화국",
     "lon": 65,
@@ -14748,30 +14544,6 @@
     "tier": 4
   },
   {
-    "name_en": "Republic of Cabinda",
-    "name_ko": "카빈다 공화국",
-    "lon": 12.19333333,
-    "lat": -5.57083333,
-    "start_year": 1975,
-    "end_year": 1976,
-    "lineage_id": null,
-    "color": "hsl(141, 70%, 55%)",
-    "qid": "Q2368688",
-    "tier": 4
-  },
-  {
-    "name_en": "People's Republic of Mozambique",
-    "name_ko": "모잠비크 인민공화국",
-    "lon": 35,
-    "lat": 18.25,
-    "start_year": 1975,
-    "end_year": 1990,
-    "lineage_id": null,
-    "color": "hsl(356, 70%, 55%)",
-    "qid": "Q617078",
-    "tier": 4
-  },
-  {
     "name_en": "Democratic Republic of East Timor",
     "name_ko": "데모크라티크 공화국 이스트 티모르",
     "lon": 125.56,
@@ -14782,42 +14554,6 @@
     "color": "hsl(24, 70%, 55%)",
     "qid": "Q114415093",
     "tier": 4
-  },
-  {
-    "name_en": "People's Republic of Benin",
-    "name_ko": "베냉 인민공화국",
-    "lon": 2.6,
-    "lat": 6.5,
-    "start_year": 1975,
-    "end_year": 1990,
-    "lineage_id": "L0127",
-    "color": "hsl(194, 70%, 55%)",
-    "qid": "Q862701",
-    "tier": 3
-  },
-  {
-    "name_en": "People's Republic of Angola",
-    "name_ko": "앙골라 인민공화국",
-    "lon": 13.23,
-    "lat": -8.84,
-    "start_year": 1975,
-    "end_year": 1992,
-    "lineage_id": null,
-    "color": "hsl(110, 70%, 55%)",
-    "qid": "Q2208280",
-    "tier": 3
-  },
-  {
-    "name_en": "Central African Empire",
-    "name_ko": "중앙아프리카 제국",
-    "lon": 20.9,
-    "lat": 6.7,
-    "start_year": 1976,
-    "end_year": 1979,
-    "lineage_id": null,
-    "color": "hsl(342, 70%, 55%)",
-    "qid": "Q189988",
-    "tier": 3
   },
   {
     "name_en": "Democratic Kampuchea",
@@ -14865,31 +14601,7 @@
     "lineage_id": null,
     "color": "hsl(273, 70%, 55%)",
     "qid": "Q16674377",
-    "tier": 3
-  },
-  {
-    "name_en": "Senegambia Confederation",
-    "name_ko": "세네감비아",
-    "lon": -17.033333333,
-    "lat": 14.666666666,
-    "start_year": 1982,
-    "end_year": 1989,
-    "lineage_id": null,
-    "color": "hsl(22, 70%, 55%)",
-    "qid": "Q828443",
-    "tier": 3
-  },
-  {
-    "name_en": "People's Democratic Republic of Ethiopia",
-    "name_ko": "에티오피아 인민민주공화국",
-    "lon": 38.75,
-    "lat": 9.02,
-    "start_year": 1987,
-    "end_year": 1991,
-    "lineage_id": null,
-    "color": "hsl(235, 70%, 55%)",
-    "qid": "Q940821",
-    "tier": 3
+    "tier": 5
   },
   {
     "name_en": "Gagauz Republic",
@@ -14961,7 +14673,7 @@
     "lineage_id": "L0153",
     "color": "hsl(341, 70%, 55%)",
     "qid": "Q7784940",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Federal Republic of Yugoslavia",
@@ -15060,18 +14772,6 @@
     "tier": 3
   },
   {
-    "name_en": "Maakhir",
-    "name_ko": "마아크이르",
-    "lon": 48.334351,
-    "lat": 10.705152,
-    "start_year": 2007,
-    "end_year": 2009,
-    "lineage_id": null,
-    "color": "hsl(123, 70%, 55%)",
-    "qid": "Q1322424",
-    "tier": 4
-  },
-  {
     "name_en": "Republic of Formosa",
     "name_ko": "대만민주국",
     "lon": 121.5,
@@ -15153,18 +14853,6 @@
     "lineage_id": null,
     "color": "hsl(38, 70%, 55%)",
     "qid": "Q1037040",
-    "tier": 4
-  },
-  {
-    "name_en": "People's Republic of Zanzibar",
-    "name_ko": "잔지바르 인민공화국",
-    "lon": 39.19,
-    "lat": -6.16,
-    "start_year": 1964,
-    "end_year": 1964,
-    "lineage_id": null,
-    "color": "hsl(94, 70%, 55%)",
-    "qid": "Q1026192",
     "tier": 4
   },
   {
@@ -16524,18 +16212,6 @@
     "tier": 4
   },
   {
-    "name_en": "Later Turkic Khaganate",
-    "name_ko": "후돌궐",
-    "lon": 107.05,
-    "lat": 47.92,
-    "start_year": 682,
-    "end_year": 744,
-    "lineage_id": null,
-    "color": "hsl(259, 70%, 55%)",
-    "qid": "",
-    "tier": 4
-  },
-  {
     "name_en": "Qara Khitai",
     "name_ko": "서요",
     "lon": 75.99,
@@ -16602,18 +16278,6 @@
     "lat": 21.3,
     "start_year": -2879,
     "end_year": -258,
-    "lineage_id": null,
-    "color": "hsl(285, 70%, 55%)",
-    "qid": null,
-    "tier": 4
-  },
-  {
-    "name_en": "Earlier Lê dynasty",
-    "name_ko": "전 레 왕조",
-    "lon": 105.98,
-    "lat": 20.26,
-    "start_year": 980,
-    "end_year": 1009,
     "lineage_id": null,
     "color": "hsl(285, 70%, 55%)",
     "qid": null,
@@ -16762,18 +16426,6 @@
     "color": "hsl(77, 70%, 55%)",
     "qid": "Q16",
     "tier": 2
-  },
-  {
-    "name_en": "Newfoundland",
-    "name_ko": "뉴펀들랜드",
-    "lon": -52.681,
-    "lat": 47.585,
-    "start_year": 1886,
-    "end_year": 1948,
-    "lineage_id": null,
-    "color": "hsl(154, 70%, 55%)",
-    "qid": "CSHAPES_Newfoundland",
-    "tier": 4
   },
   {
     "name_en": "Bahamas",
@@ -17520,18 +17172,6 @@
     "tier": 4
   },
   {
-    "name_en": "Transvaal",
-    "name_ko": "트란스발",
-    "lon": 28.2294,
-    "lat": -25.7069,
-    "start_year": 1886,
-    "end_year": 1910,
-    "lineage_id": null,
-    "color": "hsl(122, 70%, 55%)",
-    "qid": "CSHAPES_Transvaal",
-    "tier": 4
-  },
-  {
     "name_en": "Namibia",
     "name_ko": "나미비아",
     "lon": 17.0836,
@@ -18069,30 +17709,6 @@
     "lineage_id": null,
     "color": "hsl(126, 70%, 55%)",
     "qid": "CSHAPES_British_Bechuanaland",
-    "tier": 4
-  },
-  {
-    "name_en": "Bokhara",
-    "name_ko": "부하라",
-    "lon": 64.43,
-    "lat": 39.78,
-    "start_year": 1886,
-    "end_year": 1920,
-    "lineage_id": null,
-    "color": "hsl(193, 70%, 55%)",
-    "qid": "CSHAPES_Bokhara",
-    "tier": 4
-  },
-  {
-    "name_en": "Khiva",
-    "name_ko": "히바",
-    "lon": 60.3557,
-    "lat": 41.3911,
-    "start_year": 1886,
-    "end_year": 1920,
-    "lineage_id": null,
-    "color": "hsl(309, 70%, 55%)",
-    "qid": "CSHAPES_Khiva",
     "tier": 4
   },
   {
@@ -18768,18 +18384,6 @@
     "tier": 3
   },
   {
-    "name_en": "Danzig",
-    "name_ko": "단치히",
-    "lon": 18.64,
-    "lat": 54.36,
-    "start_year": 1919,
-    "end_year": 1938,
-    "lineage_id": null,
-    "color": "hsl(214, 70%, 55%)",
-    "qid": "CSHAPES_Danzig",
-    "tier": 4
-  },
-  {
     "name_en": "Burkina Faso",
     "name_ko": "부르키나파소",
     "lon": -1.52472,
@@ -18802,18 +18406,6 @@
     "color": "hsl(101, 70%, 55%)",
     "qid": "Q1009",
     "tier": 3
-  },
-  {
-    "name_en": "Rwanda-Urundi",
-    "name_ko": "르완다우룬디",
-    "lon": 29.36,
-    "lat": -3.37609,
-    "start_year": 1920,
-    "end_year": 1962,
-    "lineage_id": null,
-    "color": "hsl(120, 70%, 55%)",
-    "qid": "CSHAPES_Rwanda-Urundi",
-    "tier": 4
   },
   {
     "name_en": "Iraq",
@@ -19077,18 +18669,6 @@
     "lineage_id": null,
     "color": "hsl(156, 70%, 55%)",
     "qid": "CSHAPES_West_Bank",
-    "tier": 4
-  },
-  {
-    "name_en": "West Irian (Dutch New Guinea)",
-    "name_ko": "서이리안",
-    "lon": 140.7,
-    "lat": -2.53299,
-    "start_year": 1949,
-    "end_year": 1969,
-    "lineage_id": null,
-    "color": "hsl(132, 70%, 55%)",
-    "qid": "CSHAPES_West_Irian_Dutch_New_Guinea",
     "tier": 4
   },
   {
@@ -19438,18 +19018,6 @@
     "color": "hsl(173, 70%, 55%)",
     "qid": "Q958",
     "tier": 3
-  },
-  {
-    "name_en": "Zanzibar",
-    "name_ko": "잔지바르",
-    "lon": 39.1956,
-    "lat": -6.16698,
-    "start_year": 1890,
-    "end_year": 1964,
-    "lineage_id": null,
-    "color": "hsl(94, 70%, 55%)",
-    "qid": "CSHAPES_Zanzibar",
-    "tier": 4
   },
   {
     "name_en": "Germany",
