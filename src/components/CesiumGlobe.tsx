@@ -1478,8 +1478,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const DEFAULT_LABEL_STYLE = TIER_LABEL_STYLES[3];
 
   function getLabelStyle(tier: number | null | undefined): TierLabelStyle {
-    if (tier && TIER_LABEL_STYLES[tier]) return TIER_LABEL_STYLES[tier];
-    return DEFAULT_LABEL_STYLE;
+    // [cl] ★ 임시: 전 티어 T1 크기로 통일 (가시성 확인용, 나중에 복원)
+    return TIER_LABEL_STYLES[1];
   }
 
   // [cl] 메타데이터 타입 정의
