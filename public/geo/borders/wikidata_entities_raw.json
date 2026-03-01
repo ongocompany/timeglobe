@@ -26144,22 +26144,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q5788450",
-    "name_en": "Restored Republic",
-    "name_ko": "복원된 공화국",
-    "start": "1867",
-    "end": "1876",
-    "lon": "118.8",
-    "lat": "32.06",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 4,
-    "sitelinks": 6,
-    "region": "east_asia",
-    "score": 26.9,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q25395037",
     "name_en": "Kingdom of Hungary",
     "name_ko": "헝가리 왕국",
