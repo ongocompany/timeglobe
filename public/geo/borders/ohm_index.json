@@ -45,6 +45,26 @@
     ]
   },
   {
+    "qid": "Q1865132",
+    "name_en": "Aden Protectorate",
+    "name_ko": "아덴 보호령",
+    "tier": 3,
+    "start_year": 1886,
+    "end_year": 1963,
+    "snapshots": [
+      {
+        "rid": 2848486,
+        "start": 1886,
+        "end": 1917
+      },
+      {
+        "rid": 2848485,
+        "start": 1917,
+        "end": 1963
+      }
+    ]
+  },
+  {
     "qid": "CSHAPES_Angola",
     "name_en": "Angola",
     "name_ko": "앙골라",
@@ -1355,6 +1375,21 @@
     ]
   },
   {
+    "qid": "OHM_Brunei_Darussalam",
+    "name_en": "Brunei Darussalam",
+    "name_ko": "Brunei Darussalam",
+    "tier": 3,
+    "start_year": 1984,
+    "end_year": null,
+    "snapshots": [
+      {
+        "rid": 2801993,
+        "start": 1984,
+        "end": null
+      }
+    ]
+  },
+  {
     "qid": "OHM_Bundesrepublik_Deutschland",
     "name_en": "Bundesrepublik Deutschland",
     "name_ko": "Bundesrepublik Deutschland",
@@ -1430,6 +1465,26 @@
       {
         "rid": 2831373,
         "start": 1984,
+        "end": null
+      }
+    ]
+  },
+  {
+    "qid": "OHM_Cabo_Verde",
+    "name_en": "Cabo Verde",
+    "name_ko": "Cabo Verde",
+    "tier": 3,
+    "start_year": 1975,
+    "end_year": 1977,
+    "snapshots": [
+      {
+        "rid": 2803496,
+        "start": 1975,
+        "end": 1977
+      },
+      {
+        "rid": 2885947,
+        "start": 1977,
         "end": null
       }
     ]
@@ -1636,6 +1691,26 @@
         "rid": 2861456,
         "start": 1894,
         "end": 1958
+      }
+    ]
+  },
+  {
+    "qid": "OHM_Colony_of_Natal",
+    "name_en": "Colony of Natal",
+    "name_ko": "Colony of Natal",
+    "tier": 3,
+    "start_year": 1843,
+    "end_year": 1910,
+    "snapshots": [
+      {
+        "rid": 2691742,
+        "start": 1843,
+        "end": 1897
+      },
+      {
+        "rid": 2828441,
+        "start": 1897,
+        "end": 1910
       }
     ]
   },
@@ -1849,6 +1924,21 @@
     "snapshots": [
       {
         "rid": 2800989,
+        "start": 1960,
+        "end": null
+      }
+    ]
+  },
+  {
+    "qid": "OHM_Côte_d'Ivoire",
+    "name_en": "Côte d'Ivoire",
+    "name_ko": "Côte d'Ivoire",
+    "tier": 3,
+    "start_year": 1960,
+    "end_year": null,
+    "snapshots": [
+      {
+        "rid": 2831360,
         "start": 1960,
         "end": null
       }
@@ -2771,6 +2861,21 @@
         "rid": 2850423,
         "start": 1204,
         "end": 1224
+      }
+    ]
+  },
+  {
+    "qid": "OHM_Eswatini",
+    "name_en": "Eswatini",
+    "name_ko": "Eswatini",
+    "tier": 3,
+    "start_year": 2018,
+    "end_year": null,
+    "snapshots": [
+      {
+        "rid": 2691752,
+        "start": 2018,
+        "end": null
       }
     ]
   },
@@ -5961,6 +6066,21 @@
         "rid": 2886194,
         "start": 1998,
         "end": null
+      }
+    ]
+  },
+  {
+    "qid": "OHM_North_Yemen",
+    "name_en": "North Yemen",
+    "name_ko": "North Yemen",
+    "tier": 3,
+    "start_year": 1962,
+    "end_year": 1990,
+    "snapshots": [
+      {
+        "rid": 2743111,
+        "start": 1962,
+        "end": 1990
       }
     ]
   },
@@ -9365,6 +9485,21 @@
     ]
   },
   {
+    "qid": "OHM_Swaziland",
+    "name_en": "Swaziland",
+    "name_ko": "Swaziland",
+    "tier": 3,
+    "start_year": 1968,
+    "end_year": 2018,
+    "snapshots": [
+      {
+        "rid": 2691751,
+        "start": 1968,
+        "end": 2018
+      }
+    ]
+  },
+  {
     "qid": "OHM_Sūþseaxna_rīċe",
     "name_en": "Sūþseaxna rīċe",
     "name_ko": "Sūþseaxna rīċe",
@@ -9440,6 +9575,21 @@
     ]
   },
   {
+    "qid": "OHM_Tanzania",
+    "name_en": "Tanzania",
+    "name_ko": "Tanzania",
+    "tier": 3,
+    "start_year": 1964,
+    "end_year": null,
+    "snapshots": [
+      {
+        "rid": 2831527,
+        "start": 1964,
+        "end": null
+      }
+    ]
+  },
+  {
     "qid": "CSHAPES_Tasmania",
     "name_en": "Tasmania",
     "name_ko": "태즈메이니아",
@@ -9510,6 +9660,21 @@
     ]
   },
   {
+    "qid": "OHM_The_Gambia",
+    "name_en": "The Gambia",
+    "name_ko": "The Gambia",
+    "tier": 3,
+    "start_year": 1965,
+    "end_year": null,
+    "snapshots": [
+      {
+        "rid": 2803503,
+        "start": 1965,
+        "end": null
+      }
+    ]
+  },
+  {
     "qid": "CSHAPES_Togo",
     "name_en": "Togo",
     "name_ko": "토고",
@@ -9530,6 +9695,26 @@
     ]
   },
   {
+    "qid": "OHM_Transvaal_Colony",
+    "name_en": "Transvaal Colony",
+    "name_ko": "Transvaal Colony",
+    "tier": 3,
+    "start_year": 1877,
+    "end_year": 1910,
+    "snapshots": [
+      {
+        "rid": 2828466,
+        "start": 1877,
+        "end": 1884
+      },
+      {
+        "rid": 2828464,
+        "start": 1902,
+        "end": 1910
+      }
+    ]
+  },
+  {
     "qid": "CSHAPES_Trinidad",
     "name_en": "Trinidad",
     "name_ko": "트리니다드 토바고",
@@ -9541,6 +9726,41 @@
         "rid": 2842613,
         "start": 1525,
         "end": 1596
+      }
+    ]
+  },
+  {
+    "qid": "OHM_Türkiye",
+    "name_en": "Türkiye",
+    "name_ko": "Türkiye",
+    "tier": 3,
+    "start_year": 1924,
+    "end_year": 2022,
+    "snapshots": [
+      {
+        "rid": 2801012,
+        "start": 1924,
+        "end": 1939
+      },
+      {
+        "rid": 2864004,
+        "start": 1939,
+        "end": 1964
+      },
+      {
+        "rid": 2890237,
+        "start": 1964,
+        "end": 1982
+      },
+      {
+        "rid": 2890236,
+        "start": 1982,
+        "end": 2022
+      },
+      {
+        "rid": 2864003,
+        "start": 2022,
+        "end": null
       }
     ]
   },
