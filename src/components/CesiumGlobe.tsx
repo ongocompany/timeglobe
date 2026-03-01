@@ -1449,26 +1449,28 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     scale: NearFarScalar;       // 거리별 크기 배율
     translucency: NearFarScalar; // 거리별 투명도
   }
+  // [cl] ★ 선명도 트릭: 폰트를 2배로 렌더링 → scale 절반 → 텍스처 해상도 2배
+  // CesiumJS Label은 Canvas2D→텍스처 변환이라 Retina에서 흐려짐, 이걸로 해결
   const TIER_LABEL_STYLES: Record<number, TierLabelStyle> = {
     1: {
-      font: "bold 22px sans-serif",
-      scale: new NearFarScalar(2e6, 1.2, 2e7, 0.55),        // 항상 잘 보임
+      font: "bold 48px sans-serif",                            // 실효 ~24px
+      scale: new NearFarScalar(2e6, 0.6, 2e7, 0.3),
       translucency: new NearFarScalar(5e6, 1.0, 3e7, 0.3),   // 멀어도 30% 유지
     },
     2: {
-      font: "bold 17px sans-serif",
-      scale: new NearFarScalar(2e6, 1.1, 1.5e7, 0.45),
-      translucency: new NearFarScalar(3e6, 1.0, 2e7, 0),     // 20,000km에서 사라짐
+      font: "bold 38px sans-serif",                            // 실효 ~19px
+      scale: new NearFarScalar(2e6, 0.55, 1.5e7, 0.25),
+      translucency: new NearFarScalar(3e6, 1.0, 2e7, 0),
     },
     3: {
-      font: "14px sans-serif",
-      scale: new NearFarScalar(1e6, 1.0, 8e6, 0.35),
-      translucency: new NearFarScalar(1.5e6, 1.0, 8e6, 0),   // 8,000km에서 사라짐
+      font: "bold 32px sans-serif",                            // 실효 ~16px
+      scale: new NearFarScalar(1e6, 0.55, 1e7, 0.2),
+      translucency: new NearFarScalar(2e6, 1.0, 1e7, 0),     // 10,000km에서 사라짐
     },
     4: {
-      font: "12px sans-serif",
-      scale: new NearFarScalar(5e5, 1.0, 3e6, 0.3),
-      translucency: new NearFarScalar(8e5, 1.0, 3e6, 0),     // 3,000km에서 사라짐
+      font: "bold 28px sans-serif",                            // 실효 ~14px
+      scale: new NearFarScalar(5e5, 0.55, 5e6, 0.2),
+      translucency: new NearFarScalar(1e6, 1.0, 5e6, 0),     // 5,000km에서 사라짐
     },
   };
   // [cl] 기본 스타일 (tier 미지정 시 T3 취급)
@@ -1709,7 +1711,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           font: style.font,
           fillColor: Color.WHITE,
           outlineColor: Color.BLACK,
-          outlineWidth: 2,
+          outlineWidth: 4,   // [cl] 2배 렌더링이라 outline도 키움
           style: 2, // FILL_AND_OUTLINE
           pixelOffset: new Cartesian2(0, -20),
           scaleByDistance: style.scale,
@@ -1887,7 +1889,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
               font: style.font,
               fillColor: Color.WHITE,
               outlineColor: Color.BLACK,
-              outlineWidth: 2,
+              outlineWidth: 4,   // [cl] 2배 렌더링이라 outline도 키움
               style: 2, // FILL_AND_OUTLINE
               pixelOffset: new Cartesian2(0, 0),
               scaleByDistance: style.scale,
