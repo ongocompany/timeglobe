@@ -8,7 +8,7 @@
         "name_en": "Ancient Egypt",
         "name_ko": "고대 이집트",
         "sources": 4,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": -3000,
         "t1_end": -30
       },
@@ -39,7 +39,7 @@
         "name_en": "Ancient Egypt",
         "name_ko": "고대 이집트",
         "sources": 4,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": -3000,
         "t1_end": -30
       },
@@ -68,8 +68,8 @@
         "t1_end": -540
       },
       {
-        "name_en": "Minoan civilisation",
-        "name_ko": "미노아 문명",
+        "name_en": "Minoan civilization",
+        "name_ko": "미노스 문명",
         "sources": 3,
         "region": "europe",
         "t1_start": -2700,
@@ -86,7 +86,7 @@
         "name_en": "Ancient Egypt",
         "name_ko": "고대 이집트",
         "sources": 4,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": -3000,
         "t1_end": -30
       },
@@ -123,8 +123,8 @@
         "t1_end": 900
       },
       {
-        "name_en": "Minoan civilisation",
-        "name_ko": "미노아 문명",
+        "name_en": "Minoan civilization",
+        "name_ko": "미노스 문명",
         "sources": 3,
         "region": "europe",
         "t1_start": -2700,
@@ -146,14 +146,6 @@
     "count": 13,
     "entities": [
       {
-        "name_en": "Ancient Egypt",
-        "name_ko": "고대 이집트",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -3000,
-        "t1_end": -30
-      },
-      {
         "name_en": "Babylonia",
         "name_ko": "바빌로니아",
         "sources": 4,
@@ -162,12 +154,20 @@
         "t1_end": -539
       },
       {
-        "name_en": "Hittite Empire",
-        "name_ko": "히타이트 제국",
+        "name_en": "Shang dynasty",
+        "name_ko": "상나라",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": -1600,
+        "t1_end": -1046
+      },
+      {
+        "name_en": "Ancient Egypt",
+        "name_ko": "고대 이집트",
         "sources": 4,
         "region": "middle_east",
-        "t1_start": -1600,
-        "t1_end": -1178
+        "t1_start": -3000,
+        "t1_end": -30
       },
       {
         "name_en": "Indus Valley Civilisation",
@@ -186,12 +186,12 @@
         "t1_end": -1100
       },
       {
-        "name_en": "Shang dynasty",
-        "name_ko": "상나라",
+        "name_en": "Hittite Empire",
+        "name_ko": "히타이트",
         "sources": 4,
-        "region": "east_asia",
+        "region": "middle_east",
         "t1_start": -1600,
-        "t1_end": -1046
+        "t1_end": -1178
       },
       {
         "name_en": "Elam",
@@ -200,22 +200,6 @@
         "region": "middle_east",
         "t1_start": -2700,
         "t1_end": -540
-      },
-      {
-        "name_en": "Maya civilization",
-        "name_ko": "마야 문명",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -2000,
-        "t1_end": 900
-      },
-      {
-        "name_en": "Minoan civilisation",
-        "name_ko": "미노아 문명",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": -2700,
-        "t1_end": -1450
       },
       {
         "name_en": "Mitanni",
@@ -226,6 +210,22 @@
         "t1_end": -1260
       },
       {
+        "name_en": "Maya civilization",
+        "name_ko": "마야 문명",
+        "sources": 3,
+        "region": "latin_america",
+        "t1_start": -2000,
+        "t1_end": 900
+      },
+      {
+        "name_en": "Minoan civilization",
+        "name_ko": "미노스 문명",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": -2700,
+        "t1_end": -1450
+      },
+      {
         "name_en": "Gojoseon",
         "name_ko": "고조선",
         "sources": 2,
@@ -234,20 +234,20 @@
         "t1_end": -108
       },
       {
+        "name_en": "Olmec civilization",
+        "name_ko": "올멕 문명",
+        "sources": 2,
+        "region": "latin_america",
+        "t1_start": -1500,
+        "t1_end": -400
+      },
+      {
         "name_en": "Kassite Babylonia",
         "name_ko": "카시트 바빌로니아",
         "sources": 2,
         "region": "middle_east",
         "t1_start": -1531,
         "t1_end": -1155
-      },
-      {
-        "name_en": "Olmec",
-        "name_ko": "올멕 문명",
-        "sources": 2,
-        "region": "latin_america",
-        "t1_start": -1500,
-        "t1_end": -400
       }
     ]
   },
@@ -257,14 +257,6 @@
     "count": 11,
     "entities": [
       {
-        "name_en": "Ancient Egypt",
-        "name_ko": "고대 이집트",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -3000,
-        "t1_end": -30
-      },
-      {
         "name_en": "Babylonia",
         "name_ko": "바빌로니아",
         "sources": 4,
@@ -273,12 +265,20 @@
         "t1_end": -539
       },
       {
-        "name_en": "Hittite Empire",
-        "name_ko": "히타이트 제국",
+        "name_en": "Shang dynasty",
+        "name_ko": "상나라",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": -1600,
+        "t1_end": -1046
+      },
+      {
+        "name_en": "Ancient Egypt",
+        "name_ko": "고대 이집트",
         "sources": 4,
         "region": "middle_east",
-        "t1_start": -1600,
-        "t1_end": -1178
+        "t1_start": -3000,
+        "t1_end": -30
       },
       {
         "name_en": "Mycenaean Greece",
@@ -289,12 +289,12 @@
         "t1_end": -1100
       },
       {
-        "name_en": "Shang dynasty",
-        "name_ko": "상나라",
+        "name_en": "Hittite Empire",
+        "name_ko": "히타이트",
         "sources": 4,
-        "region": "east_asia",
+        "region": "middle_east",
         "t1_start": -1600,
-        "t1_end": -1046
+        "t1_end": -1178
       },
       {
         "name_en": "Elam",
@@ -313,6 +313,14 @@
         "t1_end": 900
       },
       {
+        "name_en": "Phoenicia",
+        "name_ko": "페니키아",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": -1200,
+        "t1_end": -300
+      },
+      {
         "name_en": "Gojoseon",
         "name_ko": "고조선",
         "sources": 2,
@@ -321,15 +329,7 @@
         "t1_end": -108
       },
       {
-        "name_en": "Kassite Babylonia",
-        "name_ko": "카시트 바빌로니아",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": -1531,
-        "t1_end": -1155
-      },
-      {
-        "name_en": "Olmec",
+        "name_en": "Olmec civilization",
         "name_ko": "올멕 문명",
         "sources": 2,
         "region": "latin_america",
@@ -337,12 +337,12 @@
         "t1_end": -400
       },
       {
-        "name_en": "Phoenicia",
-        "name_ko": "페니키아",
+        "name_en": "Kassite Babylonia",
+        "name_ko": "카시트 바빌로니아",
         "sources": 2,
         "region": "middle_east",
-        "t1_start": -1200,
-        "t1_end": -300
+        "t1_start": -1531,
+        "t1_end": -1155
       }
     ]
   },
@@ -352,20 +352,20 @@
     "count": 10,
     "entities": [
       {
-        "name_en": "Ancient Egypt",
-        "name_ko": "고대 이집트",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -3000,
-        "t1_end": -30
-      },
-      {
         "name_en": "Babylonia",
         "name_ko": "바빌로니아",
         "sources": 4,
         "region": "middle_east",
         "t1_start": -1900,
         "t1_end": -539
+      },
+      {
+        "name_en": "Ancient Egypt",
+        "name_ko": "고대 이집트",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -3000,
+        "t1_end": -30
       },
       {
         "name_en": "Elam",
@@ -379,9 +379,17 @@
         "name_en": "Kingdom of Kush",
         "name_ko": "쿠시 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -1070,
         "t1_end": 350
+      },
+      {
+        "name_en": "Western Zhou",
+        "name_ko": "서주",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": -1046,
+        "t1_end": -771
       },
       {
         "name_en": "Maya civilization",
@@ -392,12 +400,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Western Zhou",
-        "name_ko": "서주",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": -1046,
-        "t1_end": -771
+        "name_en": "Phoenicia",
+        "name_ko": "페니키아",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": -1200,
+        "t1_end": -300
       },
       {
         "name_en": "Gojoseon",
@@ -409,27 +417,19 @@
       },
       {
         "name_en": "Kingdom of Israel",
-        "name_ko": "이스라엘 왕국",
+        "name_ko": "연합 이스라엘 왕국",
         "sources": 2,
         "region": "middle_east",
         "t1_start": -1050,
         "t1_end": -720
       },
       {
-        "name_en": "Olmec",
+        "name_en": "Olmec civilization",
         "name_ko": "올멕 문명",
         "sources": 2,
         "region": "latin_america",
         "t1_start": -1500,
         "t1_end": -400
-      },
-      {
-        "name_en": "Phoenicia",
-        "name_ko": "페니키아",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": -1200,
-        "t1_end": -300
       }
     ]
   },
@@ -439,10 +439,34 @@
     "count": 14,
     "entities": [
       {
+        "name_en": "Babylonia",
+        "name_ko": "바빌로니아",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -1900,
+        "t1_end": -539
+      },
+      {
+        "name_en": "Neo-Assyrian Empire",
+        "name_ko": "신아시리아 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -911,
+        "t1_end": -609
+      },
+      {
+        "name_en": "Ancient Carthage",
+        "name_ko": "고대 카르타고",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -814,
+        "t1_end": -146
+      },
+      {
         "name_en": "Ancient Egypt",
         "name_ko": "고대 이집트",
         "sources": 4,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": -3000,
         "t1_end": -30
       },
@@ -455,30 +479,6 @@
         "t1_end": -146
       },
       {
-        "name_en": "Babylonia",
-        "name_ko": "바빌로니아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -1900,
-        "t1_end": -539
-      },
-      {
-        "name_en": "Carthage",
-        "name_ko": "카르타고",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -814,
-        "t1_end": -146
-      },
-      {
-        "name_en": "Neo-Assyrian Empire",
-        "name_ko": "신아시리아 제국",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -911,
-        "t1_end": -609
-      },
-      {
         "name_en": "Elam",
         "name_ko": "엘람",
         "sources": 3,
@@ -490,17 +490,9 @@
         "name_en": "Kingdom of Kush",
         "name_ko": "쿠시 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -1070,
         "t1_end": 350
-      },
-      {
-        "name_en": "Maya civilization",
-        "name_ko": "마야 문명",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -2000,
-        "t1_end": 900
       },
       {
         "name_en": "Urartu",
@@ -519,6 +511,22 @@
         "t1_end": -771
       },
       {
+        "name_en": "Maya civilization",
+        "name_ko": "마야 문명",
+        "sources": 3,
+        "region": "latin_america",
+        "t1_start": -2000,
+        "t1_end": 900
+      },
+      {
+        "name_en": "Phoenicia",
+        "name_ko": "페니키아",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": -1200,
+        "t1_end": -300
+      },
+      {
         "name_en": "Gojoseon",
         "name_ko": "고조선",
         "sources": 2,
@@ -528,27 +536,19 @@
       },
       {
         "name_en": "Kingdom of Israel",
-        "name_ko": "이스라엘 왕국",
+        "name_ko": "연합 이스라엘 왕국",
         "sources": 2,
         "region": "middle_east",
         "t1_start": -1050,
         "t1_end": -720
       },
       {
-        "name_en": "Olmec",
+        "name_en": "Olmec civilization",
         "name_ko": "올멕 문명",
         "sources": 2,
         "region": "latin_america",
         "t1_start": -1500,
         "t1_end": -400
-      },
-      {
-        "name_en": "Phoenicia",
-        "name_ko": "페니키아",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": -1200,
-        "t1_end": -300
       }
     ]
   },
@@ -558,10 +558,34 @@
     "count": 17,
     "entities": [
       {
+        "name_en": "Babylonia",
+        "name_ko": "바빌로니아",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -1900,
+        "t1_end": -539
+      },
+      {
+        "name_en": "Ancient Carthage",
+        "name_ko": "고대 카르타고",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -814,
+        "t1_end": -146
+      },
+      {
+        "name_en": "Neo-Babylonian Empire",
+        "name_ko": "신바빌로니아 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -626,
+        "t1_end": -539
+      },
+      {
         "name_en": "Ancient Egypt",
         "name_ko": "고대 이집트",
         "sources": 4,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": -3000,
         "t1_end": -30
       },
@@ -572,38 +596,6 @@
         "region": "europe",
         "t1_start": -800,
         "t1_end": -146
-      },
-      {
-        "name_en": "Babylonia",
-        "name_ko": "바빌로니아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -1900,
-        "t1_end": -539
-      },
-      {
-        "name_en": "Carthage",
-        "name_ko": "카르타고",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -814,
-        "t1_end": -146
-      },
-      {
-        "name_en": "Neo-Babylonian Empire",
-        "name_ko": "신바빌로니아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -626,
-        "t1_end": -539
-      },
-      {
-        "name_en": "Eastern Zhou",
-        "name_ko": "동주",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": -771,
-        "t1_end": -256
       },
       {
         "name_en": "Elam",
@@ -617,7 +609,7 @@
         "name_en": "Kingdom of Kush",
         "name_ko": "쿠시 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -1070,
         "t1_end": 350
       },
@@ -630,6 +622,38 @@
         "t1_end": -321
       },
       {
+        "name_en": "Urartu",
+        "name_ko": "우라르투",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -860,
+        "t1_end": -590
+      },
+      {
+        "name_en": "Median Kingdom",
+        "name_ko": "메디아은 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -678,
+        "t1_end": -549
+      },
+      {
+        "name_en": "Scythia Minor (Crimea)",
+        "name_ko": "스크이티아 (크리메아)",
+        "sources": 3,
+        "region": "central_asia",
+        "t1_start": -700,
+        "t1_end": -200
+      },
+      {
+        "name_en": "Eastern Zhou",
+        "name_ko": "동주",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": -771,
+        "t1_end": -256
+      },
+      {
         "name_en": "Maya civilization",
         "name_ko": "마야 문명",
         "sources": 3,
@@ -638,28 +662,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Median Empire",
-        "name_ko": "메디아",
-        "sources": 3,
+        "name_en": "Phoenicia",
+        "name_ko": "페니키아",
+        "sources": 2,
         "region": "middle_east",
-        "t1_start": -678,
-        "t1_end": -549
-      },
-      {
-        "name_en": "Scythia",
-        "name_ko": "스키타이",
-        "sources": 3,
-        "region": "central_asia",
-        "t1_start": -700,
-        "t1_end": -200
-      },
-      {
-        "name_en": "Urartu",
-        "name_ko": "우라르투",
-        "sources": 3,
-        "region": "middle_east",
-        "t1_start": -860,
-        "t1_end": -590
+        "t1_start": -1200,
+        "t1_end": -300
       },
       {
         "name_en": "Gojoseon",
@@ -678,20 +686,12 @@
         "t1_end": -546
       },
       {
-        "name_en": "Olmec",
+        "name_en": "Olmec civilization",
         "name_ko": "올멕 문명",
         "sources": 2,
         "region": "latin_america",
         "t1_start": -1500,
         "t1_end": -400
-      },
-      {
-        "name_en": "Phoenicia",
-        "name_ko": "페니키아",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": -1200,
-        "t1_end": -300
       }
     ]
   },
@@ -701,18 +701,34 @@
     "count": 13,
     "entities": [
       {
+        "name_en": "Ancient Carthage",
+        "name_ko": "고대 카르타고",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -814,
+        "t1_end": -146
+      },
+      {
         "name_en": "Achaemenid Empire",
-        "name_ko": "아케메네스 페르시아",
+        "name_ko": "아케메네스 왕조",
         "sources": 4,
         "region": "middle_east",
         "t1_start": -550,
         "t1_end": -330
       },
       {
+        "name_en": "Roman Republic",
+        "name_ko": "공화정 로마",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -509,
+        "t1_end": -27
+      },
+      {
         "name_en": "Ancient Egypt",
         "name_ko": "고대 이집트",
         "sources": 4,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": -3000,
         "t1_end": -30
       },
@@ -725,34 +741,10 @@
         "t1_end": -146
       },
       {
-        "name_en": "Carthage",
-        "name_ko": "카르타고",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -814,
-        "t1_end": -146
-      },
-      {
-        "name_en": "Roman Republic",
-        "name_ko": "로마 공화정",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": -509,
-        "t1_end": -27
-      },
-      {
-        "name_en": "Eastern Zhou",
-        "name_ko": "동주",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": -771,
-        "t1_end": -256
-      },
-      {
         "name_en": "Kingdom of Kush",
         "name_ko": "쿠시 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -1070,
         "t1_end": 350
       },
@@ -765,6 +757,22 @@
         "t1_end": -321
       },
       {
+        "name_en": "Scythia Minor (Crimea)",
+        "name_ko": "스크이티아 (크리메아)",
+        "sources": 3,
+        "region": "central_asia",
+        "t1_start": -700,
+        "t1_end": -200
+      },
+      {
+        "name_en": "Eastern Zhou",
+        "name_ko": "동주",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": -771,
+        "t1_end": -256
+      },
+      {
         "name_en": "Maya civilization",
         "name_ko": "마야 문명",
         "sources": 3,
@@ -773,12 +781,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Scythia",
-        "name_ko": "스키타이",
-        "sources": 3,
-        "region": "central_asia",
-        "t1_start": -700,
-        "t1_end": -200
+        "name_en": "Phoenicia",
+        "name_ko": "페니키아",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": -1200,
+        "t1_end": -300
       },
       {
         "name_en": "Gojoseon",
@@ -789,20 +797,12 @@
         "t1_end": -108
       },
       {
-        "name_en": "Olmec",
+        "name_en": "Olmec civilization",
         "name_ko": "올멕 문명",
         "sources": 2,
         "region": "latin_america",
         "t1_start": -1500,
         "t1_end": -400
-      },
-      {
-        "name_en": "Phoenicia",
-        "name_ko": "페니키아",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": -1200,
-        "t1_end": -300
       }
     ]
   },
@@ -812,18 +812,34 @@
     "count": 13,
     "entities": [
       {
+        "name_en": "Ancient Carthage",
+        "name_ko": "고대 카르타고",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -814,
+        "t1_end": -146
+      },
+      {
         "name_en": "Achaemenid Empire",
-        "name_ko": "아케메네스 페르시아",
+        "name_ko": "아케메네스 왕조",
         "sources": 4,
         "region": "middle_east",
         "t1_start": -550,
         "t1_end": -330
       },
       {
+        "name_en": "Roman Republic",
+        "name_ko": "공화정 로마",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -509,
+        "t1_end": -27
+      },
+      {
         "name_en": "Ancient Egypt",
         "name_ko": "고대 이집트",
         "sources": 4,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": -3000,
         "t1_end": -30
       },
@@ -836,34 +852,10 @@
         "t1_end": -146
       },
       {
-        "name_en": "Carthage",
-        "name_ko": "카르타고",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -814,
-        "t1_end": -146
-      },
-      {
-        "name_en": "Roman Republic",
-        "name_ko": "로마 공화정",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": -509,
-        "t1_end": -27
-      },
-      {
-        "name_en": "Eastern Zhou",
-        "name_ko": "동주",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": -771,
-        "t1_end": -256
-      },
-      {
         "name_en": "Kingdom of Kush",
         "name_ko": "쿠시 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -1070,
         "t1_end": 350
       },
@@ -876,6 +868,22 @@
         "t1_end": -321
       },
       {
+        "name_en": "Scythia Minor (Crimea)",
+        "name_ko": "스크이티아 (크리메아)",
+        "sources": 3,
+        "region": "central_asia",
+        "t1_start": -700,
+        "t1_end": -200
+      },
+      {
+        "name_en": "Eastern Zhou",
+        "name_ko": "동주",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": -771,
+        "t1_end": -256
+      },
+      {
         "name_en": "Maya civilization",
         "name_ko": "마야 문명",
         "sources": 3,
@@ -884,12 +892,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Scythia",
-        "name_ko": "스키타이",
-        "sources": 3,
-        "region": "central_asia",
-        "t1_start": -700,
-        "t1_end": -200
+        "name_en": "Phoenicia",
+        "name_ko": "페니키아",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": -1200,
+        "t1_end": -300
       },
       {
         "name_en": "Gojoseon",
@@ -900,20 +908,12 @@
         "t1_end": -108
       },
       {
-        "name_en": "Olmec",
+        "name_en": "Olmec civilization",
         "name_ko": "올멕 문명",
         "sources": 2,
         "region": "latin_america",
         "t1_start": -1500,
         "t1_end": -400
-      },
-      {
-        "name_en": "Phoenicia",
-        "name_ko": "페니키아",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": -1200,
-        "t1_end": -300
       }
     ]
   },
@@ -923,52 +923,36 @@
     "count": 14,
     "entities": [
       {
-        "name_en": "Ancient Egypt",
-        "name_ko": "고대 이집트",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -3000,
-        "t1_end": -30
-      },
-      {
-        "name_en": "Ancient Greece",
-        "name_ko": "고대 그리스",
+        "name_en": "Ancient Carthage",
+        "name_ko": "고대 카르타고",
         "sources": 4,
         "region": "europe",
-        "t1_start": -800,
-        "t1_end": -146
-      },
-      {
-        "name_en": "Carthage",
-        "name_ko": "카르타고",
-        "sources": 4,
-        "region": "north_africa",
         "t1_start": -814,
         "t1_end": -146
       },
       {
         "name_en": "Macedonia",
-        "name_ko": "마케도니아",
+        "name_ko": "마케도니아 왕국",
         "sources": 4,
         "region": "europe",
         "t1_start": -359,
         "t1_end": -168
       },
       {
-        "name_en": "Maurya Empire",
+        "name_en": "Roman Republic",
+        "name_ko": "공화정 로마",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -509,
+        "t1_end": -27
+      },
+      {
+        "name_en": "Maurya empire",
         "name_ko": "마우리아 제국",
         "sources": 4,
         "region": "south_asia",
         "t1_start": -321,
         "t1_end": -184
-      },
-      {
-        "name_en": "Roman Republic",
-        "name_ko": "로마 공화정",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": -509,
-        "t1_end": -27
       },
       {
         "name_en": "Seleucid Empire",
@@ -979,20 +963,44 @@
         "t1_end": -63
       },
       {
+        "name_en": "Ancient Egypt",
+        "name_ko": "고대 이집트",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -3000,
+        "t1_end": -30
+      },
+      {
+        "name_en": "Ancient Greece",
+        "name_ko": "고대 그리스",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -800,
+        "t1_end": -146
+      },
+      {
+        "name_en": "Kingdom of Kush",
+        "name_ko": "쿠시 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -1070,
+        "t1_end": 350
+      },
+      {
+        "name_en": "Scythia Minor (Crimea)",
+        "name_ko": "스크이티아 (크리메아)",
+        "sources": 3,
+        "region": "central_asia",
+        "t1_start": -700,
+        "t1_end": -200
+      },
+      {
         "name_en": "Eastern Zhou",
         "name_ko": "동주",
         "sources": 3,
         "region": "east_asia",
         "t1_start": -771,
         "t1_end": -256
-      },
-      {
-        "name_en": "Kingdom of Kush",
-        "name_ko": "쿠시 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -1070,
-        "t1_end": 350
       },
       {
         "name_en": "Maya civilization",
@@ -1011,12 +1019,12 @@
         "t1_end": -30
       },
       {
-        "name_en": "Scythia",
-        "name_ko": "스키타이",
-        "sources": 3,
-        "region": "central_asia",
-        "t1_start": -700,
-        "t1_end": -200
+        "name_en": "Phoenicia",
+        "name_ko": "페니키아",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": -1200,
+        "t1_end": -300
       },
       {
         "name_en": "Gojoseon",
@@ -1025,14 +1033,6 @@
         "region": "east_asia",
         "t1_start": -2333,
         "t1_end": -108
-      },
-      {
-        "name_en": "Phoenicia",
-        "name_ko": "페니키아",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": -1200,
-        "t1_end": -300
       }
     ]
   },
@@ -1042,68 +1042,36 @@
     "count": 15,
     "entities": [
       {
-        "name_en": "Ancient Egypt",
-        "name_ko": "고대 이집트",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -3000,
-        "t1_end": -30
-      },
-      {
-        "name_en": "Ancient Greece",
-        "name_ko": "고대 그리스",
+        "name_en": "Ancient Carthage",
+        "name_ko": "고대 카르타고",
         "sources": 4,
         "region": "europe",
-        "t1_start": -800,
-        "t1_end": -146
-      },
-      {
-        "name_en": "Carthage",
-        "name_ko": "카르타고",
-        "sources": 4,
-        "region": "north_africa",
         "t1_start": -814,
         "t1_end": -146
       },
       {
-        "name_en": "Han dynasty",
-        "name_ko": "한나라",
-        "sources": 4,
-        "region": "east_asia",
-        "t1_start": -206,
-        "t1_end": 220
-      },
-      {
         "name_en": "Macedonia",
-        "name_ko": "마케도니아",
+        "name_ko": "마케도니아 왕국",
         "sources": 4,
         "region": "europe",
         "t1_start": -359,
         "t1_end": -168
       },
       {
-        "name_en": "Maurya Empire",
+        "name_en": "Roman Republic",
+        "name_ko": "공화정 로마",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -509,
+        "t1_end": -27
+      },
+      {
+        "name_en": "Maurya empire",
         "name_ko": "마우리아 제국",
         "sources": 4,
         "region": "south_asia",
         "t1_start": -321,
         "t1_end": -184
-      },
-      {
-        "name_en": "Parthian Empire",
-        "name_ko": "파르티아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -247,
-        "t1_end": 224
-      },
-      {
-        "name_en": "Roman Republic",
-        "name_ko": "로마 공화정",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": -509,
-        "t1_end": -27
       },
       {
         "name_en": "Seleucid Empire",
@@ -1117,17 +1085,57 @@
         "name_en": "Xiongnu",
         "name_ko": "흉노",
         "sources": 4,
-        "region": "central_asia",
+        "region": "east_asia",
         "t1_start": -209,
         "t1_end": 155
+      },
+      {
+        "name_en": "Parthian Empire",
+        "name_ko": "파르티아 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -247,
+        "t1_end": 224
+      },
+      {
+        "name_en": "Han dynasty",
+        "name_ko": "한나라",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": -206,
+        "t1_end": 220
+      },
+      {
+        "name_en": "Ancient Egypt",
+        "name_ko": "고대 이집트",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -3000,
+        "t1_end": -30
+      },
+      {
+        "name_en": "Ancient Greece",
+        "name_ko": "고대 그리스",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": -800,
+        "t1_end": -146
       },
       {
         "name_en": "Kingdom of Kush",
         "name_ko": "쿠시 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -1070,
         "t1_end": 350
+      },
+      {
+        "name_en": "Scythia Minor (Crimea)",
+        "name_ko": "스크이티아 (크리메아)",
+        "sources": 3,
+        "region": "central_asia",
+        "t1_start": -700,
+        "t1_end": -200
       },
       {
         "name_en": "Maya civilization",
@@ -1144,14 +1152,6 @@
         "region": "north_africa",
         "t1_start": -305,
         "t1_end": -30
-      },
-      {
-        "name_en": "Scythia",
-        "name_ko": "스키타이",
-        "sources": 3,
-        "region": "central_asia",
-        "t1_start": -700,
-        "t1_end": -200
       },
       {
         "name_en": "Gojoseon",
@@ -1169,32 +1169,8 @@
     "count": 12,
     "entities": [
       {
-        "name_en": "Ancient Egypt",
-        "name_ko": "고대 이집트",
-        "sources": 4,
-        "region": "north_africa",
-        "t1_start": -3000,
-        "t1_end": -30
-      },
-      {
-        "name_en": "Han dynasty",
-        "name_ko": "한나라",
-        "sources": 4,
-        "region": "east_asia",
-        "t1_start": -206,
-        "t1_end": 220
-      },
-      {
-        "name_en": "Parthian Empire",
-        "name_ko": "파르티아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -247,
-        "t1_end": 224
-      },
-      {
         "name_en": "Roman Republic",
-        "name_ko": "로마 공화정",
+        "name_ko": "공화정 로마",
         "sources": 4,
         "region": "europe",
         "t1_start": -509,
@@ -1212,25 +1188,57 @@
         "name_en": "Xiongnu",
         "name_ko": "흉노",
         "sources": 4,
-        "region": "central_asia",
+        "region": "east_asia",
         "t1_start": -209,
         "t1_end": 155
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -100,
-        "t1_end": 940
+        "name_en": "Parthian Empire",
+        "name_ko": "파르티아 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -247,
+        "t1_end": 224
+      },
+      {
+        "name_en": "Han dynasty",
+        "name_ko": "한나라",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": -206,
+        "t1_end": 220
+      },
+      {
+        "name_en": "Ancient Egypt",
+        "name_ko": "고대 이집트",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -3000,
+        "t1_end": -30
       },
       {
         "name_en": "Kingdom of Kush",
         "name_ko": "쿠시 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -1070,
         "t1_end": 350
+      },
+      {
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -100,
+        "t1_end": 940
+      },
+      {
+        "name_en": "Teotihuacan civilization",
+        "name_ko": "테오티후아카은 문명",
+        "sources": 3,
+        "region": "latin_america",
+        "t1_start": -100,
+        "t1_end": 550
       },
       {
         "name_en": "Maya civilization",
@@ -1249,16 +1257,8 @@
         "t1_end": -30
       },
       {
-        "name_en": "Teotihuacan",
-        "name_ko": "테오티우아칸",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -100,
-        "t1_end": 550
-      },
-      {
         "name_en": "Satavahana dynasty",
-        "name_ko": "사타바하나",
+        "name_ko": "사타바하나 왕조",
         "sources": 2,
         "region": "south_asia",
         "t1_start": -100,
@@ -1272,20 +1272,28 @@
     "count": 12,
     "entities": [
       {
+        "name_en": "Xiongnu",
+        "name_ko": "흉노",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": -209,
+        "t1_end": 155
+      },
+      {
+        "name_en": "Parthian Empire",
+        "name_ko": "파르티아 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -247,
+        "t1_end": 224
+      },
+      {
         "name_en": "Han dynasty",
         "name_ko": "한나라",
         "sources": 4,
         "region": "east_asia",
         "t1_start": -206,
         "t1_end": 220
-      },
-      {
-        "name_en": "Parthian Empire",
-        "name_ko": "파르티아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -247,
-        "t1_end": 224
       },
       {
         "name_en": "Roman Empire",
@@ -1296,12 +1304,20 @@
         "t1_end": 476
       },
       {
-        "name_en": "Xiongnu",
-        "name_ko": "흉노",
-        "sources": 4,
-        "region": "central_asia",
-        "t1_start": -209,
-        "t1_end": 155
+        "name_en": "Kingdom of Kush",
+        "name_ko": "쿠시 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -1070,
+        "t1_end": 350
+      },
+      {
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -100,
+        "t1_end": 940
       },
       {
         "name_en": "Goguryeo",
@@ -1312,20 +1328,12 @@
         "t1_end": 668
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
+        "name_en": "Teotihuacan civilization",
+        "name_ko": "테오티후아카은 문명",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "latin_america",
         "t1_start": -100,
-        "t1_end": 940
-      },
-      {
-        "name_en": "Kingdom of Kush",
-        "name_ko": "쿠시 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -1070,
-        "t1_end": 350
+        "t1_end": 550
       },
       {
         "name_en": "Maya civilization",
@@ -1336,24 +1344,8 @@
         "t1_end": 900
       },
       {
-        "name_en": "Teotihuacan",
-        "name_ko": "테오티우아칸",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -100,
-        "t1_end": 550
-      },
-      {
-        "name_en": "Baekje",
-        "name_ko": "백제",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": -18,
-        "t1_end": 660
-      },
-      {
         "name_en": "Satavahana dynasty",
-        "name_ko": "사타바하나",
+        "name_ko": "사타바하나 왕조",
         "sources": 2,
         "region": "south_asia",
         "t1_start": -100,
@@ -1366,6 +1358,14 @@
         "region": "east_asia",
         "t1_start": -57,
         "t1_end": 935
+      },
+      {
+        "name_en": "Baekje",
+        "name_ko": "백제",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": -18,
+        "t1_end": 660
       }
     ]
   },
@@ -1375,6 +1375,22 @@
     "count": 13,
     "entities": [
       {
+        "name_en": "Xiongnu",
+        "name_ko": "흉노",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": -209,
+        "t1_end": 155
+      },
+      {
+        "name_en": "Parthian Empire",
+        "name_ko": "파르티아 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -247,
+        "t1_end": 224
+      },
+      {
         "name_en": "Han dynasty",
         "name_ko": "한나라",
         "sources": 4,
@@ -1384,19 +1400,11 @@
       },
       {
         "name_en": "Kushan Empire",
-        "name_ko": "쿠샨 제국",
+        "name_ko": "쿠샨 왕조",
         "sources": 4,
-        "region": "central_asia",
+        "region": "south_asia",
         "t1_start": 30,
         "t1_end": 375
-      },
-      {
-        "name_en": "Parthian Empire",
-        "name_ko": "파르티아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -247,
-        "t1_end": 224
       },
       {
         "name_en": "Roman Empire",
@@ -1407,12 +1415,20 @@
         "t1_end": 476
       },
       {
-        "name_en": "Xiongnu",
-        "name_ko": "흉노",
-        "sources": 4,
-        "region": "central_asia",
-        "t1_start": -209,
-        "t1_end": 155
+        "name_en": "Kingdom of Kush",
+        "name_ko": "쿠시 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -1070,
+        "t1_end": 350
+      },
+      {
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -100,
+        "t1_end": 940
       },
       {
         "name_en": "Goguryeo",
@@ -1423,20 +1439,12 @@
         "t1_end": 668
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
+        "name_en": "Teotihuacan civilization",
+        "name_ko": "테오티후아카은 문명",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "latin_america",
         "t1_start": -100,
-        "t1_end": 940
-      },
-      {
-        "name_en": "Kingdom of Kush",
-        "name_ko": "쿠시 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -1070,
-        "t1_end": 350
+        "t1_end": 550
       },
       {
         "name_en": "Maya civilization",
@@ -1447,24 +1455,8 @@
         "t1_end": 900
       },
       {
-        "name_en": "Teotihuacan",
-        "name_ko": "테오티우아칸",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -100,
-        "t1_end": 550
-      },
-      {
-        "name_en": "Baekje",
-        "name_ko": "백제",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": -18,
-        "t1_end": 660
-      },
-      {
         "name_en": "Satavahana dynasty",
-        "name_ko": "사타바하나",
+        "name_ko": "사타바하나 왕조",
         "sources": 2,
         "region": "south_asia",
         "t1_start": -100,
@@ -1477,6 +1469,14 @@
         "region": "east_asia",
         "t1_start": -57,
         "t1_end": 935
+      },
+      {
+        "name_en": "Baekje",
+        "name_ko": "백제",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": -18,
+        "t1_end": 660
       }
     ]
   },
@@ -1486,6 +1486,14 @@
     "count": 12,
     "entities": [
       {
+        "name_en": "Parthian Empire",
+        "name_ko": "파르티아 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": -247,
+        "t1_end": 224
+      },
+      {
         "name_en": "Han dynasty",
         "name_ko": "한나라",
         "sources": 4,
@@ -1495,19 +1503,11 @@
       },
       {
         "name_en": "Kushan Empire",
-        "name_ko": "쿠샨 제국",
+        "name_ko": "쿠샨 왕조",
         "sources": 4,
-        "region": "central_asia",
+        "region": "south_asia",
         "t1_start": 30,
         "t1_end": 375
-      },
-      {
-        "name_en": "Parthian Empire",
-        "name_ko": "파르티아",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": -247,
-        "t1_end": 224
       },
       {
         "name_en": "Roman Empire",
@@ -1518,6 +1518,22 @@
         "t1_end": 476
       },
       {
+        "name_en": "Kingdom of Kush",
+        "name_ko": "쿠시 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -1070,
+        "t1_end": 350
+      },
+      {
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -100,
+        "t1_end": 940
+      },
+      {
         "name_en": "Goguryeo",
         "name_ko": "고구려",
         "sources": 3,
@@ -1526,20 +1542,12 @@
         "t1_end": 668
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
+        "name_en": "Teotihuacan civilization",
+        "name_ko": "테오티후아카은 문명",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "latin_america",
         "t1_start": -100,
-        "t1_end": 940
-      },
-      {
-        "name_en": "Kingdom of Kush",
-        "name_ko": "쿠시 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -1070,
-        "t1_end": 350
+        "t1_end": 550
       },
       {
         "name_en": "Maya civilization",
@@ -1550,24 +1558,8 @@
         "t1_end": 900
       },
       {
-        "name_en": "Teotihuacan",
-        "name_ko": "테오티우아칸",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -100,
-        "t1_end": 550
-      },
-      {
-        "name_en": "Baekje",
-        "name_ko": "백제",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": -18,
-        "t1_end": 660
-      },
-      {
         "name_en": "Satavahana dynasty",
-        "name_ko": "사타바하나",
+        "name_ko": "사타바하나 왕조",
         "sources": 2,
         "region": "south_asia",
         "t1_start": -100,
@@ -1580,6 +1572,14 @@
         "region": "east_asia",
         "t1_start": -57,
         "t1_end": 935
+      },
+      {
+        "name_en": "Baekje",
+        "name_ko": "백제",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": -18,
+        "t1_end": 660
       }
     ]
   },
@@ -1589,20 +1589,28 @@
     "count": 11,
     "entities": [
       {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
+        "name_en": "Kushan Empire",
+        "name_ko": "쿠샨 왕조",
         "sources": 4,
-        "region": "sub_saharan",
+        "region": "south_asia",
+        "t1_start": 30,
+        "t1_end": 375
+      },
+      {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
         "t1_start": 300,
         "t1_end": 1200
       },
       {
-        "name_en": "Kushan Empire",
-        "name_ko": "쿠샨 제국",
+        "name_en": "Sasanian Empire",
+        "name_ko": "사산 왕조",
         "sources": 4,
         "region": "central_asia",
-        "t1_start": 30,
-        "t1_end": 375
+        "t1_start": 224,
+        "t1_end": 651
       },
       {
         "name_en": "Roman Empire",
@@ -1613,12 +1621,20 @@
         "t1_end": 476
       },
       {
-        "name_en": "Sasanian Empire",
-        "name_ko": "사산 페르시아",
-        "sources": 4,
+        "name_en": "Kingdom of Kush",
+        "name_ko": "쿠시 왕국",
+        "sources": 3,
         "region": "middle_east",
-        "t1_start": 224,
-        "t1_end": 651
+        "t1_start": -1070,
+        "t1_end": 350
+      },
+      {
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -100,
+        "t1_end": 940
       },
       {
         "name_en": "Goguryeo",
@@ -1629,20 +1645,12 @@
         "t1_end": 668
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
+        "name_en": "Teotihuacan civilization",
+        "name_ko": "테오티후아카은 문명",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "latin_america",
         "t1_start": -100,
-        "t1_end": 940
-      },
-      {
-        "name_en": "Kingdom of Kush",
-        "name_ko": "쿠시 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -1070,
-        "t1_end": 350
+        "t1_end": 550
       },
       {
         "name_en": "Maya civilization",
@@ -1653,12 +1661,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Teotihuacan",
-        "name_ko": "테오티우아칸",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -100,
-        "t1_end": 550
+        "name_en": "Silla",
+        "name_ko": "신라",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": -57,
+        "t1_end": 935
       },
       {
         "name_en": "Baekje",
@@ -1667,14 +1675,6 @@
         "region": "east_asia",
         "t1_start": -18,
         "t1_end": 660
-      },
-      {
-        "name_en": "Silla",
-        "name_ko": "신라",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": -57,
-        "t1_end": 935
       }
     ]
   },
@@ -1684,28 +1684,36 @@
     "count": 13,
     "entities": [
       {
-        "name_en": "Byzantine Empire",
-        "name_ko": "동로마 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 395,
-        "t1_end": 1453
-      },
-      {
         "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
+        "name_ko": "와가두 제국",
         "sources": 4,
-        "region": "sub_saharan",
+        "region": "north_africa",
         "t1_start": 300,
         "t1_end": 1200
       },
       {
+        "name_en": "Sasanian Empire",
+        "name_ko": "사산 왕조",
+        "sources": 4,
+        "region": "central_asia",
+        "t1_start": 224,
+        "t1_end": 651
+      },
+      {
         "name_en": "Gupta Empire",
-        "name_ko": "굽타 제국",
+        "name_ko": "굽타 왕조",
         "sources": 4,
         "region": "south_asia",
         "t1_start": 320,
         "t1_end": 550
+      },
+      {
+        "name_en": "Byzantine Empire",
+        "name_ko": "동로마 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": 395,
+        "t1_end": 1453
       },
       {
         "name_en": "Roman Empire",
@@ -1716,12 +1724,12 @@
         "t1_end": 476
       },
       {
-        "name_en": "Sasanian Empire",
-        "name_ko": "사산 페르시아",
-        "sources": 4,
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
         "region": "middle_east",
-        "t1_start": 224,
-        "t1_end": 651
+        "t1_start": -100,
+        "t1_end": 940
       },
       {
         "name_en": "Goguryeo",
@@ -1732,12 +1740,12 @@
         "t1_end": 668
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
+        "name_en": "Teotihuacan civilization",
+        "name_ko": "테오티후아카은 문명",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "latin_america",
         "t1_start": -100,
-        "t1_end": 940
+        "t1_end": 550
       },
       {
         "name_en": "Maya civilization",
@@ -1748,12 +1756,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Teotihuacan",
-        "name_ko": "테오티우아칸",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -100,
-        "t1_end": 550
+        "name_en": "Silla",
+        "name_ko": "신라",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": -57,
+        "t1_end": 935
       },
       {
         "name_en": "Baekje",
@@ -1778,14 +1786,6 @@
         "region": "east_asia",
         "t1_start": 386,
         "t1_end": 534
-      },
-      {
-        "name_en": "Silla",
-        "name_ko": "신라",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": -57,
-        "t1_end": 935
       }
     ]
   },
@@ -1795,10 +1795,34 @@
     "count": 12,
     "entities": [
       {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
+      },
+      {
+        "name_en": "Sasanian Empire",
+        "name_ko": "사산 왕조",
+        "sources": 4,
+        "region": "central_asia",
+        "t1_start": 224,
+        "t1_end": 651
+      },
+      {
+        "name_en": "Gupta Empire",
+        "name_ko": "굽타 왕조",
+        "sources": 4,
+        "region": "south_asia",
+        "t1_start": 320,
+        "t1_end": 550
+      },
+      {
         "name_en": "Byzantine Empire",
         "name_ko": "동로마 제국",
         "sources": 4,
-        "region": "europe",
+        "region": "middle_east",
         "t1_start": 395,
         "t1_end": 1453
       },
@@ -1811,28 +1835,12 @@
         "t1_end": 843
       },
       {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
-        "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
-      },
-      {
-        "name_en": "Gupta Empire",
-        "name_ko": "굽타 제국",
-        "sources": 4,
-        "region": "south_asia",
-        "t1_start": 320,
-        "t1_end": 550
-      },
-      {
-        "name_en": "Sasanian Empire",
-        "name_ko": "사산 페르시아",
-        "sources": 4,
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
         "region": "middle_east",
-        "t1_start": 224,
-        "t1_end": 651
+        "t1_start": -100,
+        "t1_end": 940
       },
       {
         "name_en": "Goguryeo",
@@ -1843,12 +1851,12 @@
         "t1_end": 668
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
+        "name_en": "Teotihuacan civilization",
+        "name_ko": "테오티후아카은 문명",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "latin_america",
         "t1_start": -100,
-        "t1_end": 940
+        "t1_end": 550
       },
       {
         "name_en": "Maya civilization",
@@ -1859,12 +1867,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Teotihuacan",
-        "name_ko": "테오티우아칸",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -100,
-        "t1_end": 550
+        "name_en": "Silla",
+        "name_ko": "신라",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": -57,
+        "t1_end": 935
       },
       {
         "name_en": "Baekje",
@@ -1881,14 +1889,6 @@
         "region": "east_asia",
         "t1_start": 386,
         "t1_end": 534
-      },
-      {
-        "name_en": "Silla",
-        "name_ko": "신라",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": -57,
-        "t1_end": 935
       }
     ]
   },
@@ -1898,10 +1898,26 @@
     "count": 13,
     "entities": [
       {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
+      },
+      {
+        "name_en": "Sasanian Empire",
+        "name_ko": "사산 왕조",
+        "sources": 4,
+        "region": "central_asia",
+        "t1_start": 224,
+        "t1_end": 651
+      },
+      {
         "name_en": "Byzantine Empire",
         "name_ko": "동로마 제국",
         "sources": 4,
-        "region": "europe",
+        "region": "middle_east",
         "t1_start": 395,
         "t1_end": 1453
       },
@@ -1914,20 +1930,12 @@
         "t1_end": 843
       },
       {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
-        "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
-      },
-      {
-        "name_en": "Sasanian Empire",
-        "name_ko": "사산 페르시아",
-        "sources": 4,
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
         "region": "middle_east",
-        "t1_start": 224,
-        "t1_end": 651
+        "t1_start": -100,
+        "t1_end": 940
       },
       {
         "name_en": "Goguryeo",
@@ -1938,6 +1946,14 @@
         "t1_end": 668
       },
       {
+        "name_en": "Maya civilization",
+        "name_ko": "마야 문명",
+        "sources": 3,
+        "region": "latin_america",
+        "t1_start": -2000,
+        "t1_end": 900
+      },
+      {
         "name_en": "Japan",
         "name_ko": "일본",
         "sources": 3,
@@ -1946,20 +1962,12 @@
         "t1_end": 1800
       },
       {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -100,
-        "t1_end": 940
-      },
-      {
-        "name_en": "Maya civilization",
-        "name_ko": "마야 문명",
-        "sources": 3,
-        "region": "latin_america",
-        "t1_start": -2000,
-        "t1_end": 900
+        "name_en": "Silla",
+        "name_ko": "신라",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": -57,
+        "t1_end": 935
       },
       {
         "name_en": "Baekje",
@@ -1970,20 +1978,12 @@
         "t1_end": 660
       },
       {
-        "name_en": "Gokturk Khaganate",
+        "name_en": "Göktürks",
         "name_ko": "돌궐",
         "sources": 2,
-        "region": "central_asia",
+        "region": "east_asia",
         "t1_start": 552,
         "t1_end": 744
-      },
-      {
-        "name_en": "Silla",
-        "name_ko": "신라",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": -57,
-        "t1_end": 935
       },
       {
         "name_en": "Sui dynasty",
@@ -1995,7 +1995,7 @@
       },
       {
         "name_en": "Chalukya dynasty",
-        "name_ko": "찰루키아 왕조",
+        "name_ko": "찰루키아",
         "sources": 1,
         "region": "south_asia",
         "t1_start": 543,
@@ -2009,10 +2009,18 @@
     "count": 16,
     "entities": [
       {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
+      },
+      {
         "name_en": "Byzantine Empire",
         "name_ko": "동로마 제국",
         "sources": 4,
-        "region": "europe",
+        "region": "middle_east",
         "t1_start": 395,
         "t1_end": 1453
       },
@@ -2025,12 +2033,12 @@
         "t1_end": 843
       },
       {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
+        "name_en": "Umayyad Caliphate",
+        "name_ko": "우마이야 칼리파조",
         "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
+        "region": "middle_east",
+        "t1_start": 661,
+        "t1_end": 750
       },
       {
         "name_en": "Tang dynasty",
@@ -2041,28 +2049,28 @@
         "t1_end": 907
       },
       {
-        "name_en": "Umayyad Caliphate",
-        "name_ko": "우마이야 왕조",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": 661,
-        "t1_end": 750
-      },
-      {
-        "name_en": "Japan",
-        "name_ko": "일본",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
-        "t1_end": 1800
-      },
-      {
         "name_en": "Kingdom of Aksum",
         "name_ko": "악숨 왕국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": -100,
         "t1_end": 940
+      },
+      {
+        "name_en": "Tibetan Empire",
+        "name_ko": "토번",
+        "sources": 3,
+        "region": "south_asia",
+        "t1_start": 618,
+        "t1_end": 842
+      },
+      {
+        "name_en": "Later Silla",
+        "name_ko": "통일신라",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 668,
+        "t1_end": 935
       },
       {
         "name_en": "Maya civilization",
@@ -2073,44 +2081,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Tibetan Empire",
-        "name_ko": "토번 제국",
+        "name_en": "Japan",
+        "name_ko": "일본",
         "sources": 3,
         "region": "east_asia",
-        "t1_start": 618,
-        "t1_end": 842
-      },
-      {
-        "name_en": "Unified Silla",
-        "name_ko": "통일신라",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 668,
-        "t1_end": 935
-      },
-      {
-        "name_en": "Balhae",
-        "name_ko": "발해",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": 698,
-        "t1_end": 926
-      },
-      {
-        "name_en": "First Bulgarian Empire",
-        "name_ko": "제1차 불가리아 제국",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 681,
-        "t1_end": 1018
-      },
-      {
-        "name_en": "Gokturk Khaganate",
-        "name_ko": "돌궐",
-        "sources": 2,
-        "region": "central_asia",
-        "t1_start": 552,
-        "t1_end": 744
+        "t1_start": 600,
+        "t1_end": 1800
       },
       {
         "name_en": "Silla",
@@ -2121,6 +2097,14 @@
         "t1_end": 935
       },
       {
+        "name_en": "Göktürks",
+        "name_ko": "돌궐",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": 552,
+        "t1_end": 744
+      },
+      {
         "name_en": "Srivijaya",
         "name_ko": "스리비자야",
         "sources": 2,
@@ -2129,8 +2113,24 @@
         "t1_end": 1377
       },
       {
+        "name_en": "First Bulgarian Empire",
+        "name_ko": "불가리아 제1제국",
+        "sources": 2,
+        "region": "europe",
+        "t1_start": 681,
+        "t1_end": 1018
+      },
+      {
+        "name_en": "Balhae",
+        "name_ko": "발해",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": 698,
+        "t1_end": 926
+      },
+      {
         "name_en": "Chalukya dynasty",
-        "name_ko": "찰루키아 왕조",
+        "name_ko": "찰루키아",
         "sources": 1,
         "region": "south_asia",
         "t1_start": 543,
@@ -2144,18 +2144,18 @@
     "count": 17,
     "entities": [
       {
-        "name_en": "Abbasid Caliphate",
-        "name_ko": "아바스 왕조",
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
         "sources": 4,
-        "region": "middle_east",
-        "t1_start": 750,
-        "t1_end": 1258
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
       },
       {
         "name_en": "Byzantine Empire",
         "name_ko": "동로마 제국",
         "sources": 4,
-        "region": "europe",
+        "region": "middle_east",
         "t1_start": 395,
         "t1_end": 1453
       },
@@ -2168,12 +2168,12 @@
         "t1_end": 843
       },
       {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
+        "name_en": "Abbasid Caliphate",
+        "name_ko": "아바스 왕조",
         "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
+        "region": "middle_east",
+        "t1_start": 750,
+        "t1_end": 1258
       },
       {
         "name_en": "Tang dynasty",
@@ -2184,28 +2184,36 @@
         "t1_end": 907
       },
       {
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -100,
+        "t1_end": 940
+      },
+      {
+        "name_en": "Tibetan Empire",
+        "name_ko": "토번",
+        "sources": 3,
+        "region": "south_asia",
+        "t1_start": 618,
+        "t1_end": 842
+      },
+      {
+        "name_en": "Later Silla",
+        "name_ko": "통일신라",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 668,
+        "t1_end": 935
+      },
+      {
         "name_en": "Carolingian Empire",
-        "name_ko": "카롤링거 제국",
+        "name_ko": "카롤루스 제국",
         "sources": 3,
         "region": "europe",
         "t1_start": 800,
         "t1_end": 888
-      },
-      {
-        "name_en": "Japan",
-        "name_ko": "일본",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -100,
-        "t1_end": 940
       },
       {
         "name_en": "Maya civilization",
@@ -2216,36 +2224,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Tibetan Empire",
-        "name_ko": "토번 제국",
+        "name_en": "Japan",
+        "name_ko": "일본",
         "sources": 3,
         "region": "east_asia",
-        "t1_start": 618,
-        "t1_end": 842
-      },
-      {
-        "name_en": "Unified Silla",
-        "name_ko": "통일신라",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 668,
-        "t1_end": 935
-      },
-      {
-        "name_en": "Balhae",
-        "name_ko": "발해",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": 698,
-        "t1_end": 926
-      },
-      {
-        "name_en": "First Bulgarian Empire",
-        "name_ko": "제1차 불가리아 제국",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 681,
-        "t1_end": 1018
+        "t1_start": 600,
+        "t1_end": 1800
       },
       {
         "name_en": "Silla",
@@ -2264,16 +2248,32 @@
         "t1_end": 1377
       },
       {
-        "name_en": "Uyghur Khaganate",
-        "name_ko": "위구르",
+        "name_en": "First Bulgarian Empire",
+        "name_ko": "불가리아 제1제국",
         "sources": 2,
-        "region": "central_asia",
+        "region": "europe",
+        "t1_start": 681,
+        "t1_end": 1018
+      },
+      {
+        "name_en": "Balhae",
+        "name_ko": "발해",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": 698,
+        "t1_end": 926
+      },
+      {
+        "name_en": "Uyghur Khaganate",
+        "name_ko": "위구르 카간국",
+        "sources": 2,
+        "region": "east_asia",
         "t1_start": 744,
         "t1_end": 840
       },
       {
         "name_en": "Rashtrakuta dynasty",
-        "name_ko": "라슈트라쿠타",
+        "name_ko": "라슈트라쿠타 왕조",
         "sources": 1,
         "region": "south_asia",
         "t1_start": 753,
@@ -2287,28 +2287,28 @@
     "count": 16,
     "entities": [
       {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
+      },
+      {
+        "name_en": "Byzantine Empire",
+        "name_ko": "동로마 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": 395,
+        "t1_end": 1453
+      },
+      {
         "name_en": "Abbasid Caliphate",
         "name_ko": "아바스 왕조",
         "sources": 4,
         "region": "middle_east",
         "t1_start": 750,
         "t1_end": 1258
-      },
-      {
-        "name_en": "Byzantine Empire",
-        "name_ko": "동로마 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 395,
-        "t1_end": 1453
-      },
-      {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
-        "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
       },
       {
         "name_en": "Tang dynasty",
@@ -2319,36 +2319,36 @@
         "t1_end": 907
       },
       {
-        "name_en": "Chola dynasty",
-        "name_ko": "촐라 왕조",
+        "name_en": "Kingdom of Aksum",
+        "name_ko": "악숨 왕국",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": -100,
+        "t1_end": 940
+      },
+      {
+        "name_en": "Later Silla",
+        "name_ko": "통일신라",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 668,
+        "t1_end": 935
+      },
+      {
+        "name_en": "Chola Empire",
+        "name_ko": "촐라 제국",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 848,
         "t1_end": 1279
       },
       {
-        "name_en": "Japan",
-        "name_ko": "일본",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Kievan Rus",
+        "name_en": "Kievan Rus'",
         "name_ko": "키예프 루스",
         "sources": 3,
         "region": "europe",
         "t1_start": 882,
         "t1_end": 1240
-      },
-      {
-        "name_en": "Kingdom of Aksum",
-        "name_ko": "악숨 왕국",
-        "sources": 3,
-        "region": "sub_saharan",
-        "t1_start": -100,
-        "t1_end": 940
       },
       {
         "name_en": "Maya civilization",
@@ -2359,36 +2359,12 @@
         "t1_end": 900
       },
       {
-        "name_en": "Unified Silla",
-        "name_ko": "통일신라",
+        "name_en": "Japan",
+        "name_ko": "일본",
         "sources": 3,
         "region": "east_asia",
-        "t1_start": 668,
-        "t1_end": 935
-      },
-      {
-        "name_en": "Balhae",
-        "name_ko": "발해",
-        "sources": 2,
-        "region": "east_asia",
-        "t1_start": 698,
-        "t1_end": 926
-      },
-      {
-        "name_en": "First Bulgarian Empire",
-        "name_ko": "제1차 불가리아 제국",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 681,
-        "t1_end": 1018
-      },
-      {
-        "name_en": "Khmer Empire",
-        "name_ko": "크메르 제국",
-        "sources": 2,
-        "region": "southeast_asia",
-        "t1_start": 802,
-        "t1_end": 1431
+        "t1_start": 600,
+        "t1_end": 1800
       },
       {
         "name_en": "Silla",
@@ -2407,8 +2383,32 @@
         "t1_end": 1377
       },
       {
+        "name_en": "First Bulgarian Empire",
+        "name_ko": "불가리아 제1제국",
+        "sources": 2,
+        "region": "europe",
+        "t1_start": 681,
+        "t1_end": 1018
+      },
+      {
+        "name_en": "Balhae",
+        "name_ko": "발해",
+        "sources": 2,
+        "region": "east_asia",
+        "t1_start": 698,
+        "t1_end": 926
+      },
+      {
+        "name_en": "Khmer Empire",
+        "name_ko": "크메르 제국",
+        "sources": 2,
+        "region": "southeast_asia",
+        "t1_start": 802,
+        "t1_end": 1431
+      },
+      {
         "name_en": "Rashtrakuta dynasty",
-        "name_ko": "라슈트라쿠타",
+        "name_ko": "라슈트라쿠타 왕조",
         "sources": 1,
         "region": "south_asia",
         "t1_start": 753,
@@ -2422,28 +2422,28 @@
     "count": 14,
     "entities": [
       {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
+      },
+      {
+        "name_en": "Byzantine Empire",
+        "name_ko": "동로마 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": 395,
+        "t1_end": 1453
+      },
+      {
         "name_en": "Abbasid Caliphate",
         "name_ko": "아바스 왕조",
         "sources": 4,
         "region": "middle_east",
         "t1_start": 750,
         "t1_end": 1258
-      },
-      {
-        "name_en": "Byzantine Empire",
-        "name_ko": "동로마 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 395,
-        "t1_end": 1453
-      },
-      {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
-        "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
       },
       {
         "name_en": "Holy Roman Empire",
@@ -2462,18 +2462,26 @@
         "t1_end": 1279
       },
       {
-        "name_en": "Chola dynasty",
-        "name_ko": "촐라 왕조",
+        "name_en": "Chola Empire",
+        "name_ko": "촐라 제국",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 848,
         "t1_end": 1279
       },
       {
+        "name_en": "Kievan Rus'",
+        "name_ko": "키예프 루스",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 882,
+        "t1_end": 1240
+      },
+      {
         "name_en": "Fatimid Caliphate",
         "name_ko": "파티마 왕조",
         "sources": 3,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": 909,
         "t1_end": 1171
       },
@@ -2486,22 +2494,6 @@
         "t1_end": 1392
       },
       {
-        "name_en": "Japan",
-        "name_ko": "일본",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Kievan Rus",
-        "name_ko": "키예프 루스",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 882,
-        "t1_end": 1240
-      },
-      {
         "name_en": "Liao dynasty",
         "name_ko": "요나라",
         "sources": 3,
@@ -2510,8 +2502,24 @@
         "t1_end": 1125
       },
       {
+        "name_en": "Japan",
+        "name_ko": "일본",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 600,
+        "t1_end": 1800
+      },
+      {
+        "name_en": "Srivijaya",
+        "name_ko": "스리비자야",
+        "sources": 2,
+        "region": "southeast_asia",
+        "t1_start": 650,
+        "t1_end": 1377
+      },
+      {
         "name_en": "First Bulgarian Empire",
-        "name_ko": "제1차 불가리아 제국",
+        "name_ko": "불가리아 제1제국",
         "sources": 2,
         "region": "europe",
         "t1_start": 681,
@@ -2524,14 +2532,6 @@
         "region": "southeast_asia",
         "t1_start": 802,
         "t1_end": 1431
-      },
-      {
-        "name_en": "Srivijaya",
-        "name_ko": "스리비자야",
-        "sources": 2,
-        "region": "southeast_asia",
-        "t1_start": 650,
-        "t1_end": 1377
       }
     ]
   },
@@ -2541,28 +2541,28 @@
     "count": 17,
     "entities": [
       {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
+      },
+      {
+        "name_en": "Byzantine Empire",
+        "name_ko": "동로마 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": 395,
+        "t1_end": 1453
+      },
+      {
         "name_en": "Abbasid Caliphate",
         "name_ko": "아바스 왕조",
         "sources": 4,
         "region": "middle_east",
         "t1_start": 750,
         "t1_end": 1258
-      },
-      {
-        "name_en": "Byzantine Empire",
-        "name_ko": "동로마 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 395,
-        "t1_end": 1453
-      },
-      {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
-        "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
       },
       {
         "name_en": "Holy Roman Empire",
@@ -2576,7 +2576,7 @@
         "name_en": "Seljuk Empire",
         "name_ko": "셀주크 제국",
         "sources": 4,
-        "region": "middle_east",
+        "region": "central_asia",
         "t1_start": 1037,
         "t1_end": 1194
       },
@@ -2589,18 +2589,26 @@
         "t1_end": 1279
       },
       {
-        "name_en": "Chola dynasty",
-        "name_ko": "촐라 왕조",
+        "name_en": "Chola Empire",
+        "name_ko": "촐라 제국",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 848,
         "t1_end": 1279
       },
       {
+        "name_en": "Kievan Rus'",
+        "name_ko": "키예프 루스",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 882,
+        "t1_end": 1240
+      },
+      {
         "name_en": "Fatimid Caliphate",
         "name_ko": "파티마 왕조",
         "sources": 3,
-        "region": "north_africa",
+        "region": "middle_east",
         "t1_start": 909,
         "t1_end": 1171
       },
@@ -2613,22 +2621,6 @@
         "t1_end": 1392
       },
       {
-        "name_en": "Japan",
-        "name_ko": "일본",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Kievan Rus",
-        "name_ko": "키예프 루스",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 882,
-        "t1_end": 1240
-      },
-      {
         "name_en": "Liao dynasty",
         "name_ko": "요나라",
         "sources": 3,
@@ -2637,12 +2629,12 @@
         "t1_end": 1125
       },
       {
-        "name_en": "Khmer Empire",
-        "name_ko": "크메르 제국",
-        "sources": 2,
-        "region": "southeast_asia",
-        "t1_start": 802,
-        "t1_end": 1431
+        "name_en": "Japan",
+        "name_ko": "일본",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 600,
+        "t1_end": 1800
       },
       {
         "name_en": "Srivijaya",
@@ -2651,6 +2643,14 @@
         "region": "southeast_asia",
         "t1_start": 650,
         "t1_end": 1377
+      },
+      {
+        "name_en": "Khmer Empire",
+        "name_ko": "크메르 제국",
+        "sources": 2,
+        "region": "southeast_asia",
+        "t1_start": 802,
+        "t1_end": 1431
       },
       {
         "name_en": "Western Xia",
@@ -2662,7 +2662,7 @@
       },
       {
         "name_en": "Almoravid dynasty",
-        "name_ko": "알모라비드",
+        "name_ko": "무라비트 왕조",
         "sources": 1,
         "region": "north_africa",
         "t1_start": 1040,
@@ -2670,7 +2670,7 @@
       },
       {
         "name_en": "Khwarazmian Empire",
-        "name_ko": "호라즘 제국",
+        "name_ko": "화레즘 제국",
         "sources": 1,
         "region": "central_asia",
         "t1_start": 1077,
@@ -2684,28 +2684,28 @@
     "count": 17,
     "entities": [
       {
+        "name_en": "Ghana Empire",
+        "name_ko": "와가두 제국",
+        "sources": 4,
+        "region": "north_africa",
+        "t1_start": 300,
+        "t1_end": 1200
+      },
+      {
+        "name_en": "Byzantine Empire",
+        "name_ko": "동로마 제국",
+        "sources": 4,
+        "region": "middle_east",
+        "t1_start": 395,
+        "t1_end": 1453
+      },
+      {
         "name_en": "Abbasid Caliphate",
         "name_ko": "아바스 왕조",
         "sources": 4,
         "region": "middle_east",
         "t1_start": 750,
         "t1_end": 1258
-      },
-      {
-        "name_en": "Byzantine Empire",
-        "name_ko": "동로마 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 395,
-        "t1_end": 1453
-      },
-      {
-        "name_en": "Ghana Empire",
-        "name_ko": "가나 제국",
-        "sources": 4,
-        "region": "sub_saharan",
-        "t1_start": 300,
-        "t1_end": 1200
       },
       {
         "name_en": "Holy Roman Empire",
@@ -2724,20 +2724,20 @@
         "t1_end": 1279
       },
       {
-        "name_en": "Ayyubid dynasty",
-        "name_ko": "아이유브 왕조",
-        "sources": 3,
-        "region": "middle_east",
-        "t1_start": 1171,
-        "t1_end": 1260
-      },
-      {
-        "name_en": "Chola dynasty",
-        "name_ko": "촐라 왕조",
+        "name_en": "Chola Empire",
+        "name_ko": "촐라 제국",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 848,
         "t1_end": 1279
+      },
+      {
+        "name_en": "Kievan Rus'",
+        "name_ko": "키예프 루스",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 882,
+        "t1_end": 1240
       },
       {
         "name_en": "Goryeo",
@@ -2748,6 +2748,22 @@
         "t1_end": 1392
       },
       {
+        "name_en": "Ayyubid dynasty",
+        "name_ko": "아이유브 왕조",
+        "sources": 3,
+        "region": "middle_east",
+        "t1_start": 1171,
+        "t1_end": 1260
+      },
+      {
+        "name_en": "Jin dynasty (1115–1234)",
+        "name_ko": "금나라",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 1115,
+        "t1_end": 1234
+      },
+      {
         "name_en": "Japan",
         "name_ko": "일본",
         "sources": 3,
@@ -2756,20 +2772,12 @@
         "t1_end": 1800
       },
       {
-        "name_en": "Jin dynasty (Jurchen)",
-        "name_ko": "금나라",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 1115,
-        "t1_end": 1234
-      },
-      {
-        "name_en": "Kievan Rus",
-        "name_ko": "키예프 루스",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 882,
-        "t1_end": 1240
+        "name_en": "Srivijaya",
+        "name_ko": "스리비자야",
+        "sources": 2,
+        "region": "southeast_asia",
+        "t1_start": 650,
+        "t1_end": 1377
       },
       {
         "name_en": "Khmer Empire",
@@ -2781,19 +2789,11 @@
       },
       {
         "name_en": "Kingdom of England",
-        "name_ko": "잉글랜드",
+        "name_ko": "잉글랜드 왕국",
         "sources": 2,
         "region": "europe",
         "t1_start": 1200,
         "t1_end": 1707
-      },
-      {
-        "name_en": "Srivijaya",
-        "name_ko": "스리비자야",
-        "sources": 2,
-        "region": "southeast_asia",
-        "t1_start": 650,
-        "t1_end": 1377
       },
       {
         "name_en": "Western Xia",
@@ -2804,20 +2804,20 @@
         "t1_end": 1227
       },
       {
-        "name_en": "Almohad Caliphate",
-        "name_ko": "알모하드",
-        "sources": 1,
-        "region": "north_africa",
-        "t1_start": 1121,
-        "t1_end": 1269
-      },
-      {
         "name_en": "Khwarazmian Empire",
-        "name_ko": "호라즘 제국",
+        "name_ko": "화레즘 제국",
         "sources": 1,
         "region": "central_asia",
         "t1_start": 1077,
         "t1_end": 1231
+      },
+      {
+        "name_en": "Almohad Caliphate",
+        "name_ko": "무와히드 칼리파국",
+        "sources": 1,
+        "region": "north_africa",
+        "t1_start": 1121,
+        "t1_end": 1269
       }
     ]
   },
@@ -2830,7 +2830,7 @@
         "name_en": "Byzantine Empire",
         "name_ko": "동로마 제국",
         "sources": 4,
-        "region": "europe",
+        "region": "middle_east",
         "t1_start": 395,
         "t1_end": 1453
       },
@@ -2843,20 +2843,20 @@
         "t1_end": 1806
       },
       {
+        "name_en": "Mongol Empire",
+        "name_ko": "몽골 제국",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": 1206,
+        "t1_end": 1368
+      },
+      {
         "name_en": "Mali Empire",
         "name_ko": "말리 제국",
         "sources": 4,
         "region": "sub_saharan",
         "t1_start": 1235,
         "t1_end": 1600
-      },
-      {
-        "name_en": "Mongol Empire",
-        "name_ko": "몽골 제국",
-        "sources": 4,
-        "region": "central_asia",
-        "t1_start": 1206,
-        "t1_end": 1368
       },
       {
         "name_en": "Ottoman Empire",
@@ -2875,8 +2875,24 @@
         "t1_end": 1368
       },
       {
+        "name_en": "Goryeo",
+        "name_ko": "고려",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 918,
+        "t1_end": 1392
+      },
+      {
+        "name_en": "Kingdom of France",
+        "name_ko": "프랑스 왕국",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 1300,
+        "t1_end": 1800
+      },
+      {
         "name_en": "Delhi Sultanate",
-        "name_ko": "델리 술탄국",
+        "name_ko": "델리 술탄 왕조",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 1206,
@@ -2891,12 +2907,12 @@
         "t1_end": 1502
       },
       {
-        "name_en": "Goryeo",
-        "name_ko": "고려",
+        "name_en": "Mamluk Sultanate",
+        "name_ko": "맘루크 술탄국",
         "sources": 3,
-        "region": "east_asia",
-        "t1_start": 918,
-        "t1_end": 1392
+        "region": "middle_east",
+        "t1_start": 1250,
+        "t1_end": 1517
       },
       {
         "name_en": "Japan",
@@ -2907,52 +2923,12 @@
         "t1_end": 1800
       },
       {
-        "name_en": "Kingdom of France",
-        "name_ko": "프랑스 왕국",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 1300,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Mamluk Sultanate",
-        "name_ko": "맘루크 왕조",
-        "sources": 3,
-        "region": "north_africa",
-        "t1_start": 1250,
-        "t1_end": 1517
-      },
-      {
-        "name_en": "Chagatai Khanate",
-        "name_ko": "차가타이 칸국",
+        "name_en": "Srivijaya",
+        "name_ko": "스리비자야",
         "sources": 2,
-        "region": "central_asia",
-        "t1_start": 1227,
-        "t1_end": 1370
-      },
-      {
-        "name_en": "Ethiopian Empire",
-        "name_ko": "에티오피아 제국",
-        "sources": 2,
-        "region": "sub_saharan",
-        "t1_start": 1270,
-        "t1_end": 1975
-      },
-      {
-        "name_en": "Grand Duchy of Moscow",
-        "name_ko": "모스크바 대공국",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 1263,
-        "t1_end": 1547
-      },
-      {
-        "name_en": "Ilkhanate",
-        "name_ko": "일칸국",
-        "sources": 2,
-        "region": "middle_east",
-        "t1_start": 1256,
-        "t1_end": 1335
+        "region": "southeast_asia",
+        "t1_start": 650,
+        "t1_end": 1377
       },
       {
         "name_en": "Khmer Empire",
@@ -2964,27 +2940,51 @@
       },
       {
         "name_en": "Kingdom of England",
-        "name_ko": "잉글랜드",
+        "name_ko": "잉글랜드 왕국",
         "sources": 2,
         "region": "europe",
         "t1_start": 1200,
         "t1_end": 1707
       },
       {
+        "name_en": "Chagatai Khanate",
+        "name_ko": "차가타이 칸국",
+        "sources": 2,
+        "region": "central_asia",
+        "t1_start": 1227,
+        "t1_end": 1370
+      },
+      {
+        "name_en": "Ilkhanate",
+        "name_ko": "일 칸국",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": 1256,
+        "t1_end": 1335
+      },
+      {
+        "name_en": "Grand Principality of Moscow",
+        "name_ko": "모스크바 대공국",
+        "sources": 2,
+        "region": "europe",
+        "t1_start": 1263,
+        "t1_end": 1547
+      },
+      {
+        "name_en": "Ethiopian Empire",
+        "name_ko": "에티오피아 제국",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": 1270,
+        "t1_end": 1975
+      },
+      {
         "name_en": "Majapahit",
-        "name_ko": "마자파힛",
+        "name_ko": "마자파힛 제국",
         "sources": 2,
         "region": "southeast_asia",
         "t1_start": 1293,
         "t1_end": 1527
-      },
-      {
-        "name_en": "Srivijaya",
-        "name_ko": "스리비자야",
-        "sources": 2,
-        "region": "southeast_asia",
-        "t1_start": 650,
-        "t1_end": 1377
       }
     ]
   },
@@ -2997,7 +2997,7 @@
         "name_en": "Byzantine Empire",
         "name_ko": "동로마 제국",
         "sources": 4,
-        "region": "europe",
+        "region": "middle_east",
         "t1_start": 395,
         "t1_end": 1453
       },
@@ -3018,14 +3018,6 @@
         "t1_end": 1600
       },
       {
-        "name_en": "Ming dynasty",
-        "name_ko": "명나라",
-        "sources": 4,
-        "region": "east_asia",
-        "t1_start": 1368,
-        "t1_end": 1644
-      },
-      {
         "name_en": "Ottoman Empire",
         "name_ko": "오스만 제국",
         "sources": 4,
@@ -3034,8 +3026,24 @@
         "t1_end": 1922
       },
       {
+        "name_en": "Ming dynasty",
+        "name_ko": "명나라",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": 1368,
+        "t1_end": 1644
+      },
+      {
+        "name_en": "Kingdom of France",
+        "name_ko": "프랑스 왕국",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 1300,
+        "t1_end": 1800
+      },
+      {
         "name_en": "Delhi Sultanate",
-        "name_ko": "델리 술탄국",
+        "name_ko": "델리 술탄 왕조",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 1206,
@@ -3050,12 +3058,20 @@
         "t1_end": 1502
       },
       {
-        "name_en": "Japan",
-        "name_ko": "일본",
+        "name_en": "Mamluk Sultanate",
+        "name_ko": "맘루크 술탄국",
         "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
-        "t1_end": 1800
+        "region": "middle_east",
+        "t1_start": 1250,
+        "t1_end": 1517
+      },
+      {
+        "name_en": "Timurid Empire",
+        "name_ko": "티무르 왕조",
+        "sources": 3,
+        "region": "south_asia",
+        "t1_start": 1370,
+        "t1_end": 1507
       },
       {
         "name_en": "Joseon",
@@ -3066,44 +3082,12 @@
         "t1_end": 1897
       },
       {
-        "name_en": "Kingdom of France",
-        "name_ko": "프랑스 왕국",
+        "name_en": "Japan",
+        "name_ko": "일본",
         "sources": 3,
-        "region": "europe",
-        "t1_start": 1300,
+        "region": "east_asia",
+        "t1_start": 600,
         "t1_end": 1800
-      },
-      {
-        "name_en": "Mamluk Sultanate",
-        "name_ko": "맘루크 왕조",
-        "sources": 3,
-        "region": "north_africa",
-        "t1_start": 1250,
-        "t1_end": 1517
-      },
-      {
-        "name_en": "Timurid Empire",
-        "name_ko": "티무르 제국",
-        "sources": 3,
-        "region": "central_asia",
-        "t1_start": 1370,
-        "t1_end": 1507
-      },
-      {
-        "name_en": "Ethiopian Empire",
-        "name_ko": "에티오피아 제국",
-        "sources": 2,
-        "region": "sub_saharan",
-        "t1_start": 1270,
-        "t1_end": 1975
-      },
-      {
-        "name_en": "Grand Duchy of Moscow",
-        "name_ko": "모스크바 대공국",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 1263,
-        "t1_end": 1547
       },
       {
         "name_en": "Khmer Empire",
@@ -3115,35 +3099,51 @@
       },
       {
         "name_en": "Kingdom of England",
-        "name_ko": "잉글랜드",
+        "name_ko": "잉글랜드 왕국",
         "sources": 2,
         "region": "europe",
         "t1_start": 1200,
         "t1_end": 1707
       },
       {
+        "name_en": "Grand Principality of Moscow",
+        "name_ko": "모스크바 대공국",
+        "sources": 2,
+        "region": "europe",
+        "t1_start": 1263,
+        "t1_end": 1547
+      },
+      {
+        "name_en": "Ethiopian Empire",
+        "name_ko": "에티오피아 제국",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": 1270,
+        "t1_end": 1975
+      },
+      {
         "name_en": "Majapahit",
-        "name_ko": "마자파힛",
+        "name_ko": "마자파힛 제국",
         "sources": 2,
         "region": "southeast_asia",
         "t1_start": 1293,
         "t1_end": 1527
       },
       {
-        "name_en": "Poland-Lithuania",
+        "name_en": "Vijayanagara Empire",
+        "name_ko": "비자야나가라 제국",
+        "sources": 2,
+        "region": "south_asia",
+        "t1_start": 1336,
+        "t1_end": 1646
+      },
+      {
+        "name_en": "Polish–Lithuanian Commonwealth",
         "name_ko": "폴란드-리투아니아",
         "sources": 2,
         "region": "europe",
         "t1_start": 1385,
         "t1_end": 1795
-      },
-      {
-        "name_en": "Vijayanagara Empire",
-        "name_ko": "비자야나가라",
-        "sources": 2,
-        "region": "south_asia",
-        "t1_start": 1336,
-        "t1_end": 1646
       }
     ]
   },
@@ -3153,14 +3153,6 @@
     "count": 23,
     "entities": [
       {
-        "name_en": "Aztec Empire",
-        "name_ko": "아즈텍",
-        "sources": 4,
-        "region": "latin_america",
-        "t1_start": 1428,
-        "t1_end": 1521
-      },
-      {
         "name_en": "Holy Roman Empire",
         "name_ko": "신성 로마 제국",
         "sources": 4,
@@ -3169,12 +3161,12 @@
         "t1_end": 1806
       },
       {
-        "name_en": "Inca Empire",
-        "name_ko": "잉카 제국",
+        "name_en": "Kingdom of Portugal",
+        "name_ko": "포르투갈 왕국",
         "sources": 4,
-        "region": "latin_america",
-        "t1_start": 1438,
-        "t1_end": 1533
+        "region": "europe",
+        "t1_start": 1415,
+        "t1_end": 1800
       },
       {
         "name_en": "Mali Empire",
@@ -3185,14 +3177,6 @@
         "t1_end": 1600
       },
       {
-        "name_en": "Ming dynasty",
-        "name_ko": "명나라",
-        "sources": 4,
-        "region": "east_asia",
-        "t1_start": 1368,
-        "t1_end": 1644
-      },
-      {
         "name_en": "Ottoman Empire",
         "name_ko": "오스만 제국",
         "sources": 4,
@@ -3201,12 +3185,12 @@
         "t1_end": 1922
       },
       {
-        "name_en": "Portuguese Empire",
-        "name_ko": "포르투갈 제국",
+        "name_en": "Aztec Empire",
+        "name_ko": "아즈텍",
         "sources": 4,
-        "region": "europe",
-        "t1_start": 1415,
-        "t1_end": 1800
+        "region": "latin_america",
+        "t1_start": 1428,
+        "t1_end": 1521
       },
       {
         "name_en": "Spanish Empire",
@@ -3217,8 +3201,32 @@
         "t1_end": 1800
       },
       {
+        "name_en": "Inca Empire",
+        "name_ko": "잉카 제국",
+        "sources": 4,
+        "region": "latin_america",
+        "t1_start": 1438,
+        "t1_end": 1533
+      },
+      {
+        "name_en": "Ming dynasty",
+        "name_ko": "명나라",
+        "sources": 4,
+        "region": "east_asia",
+        "t1_start": 1368,
+        "t1_end": 1644
+      },
+      {
+        "name_en": "Kingdom of France",
+        "name_ko": "프랑스 왕국",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 1300,
+        "t1_end": 1800
+      },
+      {
         "name_en": "Delhi Sultanate",
-        "name_ko": "델리 술탄국",
+        "name_ko": "델리 술탄 왕조",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 1206,
@@ -3233,12 +3241,20 @@
         "t1_end": 1502
       },
       {
-        "name_en": "Japan",
-        "name_ko": "일본",
+        "name_en": "Mamluk Sultanate",
+        "name_ko": "맘루크 술탄국",
         "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
-        "t1_end": 1800
+        "region": "middle_east",
+        "t1_start": 1250,
+        "t1_end": 1517
+      },
+      {
+        "name_en": "Timurid Empire",
+        "name_ko": "티무르 왕조",
+        "sources": 3,
+        "region": "south_asia",
+        "t1_start": 1370,
+        "t1_end": 1507
       },
       {
         "name_en": "Joseon",
@@ -3249,47 +3265,31 @@
         "t1_end": 1897
       },
       {
-        "name_en": "Kingdom of France",
-        "name_ko": "프랑스 왕국",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 1300,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Mamluk Sultanate",
-        "name_ko": "맘루크 왕조",
-        "sources": 3,
-        "region": "north_africa",
-        "t1_start": 1250,
-        "t1_end": 1517
-      },
-      {
         "name_en": "Songhai Empire",
         "name_ko": "송가이 제국",
         "sources": 3,
-        "region": "sub_saharan",
+        "region": "north_africa",
         "t1_start": 1464,
         "t1_end": 1591
       },
       {
-        "name_en": "Timurid Empire",
-        "name_ko": "티무르 제국",
+        "name_en": "Japan",
+        "name_ko": "일본",
         "sources": 3,
-        "region": "central_asia",
-        "t1_start": 1370,
-        "t1_end": 1507
+        "region": "east_asia",
+        "t1_start": 600,
+        "t1_end": 1800
       },
       {
-        "name_en": "Ethiopian Empire",
-        "name_ko": "에티오피아 제국",
+        "name_en": "Kingdom of England",
+        "name_ko": "잉글랜드 왕국",
         "sources": 2,
-        "region": "sub_saharan",
-        "t1_start": 1270,
-        "t1_end": 1975
+        "region": "europe",
+        "t1_start": 1200,
+        "t1_end": 1707
       },
       {
-        "name_en": "Grand Duchy of Moscow",
+        "name_en": "Grand Principality of Moscow",
         "name_ko": "모스크바 대공국",
         "sources": 2,
         "region": "europe",
@@ -3297,31 +3297,31 @@
         "t1_end": 1547
       },
       {
-        "name_en": "Habsburg Monarchy",
-        "name_ko": "합스부르크 오스트리아",
+        "name_en": "Ethiopian Empire",
+        "name_ko": "에티오피아 제국",
         "sources": 2,
-        "region": "europe",
-        "t1_start": 1500,
-        "t1_end": 1918
-      },
-      {
-        "name_en": "Kingdom of England",
-        "name_ko": "잉글랜드",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 1200,
-        "t1_end": 1707
+        "region": "middle_east",
+        "t1_start": 1270,
+        "t1_end": 1975
       },
       {
         "name_en": "Majapahit",
-        "name_ko": "마자파힛",
+        "name_ko": "마자파힛 제국",
         "sources": 2,
         "region": "southeast_asia",
         "t1_start": 1293,
         "t1_end": 1527
       },
       {
-        "name_en": "Poland-Lithuania",
+        "name_en": "Vijayanagara Empire",
+        "name_ko": "비자야나가라 제국",
+        "sources": 2,
+        "region": "south_asia",
+        "t1_start": 1336,
+        "t1_end": 1646
+      },
+      {
+        "name_en": "Polish–Lithuanian Commonwealth",
         "name_ko": "폴란드-리투아니아",
         "sources": 2,
         "region": "europe",
@@ -3329,12 +3329,12 @@
         "t1_end": 1795
       },
       {
-        "name_en": "Vijayanagara Empire",
-        "name_ko": "비자야나가라",
+        "name_en": "Habsburg Monarchy",
+        "name_ko": "합스부르크",
         "sources": 2,
-        "region": "south_asia",
-        "t1_start": 1336,
-        "t1_end": 1646
+        "region": "europe",
+        "t1_start": 1500,
+        "t1_end": 1918
       }
     ]
   },
@@ -3344,20 +3344,20 @@
     "count": 19,
     "entities": [
       {
-        "name_en": "British Empire",
-        "name_ko": "대영 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 1600,
-        "t1_end": 1900
-      },
-      {
         "name_en": "Holy Roman Empire",
         "name_ko": "신성 로마 제국",
         "sources": 4,
         "region": "europe",
         "t1_start": 962,
         "t1_end": 1806
+      },
+      {
+        "name_en": "Kingdom of Portugal",
+        "name_ko": "포르투갈 왕국",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": 1415,
+        "t1_end": 1800
       },
       {
         "name_en": "Mali Empire",
@@ -3368,12 +3368,28 @@
         "t1_end": 1600
       },
       {
-        "name_en": "Ming dynasty",
-        "name_ko": "명나라",
+        "name_en": "Ottoman Empire",
+        "name_ko": "오스만 제국",
         "sources": 4,
-        "region": "east_asia",
-        "t1_start": 1368,
-        "t1_end": 1644
+        "region": "middle_east",
+        "t1_start": 1299,
+        "t1_end": 1922
+      },
+      {
+        "name_en": "Spanish Empire",
+        "name_ko": "스페인 제국",
+        "sources": 4,
+        "region": "europe",
+        "t1_start": 1492,
+        "t1_end": 1800
+      },
+      {
+        "name_en": "Safavid Iran",
+        "name_ko": "사파비 제국",
+        "sources": 4,
+        "region": "central_asia",
+        "t1_start": 1501,
+        "t1_end": 1736
       },
       {
         "name_en": "Mughal Empire",
@@ -3384,22 +3400,6 @@
         "t1_end": 1857
       },
       {
-        "name_en": "Ottoman Empire",
-        "name_ko": "오스만 제국",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": 1299,
-        "t1_end": 1922
-      },
-      {
-        "name_en": "Portuguese Empire",
-        "name_ko": "포르투갈 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 1415,
-        "t1_end": 1800
-      },
-      {
         "name_en": "Russian Empire",
         "name_ko": "러시아 제국",
         "sources": 4,
@@ -3408,20 +3408,36 @@
         "t1_end": 1917
       },
       {
-        "name_en": "Safavid dynasty",
-        "name_ko": "사파비 왕조",
+        "name_en": "Ming dynasty",
+        "name_ko": "명나라",
         "sources": 4,
-        "region": "middle_east",
-        "t1_start": 1501,
-        "t1_end": 1736
+        "region": "east_asia",
+        "t1_start": 1368,
+        "t1_end": 1644
       },
       {
-        "name_en": "Spanish Empire",
-        "name_ko": "스페인 제국",
+        "name_en": "British Empire",
+        "name_ko": "대영 제국",
         "sources": 4,
         "region": "europe",
-        "t1_start": 1492,
+        "t1_start": 1600,
+        "t1_end": 1900
+      },
+      {
+        "name_en": "Kingdom of France",
+        "name_ko": "프랑스 왕국",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 1300,
         "t1_end": 1800
+      },
+      {
+        "name_en": "Joseon",
+        "name_ko": "조선",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 1392,
+        "t1_end": 1897
       },
       {
         "name_en": "Dutch Republic",
@@ -3440,47 +3456,31 @@
         "t1_end": 1800
       },
       {
-        "name_en": "Joseon",
-        "name_ko": "조선",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 1392,
-        "t1_end": 1897
-      },
-      {
-        "name_en": "Kingdom of France",
-        "name_ko": "프랑스 왕국",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 1300,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Ethiopian Empire",
-        "name_ko": "에티오피아 제국",
-        "sources": 2,
-        "region": "sub_saharan",
-        "t1_start": 1270,
-        "t1_end": 1975
-      },
-      {
-        "name_en": "Habsburg Monarchy",
-        "name_ko": "합스부르크 오스트리아",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 1500,
-        "t1_end": 1918
-      },
-      {
         "name_en": "Kingdom of England",
-        "name_ko": "잉글랜드",
+        "name_ko": "잉글랜드 왕국",
         "sources": 2,
         "region": "europe",
         "t1_start": 1200,
         "t1_end": 1707
       },
       {
-        "name_en": "Poland-Lithuania",
+        "name_en": "Ethiopian Empire",
+        "name_ko": "에티오피아 제국",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": 1270,
+        "t1_end": 1975
+      },
+      {
+        "name_en": "Vijayanagara Empire",
+        "name_ko": "비자야나가라 제국",
+        "sources": 2,
+        "region": "south_asia",
+        "t1_start": 1336,
+        "t1_end": 1646
+      },
+      {
+        "name_en": "Polish–Lithuanian Commonwealth",
         "name_ko": "폴란드-리투아니아",
         "sources": 2,
         "region": "europe",
@@ -3488,12 +3488,12 @@
         "t1_end": 1795
       },
       {
-        "name_en": "Vijayanagara Empire",
-        "name_ko": "비자야나가라",
+        "name_en": "Habsburg Monarchy",
+        "name_ko": "합스부르크",
         "sources": 2,
-        "region": "south_asia",
-        "t1_start": 1336,
-        "t1_end": 1646
+        "region": "europe",
+        "t1_start": 1500,
+        "t1_end": 1918
       }
     ]
   },
@@ -3503,14 +3503,6 @@
     "count": 19,
     "entities": [
       {
-        "name_en": "British Empire",
-        "name_ko": "대영 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 1600,
-        "t1_end": 1900
-      },
-      {
         "name_en": "Holy Roman Empire",
         "name_ko": "신성 로마 제국",
         "sources": 4,
@@ -3519,12 +3511,12 @@
         "t1_end": 1806
       },
       {
-        "name_en": "Mughal Empire",
-        "name_ko": "무굴 제국",
+        "name_en": "Kingdom of Portugal",
+        "name_ko": "포르투갈 왕국",
         "sources": 4,
-        "region": "south_asia",
-        "t1_start": 1526,
-        "t1_end": 1857
+        "region": "europe",
+        "t1_start": 1415,
+        "t1_end": 1800
       },
       {
         "name_en": "Ottoman Empire",
@@ -3535,12 +3527,28 @@
         "t1_end": 1922
       },
       {
-        "name_en": "Portuguese Empire",
-        "name_ko": "포르투갈 제국",
+        "name_en": "Spanish Empire",
+        "name_ko": "스페인 제국",
         "sources": 4,
         "region": "europe",
-        "t1_start": 1415,
+        "t1_start": 1492,
         "t1_end": 1800
+      },
+      {
+        "name_en": "Safavid Iran",
+        "name_ko": "사파비 제국",
+        "sources": 4,
+        "region": "central_asia",
+        "t1_start": 1501,
+        "t1_end": 1736
+      },
+      {
+        "name_en": "Mughal Empire",
+        "name_ko": "무굴 제국",
+        "sources": 4,
+        "region": "south_asia",
+        "t1_start": 1526,
+        "t1_end": 1857
       },
       {
         "name_en": "Qing dynasty",
@@ -3559,20 +3567,28 @@
         "t1_end": 1917
       },
       {
-        "name_en": "Safavid dynasty",
-        "name_ko": "사파비 왕조",
-        "sources": 4,
-        "region": "middle_east",
-        "t1_start": 1501,
-        "t1_end": 1736
-      },
-      {
-        "name_en": "Spanish Empire",
-        "name_ko": "스페인 제국",
+        "name_en": "British Empire",
+        "name_ko": "대영 제국",
         "sources": 4,
         "region": "europe",
-        "t1_start": 1492,
+        "t1_start": 1600,
+        "t1_end": 1900
+      },
+      {
+        "name_en": "Kingdom of France",
+        "name_ko": "프랑스 왕국",
+        "sources": 3,
+        "region": "europe",
+        "t1_start": 1300,
         "t1_end": 1800
+      },
+      {
+        "name_en": "Joseon",
+        "name_ko": "조선",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 1392,
+        "t1_end": 1897
       },
       {
         "name_en": "Dutch Republic",
@@ -3583,6 +3599,14 @@
         "t1_end": 1795
       },
       {
+        "name_en": "Maratha Empire",
+        "name_ko": "마라타 왕국",
+        "sources": 3,
+        "region": "south_asia",
+        "t1_start": 1674,
+        "t1_end": 1818
+      },
+      {
         "name_en": "Japan",
         "name_ko": "일본",
         "sources": 3,
@@ -3591,55 +3615,23 @@
         "t1_end": 1800
       },
       {
-        "name_en": "Joseon",
-        "name_ko": "조선",
-        "sources": 3,
-        "region": "east_asia",
-        "t1_start": 1392,
-        "t1_end": 1897
-      },
-      {
-        "name_en": "Kingdom of France",
-        "name_ko": "프랑스 왕국",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 1300,
-        "t1_end": 1800
-      },
-      {
-        "name_en": "Maratha Empire",
-        "name_ko": "마라타 동맹",
-        "sources": 3,
-        "region": "south_asia",
-        "t1_start": 1674,
-        "t1_end": 1818
-      },
-      {
-        "name_en": "Ethiopian Empire",
-        "name_ko": "에티오피아 제국",
-        "sources": 2,
-        "region": "sub_saharan",
-        "t1_start": 1270,
-        "t1_end": 1975
-      },
-      {
-        "name_en": "Habsburg Monarchy",
-        "name_ko": "합스부르크 오스트리아",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 1500,
-        "t1_end": 1918
-      },
-      {
         "name_en": "Kingdom of England",
-        "name_ko": "잉글랜드",
+        "name_ko": "잉글랜드 왕국",
         "sources": 2,
         "region": "europe",
         "t1_start": 1200,
         "t1_end": 1707
       },
       {
-        "name_en": "Poland-Lithuania",
+        "name_en": "Ethiopian Empire",
+        "name_ko": "에티오피아 제국",
+        "sources": 2,
+        "region": "middle_east",
+        "t1_start": 1270,
+        "t1_end": 1975
+      },
+      {
+        "name_en": "Polish–Lithuanian Commonwealth",
         "name_ko": "폴란드-리투아니아",
         "sources": 2,
         "region": "europe",
@@ -3647,12 +3639,20 @@
         "t1_end": 1795
       },
       {
-        "name_en": "Swedish Empire",
-        "name_ko": "스웨덴 제국",
+        "name_en": "Kingdom of Sweden",
+        "name_ko": "스웨덴 왕국",
         "sources": 2,
         "region": "europe",
         "t1_start": 1611,
         "t1_end": 1721
+      },
+      {
+        "name_en": "Habsburg Monarchy",
+        "name_ko": "합스부르크",
+        "sources": 2,
+        "region": "europe",
+        "t1_start": 1500,
+        "t1_end": 1918
       }
     ]
   },
@@ -3662,14 +3662,6 @@
     "count": 16,
     "entities": [
       {
-        "name_en": "British Empire",
-        "name_ko": "대영 제국",
-        "sources": 4,
-        "region": "europe",
-        "t1_start": 1600,
-        "t1_end": 1900
-      },
-      {
         "name_en": "Holy Roman Empire",
         "name_ko": "신성 로마 제국",
         "sources": 4,
@@ -3678,12 +3670,12 @@
         "t1_end": 1806
       },
       {
-        "name_en": "Mughal Empire",
-        "name_ko": "무굴 제국",
+        "name_en": "Kingdom of Portugal",
+        "name_ko": "포르투갈 왕국",
         "sources": 4,
-        "region": "south_asia",
-        "t1_start": 1526,
-        "t1_end": 1857
+        "region": "europe",
+        "t1_start": 1415,
+        "t1_end": 1800
       },
       {
         "name_en": "Ottoman Empire",
@@ -3694,12 +3686,20 @@
         "t1_end": 1922
       },
       {
-        "name_en": "Portuguese Empire",
-        "name_ko": "포르투갈 제국",
+        "name_en": "Spanish Empire",
+        "name_ko": "스페인 제국",
         "sources": 4,
         "region": "europe",
-        "t1_start": 1415,
+        "t1_start": 1492,
         "t1_end": 1800
+      },
+      {
+        "name_en": "Mughal Empire",
+        "name_ko": "무굴 제국",
+        "sources": 4,
+        "region": "south_asia",
+        "t1_start": 1526,
+        "t1_end": 1857
       },
       {
         "name_en": "Qing dynasty",
@@ -3718,19 +3718,19 @@
         "t1_end": 1917
       },
       {
-        "name_en": "Spanish Empire",
-        "name_ko": "스페인 제국",
+        "name_en": "British Empire",
+        "name_ko": "대영 제국",
         "sources": 4,
         "region": "europe",
-        "t1_start": 1492,
-        "t1_end": 1800
+        "t1_start": 1600,
+        "t1_end": 1900
       },
       {
-        "name_en": "Japan",
-        "name_ko": "일본",
+        "name_en": "Kingdom of France",
+        "name_ko": "프랑스 왕국",
         "sources": 3,
-        "region": "east_asia",
-        "t1_start": 600,
+        "region": "europe",
+        "t1_start": 1300,
         "t1_end": 1800
       },
       {
@@ -3742,48 +3742,48 @@
         "t1_end": 1897
       },
       {
-        "name_en": "Kingdom of France",
-        "name_ko": "프랑스 왕국",
-        "sources": 3,
-        "region": "europe",
-        "t1_start": 1300,
-        "t1_end": 1800
-      },
-      {
         "name_en": "Maratha Empire",
-        "name_ko": "마라타 동맹",
+        "name_ko": "마라타 왕국",
         "sources": 3,
         "region": "south_asia",
         "t1_start": 1674,
         "t1_end": 1818
       },
       {
+        "name_en": "Japan",
+        "name_ko": "일본",
+        "sources": 3,
+        "region": "east_asia",
+        "t1_start": 600,
+        "t1_end": 1800
+      },
+      {
         "name_en": "Ethiopian Empire",
         "name_ko": "에티오피아 제국",
         "sources": 2,
-        "region": "sub_saharan",
+        "region": "middle_east",
         "t1_start": 1270,
         "t1_end": 1975
       },
       {
-        "name_en": "Habsburg Monarchy",
-        "name_ko": "합스부르크 오스트리아",
-        "sources": 2,
-        "region": "europe",
-        "t1_start": 1500,
-        "t1_end": 1918
-      },
-      {
         "name_en": "Kingdom of Prussia",
-        "name_ko": "프로이센",
+        "name_ko": "프로이센 왕국",
         "sources": 2,
         "region": "europe",
         "t1_start": 1701,
         "t1_end": 1918
       },
       {
+        "name_en": "Habsburg Monarchy",
+        "name_ko": "합스부르크",
+        "sources": 2,
+        "region": "europe",
+        "t1_start": 1500,
+        "t1_end": 1918
+      },
+      {
         "name_en": "Durrani Empire",
-        "name_ko": "두라니 제국",
+        "name_ko": "두라니 왕조",
         "sources": 1,
         "region": "south_asia",
         "t1_start": 1747,
