@@ -1674,13 +1674,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const circles = wikidataCirclesRef.current;
     const RADIUS = 50000; // 50km
 
-    // [cl] 전 구간 OHM + 원형으로 통일
+    // [cl] 전 구간 라벨 렌더링 (원형 제거, 라벨만)
     for (const entity of circles) {
       if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
 
-      // [cl] OHM 매칭: QID 또는 name_en으로 (CSHAPES_ QID 형식 불일치 대응)
-      const hasOhmPolygon = ohmQidsRef.current.has(entity.qid) ||
-        (entity.name_en ? ohmNamesRef.current.has(entity.name_en.toLowerCase()) : false);
       const position = Cartesian3.fromDegrees(entity.lon, entity.lat);
 
       // ── 라벨 텍스트: 한글명 우선, 없으면 영문 ──
@@ -1693,50 +1690,21 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       const style = getLabelStyle(entity.tier);
 
-      if (hasOhmPolygon) {
-        // [cl] OHM 폴리곤이 있으면 원형 없이 라벨만 표시
-        ds.entities.add({
-          position,
-          label: {
-            text: labelText,
-            font: style.font,
-            fillColor: Color.WHITE,
-            outlineColor: Color.BLACK,
-            outlineWidth: 4,
-            style: 2, // FILL_AND_OUTLINE
-            pixelOffset: new Cartesian2(0, 0),
-            scaleByDistance: style.scale,
-            translucencyByDistance: style.translucency,
-          },
-        });
-      } else {
-        // [cl] OHM 없으면 원형 + 라벨
-        const fillColor = Color.fromCssColorString(entity.color).withAlpha(0.35);
-        const outlineColor = Color.fromCssColorString(entity.color).withAlpha(0.7);
-        ds.entities.add({
-          position,
-          ellipse: {
-            semiMajorAxis: RADIUS,
-            semiMinorAxis: RADIUS,
-            material: fillColor,
-            outline: true,
-            outlineColor,
-            outlineWidth: 1,
-            classificationType: ClassificationType.BOTH,
-          },
-          label: {
-            text: labelText,
-            font: style.font,
-            fillColor: Color.WHITE,
-            outlineColor: Color.BLACK,
-            outlineWidth: 4,
-            style: 2, // FILL_AND_OUTLINE
-            pixelOffset: new Cartesian2(0, -20),
-            scaleByDistance: style.scale,
-            translucencyByDistance: style.translucency,
-          },
-        });
-      }
+      // [cl] 원형(ellipse) 제거 — 라벨만 표시 (진형 결정 2026-03-02)
+      ds.entities.add({
+        position,
+        label: {
+          text: labelText,
+          font: style.font,
+          fillColor: Color.WHITE,
+          outlineColor: Color.BLACK,
+          outlineWidth: 4,
+          style: 2, // FILL_AND_OUTLINE
+          pixelOffset: new Cartesian2(0, 0),
+          scaleByDistance: style.scale,
+          translucencyByDistance: style.translucency,
+        },
+      });
     }
 
     viewer.dataSources.add(ds);
