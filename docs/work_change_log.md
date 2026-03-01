@@ -3,6 +3,20 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-02] [cl] OHM 폴리곤 CesiumGlobe 렌더링 연동
+* **소련(Q15180) 매칭 누락 수정**: 매칭 데이터에 소련 18개 스냅샷 추가, OHM Overpass API로 폴리곤 다운로드 완료 (18개 파일, ~90MB)
+* **OHM 인덱스 파일 생성**: `public/geo/borders/ohm_index.json` — 229개 엔티티, 1,062개 스냅샷, 81KB
+  - 엔티티별 QID, 이름, tier, 존속기간, 스냅샷 목록 (rid + start/end 포함)
+* **CesiumGlobe.tsx OHM 폴리곤 렌더링 통합**:
+  - `OhmEntity` / `OhmSnapshot` 인터페이스 추가
+  - `loadOhmIndex()`: ohm_index.json 1회 로드 + ohmQidsRef 세팅
+  - `renderOhmForYear()`: 특정 연도에 활성화된 엔티티의 최적 스냅샷 선택 → GeoJSON fetch(배치 10개씩) → filled polygon + outline polyline 렌더링
+  - GeoJSON 캐시(ohmGeojsonCacheRef): 한 번 fetch한 파일은 메모리에 유지
+  - 원형 렌더링(renderCirclesForYear)에서 OHM 매칭된 QID 자동 제외 → 이중 렌더링 방지
+  - useEffect 연결: viewer 초기화 시 OHM 인덱스 로드, 연도 변경 시 폴리곤 업데이트
+  - 클린업 함수에 ohmDsRef 정리 추가
+* **데이터 현황**: OHM 폴리곤 1,006개 GeoJSON, 230개 엔티티 매칭 (T1:82, T2:148)
+
 ## [2026-02-24] [gm]
 * `docs/database_schema_plan.md` 및 `docs/development_guide.md` 작성.
 * `claud.md.md` 및 `gemini.md.md` 구조 개편 및 `gemini.md` (지훈 페르소나 설정) 작성.
