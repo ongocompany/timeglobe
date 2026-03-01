@@ -1438,6 +1438,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const currentOhmYearRef = useRef<number | null>(null);
   // [cl] OHM 매칭된 QID set (원형 렌더링에서 제외용)
   const ohmQidsRef = useRef<Set<string>>(new Set());
+  const ohmNamesRef = useRef<Set<string>>(new Set());
 
   // [cl] ★ Tier별 라벨 스타일 — 고도(카메라 거리) 기반 노출 전략
   // T1: 대제국 (로마, 당, 오스만) — 항상 크게 보임
@@ -1677,7 +1678,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     for (const entity of circles) {
       if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
 
-      const hasOhmPolygon = ohmQidsRef.current.has(entity.qid);
+      // [cl] OHM 매칭: QID 또는 name_en으로 (CSHAPES_ QID 형식 불일치 대응)
+      const hasOhmPolygon = ohmQidsRef.current.has(entity.qid) ||
+        (entity.name_en ? ohmNamesRef.current.has(entity.name_en.toLowerCase()) : false);
       const position = Cartesian3.fromDegrees(entity.lon, entity.lat);
 
       // ── 라벨 텍스트: 한글명 우선, 없으면 영문 ──
@@ -1746,10 +1749,15 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const res = await fetch("/geo/borders/ohm_index.json");
     const data: OhmEntity[] = await res.json();
     ohmIndexRef.current = data;
-    // [cl] OHM 매칭된 QID 목록 (원형 렌더링 시 이 QID는 제외)
+    // [cl] OHM 매칭된 QID + name_en 목록 (원형 렌더링 시 이 엔티티 원형 제외)
     const qids = new Set<string>();
-    for (const e of data) qids.add(e.qid);
+    const names = new Set<string>();
+    for (const e of data) {
+      qids.add(e.qid);
+      if (e.name_en) names.add(e.name_en.toLowerCase());
+    }
     ohmQidsRef.current = qids;
+    ohmNamesRef.current = names;
     return data;
   }
 
