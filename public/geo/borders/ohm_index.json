@@ -3,7 +3,7 @@
     "qid": "MANUAL_Q47690",
     "name_en": "Indus Valley Civilisation",
     "name_ko": "인더스 문명",
-    "tier": 1,
+    "tier": 3,
     "start_year": -3300,
     "end_year": -1300,
     "snapshots": [
@@ -19,7 +19,7 @@
     "qid": "Q11768",
     "name_en": "Ancient Egypt",
     "name_ko": "고대 이집트",
-    "tier": 1,
+    "tier": 3,
     "start_year": -3100,
     "end_year": -30,
     "snapshots": [
@@ -35,7 +35,7 @@
     "qid": "Q173527",
     "name_en": "Minoan civilization",
     "name_ko": "미노스 문명",
-    "tier": 1,
+    "tier": 3,
     "start_year": -2700,
     "end_year": -1450,
     "snapshots": [
@@ -51,7 +51,7 @@
     "qid": "Q128904",
     "name_en": "Elam",
     "name_ko": "엘람",
-    "tier": 1,
+    "tier": 3,
     "start_year": -2699,
     "end_year": -519,
     "snapshots": [
@@ -67,7 +67,7 @@
     "qid": "Q177819",
     "name_en": "Old Kingdom of Egypt",
     "name_ko": "이집트 고왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": -2686,
     "end_year": -2181,
     "snapshots": [
@@ -83,7 +83,7 @@
     "qid": "Q42534",
     "name_en": "",
     "name_ko": "인더스 문명",
-    "tier": null,
+    "tier": 3,
     "start_year": -2598,
     "end_year": -1899,
     "snapshots": [
@@ -99,7 +99,7 @@
     "qid": "Q175094",
     "name_en": "Lagash",
     "name_ko": "라가시",
-    "tier": 1,
+    "tier": 3,
     "start_year": -2500,
     "end_year": -2000,
     "snapshots": [
@@ -115,7 +115,7 @@
     "qid": "Q11691",
     "name_en": "Land of Punt",
     "name_ko": "푼트",
-    "tier": 1,
+    "tier": 3,
     "start_year": -2400,
     "end_year": -1068,
     "snapshots": [
@@ -131,7 +131,7 @@
     "qid": "Q28405",
     "name_en": "Gojoseon",
     "name_ko": "고조선",
-    "tier": 1,
+    "tier": 3,
     "start_year": -2332,
     "end_year": -107,
     "snapshots": [
@@ -147,7 +147,7 @@
     "qid": "Q35765",
     "name_en": "Xia dynasty",
     "name_ko": "하 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": -2070,
     "end_year": -1600,
     "snapshots": [
@@ -163,7 +163,7 @@
     "qid": "Q41137",
     "name_en": "Assyrian Empire",
     "name_ko": "아시리아",
-    "tier": 1,
+    "tier": 3,
     "start_year": -2024,
     "end_year": -910,
     "snapshots": [
@@ -179,7 +179,7 @@
     "qid": "Q47690",
     "name_en": "Babylonia",
     "name_ko": "바빌로니아",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1879,
     "end_year": -1761,
     "snapshots": [
@@ -195,7 +195,7 @@
     "qid": "Q220738",
     "name_en": "Colchis",
     "name_ko": "콜키스",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1700,
     "end_year": -163,
     "snapshots": [
@@ -211,7 +211,7 @@
     "qid": "Q649262",
     "name_en": "Arzawa",
     "name_ko": "아르자와",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1699,
     "end_year": -1349,
     "snapshots": [
@@ -227,7 +227,7 @@
     "qid": "Q12406731",
     "name_en": "Old Hittite Kingdom",
     "name_ko": "오르드 히타이트 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": -1649,
     "end_year": -1499,
     "snapshots": [
@@ -243,7 +243,7 @@
     "qid": "Q28923",
     "name_en": "Mycenaean Greece",
     "name_ko": "미케네 문명",
-    "tier": 4,
+    "tier": 3,
     "start_year": -1599,
     "end_year": -1199,
     "snapshots": [
@@ -259,7 +259,7 @@
     "qid": "Q180920",
     "name_en": "New Kingdom of Egypt",
     "name_ko": "이집트 신왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1550,
     "end_year": -1077,
     "snapshots": [
@@ -275,7 +275,7 @@
     "qid": "Q135364",
     "name_en": "Olmec civilization",
     "name_ko": "올멕 문명",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1500,
     "end_year": -400,
     "snapshots": [
@@ -291,7 +291,7 @@
     "qid": "Q178665",
     "name_en": "Mitanni",
     "name_ko": "미탄니",
-    "tier": 2,
+    "tier": 3,
     "start_year": -1499,
     "end_year": -1349,
     "snapshots": [
@@ -307,7 +307,7 @@
     "qid": "Q208299",
     "name_en": "Moab",
     "name_ko": "모압",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1300,
     "end_year": -399,
     "snapshots": [
@@ -323,7 +323,7 @@
     "qid": "Q1193806",
     "name_en": "Shu",
     "name_ko": "고촉",
-    "tier": 2,
+    "tier": 3,
     "start_year": -1200,
     "end_year": -315,
     "snapshots": [
@@ -339,7 +339,7 @@
     "qid": "Q171513",
     "name_en": "Magadha",
     "name_ko": "마가다",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1200,
     "end_year": -344,
     "snapshots": [
@@ -355,7 +355,7 @@
     "qid": "Q41642",
     "name_en": "Phoenicia",
     "name_ko": "페니키아",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1199,
     "end_year": -528,
     "snapshots": [
@@ -383,7 +383,7 @@
     "qid": "Q41127",
     "name_en": "Lydia",
     "name_ko": "리디아",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1199,
     "end_year": -545,
     "snapshots": [
@@ -415,7 +415,7 @@
     "qid": "Q169940",
     "name_en": "Kingdom of Kush",
     "name_ko": "쿠시 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1070,
     "end_year": 350,
     "snapshots": [
@@ -431,7 +431,7 @@
     "qid": "Q230547",
     "name_en": "Yan (state)",
     "name_ko": "연(燕)나라",
-    "tier": 2,
+    "tier": 3,
     "start_year": -1044,
     "end_year": -222,
     "snapshots": [
@@ -447,7 +447,7 @@
     "qid": "Q837855",
     "name_en": "Qi",
     "name_ko": "제",
-    "tier": 1,
+    "tier": 3,
     "start_year": -1044,
     "end_year": -220,
     "snapshots": [
@@ -463,7 +463,7 @@
     "qid": "Q5690",
     "name_en": "Sparta",
     "name_ko": "스파르타",
-    "tier": null,
+    "tier": 3,
     "start_year": -900,
     "end_year": -371,
     "snapshots": [
@@ -479,7 +479,7 @@
     "qid": "Q219067",
     "name_en": "Chavín culture",
     "name_ko": "차빈 문명",
-    "tier": 1,
+    "tier": 3,
     "start_year": -900,
     "end_year": -200,
     "snapshots": [
@@ -495,7 +495,7 @@
     "qid": "Q242309",
     "name_en": "Qin (state)",
     "name_ko": "진(秦) 제후국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -897,
     "end_year": -221,
     "snapshots": [
@@ -533,7 +533,7 @@
     "qid": "Q2429397",
     "name_en": "Ancient Carthage",
     "name_ko": "고대 카르타고",
-    "tier": 2,
+    "tier": 3,
     "start_year": -814,
     "end_year": -146,
     "snapshots": [
@@ -585,7 +585,7 @@
     "qid": "Q83958",
     "name_en": "Macedonia",
     "name_ko": "마케도니아 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -807,
     "end_year": -166,
     "snapshots": [
@@ -601,7 +601,7 @@
     "qid": "Q215765",
     "name_en": "Eastern Zhou",
     "name_ko": "동주",
-    "tier": 2,
+    "tier": 3,
     "start_year": -770,
     "end_year": -256,
     "snapshots": [
@@ -617,7 +617,7 @@
     "qid": "Q201038",
     "name_en": "Roman Kingdom",
     "name_ko": "로마 왕정",
-    "tier": 2,
+    "tier": 3,
     "start_year": -752,
     "end_year": -509,
     "snapshots": [
@@ -639,7 +639,7 @@
     "qid": "Q504759",
     "name_en": "Chu",
     "name_ko": "초",
-    "tier": 2,
+    "tier": 3,
     "start_year": -721,
     "end_year": -222,
     "snapshots": [
@@ -655,7 +655,7 @@
     "qid": "Q844930",
     "name_en": "Attica",
     "name_ko": "아트로파테네",
-    "tier": null,
+    "tier": 3,
     "start_year": -700,
     "end_year": -200,
     "snapshots": [
@@ -671,7 +671,7 @@
     "qid": "Q4671762",
     "name_en": "Kingdom of Leinster",
     "name_ko": "레이느스테르 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": -600,
     "end_year": 1603,
     "snapshots": [
@@ -693,7 +693,7 @@
     "qid": "Q389688",
     "name_en": "Achaemenid Empire",
     "name_ko": "아케메네스 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": -549,
     "end_year": -329,
     "snapshots": [
@@ -709,7 +709,7 @@
     "qid": "Q17167",
     "name_en": "Roman Republic",
     "name_ko": "공화정 로마",
-    "tier": 1,
+    "tier": 3,
     "start_year": -509,
     "end_year": -27,
     "snapshots": [
@@ -833,7 +833,7 @@
     "qid": "MANUAL_Q766",
     "name_en": "Classical Athens",
     "name_ko": "고대 아테네",
-    "tier": 1,
+    "tier": 3,
     "start_year": -508,
     "end_year": -322,
     "snapshots": [
@@ -849,7 +849,7 @@
     "qid": "Q80702",
     "name_en": "Maurya empire",
     "name_ko": "마우리아 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -321,
     "end_year": -184,
     "snapshots": [
@@ -865,7 +865,7 @@
     "qid": "Q170477",
     "name_en": "Seleucid Empire",
     "name_ko": "셀레우코스 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": -311,
     "end_year": -62,
     "snapshots": [
@@ -881,7 +881,7 @@
     "qid": "Q188836",
     "name_en": "Xiongnu",
     "name_ko": "흉노",
-    "tier": 1,
+    "tier": 3,
     "start_year": -300,
     "end_year": 100,
     "snapshots": [
@@ -897,7 +897,7 @@
     "qid": "Q212648",
     "name_en": "Mauretania",
     "name_ko": "마우레타니아",
-    "tier": 1,
+    "tier": 3,
     "start_year": -300,
     "end_year": 698,
     "snapshots": [
@@ -913,7 +913,7 @@
     "qid": "Q938636",
     "name_en": "Pandya dynasty",
     "name_ko": "판드야",
-    "tier": 1,
+    "tier": 3,
     "start_year": -299,
     "end_year": 1650,
     "snapshots": [
@@ -929,7 +929,7 @@
     "qid": "MANUAL_Q188161",
     "name_en": "Kingdom of Iberia",
     "name_ko": "캅카스 이베리아",
-    "tier": 1,
+    "tier": 3,
     "start_year": -298,
     "end_year": 580,
     "snapshots": [
@@ -945,7 +945,7 @@
     "qid": "Q1986139",
     "name_en": "Parthian Empire",
     "name_ko": "파르티아 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -247,
     "end_year": 224,
     "snapshots": [
@@ -961,7 +961,7 @@
     "qid": "Q7183",
     "name_en": "Qin dynasty",
     "name_ko": "진나라",
-    "tier": 2,
+    "tier": 3,
     "start_year": -221,
     "end_year": -206,
     "snapshots": [
@@ -977,7 +977,7 @@
     "qid": "Q131748",
     "name_en": "Xianbei",
     "name_ko": "선비",
-    "tier": 1,
+    "tier": 3,
     "start_year": -209,
     "end_year": 235,
     "snapshots": [
@@ -993,7 +993,7 @@
     "qid": "Q827040",
     "name_en": "Nanyue",
     "name_ko": "남월국",
-    "tier": 2,
+    "tier": 3,
     "start_year": -206,
     "end_year": -110,
     "snapshots": [
@@ -1009,7 +1009,7 @@
     "qid": "Q7209",
     "name_en": "Han dynasty",
     "name_ko": "한나라",
-    "tier": 1,
+    "tier": 3,
     "start_year": -205,
     "end_year": 220,
     "snapshots": [
@@ -1041,7 +1041,7 @@
     "qid": "Q487879",
     "name_en": "Buyeo kingdom",
     "name_ko": "부여",
-    "tier": 2,
+    "tier": 3,
     "start_year": -200,
     "end_year": 494,
     "snapshots": [
@@ -1057,7 +1057,7 @@
     "qid": "Q1032006",
     "name_en": "Pyu city-states",
     "name_ko": "쀼 시국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -200,
     "end_year": 1050,
     "snapshots": [
@@ -1073,7 +1073,7 @@
     "qid": "Q311618",
     "name_en": "Indo-Scythians",
     "name_ko": "인도-스키타이",
-    "tier": 1,
+    "tier": 3,
     "start_year": -199,
     "end_year": 400,
     "snapshots": [
@@ -1089,7 +1089,7 @@
     "qid": "Q703340",
     "name_en": "Wiman Chosŏn",
     "name_ko": "위만조선",
-    "tier": 2,
+    "tier": 3,
     "start_year": -193,
     "end_year": -107,
     "snapshots": [
@@ -1105,7 +1105,7 @@
     "qid": "Q1072949",
     "name_en": "Western Han",
     "name_ko": "한나라",
-    "tier": null,
+    "tier": 3,
     "start_year": -107,
     "end_year": 8,
     "snapshots": [
@@ -1127,7 +1127,7 @@
     "qid": "Q28084",
     "name_en": "Byeonhan",
     "name_ko": "변한",
-    "tier": null,
+    "tier": 3,
     "start_year": -100,
     "end_year": 41,
     "snapshots": [
@@ -1143,7 +1143,7 @@
     "qid": "Q213168",
     "name_en": "Nazca civilization",
     "name_ko": "나스카 문명",
-    "tier": 1,
+    "tier": 3,
     "start_year": -100,
     "end_year": 800,
     "snapshots": [
@@ -1159,7 +1159,7 @@
     "qid": "Q28370",
     "name_en": "Goguryeo",
     "name_ko": "고구려",
-    "tier": 1,
+    "tier": 3,
     "start_year": -36,
     "end_year": 668,
     "snapshots": [
@@ -1175,7 +1175,7 @@
     "qid": "Q2277",
     "name_en": "Roman Empire",
     "name_ko": "로마 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": -27,
     "end_year": 395,
     "snapshots": [
@@ -1299,7 +1299,7 @@
     "qid": "Q129864",
     "name_en": "Xin dynasty",
     "name_ko": "신나라",
-    "tier": 2,
+    "tier": 3,
     "start_year": 9,
     "end_year": 23,
     "snapshots": [
@@ -1315,7 +1315,7 @@
     "qid": "Q46362",
     "name_en": "Kushan Empire",
     "name_ko": "쿠샨 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": 30,
     "end_year": 375,
     "snapshots": [
@@ -1331,7 +1331,7 @@
     "qid": "Q139377",
     "name_en": "Kingdom of Aksum",
     "name_ko": "악숨 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 50,
     "end_year": 960,
     "snapshots": [
@@ -1353,7 +1353,7 @@
     "qid": "Q273266",
     "name_en": "Kingdom of Khotan",
     "name_ko": "호탄 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 56,
     "end_year": 1006,
     "snapshots": [
@@ -1369,7 +1369,7 @@
     "qid": "Q208188",
     "name_en": "Wari Empire",
     "name_ko": "와리 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 100,
     "end_year": 700,
     "snapshots": [
@@ -1385,7 +1385,7 @@
     "qid": "Q206789",
     "name_en": "Ghana Empire",
     "name_ko": "와가두 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 200,
     "end_year": 1250,
     "snapshots": [
@@ -1401,7 +1401,7 @@
     "qid": "Q25777",
     "name_en": "Sasanian Empire",
     "name_ko": "사산 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": 224,
     "end_year": 651,
     "snapshots": [
@@ -1417,7 +1417,7 @@
     "qid": "Q28567",
     "name_en": "Maya civilization",
     "name_ko": "마야 문명",
-    "tier": 1,
+    "tier": 3,
     "start_year": 250,
     "end_year": 900,
     "snapshots": [
@@ -1433,7 +1433,7 @@
     "qid": "Q1144936",
     "name_en": "Wa (Japan)",
     "name_ko": "왜국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 250,
     "end_year": 670,
     "snapshots": [
@@ -1449,7 +1449,7 @@
     "qid": "MANUAL_Q733",
     "name_en": "Pallava dynasty",
     "name_ko": "팔라바",
-    "tier": 1,
+    "tier": 3,
     "start_year": 275,
     "end_year": 897,
     "snapshots": [
@@ -1465,7 +1465,7 @@
     "qid": "Q255283",
     "name_en": "Eastern Jin",
     "name_ko": "동진",
-    "tier": 2,
+    "tier": 3,
     "start_year": 317,
     "end_year": 420,
     "snapshots": [
@@ -1481,7 +1481,7 @@
     "qid": "Q8534",
     "name_en": "Gupta Empire",
     "name_ko": "굽타 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": 320,
     "end_year": 550,
     "snapshots": [
@@ -1497,7 +1497,7 @@
     "qid": "Q155361",
     "name_en": "Rouran Khaganate",
     "name_ko": "유연",
-    "tier": 2,
+    "tier": 3,
     "start_year": 330,
     "end_year": 555,
     "snapshots": [
@@ -1513,7 +1513,7 @@
     "qid": "Q28428",
     "name_en": "Baekje",
     "name_ko": "백제",
-    "tier": 1,
+    "tier": 3,
     "start_year": 371,
     "end_year": 660,
     "snapshots": [
@@ -1535,7 +1535,7 @@
     "qid": "Q42834",
     "name_en": "Western Roman Empire",
     "name_ko": "서로마 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 395,
     "end_year": 476,
     "snapshots": [
@@ -1617,7 +1617,7 @@
     "qid": "Q12544",
     "name_en": "Byzantine Empire",
     "name_ko": "동로마 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 395,
     "end_year": 1453,
     "snapshots": [
@@ -1837,7 +1837,7 @@
     "qid": "Q28456",
     "name_en": "Silla",
     "name_ko": "신라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 400,
     "end_year": 931,
     "snapshots": [
@@ -1871,7 +1871,7 @@
     "qid": "Q2578706",
     "name_en": "Kingdom of Ceredigion",
     "name_ko": "세레디기오은 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 400,
     "end_year": 872,
     "snapshots": [
@@ -1887,7 +1887,7 @@
     "qid": "Q28057",
     "name_en": "Tamna",
     "name_ko": "탐라",
-    "tier": 2,
+    "tier": 3,
     "start_year": 400,
     "end_year": 937,
     "snapshots": [
@@ -1903,7 +1903,7 @@
     "qid": "Q816814",
     "name_en": "Kingdom of Gwynedd",
     "name_ko": "귀네드 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 401,
     "end_year": 1282,
     "snapshots": [
@@ -1947,7 +1947,7 @@
     "qid": "Q956451",
     "name_en": "Kingdom of Dyfed",
     "name_ko": "더베드 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 410,
     "end_year": 920,
     "snapshots": [
@@ -1963,7 +1963,7 @@
     "qid": "Q179872",
     "name_en": "Kingdom of Galicia",
     "name_ko": "갈리시아 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 410,
     "end_year": 1833,
     "snapshots": [
@@ -1979,7 +1979,7 @@
     "qid": "Q126936",
     "name_en": "Visigothic Kingdom",
     "name_ko": "서고트 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 418,
     "end_year": 721,
     "snapshots": [
@@ -2071,7 +2071,7 @@
     "qid": "Q2253783",
     "name_en": "Kingdom of Glywysing",
     "name_ko": "글러으어싱",
-    "tier": 4,
+    "tier": 3,
     "start_year": 430,
     "end_year": 1055,
     "snapshots": [
@@ -2109,7 +2109,7 @@
     "qid": "Q954585",
     "name_en": "Kingdom of Brycheiniog",
     "name_ko": "브러체이니옥",
-    "tier": 4,
+    "tier": 3,
     "start_year": 450,
     "end_year": 1045,
     "snapshots": [
@@ -2147,7 +2147,7 @@
     "qid": "Q328818",
     "name_en": "Kingdom of Kent",
     "name_ko": "켄트 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 455,
     "end_year": 871,
     "snapshots": [
@@ -2201,7 +2201,7 @@
     "qid": "Q13590051",
     "name_en": "Kingdom of the Burgundians",
     "name_ko": "부르고뉴족 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 476,
     "end_year": 534,
     "snapshots": [
@@ -2229,7 +2229,7 @@
     "qid": "Q676184",
     "name_en": "Kingdom of Sussex",
     "name_ko": "서섹스 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 477,
     "end_year": 860,
     "snapshots": [
@@ -2245,7 +2245,7 @@
     "qid": "Q146246",
     "name_en": "Francia",
     "name_ko": "프랑크 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 481,
     "end_year": 800,
     "snapshots": [
@@ -2383,7 +2383,7 @@
     "qid": "Q207833",
     "name_en": "Kingdom of Makuria",
     "name_ko": "마쿠리아",
-    "tier": 1,
+    "tier": 3,
     "start_year": 500,
     "end_year": 1518,
     "snapshots": [
@@ -2399,7 +2399,7 @@
     "qid": "Q105313",
     "name_en": "Kingdom of Wessex",
     "name_ko": "웨식스 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 519,
     "end_year": 927,
     "snapshots": [
@@ -2415,7 +2415,7 @@
     "qid": "Q110888",
     "name_en": "Kingdom of Essex",
     "name_ko": "에식스 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 527,
     "end_year": 825,
     "snapshots": [
@@ -2437,7 +2437,7 @@
     "qid": "Q1068458",
     "name_en": "Dvaravati",
     "name_ko": "드바라바티",
-    "tier": 1,
+    "tier": 3,
     "start_year": 550,
     "end_year": 1050,
     "snapshots": [
@@ -2453,7 +2453,7 @@
     "qid": "Q205466",
     "name_en": "Göktürks",
     "name_ko": "돌궐",
-    "tier": 2,
+    "tier": 3,
     "start_year": 552,
     "end_year": 744,
     "snapshots": [
@@ -2469,7 +2469,7 @@
     "qid": "Q90886999",
     "name_en": "Tribal Duchy of Bavaria",
     "name_ko": "트리바르 공국 바이에른",
-    "tier": 4,
+    "tier": 3,
     "start_year": 555,
     "end_year": 788,
     "snapshots": [
@@ -2567,7 +2567,7 @@
     "qid": "Q2325193",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 568,
     "end_year": 774,
     "snapshots": [
@@ -2589,7 +2589,7 @@
     "qid": "Q7405",
     "name_en": "Sui dynasty",
     "name_ko": "수나라",
-    "tier": 2,
+    "tier": 3,
     "start_year": 581,
     "end_year": 618,
     "snapshots": [
@@ -2605,7 +2605,7 @@
     "qid": "Q87791",
     "name_en": "Frisian Kingdom",
     "name_ko": "프리슬란트 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 600,
     "end_year": 772,
     "snapshots": [
@@ -2633,7 +2633,7 @@
     "qid": "Q28073",
     "name_en": "Volga Bulgaria",
     "name_ko": "볼가 불가르",
-    "tier": 1,
+    "tier": 3,
     "start_year": 601,
     "end_year": 1240,
     "snapshots": [
@@ -2649,7 +2649,7 @@
     "qid": "Q9683",
     "name_en": "Tang dynasty",
     "name_ko": "당나라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 618,
     "end_year": 907,
     "snapshots": [
@@ -2681,7 +2681,7 @@
     "qid": "Q104037",
     "name_en": "Srivijaya",
     "name_ko": "스리비자야",
-    "tier": 1,
+    "tier": 3,
     "start_year": 650,
     "end_year": 1377,
     "snapshots": [
@@ -2697,7 +2697,7 @@
     "qid": "Q42910",
     "name_en": "Khazar Khaganate",
     "name_ko": "하자르 카간국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 650,
     "end_year": 969,
     "snapshots": [
@@ -2713,7 +2713,7 @@
     "qid": "Q107299",
     "name_en": "Kingdom of Northumbria",
     "name_ko": "노섬브리아 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 654,
     "end_year": 867,
     "snapshots": [
@@ -2751,7 +2751,7 @@
     "qid": "Q8575586",
     "name_en": "Umayyad Caliphate",
     "name_ko": "우마이야 칼리파조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 661,
     "end_year": 750,
     "snapshots": [
@@ -2773,7 +2773,7 @@
     "qid": "Q17",
     "name_en": "Japan",
     "name_ko": "일본",
-    "tier": 1,
+    "tier": 2,
     "start_year": 670,
     "end_year": 2025,
     "snapshots": [
@@ -2789,7 +2789,7 @@
     "qid": "Q715257",
     "name_en": "Later Silla",
     "name_ko": "통일신라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 676,
     "end_year": 935,
     "snapshots": [
@@ -2805,7 +2805,7 @@
     "qid": "Q193714",
     "name_en": "First Bulgarian Empire",
     "name_ko": "불가리아 제1제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 681,
     "end_year": 1018,
     "snapshots": [
@@ -2821,7 +2821,7 @@
     "qid": "Q4948",
     "name_en": "Republic of Venice",
     "name_ko": "베네치아 공화국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 697,
     "end_year": 1797,
     "snapshots": [
@@ -2933,7 +2933,7 @@
     "qid": "Q28322",
     "name_en": "Balhae",
     "name_ko": "발해",
-    "tier": 1,
+    "tier": 3,
     "start_year": 698,
     "end_year": 926,
     "snapshots": [
@@ -2949,7 +2949,7 @@
     "qid": "Q1139762",
     "name_en": "Kanem-Bornu Empire",
     "name_ko": "카넴-보르누 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 700,
     "end_year": 1380,
     "snapshots": [
@@ -2965,7 +2965,7 @@
     "qid": "MANUAL_Q16957",
     "name_en": "Ifriqiya",
     "name_ko": "이프리키야",
-    "tier": 1,
+    "tier": 3,
     "start_year": 703,
     "end_year": 1705,
     "snapshots": [
@@ -2981,7 +2981,7 @@
     "qid": "Q837998",
     "name_en": "Kingdom of East Anglia",
     "name_ko": "이스트앵글리아 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 704,
     "end_year": 917,
     "snapshots": [
@@ -2997,7 +2997,7 @@
     "qid": "Q231392",
     "name_en": "Kingdom of Asturias",
     "name_ko": "아스투리아스 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 722,
     "end_year": 923,
     "snapshots": [
@@ -3043,7 +3043,7 @@
     "qid": "Q2456191",
     "name_en": "Kingdom of Seisyllwg",
     "name_ko": "세이스이르우그 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 730,
     "end_year": 920,
     "snapshots": [
@@ -3059,7 +3059,7 @@
     "qid": "Q831218",
     "name_en": "Uyghur Khaganate",
     "name_ko": "위구르 카간국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 744,
     "end_year": 840,
     "snapshots": [
@@ -3075,7 +3075,7 @@
     "qid": "Q12536",
     "name_en": "Abbasid Caliphate",
     "name_ko": "아바스 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": 750,
     "end_year": 1258,
     "snapshots": [
@@ -3145,7 +3145,7 @@
     "qid": "Q170174",
     "name_en": "Papal States",
     "name_ko": "교황령",
-    "tier": 1,
+    "tier": 3,
     "start_year": 754,
     "end_year": 1870,
     "snapshots": [
@@ -3281,7 +3281,7 @@
     "qid": "Q1337854",
     "name_en": "emirate of Córdoba",
     "name_ko": "코르도바 토후국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 756,
     "end_year": 929,
     "snapshots": [
@@ -3303,7 +3303,7 @@
     "qid": "Q105092",
     "name_en": "Kingdom of Mercia",
     "name_ko": "머시아 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 784,
     "end_year": 918,
     "snapshots": [
@@ -3325,7 +3325,7 @@
     "qid": "Q31929",
     "name_en": "Carolingian Empire",
     "name_ko": "카롤루스 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 800,
     "end_year": 843,
     "snapshots": [
@@ -3417,7 +3417,7 @@
     "qid": "Q164800",
     "name_en": "Khmer Empire",
     "name_ko": "크메르 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 802,
     "end_year": 1431,
     "snapshots": [
@@ -3433,7 +3433,7 @@
     "qid": "Q771193",
     "name_en": "Kingdom of Brittany",
     "name_ko": "브르타뉴 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 822,
     "end_year": 938,
     "snapshots": [
@@ -3467,7 +3467,7 @@
     "qid": "Q3446210",
     "name_en": "Kingdom of Pamplona",
     "name_ko": "파음프로나 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 824,
     "end_year": 1512,
     "snapshots": [
@@ -3543,7 +3543,7 @@
     "qid": "Q47307",
     "name_en": "Kingdom of Navarre",
     "name_ko": "나바라 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 824,
     "end_year": 1620,
     "snapshots": [
@@ -3559,7 +3559,7 @@
     "qid": "Q178544",
     "name_en": "Great Moravia",
     "name_ko": "대모라바 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 833,
     "end_year": 907,
     "snapshots": [
@@ -3575,7 +3575,7 @@
     "qid": "Q230791",
     "name_en": "Kingdom of Scotland",
     "name_ko": "스코틀랜드 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 843,
     "end_year": 1707,
     "snapshots": [
@@ -3651,7 +3651,7 @@
     "qid": "Q46370",
     "name_en": "West Francia",
     "name_ko": "서프랑크 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 843,
     "end_year": 987,
     "snapshots": [
@@ -3713,7 +3713,7 @@
     "qid": "Q153080",
     "name_en": "East Francia",
     "name_ko": "동프랑크 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 843,
     "end_year": 962,
     "snapshots": [
@@ -3729,7 +3729,7 @@
     "qid": "Q1878022",
     "name_en": "Emirate of Bari",
     "name_ko": "바리 토후국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 847,
     "end_year": 871,
     "snapshots": [
@@ -3767,7 +3767,7 @@
     "qid": "Q781935",
     "name_en": "Principality of Benevento",
     "name_ko": "베네벤토 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 851,
     "end_year": 1053,
     "snapshots": [
@@ -3821,7 +3821,7 @@
     "qid": "Q1280122",
     "name_en": "Principality of Capua",
     "name_ko": "카푸아 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 861,
     "end_year": 899,
     "snapshots": [
@@ -3915,7 +3915,7 @@
     "qid": "Q33242",
     "name_en": "Lower Burgundy",
     "name_ko": "하부르군트",
-    "tier": 4,
+    "tier": 3,
     "start_year": 879,
     "end_year": 933,
     "snapshots": [
@@ -3931,7 +3931,7 @@
     "qid": "Q166813",
     "name_en": "Duchy of Burgundy",
     "name_ko": "부르고뉴 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 880,
     "end_year": 1477,
     "snapshots": [
@@ -3947,7 +3947,7 @@
     "qid": "MANUAL_Q170174",
     "name_en": "Kievan Rus'",
     "name_ko": "키예프 루스",
-    "tier": 1,
+    "tier": 3,
     "start_year": 882,
     "end_year": 1240,
     "snapshots": [
@@ -3963,7 +3963,7 @@
     "qid": "Q33235",
     "name_en": "Upper Burgundy",
     "name_ko": "상부르군트",
-    "tier": 4,
+    "tier": 3,
     "start_year": 888,
     "end_year": 933,
     "snapshots": [
@@ -3985,7 +3985,7 @@
     "qid": "Q2723760",
     "name_en": "Giudicato of Gallura",
     "name_ko": "기우디카토 가루라",
-    "tier": 2,
+    "tier": 3,
     "start_year": 900,
     "end_year": 1207,
     "snapshots": [
@@ -4001,7 +4001,7 @@
     "qid": "Q1761381",
     "name_en": "Giudicato of Logudoro",
     "name_ko": "기우디카토 로구도로",
-    "tier": 2,
+    "tier": 3,
     "start_year": 900,
     "end_year": 1259,
     "snapshots": [
@@ -4017,7 +4017,7 @@
     "qid": "Q698239",
     "name_en": "Later Baekje",
     "name_ko": "후백제",
-    "tier": 2,
+    "tier": 3,
     "start_year": 900,
     "end_year": 936,
     "snapshots": [
@@ -4093,7 +4093,7 @@
     "qid": "Q160307",
     "name_en": "Fatimid Caliphate",
     "name_ko": "파티마 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 909,
     "end_year": 1171,
     "snapshots": [
@@ -4151,7 +4151,7 @@
     "qid": "Q175276",
     "name_en": "Kingdom of Leon",
     "name_ko": "레온 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 910,
     "end_year": 1229,
     "snapshots": [
@@ -4251,7 +4251,7 @@
     "qid": "Q42891",
     "name_en": "Liao dynasty",
     "name_ko": "요나라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 916,
     "end_year": 1125,
     "snapshots": [
@@ -4267,7 +4267,7 @@
     "qid": "Q28208",
     "name_en": "Goryeo",
     "name_ko": "고려",
-    "tier": 1,
+    "tier": 3,
     "start_year": 918,
     "end_year": 1392,
     "snapshots": [
@@ -4379,7 +4379,7 @@
     "qid": "Q837136",
     "name_en": "Kingdom of Deheubarth",
     "name_ko": "데허이바르스",
-    "tier": 4,
+    "tier": 3,
     "start_year": 920,
     "end_year": 1197,
     "snapshots": [
@@ -4411,7 +4411,7 @@
     "qid": "Q171740",
     "name_en": "Caliphate of Córdoba",
     "name_ko": "후우마이야 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 929,
     "end_year": 1031,
     "snapshots": [
@@ -4459,7 +4459,7 @@
     "qid": "Q26472",
     "name_en": "Dali Kingdom",
     "name_ko": "대리국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 937,
     "end_year": 1253,
     "snapshots": [
@@ -4475,7 +4475,7 @@
     "qid": "Q71747",
     "name_en": "Duchy of Brittany",
     "name_ko": "브르타뉴 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 938,
     "end_year": 942,
     "snapshots": [
@@ -4491,7 +4491,7 @@
     "qid": "Q1250763",
     "name_en": "Muslim Sicily",
     "name_ko": "시칠리아 토후국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 948,
     "end_year": 1071,
     "snapshots": [
@@ -4507,7 +4507,7 @@
     "qid": "Q1326567",
     "name_en": "Tuʻi Tonga Empire",
     "name_ko": "통가 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 951,
     "end_year": 1826,
     "snapshots": [
@@ -4523,7 +4523,7 @@
     "qid": "Q486820",
     "name_en": "Kilwa Sultanate",
     "name_ko": "킬와 술탄국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 957,
     "end_year": 1513,
     "snapshots": [
@@ -4567,7 +4567,7 @@
     "qid": "Q7462",
     "name_en": "Song dynasty",
     "name_ko": "송나라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 960,
     "end_year": 1279,
     "snapshots": [
@@ -4583,7 +4583,7 @@
     "qid": "Q12548",
     "name_en": "Holy Roman Empire",
     "name_ko": "신성 로마 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 962,
     "end_year": 1806,
     "snapshots": [
@@ -4723,7 +4723,7 @@
     "qid": "Q237131",
     "name_en": "Kingdom of France",
     "name_ko": "프랑스 왕국",
-    "tier": null,
+    "tier": 3,
     "start_year": 987,
     "end_year": 1050,
     "snapshots": [
@@ -4739,7 +4739,7 @@
     "qid": "Q34",
     "name_en": "Kingdom of Sweden",
     "name_ko": "스웨덴 왕국",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1000,
     "end_year": 2025,
     "snapshots": [
@@ -4821,7 +4821,7 @@
     "qid": "Q2297073",
     "name_en": "Giudicato of Cagliari",
     "name_ko": "기우디카토 카그리아리",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1000,
     "end_year": 1215,
     "snapshots": [
@@ -4837,7 +4837,7 @@
     "qid": "Q1241847",
     "name_en": "Judicate of Arborea",
     "name_ko": "주디카테 아르보레아",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1000,
     "end_year": 1420,
     "snapshots": [
@@ -4869,7 +4869,7 @@
     "qid": "Q1470101",
     "name_en": "Kingdom of Hungary",
     "name_ko": "헝가리 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1000,
     "end_year": 1400,
     "snapshots": [
@@ -4937,7 +4937,7 @@
     "qid": "Q3708094",
     "name_en": "Seljuk Empire",
     "name_ko": "셀주크 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1037,
     "end_year": 1194,
     "snapshots": [
@@ -4953,7 +4953,7 @@
     "qid": "Q107091",
     "name_en": "Almoravid dynasty",
     "name_ko": "무라비트 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1040,
     "end_year": 1147,
     "snapshots": [
@@ -4985,7 +4985,7 @@
     "qid": "Q179293",
     "name_en": "Crown of Castile",
     "name_ko": "카스티야 연합왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1065,
     "end_year": 1229,
     "snapshots": [
@@ -5019,7 +5019,7 @@
     "qid": "Q179876",
     "name_en": "Kingdom of England",
     "name_ko": "잉글랜드 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1066,
     "end_year": 1707,
     "snapshots": [
@@ -5053,7 +5053,7 @@
     "qid": "Q200382",
     "name_en": "Sultanate of Rum",
     "name_ko": "룸 술탄국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1077,
     "end_year": 1308,
     "snapshots": [
@@ -5101,7 +5101,7 @@
     "qid": "Q55502",
     "name_en": "Kingdom of Jerusalem",
     "name_ko": "예루살렘 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1099,
     "end_year": 1291,
     "snapshots": [
@@ -5145,7 +5145,7 @@
     "qid": "Q4970",
     "name_en": "Jin dynasty (1115–1234)",
     "name_ko": "금나라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1115,
     "end_year": 1234,
     "snapshots": [
@@ -5161,7 +5161,7 @@
     "qid": "Q148540",
     "name_en": "Republic of Florence",
     "name_ko": "피렌체 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1115,
     "end_year": 1532,
     "snapshots": [
@@ -5199,7 +5199,7 @@
     "qid": "Q188586",
     "name_en": "Kingdom of Sicily",
     "name_ko": "시칠리아 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1130,
     "end_year": 1816,
     "snapshots": [
@@ -5281,7 +5281,7 @@
     "qid": "Q151536",
     "name_en": "Novgorod Republic",
     "name_ko": "노브고로드 공화국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1136,
     "end_year": 1478,
     "snapshots": [
@@ -5309,7 +5309,7 @@
     "qid": "Q45670",
     "name_en": "Kingdom of Portugal",
     "name_ko": "포르투갈 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1139,
     "end_year": 1910,
     "snapshots": [
@@ -5349,7 +5349,7 @@
     "qid": "Q2670639",
     "name_en": "Powys Wenwynwyn",
     "name_ko": "포우스 웨느우느우은",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1160,
     "end_year": 1283,
     "snapshots": [
@@ -5365,7 +5365,7 @@
     "qid": "Q204920",
     "name_en": "Crown of Aragon",
     "name_ko": "아라곤 연합왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1164,
     "end_year": 1479,
     "snapshots": [
@@ -5543,7 +5543,7 @@
     "qid": "Q200029",
     "name_en": "Benin Empire",
     "name_ko": "베닌 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1170,
     "end_year": 1897,
     "snapshots": [
@@ -5559,7 +5559,7 @@
     "qid": "Q35535",
     "name_en": "Ayyubid dynasty",
     "name_ko": "아이유브 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1171,
     "end_year": 1341,
     "snapshots": [
@@ -5607,7 +5607,7 @@
     "qid": "MANUAL_Q42585",
     "name_en": "Kingdom of Bohemia",
     "name_ko": "보헤미아 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1198,
     "end_year": 1918,
     "snapshots": [
@@ -5623,7 +5623,7 @@
     "qid": "Q12557",
     "name_en": "Mongol Empire",
     "name_ko": "몽골 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1200,
     "end_year": 1271,
     "snapshots": [
@@ -5699,7 +5699,7 @@
     "qid": "Q187684",
     "name_en": "Despotate of Epirus",
     "name_ko": "에페이로스 전제공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1204,
     "end_year": 1337,
     "snapshots": [
@@ -5727,7 +5727,7 @@
     "qid": "Q178913",
     "name_en": "Empire of Trebizond",
     "name_ko": "트라페준타 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1204,
     "end_year": 1461,
     "snapshots": [
@@ -5743,7 +5743,7 @@
     "qid": "Q178897",
     "name_en": "Latin Empire",
     "name_ko": "라틴 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1204,
     "end_year": 1261,
     "snapshots": [
@@ -5787,7 +5787,7 @@
     "qid": "Q842091",
     "name_en": "Duchy of Normandy",
     "name_ko": "노르망디 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1204,
     "end_year": 1290,
     "snapshots": [
@@ -5803,7 +5803,7 @@
     "qid": "Q332005",
     "name_en": "Principality of Achaea",
     "name_ko": "아차이 공국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1205,
     "end_year": 1432,
     "snapshots": [
@@ -5819,7 +5819,7 @@
     "qid": "Q179522",
     "name_en": "Delhi Sultanate",
     "name_ko": "델리 술탄 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1206,
     "end_year": 1526,
     "snapshots": [
@@ -5835,7 +5835,7 @@
     "qid": "Q216617",
     "name_en": "Marinid dynasty",
     "name_ko": "마리니드 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1215,
     "end_year": 1465,
     "snapshots": [
@@ -5851,7 +5851,7 @@
     "qid": "Q487230",
     "name_en": "Chagatai Khanate",
     "name_ko": "차가타이 칸국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1225,
     "end_year": 1687,
     "snapshots": [
@@ -5867,7 +5867,7 @@
     "qid": "Q217196",
     "name_en": "Crown of Castile (1266-1300)",
     "name_ko": "카스티야 연합왕국",
-    "tier": null,
+    "tier": 3,
     "start_year": 1230,
     "end_year": 1405,
     "snapshots": [
@@ -5919,7 +5919,7 @@
     "qid": "Q238445",
     "name_en": "Emirate of Granada",
     "name_ko": "그라나다 토후국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1232,
     "end_year": 1492,
     "snapshots": [
@@ -5971,7 +5971,7 @@
     "qid": "Q185729",
     "name_en": "Mali Empire",
     "name_ko": "말리 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1235,
     "end_year": 1670,
     "snapshots": [
@@ -5987,7 +5987,7 @@
     "qid": "MANUAL_Q154849",
     "name_en": "Grand Duchy of Lithuania",
     "name_ko": "리투아니아 대공국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1236,
     "end_year": 1795,
     "snapshots": [
@@ -6037,7 +6037,7 @@
     "qid": "Q79965",
     "name_en": "Golden Horde",
     "name_ko": "킵차크 칸국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1243,
     "end_year": 1502,
     "snapshots": [
@@ -6069,7 +6069,7 @@
     "qid": "Q320802",
     "name_en": "Mamluk Sultanate",
     "name_ko": "맘루크 술탄국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1250,
     "end_year": 1517,
     "snapshots": [
@@ -6085,7 +6085,7 @@
     "qid": "Q178084",
     "name_en": "Ilkhanate",
     "name_ko": "일 칸국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1259,
     "end_year": 1357,
     "snapshots": [
@@ -6101,7 +6101,7 @@
     "qid": "Q170770",
     "name_en": "Grand Principality of Moscow",
     "name_ko": "모스크바 대공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1263,
     "end_year": 1547,
     "snapshots": [
@@ -6153,7 +6153,7 @@
     "qid": "Q7313",
     "name_en": "Yuan dynasty",
     "name_ko": "원나라",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1271,
     "end_year": 1368,
     "snapshots": [
@@ -6185,7 +6185,7 @@
     "qid": "Q184105",
     "name_en": "Majapahit",
     "name_ko": "마자파힛 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1293,
     "end_year": 1527,
     "snapshots": [
@@ -6201,7 +6201,7 @@
     "qid": "Q1059707",
     "name_en": "Lanna",
     "name_ko": "란나",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1295,
     "end_year": 1558,
     "snapshots": [
@@ -6247,7 +6247,7 @@
     "qid": "Q863279",
     "name_en": "Sukhothai Kingdom",
     "name_ko": "수코타이 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1298,
     "end_year": 1418,
     "snapshots": [
@@ -6275,7 +6275,7 @@
     "qid": "Q1332305",
     "name_en": "Lavo Kingdom",
     "name_ko": "라보 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1298,
     "end_year": 1351,
     "snapshots": [
@@ -6291,7 +6291,7 @@
     "qid": "Q11295580",
     "name_en": "Kingdom of Nan",
     "name_ko": "나은 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1298,
     "end_year": 1433,
     "snapshots": [
@@ -6319,7 +6319,7 @@
     "qid": "Q12560",
     "name_en": "Ottoman Empire",
     "name_ko": "오스만 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1299,
     "end_year": 1924,
     "snapshots": [
@@ -6485,7 +6485,7 @@
     "qid": "Q27842",
     "name_en": "Kingdom of Singapura",
     "name_ko": "싱가푸라 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1299,
     "end_year": 1397,
     "snapshots": [
@@ -6539,7 +6539,7 @@
     "qid": "Q173065",
     "name_en": "Kingdom of Naples",
     "name_ko": "나폴리 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1302,
     "end_year": 1816,
     "snapshots": [
@@ -6665,7 +6665,7 @@
     "qid": "Q123027565",
     "name_en": "Kashmir Sultanate",
     "name_ko": "카슈미르 술탄국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1320,
     "end_year": 1586,
     "snapshots": [
@@ -6703,7 +6703,7 @@
     "qid": "Q2460755",
     "name_en": "Kingdom of Sweden",
     "name_ko": "스웨덴 왕국",
-    "tier": null,
+    "tier": 3,
     "start_year": 1323,
     "end_year": 1611,
     "snapshots": [
@@ -6737,7 +6737,7 @@
     "qid": "Q1315339",
     "name_en": "Lohara Dynasty",
     "name_ko": "로하라 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1324,
     "end_year": 1338,
     "snapshots": [
@@ -6753,7 +6753,7 @@
     "qid": "Q862467",
     "name_en": "Kingdom of Sine",
     "name_ko": "시네 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1335,
     "end_year": 1960,
     "snapshots": [
@@ -6775,7 +6775,7 @@
     "qid": "Q167639",
     "name_en": "Vijayanagara Empire",
     "name_ko": "비자야나가라 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1336,
     "end_year": 1646,
     "snapshots": [
@@ -6839,7 +6839,7 @@
     "qid": "Q841364",
     "name_en": "Ayutthaya Kingdom",
     "name_ko": "아유타야 왕조",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1351,
     "end_year": 1767,
     "snapshots": [
@@ -6969,7 +6969,7 @@
     "qid": "Q188897",
     "name_en": "Lan Xang",
     "name_ko": "란쌍 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1354,
     "end_year": 1707,
     "snapshots": [
@@ -7025,7 +7025,7 @@
     "qid": "Q9903",
     "name_en": "Ming dynasty",
     "name_ko": "명나라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1368,
     "end_year": 1644,
     "snapshots": [
@@ -7041,7 +7041,7 @@
     "qid": "Q1186434",
     "name_en": "Muang Phuan",
     "name_ko": "씨앙쿠앙 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1369,
     "end_year": 1478,
     "snapshots": [
@@ -7063,7 +7063,7 @@
     "qid": "MANUAL_Q42585",
     "name_en": "Timurid Empire",
     "name_ko": "티무르 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1370,
     "end_year": 1507,
     "snapshots": [
@@ -7079,7 +7079,7 @@
     "qid": "Q28179",
     "name_en": "Joseon",
     "name_ko": "조선",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1392,
     "end_year": 1897,
     "snapshots": [
@@ -7107,7 +7107,7 @@
     "qid": "Q507796",
     "name_en": "Gujarat Sultanate",
     "name_ko": "구자라트 술탄국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1394,
     "end_year": 1535,
     "snapshots": [
@@ -7123,7 +7123,7 @@
     "qid": "Q189762",
     "name_en": "Kingdom of Kongo",
     "name_ko": "콩고 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1395,
     "end_year": 1888,
     "snapshots": [
@@ -7139,7 +7139,7 @@
     "qid": "Q1070691",
     "name_en": "Kingdom of Rwanda",
     "name_ko": "르완다 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1400,
     "end_year": 1890,
     "snapshots": [
@@ -7167,7 +7167,7 @@
     "qid": "Q230912",
     "name_en": "Oyo Empire",
     "name_ko": "오요 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1400,
     "end_year": 1905,
     "snapshots": [
@@ -7183,7 +7183,7 @@
     "qid": "Q937879",
     "name_en": "Malwa Sultanate",
     "name_ko": "말와 술탄국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1401,
     "end_year": 1562,
     "snapshots": [
@@ -7199,7 +7199,7 @@
     "qid": "Q6412684",
     "name_en": "Kingdom of the Canary Islands",
     "name_ko": "카나리아 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1404,
     "end_year": 1448,
     "snapshots": [
@@ -7215,7 +7215,7 @@
     "qid": "Q2608489",
     "name_en": "Aztec Empire",
     "name_ko": "아즈텍",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1428,
     "end_year": 1521,
     "snapshots": [
@@ -7243,7 +7243,7 @@
     "qid": "Q202687",
     "name_en": "Songhai Empire",
     "name_ko": "송가이 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1430,
     "end_year": 1591,
     "snapshots": [
@@ -7259,7 +7259,7 @@
     "qid": "Q28025",
     "name_en": "Ryukyu Kingdom",
     "name_ko": "류큐국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1430,
     "end_year": 1872,
     "snapshots": [
@@ -7305,7 +7305,7 @@
     "qid": "Q686812",
     "name_en": "Kingdom of Mutapa",
     "name_ko": "무타파 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1430,
     "end_year": 1760,
     "snapshots": [
@@ -7321,7 +7321,7 @@
     "qid": "Q28573",
     "name_en": "Inca Empire",
     "name_ko": "잉카 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1438,
     "end_year": 1533,
     "snapshots": [
@@ -7337,7 +7337,7 @@
     "qid": "Q186537",
     "name_en": "Khanate of Qazan",
     "name_ko": "카잔 한국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1438,
     "end_year": 1552,
     "snapshots": [
@@ -7353,7 +7353,7 @@
     "qid": "Q2393278",
     "name_en": "Republic of Cospaia",
     "name_ko": "코스파이아 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1440,
     "end_year": 1826,
     "snapshots": [
@@ -7369,7 +7369,7 @@
     "qid": "Q160440",
     "name_en": "Crimean Khanate",
     "name_ko": "크림 한국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1441,
     "end_year": 1783,
     "snapshots": [
@@ -7407,7 +7407,7 @@
     "qid": "Q11709",
     "name_en": "Delhi Sultanate (Lodi)",
     "name_ko": "델리 술탄 왕조",
-    "tier": null,
+    "tier": 3,
     "start_year": 1451,
     "end_year": 1526,
     "snapshots": [
@@ -7423,7 +7423,7 @@
     "qid": "Q422065",
     "name_en": "Sultanate of Sulu",
     "name_ko": "술루 술탄국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1457,
     "end_year": 1915,
     "snapshots": [
@@ -7451,7 +7451,7 @@
     "qid": "Q1433867",
     "name_en": "Kazakh Khanate",
     "name_ko": "카자흐 칸국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1465,
     "end_year": 1847,
     "snapshots": [
@@ -7473,7 +7473,7 @@
     "qid": "CSHAPES_Spain",
     "name_en": "Spain",
     "name_ko": "스페인",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1479,
     "end_year": 2025,
     "snapshots": [
@@ -7603,7 +7603,7 @@
     "qid": "Q669317",
     "name_en": "Bidar Sultanate",
     "name_ko": "비다르 술탄국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1489,
     "end_year": 1619,
     "snapshots": [
@@ -7641,7 +7641,7 @@
     "qid": "Q818666",
     "name_en": "Berar Sultanate",
     "name_ko": "베라르 술탄국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1490,
     "end_year": 1574,
     "snapshots": [
@@ -7673,7 +7673,7 @@
     "qid": "Q3482103",
     "name_en": "Shilluk Kingdom",
     "name_ko": "씰룩 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1490,
     "end_year": 1861,
     "snapshots": [
@@ -7689,7 +7689,7 @@
     "qid": "Q487907",
     "name_en": "Siberian Khanate",
     "name_ko": "시비리 칸국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1490,
     "end_year": 1598,
     "snapshots": [
@@ -7705,7 +7705,7 @@
     "qid": "Q778",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1492,
     "end_year": 1783,
     "snapshots": [
@@ -7727,7 +7727,7 @@
     "qid": "Q577668",
     "name_en": "Khanate of Bukhara",
     "name_ko": "부하라 한국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1501,
     "end_year": 1785,
     "snapshots": [
@@ -7765,7 +7765,7 @@
     "qid": "Q491106",
     "name_en": "Khanate of Khiva",
     "name_ko": "히바 칸국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1511,
     "end_year": 1873,
     "snapshots": [
@@ -7815,7 +7815,7 @@
     "qid": "Q19805959",
     "name_en": "Golconda Sultanate",
     "name_ko": "고르코은드아 술탄국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1518,
     "end_year": 1687,
     "snapshots": [
@@ -7831,7 +7831,7 @@
     "qid": "Q1471373",
     "name_en": "Saloum",
     "name_ko": "살룸",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1520,
     "end_year": 1867,
     "snapshots": [
@@ -7847,7 +7847,7 @@
     "qid": "Q82112",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1521,
     "end_year": 2025,
     "snapshots": [
@@ -7899,7 +7899,7 @@
     "qid": "Q429381",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1525,
     "end_year": 1596,
     "snapshots": [
@@ -7915,7 +7915,7 @@
     "qid": "Q38872",
     "name_en": "Prussia",
     "name_ko": "프로이센",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1525,
     "end_year": 1871,
     "snapshots": [
@@ -7931,7 +7931,7 @@
     "qid": "Q1660566",
     "name_en": "Sultanate of Banjar",
     "name_ko": "반자르 술탄국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1526,
     "end_year": 1830,
     "snapshots": [
@@ -7971,7 +7971,7 @@
     "qid": "Q33296",
     "name_en": "Mughal Empire",
     "name_ko": "무굴 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1526,
     "end_year": 1857,
     "snapshots": [
@@ -7987,7 +7987,7 @@
     "qid": "CSHAPES_Nicaragua",
     "name_en": "Nicaragua",
     "name_ko": "니카라과",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1527,
     "end_year": 2025,
     "snapshots": [
@@ -8051,7 +8051,7 @@
     "qid": "Q2437292",
     "name_en": "Nueva Galicia",
     "name_ko": "누에바 갈리시아",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1531,
     "end_year": 1821,
     "snapshots": [
@@ -8067,7 +8067,7 @@
     "qid": "Q244",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1532,
     "end_year": 2025,
     "snapshots": [
@@ -8110,74 +8110,10 @@
     ]
   },
   {
-    "qid": "Q62651",
-    "name_en": "Denmark–Norway",
-    "name_ko": "덴마크-노르웨이",
-    "tier": 2,
-    "start_year": 1537,
-    "end_year": 1814,
-    "snapshots": [
-      {
-        "rid": 2850549,
-        "start": 1537,
-        "end": 1559,
-        "file": "ohm_2850549.geojson"
-      },
-      {
-        "rid": 2851857,
-        "start": 1559,
-        "end": 1645,
-        "file": "ohm_2851857.geojson"
-      },
-      {
-        "rid": 2851862,
-        "start": 1645,
-        "end": 1658,
-        "file": "ohm_2851862.geojson"
-      },
-      {
-        "rid": 2851865,
-        "start": 1658,
-        "end": 1660,
-        "file": "ohm_2851865.geojson"
-      },
-      {
-        "rid": 2859885,
-        "start": 1660,
-        "end": 1714,
-        "file": "ohm_2859885.geojson"
-      },
-      {
-        "rid": 2840523,
-        "start": 1714,
-        "end": 1721,
-        "file": "ohm_2840523.geojson"
-      },
-      {
-        "rid": 2870659,
-        "start": 1721,
-        "end": 1773,
-        "file": "ohm_2870659.geojson"
-      },
-      {
-        "rid": 2696595,
-        "start": 1773,
-        "end": 1806,
-        "file": "ohm_2696595.geojson"
-      },
-      {
-        "rid": 2835380,
-        "start": 1806,
-        "end": 1814,
-        "file": "ohm_2835380.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1071439",
     "name_en": "Merina Kingdom",
     "name_ko": "메리나 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1540,
     "end_year": 1897,
     "snapshots": [
@@ -8205,7 +8141,7 @@
     "qid": "Q215530",
     "name_en": "Kingdom of Ireland",
     "name_ko": "아일랜드 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1542,
     "end_year": 1800,
     "snapshots": [
@@ -8227,7 +8163,7 @@
     "qid": "Q186096",
     "name_en": "Tsardom of Russia",
     "name_ko": "러시아 차르국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1547,
     "end_year": 1721,
     "snapshots": [
@@ -8383,7 +8319,7 @@
     "qid": "Q266923",
     "name_en": "Kingdom of Mysore",
     "name_ko": "마이소르 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1566,
     "end_year": 1799,
     "snapshots": [
@@ -8399,7 +8335,7 @@
     "qid": "Q172107",
     "name_en": "Polish–Lithuanian Commonwealth",
     "name_ko": "폴란드-리투아니아",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1569,
     "end_year": 1795,
     "snapshots": [
@@ -8457,7 +8393,7 @@
     "qid": "Q16622609",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1573,
     "end_year": 1829,
     "snapshots": [
@@ -8503,7 +8439,7 @@
     "qid": "Q170072",
     "name_en": "Dutch Republic",
     "name_ko": "네덜란드 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1581,
     "end_year": 1795,
     "snapshots": [
@@ -8519,7 +8455,7 @@
     "qid": "Q215443",
     "name_en": "Swedish Empire",
     "name_ko": "스웨덴 왕국",
-    "tier": null,
+    "tier": 3,
     "start_year": 1611,
     "end_year": 1721,
     "snapshots": [
@@ -8613,7 +8549,7 @@
     "qid": "Q11876909",
     "name_en": "State of Brazil",
     "name_ko": "브라질국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1621,
     "end_year": 1815,
     "snapshots": [
@@ -8819,7 +8755,7 @@
     "qid": "Q10921634",
     "name_en": "Khoshut Khanate",
     "name_ko": "코슈트 칸국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1642,
     "end_year": 1717,
     "snapshots": [
@@ -8835,7 +8771,7 @@
     "qid": "Q8733",
     "name_en": "Qing dynasty",
     "name_ko": "청나라",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1644,
     "end_year": 1911,
     "snapshots": [
@@ -8923,7 +8859,7 @@
     "qid": "Q573072",
     "name_en": "Neapolitan Republic",
     "name_ko": "네아포리타은 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1647,
     "end_year": 1648,
     "snapshots": [
@@ -8939,7 +8875,7 @@
     "qid": "Q154849",
     "name_en": "Grand Duchy of Tuscany",
     "name_ko": "토스카나 대공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1859,
     "snapshots": [
@@ -8973,7 +8909,7 @@
     "qid": "Q933592",
     "name_en": "Duchy of Massa and Carrara",
     "name_ko": "마사에카라라 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1829,
     "snapshots": [
@@ -9051,7 +8987,7 @@
     "qid": "Q3456410",
     "name_en": "Republic of Mulhouse",
     "name_ko": "무르호우세 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1798,
     "snapshots": [
@@ -9067,7 +9003,7 @@
     "qid": "Q435583",
     "name_en": "Old Swiss Confederacy",
     "name_ko": "스위스 서약동맹",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1798,
     "snapshots": [
@@ -9083,7 +9019,7 @@
     "qid": "Q23366230",
     "name_en": "Republic of Geneva",
     "name_ko": "제네바 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1798,
     "snapshots": [
@@ -9099,7 +9035,7 @@
     "qid": "Q3456432",
     "name_en": "République des Sept-Dizains",
     "name_ko": "르에푸브리케 세프트-디자이느스",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1798,
     "snapshots": [
@@ -9115,7 +9051,7 @@
     "qid": "Q1615455",
     "name_en": "Duchy of Mirandola",
     "name_ko": "미란돌라 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1711,
     "snapshots": [
@@ -9131,7 +9067,7 @@
     "qid": "Q174306",
     "name_en": "Republic of Genoa",
     "name_ko": "제노바 공화국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1797,
     "snapshots": [
@@ -9159,7 +9095,7 @@
     "qid": "Q3933247",
     "name_en": "Republic of Noli",
     "name_ko": "노리 공화국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1797,
     "snapshots": [
@@ -9191,7 +9127,7 @@
     "qid": "Q537503",
     "name_en": "Principality of Piombino",
     "name_ko": "피옴비노 대공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1803,
     "snapshots": [
@@ -9247,7 +9183,7 @@
     "qid": "Q152855",
     "name_en": "Kingdom of Tungning",
     "name_ko": "동녕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1661,
     "end_year": 1683,
     "snapshots": [
@@ -9263,7 +9199,7 @@
     "qid": "Q131429368",
     "name_en": "Alawi Sultanate",
     "name_ko": "아라위 술탄국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1666,
     "end_year": 1912,
     "snapshots": [
@@ -9285,7 +9221,7 @@
     "qid": "Q19901436",
     "name_en": "Suriname",
     "name_ko": "수리남",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1667,
     "end_year": 2025,
     "snapshots": [
@@ -9307,7 +9243,7 @@
     "qid": "MANUAL_Q204920",
     "name_en": "Ashanti Empire",
     "name_ko": "아샨티 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1670,
     "end_year": 1902,
     "snapshots": [
@@ -9323,7 +9259,7 @@
     "qid": "Q83618",
     "name_en": "Maratha Empire",
     "name_ko": "마라타 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1674,
     "end_year": 1818,
     "snapshots": [
@@ -9339,7 +9275,7 @@
     "qid": "Q5502051",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1679,
     "end_year": 1758,
     "snapshots": [
@@ -9383,7 +9319,7 @@
     "qid": "Q4969562",
     "name_en": "British Bencoolen",
     "name_ko": "영국 베느코오레은",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1685,
     "end_year": 1824,
     "snapshots": [
@@ -9399,7 +9335,7 @@
     "qid": "Q892272",
     "name_en": "Bundu",
     "name_ko": "부은드우",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1690,
     "end_year": 1885,
     "snapshots": [
@@ -9427,7 +9363,7 @@
     "qid": "Q208169",
     "name_en": "Republic of Ragusa",
     "name_ko": "라구사 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1699,
     "end_year": 1808,
     "snapshots": [
@@ -9443,7 +9379,7 @@
     "qid": "Q27306",
     "name_en": "Kingdom of Prussia",
     "name_ko": "프로이센 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1707,
     "end_year": 1867,
     "snapshots": [
@@ -9579,7 +9515,7 @@
     "qid": "Q161885",
     "name_en": "Kingdom of Great Britain",
     "name_ko": "그레이트브리튼 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1707,
     "end_year": 1800,
     "snapshots": [
@@ -9595,7 +9531,7 @@
     "qid": "Q153529",
     "name_en": "Duchy of Milan",
     "name_ko": "밀라노 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1707,
     "end_year": 1796,
     "snapshots": [
@@ -9635,7 +9571,7 @@
     "qid": "Q2578028",
     "name_en": "Sikh Confederacy",
     "name_ko": "시크 연맹",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1707,
     "end_year": 1799,
     "snapshots": [
@@ -9651,7 +9587,7 @@
     "qid": "Q696241",
     "name_en": "Khanate of Kokand",
     "name_ko": "코칸트 칸국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1709,
     "end_year": 1876,
     "snapshots": [
@@ -9701,7 +9637,7 @@
     "qid": "Q165154",
     "name_en": "Kingdom of Sardinia",
     "name_ko": "사르데냐 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1720,
     "end_year": 1861,
     "snapshots": [
@@ -9777,7 +9713,7 @@
     "qid": "Q34266",
     "name_en": "Russian Empire",
     "name_ko": "러시아 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1721,
     "end_year": 1917,
     "snapshots": [
@@ -9997,7 +9933,7 @@
     "qid": "Q63149558",
     "name_en": "Afsharid Iran",
     "name_ko": "아프샤르 제국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1736,
     "end_year": 1796,
     "snapshots": [
@@ -10045,7 +9981,7 @@
     "qid": "Q70972",
     "name_en": "Kingdom of France",
     "name_ko": "프랑스 왕국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1766,
     "end_year": 1792,
     "snapshots": [
@@ -10285,7 +10221,7 @@
     "qid": "Q30",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1783,
     "end_year": 2025,
     "snapshots": [
@@ -10629,7 +10565,7 @@
     "qid": "Q1034173",
     "name_en": "Tây Sơn dynasty",
     "name_ko": "떠이선 왕조",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1787,
     "end_year": 1802,
     "snapshots": [
@@ -10651,7 +10587,7 @@
     "qid": "Q5148518",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1787,
     "end_year": 1907,
     "snapshots": [
@@ -10701,7 +10637,7 @@
     "qid": "Q3324486",
     "name_en": "Prince-Bishopric of Montenegro",
     "name_ko": "몬테네그로 주교후국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1789,
     "end_year": 1852,
     "snapshots": [
@@ -10717,7 +10653,7 @@
     "qid": "Q58296",
     "name_en": "French First Republic",
     "name_ko": "프랑스 제1공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1792,
     "end_year": 1804,
     "snapshots": [
@@ -10781,7 +10717,7 @@
     "qid": "Q83536",
     "name_en": "Anglo-Corsican Kingdom",
     "name_ko": "영국령 코르시카 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1794,
     "end_year": 1796,
     "snapshots": [
@@ -10797,7 +10733,7 @@
     "qid": "Q188553",
     "name_en": "Batavian Republic",
     "name_ko": "바타비아 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1795,
     "end_year": 1806,
     "snapshots": [
@@ -10825,7 +10761,7 @@
     "qid": "Q156418",
     "name_en": "Kingdom of Hawaiʻi",
     "name_ko": "하와이 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1795,
     "end_year": 1893,
     "snapshots": [
@@ -10869,7 +10805,7 @@
     "qid": "Q729481",
     "name_en": "Transpadane Republic",
     "name_ko": "트라느스파다네 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1796,
     "end_year": 1797,
     "snapshots": [
@@ -10931,7 +10867,7 @@
     "qid": "Q175881",
     "name_en": "Roman Republic",
     "name_ko": "공화정 로마",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1798,
     "end_year": 1799,
     "snapshots": [
@@ -10969,7 +10905,7 @@
     "qid": "Q188161",
     "name_en": "Dutch East Indies",
     "name_ko": "네덜란드령 동인도",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1800,
     "end_year": 1945,
     "snapshots": [
@@ -11027,7 +10963,7 @@
     "qid": "Q1077630",
     "name_en": "Septinsular Republic",
     "name_ko": "에프타니소스 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1800,
     "end_year": 1807,
     "snapshots": [
@@ -11059,7 +10995,7 @@
     "qid": "Q1516442",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1801,
     "end_year": 1919,
     "snapshots": [
@@ -11075,7 +11011,7 @@
     "qid": "Q174193",
     "name_en": "United Kingdom of Great Britain and Ireland",
     "name_ko": "그레이트브리튼 아일랜드 연합왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1801,
     "end_year": 1922,
     "snapshots": [
@@ -11091,7 +11027,7 @@
     "qid": "Q71084",
     "name_en": "First French Empire",
     "name_ko": "프랑스 제1제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1804,
     "end_year": 1815,
     "snapshots": [
@@ -11187,7 +11123,7 @@
     "qid": "Q131964",
     "name_en": "Austrian Empire",
     "name_ko": "오스트리아 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1805,
     "end_year": 1867,
     "snapshots": [
@@ -11343,7 +11279,7 @@
     "qid": "Q13816636",
     "name_en": "Principality Isenburg",
     "name_ko": "공국 이세느부르그",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1815,
     "snapshots": [
@@ -11359,7 +11295,7 @@
     "qid": "Q165763",
     "name_en": "Principality of Waldeck",
     "name_ko": "발데크피르몬트 후국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1867,
     "snapshots": [
@@ -11381,7 +11317,7 @@
     "qid": "Q529605",
     "name_en": "Electorate of Hesse",
     "name_ko": "헤센 선제후국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1866,
     "snapshots": [
@@ -11449,7 +11385,7 @@
     "qid": "Q10957559",
     "name_en": "Principality of Moldavia",
     "name_ko": "몰다비아 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1850,
     "snapshots": [
@@ -11465,7 +11401,7 @@
     "qid": "Q156199",
     "name_en": "Electorate of Saxony",
     "name_ko": "작센 선제후국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1806,
     "snapshots": [
@@ -11563,7 +11499,7 @@
     "qid": "Q508488",
     "name_en": "Duchy of Arenberg-Meppen",
     "name_ko": "아레느베르그-메페은 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1810,
     "snapshots": [
@@ -11579,7 +11515,7 @@
     "qid": "Q701969",
     "name_en": "Principality of Regensburg",
     "name_ko": "레게느스부르그 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1810,
     "snapshots": [
@@ -11595,7 +11531,7 @@
     "qid": "Q569202",
     "name_en": "Principality of Aschaffenburg",
     "name_ko": "아시아페느부르그 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1810,
     "snapshots": [
@@ -11611,7 +11547,7 @@
     "qid": "Q249428",
     "name_en": "Grand Duchy of Berg",
     "name_ko": "베르크 대공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1813,
     "snapshots": [
@@ -11633,7 +11569,7 @@
     "qid": "Q697084",
     "name_en": "Duchy of Oldenburg",
     "name_ko": "올덴부르크 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1810,
     "snapshots": [
@@ -11649,7 +11585,7 @@
     "qid": "Q11024667",
     "name_en": "Duchy of Mecklenburg-Schwerin",
     "name_ko": "메클렌부르크-시웨리은 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1815,
     "snapshots": [
@@ -11665,7 +11601,7 @@
     "qid": "Q2751106",
     "name_en": "Duchy of Mecklenburg-Strelitz",
     "name_ko": "메클렌부르크-스트레리츠 공국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1806,
     "end_year": 1815,
     "snapshots": [
@@ -11697,7 +11633,7 @@
     "qid": "Q825489",
     "name_en": "County Pyrmont",
     "name_ko": "코우은트이 프이르모은트",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1807,
     "end_year": 1849,
     "snapshots": [
@@ -11757,7 +11693,7 @@
     "qid": "Q901974",
     "name_en": "Free City of Danzig",
     "name_ko": "단치히 자유시",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1807,
     "end_year": 1814,
     "snapshots": [
@@ -11811,7 +11747,7 @@
     "qid": "Q154195",
     "name_en": "Kingdom of Bavaria",
     "name_ko": "바이에른 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1810,
     "end_year": 1871,
     "snapshots": [
@@ -11897,7 +11833,7 @@
     "qid": "Q738144",
     "name_en": "United Provinces of the Río de la Plata",
     "name_ko": "남미연합주국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1810,
     "end_year": 1831,
     "snapshots": [
@@ -11949,7 +11885,7 @@
     "qid": "Q733",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1811,
     "end_year": 2025,
     "snapshots": [
@@ -11983,7 +11919,7 @@
     "qid": "Q1472105",
     "name_en": "Kingdom of Haiti",
     "name_ko": "하이티 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1811,
     "end_year": 1820,
     "snapshots": [
@@ -11999,7 +11935,7 @@
     "qid": "Q8935",
     "name_en": "First Republic of Venezuela",
     "name_ko": "베네수엘라 제1공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1811,
     "end_year": 1812,
     "snapshots": [
@@ -12015,7 +11951,7 @@
     "qid": "CSHAPES_Iran",
     "name_en": "Iran",
     "name_ko": "이란",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1813,
     "end_year": 2025,
     "snapshots": [
@@ -12049,7 +11985,7 @@
     "qid": "Q774783",
     "name_en": "Sovereign Principality of the United Netherlands",
     "name_ko": "연합 네덜란드 주권공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1813,
     "end_year": 1815,
     "snapshots": [
@@ -12065,7 +12001,7 @@
     "qid": "Q8950",
     "name_en": "Second Republic of Venezuela",
     "name_ko": "베네수엘라 제2공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1813,
     "end_year": 1814,
     "snapshots": [
@@ -12131,7 +12067,7 @@
     "qid": "Q370736",
     "name_en": "Cape Colony",
     "name_ko": "케이프 식민지",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1814,
     "end_year": 1910,
     "snapshots": [
@@ -12287,7 +12223,7 @@
     "qid": "Q161215",
     "name_en": "Grand Duchy of Mecklenburg-Strelitz",
     "name_ko": "메클렌부르크슈트렐리츠 대공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1815,
     "end_year": 1867,
     "snapshots": [
@@ -12341,7 +12277,7 @@
     "qid": "Q1063498",
     "name_en": "United States of the Ionian Islands",
     "name_ko": "이오니아 제도 합중국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1815,
     "end_year": 1864,
     "snapshots": [
@@ -12411,7 +12347,7 @@
     "qid": "Q180393",
     "name_en": "Kingdom of the Two Sicilies",
     "name_ko": "양시칠리아 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1816,
     "end_year": 1861,
     "snapshots": [
@@ -12451,7 +12387,7 @@
     "qid": "Q837",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1816,
     "end_year": 1923,
     "snapshots": [
@@ -12473,7 +12409,7 @@
     "qid": "Q298",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1817,
     "end_year": 2025,
     "snapshots": [
@@ -12565,7 +12501,7 @@
     "qid": "Q3355737",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1819,
     "end_year": 1824,
     "snapshots": [
@@ -12581,7 +12517,7 @@
     "qid": "Q95408244",
     "name_en": "Republic of Haiti (1820–1849)",
     "name_ko": "하이티 공화국 (1820–1849)",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1820,
     "end_year": 1849,
     "snapshots": [
@@ -12625,7 +12561,7 @@
     "qid": "Q3267672",
     "name_en": "Republic of Entre Ríos",
     "name_ko": "엔트레리오스 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1820,
     "end_year": 1821,
     "snapshots": [
@@ -12657,7 +12593,7 @@
     "qid": "Q285658",
     "name_en": "First Mexican Empire",
     "name_ko": "멕시코 제1제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1821,
     "end_year": 1823,
     "snapshots": [
@@ -12679,7 +12615,7 @@
     "qid": "Q503623",
     "name_en": "Gold Coast Colony",
     "name_ko": "영국령 골드코스트",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1821,
     "end_year": 1957,
     "snapshots": [
@@ -12757,7 +12693,7 @@
     "qid": "Q7251405",
     "name_en": "Protectorate of San Martín",
     "name_ko": "산마르틴 보호령",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1821,
     "end_year": 1822,
     "snapshots": [
@@ -12773,7 +12709,7 @@
     "qid": "Q199821",
     "name_en": "Gran Colombia",
     "name_ko": "그란콜롬비아",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1821,
     "end_year": 1831,
     "snapshots": [
@@ -12813,7 +12749,7 @@
     "qid": "Q5918684",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1821,
     "end_year": 1822,
     "snapshots": [
@@ -12829,7 +12765,7 @@
     "qid": "Q217230",
     "name_en": "Empire of Brazil",
     "name_ko": "브라질 제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1822,
     "end_year": 1889,
     "snapshots": [
@@ -12863,7 +12799,7 @@
     "qid": "Q6136070",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1822,
     "end_year": 1836,
     "snapshots": [
@@ -12891,7 +12827,7 @@
     "qid": "Q190025",
     "name_en": "Federal Republic of Central America",
     "name_ko": "중앙아메리카 연방공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1823,
     "end_year": 1841,
     "snapshots": [
@@ -12937,7 +12873,7 @@
     "qid": "Q1109279",
     "name_en": "First Mexican Republic",
     "name_ko": "멕시코 제1공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1823,
     "end_year": 1835,
     "snapshots": [
@@ -12971,7 +12907,7 @@
     "qid": "Q3044695",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1824,
     "end_year": 1830,
     "snapshots": [
@@ -12987,7 +12923,7 @@
     "qid": "Q5775324",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1825,
     "end_year": 1836,
     "snapshots": [
@@ -13025,7 +12961,7 @@
     "qid": "Q77",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1828,
     "end_year": 2025,
     "snapshots": [
@@ -13047,7 +12983,7 @@
     "qid": "CSHAPES_Costa_Rica",
     "name_en": "Costa Rica",
     "name_ko": "코스타리카",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1829,
     "end_year": 1941,
     "snapshots": [
@@ -13187,7 +13123,7 @@
     "qid": "Q5062192",
     "name_en": "Centralist Republic of Mexico",
     "name_ko": "멕시코 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1835,
     "end_year": 1846,
     "snapshots": [
@@ -13255,7 +13191,7 @@
     "qid": "Q736",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1835,
     "end_year": 2025,
     "snapshots": [
@@ -13295,7 +13231,7 @@
     "qid": "Q170588",
     "name_en": "Republic of Texas",
     "name_ko": "텍사스 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1836,
     "end_year": 1845,
     "snapshots": [
@@ -13333,7 +13269,7 @@
     "qid": "CSHAPES_Honduras",
     "name_en": "Honduras",
     "name_ko": "온두라스",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1838,
     "end_year": 2025,
     "snapshots": [
@@ -13385,7 +13321,7 @@
     "qid": "Q750",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1839,
     "end_year": 2025,
     "snapshots": [
@@ -13501,7 +13437,7 @@
     "qid": "Q774",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1839,
     "end_year": 1859,
     "snapshots": [
@@ -13557,7 +13493,7 @@
     "qid": "CSHAPES_Luxembourg",
     "name_en": "Luxembourg",
     "name_ko": "룩셈부르크",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1840,
     "end_year": 2025,
     "snapshots": [
@@ -13603,7 +13539,7 @@
     "qid": "Q8842943",
     "name_en": "Estado Libre del Istmo",
     "name_ko": "에스타도 리브레 이스트모",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1840,
     "end_year": 1841,
     "snapshots": [
@@ -13619,7 +13555,7 @@
     "qid": "CSHAPES_El_Salvador",
     "name_en": "El Salvador",
     "name_ko": "엘살바도르",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1841,
     "end_year": 1922,
     "snapshots": [
@@ -13641,7 +13577,7 @@
     "qid": "Q51545918",
     "name_en": "First Republic (Dominican Republic)",
     "name_ko": "도미니카 제1공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1844,
     "end_year": 1861,
     "snapshots": [
@@ -13657,7 +13593,7 @@
     "qid": "Q7443295",
     "name_en": "Second Federal Republic of Mexico",
     "name_ko": "멕시코 제2연방공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1846,
     "end_year": 1863,
     "snapshots": [
@@ -13703,7 +13639,7 @@
     "qid": "Q1014",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1847,
     "end_year": 2025,
     "snapshots": [
@@ -13725,7 +13661,7 @@
     "qid": "Q71092",
     "name_en": "Second French Empire",
     "name_ko": "프랑스 제2제국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1848,
     "end_year": 1870,
     "snapshots": [
@@ -13759,7 +13695,7 @@
     "qid": "Q3048062",
     "name_en": "Orange River Sovereignty",
     "name_ko": "오라응게 강 소베레이그은트이",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1848,
     "end_year": 1854,
     "snapshots": [
@@ -13775,7 +13711,7 @@
     "qid": "Q30890672",
     "name_en": "Kingdom of Sicily",
     "name_ko": "시칠리아 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1848,
     "end_year": 1849,
     "snapshots": [
@@ -13791,7 +13727,7 @@
     "qid": "Q2037576",
     "name_en": "Republic of San Marco",
     "name_ko": "산마르코 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1848,
     "end_year": 1849,
     "snapshots": [
@@ -13807,7 +13743,7 @@
     "qid": "Q2979717",
     "name_en": "Second Empire of Haiti",
     "name_ko": "아이티 제2제국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1849,
     "end_year": 1859,
     "snapshots": [
@@ -13839,7 +13775,7 @@
     "qid": "Q1842",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1849,
     "end_year": 1919,
     "snapshots": [
@@ -13855,7 +13791,7 @@
     "qid": "Q550374",
     "name_en": "South African Republic",
     "name_ko": "트란스발 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1852,
     "end_year": 1902,
     "snapshots": [
@@ -13899,7 +13835,7 @@
     "qid": "Q218023",
     "name_en": "Orange Free State",
     "name_ko": "오라녜 자유국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1854,
     "end_year": 1902,
     "snapshots": [
@@ -13937,7 +13873,7 @@
     "qid": "Q157904",
     "name_en": "Sultanate of Zanzibar",
     "name_ko": "잔지바르 술탄국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1856,
     "end_year": 1964,
     "snapshots": [
@@ -13959,7 +13895,7 @@
     "qid": "Q129286",
     "name_en": "British Raj",
     "name_ko": "인도 제국(영국령)",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1858,
     "end_year": 1947,
     "snapshots": [
@@ -14039,7 +13975,7 @@
     "qid": "CSHAPES_Guatemala",
     "name_en": "Guatemala",
     "name_ko": "과테말라",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1859,
     "end_year": 2025,
     "snapshots": [
@@ -14109,7 +14045,7 @@
     "qid": "Q2268597",
     "name_en": "United Provinces of Central Italy",
     "name_ko": "중앙이탈리아 연방",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1859,
     "end_year": 1860,
     "snapshots": [
@@ -14125,7 +14061,7 @@
     "qid": "Q172579",
     "name_en": "Kingdom of Italy",
     "name_ko": "이탈리아 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1861,
     "end_year": 1945,
     "snapshots": [
@@ -14165,7 +14101,7 @@
     "qid": "Q414",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1861,
     "end_year": 2025,
     "snapshots": [
@@ -14223,7 +14159,7 @@
     "qid": "Q16550783",
     "name_en": "Duchy of Anhalt",
     "name_ko": "안할트 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1863,
     "end_year": 1867,
     "snapshots": [
@@ -14271,7 +14207,7 @@
     "qid": "Q35",
     "name_en": "Kingdom of Denmark",
     "name_ko": "덴마크 왕국",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1864,
     "end_year": 2025,
     "snapshots": [
@@ -14323,7 +14259,7 @@
     "qid": "Q209065",
     "name_en": "Kingdom of Greece",
     "name_ko": "그리스 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1864,
     "end_year": 1947,
     "snapshots": [
@@ -14375,7 +14311,7 @@
     "qid": "Q6123742",
     "name_en": "Second Republic",
     "name_ko": "세코은드 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1865,
     "end_year": 1916,
     "snapshots": [
@@ -14391,7 +14327,7 @@
     "qid": "Q28513",
     "name_en": "Austria–Hungary",
     "name_ko": "오스트리아-헝가리 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1867,
     "end_year": 1918,
     "snapshots": [
@@ -14435,7 +14371,7 @@
     "qid": "Q5788450",
     "name_en": "Restored Republic",
     "name_ko": "복원된 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1867,
     "end_year": 1917,
     "snapshots": [
@@ -14469,7 +14405,7 @@
     "qid": "Q1094090",
     "name_en": "Republic of Ezo",
     "name_ko": "에조 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1869,
     "end_year": 1869,
     "snapshots": [
@@ -14485,7 +14421,7 @@
     "qid": "Q70802",
     "name_en": "French Third Republic",
     "name_ko": "프랑스 제3공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1870,
     "end_year": 1940,
     "snapshots": [
@@ -14519,7 +14455,7 @@
     "qid": "Q43287",
     "name_en": "German Empire",
     "name_ko": "독일 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1871,
     "end_year": 1918,
     "snapshots": [
@@ -14563,7 +14499,7 @@
     "qid": "Q678",
     "name_en": "Kingdom of Tonga",
     "name_ko": "라로통가 왕국",
-    "tier": null,
+    "tier": 3,
     "start_year": 1875,
     "end_year": 1900,
     "snapshots": [
@@ -14595,7 +14531,7 @@
     "qid": "Q958291",
     "name_en": "United Principalities of Moldavia and Wallachia",
     "name_ko": "몰다비아 왈라키아 연합공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1878,
     "end_year": 1881,
     "snapshots": [
@@ -14611,7 +14547,7 @@
     "qid": "CSHAPES_Italian_Somaliland",
     "name_en": "Italian Somaliland",
     "name_ko": "이탈리아령 소말릴란드",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1880,
     "end_year": 1936,
     "snapshots": [
@@ -14649,7 +14585,7 @@
     "qid": "Q218",
     "name_en": "Romania (1881-1913)",
     "name_ko": "루마니아 왕국",
-    "tier": null,
+    "tier": 2,
     "start_year": 1881,
     "end_year": 1918,
     "snapshots": [
@@ -14721,7 +14657,7 @@
     "qid": "Q662653",
     "name_en": "British Somaliland",
     "name_ko": "영국령 소말릴란드",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1884,
     "end_year": 1960,
     "snapshots": [
@@ -14743,7 +14679,7 @@
     "qid": "Q668294",
     "name_en": "Kamerun",
     "name_ko": "독일령 카메룬",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1884,
     "end_year": 1916,
     "snapshots": [
@@ -14781,7 +14717,7 @@
     "qid": "Q2566427",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1884,
     "end_year": 1893,
     "snapshots": [
@@ -14797,7 +14733,7 @@
     "qid": "Q153665",
     "name_en": "German South-West Africa",
     "name_ko": "독일령 남서아프리카",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1884,
     "end_year": 1919,
     "snapshots": [
@@ -14819,7 +14755,7 @@
     "qid": "Q153963",
     "name_en": "German East Africa",
     "name_ko": "독일령 동아프리카",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1885,
     "end_year": 1920,
     "snapshots": [
@@ -14875,7 +14811,7 @@
     "qid": "Q4530733",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1885,
     "end_year": 1895,
     "snapshots": [
@@ -14891,7 +14827,7 @@
     "qid": "Q76048",
     "name_en": "Congo Free State",
     "name_ko": "콩고 자유국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1885,
     "end_year": 1908,
     "snapshots": [
@@ -14929,7 +14865,7 @@
     "qid": "Q739",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1886,
     "end_year": 2025,
     "snapshots": [
@@ -14963,7 +14899,7 @@
     "qid": "Q2975232",
     "name_en": "Republic of Independent Guyana",
     "name_ko": "독립 가이아나 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1886,
     "end_year": 1891,
     "snapshots": [
@@ -14979,7 +14915,7 @@
     "qid": "Q185682",
     "name_en": "French Indochina",
     "name_ko": "프랑스령 인도차이나",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1887,
     "end_year": 1954,
     "snapshots": [
@@ -15011,7 +14947,7 @@
     "qid": "Q207521",
     "name_en": "Ethiopian Empire",
     "name_ko": "에티오피아 제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1889,
     "end_year": 1936,
     "snapshots": [
@@ -15027,7 +14963,7 @@
     "qid": "CSHAPES_Brazil",
     "name_en": "Brazil",
     "name_ko": "브라질",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1889,
     "end_year": 2025,
     "snapshots": [
@@ -15109,7 +15045,7 @@
     "qid": "Q1400154",
     "name_en": "Federated Malay States",
     "name_ko": "말레이 연방주",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1896,
     "end_year": 1941,
     "snapshots": [
@@ -15131,7 +15067,7 @@
     "qid": "Q28233",
     "name_en": "Korean Empire",
     "name_ko": "대한제국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1897,
     "end_year": 1910,
     "snapshots": [
@@ -15147,7 +15083,7 @@
     "qid": "Q72785",
     "name_en": "Cretan State",
     "name_ko": "크레타 자치국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1898,
     "end_year": 1913,
     "snapshots": [
@@ -15185,7 +15121,7 @@
     "qid": "Q23022146",
     "name_en": "Kingdom of Tonga",
     "name_ko": "통가 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1900,
     "end_year": 1970,
     "snapshots": [
@@ -15207,7 +15143,7 @@
     "qid": "Q1183",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1900,
     "end_year": null,
     "snapshots": [
@@ -15223,7 +15159,7 @@
     "qid": "Q408",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1901,
     "end_year": 2025,
     "snapshots": [
@@ -15269,7 +15205,7 @@
     "qid": "Q34366",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1901,
     "end_year": null,
     "snapshots": [
@@ -15301,7 +15237,7 @@
     "qid": "Q14905932",
     "name_en": "Republic of Cuba",
     "name_ko": "쿠바 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1902,
     "end_year": 1925,
     "snapshots": [
@@ -15323,7 +15259,7 @@
     "qid": "CSHAPES_Panama",
     "name_en": "Panama",
     "name_ko": "파나마",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1903,
     "end_year": 2025,
     "snapshots": [
@@ -15409,7 +15345,7 @@
     "qid": "Q752431",
     "name_en": "New Hebrides",
     "name_ko": "뉴헤브리디스 제도",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1907,
     "end_year": 1980,
     "snapshots": [
@@ -15471,7 +15407,7 @@
     "qid": "Q193619",
     "name_en": "Union of South Africa",
     "name_ko": "남아프리카 연방",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1910,
     "end_year": 1961,
     "snapshots": [
@@ -15505,7 +15441,7 @@
     "qid": "Q45",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1910,
     "end_year": 2025,
     "snapshots": [
@@ -15527,7 +15463,7 @@
     "qid": "Q56282578",
     "name_en": "Uryankhay Republic",
     "name_ko": "우르야응크하이 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1911,
     "end_year": 1914,
     "snapshots": [
@@ -15543,7 +15479,7 @@
     "qid": "Q865",
     "name_en": "Republic of China",
     "name_ko": "중화민국 대륙 시기",
-    "tier": null,
+    "tier": 2,
     "start_year": 1912,
     "end_year": 1950,
     "snapshots": [
@@ -15583,7 +15519,7 @@
     "qid": "Q582781",
     "name_en": "Albania",
     "name_ko": "프로비시오나르 고베르느메은트 아르바니아",
-    "tier": null,
+    "tier": 3,
     "start_year": 1912,
     "end_year": 1914,
     "snapshots": [
@@ -15631,7 +15567,7 @@
     "qid": "Q187035",
     "name_en": "Principality of Albania",
     "name_ko": "알바니아 공국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1914,
     "end_year": 1925,
     "snapshots": [
@@ -15723,7 +15659,7 @@
     "qid": "Q1028848",
     "name_en": "French Cameroons",
     "name_ko": "프랑스령 카메룬",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1916,
     "end_year": 1960,
     "snapshots": [
@@ -15739,7 +15675,7 @@
     "qid": "Q590743",
     "name_en": "Ruanda-Urundi",
     "name_ko": "루안다-우룬디",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1916,
     "end_year": 1962,
     "snapshots": [
@@ -15795,7 +15731,7 @@
     "qid": "Q2184",
     "name_en": "Russian Republic",
     "name_ko": "러시아 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1917,
     "end_year": 1921,
     "snapshots": [
@@ -15845,7 +15781,7 @@
     "qid": "Q140359",
     "name_en": "Czechoslovakia (1924-1936)",
     "name_ko": "체코슬로바키아",
-    "tier": null,
+    "tier": 3,
     "start_year": 1918,
     "end_year": 1938,
     "snapshots": [
@@ -15891,7 +15827,7 @@
     "qid": "Q1206012",
     "name_en": "German Reich (1920 01-02)",
     "name_ko": "바이마르 공화국",
-    "tier": null,
+    "tier": 3,
     "start_year": 1918,
     "end_year": 1945,
     "snapshots": [
@@ -16015,7 +15951,7 @@
     "qid": "CSHAPES_Estonia",
     "name_en": "Estonia",
     "name_ko": "에스토니아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1918,
     "end_year": 2025,
     "snapshots": [
@@ -16043,7 +15979,7 @@
     "qid": "CSHAPES_Armenia",
     "name_en": "Armenia",
     "name_ko": "아르메니아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1918,
     "end_year": 2025,
     "snapshots": [
@@ -16087,7 +16023,7 @@
     "qid": "Q62567",
     "name_en": "Kingdom of Iceland",
     "name_ko": "아이슬란드 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1918,
     "end_year": 1944,
     "snapshots": [
@@ -16119,7 +16055,7 @@
     "qid": "Q36704",
     "name_en": "Yugoslavia",
     "name_ko": "유고슬라비아",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1918,
     "end_year": 1992,
     "snapshots": [
@@ -16135,7 +16071,7 @@
     "qid": "Q41304",
     "name_en": "Weimar Republic",
     "name_ko": "바이마르 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1918,
     "end_year": 1933,
     "snapshots": [
@@ -16151,7 +16087,7 @@
     "qid": "Q203493",
     "name_en": "Kingdom of Romania",
     "name_ko": "루마니아 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1919,
     "end_year": 1947,
     "snapshots": [
@@ -16225,7 +16161,7 @@
     "qid": "Q207272",
     "name_en": "Second Polish Republic",
     "name_ko": "폴란드 제2공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1920,
     "end_year": 1939,
     "snapshots": [
@@ -16289,7 +16225,7 @@
     "qid": "Q8272919",
     "name_en": "Republic of Lithuania",
     "name_ko": "리투아니아 제1공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1920,
     "end_year": 1940,
     "snapshots": [
@@ -16375,7 +16311,7 @@
     "qid": "Q548114",
     "name_en": "Free State of Fiume",
     "name_ko": "리예카 자유국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1920,
     "end_year": 1924,
     "snapshots": [
@@ -16391,7 +16327,7 @@
     "qid": "Q211",
     "name_en": "Latvia",
     "name_ko": "라트비아은 소시아리스트 소비에트 공화국",
-    "tier": null,
+    "tier": 2,
     "start_year": 1920,
     "end_year": 1940,
     "snapshots": [
@@ -16407,7 +16343,7 @@
     "qid": "Q158725",
     "name_en": "Tanganyika Territory",
     "name_ko": "탕가니카",
-    "tier": null,
+    "tier": 3,
     "start_year": 1920,
     "end_year": 1961,
     "snapshots": [
@@ -16461,7 +16397,7 @@
     "qid": "Q146562",
     "name_en": "State of Damascus",
     "name_ko": "다마스쿠스국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1920,
     "end_year": 1922,
     "snapshots": [
@@ -16483,7 +16419,7 @@
     "qid": "Q146872",
     "name_en": "State of Aleppo",
     "name_ko": "알레포국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1920,
     "end_year": 1922,
     "snapshots": [
@@ -16499,7 +16435,7 @@
     "qid": "Q130229",
     "name_en": "Georgian Soviet Socialist Republic",
     "name_ko": "그루지야 소비에트 사회주의 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1921,
     "end_year": 1922,
     "snapshots": [
@@ -16515,7 +16451,7 @@
     "qid": "Q133844233",
     "name_en": "Federation of Central America",
     "name_ko": "연방 세은트라르 아메리카",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1921,
     "end_year": 1922,
     "snapshots": [
@@ -16563,7 +16499,7 @@
     "qid": "Q146740",
     "name_en": "Jabal Druze",
     "name_ko": "자발 드루즈국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1921,
     "end_year": 1936,
     "snapshots": [
@@ -16591,7 +16527,7 @@
     "qid": "Q145",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1922,
     "end_year": 2025,
     "snapshots": [
@@ -16629,7 +16565,7 @@
     "qid": "Q15180",
     "name_en": "Soviet Union (1951-1960)",
     "name_ko": "소비에트 연방",
-    "tier": null,
+    "tier": 3,
     "start_year": 1922,
     "end_year": 1991,
     "snapshots": [
@@ -16763,7 +16699,7 @@
     "qid": "Q792",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1922,
     "end_year": 2025,
     "snapshots": [
@@ -16791,7 +16727,7 @@
     "qid": "Q12183911",
     "name_en": "Syrian Federation",
     "name_ko": "스이리아은 연방",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1922,
     "end_year": 1925,
     "snapshots": [
@@ -16813,7 +16749,7 @@
     "qid": "CSHAPES_Mongolia",
     "name_en": "Mongolia",
     "name_ko": "몽골",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1924,
     "end_year": null,
     "snapshots": [
@@ -16829,7 +16765,7 @@
     "qid": "Q48742118",
     "name_en": "Italy (1940-1941)",
     "name_ko": "이탈리아 왕국",
-    "tier": null,
+    "tier": 3,
     "start_year": 1924,
     "end_year": 1943,
     "snapshots": [
@@ -16869,7 +16805,7 @@
     "qid": "Q51547013",
     "name_en": "Third Dominican Republic",
     "name_ko": "티르드 도미니카은 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1924,
     "end_year": 1965,
     "snapshots": [
@@ -16885,7 +16821,7 @@
     "qid": "Q1923781",
     "name_en": "Albanian Republic",
     "name_ko": "알바니아 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1925,
     "end_year": 1928,
     "snapshots": [
@@ -16907,7 +16843,7 @@
     "qid": "Q241",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1925,
     "end_year": 2025,
     "snapshots": [
@@ -16929,7 +16865,7 @@
     "qid": "Q146880",
     "name_en": "State of Syria",
     "name_ko": "시리아국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1925,
     "end_year": 1930,
     "snapshots": [
@@ -16961,7 +16897,7 @@
     "qid": "Q1048340",
     "name_en": "Albanian Kingdom",
     "name_ko": "알바니아 왕국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1928,
     "end_year": 1939,
     "snapshots": [
@@ -16977,7 +16913,7 @@
     "qid": "Q191077",
     "name_en": "Kingdom of Yugoslavia",
     "name_ko": "유고슬라비아",
-    "tier": null,
+    "tier": 3,
     "start_year": 1929,
     "end_year": 1939,
     "snapshots": [
@@ -16993,7 +16929,7 @@
     "qid": "Q26234937",
     "name_en": "First Syrian Republic",
     "name_ko": "시리아 제1공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1930,
     "end_year": 1958,
     "snapshots": [
@@ -17033,7 +16969,7 @@
     "qid": "Q30623",
     "name_en": "Manchukuo",
     "name_ko": "만주국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1932,
     "end_year": 1945,
     "snapshots": [
@@ -17049,7 +16985,7 @@
     "qid": "Q7318",
     "name_en": "Nazi Germany",
     "name_ko": "나치 독일",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1933,
     "end_year": 1945,
     "snapshots": [
@@ -17065,7 +17001,7 @@
     "qid": "Q790",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1934,
     "end_year": 2025,
     "snapshots": [
@@ -17153,7 +17089,7 @@
     "qid": "Q49910",
     "name_en": "Colony of Aden",
     "name_ko": "아덴 식민지",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1937,
     "end_year": 1963,
     "snapshots": [
@@ -17169,7 +17105,7 @@
     "qid": "Q2010024",
     "name_en": "Czechoslovakia (1938 09-11)",
     "name_ko": "체코슬로바키아",
-    "tier": null,
+    "tier": 3,
     "start_year": 1938,
     "end_year": 1939,
     "snapshots": [
@@ -17191,7 +17127,7 @@
     "qid": "Q146761",
     "name_en": "Hatay State",
     "name_ko": "하타이 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1938,
     "end_year": 1939,
     "snapshots": [
@@ -17235,7 +17171,7 @@
     "qid": "Q1448131",
     "name_en": "Italian protectorate of Albania",
     "name_ko": "알바니아의 이탈리아 보호령",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1939,
     "end_year": 1943,
     "snapshots": [
@@ -17291,7 +17227,7 @@
     "qid": "Q130280",
     "name_en": "Estonian Soviet Socialist Republic",
     "name_ko": "에스토니아 소비에트 사회주의 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1940,
     "end_year": 1940,
     "snapshots": [
@@ -17307,7 +17243,7 @@
     "qid": "Q69808",
     "name_en": "Vichy France",
     "name_ko": "비시 프랑스",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1940,
     "end_year": 1944,
     "snapshots": [
@@ -17357,7 +17293,7 @@
     "qid": "Q800",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1941,
     "end_year": 2025,
     "snapshots": [
@@ -17379,7 +17315,7 @@
     "qid": "CSHAPES_Lebanon",
     "name_en": "Lebanon",
     "name_ko": "레바논",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1943,
     "end_year": 2025,
     "snapshots": [
@@ -17413,7 +17349,7 @@
     "qid": "Q153660",
     "name_en": "Italian Social Republic",
     "name_ko": "이탈리아 사회공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1943,
     "end_year": 1945,
     "snapshots": [
@@ -17435,7 +17371,7 @@
     "qid": "Q3752897",
     "name_en": "Italy (1944-1945)",
     "name_ko": "이탈리아 왕국",
-    "tier": null,
+    "tier": 3,
     "start_year": 1943,
     "end_year": 1945,
     "snapshots": [
@@ -17457,7 +17393,7 @@
     "qid": "Q16953965",
     "name_en": "British Military Administration",
     "name_ko": "영국 미리타르이 아드미니스트라티오은",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1943,
     "end_year": 1951,
     "snapshots": [
@@ -17479,7 +17415,7 @@
     "qid": "Q704358",
     "name_en": "State of Burma",
     "name_ko": "버마국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1943,
     "end_year": 1945,
     "snapshots": [
@@ -17511,7 +17447,7 @@
     "qid": "CSHAPES_Iceland",
     "name_en": "Iceland",
     "name_ko": "아이슬란드",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1944,
     "end_year": 2025,
     "snapshots": [
@@ -17561,7 +17497,7 @@
     "qid": "Q211274",
     "name_en": "Polish People's Republic",
     "name_ko": "폴란드 인민공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1945,
     "end_year": 1989,
     "snapshots": [
@@ -17595,7 +17531,7 @@
     "qid": "Q2454585",
     "name_en": "Czechoslovak Republic (1945-1947)",
     "name_ko": "체코슬로바키아",
-    "tier": null,
+    "tier": 3,
     "start_year": 1945,
     "end_year": 1948,
     "snapshots": [
@@ -17645,7 +17581,7 @@
     "qid": "Q172640",
     "name_en": "North Vietnam",
     "name_ko": "베트남 민주공화국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1945,
     "end_year": 1976,
     "snapshots": [
@@ -17667,7 +17603,7 @@
     "qid": "Q840261",
     "name_en": "Empire of Vietnam",
     "name_ko": "베트남 제국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1945,
     "end_year": 1945,
     "snapshots": [
@@ -17683,7 +17619,7 @@
     "qid": "CSHAPES_Cambodia",
     "name_en": "Cambodia",
     "name_ko": "캄보디아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1945,
     "end_year": 2025,
     "snapshots": [
@@ -17705,7 +17641,7 @@
     "qid": "CSHAPES_Laos",
     "name_en": "Laos",
     "name_ko": "라오스",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1945,
     "end_year": 2025,
     "snapshots": [
@@ -17759,7 +17695,7 @@
     "qid": "Q252",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1945,
     "end_year": 2025,
     "snapshots": [
@@ -17805,7 +17741,7 @@
     "qid": "Q940741",
     "name_en": "Second Hungarian Republic",
     "name_ko": "헝가리 제2공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1945,
     "end_year": 1949,
     "snapshots": [
@@ -17821,7 +17757,7 @@
     "qid": "Q310293",
     "name_en": "Saar Protectorate",
     "name_ko": "자르 보호령",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1946,
     "end_year": 1956,
     "snapshots": [
@@ -17849,7 +17785,7 @@
     "qid": "Q38",
     "name_en": "Italy",
     "name_ko": "이탈리아 제국",
-    "tier": null,
+    "tier": 2,
     "start_year": 1946,
     "end_year": 1984,
     "snapshots": [
@@ -17871,7 +17807,7 @@
     "qid": "Q928",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1946,
     "end_year": 2025,
     "snapshots": [
@@ -17925,7 +17861,7 @@
     "qid": "CSHAPES_Spanish_West_Africa",
     "name_en": "Spanish West Africa",
     "name_ko": "스페인령 서아프리카",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1946,
     "end_year": 1958,
     "snapshots": [
@@ -17941,7 +17877,7 @@
     "qid": "Q17012",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1946,
     "end_year": 2025,
     "snapshots": [
@@ -17997,7 +17933,7 @@
     "qid": "Q142",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1947,
     "end_year": 2025,
     "snapshots": [
@@ -18065,7 +18001,7 @@
     "qid": "Q917",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1947,
     "end_year": null,
     "snapshots": [
@@ -18081,7 +18017,7 @@
     "qid": "Q664",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1947,
     "end_year": 2025,
     "snapshots": [
@@ -18169,7 +18105,7 @@
     "qid": "Q33946",
     "name_en": "Czechoslovakia",
     "name_ko": "체코슬로바키아",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1948,
     "end_year": 1960,
     "snapshots": [
@@ -18243,7 +18179,7 @@
     "qid": "CSHAPES_Jordan",
     "name_en": "Jordan",
     "name_ko": "요르단",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1948,
     "end_year": 2025,
     "snapshots": [
@@ -18277,7 +18213,7 @@
     "qid": "Q1479726",
     "name_en": "Federation of Malaya",
     "name_ko": "말라야 연방",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1948,
     "end_year": 1963,
     "snapshots": [
@@ -18293,7 +18229,7 @@
     "qid": "Q7233551",
     "name_en": "Union of Burma (1948–1962)",
     "name_ko": "독립 이후의 버마",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1948,
     "end_year": 1989,
     "snapshots": [
@@ -18309,7 +18245,7 @@
     "qid": "Q2670092",
     "name_en": "Dominion of Ceylon",
     "name_ko": "실론 자치령",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1948,
     "end_year": 1972,
     "snapshots": [
@@ -18325,7 +18261,7 @@
     "qid": "Q2051582",
     "name_en": "All-Palestine Government",
     "name_ko": "팔레스타인 정부 (1948년)",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1948,
     "end_year": 1956,
     "snapshots": [
@@ -18341,7 +18277,7 @@
     "qid": "Q713750",
     "name_en": "West Germany",
     "name_ko": "서독",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1949,
     "end_year": 1990,
     "snapshots": [
@@ -18381,7 +18317,7 @@
     "qid": "Q16957",
     "name_en": "German Democratic Republic",
     "name_ko": "동독",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1949,
     "end_year": 1990,
     "snapshots": [
@@ -18403,7 +18339,7 @@
     "qid": "Q148",
     "name_en": "People's Republic of China",
     "name_ko": "중화인민공화국",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1949,
     "end_year": 2025,
     "snapshots": [
@@ -18461,7 +18397,7 @@
     "qid": "Q2003",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1949,
     "end_year": 2001,
     "snapshots": [
@@ -18477,7 +18413,7 @@
     "qid": "Q370372",
     "name_en": "Emirate of Cyrenaica",
     "name_ko": "키레나이카 토후국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1949,
     "end_year": 1951,
     "snapshots": [
@@ -18509,7 +18445,7 @@
     "qid": "Q523435",
     "name_en": "United States of Indonesia",
     "name_ko": "인도네시아 합중국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1949,
     "end_year": 1950,
     "snapshots": [
@@ -18525,7 +18461,7 @@
     "qid": "Q13426199",
     "name_en": "Republic of China",
     "name_ko": "중화민국 대륙 시기",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1950,
     "end_year": 2025,
     "snapshots": [
@@ -18559,7 +18495,7 @@
     "qid": "Q668",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1950,
     "end_year": 2025,
     "snapshots": [
@@ -18581,7 +18517,7 @@
     "qid": "CSHAPES_Libya",
     "name_en": "Libya",
     "name_ko": "리비아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1951,
     "end_year": 2025,
     "snapshots": [
@@ -18619,7 +18555,7 @@
     "qid": "Q3087763",
     "name_en": "Republic of Egypt",
     "name_ko": "이집트 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1953,
     "end_year": 1958,
     "snapshots": [
@@ -18641,7 +18577,7 @@
     "qid": "Q83286",
     "name_en": "Yugoslavia (1954-1991)",
     "name_ko": "유고슬라비아",
-    "tier": null,
+    "tier": 3,
     "start_year": 1954,
     "end_year": 1991,
     "snapshots": [
@@ -18685,7 +18621,7 @@
     "qid": "Q180573",
     "name_en": "Republic of Vietnam",
     "name_ko": "베트남 공화국",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1955,
     "end_year": 1975,
     "snapshots": [
@@ -18701,7 +18637,7 @@
     "qid": "CSHAPES_Sudan",
     "name_en": "Sudan",
     "name_ko": "수단",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1956,
     "end_year": 2025,
     "snapshots": [
@@ -18723,7 +18659,7 @@
     "qid": "CSHAPES_Tunisia",
     "name_en": "Tunisia",
     "name_ko": "튀니지",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1956,
     "end_year": 2025,
     "snapshots": [
@@ -18779,7 +18715,7 @@
     "qid": "Q117",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1957,
     "end_year": null,
     "snapshots": [
@@ -18795,7 +18731,7 @@
     "qid": "Q170468",
     "name_en": "United Arab Republic",
     "name_ko": "아랍 연합 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1958,
     "end_year": 1971,
     "snapshots": [
@@ -18823,7 +18759,7 @@
     "qid": "Q1006",
     "name_en": "Guinea",
     "name_ko": "네덜란드령 뉴기니",
-    "tier": null,
+    "tier": 2,
     "start_year": 1958,
     "end_year": 1977,
     "snapshots": [
@@ -18839,7 +18775,7 @@
     "qid": "CSHAPES_Central_African_Republic",
     "name_en": "Central African Republic",
     "name_ko": "중앙아프리카공화국",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1958,
     "end_year": 2025,
     "snapshots": [
@@ -18867,7 +18803,7 @@
     "qid": "Q652560",
     "name_en": "West Indies Federation",
     "name_ko": "서인도 연방",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1958,
     "end_year": 1962,
     "snapshots": [
@@ -18911,7 +18847,7 @@
     "qid": "Q945",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
     "snapshots": [
@@ -18933,7 +18869,7 @@
     "qid": "CSHAPES_United_Kingdom",
     "name_en": "United Kingdom",
     "name_ko": "영국",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1960,
     "end_year": null,
     "snapshots": [
@@ -18949,7 +18885,7 @@
     "qid": "Q229",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1960,
     "end_year": null,
     "snapshots": [
@@ -18965,7 +18901,7 @@
     "qid": "CSHAPES_Chad",
     "name_en": "Chad",
     "name_ko": "차드",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1960,
     "end_year": null,
     "snapshots": [
@@ -18981,7 +18917,7 @@
     "qid": "Q1032",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1960,
     "end_year": null,
     "snapshots": [
@@ -18997,7 +18933,7 @@
     "qid": "CSHAPES_Senegal",
     "name_en": "Senegal",
     "name_ko": "세네갈",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1960,
     "end_year": null,
     "snapshots": [
@@ -19013,7 +18949,7 @@
     "qid": "Q468814",
     "name_en": "Dahomey",
     "name_ko": "다호메이",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1960,
     "end_year": 1975,
     "snapshots": [
@@ -19035,7 +18971,7 @@
     "qid": "CSHAPES_Cameroon",
     "name_en": "Cameroon",
     "name_ko": "카메룬",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
     "snapshots": [
@@ -19069,7 +19005,7 @@
     "qid": "Q912",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1960,
     "end_year": null,
     "snapshots": [
@@ -19085,7 +19021,7 @@
     "qid": "CSHAPES_Mauritania",
     "name_en": "Mauritania",
     "name_ko": "모리타니",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1960,
     "end_year": null,
     "snapshots": [
@@ -19101,7 +19037,7 @@
     "qid": "Q965",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
     "snapshots": [
@@ -19123,7 +19059,7 @@
     "qid": "Q1000",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
     "snapshots": [
@@ -19145,7 +19081,7 @@
     "qid": "Q618399",
     "name_en": "Republic of the Congo (Léopoldville)",
     "name_ko": "콩고 공화국 (레오폴드빌)",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1960,
     "end_year": 1971,
     "snapshots": [
@@ -19173,7 +19109,7 @@
     "qid": "CSHAPES_Belize",
     "name_en": "Belize",
     "name_ko": "벨리즈",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
     "snapshots": [
@@ -19207,7 +19143,7 @@
     "qid": "Q7559152",
     "name_en": "Somali Republic",
     "name_ko": "소말리 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1960,
     "end_year": 1991,
     "snapshots": [
@@ -19229,7 +19165,7 @@
     "qid": "Q6740997",
     "name_en": "Malagasy Republic",
     "name_ko": "마다가스카르 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1960,
     "end_year": 1975,
     "snapshots": [
@@ -19245,7 +19181,7 @@
     "qid": "Q258",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1961,
     "end_year": 2025,
     "snapshots": [
@@ -19267,7 +19203,7 @@
     "qid": "Q1044",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1961,
     "end_year": null,
     "snapshots": [
@@ -19283,7 +19219,7 @@
     "qid": "Q19929935",
     "name_en": "Commonwealth realm of Tanganyika",
     "name_ko": "연방 레아르므 타응가느이카",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1961,
     "end_year": 1962,
     "snapshots": [
@@ -19349,7 +19285,7 @@
     "qid": "Q1036",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1962,
     "end_year": 2025,
     "snapshots": [
@@ -19389,7 +19325,7 @@
     "qid": "Q431731",
     "name_en": "Tanganyika",
     "name_ko": "탕가니카",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1962,
     "end_year": 1964,
     "snapshots": [
@@ -19411,7 +19347,7 @@
     "qid": "CSHAPES_Burundi",
     "name_en": "Burundi",
     "name_ko": "부룬디",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1962,
     "end_year": null,
     "snapshots": [
@@ -19427,7 +19363,7 @@
     "qid": "Q1037",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1962,
     "end_year": null,
     "snapshots": [
@@ -19443,7 +19379,7 @@
     "qid": "Q766",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1962,
     "end_year": 2025,
     "snapshots": [
@@ -19493,7 +19429,7 @@
     "qid": "CSHAPES_Malaysia",
     "name_en": "Malaysia",
     "name_ko": "말레이시아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1963,
     "end_year": 2025,
     "snapshots": [
@@ -19555,7 +19491,7 @@
     "qid": "Q6392538",
     "name_en": "Kenya (1963–1964)",
     "name_ko": "케냐",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1963,
     "end_year": 1964,
     "snapshots": [
@@ -19587,7 +19523,7 @@
     "qid": "Q233",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1964,
     "end_year": null,
     "snapshots": [
@@ -19603,7 +19539,7 @@
     "qid": "Q1020",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1964,
     "end_year": null,
     "snapshots": [
@@ -19619,7 +19555,7 @@
     "qid": "Q114",
     "name_en": "Kenya",
     "name_ko": "케냐",
-    "tier": null,
+    "tier": 2,
     "start_year": 1964,
     "end_year": null,
     "snapshots": [
@@ -19635,7 +19571,7 @@
     "qid": "Q953",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1964,
     "end_year": null,
     "snapshots": [
@@ -19651,7 +19587,7 @@
     "qid": "Q1026192",
     "name_en": "People's Republic of Zanzibar",
     "name_ko": "잔지바르 인민공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1964,
     "end_year": 1964,
     "snapshots": [
@@ -19667,7 +19603,7 @@
     "qid": "Q334",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1965,
     "end_year": 2025,
     "snapshots": [
@@ -19689,7 +19625,7 @@
     "qid": "CSHAPES_Maldives",
     "name_en": "Maldives",
     "name_ko": "몰디브",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1965,
     "end_year": null,
     "snapshots": [
@@ -19727,7 +19663,7 @@
     "qid": "Q1013",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1966,
     "end_year": null,
     "snapshots": [
@@ -19743,7 +19679,7 @@
     "qid": "Q963",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1966,
     "end_year": null,
     "snapshots": [
@@ -19759,7 +19695,7 @@
     "qid": "Q734",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1966,
     "end_year": null,
     "snapshots": [
@@ -19775,7 +19711,7 @@
     "qid": "CSHAPES_Dominican_Republic",
     "name_en": "Dominican Republic",
     "name_ko": "도미니카 공화국",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1966,
     "end_year": 2025,
     "snapshots": [
@@ -19803,7 +19739,7 @@
     "qid": "Q199841",
     "name_en": "South Yemen",
     "name_ko": "남예멘",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1967,
     "end_year": 1990,
     "snapshots": [
@@ -19819,7 +19755,7 @@
     "qid": "CSHAPES_Equatorial_Guinea",
     "name_en": "Equatorial Guinea",
     "name_ko": "적도기니",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1968,
     "end_year": 2025,
     "snapshots": [
@@ -19841,7 +19777,7 @@
     "qid": "Q1027",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1968,
     "end_year": null,
     "snapshots": [
@@ -19857,7 +19793,7 @@
     "qid": "CSHAPES_Kuwait",
     "name_en": "Kuwait",
     "name_ko": "쿠웨이트",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1970,
     "end_year": null,
     "snapshots": [
@@ -19873,7 +19809,7 @@
     "qid": "CSHAPES_Oman",
     "name_en": "Oman",
     "name_ko": "오만",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1970,
     "end_year": null,
     "snapshots": [
@@ -19889,7 +19825,7 @@
     "qid": "Q5291089",
     "name_en": "Dominion of Fiji",
     "name_ko": "피지 자치령",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1970,
     "end_year": 1987,
     "snapshots": [
@@ -19905,7 +19841,7 @@
     "qid": "Q902",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1971,
     "end_year": 2025,
     "snapshots": [
@@ -19927,7 +19863,7 @@
     "qid": "CSHAPES_Qatar",
     "name_en": "Qatar",
     "name_ko": "카타르",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1971,
     "end_year": null,
     "snapshots": [
@@ -19943,7 +19879,7 @@
     "qid": "CSHAPES_Bahrain",
     "name_en": "Bahrain",
     "name_ko": "바레인",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1971,
     "end_year": null,
     "snapshots": [
@@ -19959,7 +19895,7 @@
     "qid": "CSHAPES_United_Arab_Emirates",
     "name_en": "United Arab Emirates",
     "name_ko": "아랍에미리트",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1971,
     "end_year": null,
     "snapshots": [
@@ -19975,7 +19911,7 @@
     "qid": "CSHAPES_Egypt",
     "name_en": "Egypt",
     "name_ko": "이집트",
-    "tier": 1,
+    "tier": 2,
     "start_year": 1971,
     "end_year": 2025,
     "snapshots": [
@@ -19997,7 +19933,7 @@
     "qid": "Q6500954",
     "name_en": "Zaire",
     "name_ko": "자이르",
-    "tier": 1,
+    "tier": 3,
     "start_year": 1971,
     "end_year": 1997,
     "snapshots": [
@@ -20019,7 +19955,7 @@
     "qid": "Q854",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1972,
     "end_year": null,
     "snapshots": [
@@ -20035,7 +19971,7 @@
     "qid": "CSHAPES_Guinea-Bissau",
     "name_en": "Guinea-Bissau",
     "name_ko": "기니비사우",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1973,
     "end_year": null,
     "snapshots": [
@@ -20051,7 +19987,7 @@
     "qid": "Q2067309",
     "name_en": "Republic of Afghanistan",
     "name_ko": "아프그아니스타은 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1973,
     "end_year": 1978,
     "snapshots": [
@@ -20067,7 +20003,7 @@
     "qid": "Q1072362",
     "name_en": "Provisional Revolutionary Government of the Republic of South Vietnam",
     "name_ko": "남베트남 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1975,
     "end_year": 1976,
     "snapshots": [
@@ -20083,7 +20019,7 @@
     "qid": "Q691",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1975,
     "end_year": null,
     "snapshots": [
@@ -20099,7 +20035,7 @@
     "qid": "Q962",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1975,
     "end_year": 2025,
     "snapshots": [
@@ -20127,7 +20063,7 @@
     "qid": "Q916",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1975,
     "end_year": 2025,
     "snapshots": [
@@ -20155,7 +20091,7 @@
     "qid": "CSHAPES_Mozambique",
     "name_en": "Mozambique",
     "name_ko": "모잠비크",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1975,
     "end_year": null,
     "snapshots": [
@@ -20171,7 +20107,7 @@
     "qid": "Q2368688",
     "name_en": "Republic of Cabinda",
     "name_ko": "카빈다 공화국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1975,
     "end_year": 1976,
     "snapshots": [
@@ -20187,7 +20123,7 @@
     "qid": "Q114415093",
     "name_en": "Democratic Republic of East Timor",
     "name_ko": "데모크라티크 공화국 이스트 티모르",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1975,
     "end_year": 1976,
     "snapshots": [
@@ -20203,7 +20139,7 @@
     "qid": "CSHAPES_Comoros",
     "name_en": "Comoros",
     "name_ko": "코모로",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1975,
     "end_year": 2025,
     "snapshots": [
@@ -20225,7 +20161,7 @@
     "qid": "Q977",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1977,
     "end_year": null,
     "snapshots": [
@@ -20241,7 +20177,7 @@
     "qid": "Q98605707",
     "name_en": "People's Revolutionary Republic of Guinea",
     "name_ko": "페오프레스 레보루티오나르이 공화국 기네아",
-    "tier": 4,
+    "tier": 3,
     "start_year": 1977,
     "end_year": 1983,
     "snapshots": [
@@ -20257,7 +20193,7 @@
     "qid": "Q476757",
     "name_en": "Democratic Republic of Afghanistan",
     "name_ko": "아프가니스탄 민주공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1978,
     "end_year": 1992,
     "snapshots": [
@@ -20273,7 +20209,7 @@
     "qid": "Q685",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1978,
     "end_year": null,
     "snapshots": [
@@ -20305,7 +20241,7 @@
     "qid": "Q954",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1980,
     "end_year": null,
     "snapshots": [
@@ -20321,7 +20257,7 @@
     "qid": "Q242",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1981,
     "end_year": 2025,
     "snapshots": [
@@ -20349,7 +20285,7 @@
     "qid": "Q16",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1982,
     "end_year": 2025,
     "snapshots": [
@@ -20371,7 +20307,7 @@
     "qid": "CSHAPES_Guinea",
     "name_en": "Guinea",
     "name_ko": "기니",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1984,
     "end_year": null,
     "snapshots": [
@@ -20387,7 +20323,7 @@
     "qid": "CSHAPES_Fiji",
     "name_en": "Fiji",
     "name_ko": "피지",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1987,
     "end_year": null,
     "snapshots": [
@@ -20441,7 +20377,7 @@
     "qid": "CSHAPES_Bulgaria",
     "name_en": "Bulgaria",
     "name_ko": "불가리아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1990,
     "end_year": null,
     "snapshots": [
@@ -20457,7 +20393,7 @@
     "qid": "Q1030",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1990,
     "end_year": null,
     "snapshots": [
@@ -20473,7 +20409,7 @@
     "qid": "Q1998866",
     "name_en": "Czechoslovak Federative Republic",
     "name_ko": "체코슬로바키아",
-    "tier": null,
+    "tier": 3,
     "start_year": 1990,
     "end_year": 1992,
     "snapshots": [
@@ -20495,7 +20431,7 @@
     "qid": "CSHAPES_Latvia",
     "name_en": "Latvia",
     "name_ko": "라트비아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": 2025,
     "snapshots": [
@@ -20517,7 +20453,7 @@
     "qid": "Q212",
     "name_en": "Ukraine",
     "name_ko": "우크라이나 소비에트 사회주의 공화국",
-    "tier": null,
+    "tier": 2,
     "start_year": 1991,
     "end_year": null,
     "snapshots": [
@@ -20533,7 +20469,7 @@
     "qid": "Q217",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1991,
     "end_year": null,
     "snapshots": [
@@ -20549,7 +20485,7 @@
     "qid": "CSHAPES_Slovenia",
     "name_en": "Slovenia",
     "name_ko": "슬로베니아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": null,
     "snapshots": [
@@ -20565,7 +20501,7 @@
     "qid": "CSHAPES_Croatia",
     "name_en": "Croatia",
     "name_ko": "크로아티아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": null,
     "snapshots": [
@@ -20581,7 +20517,7 @@
     "qid": "CSHAPES_Albania",
     "name_en": "Albania",
     "name_ko": "알바니아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": null,
     "snapshots": [
@@ -20597,7 +20533,7 @@
     "qid": "CSHAPES_Azerbaijan",
     "name_en": "Azerbaijan",
     "name_ko": "아제르바이잔",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": 2025,
     "snapshots": [
@@ -20619,7 +20555,7 @@
     "qid": "CSHAPES_Georgia",
     "name_en": "Georgia",
     "name_ko": "조지아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": null,
     "snapshots": [
@@ -20635,7 +20571,7 @@
     "qid": "CSHAPES_Kazakhstan",
     "name_en": "Kazakhstan",
     "name_ko": "카자흐스탄",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": 2025,
     "snapshots": [
@@ -20657,7 +20593,7 @@
     "qid": "CSHAPES_Turkmenistan",
     "name_en": "Turkmenistan",
     "name_ko": "투르크메니스탄",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": 2025,
     "snapshots": [
@@ -20679,7 +20615,7 @@
     "qid": "Q159",
     "name_en": "Russia",
     "name_ko": "벨로루시 소비에트 사회주의 공화국",
-    "tier": null,
+    "tier": 2,
     "start_year": 1991,
     "end_year": 2004,
     "snapshots": [
@@ -20695,7 +20631,7 @@
     "qid": "CSHAPES_Somalia",
     "name_en": "Somalia",
     "name_ko": "소말리아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1991,
     "end_year": null,
     "snapshots": [
@@ -20743,7 +20679,7 @@
     "qid": "CSHAPES_Slovakia",
     "name_en": "Slovakia",
     "name_ko": "슬로바키아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1993,
     "end_year": null,
     "snapshots": [
@@ -20759,7 +20695,7 @@
     "qid": "CSHAPES_Czech_Republic",
     "name_en": "Czech Republic",
     "name_ko": "체코",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1993,
     "end_year": null,
     "snapshots": [
@@ -20775,7 +20711,7 @@
     "qid": "CSHAPES_Eritrea",
     "name_en": "Eritrea",
     "name_ko": "에리트레아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1993,
     "end_year": null,
     "snapshots": [
@@ -20791,7 +20727,7 @@
     "qid": "CSHAPES_Palestine",
     "name_en": "Palestine",
     "name_ko": "팔레스타인",
-    "tier": 3,
+    "tier": 2,
     "start_year": 1994,
     "end_year": 2025,
     "snapshots": [
@@ -20813,7 +20749,7 @@
     "qid": "Q1033",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1998,
     "end_year": null,
     "snapshots": [
@@ -20829,7 +20765,7 @@
     "qid": "Q717",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 1999,
     "end_year": null,
     "snapshots": [
@@ -20845,7 +20781,7 @@
     "qid": "Q113988063",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 3,
     "start_year": 1999,
     "end_year": 2002,
     "snapshots": [
@@ -20862,12 +20798,12 @@
     "name_en": "Saudi Arabia",
     "name_ko": "사우디아라비아",
     "tier": 2,
-    "start_year": 2000,
+    "start_year": 1932,
     "end_year": null,
     "snapshots": [
       {
         "rid": 2825871,
-        "start": 2000,
+        "start": 1932,
         "end": null,
         "file": "ohm_2825871.geojson"
       }
@@ -20877,7 +20813,7 @@
     "qid": "CSHAPES_Yemen",
     "name_en": "Yemen",
     "name_ko": "예멘",
-    "tier": 3,
+    "tier": 2,
     "start_year": 2000,
     "end_year": null,
     "snapshots": [
@@ -20893,7 +20829,7 @@
     "qid": "Q4689103",
     "name_en": "Transitional Islamic State of Afghanistan",
     "name_ko": "아프가니스탄 과도 이슬람국",
-    "tier": 4,
+    "tier": 3,
     "start_year": 2002,
     "end_year": 2004,
     "snapshots": [
@@ -20909,7 +20845,7 @@
     "qid": "CSHAPES_East_Timor",
     "name_en": "East Timor",
     "name_ko": "동티모르",
-    "tier": 3,
+    "tier": 2,
     "start_year": 2002,
     "end_year": null,
     "snapshots": [
@@ -20941,7 +20877,7 @@
     "qid": "CSHAPES_French_Polynesia",
     "name_en": "French Polynesia",
     "name_ko": "프랑스령 폴리네시아",
-    "tier": 4,
+    "tier": 3,
     "start_year": 2003,
     "end_year": 2025,
     "snapshots": [
@@ -20995,7 +20931,7 @@
     "qid": "CSHAPES_Montenegro",
     "name_en": "Montenegro",
     "name_ko": "몬테네그로",
-    "tier": 3,
+    "tier": 2,
     "start_year": 2006,
     "end_year": null,
     "snapshots": [
@@ -21011,7 +20947,7 @@
     "qid": "CSHAPES_Serbia",
     "name_en": "Serbia",
     "name_ko": "세르비아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 2006,
     "end_year": 2025,
     "snapshots": [
@@ -21033,7 +20969,7 @@
     "qid": "CSHAPES_Kosovo",
     "name_en": "Kosovo",
     "name_ko": "코소보",
-    "tier": 3,
+    "tier": 2,
     "start_year": 2008,
     "end_year": null,
     "snapshots": [
@@ -21049,7 +20985,7 @@
     "qid": "Q958",
     "name_en": "",
     "name_ko": "",
-    "tier": null,
+    "tier": 2,
     "start_year": 2011,
     "end_year": null,
     "snapshots": [
@@ -21087,7 +21023,7 @@
     "qid": "CSHAPES_Afghanistan",
     "name_en": "Afghanistan",
     "name_ko": "아프가니스탄",
-    "tier": 3,
+    "tier": 2,
     "start_year": 2021,
     "end_year": null,
     "snapshots": [
@@ -21119,7 +21055,7 @@
     "qid": "CSHAPES_Syria",
     "name_en": "Syria",
     "name_ko": "시리아",
-    "tier": 3,
+    "tier": 2,
     "start_year": 2023,
     "end_year": null,
     "snapshots": [
