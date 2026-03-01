@@ -1825,6 +1825,34 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           });
         }
       }
+
+      // [cl] ★ 라벨 추가 — 폴리곤 centroid 위치에 국가명 표시
+      const firstFeature = geojson.features[0];
+      if (firstFeature) {
+        const center = calcCentroid(firstFeature.geometry);
+        if (center) {
+          const koName = entity.name_ko || entity.name_en;
+          const enName = entity.name_en;
+          let labelText = koName;
+          if (koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName)) {
+            labelText += `\n${enName}`;
+          }
+          ds.entities.add({
+            position: Cartesian3.fromDegrees(center[0], center[1]),
+            label: {
+              text: labelText,
+              font: "bold 13px sans-serif",
+              fillColor: Color.WHITE,
+              outlineColor: Color.BLACK,
+              outlineWidth: 2,
+              style: 2, // FILL_AND_OUTLINE
+              pixelOffset: new Cartesian2(0, 0),
+              scaleByDistance: new NearFarScalar(3e6, 1.0, 1.5e7, 0.4),
+              translucencyByDistance: new NearFarScalar(3e6, 1.0, 2e7, 0),
+            },
+          });
+        }
+      }
     }
 
     if (!viewer.isDestroyed()) {
