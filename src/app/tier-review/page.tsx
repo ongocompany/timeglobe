@@ -2,8 +2,7 @@
 
 import { useEffect, useState, useMemo, useCallback } from "react";
 
-// [cl] Tier 리뷰 페이지 — 전체 보기 + 시기별 보기 탭
-// 시기별 보기: 4개 AI(GPT/Claude/Gemini/Qwen) 교차검증 기반 T1 스냅샷
+// [cl] Tier 리뷰 페이지 — 시기별 전체 티어 + 리스트 뷰
 
 interface Entity {
   qid?: string;
@@ -18,6 +17,20 @@ interface Entity {
   region?: string;
   score?: number;
   tier_reason?: string;
+}
+
+interface CircleEntity {
+  name_en: string;
+  name_ko: string;
+  start_year: number;
+  end_year: number;
+  tier: number;
+  region: string;
+  qid: string;
+  color: string;
+  t1_start?: number;
+  t1_end?: number;
+  t1_sources?: number;
 }
 
 interface SnapshotEntity {
@@ -37,6 +50,7 @@ interface Snapshot {
 }
 
 type ViewTab = "list" | "timeline";
+type TierFilter = "all" | "1" | "2" | "3";
 
 const REGION_KO: Record<string, string> = {
   east_asia: "동아시아",
@@ -84,6 +98,20 @@ const SOURCE_COLORS: Record<number, { bg: string; border: string; text: string }
 
 const ALL_REGIONS = Object.keys(REGION_KO);
 
+// [cl] 타임라인 스냅샷 시점
+const SNAPSHOT_YEARS = [
+  -3000, -2500, -2000, -1500, -1200, -1000,
+  -800, -600, -500, -400, -300, -200, -100,
+  1, 100, 200, 300, 400, 500, 600, 700, 800, 900,
+  1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800,
+];
+
+function yearLabel(y: number): string {
+  if (y < 0) return `BC ${Math.abs(y)}`;
+  if (y === 1) return "AD 1";
+  return `AD ${y}`;
+}
+
 interface ReviewComment {
   idx: number;
   name_en: string;
@@ -94,62 +122,106 @@ interface ReviewComment {
 }
 
 // ═══════════════════════════════════════════════════
-// [cl] 시기별 보기 (Timeline Snapshot View)
+// [cl] 시기별 보기 (Timeline View) — 전체 티어 통합
 // ═══════════════════════════════════════════════════
 function TimelineView() {
+  const [circles, setCircles] = useState<CircleEntity[]>([]);
   const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [filterRegion, setFilterRegion] = useState("all");
-  const [minSources, setMinSources] = useState(1);
+  const [tierFilter, setTierFilter] = useState<TierFilter>("all");
+  const [t3Expanded, setT3Expanded] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("/geo/borders/tier_snapshots.json")
-      .then((r) => r.json())
-      .then((data: Snapshot[]) => {
-        setSnapshots(data);
-        // 기본: AD 800 (가장 다양한 시기 중 하나)
-        const defaultIdx = data.findIndex((s) => s.year === 800);
+    Promise.all([
+      fetch("/geo/borders/wikidata_circles.json").then((r) => r.json()),
+      fetch("/geo/borders/tier_snapshots.json").then((r) => r.json()),
+    ])
+      .then(([circlesData, snapshotsData]) => {
+        setCircles(circlesData);
+        setSnapshots(snapshotsData);
+        const defaultIdx = SNAPSHOT_YEARS.indexOf(800);
         if (defaultIdx >= 0) setSelectedIdx(defaultIdx);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
 
-  const current = snapshots[selectedIdx];
+  const currentYear = SNAPSHOT_YEARS[selectedIdx] ?? 800;
 
-  const filtered = useMemo(() => {
-    if (!current) return [];
-    return current.entities
-      .filter((e) => filterRegion === "all" || e.region === filterRegion)
-      .filter((e) => e.sources >= minSources);
-  }, [current, filterRegion, minSources]);
+  // [cl] 현재 연도에 활성인 엔티티들
+  const activeEntities = useMemo(() => {
+    return circles.filter(
+      (c) => c.start_year <= currentYear && c.end_year >= currentYear
+    );
+  }, [circles, currentYear]);
 
-  // [cl] 현재 스냅샷의 권역별 통계
+  // [cl] T1 스냅샷 데이터 (sources 정보 포함)
+  const t1Snapshot = useMemo(() => {
+    const snap = snapshots.find((s) => s.year === currentYear);
+    return snap?.entities || [];
+  }, [snapshots, currentYear]);
+
+  // [cl] 티어별 + 필터별 분류
+  const grouped = useMemo(() => {
+    let pool = activeEntities;
+
+    // 권역 필터
+    if (filterRegion !== "all") {
+      pool = pool.filter((e) => e.region === filterRegion);
+    }
+
+    // 검색 필터
+    if (search.trim()) {
+      const q = search.trim().toLowerCase();
+      pool = pool.filter(
+        (e) =>
+          e.name_ko?.toLowerCase().includes(q) ||
+          e.name_en.toLowerCase().includes(q)
+      );
+    }
+
+    const t1 = pool.filter((e) => e.tier === 1);
+    const t2 = pool.filter((e) => e.tier === 2);
+    const t3 = pool.filter((e) => e.tier === 3);
+
+    return { t1, t2, t3, total: pool.length };
+  }, [activeEntities, filterRegion, search]);
+
+  // [cl] 권역별 통계 (전체)
   const regionStats = useMemo(() => {
-    if (!current) return {};
     const map: Record<string, number> = {};
-    current.entities.forEach((e) => {
+    activeEntities.forEach((e) => {
       map[e.region] = (map[e.region] || 0) + 1;
     });
     return map;
-  }, [current]);
+  }, [activeEntities]);
+
+  // [cl] T3를 권역별로 그룹핑
+  const t3ByRegion = useMemo(() => {
+    const map: Record<string, CircleEntity[]> = {};
+    grouped.t3.forEach((e) => {
+      const r = e.region || "unknown";
+      if (!map[r]) map[r] = [];
+      map[r].push(e);
+    });
+    // 권역별 정렬 (개수 내림차순)
+    return Object.entries(map).sort((a, b) => b[1].length - a[1].length);
+  }, [grouped.t3]);
 
   if (loading) {
     return (
       <div style={{ padding: 40, color: "#888", textAlign: "center" }}>
-        스냅샷 로딩 중...
+        데이터 로딩 중...
       </div>
     );
   }
 
-  if (snapshots.length === 0) {
-    return (
-      <div style={{ padding: 40, color: "#888", textAlign: "center" }}>
-        tier_snapshots.json을 찾을 수 없습니다.
-      </div>
-    );
-  }
+  const showT1 = tierFilter === "all" || tierFilter === "1";
+  const showT2 = tierFilter === "all" || tierFilter === "2";
+  const showT3 = tierFilter === "all" || tierFilter === "3";
 
   return (
     <div>
@@ -171,9 +243,7 @@ function TimelineView() {
             marginBottom: 8,
           }}
         >
-          <span style={{ fontSize: 13, color: "#888" }}>
-            시기 선택
-          </span>
+          <span style={{ fontSize: 13, color: "#888" }}>시기 선택</span>
           <span
             style={{
               fontSize: 22,
@@ -182,17 +252,17 @@ function TimelineView() {
               fontFamily: "monospace",
             }}
           >
-            {current?.label}
+            {yearLabel(currentYear)}
           </span>
           <span style={{ fontSize: 13, color: "#888" }}>
-            {current?.count}개 엔티티
+            {activeEntities.length}개 활성
           </span>
         </div>
 
         <input
           type="range"
           min={0}
-          max={snapshots.length - 1}
+          max={SNAPSHOT_YEARS.length - 1}
           value={selectedIdx}
           onChange={(e) => setSelectedIdx(parseInt(e.target.value))}
           style={{
@@ -203,7 +273,6 @@ function TimelineView() {
           }}
         />
 
-        {/* [cl] 타임라인 눈금 라벨 */}
         <div
           style={{
             display: "flex",
@@ -213,13 +282,13 @@ function TimelineView() {
             color: "#555",
           }}
         >
-          {snapshots.filter((_, i) => i % 4 === 0).map((s) => (
-            <span key={s.year}>{s.label}</span>
+          {SNAPSHOT_YEARS.filter((_, i) => i % 4 === 0).map((y) => (
+            <span key={y}>{yearLabel(y)}</span>
           ))}
         </div>
       </div>
 
-      {/* ── 필터 바 ── */}
+      {/* ── 티어 필터 + 검색 바 ── */}
       <div
         style={{
           display: "flex",
@@ -229,6 +298,49 @@ function TimelineView() {
           alignItems: "center",
         }}
       >
+        {/* 티어 필터 버튼 */}
+        {(["all", "1", "2", "3"] as TierFilter[]).map((tf) => {
+          const count =
+            tf === "all"
+              ? grouped.total
+              : tf === "1"
+                ? grouped.t1.length
+                : tf === "2"
+                  ? grouped.t2.length
+                  : grouped.t3.length;
+          const label =
+            tf === "all"
+              ? "전체"
+              : `T${tf}`;
+          const color =
+            tf === "all"
+              ? "#06b6d4"
+              : TIER_COLORS[parseInt(tf)];
+          const isActive = tierFilter === tf;
+
+          return (
+            <button
+              key={tf}
+              onClick={() => setTierFilter(tf)}
+              style={{
+                padding: "6px 14px",
+                borderRadius: 6,
+                border: `2px solid ${color}`,
+                background: isActive ? color : "transparent",
+                color: isActive ? "#fff" : color,
+                cursor: "pointer",
+                fontWeight: 700,
+                fontSize: 13,
+              }}
+            >
+              {label} ({count})
+            </button>
+          );
+        })}
+
+        <div style={{ width: 1, height: 24, background: "#333", margin: "0 4px" }} />
+
+        {/* 권역 필터 */}
         <select
           value={filterRegion}
           onChange={(e) => setFilterRegion(e.target.value)}
@@ -241,7 +353,7 @@ function TimelineView() {
             fontSize: 13,
           }}
         >
-          <option value="all">모든 권역 ({current?.count})</option>
+          <option value="all">모든 권역</option>
           {Object.entries(regionStats)
             .sort((a, b) => b[1] - a[1])
             .map(([r, count]) => (
@@ -251,183 +363,398 @@ function TimelineView() {
             ))}
         </select>
 
-        <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-          <span style={{ fontSize: 12, color: "#888" }}>최소 합의:</span>
-          {[1, 2, 3, 4].map((n) => (
-            <button
-              key={n}
-              onClick={() => setMinSources(n)}
-              style={{
-                width: 30,
-                height: 26,
-                border: "none",
-                borderRadius: 4,
-                cursor: "pointer",
-                fontWeight: 700,
-                fontSize: 12,
-                background:
-                  minSources === n
-                    ? SOURCE_COLORS[n].border
-                    : "#2a2a2a",
-                color: minSources === n ? "#fff" : "#666",
-              }}
-            >
-              {n}
-            </button>
-          ))}
-          <span style={{ fontSize: 11, color: "#666" }}>/ 4 AI</span>
-        </div>
+        {/* 검색 */}
+        <input
+          type="text"
+          placeholder="검색..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          style={{
+            padding: "6px 12px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+            fontSize: 13,
+            width: 160,
+          }}
+        />
 
         <span style={{ fontSize: 13, color: "#888", marginLeft: "auto" }}>
-          {filtered.length}개 표시
+          T1:{grouped.t1.length} T2:{grouped.t2.length} T3:{grouped.t3.length}
         </span>
       </div>
 
       {/* ── 권역 분포 미니 바 ── */}
-      {current && (
-        <div
-          style={{
-            display: "flex",
-            height: 8,
-            borderRadius: 4,
-            overflow: "hidden",
-            marginBottom: 16,
-            background: "#222",
-          }}
-        >
-          {Object.entries(regionStats)
-            .sort((a, b) => b[1] - a[1])
-            .map(([region, count]) => (
-              <div
-                key={region}
-                title={`${REGION_KO[region]}: ${count}`}
-                style={{
-                  width: `${(count / current.count) * 100}%`,
-                  background: REGION_COLORS[region] || "#666",
-                  minWidth: 3,
-                }}
-              />
-            ))}
+      <div
+        style={{
+          display: "flex",
+          height: 8,
+          borderRadius: 4,
+          overflow: "hidden",
+          marginBottom: 20,
+          background: "#222",
+        }}
+      >
+        {Object.entries(regionStats)
+          .sort((a, b) => b[1] - a[1])
+          .map(([region, count]) => (
+            <div
+              key={region}
+              title={`${REGION_KO[region]}: ${count}`}
+              style={{
+                width: `${(count / activeEntities.length) * 100}%`,
+                background: REGION_COLORS[region] || "#666",
+                minWidth: 3,
+              }}
+            />
+          ))}
+      </div>
+
+      {/* ═══ T1 섹션 ═══ */}
+      {showT1 && grouped.t1.length > 0 && (
+        <div style={{ marginBottom: 24 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              marginBottom: 10,
+            }}
+          >
+            <span
+              style={{
+                background: TIER_COLORS[1],
+                color: "#fff",
+                padding: "2px 10px",
+                borderRadius: 4,
+                fontWeight: 800,
+                fontSize: 13,
+              }}
+            >
+              T1
+            </span>
+            <span style={{ color: "#ef4444", fontWeight: 600, fontSize: 14 }}>
+              주요 국가 · {grouped.t1.length}개
+            </span>
+            <div
+              style={{
+                flex: 1,
+                height: 1,
+                background: "#ef444440",
+                marginLeft: 8,
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gap: 8,
+            }}
+          >
+            {grouped.t1.map((entity) => {
+              // T1 스냅샷에서 sources 정보 가져오기
+              const snapInfo = t1Snapshot.find(
+                (s) => s.name_en === entity.name_en
+              );
+              const sources = snapInfo?.sources ?? entity.t1_sources ?? 1;
+              const sc = SOURCE_COLORS[sources] || SOURCE_COLORS[1];
+              const regionColor = REGION_COLORS[entity.region] || "#666";
+
+              return (
+                <div
+                  key={entity.qid || entity.name_en}
+                  style={{
+                    background: sc.bg,
+                    border: `1px solid ${sc.border}40`,
+                    borderRadius: 8,
+                    padding: "10px 14px",
+                    borderLeft: `4px solid ${regionColor}`,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      marginBottom: 4,
+                    }}
+                  >
+                    <div>
+                      <div
+                        style={{
+                          fontSize: 14,
+                          fontWeight: 700,
+                          color: "#fff",
+                        }}
+                      >
+                        {entity.name_ko}
+                      </div>
+                      <div style={{ fontSize: 11, color: "#888" }}>
+                        {entity.name_en}
+                      </div>
+                    </div>
+                    <div style={{ display: "flex", gap: 3, alignItems: "center" }}>
+                      {[1, 2, 3, 4].map((n) => (
+                        <div
+                          key={n}
+                          style={{
+                            width: 8,
+                            height: 8,
+                            borderRadius: "50%",
+                            background: n <= sources ? sc.border : "#333",
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginTop: 6,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: 10,
+                        padding: "1px 8px",
+                        borderRadius: 10,
+                        background: `${regionColor}20`,
+                        color: regionColor,
+                        border: `1px solid ${regionColor}40`,
+                      }}
+                    >
+                      {REGION_KO[entity.region] || entity.region}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: 10,
+                        color: "#666",
+                        fontFamily: "monospace",
+                      }}
+                    >
+                      {entity.start_year <= 0
+                        ? `BC${Math.abs(entity.start_year)}`
+                        : entity.start_year}
+                      ~
+                      {entity.end_year <= 0
+                        ? `BC${Math.abs(entity.end_year)}`
+                        : entity.end_year}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
 
-      {/* ── 엔티티 카드 그리드 ── */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-          gap: 10,
-        }}
-      >
-        {filtered.map((entity) => {
-          const sc = SOURCE_COLORS[entity.sources] || SOURCE_COLORS[1];
-          const regionColor = REGION_COLORS[entity.region] || "#666";
-
-          return (
-            <div
-              key={entity.name_en}
+      {/* ═══ T2 섹션 ═══ */}
+      {showT2 && grouped.t2.length > 0 && (
+        <div style={{ marginBottom: 24 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              marginBottom: 10,
+            }}
+          >
+            <span
               style={{
-                background: sc.bg,
-                border: `1px solid ${sc.border}40`,
-                borderRadius: 8,
-                padding: "10px 14px",
-                borderLeft: `4px solid ${regionColor}`,
+                background: TIER_COLORS[2],
+                color: "#fff",
+                padding: "2px 10px",
+                borderRadius: 4,
+                fontWeight: 800,
+                fontSize: 13,
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                  marginBottom: 4,
-                }}
-              >
-                <div>
-                  <div
-                    style={{
-                      fontSize: 14,
-                      fontWeight: 700,
-                      color: "#fff",
-                    }}
-                  >
+              T2
+            </span>
+            <span style={{ color: "#f59e0b", fontWeight: 600, fontSize: 14 }}>
+              지역 주요 · {grouped.t2.length}개
+            </span>
+            <div
+              style={{
+                flex: 1,
+                height: 1,
+                background: "#f59e0b40",
+                marginLeft: 8,
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+              gap: 6,
+            }}
+          >
+            {grouped.t2.map((entity) => {
+              const regionColor = REGION_COLORS[entity.region] || "#666";
+              return (
+                <div
+                  key={entity.qid || entity.name_en}
+                  style={{
+                    background: "#1a1a1a",
+                    border: `1px solid #f59e0b30`,
+                    borderRadius: 6,
+                    padding: "6px 10px",
+                    borderLeft: `3px solid ${regionColor}`,
+                  }}
+                >
+                  <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>
                     {entity.name_ko}
                   </div>
-                  <div style={{ fontSize: 11, color: "#888" }}>
-                    {entity.name_en}
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginTop: 3,
+                    }}
+                  >
+                    <span style={{ fontSize: 10, color: regionColor }}>
+                      {REGION_KO[entity.region] || entity.region}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: 9,
+                        color: "#555",
+                        fontFamily: "monospace",
+                      }}
+                    >
+                      {entity.start_year}~{entity.end_year}
+                    </span>
                   </div>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 3,
-                    alignItems: "center",
-                  }}
-                >
-                  {/* [cl] 소스 합의도 도트 */}
-                  {[1, 2, 3, 4].map((n) => (
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* ═══ T3 섹션 ═══ */}
+      {showT3 && grouped.t3.length > 0 && (
+        <div style={{ marginBottom: 24 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              marginBottom: 10,
+              cursor: "pointer",
+            }}
+            onClick={() => setT3Expanded(!t3Expanded)}
+          >
+            <span
+              style={{
+                background: TIER_COLORS[3],
+                color: "#fff",
+                padding: "2px 10px",
+                borderRadius: 4,
+                fontWeight: 800,
+                fontSize: 13,
+              }}
+            >
+              T3
+            </span>
+            <span style={{ color: "#3b82f6", fontWeight: 600, fontSize: 14 }}>
+              기타 · {grouped.t3.length}개
+            </span>
+            <span style={{ fontSize: 12, color: "#555" }}>
+              {t3Expanded ? "▼ 접기" : "▶ 펼치기"}
+            </span>
+            <div
+              style={{
+                flex: 1,
+                height: 1,
+                background: "#3b82f640",
+                marginLeft: 8,
+              }}
+            />
+          </div>
+
+          {t3Expanded && (
+            <div
+              style={{
+                background: "#141418",
+                borderRadius: 8,
+                padding: "12px 16px",
+                border: "1px solid #222",
+              }}
+            >
+              {t3ByRegion.map(([region, entities]) => (
+                <div key={region} style={{ marginBottom: 12 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                      marginBottom: 6,
+                    }}
+                  >
                     <div
-                      key={n}
                       style={{
-                        width: 8,
-                        height: 8,
-                        borderRadius: "50%",
-                        background:
-                          n <= entity.sources ? sc.border : "#333",
+                        width: 10,
+                        height: 10,
+                        borderRadius: 2,
+                        background: REGION_COLORS[region] || "#666",
                       }}
                     />
-                  ))}
+                    <span
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: REGION_COLORS[region] || "#666",
+                      }}
+                    >
+                      {REGION_KO[region] || region} ({entities.length})
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: 4,
+                      paddingLeft: 16,
+                    }}
+                  >
+                    {entities.map((e) => (
+                      <span
+                        key={e.qid || e.name_en}
+                        title={`${e.name_en} (${e.start_year}~${e.end_year})`}
+                        style={{
+                          fontSize: 11,
+                          padding: "2px 8px",
+                          borderRadius: 4,
+                          background: "#1e1e24",
+                          color: "#aaa",
+                          border: "1px solid #2a2a30",
+                          cursor: "default",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {e.name_ko || e.name_en}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginTop: 6,
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 10,
-                    padding: "1px 8px",
-                    borderRadius: 10,
-                    background: `${regionColor}20`,
-                    color: regionColor,
-                    border: `1px solid ${regionColor}40`,
-                  }}
-                >
-                  {REGION_KO[entity.region] || entity.region}
-                </span>
-                <span
-                  style={{
-                    fontSize: 10,
-                    color: "#666",
-                    fontFamily: "monospace",
-                  }}
-                >
-                  {entity.t1_start <= 0
-                    ? `BC${Math.abs(entity.t1_start)}`
-                    : entity.t1_start}
-                  ~
-                  {entity.t1_end <= 0
-                    ? `BC${Math.abs(entity.t1_end)}`
-                    : entity.t1_end}
-                </span>
-              </div>
+              ))}
             </div>
-          );
-        })}
-      </div>
+          )}
+        </div>
+      )}
 
-      {filtered.length === 0 && (
-        <div
-          style={{
-            padding: 40,
-            textAlign: "center",
-            color: "#555",
-          }}
-        >
+      {grouped.total === 0 && (
+        <div style={{ padding: 40, textAlign: "center", color: "#555" }}>
           해당 조건에 맞는 엔티티가 없습니다.
         </div>
       )}
@@ -442,34 +769,42 @@ function TimelineView() {
           border: "1px solid #2a2a2a",
         }}
       >
-        <div
-          style={{
-            fontSize: 11,
-            color: "#666",
-            marginBottom: 8,
-          }}
-        >
-          합의도 (4개 AI: GPT · Claude · Gemini · Qwen)
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 8 }}>
+          <div style={{ fontSize: 11, color: "#666" }}>티어:</div>
+          {[1, 2, 3].map((t) => (
+            <div key={t} style={{ display: "flex", gap: 4, alignItems: "center", fontSize: 12 }}>
+              <div
+                style={{
+                  width: 12,
+                  height: 12,
+                  borderRadius: 3,
+                  background: TIER_COLORS[t],
+                }}
+              />
+              <span style={{ color: "#aaa" }}>
+                T{t}{" "}
+                {t === 1
+                  ? "(최대 줌아웃)"
+                  : t === 2
+                    ? "(지역 줌)"
+                    : "(근접 줌)"}
+              </span>
+            </div>
+          ))}
         </div>
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+
+        <div style={{ fontSize: 11, color: "#666", marginBottom: 6 }}>
+          T1 합의도 (4개 AI: GPT · Claude · Gemini · Qwen)
+        </div>
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 10 }}>
           {[4, 3, 2, 1].map((n) => {
             const sc = SOURCE_COLORS[n];
             return (
               <div
                 key={n}
-                style={{
-                  display: "flex",
-                  gap: 6,
-                  alignItems: "center",
-                  fontSize: 12,
-                }}
+                style={{ display: "flex", gap: 6, alignItems: "center", fontSize: 12 }}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 2,
-                  }}
-                >
+                <div style={{ display: "flex", gap: 2 }}>
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
@@ -477,8 +812,7 @@ function TimelineView() {
                         width: 7,
                         height: 7,
                         borderRadius: "50%",
-                        background:
-                          i <= n ? sc.border : "#333",
+                        background: i <= n ? sc.border : "#333",
                       }}
                     />
                   ))}
@@ -486,26 +820,19 @@ function TimelineView() {
                 <span style={{ color: sc.text }}>
                   {n}/4{" "}
                   {n === 4
-                    ? "(전원 합의)"
+                    ? "(전원)"
                     : n === 3
-                      ? "(강력 추천)"
+                      ? "(강력)"
                       : n === 2
                         ? "(권장)"
-                        : "(1개 추천)"}
+                        : "(단일)"}
                 </span>
               </div>
             );
           })}
         </div>
 
-        <div
-          style={{
-            fontSize: 11,
-            color: "#666",
-            marginTop: 10,
-            marginBottom: 6,
-          }}
-        >
+        <div style={{ fontSize: 11, color: "#666", marginBottom: 6 }}>
           권역 색상
         </div>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -514,12 +841,7 @@ function TimelineView() {
             .map(([key, label]) => (
               <div
                 key={key}
-                style={{
-                  display: "flex",
-                  gap: 4,
-                  alignItems: "center",
-                  fontSize: 11,
-                }}
+                style={{ display: "flex", gap: 4, alignItems: "center", fontSize: 11 }}
               >
                 <div
                   style={{
@@ -567,7 +889,6 @@ function ListView({
   const [commentSaving, setCommentSaving] = useState(false);
   const [commentSaveMsg, setCommentSaveMsg] = useState("");
 
-  // 코멘트 서버 로드
   useEffect(() => {
     fetch("/api/tiers/comments")
       .then((r) => r.json())
@@ -1021,7 +1342,7 @@ export default function TierReviewPage() {
             cursor: "pointer", fontWeight: 700, fontSize: 14,
           }}
         >
-          📅 시기별 보기
+          시기별 보기
         </button>
         <button
           onClick={() => setActiveTab("list")}
@@ -1033,7 +1354,7 @@ export default function TierReviewPage() {
             cursor: "pointer", fontWeight: 700, fontSize: 14,
           }}
         >
-          📋 전체 리스트
+          전체 리스트
         </button>
       </div>
 
