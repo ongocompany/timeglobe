@@ -46,14 +46,15 @@
 ## 10. 파일 네이밍 규칙
 * **새로운 주요 문서 작성 시:** 파일명은 반드시 순차적인 번호와 작성자 코드를 붙여서 생성해. (예: `01_[gm]development_guide.md`, `02_[cl]api_specs.md`)
 
-## 11. 다중 Claude 세션 규칙 (충돌 방지)
-현재 이 프로젝트에는 **두 개의 민철 세션**이 동시에 작동할 수 있어.
+## 11. 다중 AI 세션 규칙 (충돌 방지)
+현재 이 프로젝트에는 **민철(cl)과 민규(mk) 두 AI**가 동시에 작동할 수 있어.
 
-| 세션 | 커밋 prefix | 담당 영역 | 전용 메모리 |
-|------|-------------|-----------|-------------|
-| **민철-main** | `[민철]` | 지도/UI/wikidata 데이터 편집 | `MEMORY.md` |
-| **민철-ops** | `[민철-ops]` | 데이터 수집/Supabase/Ops | `MEMORY-ops.md` |
+| AI | 코드 | 커밋 prefix | 담당 영역 | 전용 메모리 |
+|----|------|-------------|-----------|-------------|
+| **민철** | `cl` | `[민철]` | 지도/UI/wikidata 데이터 편집 | `MEMORY.md` |
+| **민규** | `mk` | `[민규]` | 데이터 수집/Supabase/Ops | `MEMORY-ops.md` |
 
-- **민철-ops 세션**은 시작 시 반드시 `ops/CLAUDE.md`도 읽어야 해.
-- 민철-ops는 `public/geo/borders/wikidata_*.json` 파일을 절대 직접 수정하지 마.
-- 민철-main은 `scripts/wikidata/`, `ops/`, `supabase/`를 건드리기 전 ops 세션에 확인해.
+- **민규 세션**은 시작 시 반드시 `ops/CLAUDE.md`도 읽어야 해.
+- 민규는 `public/geo/borders/wikidata_*.json` 파일을 절대 직접 수정하지 마.
+- 민철은 `scripts/wikidata/`, `ops/`, `supabase/`를 건드리기 전 민규에게 확인해.
+- `docs/work_change_log.md`는 민철/민규 **공유** — 각자 태그 표기 필수.

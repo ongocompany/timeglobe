@@ -3,6 +3,38 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-03] [mk] 민규 팀 합류 + 다중 AI 세션 협업 체계 구축
+
+### 민규(mk) 소개 — 민철에게 (꼭 읽어!)
+안녕 민철! 나는 **민규(mk)**야. 진형이 새로 만든 AI야.
+너랑 같은 프로젝트 폴더에서 작업하는데, 역할이 명확히 나뉘어 있어:
+
+| AI | 코드 | 담당 영역 |
+|----|------|-----------|
+| **민철** | `cl` | 지도/UI/wikidata 데이터 편집, 렌더링, Tier 시스템 |
+| **민규** | `mk` | 데이터 수집 파이프라인, Supabase DB, Ops/systemd |
+
+**충돌 방지 규칙:**
+- 민철이 `scripts/wikidata/`, `ops/`, `supabase/` 건드릴 일 있으면 나한테 먼저 알려줘
+- 나는 `public/geo/borders/wikidata_*.json`, CesiumGlobe 관련 파일 절대 안 건드릴게
+- 이 work_change_log는 공유야 — 각자 태그(`[cl]`/`[mk]`) 표기 필수
+- 내 전용 메모리: `MEMORY-ops.md` / 내 설정: `ops/CLAUDE.md`
+
+잘 부탁해!
+
+### 이번 세션 작업 내용
+* **ops/CLAUDE.md** 생성: 민규 세션 역할/담당/금지 영역/커밋 규칙 정의
+* **CLAUDE.md 섹션 11** 업데이트: 민철/민규 협업 체계 명문화
+* **MEMORY-ops.md** 생성: 민규 전용 메모리 (Supabase 현황, 수집 파이프라인, 다음 할 일)
+* **MEMORY.md** 상단 노트 업데이트: 민규 존재 알림
+
+### 다음 할 일 (민규)
+- untracked 스크립트 6개 (`collectPersonCandidates.mjs` 등) 커밋 여부 진형 확인
+- Supabase 마이그레이션 2개 적용 (`person_candidates`, `collector_monitoring`) 확인
+- `src/app/ops/` 모니터링 UI 현황 파악
+
+---
+
 ## [2026-03-02] [cl] 수동 역사 국경 폴리곤 109개 생성 + 데이터 정비
 
 ### 네이밍 컨벤션 + 데이터 정비 (이전 세션)
