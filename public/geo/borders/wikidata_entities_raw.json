@@ -6953,11 +6953,11 @@
     "lat": "42.36",
     "type": "historical",
     "lineage_id": null,
-    "tier": 4,
+    "tier": 3,
     "sitelinks": 19,
     "region": "europe",
     "score": 60.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "score_top55"
   },
   {
     "qid": "Q18608788",
@@ -25401,11 +25401,11 @@
     "lat": "48.816666666",
     "type": "historical",
     "lineage_id": "L0176",
-    "tier": 3,
+    "tier": 2,
     "sitelinks": 64,
     "region": "europe",
     "score": 74.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "score_top25"
   },
   {
     "qid": "Q2037576",
@@ -27276,7 +27276,7 @@
     "tier": 3,
     "sitelinks": 57,
     "region": "europe",
-    "score": 70.5,
+    "score": 70.6,
     "tier_reason": "score_top55"
   },
   {
@@ -27308,7 +27308,7 @@
     "tier": 4,
     "sitelinks": 35,
     "region": "europe",
-    "score": 53.9,
+    "score": 54.0,
     "tier_reason": "score_rest"
   },
   {
@@ -27340,7 +27340,7 @@
     "tier": 3,
     "sitelinks": 59,
     "region": "europe",
-    "score": 70.8,
+    "score": 70.9,
     "tier_reason": "score_top55"
   },
   {
@@ -27484,7 +27484,7 @@
     "tier": 4,
     "sitelinks": 35,
     "region": "europe",
-    "score": 53.6,
+    "score": 53.7,
     "tier_reason": "score_rest"
   },
   {
@@ -27692,7 +27692,7 @@
     "tier": 3,
     "sitelinks": 44,
     "region": "europe",
-    "score": 61.6,
+    "score": 61.8,
     "tier_reason": "score_top55"
   },
   {
@@ -27708,7 +27708,7 @@
     "tier": 3,
     "sitelinks": 63,
     "region": "europe",
-    "score": 73.3,
+    "score": 73.5,
     "tier_reason": "score_top55"
   },
   {
@@ -27740,7 +27740,7 @@
     "tier": 4,
     "sitelinks": 19,
     "region": "europe",
-    "score": 39.4,
+    "score": 39.5,
     "tier_reason": "score_rest"
   },
   {
@@ -27788,7 +27788,7 @@
     "tier": 4,
     "sitelinks": 32,
     "region": "europe",
-    "score": 51.4,
+    "score": 51.5,
     "tier_reason": "score_rest"
   },
   {
@@ -27804,7 +27804,7 @@
     "tier": 3,
     "sitelinks": 46,
     "region": "europe",
-    "score": 63.1,
+    "score": 63.2,
     "tier_reason": "score_top55"
   },
   {
@@ -27900,7 +27900,7 @@
     "tier": 4,
     "sitelinks": 24,
     "region": "europe",
-    "score": 45.1,
+    "score": 45.2,
     "tier_reason": "score_rest"
   },
   {
@@ -27932,7 +27932,7 @@
     "tier": 2,
     "sitelinks": 66,
     "region": "europe",
-    "score": 75.6,
+    "score": 75.8,
     "tier_reason": "score_top25"
   },
   {
@@ -27964,7 +27964,7 @@
     "tier": 3,
     "sitelinks": 48,
     "region": "europe",
-    "score": 64.5,
+    "score": 64.6,
     "tier_reason": "score_top55"
   },
   {
@@ -28028,7 +28028,7 @@
     "tier": 3,
     "sitelinks": 57,
     "region": "europe",
-    "score": 69.6,
+    "score": 69.8,
     "tier_reason": "score_top55"
   },
   {
@@ -28124,7 +28124,7 @@
     "tier": 4,
     "sitelinks": 21,
     "region": "europe",
-    "score": 41.0,
+    "score": 41.1,
     "tier_reason": "score_rest"
   },
   {
@@ -28204,7 +28204,7 @@
     "tier": 4,
     "sitelinks": 18,
     "region": "europe",
-    "score": 38.5,
+    "score": 38.6,
     "tier_reason": "score_rest"
   },
   {
@@ -28284,7 +28284,7 @@
     "tier": 4,
     "sitelinks": 23,
     "region": "europe",
-    "score": 44.2,
+    "score": 44.3,
     "tier_reason": "score_rest"
   },
   {
@@ -28332,7 +28332,7 @@
     "tier": 4,
     "sitelinks": 27,
     "region": "europe",
-    "score": 47.4,
+    "score": 47.5,
     "tier_reason": "score_rest"
   },
   {
@@ -28348,7 +28348,7 @@
     "tier": 4,
     "sitelinks": 33,
     "region": "europe",
-    "score": 52.0,
+    "score": 52.1,
     "tier_reason": "score_rest"
   },
   {
@@ -28412,7 +28412,7 @@
     "tier": 4,
     "sitelinks": 29,
     "region": "europe",
-    "score": 48.9,
+    "score": 49.0,
     "tier_reason": "score_rest"
   },
   {
@@ -28428,7 +28428,7 @@
     "tier": 4,
     "sitelinks": 40,
     "region": "europe",
-    "score": 59.2,
+    "score": 59.3,
     "tier_reason": "score_rest"
   },
   {
@@ -28444,7 +28444,7 @@
     "tier": 2,
     "sitelinks": 112,
     "region": "europe",
-    "score": 85.0,
+    "score": 84.9,
     "tier_reason": "score_top25"
   },
   {
@@ -28460,7 +28460,7 @@
     "tier": 4,
     "sitelinks": 38,
     "region": "europe",
-    "score": 56.0,
+    "score": 56.1,
     "tier_reason": "score_rest"
   },
   {
@@ -28524,7 +28524,7 @@
     "tier": 3,
     "sitelinks": 46,
     "region": "europe",
-    "score": 63.1,
+    "score": 63.2,
     "tier_reason": "score_top55"
   },
   {
@@ -28812,7 +28812,7 @@
     "tier": 3,
     "sitelinks": 57,
     "region": "europe",
-    "score": 69.6,
+    "score": 69.8,
     "tier_reason": "score_top55"
   },
   {
@@ -28828,7 +28828,7 @@
     "tier": 4,
     "sitelinks": 37,
     "region": "europe",
-    "score": 55.0,
+    "score": 55.1,
     "tier_reason": "score_rest"
   },
   {
@@ -28844,7 +28844,7 @@
     "tier": 4,
     "sitelinks": 41,
     "region": "europe",
-    "score": 59.5,
+    "score": 59.6,
     "tier_reason": "score_rest"
   },
   {
@@ -28860,7 +28860,7 @@
     "tier": 3,
     "sitelinks": 47,
     "region": "europe",
-    "score": 64.1,
+    "score": 64.2,
     "tier_reason": "score_top55"
   },
   {
@@ -28988,7 +28988,7 @@
     "tier": 3,
     "sitelinks": 48,
     "region": "europe",
-    "score": 64.3,
+    "score": 64.5,
     "tier_reason": "score_top55"
   },
   {
@@ -29100,7 +29100,7 @@
     "tier": 3,
     "sitelinks": 61,
     "region": "europe",
-    "score": 72.0,
+    "score": 72.2,
     "tier_reason": "score_top55"
   },
   {
@@ -29228,7 +29228,7 @@
     "tier": 4,
     "sitelinks": 32,
     "region": "europe",
-    "score": 51.4,
+    "score": 51.5,
     "tier_reason": "score_rest"
   },
   {
@@ -29424,22 +29424,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q191077",
-    "name_en": "Kingdom of Yugoslavia",
-    "name_ko": "유고슬라비아 왕국",
-    "start": "1929",
-    "end": "1945",
-    "lon": "20.463055555",
-    "lat": "44.809722222",
-    "type": "historical",
-    "lineage_id": "L0182",
-    "tier": 2,
-    "sitelinks": 76,
-    "region": "europe",
-    "score": 78.1,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q146885",
     "name_en": "Second Syrian Republic",
     "name_ko": "시리아 공화국",
@@ -29500,7 +29484,7 @@
     "tier": 2,
     "sitelinks": 73,
     "region": "europe",
-    "score": 77.0,
+    "score": 77.2,
     "tier_reason": "score_top25"
   },
   {
@@ -29580,7 +29564,7 @@
     "tier": 4,
     "sitelinks": 31,
     "region": "europe",
-    "score": 50.4,
+    "score": 50.5,
     "tier_reason": "score_rest"
   },
   {
@@ -29820,7 +29804,7 @@
     "tier": 3,
     "sitelinks": 52,
     "region": "europe",
-    "score": 66.5,
+    "score": 66.6,
     "tier_reason": "score_top55"
   },
   {
@@ -29836,7 +29820,7 @@
     "tier": 3,
     "sitelinks": 55,
     "region": "europe",
-    "score": 68.0,
+    "score": 68.2,
     "tier_reason": "score_top55"
   },
   {
@@ -29852,7 +29836,7 @@
     "tier": 3,
     "sitelinks": 54,
     "region": "europe",
-    "score": 68.2,
+    "score": 68.3,
     "tier_reason": "score_top55"
   },
   {
@@ -29868,7 +29852,7 @@
     "tier": 4,
     "sitelinks": 36,
     "region": "europe",
-    "score": 54.5,
+    "score": 54.6,
     "tier_reason": "score_rest"
   },
   {
@@ -29900,7 +29884,7 @@
     "tier": 4,
     "sitelinks": 40,
     "region": "europe",
-    "score": 58.4,
+    "score": 58.5,
     "tier_reason": "score_rest"
   },
   {
@@ -29964,7 +29948,7 @@
     "tier": 3,
     "sitelinks": 58,
     "region": "europe",
-    "score": 70.2,
+    "score": 70.4,
     "tier_reason": "score_top55"
   },
   {
@@ -29996,7 +29980,7 @@
     "tier": 4,
     "sitelinks": 29,
     "region": "europe",
-    "score": 48.7,
+    "score": 48.8,
     "tier_reason": "score_rest"
   },
   {
@@ -30028,7 +30012,7 @@
     "tier": 4,
     "sitelinks": 23,
     "region": "europe",
-    "score": 43.7,
+    "score": 43.8,
     "tier_reason": "score_rest"
   },
   {
@@ -30044,7 +30028,7 @@
     "tier": 2,
     "sitelinks": 66,
     "region": "europe",
-    "score": 75.0,
+    "score": 75.1,
     "tier_reason": "score_top25"
   },
   {
@@ -30124,7 +30108,7 @@
     "tier": 2,
     "sitelinks": 67,
     "region": "europe",
-    "score": 76.5,
+    "score": 76.7,
     "tier_reason": "score_top25"
   },
   {
@@ -30140,7 +30124,7 @@
     "tier": 4,
     "sitelinks": 42,
     "region": "europe",
-    "score": 59.9,
+    "score": 60.1,
     "tier_reason": "score_rest"
   },
   {
@@ -30268,7 +30252,7 @@
     "tier": 3,
     "sitelinks": 60,
     "region": "europe",
-    "score": 71.5,
+    "score": 71.7,
     "tier_reason": "score_top55"
   },
   {
@@ -30284,7 +30268,7 @@
     "tier": 3,
     "sitelinks": 56,
     "region": "europe",
-    "score": 69.7,
+    "score": 69.9,
     "tier_reason": "score_top55"
   },
   {
@@ -30300,7 +30284,7 @@
     "tier": 3,
     "sitelinks": 56,
     "region": "europe",
-    "score": 69.5,
+    "score": 69.7,
     "tier_reason": "score_top55"
   },
   {
@@ -30348,7 +30332,7 @@
     "tier": 4,
     "sitelinks": 34,
     "region": "europe",
-    "score": 52.9,
+    "score": 53.0,
     "tier_reason": "score_rest"
   },
   {
@@ -30444,7 +30428,7 @@
     "tier": 3,
     "sitelinks": 48,
     "region": "europe",
-    "score": 64.1,
+    "score": 64.3,
     "tier_reason": "score_top55"
   },
   {
@@ -30668,7 +30652,7 @@
     "tier": 3,
     "sitelinks": 53,
     "region": "europe",
-    "score": 67.6,
+    "score": 67.7,
     "tier_reason": "score_top55"
   },
   {
@@ -30684,7 +30668,7 @@
     "tier": 1,
     "sitelinks": 156,
     "region": "europe",
-    "score": 90.6,
+    "score": 90.5,
     "tier_reason": "score_top8"
   },
   {
@@ -30940,7 +30924,7 @@
     "tier": 4,
     "sitelinks": 20,
     "region": "europe",
-    "score": 40.2,
+    "score": 40.3,
     "tier_reason": "score_rest"
   },
   {
@@ -31532,7 +31516,7 @@
     "tier": 3,
     "sitelinks": 60,
     "region": "europe",
-    "score": 71.5,
+    "score": 71.7,
     "tier_reason": "score_top55"
   },
   {
@@ -31628,7 +31612,7 @@
     "tier": 4,
     "sitelinks": 38,
     "region": "europe",
-    "score": 55.5,
+    "score": 55.6,
     "tier_reason": "score_rest"
   },
   {
@@ -32284,7 +32268,7 @@
     "tier": 3,
     "sitelinks": 46,
     "region": "europe",
-    "score": 62.8,
+    "score": 62.9,
     "tier_reason": "score_top55"
   },
   {
@@ -32300,7 +32284,7 @@
     "tier": 3,
     "sitelinks": 43,
     "region": "europe",
-    "score": 60.5,
+    "score": 60.6,
     "tier_reason": "score_top55"
   },
   {

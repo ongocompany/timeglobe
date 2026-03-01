@@ -3681,7 +3681,7 @@
     "lineage_id": null,
     "color": "hsl(255, 70%, 55%)",
     "qid": "Q1514510",
-    "tier": 4
+    "tier": 3
   },
   {
     "name_en": "Idrisid dynasty",
@@ -12801,7 +12801,7 @@
     "lineage_id": "L0176",
     "color": "hsl(273, 70%, 55%)",
     "qid": "Q58326",
-    "tier": 3
+    "tier": 2
   },
   {
     "name_en": "Republic of San Marco",
@@ -15094,18 +15094,6 @@
     "color": "hsl(331, 70%, 55%)",
     "qid": "Q1048340",
     "tier": 4
-  },
-  {
-    "name_en": "Kingdom of Yugoslavia",
-    "name_ko": "유고슬라비아 왕국",
-    "lon": 20.463055555,
-    "lat": 44.809722222,
-    "start_year": 1929,
-    "end_year": 1945,
-    "lineage_id": "L0182",
-    "color": "hsl(356, 70%, 55%)",
-    "qid": "Q191077",
-    "tier": 2
   },
   {
     "name_en": "Second Syrian Republic",

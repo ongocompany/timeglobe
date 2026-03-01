@@ -3231,5 +3231,22 @@
     "score": 1.9,
     "tier_reason": "score_rest",
     "moved_reason": "sweden_internal_period"
+  },
+  {
+    "qid": "Q191077",
+    "name_en": "Kingdom of Yugoslavia",
+    "name_ko": "유고슬라비아 왕국",
+    "start": "1929",
+    "end": "1945",
+    "lon": "20.463055555",
+    "lat": "44.809722222",
+    "type": "historical",
+    "lineage_id": "L0182",
+    "tier": 2,
+    "sitelinks": 76,
+    "region": "europe",
+    "score": 78.1,
+    "tier_reason": "score_top25",
+    "moved_reason": "yugo_name_change"
   }
 ]
