@@ -1676,7 +1676,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     // [cl] 해당 연도에 활성화된 엔티티 필터링
     const activeEntities = circles.filter(
-      (e: CircleEntity) => e.start_year <= targetYear && e.end_year >= targetYear
+      (e: WikidataCircleEntry) => e.start_year <= targetYear && e.end_year >= targetYear
     );
 
     // [cl] 좌표 중복 제거: 30km 이내 같은 위치에 여러 라벨 → 최고 tier만 표시
