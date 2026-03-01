@@ -75,13 +75,17 @@ const TIER_COLORS: Record<number, string> = {
 
 const ALL_REGIONS = Object.keys(REGION_KO);
 
-// [cl] 타임라인 스냅샷 시점
-const SNAPSHOT_YEARS = [
-  -3000, -2500, -2000, -1500, -1200, -1000,
-  -800, -600, -500, -400, -300, -200, -100,
-  1, 100, 200, 300, 400, 500, 600, 700, 800, 900,
-  1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800,
-];
+// [cl] 타임라인 스냅샷 시점 (676개)
+// BC3000~BC1000: 100년 단위, BC999~AD500: 50년 단위
+// AD500~AD1500: 10년 단위, AD1500~2025: 1년 단위
+const SNAPSHOT_YEARS: number[] = (() => {
+  const years: number[] = [];
+  for (let y = -3000; y <= -1000; y += 100) years.push(y);
+  for (let y = -950; y <= 500; y += 50) years.push(y);
+  for (let y = 510; y <= 1500; y += 10) years.push(y);
+  for (let y = 1501; y <= 2025; y += 1) years.push(y);
+  return years;
+})();
 
 function yearLabel(y: number): string {
   if (y < 0) return `BC ${Math.abs(y)}`;
@@ -249,9 +253,10 @@ function TimelineView() {
             color: "#555",
           }}
         >
-          {SNAPSHOT_YEARS.filter((_, i) => i % 4 === 0).map((y) => (
-            <span key={y}>{yearLabel(y)}</span>
-          ))}
+          {[-3000, -2000, -1000, -500, 0, 500, 1000, 1500, 1800, 2025]
+            .map((y) => (
+              <span key={y}>{yearLabel(y === 0 ? 1 : y)}</span>
+            ))}
         </div>
       </div>
 
