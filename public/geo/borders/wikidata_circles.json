@@ -1161,7 +1161,7 @@
     "lineage_id": "L0020",
     "color": "hsl(35, 70%, 55%)",
     "qid": "Q1466831",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Chalkidian League",
@@ -1198,18 +1198,6 @@
     "color": "hsl(11, 70%, 55%)",
     "qid": "Q267256",
     "tier": 3
-  },
-  {
-    "name_en": "Kingdom of Mauretania",
-    "name_ko": "모리타니 왕국",
-    "lon": -5,
-    "lat": 34,
-    "start_year": -400,
-    "end_year": 40,
-    "lineage_id": null,
-    "color": "hsl(268, 70%, 55%)",
-    "qid": "Q31723",
-    "tier": 4
   },
   {
     "name_en": "Nabataean kingdom",
@@ -3324,18 +3312,6 @@
     "tier": 4
   },
   {
-    "name_en": "Kanem Empire",
-    "name_ko": "카넴 제국",
-    "lon": 14.533,
-    "lat": 13.099,
-    "start_year": 700,
-    "end_year": 1100,
-    "lineage_id": "L0075",
-    "color": "hsl(143, 70%, 55%)",
-    "qid": "Q1537016",
-    "tier": 2
-  },
-  {
     "name_en": "Duchy of Alsace",
     "name_ko": "알자스 공국",
     "lon": 7.5,
@@ -3849,7 +3825,7 @@
     "lineage_id": null,
     "color": "hsl(36, 70%, 55%)",
     "qid": "Q20108771",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Samanid Empire",
@@ -5013,7 +4989,7 @@
     "lineage_id": null,
     "color": "hsl(297, 70%, 55%)",
     "qid": "Q3827580",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "County of Savoy",
@@ -5428,7 +5404,7 @@
     "name_ko": "카넴-보르누 제국",
     "lon": 14.533,
     "lat": 13.099,
-    "start_year": 1100,
+    "start_year": 700,
     "end_year": 1900,
     "lineage_id": "L0075",
     "color": "hsl(143, 70%, 55%)",
@@ -7809,7 +7785,7 @@
     "lineage_id": "L0052",
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q97940882",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Republic of Ragusa",
@@ -9621,7 +9597,7 @@
     "lineage_id": "L0129",
     "color": "hsl(257, 70%, 55%)",
     "qid": "Q4124689",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Real Audiencia de Quito",
@@ -11685,7 +11661,7 @@
     "lineage_id": null,
     "color": "hsl(332, 70%, 55%)",
     "qid": "Q4311709",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Gran Colombia",
@@ -12960,18 +12936,6 @@
     "tier": 4
   },
   {
-    "name_en": "Anglo-Egyptian Sudan",
-    "name_ko": "앵글로-이집트 수단",
-    "lon": 32.533055555,
-    "lat": 15.633055555,
-    "start_year": 1899,
-    "end_year": 1956,
-    "lineage_id": "L0191",
-    "color": "hsl(8, 70%, 55%)",
-    "qid": "Q541455",
-    "tier": 3
-  },
-  {
     "name_en": "Republic of Acre",
     "name_ko": "아크레 공화국",
     "lon": -67.8,
@@ -13402,18 +13366,6 @@
     "color": "hsl(179, 70%, 55%)",
     "qid": "Q4398229",
     "tier": 2
-  },
-  {
-    "name_en": "Tripolitanian Republic",
-    "name_ko": "트리폴리타니아 공화국",
-    "lon": 13.0175,
-    "lat": 32.5319,
-    "start_year": 1918,
-    "end_year": 1922,
-    "lineage_id": "L0104",
-    "color": "hsl(297, 70%, 55%)",
-    "qid": "Q965346",
-    "tier": 4
   },
   {
     "name_en": "Makhnovshchina",
@@ -14328,18 +14280,6 @@
     "tier": 4
   },
   {
-    "name_en": "Emirate of Cyrenaica",
-    "name_ko": "키레나이카 토후국",
-    "lon": 21.97,
-    "lat": 32.9,
-    "start_year": 1949,
-    "end_year": 1951,
-    "lineage_id": null,
-    "color": "hsl(154, 70%, 55%)",
-    "qid": "Q370372",
-    "tier": 4
-  },
-  {
     "name_en": "Hungarian People's Republic",
     "name_ko": "헝가리 인민공화국",
     "lon": 19,
@@ -14410,18 +14350,6 @@
     "color": "hsl(98, 70%, 55%)",
     "qid": "Q1414395",
     "tier": 4
-  },
-  {
-    "name_en": "Kingdom of Libya",
-    "name_ko": "리비아 왕국",
-    "lon": 13.185833,
-    "lat": 32.902222,
-    "start_year": 1951,
-    "end_year": 1969,
-    "lineage_id": "L0104",
-    "color": "hsl(297, 70%, 55%)",
-    "qid": "Q31454",
-    "tier": 3
   },
   {
     "name_en": "Federation of Ethiopia and Eritrea",
@@ -14505,30 +14433,6 @@
     "lineage_id": null,
     "color": "hsl(164, 70%, 55%)",
     "qid": "Q2342822",
-    "tier": 4
-  },
-  {
-    "name_en": "Republic of the Sudan(1956-1969)",
-    "name_ko": "수단 공화국 (1956-1969)",
-    "lon": 32.533333333,
-    "lat": 15.633333333,
-    "start_year": 1956,
-    "end_year": 1969,
-    "lineage_id": "L0191",
-    "color": "hsl(8, 70%, 55%)",
-    "qid": "Q3486796",
-    "tier": 4
-  },
-  {
-    "name_en": "Kingdom of Tunisia",
-    "name_ko": "튀니지 왕국",
-    "lon": 10.15,
-    "lat": 36.833333333,
-    "start_year": 1956,
-    "end_year": 1957,
-    "lineage_id": "L0029",
-    "color": "hsl(307, 70%, 55%)",
-    "qid": "Q6412669",
     "tier": 4
   },
   {
@@ -14784,30 +14688,6 @@
     "tier": 3
   },
   {
-    "name_en": "Libyan Arab Republic",
-    "name_ko": "리비아 아랍 공화국",
-    "lon": 17,
-    "lat": 27,
-    "start_year": 1969,
-    "end_year": 1977,
-    "lineage_id": null,
-    "color": "hsl(281, 70%, 55%)",
-    "qid": "Q2347668",
-    "tier": 4
-  },
-  {
-    "name_en": "Democratic Republic of Sudan",
-    "name_ko": "데모크라티크 공화국 수단",
-    "lon": 32.533333333,
-    "lat": 15.633333333,
-    "start_year": 1969,
-    "end_year": 1985,
-    "lineage_id": "L0191",
-    "color": "hsl(8, 70%, 55%)",
-    "qid": "Q5866728",
-    "tier": 4
-  },
-  {
     "name_en": "Khmer Republic",
     "name_ko": "크메르 공화국",
     "lon": 104.933611111,
@@ -14961,7 +14841,7 @@
     "lineage_id": "L0104",
     "color": "hsl(297, 70%, 55%)",
     "qid": "Q4843701",
-    "tier": 3
+    "tier": 5
   },
   {
     "name_en": "Democratic Republic of Afghanistan",
