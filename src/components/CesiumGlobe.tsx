@@ -1673,12 +1673,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const circles = wikidataCirclesRef.current;
     const RADIUS = 50000; // 50km
 
-    // [cl] CShapes 비활성화 — 전 구간 OHM + 원형으로 통일
+    // [cl] 전 구간 OHM + 원형으로 통일
     for (const entity of circles) {
       if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
-      // [cl] OHM 폴리곤이 있는 엔티티는 원형 스킵 (실제 국경선으로 대체)
-      if (ohmQidsRef.current.has(entity.qid)) continue;
 
+      const hasOhmPolygon = ohmQidsRef.current.has(entity.qid);
       const position = Cartesian3.fromDegrees(entity.lon, entity.lat);
 
       // ── 라벨 텍스트: 한글명 우선, 없으면 영문 ──
@@ -1690,31 +1689,51 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
 
       const style = getLabelStyle(entity.tier);
-      const fillColor = Color.fromCssColorString(entity.color).withAlpha(0.35);
-      const outlineColor = Color.fromCssColorString(entity.color).withAlpha(0.7);
-      ds.entities.add({
-        position,
-        ellipse: {
-          semiMajorAxis: RADIUS,
-          semiMinorAxis: RADIUS,
-          material: fillColor,
-          outline: true,
-          outlineColor,
-          outlineWidth: 1,
-          classificationType: ClassificationType.BOTH,
-        },
-        label: {
-          text: labelText,
-          font: style.font,
-          fillColor: Color.WHITE,
-          outlineColor: Color.BLACK,
-          outlineWidth: 4,
-          style: 2, // FILL_AND_OUTLINE
-          pixelOffset: new Cartesian2(0, -20),
-          scaleByDistance: style.scale,
-          translucencyByDistance: style.translucency,
-        },
-      });
+
+      if (hasOhmPolygon) {
+        // [cl] OHM 폴리곤이 있으면 원형 없이 라벨만 표시
+        ds.entities.add({
+          position,
+          label: {
+            text: labelText,
+            font: style.font,
+            fillColor: Color.WHITE,
+            outlineColor: Color.BLACK,
+            outlineWidth: 4,
+            style: 2, // FILL_AND_OUTLINE
+            pixelOffset: new Cartesian2(0, 0),
+            scaleByDistance: style.scale,
+            translucencyByDistance: style.translucency,
+          },
+        });
+      } else {
+        // [cl] OHM 없으면 원형 + 라벨
+        const fillColor = Color.fromCssColorString(entity.color).withAlpha(0.35);
+        const outlineColor = Color.fromCssColorString(entity.color).withAlpha(0.7);
+        ds.entities.add({
+          position,
+          ellipse: {
+            semiMajorAxis: RADIUS,
+            semiMinorAxis: RADIUS,
+            material: fillColor,
+            outline: true,
+            outlineColor,
+            outlineWidth: 1,
+            classificationType: ClassificationType.BOTH,
+          },
+          label: {
+            text: labelText,
+            font: style.font,
+            fillColor: Color.WHITE,
+            outlineColor: Color.BLACK,
+            outlineWidth: 4,
+            style: 2, // FILL_AND_OUTLINE
+            pixelOffset: new Cartesian2(0, -20),
+            scaleByDistance: style.scale,
+            translucencyByDistance: style.translucency,
+          },
+        });
+      }
     }
 
     viewer.dataSources.add(ds);
