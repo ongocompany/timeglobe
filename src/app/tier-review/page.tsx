@@ -73,37 +73,45 @@ export default function TierReviewPage() {
   const [editingComment, setEditingComment] = useState<number | null>(null);
   const [commentDraft, setCommentDraft] = useState("");
 
-  // 로드
+  // [cl] 코멘트 저장 상태
+  const [commentSaving, setCommentSaving] = useState(false);
+  const [commentSaveMsg, setCommentSaveMsg] = useState("");
+
+  // 로드: 엔티티 + 서버 코멘트 동시 fetch
   useEffect(() => {
-    fetch("/api/tiers")
-      .then((r) => r.json())
-      .then((data) => {
-        setEntities(data);
+    Promise.all([
+      fetch("/api/tiers").then((r) => r.json()),
+      fetch("/api/tiers/comments").then((r) => r.json()),
+    ])
+      .then(([entityData, commentData]) => {
+        setEntities(entityData);
+        setFlagged(new Set(commentData.flagged || []));
+        setComments(commentData.comments || {});
         setLoading(false);
-        // localStorage에서 기존 플래그/코멘트 복원
-        try {
-          const saved = localStorage.getItem("tier-review-flags");
-          if (saved) {
-            const parsed = JSON.parse(saved);
-            setFlagged(new Set(parsed.flagged || []));
-            setComments(parsed.comments || {});
-          }
-        } catch { /* ignore */ }
       })
       .catch(() => setLoading(false));
   }, []);
 
-  // 플래그/코멘트 자동 저장 (localStorage)
-  useEffect(() => {
-    if (entities.length === 0) return;
-    localStorage.setItem(
-      "tier-review-flags",
-      JSON.stringify({
-        flagged: Array.from(flagged),
-        comments,
-      })
-    );
-  }, [flagged, comments, entities.length]);
+  // [cl] 코멘트 서버 저장
+  const saveCommentsToServer = useCallback(async () => {
+    setCommentSaving(true);
+    try {
+      const res = await fetch("/api/tiers/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          flagged: Array.from(flagged),
+          comments,
+        }),
+      });
+      const result = await res.json();
+      setCommentSaveMsg(`코멘트 ${result.saved}개 저장 완료!`);
+    } catch {
+      setCommentSaveMsg("코멘트 저장 실패!");
+    }
+    setCommentSaving(false);
+    setTimeout(() => setCommentSaveMsg(""), 3000);
+  }, [flagged, comments]);
 
   // 필터링 + 정렬
   const filtered = useMemo(() => {
@@ -386,20 +394,23 @@ export default function TierReviewPage() {
 
         <span style={{ color: "#888" }}>{filtered.length}개 표시</span>
 
-        {/* 코멘트 내보내기 */}
-        {commentCount > 0 && (
-          <button
-            onClick={exportComments}
-            style={{
-              padding: "6px 16px", background: "#ec4899", color: "#fff",
-              border: "none", borderRadius: 6, cursor: "pointer", fontWeight: 600,
-            }}
-          >
-            코멘트 내보내기 ({commentCount})
-          </button>
-        )}
+        {/* 코멘트 서버 저장 */}
+        <button
+          onClick={saveCommentsToServer}
+          disabled={commentSaving || (flagCount === 0 && commentCount === 0)}
+          style={{
+            padding: "6px 16px",
+            background: (flagCount > 0 || commentCount > 0) ? "#a855f7" : "#333",
+            color: "#fff", border: "none", borderRadius: 6,
+            cursor: (flagCount > 0 || commentCount > 0) ? "pointer" : "default",
+            fontWeight: 600,
+          }}
+        >
+          {commentSaving ? "저장 중..." : `코멘트 저장 (${commentCount}개)`}
+        </button>
+        {commentSaveMsg && <span style={{ color: "#a855f7", fontWeight: 600 }}>{commentSaveMsg}</span>}
 
-        {/* 저장 버튼 */}
+        {/* Tier/Region 변경 저장 */}
         <button
           onClick={save}
           disabled={dirty.size === 0 || saving}
@@ -411,7 +422,7 @@ export default function TierReviewPage() {
             fontWeight: 700, fontSize: 15,
           }}
         >
-          {saving ? "저장 중..." : `저장 (${dirty.size}개 변경)`}
+          {saving ? "저장 중..." : `Tier 저장 (${dirty.size}개 변경)`}
         </button>
         {saveMsg && <span style={{ color: "#22c55e", fontWeight: 600 }}>{saveMsg}</span>}
       </div>
