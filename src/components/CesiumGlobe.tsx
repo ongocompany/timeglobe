@@ -1674,9 +1674,45 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const circles = wikidataCirclesRef.current;
     const RADIUS = 50000; // 50km
 
-    // [cl] 전 구간 라벨 렌더링 (원형 제거, 라벨만)
-    for (const entity of circles) {
-      if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
+    // [cl] 해당 연도에 활성화된 엔티티 필터링
+    const activeEntities = circles.filter(
+      (e: CircleEntity) => e.start_year <= targetYear && e.end_year >= targetYear
+    );
+
+    // [cl] 좌표 중복 제거: 30km 이내 같은 위치에 여러 라벨 → 최고 tier만 표시
+    // Haversine 대신 간이 거리 (적도 기준 1도≈111km, 30km≈0.27도)
+    const DEG_THRESHOLD = 0.27;
+    const shown = new Set<number>(); // 이미 표시된 엔티티 인덱스
+    const suppressed = new Set<number>(); // 억제된 인덱스
+
+    for (let i = 0; i < activeEntities.length; i++) {
+      if (suppressed.has(i)) continue;
+      const a = activeEntities[i];
+      const aTier = a.tier ?? 5;
+
+      for (let j = i + 1; j < activeEntities.length; j++) {
+        if (suppressed.has(j)) continue;
+        const b = activeEntities[j];
+        const bTier = b.tier ?? 5;
+
+        const dLat = Math.abs(a.lat - b.lat);
+        const dLon = Math.abs(a.lon - b.lon);
+        if (dLat > DEG_THRESHOLD || dLon > DEG_THRESHOLD) continue;
+
+        // 더 낮은 tier(숫자 큰 쪽) 억제
+        if (aTier <= bTier) {
+          suppressed.add(j);
+        } else {
+          suppressed.add(i);
+          break; // i가 억제됐으므로 i 루프 탈출
+        }
+      }
+    }
+
+    // [cl] 라벨 렌더링 (억제되지 않은 엔티티만)
+    for (let i = 0; i < activeEntities.length; i++) {
+      if (suppressed.has(i)) continue;
+      const entity = activeEntities[i];
 
       const position = Cartesian3.fromDegrees(entity.lon, entity.lat);
 
