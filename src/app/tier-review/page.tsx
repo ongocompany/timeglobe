@@ -30,23 +30,6 @@ interface CircleEntity {
   color: string;
   t1_start?: number;
   t1_end?: number;
-  t1_sources?: number;
-}
-
-interface SnapshotEntity {
-  name_en: string;
-  name_ko: string;
-  sources: number;
-  region: string;
-  t1_start: number;
-  t1_end: number;
-}
-
-interface Snapshot {
-  year: number;
-  label: string;
-  count: number;
-  entities: SnapshotEntity[];
 }
 
 type ViewTab = "list" | "timeline";
@@ -89,12 +72,6 @@ const TIER_COLORS: Record<number, string> = {
   4: "#6b7280",
 };
 
-const SOURCE_COLORS: Record<number, { bg: string; border: string; text: string }> = {
-  4: { bg: "#dc262620", border: "#ef4444", text: "#fca5a5" },
-  3: { bg: "#f59e0b15", border: "#f59e0b", text: "#fcd34d" },
-  2: { bg: "#3b82f615", border: "#3b82f6", text: "#93c5fd" },
-  1: { bg: "#6b728015", border: "#6b7280", text: "#9ca3af" },
-};
 
 const ALL_REGIONS = Object.keys(REGION_KO);
 
@@ -126,7 +103,6 @@ interface ReviewComment {
 // ═══════════════════════════════════════════════════
 function TimelineView() {
   const [circles, setCircles] = useState<CircleEntity[]>([]);
-  const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [filterRegion, setFilterRegion] = useState("all");
@@ -135,13 +111,10 @@ function TimelineView() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    Promise.all([
-      fetch("/geo/borders/wikidata_circles.json").then((r) => r.json()),
-      fetch("/geo/borders/tier_snapshots.json").then((r) => r.json()),
-    ])
-      .then(([circlesData, snapshotsData]) => {
-        setCircles(circlesData);
-        setSnapshots(snapshotsData);
+    fetch("/geo/borders/wikidata_circles.json")
+      .then((r) => r.json())
+      .then((data) => {
+        setCircles(data);
         const defaultIdx = SNAPSHOT_YEARS.indexOf(800);
         if (defaultIdx >= 0) setSelectedIdx(defaultIdx);
         setLoading(false);
@@ -157,12 +130,6 @@ function TimelineView() {
       (c) => c.start_year <= currentYear && c.end_year >= currentYear
     );
   }, [circles, currentYear]);
-
-  // [cl] T1 스냅샷 데이터 (sources 정보 포함)
-  const t1Snapshot = useMemo(() => {
-    const snap = snapshots.find((s) => s.year === currentYear);
-    return snap?.entities || [];
-  }, [snapshots, currentYear]);
 
   // [cl] 티어별 + 필터별 분류
   const grouped = useMemo(() => {
@@ -455,59 +422,31 @@ function TimelineView() {
             }}
           >
             {grouped.t1.map((entity) => {
-              // T1 스냅샷에서 sources 정보 가져오기
-              const snapInfo = t1Snapshot.find(
-                (s) => s.name_en === entity.name_en
-              );
-              const sources = snapInfo?.sources ?? entity.t1_sources ?? 1;
-              const sc = SOURCE_COLORS[sources] || SOURCE_COLORS[1];
               const regionColor = REGION_COLORS[entity.region] || "#666";
 
               return (
                 <div
                   key={entity.qid || entity.name_en}
                   style={{
-                    background: sc.bg,
-                    border: `1px solid ${sc.border}40`,
+                    background: "#1a1a1a",
+                    border: `1px solid #ef444430`,
                     borderRadius: 8,
                     padding: "10px 14px",
                     borderLeft: `4px solid ${regionColor}`,
                   }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "flex-start",
-                      marginBottom: 4,
-                    }}
-                  >
-                    <div>
-                      <div
-                        style={{
-                          fontSize: 14,
-                          fontWeight: 700,
-                          color: "#fff",
-                        }}
-                      >
-                        {entity.name_ko}
-                      </div>
-                      <div style={{ fontSize: 11, color: "#888" }}>
-                        {entity.name_en}
-                      </div>
+                  <div style={{ marginBottom: 4 }}>
+                    <div
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "#fff",
+                      }}
+                    >
+                      {entity.name_ko}
                     </div>
-                    <div style={{ display: "flex", gap: 3, alignItems: "center" }}>
-                      {[1, 2, 3, 4].map((n) => (
-                        <div
-                          key={n}
-                          style={{
-                            width: 8,
-                            height: 8,
-                            borderRadius: "50%",
-                            background: n <= sources ? sc.border : "#333",
-                          }}
-                        />
-                      ))}
+                    <div style={{ fontSize: 11, color: "#888" }}>
+                      {entity.name_en}
                     </div>
                   </div>
 
@@ -791,45 +730,6 @@ function TimelineView() {
               </span>
             </div>
           ))}
-        </div>
-
-        <div style={{ fontSize: 11, color: "#666", marginBottom: 6 }}>
-          T1 합의도 (4개 AI: GPT · Claude · Gemini · Qwen)
-        </div>
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 10 }}>
-          {[4, 3, 2, 1].map((n) => {
-            const sc = SOURCE_COLORS[n];
-            return (
-              <div
-                key={n}
-                style={{ display: "flex", gap: 6, alignItems: "center", fontSize: 12 }}
-              >
-                <div style={{ display: "flex", gap: 2 }}>
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      style={{
-                        width: 7,
-                        height: 7,
-                        borderRadius: "50%",
-                        background: i <= n ? sc.border : "#333",
-                      }}
-                    />
-                  ))}
-                </div>
-                <span style={{ color: sc.text }}>
-                  {n}/4{" "}
-                  {n === 4
-                    ? "(전원)"
-                    : n === 3
-                      ? "(강력)"
-                      : n === 2
-                        ? "(권장)"
-                        : "(단일)"}
-                </span>
-              </div>
-            );
-          })}
         </div>
 
         <div style={{ fontSize: 11, color: "#666", marginBottom: 6 }}>
