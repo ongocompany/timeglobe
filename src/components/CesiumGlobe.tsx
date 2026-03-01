@@ -1418,6 +1418,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     lineage_id: string | null;
     color: string;           // HSL 기반 공간 해싱 색상
     qid: string;
+    tier: number | null;     // [cl] Tier 등급 (1~4, null=미분류)
   }
   const wikidataCirclesRef = useRef<WikidataCircleEntry[] | null>(null);
   const circleDsRef = useRef<InstanceType<typeof CustomDataSource> | null>(null);
@@ -1437,6 +1438,46 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const currentOhmYearRef = useRef<number | null>(null);
   // [cl] OHM 매칭된 QID set (원형 렌더링에서 제외용)
   const ohmQidsRef = useRef<Set<string>>(new Set());
+
+  // [cl] ★ Tier별 라벨 스타일 — 고도(카메라 거리) 기반 노출 전략
+  // T1: 대제국 (로마, 당, 오스만) — 항상 크게 보임
+  // T2: 주요국 (고려, 비잔틴) — 중간 거리부터
+  // T3: 일반국 — 가까이서
+  // T4: 소국/부족 — 매우 가까이서
+  interface TierLabelStyle {
+    font: string;
+    scale: NearFarScalar;       // 거리별 크기 배율
+    translucency: NearFarScalar; // 거리별 투명도
+  }
+  const TIER_LABEL_STYLES: Record<number, TierLabelStyle> = {
+    1: {
+      font: "bold 22px sans-serif",
+      scale: new NearFarScalar(2e6, 1.2, 2e7, 0.55),        // 항상 잘 보임
+      translucency: new NearFarScalar(5e6, 1.0, 3e7, 0.3),   // 멀어도 30% 유지
+    },
+    2: {
+      font: "bold 17px sans-serif",
+      scale: new NearFarScalar(2e6, 1.1, 1.5e7, 0.45),
+      translucency: new NearFarScalar(3e6, 1.0, 2e7, 0),     // 20,000km에서 사라짐
+    },
+    3: {
+      font: "14px sans-serif",
+      scale: new NearFarScalar(1e6, 1.0, 8e6, 0.35),
+      translucency: new NearFarScalar(1.5e6, 1.0, 8e6, 0),   // 8,000km에서 사라짐
+    },
+    4: {
+      font: "12px sans-serif",
+      scale: new NearFarScalar(5e5, 1.0, 3e6, 0.3),
+      translucency: new NearFarScalar(8e5, 1.0, 3e6, 0),     // 3,000km에서 사라짐
+    },
+  };
+  // [cl] 기본 스타일 (tier 미지정 시 T3 취급)
+  const DEFAULT_LABEL_STYLE = TIER_LABEL_STYLES[3];
+
+  function getLabelStyle(tier: number | null | undefined): TierLabelStyle {
+    if (tier && TIER_LABEL_STYLES[tier]) return TIER_LABEL_STYLES[tier];
+    return DEFAULT_LABEL_STYLE;
+  }
 
   // [cl] 메타데이터 타입 정의
   interface BorderMetadata {
@@ -1650,7 +1691,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         labelText += `\n${enName}`;
       }
 
-      // [cl] 원형 + 라벨을 하나의 엔티티로 추가
+      // [cl] 원형 + 라벨을 하나의 엔티티로 추가 (Tier별 스타일)
+      const style = getLabelStyle(entity.tier);
       ds.entities.add({
         position,
         ellipse: {
@@ -1664,14 +1706,14 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         },
         label: {
           text: labelText,
-          font: "bold 13px sans-serif",
+          font: style.font,
           fillColor: Color.WHITE,
           outlineColor: Color.BLACK,
           outlineWidth: 2,
           style: 2, // FILL_AND_OUTLINE
           pixelOffset: new Cartesian2(0, -20),
-          scaleByDistance: new NearFarScalar(3e6, 1.0, 1.5e7, 0.4),
-          translucencyByDistance: new NearFarScalar(3e6, 1.0, 2e7, 0),
+          scaleByDistance: style.scale,
+          translucencyByDistance: style.translucency,
         },
       });
     }
@@ -1826,7 +1868,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         }
       }
 
-      // [cl] ★ 라벨 추가 — 폴리곤 centroid 위치에 국가명 표시
+      // [cl] ★ 라벨 추가 — 폴리곤 centroid 위치에 국가명 표시 (Tier별 스타일)
       const firstFeature = geojson.features[0];
       if (firstFeature) {
         const center = calcCentroid(firstFeature.geometry);
@@ -1837,18 +1879,19 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           if (koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName)) {
             labelText += `\n${enName}`;
           }
+          const style = getLabelStyle(entity.tier);
           ds.entities.add({
             position: Cartesian3.fromDegrees(center[0], center[1]),
             label: {
               text: labelText,
-              font: "bold 13px sans-serif",
+              font: style.font,
               fillColor: Color.WHITE,
               outlineColor: Color.BLACK,
               outlineWidth: 2,
               style: 2, // FILL_AND_OUTLINE
               pixelOffset: new Cartesian2(0, 0),
-              scaleByDistance: new NearFarScalar(3e6, 1.0, 1.5e7, 0.4),
-              translucencyByDistance: new NearFarScalar(3e6, 1.0, 2e7, 0),
+              scaleByDistance: style.scale,
+              translucencyByDistance: style.translucency,
             },
           });
         }
