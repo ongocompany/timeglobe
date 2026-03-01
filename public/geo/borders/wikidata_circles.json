@@ -9336,18 +9336,6 @@
     "tier": 3
   },
   {
-    "name_en": "French colonial empire",
-    "name_ko": "프랑스 식민제국",
-    "lon": -2.35,
-    "lat": 48.85,
-    "start_year": 1534,
-    "end_year": 1980,
-    "lineage_id": null,
-    "color": "hsl(313, 70%, 55%)",
-    "qid": "Q179023",
-    "tier": 1
-  },
-  {
     "name_en": "Republic of Geneva",
     "name_ko": "제네바 공화국",
     "lon": 6.15,
@@ -10809,7 +10797,7 @@
     "lineage_id": null,
     "color": "hsl(91, 70%, 55%)",
     "qid": "Q4969562",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Kingdom of Tahiti",
@@ -17448,18 +17436,6 @@
     "tier": 3
   },
   {
-    "name_en": "Vietnam (Annam/Cochin China/Tonkin)",
-    "name_ko": "프랑스령 인도차이나(베트남)",
-    "lon": 107.58,
-    "lat": 16.47,
-    "start_year": 1886,
-    "end_year": 1954,
-    "lineage_id": null,
-    "color": "hsl(212, 70%, 55%)",
-    "qid": "CSHAPES_Vietnam_Annam/Cochin_China/Ton",
-    "tier": 3
-  },
-  {
     "name_en": "Unfederated Malay States",
     "name_ko": "비연합 말레이 주",
     "lon": 103.741,
@@ -18706,18 +18682,6 @@
     "color": "hsl(115, 70%, 55%)",
     "qid": "Q881",
     "tier": 3
-  },
-  {
-    "name_en": "Southern zone of Spanish Morocco",
-    "name_ko": "스페인령 모로코(남부)",
-    "lon": -12.9222,
-    "lat": 27.9389,
-    "start_year": 1956,
-    "end_year": 1958,
-    "lineage_id": null,
-    "color": "hsl(274, 70%, 55%)",
-    "qid": "CSHAPES_Southern_zone_of_Spanish_Moroc",
-    "tier": 4
   },
   {
     "name_en": "Somalia",
