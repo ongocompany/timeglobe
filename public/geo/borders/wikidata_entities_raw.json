@@ -35,7 +35,7 @@
     "qid": "Q246690",
     "name_en": "Namri",
     "name_ko": "나므리",
-    "start": "BC 3000",
+    "start": "BC 2000",
     "end": "BC 842",
     "lon": "45.3833",
     "lat": "34.35",
@@ -124,7 +124,7 @@
     "tier": 1,
     "sitelinks": 84,
     "region": "middle_east",
-    "score": 98.0,
+    "score": 98,
     "tier_reason": "score_top8"
   },
   {
@@ -188,7 +188,7 @@
     "tier": 4,
     "sitelinks": 9,
     "region": "middle_east",
-    "score": 36.0,
+    "score": 36,
     "tier_reason": "score_rest"
   },
   {
@@ -220,7 +220,7 @@
     "tier": 1,
     "sitelinks": 27,
     "region": "unknown",
-    "score": 77.0,
+    "score": 77,
     "tier_reason": "score_top8"
   },
   {
@@ -236,7 +236,7 @@
     "tier": 2,
     "sitelinks": 21,
     "region": "east_asia",
-    "score": 79.0,
+    "score": 79,
     "tier_reason": "korea_t2"
   },
   {
@@ -284,7 +284,7 @@
     "tier": 1,
     "sitelinks": 63,
     "region": "middle_east",
-    "score": 93.0,
+    "score": 93,
     "tier_reason": "score_top8"
   },
   {
@@ -316,7 +316,7 @@
     "tier": 3,
     "sitelinks": 61,
     "region": "middle_east",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -332,7 +332,7 @@
     "tier": 1,
     "sitelinks": 116,
     "region": "middle_east",
-    "score": 106.0,
+    "score": 106,
     "tier_reason": "score_top8"
   },
   {
@@ -371,7 +371,7 @@
     "qid": "Q1193806",
     "name_en": "Shu",
     "name_ko": "고촉",
-    "start": "BC 2000",
+    "start": "BC 1200",
     "end": "BC 315",
     "lon": "104.1",
     "lat": "30.6",
@@ -524,7 +524,7 @@
     "tier": 1,
     "sitelinks": 35,
     "region": "unknown",
-    "score": 80.0,
+    "score": 80,
     "tier_reason": "score_top8"
   },
   {
@@ -636,7 +636,7 @@
     "tier": 1,
     "sitelinks": 19,
     "region": "unknown",
-    "score": 75.0,
+    "score": 75,
     "tier_reason": "score_top8"
   },
   {
@@ -748,7 +748,7 @@
     "tier": 4,
     "sitelinks": 13,
     "region": "middle_east",
-    "score": 45.0,
+    "score": 45,
     "tier_reason": "score_rest"
   },
   {
@@ -940,7 +940,7 @@
     "tier": 2,
     "sitelinks": 41,
     "region": "middle_east",
-    "score": 78.0,
+    "score": 78,
     "tier_reason": "score_top25"
   },
   {
@@ -1139,7 +1139,7 @@
     "qid": "Q200969",
     "name_en": "Chaldea",
     "name_ko": "칼데아",
-    "start": "BC 1000",
+    "start": "BC 850",
     "end": "BC 650",
     "lon": "47.0",
     "lat": "31.0",
@@ -1171,7 +1171,7 @@
     "qid": "Q552328",
     "name_en": "Mannaea",
     "name_ko": "만나이인",
-    "start": "BC 1000",
+    "start": "BC 850",
     "end": "BC 800",
     "lon": "45.956691",
     "lat": "36.841238",
@@ -1196,7 +1196,7 @@
     "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
-    "score": 54.0,
+    "score": 54,
     "tier_reason": "score_top55"
   },
   {
@@ -1219,7 +1219,7 @@
     "qid": "Q12660335",
     "name_en": "Kashi",
     "name_ko": "카시 왕국",
-    "start": "BC 1000",
+    "start": "BC 800",
     "end": "BC 600",
     "lon": "83.0",
     "lat": "25.3",
@@ -1251,7 +1251,7 @@
     "qid": "Q878717",
     "name_en": "Bit Adini",
     "name_ko": "비트 아디니",
-    "start": "BC 1000",
+    "start": "BC 950",
     "end": "BC 900",
     "lon": "38.083333333",
     "lat": "36.7",
@@ -1260,7 +1260,7 @@
     "tier": 4,
     "sitelinks": 13,
     "region": "middle_east",
-    "score": 38.0,
+    "score": 38,
     "tier_reason": "score_rest"
   },
   {
@@ -1324,7 +1324,7 @@
     "tier": 2,
     "sitelinks": 65,
     "region": "middle_east",
-    "score": 77.0,
+    "score": 77,
     "tier_reason": "score_top25"
   },
   {
@@ -1340,7 +1340,7 @@
     "tier": 2,
     "sitelinks": 85,
     "region": "middle_east",
-    "score": 86.0,
+    "score": 86,
     "tier_reason": "score_top25"
   },
   {
@@ -1388,7 +1388,7 @@
     "tier": 2,
     "sitelinks": 34,
     "region": "south_asia",
-    "score": 77.0,
+    "score": 77,
     "tier_reason": "score_top25"
   },
   {
@@ -1404,7 +1404,7 @@
     "tier": 4,
     "sitelinks": 12,
     "region": "middle_east",
-    "score": 38.0,
+    "score": 38,
     "tier_reason": "score_rest"
   },
   {
@@ -1628,7 +1628,7 @@
     "tier": 2,
     "sitelinks": 76,
     "region": "europe",
-    "score": 77.0,
+    "score": 77,
     "tier_reason": "score_top25"
   },
   {
@@ -1852,7 +1852,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 31.0,
+    "score": 31,
     "tier_reason": "score_rest"
   },
   {
@@ -1900,7 +1900,7 @@
     "tier": 3,
     "sitelinks": 27,
     "region": "south_asia",
-    "score": 66.0,
+    "score": 66,
     "tier_reason": "score_top55"
   },
   {
@@ -1948,7 +1948,7 @@
     "tier": 2,
     "sitelinks": 5,
     "region": "unknown",
-    "score": 64.0,
+    "score": 64,
     "tier_reason": "score_top25"
   },
   {
@@ -2076,7 +2076,7 @@
     "tier": 4,
     "sitelinks": 7,
     "region": "south_asia",
-    "score": 49.0,
+    "score": 49,
     "tier_reason": "score_rest"
   },
   {
@@ -2476,7 +2476,7 @@
     "tier": 4,
     "sitelinks": 7,
     "region": "south_asia",
-    "score": 48.0,
+    "score": 48,
     "tier_reason": "score_rest"
   },
   {
@@ -3372,7 +3372,7 @@
     "tier": 1,
     "sitelinks": 90,
     "region": "south_asia",
-    "score": 91.0,
+    "score": 91,
     "tier_reason": "score_top8"
   },
   {
@@ -3388,7 +3388,7 @@
     "tier": 3,
     "sitelinks": 26,
     "region": "south_asia",
-    "score": 65.0,
+    "score": 65,
     "tier_reason": "score_top55"
   },
   {
@@ -3420,7 +3420,7 @@
     "tier": 2,
     "sitelinks": 16,
     "region": "east_asia",
-    "score": 64.0,
+    "score": 64,
     "tier_reason": "korea_t2"
   },
   {
@@ -3484,7 +3484,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 13.0,
+    "score": 13,
     "tier_reason": "score_rest"
   },
   {
@@ -3756,7 +3756,7 @@
     "tier": 4,
     "sitelinks": 14,
     "region": "south_asia",
-    "score": 47.0,
+    "score": 47,
     "tier_reason": "score_rest"
   },
   {
@@ -3820,7 +3820,7 @@
     "tier": 4,
     "sitelinks": 45,
     "region": "middle_east",
-    "score": 46.0,
+    "score": 46,
     "tier_reason": "score_rest"
   },
   {
@@ -3900,7 +3900,7 @@
     "tier": 3,
     "sitelinks": 12,
     "region": "east_asia",
-    "score": 49.0,
+    "score": 49,
     "tier_reason": "score_top55"
   },
   {
@@ -4316,7 +4316,7 @@
     "tier": 2,
     "sitelinks": 38,
     "region": "europe",
-    "score": 80.0,
+    "score": 80,
     "tier_reason": "score_top25"
   },
   {
@@ -4348,7 +4348,7 @@
     "tier": 4,
     "sitelinks": 8,
     "region": "east_asia",
-    "score": 38.0,
+    "score": 38,
     "tier_reason": "score_rest"
   },
   {
@@ -4364,7 +4364,7 @@
     "tier": 2,
     "sitelinks": 62,
     "region": "south_asia",
-    "score": 85.0,
+    "score": 85,
     "tier_reason": "score_top25"
   },
   {
@@ -4732,7 +4732,7 @@
     "tier": 3,
     "sitelinks": 11,
     "region": "unknown",
-    "score": 54.0,
+    "score": 54,
     "tier_reason": "score_top55"
   },
   {
@@ -4924,7 +4924,7 @@
     "tier": 3,
     "sitelinks": 19,
     "region": "europe",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -5068,7 +5068,7 @@
     "tier": 4,
     "sitelinks": 10,
     "region": "europe",
-    "score": 45.0,
+    "score": 45,
     "tier_reason": "score_rest"
   },
   {
@@ -5116,7 +5116,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 16.0,
+    "score": 16,
     "tier_reason": "score_rest"
   },
   {
@@ -5132,7 +5132,7 @@
     "tier": 2,
     "sitelinks": 44,
     "region": "europe",
-    "score": 76.0,
+    "score": 76,
     "tier_reason": "score_top25"
   },
   {
@@ -5180,7 +5180,7 @@
     "tier": 3,
     "sitelinks": 3,
     "region": "unknown",
-    "score": 48.0,
+    "score": 48,
     "tier_reason": "score_top55"
   },
   {
@@ -5804,7 +5804,7 @@
     "tier": 4,
     "sitelinks": 28,
     "region": "europe",
-    "score": 55.0,
+    "score": 55,
     "tier_reason": "score_rest"
   },
   {
@@ -6332,7 +6332,7 @@
     "tier": 4,
     "sitelinks": 13,
     "region": "europe",
-    "score": 51.0,
+    "score": 51,
     "tier_reason": "score_rest"
   },
   {
@@ -6508,7 +6508,7 @@
     "tier": 1,
     "sitelinks": 47,
     "region": "europe",
-    "score": 90.0,
+    "score": 90,
     "tier_reason": "score_top8"
   },
   {
@@ -6636,7 +6636,7 @@
     "tier": 3,
     "sitelinks": 28,
     "region": "middle_east",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top55"
   },
   {
@@ -7052,7 +7052,7 @@
     "tier": 2,
     "sitelinks": 15,
     "region": "unknown",
-    "score": 70.0,
+    "score": 70,
     "tier_reason": "score_top25"
   },
   {
@@ -7196,7 +7196,7 @@
     "tier": 3,
     "sitelinks": 39,
     "region": "europe",
-    "score": 72.0,
+    "score": 72,
     "tier_reason": "score_top55"
   },
   {
@@ -7660,7 +7660,7 @@
     "tier": 3,
     "sitelinks": 42,
     "region": "europe",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -7676,7 +7676,7 @@
     "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
-    "score": 52.0,
+    "score": 52,
     "tier_reason": "score_top55"
   },
   {
@@ -7788,7 +7788,7 @@
     "tier": 2,
     "sitelinks": 57,
     "region": "europe",
-    "score": 86.0,
+    "score": 86,
     "tier_reason": "score_top25"
   },
   {
@@ -7916,7 +7916,7 @@
     "tier": 2,
     "sitelinks": 10,
     "region": "unknown",
-    "score": 61.0,
+    "score": 61,
     "tier_reason": "score_top25"
   },
   {
@@ -8188,7 +8188,7 @@
     "tier": 3,
     "sitelinks": 24,
     "region": "east_asia",
-    "score": 57.0,
+    "score": 57,
     "tier_reason": "score_top55"
   },
   {
@@ -8204,7 +8204,7 @@
     "tier": 4,
     "sitelinks": 12,
     "region": "europe",
-    "score": 52.0,
+    "score": 52,
     "tier_reason": "score_rest"
   },
   {
@@ -8236,7 +8236,7 @@
     "tier": 3,
     "sitelinks": 9,
     "region": "east_asia",
-    "score": 40.0,
+    "score": 40,
     "tier_reason": "score_top55"
   },
   {
@@ -8572,7 +8572,7 @@
     "tier": 3,
     "sitelinks": 29,
     "region": "europe",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top55"
   },
   {
@@ -8604,7 +8604,7 @@
     "tier": 3,
     "sitelinks": 52,
     "region": "middle_east",
-    "score": 72.0,
+    "score": 72,
     "tier_reason": "score_top55"
   },
   {
@@ -8684,7 +8684,7 @@
     "tier": 4,
     "sitelinks": 11,
     "region": "sub_saharan",
-    "score": 47.0,
+    "score": 47,
     "tier_reason": "score_rest"
   },
   {
@@ -8700,7 +8700,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "unknown",
-    "score": 4.0,
+    "score": 4,
     "tier_reason": "score_rest"
   },
   {
@@ -8716,7 +8716,7 @@
     "tier": 4,
     "sitelinks": 2,
     "region": "unknown",
-    "score": 24.0,
+    "score": 24,
     "tier_reason": "score_rest"
   },
   {
@@ -8860,7 +8860,7 @@
     "tier": 1,
     "sitelinks": 178,
     "region": "europe",
-    "score": 109.0,
+    "score": 109,
     "tier_reason": "score_top8"
   },
   {
@@ -9436,7 +9436,7 @@
     "tier": 2,
     "sitelinks": 9,
     "region": "unknown",
-    "score": 58.0,
+    "score": 58,
     "tier_reason": "score_top25"
   },
   {
@@ -9500,7 +9500,7 @@
     "tier": 1,
     "sitelinks": 75,
     "region": "europe",
-    "score": 96.0,
+    "score": 96,
     "tier_reason": "score_top8"
   },
   {
@@ -9724,7 +9724,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 15.0,
+    "score": 15,
     "tier_reason": "score_rest"
   },
   {
@@ -9756,7 +9756,7 @@
     "tier": 4,
     "sitelinks": 6,
     "region": "east_asia",
-    "score": 30.0,
+    "score": 30,
     "tier_reason": "score_rest"
   },
   {
@@ -10332,7 +10332,7 @@
     "tier": 3,
     "sitelinks": 27,
     "region": "europe",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top55"
   },
   {
@@ -10796,7 +10796,7 @@
     "tier": 4,
     "sitelinks": 16,
     "region": "europe",
-    "score": 54.0,
+    "score": 54,
     "tier_reason": "score_rest"
   },
   {
@@ -11196,7 +11196,7 @@
     "tier": 1,
     "sitelinks": 61,
     "region": "europe",
-    "score": 91.0,
+    "score": 91,
     "tier_reason": "score_top8"
   },
   {
@@ -11404,7 +11404,7 @@
     "tier": 1,
     "sitelinks": 67,
     "region": "europe",
-    "score": 89.0,
+    "score": 89,
     "tier_reason": "score_top8"
   },
   {
@@ -11468,7 +11468,7 @@
     "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
-    "score": 55.0,
+    "score": 55,
     "tier_reason": "score_top55"
   },
   {
@@ -11500,7 +11500,7 @@
     "tier": 4,
     "sitelinks": 13,
     "region": "middle_east",
-    "score": 37.0,
+    "score": 37,
     "tier_reason": "score_rest"
   },
   {
@@ -11564,7 +11564,7 @@
     "tier": 4,
     "sitelinks": 23,
     "region": "south_asia",
-    "score": 59.0,
+    "score": 59,
     "tier_reason": "score_rest"
   },
   {
@@ -11900,7 +11900,7 @@
     "tier": 3,
     "sitelinks": 13,
     "region": "unknown",
-    "score": 56.0,
+    "score": 56,
     "tier_reason": "score_top55"
   },
   {
@@ -12044,7 +12044,7 @@
     "tier": 3,
     "sitelinks": 66,
     "region": "middle_east",
-    "score": 71.0,
+    "score": 71,
     "tier_reason": "score_top55"
   },
   {
@@ -12620,7 +12620,7 @@
     "tier": 4,
     "sitelinks": 4,
     "region": "unknown",
-    "score": 38.0,
+    "score": 38,
     "tier_reason": "score_rest"
   },
   {
@@ -12764,7 +12764,7 @@
     "tier": 2,
     "sitelinks": 38,
     "region": "southeast_asia",
-    "score": 73.0,
+    "score": 73,
     "tier_reason": "score_top25"
   },
   {
@@ -12844,7 +12844,7 @@
     "tier": 4,
     "sitelinks": 4,
     "region": "unknown",
-    "score": 33.0,
+    "score": 33,
     "tier_reason": "score_rest"
   },
   {
@@ -12860,7 +12860,7 @@
     "tier": 2,
     "sitelinks": 11,
     "region": "unknown",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top25"
   },
   {
@@ -12892,7 +12892,7 @@
     "tier": 4,
     "sitelinks": 11,
     "region": "europe",
-    "score": 48.0,
+    "score": 48,
     "tier_reason": "score_rest"
   },
   {
@@ -13084,7 +13084,7 @@
     "tier": 4,
     "sitelinks": 15,
     "region": "europe",
-    "score": 54.0,
+    "score": 54,
     "tier_reason": "score_rest"
   },
   {
@@ -13372,7 +13372,7 @@
     "tier": 4,
     "sitelinks": 27,
     "region": "europe",
-    "score": 57.0,
+    "score": 57,
     "tier_reason": "score_rest"
   },
   {
@@ -13596,7 +13596,7 @@
     "tier": 4,
     "sitelinks": 3,
     "region": "europe",
-    "score": 28.0,
+    "score": 28,
     "tier_reason": "score_rest"
   },
   {
@@ -13692,7 +13692,7 @@
     "tier": 3,
     "sitelinks": 17,
     "region": "north_africa",
-    "score": 76.0,
+    "score": 76,
     "tier_reason": "score_top55"
   },
   {
@@ -13724,7 +13724,7 @@
     "tier": 4,
     "sitelinks": 2,
     "region": "europe",
-    "score": 24.0,
+    "score": 24,
     "tier_reason": "score_rest"
   },
   {
@@ -14012,7 +14012,7 @@
     "tier": 2,
     "sitelinks": 24,
     "region": "sub_saharan",
-    "score": 72.0,
+    "score": 72,
     "tier_reason": "score_top25"
   },
   {
@@ -14108,7 +14108,7 @@
     "tier": 3,
     "sitelinks": 38,
     "region": "europe",
-    "score": 67.0,
+    "score": 67,
     "tier_reason": "score_top55"
   },
   {
@@ -15500,7 +15500,7 @@
     "tier": 3,
     "sitelinks": 29,
     "region": "europe",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -15660,7 +15660,7 @@
     "tier": 3,
     "sitelinks": 59,
     "region": "middle_east",
-    "score": 75.0,
+    "score": 75,
     "tier_reason": "score_top55"
   },
   {
@@ -16092,7 +16092,7 @@
     "tier": 3,
     "sitelinks": 26,
     "region": "europe",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top55"
   },
   {
@@ -16284,7 +16284,7 @@
     "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
-    "score": 46.0,
+    "score": 46,
     "tier_reason": "score_top55"
   },
   {
@@ -16412,7 +16412,7 @@
     "tier": 1,
     "sitelinks": 104,
     "region": "europe",
-    "score": 97.0,
+    "score": 97,
     "tier_reason": "score_top8"
   },
   {
@@ -16540,7 +16540,7 @@
     "tier": 3,
     "sitelinks": 36,
     "region": "middle_east",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -16652,7 +16652,7 @@
     "tier": 3,
     "sitelinks": 23,
     "region": "north_america",
-    "score": 58.0,
+    "score": 58,
     "tier_reason": "score_top55"
   },
   {
@@ -16764,7 +16764,7 @@
     "tier": 3,
     "sitelinks": 19,
     "region": "middle_east",
-    "score": 64.0,
+    "score": 64,
     "tier_reason": "score_top55"
   },
   {
@@ -16780,7 +16780,7 @@
     "tier": 4,
     "sitelinks": 6,
     "region": "unknown",
-    "score": 38.0,
+    "score": 38,
     "tier_reason": "score_rest"
   },
   {
@@ -16972,7 +16972,7 @@
     "tier": 4,
     "sitelinks": 25,
     "region": "europe",
-    "score": 60.0,
+    "score": 60,
     "tier_reason": "score_rest"
   },
   {
@@ -17020,7 +17020,7 @@
     "tier": 4,
     "sitelinks": 5,
     "region": "middle_east",
-    "score": 30.0,
+    "score": 30,
     "tier_reason": "score_rest"
   },
   {
@@ -17052,7 +17052,7 @@
     "tier": 4,
     "sitelinks": 22,
     "region": "europe",
-    "score": 50.0,
+    "score": 50,
     "tier_reason": "score_rest"
   },
   {
@@ -17276,7 +17276,7 @@
     "tier": 4,
     "sitelinks": 21,
     "region": "europe",
-    "score": 51.0,
+    "score": 51,
     "tier_reason": "score_rest"
   },
   {
@@ -17340,7 +17340,7 @@
     "tier": 3,
     "sitelinks": 30,
     "region": "middle_east",
-    "score": 74.0,
+    "score": 74,
     "tier_reason": "score_top55"
   },
   {
@@ -17404,7 +17404,7 @@
     "tier": 4,
     "sitelinks": 4,
     "region": "unknown",
-    "score": 34.0,
+    "score": 34,
     "tier_reason": "score_rest"
   },
   {
@@ -17596,7 +17596,7 @@
     "tier": 1,
     "sitelinks": 64,
     "region": "unknown",
-    "score": 82.0,
+    "score": 82,
     "tier_reason": "score_top8"
   },
   {
@@ -17660,7 +17660,7 @@
     "tier": 4,
     "sitelinks": 15,
     "region": "north_africa",
-    "score": 54.0,
+    "score": 54,
     "tier_reason": "score_rest"
   },
   {
@@ -17788,7 +17788,7 @@
     "tier": 3,
     "sitelinks": 18,
     "region": "sub_saharan",
-    "score": 59.0,
+    "score": 59,
     "tier_reason": "score_top55"
   },
   {
@@ -17980,7 +17980,7 @@
     "tier": 4,
     "sitelinks": 5,
     "region": "unknown",
-    "score": 37.0,
+    "score": 37,
     "tier_reason": "score_rest"
   },
   {
@@ -18236,7 +18236,7 @@
     "tier": 3,
     "sitelinks": 7,
     "region": "unknown",
-    "score": 44.0,
+    "score": 44,
     "tier_reason": "score_top55"
   },
   {
@@ -18492,7 +18492,7 @@
     "tier": 4,
     "sitelinks": 14,
     "region": "europe",
-    "score": 44.0,
+    "score": 44,
     "tier_reason": "score_rest"
   },
   {
@@ -18508,7 +18508,7 @@
     "tier": 4,
     "sitelinks": 15,
     "region": "south_asia",
-    "score": 42.0,
+    "score": 42,
     "tier_reason": "score_rest"
   },
   {
@@ -18652,7 +18652,7 @@
     "tier": 4,
     "sitelinks": 15,
     "region": "southeast_asia",
-    "score": 50.0,
+    "score": 50,
     "tier_reason": "score_rest"
   },
   {
@@ -18812,7 +18812,7 @@
     "tier": 4,
     "sitelinks": 9,
     "region": "sub_saharan",
-    "score": 40.0,
+    "score": 40,
     "tier_reason": "score_rest"
   },
   {
@@ -18876,7 +18876,7 @@
     "tier": 4,
     "sitelinks": 7,
     "region": "europe",
-    "score": 35.0,
+    "score": 35,
     "tier_reason": "score_rest"
   },
   {
@@ -18924,7 +18924,7 @@
     "tier": 3,
     "sitelinks": 18,
     "region": "latin_america",
-    "score": 60.0,
+    "score": 60,
     "tier_reason": "score_top55"
   },
   {
@@ -19100,7 +19100,7 @@
     "tier": 4,
     "sitelinks": 3,
     "region": "unknown",
-    "score": 29.0,
+    "score": 29,
     "tier_reason": "score_rest"
   },
   {
@@ -20108,7 +20108,7 @@
     "tier": 4,
     "sitelinks": 16,
     "region": "southeast_asia",
-    "score": 53.0,
+    "score": 53,
     "tier_reason": "score_rest"
   },
   {
@@ -20380,7 +20380,7 @@
     "tier": 4,
     "sitelinks": 8,
     "region": "middle_east",
-    "score": 35.0,
+    "score": 35,
     "tier_reason": "score_rest"
   },
   {
@@ -20508,7 +20508,7 @@
     "tier": 4,
     "sitelinks": 7,
     "region": "east_asia",
-    "score": 36.0,
+    "score": 36,
     "tier_reason": "score_rest"
   },
   {
@@ -20764,7 +20764,7 @@
     "tier": 3,
     "sitelinks": 12,
     "region": "unknown",
-    "score": 53.0,
+    "score": 53,
     "tier_reason": "score_top55"
   },
   {
@@ -21068,7 +21068,7 @@
     "tier": 2,
     "sitelinks": 14,
     "region": "unknown",
-    "score": 58.0,
+    "score": 58,
     "tier_reason": "score_top25"
   },
   {
@@ -21084,7 +21084,7 @@
     "tier": 2,
     "sitelinks": 14,
     "region": "unknown",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top25"
   },
   {
@@ -21148,7 +21148,7 @@
     "tier": 4,
     "sitelinks": 10,
     "region": "sub_saharan",
-    "score": 39.0,
+    "score": 39,
     "tier_reason": "score_rest"
   },
   {
@@ -21340,7 +21340,7 @@
     "tier": 3,
     "sitelinks": 24,
     "region": "southeast_asia",
-    "score": 61.0,
+    "score": 61,
     "tier_reason": "score_top55"
   },
   {
@@ -21532,7 +21532,7 @@
     "tier": 3,
     "sitelinks": 24,
     "region": "middle_east",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top55"
   },
   {
@@ -21628,7 +21628,7 @@
     "tier": 3,
     "sitelinks": 25,
     "region": "middle_east",
-    "score": 64.0,
+    "score": 64,
     "tier_reason": "score_top55"
   },
   {
@@ -21852,7 +21852,7 @@
     "tier": 2,
     "sitelinks": 56,
     "region": "south_asia",
-    "score": 76.0,
+    "score": 76,
     "tier_reason": "score_top25"
   },
   {
@@ -21964,7 +21964,7 @@
     "tier": 4,
     "sitelinks": 19,
     "region": "south_asia",
-    "score": 48.0,
+    "score": 48,
     "tier_reason": "score_rest"
   },
   {
@@ -22060,7 +22060,7 @@
     "tier": 4,
     "sitelinks": 3,
     "region": "unknown",
-    "score": 28.0,
+    "score": 28,
     "tier_reason": "score_rest"
   },
   {
@@ -22076,7 +22076,7 @@
     "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
-    "score": 53.0,
+    "score": 53,
     "tier_reason": "score_top55"
   },
   {
@@ -22108,7 +22108,7 @@
     "tier": 2,
     "sitelinks": 15,
     "region": "unknown",
-    "score": 64.0,
+    "score": 64,
     "tier_reason": "score_top25"
   },
   {
@@ -22668,7 +22668,7 @@
     "tier": 3,
     "sitelinks": 15,
     "region": "unknown",
-    "score": 57.0,
+    "score": 57,
     "tier_reason": "score_top55"
   },
   {
@@ -22892,7 +22892,7 @@
     "tier": 4,
     "sitelinks": 11,
     "region": "europe",
-    "score": 33.0,
+    "score": 33,
     "tier_reason": "score_rest"
   },
   {
@@ -22908,7 +22908,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 11.0,
+    "score": 11,
     "tier_reason": "score_rest"
   },
   {
@@ -22940,7 +22940,7 @@
     "tier": 1,
     "sitelinks": 82,
     "region": "southeast_asia",
-    "score": 86.0,
+    "score": 86,
     "tier_reason": "score_top8"
   },
   {
@@ -22972,7 +22972,7 @@
     "tier": 4,
     "sitelinks": 13,
     "region": "middle_east",
-    "score": 45.0,
+    "score": 45,
     "tier_reason": "score_rest"
   },
   {
@@ -23068,7 +23068,7 @@
     "tier": 4,
     "sitelinks": 4,
     "region": "unknown",
-    "score": 33.0,
+    "score": 33,
     "tier_reason": "score_rest"
   },
   {
@@ -23116,7 +23116,7 @@
     "tier": 4,
     "sitelinks": 8,
     "region": "middle_east",
-    "score": 34.0,
+    "score": 34,
     "tier_reason": "score_rest"
   },
   {
@@ -23308,7 +23308,7 @@
     "tier": 4,
     "sitelinks": 7,
     "region": "unknown",
-    "score": 40.0,
+    "score": 40,
     "tier_reason": "score_rest"
   },
   {
@@ -23404,7 +23404,7 @@
     "tier": 3,
     "sitelinks": 27,
     "region": "north_america",
-    "score": 58.0,
+    "score": 58,
     "tier_reason": "score_top55"
   },
   {
@@ -23708,7 +23708,7 @@
     "tier": 4,
     "sitelinks": 18,
     "region": "sub_saharan",
-    "score": 50.0,
+    "score": 50,
     "tier_reason": "score_rest"
   },
   {
@@ -23788,7 +23788,7 @@
     "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
-    "score": 46.0,
+    "score": 46,
     "tier_reason": "score_top55"
   },
   {
@@ -23836,7 +23836,7 @@
     "tier": 2,
     "sitelinks": 22,
     "region": "unknown",
-    "score": 65.0,
+    "score": 65,
     "tier_reason": "score_top25"
   },
   {
@@ -24028,7 +24028,7 @@
     "tier": 3,
     "sitelinks": 53,
     "region": "europe",
-    "score": 69.0,
+    "score": 69,
     "tier_reason": "score_top55"
   },
   {
@@ -24204,7 +24204,7 @@
     "tier": 3,
     "sitelinks": 32,
     "region": "middle_east",
-    "score": 67.0,
+    "score": 67,
     "tier_reason": "score_top55"
   },
   {
@@ -24268,7 +24268,7 @@
     "tier": 2,
     "sitelinks": 74,
     "region": "latin_america",
-    "score": 82.0,
+    "score": 82,
     "tier_reason": "score_top25"
   },
   {
@@ -24284,7 +24284,7 @@
     "tier": 2,
     "sitelinks": 23,
     "region": "unknown",
-    "score": 67.0,
+    "score": 67,
     "tier_reason": "score_top25"
   },
   {
@@ -24332,7 +24332,7 @@
     "tier": 3,
     "sitelinks": 27,
     "region": "middle_east",
-    "score": 63.0,
+    "score": 63,
     "tier_reason": "score_top55"
   },
   {
@@ -24812,7 +24812,7 @@
     "tier": 4,
     "sitelinks": 3,
     "region": "europe",
-    "score": 17.0,
+    "score": 17,
     "tier_reason": "score_rest"
   },
   {
@@ -24924,7 +24924,7 @@
     "tier": 2,
     "sitelinks": 62,
     "region": "europe",
-    "score": 76.0,
+    "score": 76,
     "tier_reason": "score_top25"
   },
   {
@@ -25340,7 +25340,7 @@
     "tier": 4,
     "sitelinks": 9,
     "region": "north_america",
-    "score": 30.0,
+    "score": 30,
     "tier_reason": "score_rest"
   },
   {
@@ -25436,7 +25436,7 @@
     "tier": 4,
     "sitelinks": 12,
     "region": "sub_saharan",
-    "score": 40.0,
+    "score": 40,
     "tier_reason": "score_rest"
   },
   {
@@ -25548,7 +25548,7 @@
     "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
-    "score": 48.0,
+    "score": 48,
     "tier_reason": "score_top55"
   },
   {
@@ -25692,7 +25692,7 @@
     "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
-    "score": 47.0,
+    "score": 47,
     "tier_reason": "score_top55"
   },
   {
@@ -25788,7 +25788,7 @@
     "tier": 1,
     "sitelinks": 107,
     "region": "south_asia",
-    "score": 88.0,
+    "score": 88,
     "tier_reason": "score_top8"
   },
   {
@@ -25980,7 +25980,7 @@
     "tier": 4,
     "sitelinks": 16,
     "region": "middle_east",
-    "score": 48.0,
+    "score": 48,
     "tier_reason": "score_rest"
   },
   {
@@ -26108,7 +26108,7 @@
     "tier": 3,
     "sitelinks": 62,
     "region": "europe",
-    "score": 73.0,
+    "score": 73,
     "tier_reason": "score_top55"
   },
   {
@@ -26316,7 +26316,7 @@
     "tier": 2,
     "sitelinks": 19,
     "region": "unknown",
-    "score": 65.0,
+    "score": 65,
     "tier_reason": "score_top25"
   },
   {
@@ -26364,7 +26364,7 @@
     "tier": 2,
     "sitelinks": 64,
     "region": "europe",
-    "score": 76.0,
+    "score": 76,
     "tier_reason": "score_top25"
   },
   {
@@ -26460,7 +26460,7 @@
     "tier": 3,
     "sitelinks": 32,
     "region": "southeast_asia",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -26604,7 +26604,7 @@
     "tier": 2,
     "sitelinks": 44,
     "region": "sub_saharan",
-    "score": 72.0,
+    "score": 72,
     "tier_reason": "score_top25"
   },
   {
@@ -26636,7 +26636,7 @@
     "tier": 3,
     "sitelinks": 37,
     "region": "sub_saharan",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -27244,7 +27244,7 @@
     "tier": 1,
     "sitelinks": 31,
     "region": "oceania",
-    "score": 73.0,
+    "score": 73,
     "tier_reason": "score_top8"
   },
   {
@@ -27292,7 +27292,7 @@
     "tier": 4,
     "sitelinks": 35,
     "region": "europe",
-    "score": 54.0,
+    "score": 54,
     "tier_reason": "score_rest"
   },
   {
@@ -27708,7 +27708,7 @@
     "tier": 1,
     "sitelinks": 110,
     "region": "unknown",
-    "score": 88.0,
+    "score": 88,
     "tier_reason": "score_top8"
   },
   {
@@ -28124,7 +28124,7 @@
     "tier": 2,
     "sitelinks": 21,
     "region": "unknown",
-    "score": 66.0,
+    "score": 66,
     "tier_reason": "score_top25"
   },
   {
@@ -28396,7 +28396,7 @@
     "tier": 4,
     "sitelinks": 29,
     "region": "europe",
-    "score": 49.0,
+    "score": 49,
     "tier_reason": "score_rest"
   },
   {
@@ -28572,7 +28572,7 @@
     "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
-    "score": 48.0,
+    "score": 48,
     "tier_reason": "score_top55"
   },
   {
@@ -29404,7 +29404,7 @@
     "tier": 4,
     "sitelinks": 30,
     "region": "europe",
-    "score": 50.0,
+    "score": 50,
     "tier_reason": "score_rest"
   },
   {
@@ -29500,7 +29500,7 @@
     "tier": 2,
     "sitelinks": 80,
     "region": "east_asia",
-    "score": 80.0,
+    "score": 80,
     "tier_reason": "score_top25"
   },
   {
@@ -29564,7 +29564,7 @@
     "tier": 3,
     "sitelinks": 35,
     "region": "southeast_asia",
-    "score": 66.0,
+    "score": 66,
     "tier_reason": "score_top55"
   },
   {
@@ -30188,7 +30188,7 @@
     "tier": 3,
     "sitelinks": 32,
     "region": "east_asia",
-    "score": 42.0,
+    "score": 42,
     "tier_reason": "score_top55"
   },
   {
@@ -30316,7 +30316,7 @@
     "tier": 4,
     "sitelinks": 34,
     "region": "europe",
-    "score": 53.0,
+    "score": 53,
     "tier_reason": "score_rest"
   },
   {
@@ -30348,7 +30348,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 11.0,
+    "score": 11,
     "tier_reason": "score_rest"
   },
   {
@@ -30444,7 +30444,7 @@
     "tier": 3,
     "sitelinks": 11,
     "region": "unknown",
-    "score": 53.0,
+    "score": 53,
     "tier_reason": "score_top55"
   },
   {
@@ -30460,7 +30460,7 @@
     "tier": 3,
     "sitelinks": 19,
     "region": "east_asia",
-    "score": 47.0,
+    "score": 47,
     "tier_reason": "score_top55"
   },
   {
@@ -30972,7 +30972,7 @@
     "tier": 3,
     "sitelinks": 36,
     "region": "sub_saharan",
-    "score": 61.0,
+    "score": 61,
     "tier_reason": "score_top55"
   },
   {
@@ -31116,7 +31116,7 @@
     "tier": 3,
     "sitelinks": 19,
     "region": "east_asia",
-    "score": 46.0,
+    "score": 46,
     "tier_reason": "score_top55"
   },
   {
@@ -31164,7 +31164,7 @@
     "tier": 4,
     "sitelinks": 29,
     "region": "sub_saharan",
-    "score": 53.0,
+    "score": 53,
     "tier_reason": "score_rest"
   },
   {
@@ -31228,7 +31228,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 10.0,
+    "score": 10,
     "tier_reason": "score_rest"
   },
   {
@@ -31244,7 +31244,7 @@
     "tier": 4,
     "sitelinks": 5,
     "region": "unknown",
-    "score": 34.0,
+    "score": 34,
     "tier_reason": "score_rest"
   },
   {
@@ -31260,7 +31260,7 @@
     "tier": 4,
     "sitelinks": 9,
     "region": "sub_saharan",
-    "score": 32.0,
+    "score": 32,
     "tier_reason": "score_rest"
   },
   {
@@ -31644,7 +31644,7 @@
     "tier": 4,
     "sitelinks": 30,
     "region": "southeast_asia",
-    "score": 59.0,
+    "score": 59,
     "tier_reason": "score_rest"
   },
   {
@@ -31772,7 +31772,7 @@
     "tier": 3,
     "sitelinks": 41,
     "region": "middle_east",
-    "score": 68.0,
+    "score": 68,
     "tier_reason": "score_top55"
   },
   {
@@ -31836,7 +31836,7 @@
     "tier": 4,
     "sitelinks": 31,
     "region": "middle_east",
-    "score": 60.0,
+    "score": 60,
     "tier_reason": "score_rest"
   },
   {
@@ -31852,7 +31852,7 @@
     "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
-    "score": 50.0,
+    "score": 50,
     "tier_reason": "score_top55"
   },
   {
@@ -31884,7 +31884,7 @@
     "tier": 4,
     "sitelinks": 6,
     "region": "southeast_asia",
-    "score": 24.0,
+    "score": 24,
     "tier_reason": "score_rest"
   },
   {
@@ -31932,7 +31932,7 @@
     "tier": 3,
     "sitelinks": 39,
     "region": "sub_saharan",
-    "score": 64.0,
+    "score": 64,
     "tier_reason": "score_top55"
   },
   {
@@ -31980,7 +31980,7 @@
     "tier": 3,
     "sitelinks": 36,
     "region": "north_africa",
-    "score": 74.0,
+    "score": 74,
     "tier_reason": "score_top55"
   },
   {
@@ -32092,7 +32092,7 @@
     "tier": 4,
     "sitelinks": 4,
     "region": "unknown",
-    "score": 30.0,
+    "score": 30,
     "tier_reason": "score_rest"
   },
   {
@@ -32188,7 +32188,7 @@
     "tier": 4,
     "sitelinks": 2,
     "region": "unknown",
-    "score": 19.0,
+    "score": 19,
     "tier_reason": "score_rest"
   },
   {
@@ -32332,7 +32332,7 @@
     "tier": 4,
     "sitelinks": 1,
     "region": "unknown",
-    "score": 9.0,
+    "score": 9,
     "tier_reason": "score_rest"
   },
   {
@@ -32604,7 +32604,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "europe",
-    "score": 0.0,
+    "score": 0,
     "tier_reason": "score_rest"
   },
   {
@@ -32828,7 +32828,7 @@
     "tier": 1,
     "sitelinks": 189,
     "region": "middle_east",
-    "score": 113.0,
+    "score": 113,
     "tier_reason": "score_top8"
   },
   {
@@ -32876,7 +32876,7 @@
     "tier": 1,
     "sitelinks": 136,
     "region": "north_america",
-    "score": 109.0,
+    "score": 109,
     "tier_reason": "score_top8"
   },
   {
@@ -32924,7 +32924,7 @@
     "tier": 2,
     "sitelinks": 38,
     "region": "east_asia",
-    "score": 72.0,
+    "score": 72,
     "tier_reason": "score_top25"
   },
   {
@@ -33180,7 +33180,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "sub_saharan",
-    "score": 16.0,
+    "score": 16,
     "tier_reason": "score_rest"
   },
   {
@@ -33340,7 +33340,7 @@
     "tier": 1,
     "sitelinks": 75,
     "region": "europe",
-    "score": 102.0,
+    "score": 102,
     "tier_reason": "score_top8"
   },
   {
@@ -33644,7 +33644,7 @@
     "tier": 3,
     "sitelinks": 17,
     "region": "east_asia",
-    "score": 45.0,
+    "score": 45,
     "tier_reason": "score_top55"
   },
   {
@@ -33756,7 +33756,7 @@
     "tier": 3,
     "sitelinks": 20,
     "region": "east_asia",
-    "score": 52.0,
+    "score": 52,
     "tier_reason": "score_top55"
   },
   {
@@ -33788,7 +33788,7 @@
     "tier": 1,
     "sitelinks": 79,
     "region": "east_asia",
-    "score": 90.0,
+    "score": 90,
     "tier_reason": "score_top8"
   },
   {
@@ -33804,7 +33804,7 @@
     "tier": 2,
     "sitelinks": 37,
     "region": "east_asia",
-    "score": 76.0,
+    "score": 76,
     "tier_reason": "score_top25"
   },
   {
@@ -33948,7 +33948,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "east_asia",
-    "score": 8.0,
+    "score": 8,
     "tier_reason": "score_rest"
   },
   {
@@ -34108,7 +34108,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "east_asia",
-    "score": 1.0,
+    "score": 1,
     "tier_reason": "score_rest"
   },
   {
@@ -34332,7 +34332,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "east_asia",
-    "score": 24.0,
+    "score": 24,
     "tier_reason": "score_rest"
   },
   {
@@ -34428,7 +34428,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "east_asia",
-    "score": 21.0,
+    "score": 21,
     "tier_reason": "score_rest"
   },
   {
@@ -34540,7 +34540,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "east_asia",
-    "score": 0.0,
+    "score": 0,
     "tier_reason": "score_rest"
   },
   {
@@ -34684,7 +34684,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "southeast_asia",
-    "score": 50.0,
+    "score": 50,
     "tier_reason": "score_rest"
   },
   {
@@ -34700,7 +34700,7 @@
     "tier": 4,
     "sitelinks": 0,
     "region": "southeast_asia",
-    "score": 1.0,
+    "score": 1,
     "tier_reason": "score_rest"
   },
   {
