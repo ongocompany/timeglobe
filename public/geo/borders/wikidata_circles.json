@@ -3540,18 +3540,6 @@
     "tier": 4
   },
   {
-    "name_en": "Oman proper",
-    "name_ko": "오만 본토",
-    "lon": 57.533333333,
-    "lat": 22.933333333,
-    "start_year": 751,
-    "end_year": 1970,
-    "lineage_id": null,
-    "color": "hsl(244, 70%, 55%)",
-    "qid": "Q2342282",
-    "tier": 2
-  },
-  {
     "name_en": "Arzen",
     "name_ko": "아르제은",
     "lon": 41.390556,
@@ -4845,7 +4833,7 @@
     "lineage_id": "L0052",
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q54818777",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Principality of Volhynia",
@@ -4954,18 +4942,6 @@
     "color": "hsl(128, 70%, 55%)",
     "qid": "Q171150",
     "tier": 1
-  },
-  {
-    "name_en": "ʻThr",
-    "name_ko": "스르",
-    "lon": 44,
-    "lat": 19,
-    "start_year": 1000,
-    "end_year": 1100,
-    "lineage_id": null,
-    "color": "hsl(89, 70%, 55%)",
-    "qid": "Q11907143",
-    "tier": 4
   },
   {
     "name_en": "Couto Misto",
@@ -5268,18 +5244,6 @@
     "tier": 3
   },
   {
-    "name_en": "Emirate of Ayash",
-    "name_ko": "아시 토후국",
-    "lon": 49.999171,
-    "lat": 26.575719,
-    "start_year": 1067,
-    "end_year": 1077,
-    "lineage_id": "L0111",
-    "color": "hsl(68, 70%, 55%)",
-    "qid": "Q120060873",
-    "tier": 4
-  },
-  {
     "name_en": "Danishmendid dynasty",
     "name_ko": "다니슈멘드",
     "lon": 36.55,
@@ -5301,18 +5265,6 @@
     "lineage_id": null,
     "color": "hsl(188, 70%, 55%)",
     "qid": "Q98085401",
-    "tier": 4
-  },
-  {
-    "name_en": "Uyunid Emirate",
-    "name_ko": "우유니드 토후국",
-    "lon": 50.001306,
-    "lat": 26.570873,
-    "start_year": 1076,
-    "end_year": 1238,
-    "lineage_id": "L0111",
-    "color": "hsl(68, 70%, 55%)",
-    "qid": "Q12229205",
     "tier": 4
   },
   {
@@ -5757,7 +5709,7 @@
     "lineage_id": "L0095",
     "color": "hsl(121, 70%, 55%)",
     "qid": "Q19955992",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Sultanate of the Maldives",
@@ -5770,18 +5722,6 @@
     "color": "hsl(105, 70%, 55%)",
     "qid": "Q11344632",
     "tier": 2
-  },
-  {
-    "name_en": "Nabhani dynasty",
-    "name_ko": "나브하니 드이나스트이",
-    "lon": 57,
-    "lat": 21,
-    "start_year": 1154,
-    "end_year": 1624,
-    "lineage_id": null,
-    "color": "hsl(111, 70%, 55%)",
-    "qid": "Q11938308",
-    "tier": 4
   },
   {
     "name_en": "Duchy of Austria",
@@ -6045,7 +5985,7 @@
     "lineage_id": "L0030",
     "color": "hsl(100, 70%, 55%)",
     "qid": "Q149846",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Second Bulgarian Empire",
@@ -6093,7 +6033,7 @@
     "lineage_id": "L0081",
     "color": "hsl(280, 70%, 55%)",
     "qid": "Q825489",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Kingdom of Cusco",
@@ -6177,7 +6117,7 @@
     "lineage_id": "L0089",
     "color": "hsl(10, 70%, 55%)",
     "qid": "Q5311376",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Latin Empire",
@@ -6693,7 +6633,7 @@
     "lineage_id": "L0081",
     "color": "hsl(280, 70%, 55%)",
     "qid": "Q1454024",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Principality of Tver",
@@ -6741,7 +6681,7 @@
     "lineage_id": "L0081",
     "color": "hsl(280, 70%, 55%)",
     "qid": "Q2327097",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Mamluk Sultanate",
@@ -6993,7 +6933,7 @@
     "lineage_id": "L0052",
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q97940738",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Prince-Archbishopric of Salzburg",
@@ -7017,7 +6957,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q97924757",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Free City of Wissembourg",
@@ -7029,7 +6969,7 @@
     "lineage_id": "L0052",
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q97943978",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Duchy of Teschen",
@@ -7065,7 +7005,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q2112681",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Kingdom of Naples",
@@ -7089,7 +7029,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q54810258",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Ban de la Roche",
@@ -7149,7 +7089,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q97946582",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Duchy of Nysa",
@@ -7197,7 +7137,7 @@
     "lineage_id": "L0052",
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q2138849",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Lanna",
@@ -7221,7 +7161,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q97940833",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Majapahit",
@@ -7341,7 +7281,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q54810282",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Republic of Mulhouse",
@@ -7401,7 +7341,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q97941965",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Duchy of Siewierz",
@@ -8052,18 +7992,6 @@
     "tier": 2
   },
   {
-    "name_en": "Kathiri Sultanate",
-    "name_ko": "카티리 술탄국",
-    "lon": 50.25,
-    "lat": 17.166666666,
-    "start_year": 1379,
-    "end_year": 1967,
-    "lineage_id": null,
-    "color": "hsl(32, 70%, 55%)",
-    "qid": "Q1296908",
-    "tier": 3
-  },
-  {
     "name_en": "Amurru kingdom",
     "name_ko": "아무루 왕국",
     "lon": 36.23194444,
@@ -8169,7 +8097,7 @@
     "lineage_id": "L0130",
     "color": "hsl(180, 70%, 55%)",
     "qid": "Q571775",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Duchy of Milan",
@@ -8277,7 +8205,7 @@
     "lineage_id": "L0071",
     "color": "hsl(127, 70%, 55%)",
     "qid": "Q3192661",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Ardalan",
@@ -8520,18 +8448,6 @@
     "tier": 4
   },
   {
-    "name_en": "Mahra Sultanate",
-    "name_ko": "마흐라 술탄국",
-    "lon": 51.7333,
-    "lat": 15.8,
-    "start_year": 1432,
-    "end_year": 1967,
-    "lineage_id": null,
-    "color": "hsl(301, 70%, 55%)",
-    "qid": "Q1885093",
-    "tier": 3
-  },
-  {
     "name_en": "Great Horde",
     "name_ko": "대 칸국",
     "lon": 60,
@@ -8637,7 +8553,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q701983",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Duchy of Zator",
@@ -8649,18 +8565,6 @@
     "lineage_id": "L0089",
     "color": "hsl(10, 70%, 55%)",
     "qid": "Q694494",
-    "tier": 4
-  },
-  {
-    "name_en": "Emirate of Diriyah",
-    "name_ko": "디리야흐 토후국",
-    "lon": 46.575556111,
-    "lat": 24.733333055,
-    "start_year": 1446,
-    "end_year": 1743,
-    "lineage_id": "L0148",
-    "color": "hsl(59, 70%, 55%)",
-    "qid": "Q56885910",
     "tier": 4
   },
   {
@@ -9201,18 +9105,6 @@
     "lineage_id": "L0075",
     "color": "hsl(143, 70%, 55%)",
     "qid": "Q1389743",
-    "tier": 4
-  },
-  {
-    "name_en": "Emirate of Dhala",
-    "name_ko": "드하라 토후국",
-    "lon": 44.73083333,
-    "lat": 13.69666667,
-    "start_year": 1500,
-    "end_year": 1967,
-    "lineage_id": "L0027",
-    "color": "hsl(3, 70%, 55%)",
-    "qid": "Q6415938",
     "tier": 4
   },
   {
@@ -10236,18 +10128,6 @@
     "tier": 4
   },
   {
-    "name_en": "Sultanate of Muscat",
-    "name_ko": "무스카트 술탄국",
-    "lon": 58.59,
-    "lat": 23.61,
-    "start_year": 1650,
-    "end_year": 1820,
-    "lineage_id": null,
-    "color": "hsl(28, 70%, 55%)",
-    "qid": "Q16881283",
-    "tier": 4
-  },
-  {
     "name_en": "Khoshut Khanate",
     "name_ko": "코슈트 칸국",
     "lon": 99,
@@ -10332,18 +10212,6 @@
     "tier": 4
   },
   {
-    "name_en": "Bani Khalid Emirate",
-    "name_ko": "바니 크아리드 토후국",
-    "lon": 49.548316,
-    "lat": 25.404932,
-    "start_year": 1669,
-    "end_year": 1796,
-    "lineage_id": "L0163",
-    "color": "hsl(210, 70%, 55%)",
-    "qid": "Q56376885",
-    "tier": 4
-  },
-  {
     "name_en": "Ashanti Empire",
     "name_ko": "아샨티 왕국",
     "lon": -0.96666667,
@@ -10377,18 +10245,6 @@
     "lineage_id": null,
     "color": "hsl(262, 70%, 55%)",
     "qid": "Q10920088",
-    "tier": 4
-  },
-  {
-    "name_en": "Emirate of Beihan",
-    "name_ko": "베이하은 토후국",
-    "lon": 45.6667,
-    "lat": 13.4167,
-    "start_year": 1680,
-    "end_year": 1967,
-    "lineage_id": "L0165",
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "Q2485209",
     "tier": 4
   },
   {
@@ -10437,18 +10293,6 @@
     "lineage_id": null,
     "color": "hsl(132, 70%, 55%)",
     "qid": "Q557842",
-    "tier": 4
-  },
-  {
-    "name_en": "Omani Empire",
-    "name_ko": "오만 제국",
-    "lon": 58.59,
-    "lat": 23.61,
-    "start_year": 1692,
-    "end_year": 1820,
-    "lineage_id": null,
-    "color": "hsl(28, 70%, 55%)",
-    "qid": "Q22684779",
     "tier": 4
   },
   {
@@ -10653,7 +10497,7 @@
     "lineage_id": "L0120",
     "color": "hsl(45, 70%, 55%)",
     "qid": "Q1843786",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Kingdom of Serbia",
@@ -10690,18 +10534,6 @@
     "color": "hsl(56, 70%, 55%)",
     "qid": "Q3503559",
     "tier": 4
-  },
-  {
-    "name_en": "Sultanate of Lahej",
-    "name_ko": "라흐지 술탄국",
-    "lon": 45.4667,
-    "lat": 13.1,
-    "start_year": 1728,
-    "end_year": 1967,
-    "lineage_id": "L0165",
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "Q404774",
-    "tier": 3
   },
   {
     "name_en": "Kingdom of Thiruvithamkoor",
@@ -10797,18 +10629,6 @@
     "lineage_id": "L0038",
     "color": "hsl(159, 70%, 55%)",
     "qid": "Q3302610",
-    "tier": 4
-  },
-  {
-    "name_en": "Alawi",
-    "name_ko": "아라위",
-    "lon": 44.656,
-    "lat": 13.468,
-    "start_year": 1743,
-    "end_year": 1967,
-    "lineage_id": "L0165",
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "Q2121839",
     "tier": 4
   },
   {
@@ -11014,18 +10834,6 @@
     "color": "hsl(162, 70%, 55%)",
     "qid": "Q1155700",
     "tier": 3
-  },
-  {
-    "name_en": "Bahrain and its Dependencies",
-    "name_ko": "바흐라이은 이츠 데페은드에느시에스",
-    "lon": 50.551111,
-    "lat": 26.0675,
-    "start_year": 1783,
-    "end_year": 1971,
-    "lineage_id": "L0112",
-    "color": "hsl(68, 70%, 55%)",
-    "qid": "Q17061755",
-    "tier": 4
   },
   {
     "name_en": "Western Confederacy",
@@ -11292,30 +11100,6 @@
     "tier": 1
   },
   {
-    "name_en": "Audhali",
-    "name_ko": "아드하리",
-    "lon": 45.52,
-    "lat": 13.54,
-    "start_year": 1800,
-    "end_year": 1967,
-    "lineage_id": "L0027",
-    "color": "hsl(3, 70%, 55%)",
-    "qid": "Q758709",
-    "tier": 4
-  },
-  {
-    "name_en": "Al-Busi",
-    "name_ko": "부시",
-    "lon": 44.716667,
-    "lat": 13.683333,
-    "start_year": 1800,
-    "end_year": 1967,
-    "lineage_id": "L0027",
-    "color": "hsl(3, 70%, 55%)",
-    "qid": "Q11910203",
-    "tier": 4
-  },
-  {
     "name_en": "Septinsular Republic",
     "name_ko": "에프타니소스 공화국",
     "lon": 20.5,
@@ -11328,30 +11112,6 @@
     "tier": 4
   },
   {
-    "name_en": "Upper Yafa",
-    "name_ko": "상야파",
-    "lon": 45.255555555,
-    "lat": 13.830833333,
-    "start_year": 1800,
-    "end_year": 1967,
-    "lineage_id": "L0027",
-    "color": "hsl(3, 70%, 55%)",
-    "qid": "Q1367119",
-    "tier": 4
-  },
-  {
-    "name_en": "Aqrabi",
-    "name_ko": "아크라비",
-    "lon": 44.5,
-    "lat": 12.53,
-    "start_year": 1800,
-    "end_year": 1967,
-    "lineage_id": "L0165",
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "Q2121850",
-    "tier": 4
-  },
-  {
     "name_en": "Kengcheng",
     "name_ko": "케응체응",
     "lon": 100.867,
@@ -11361,18 +11121,6 @@
     "lineage_id": "L0170",
     "color": "hsl(317, 70%, 55%)",
     "qid": "Q6389173",
-    "tier": 4
-  },
-  {
-    "name_en": "Upper Aulaqi Sheikhdom",
-    "name_ko": "상아라크이 셰이크도므",
-    "lon": 46.5,
-    "lat": 14.3,
-    "start_year": 1800,
-    "end_year": 1967,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q1641428",
     "tier": 4
   },
   {
@@ -11952,18 +11700,6 @@
     "tier": 2
   },
   {
-    "name_en": "Second Bani Khalid Emirate",
-    "name_ko": "세코은드 바니 크아리드 토후국",
-    "lon": 49.588345,
-    "lat": 25.363498,
-    "start_year": 1819,
-    "end_year": 1830,
-    "lineage_id": "L0163",
-    "color": "hsl(210, 70%, 55%)",
-    "qid": "Q111822288",
-    "tier": 4
-  },
-  {
     "name_en": "Palanpur Agency",
     "name_ko": "파라느푸르 아게느크이",
     "lon": 72.436981,
@@ -11974,18 +11710,6 @@
     "color": "hsl(358, 70%, 55%)",
     "qid": "Q1237976",
     "tier": 4
-  },
-  {
-    "name_en": "Muscat and Oman",
-    "name_ko": "무스카트 오만 술탄국",
-    "lon": 58.59,
-    "lat": 23.61,
-    "start_year": 1820,
-    "end_year": 1970,
-    "lineage_id": null,
-    "color": "hsl(28, 70%, 55%)",
-    "qid": "Q157734",
-    "tier": 3
   },
   {
     "name_en": "Trucial States",
@@ -12204,42 +11928,6 @@
     "tier": 3
   },
   {
-    "name_en": "Wahidi Bir Ali",
-    "name_ko": "와히디 비르 아리",
-    "lon": 48.3419,
-    "lat": 14.025,
-    "start_year": 1830,
-    "end_year": 1967,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q739722",
-    "tier": 4
-  },
-  {
-    "name_en": "Wahidi Balhaf",
-    "name_ko": "와히디 바르하프",
-    "lon": 48.1833,
-    "lat": 13.9667,
-    "start_year": 1830,
-    "end_year": 1967,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q1897800",
-    "tier": 4
-  },
-  {
-    "name_en": "Wahidi Azzan",
-    "name_ko": "와히디 아자은",
-    "lon": 47.4333,
-    "lat": 14.3333,
-    "start_year": 1830,
-    "end_year": 1881,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q13375062",
-    "tier": 4
-  },
-  {
     "name_en": "Sultanate of Mohéli",
     "name_ko": "모흐에리 술탄국",
     "lon": 43.73,
@@ -12408,18 +12096,6 @@
     "tier": 4
   },
   {
-    "name_en": "Emirate of Jabal Shammar",
-    "name_ko": "자발 샴마르 토후국",
-    "lon": 41.683333,
-    "lat": 27.516667,
-    "start_year": 1836,
-    "end_year": 1921,
-    "lineage_id": null,
-    "color": "hsl(302, 70%, 55%)",
-    "qid": "Q5362837",
-    "tier": 3
-  },
-  {
     "name_en": "State of Los Altos",
     "name_ko": "로스알토스국",
     "lon": -91.5,
@@ -12453,7 +12129,7 @@
     "lineage_id": null,
     "color": "hsl(290, 70%, 55%)",
     "qid": "Q8842943",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Republic of Yucatán",
@@ -12537,7 +12213,7 @@
     "lineage_id": "L0187",
     "color": "hsl(75, 70%, 55%)",
     "qid": "Q3048062",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Second Empire of Haiti",
@@ -12573,18 +12249,6 @@
     "lineage_id": null,
     "color": "hsl(180, 70%, 55%)",
     "qid": "Q661340",
-    "tier": 4
-  },
-  {
-    "name_en": "Maflahi",
-    "name_ko": "마프라히",
-    "lon": 44.7167,
-    "lat": 13.6833,
-    "start_year": 1850,
-    "end_year": 1967,
-    "lineage_id": "L0027",
-    "color": "hsl(3, 70%, 55%)",
-    "qid": "Q751372",
     "tier": 4
   },
   {
@@ -12682,18 +12346,6 @@
     "color": "hsl(176, 70%, 55%)",
     "qid": "Q129286",
     "tier": 1
-  },
-  {
-    "name_en": "Qu'aiti Sultanate",
-    "name_ko": "콰이티 술탄국",
-    "lon": 49.08333333,
-    "lat": 14.58333333,
-    "start_year": 1858,
-    "end_year": 1967,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q202775",
-    "tier": 4
   },
   {
     "name_en": "Kingdom of Rarotonga",
@@ -12862,18 +12514,6 @@
     "color": "hsl(2, 70%, 55%)",
     "qid": "Q533558",
     "tier": 4
-  },
-  {
-    "name_en": "Aden Protectorate",
-    "name_ko": "아덴 보호령",
-    "lon": 45.03,
-    "lat": 12.8,
-    "start_year": 1869,
-    "end_year": 1963,
-    "lineage_id": null,
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "Q1865132",
-    "tier": 3
   },
   {
     "name_en": "German Empire",
@@ -13149,7 +12789,7 @@
     "lineage_id": "L0185",
     "color": "hsl(198, 70%, 55%)",
     "qid": "Q1493843",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Sultanate of Grande Comore",
@@ -13368,18 +13008,6 @@
     "tier": 4
   },
   {
-    "name_en": "Sheikhdom of al-Hawra",
-    "name_ko": "셰이크도므 하우라",
-    "lon": 47.578196,
-    "lat": 13.817366,
-    "start_year": 1900,
-    "end_year": 1967,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q65050489",
-    "tier": 4
-  },
-  {
     "name_en": "Gurian Republic",
     "name_ko": "구리아은 공화국",
     "lon": 42.000556,
@@ -13413,18 +13041,6 @@
     "lineage_id": null,
     "color": "hsl(233, 70%, 55%)",
     "qid": "Q14905932",
-    "tier": 4
-  },
-  {
-    "name_en": "Emirate of Asir",
-    "name_ko": "아시르 이드리드 토후국",
-    "lon": 42.616667,
-    "lat": 17.15,
-    "start_year": 1906,
-    "end_year": 1934,
-    "lineage_id": null,
-    "color": "hsl(238, 70%, 55%)",
-    "qid": "Q1656908",
     "tier": 4
   },
   {
@@ -13821,7 +13437,7 @@
     "lineage_id": null,
     "color": "hsl(352, 70%, 55%)",
     "qid": "Q1518576",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "People's State of Bavaria",
@@ -14313,19 +13929,7 @@
     "lineage_id": "L0197",
     "color": "hsl(145, 70%, 55%)",
     "qid": "Q10955123",
-    "tier": 4
-  },
-  {
-    "name_en": "Colony of Aden",
-    "name_ko": "아덴 식민지",
-    "lon": 45.0333,
-    "lat": 12.8,
-    "start_year": 1937,
-    "end_year": 1963,
-    "lineage_id": "L0165",
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "Q49910",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Hatay State",
@@ -14505,7 +14109,7 @@
     "lineage_id": null,
     "color": "hsl(269, 70%, 55%)",
     "qid": "Q16953965",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "State of Burma",
@@ -15453,7 +15057,7 @@
     "lineage_id": null,
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q65362",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Islamic State of Afghanistan",
@@ -15525,7 +15129,7 @@
     "lineage_id": null,
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q1257607",
-    "tier": 4
+    "tier": 5
   },
   {
     "name_en": "Transitional Islamic State of Afghanistan",
@@ -18208,7 +17812,7 @@
     "name_ko": "오만",
     "lon": 58.5933,
     "lat": 23.6133,
-    "start_year": 1886,
+    "start_year": 751,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(28, 70%, 55%)",
@@ -19452,18 +19056,6 @@
     "tier": 2
   },
   {
-    "name_en": "Aden",
-    "name_ko": "아덴",
-    "lon": 45.0333,
-    "lat": 12.8,
-    "start_year": 1937,
-    "end_year": 1962,
-    "lineage_id": null,
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "CSHAPES_Aden",
-    "tier": 4
-  },
-  {
     "name_en": "Burma",
     "name_ko": "미얀마",
     "lon": 96.1186,
@@ -19474,18 +19066,6 @@
     "color": "hsl(335, 70%, 55%)",
     "qid": "Q836",
     "tier": 3
-  },
-  {
-    "name_en": "East Aden Protectorate",
-    "name_ko": "동아덴 보호령",
-    "lon": 49.1259,
-    "lat": 14.5412,
-    "start_year": 1937,
-    "end_year": 1962,
-    "lineage_id": null,
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "CSHAPES_East_Aden_Protectorate",
-    "tier": 4
   },
   {
     "name_en": "Korea, Democratic People's Republic of",
