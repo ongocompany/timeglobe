@@ -5928,18 +5928,6 @@
     "tier": 2
   },
   {
-    "name_en": "Ayyubid Sultanate",
-    "name_ko": "아이유브 술탄국",
-    "lon": 36.29,
-    "lat": 33.51,
-    "start_year": 1171,
-    "end_year": 1250,
-    "lineage_id": null,
-    "color": "hsl(156, 70%, 55%)",
-    "qid": "Q63135869",
-    "tier": 4
-  },
-  {
     "name_en": "Duchy of Opole",
     "name_ko": "오포레 공국",
     "lon": 17.916666666,
@@ -9228,18 +9216,6 @@
     "tier": 4
   },
   {
-    "name_en": "Safavid Iran",
-    "name_ko": "사파비 제국",
-    "lon": 50,
-    "lat": 33,
-    "start_year": 1501,
-    "end_year": 1736,
-    "lineage_id": null,
-    "color": "hsl(209, 70%, 55%)",
-    "qid": "Q18234383",
-    "tier": 2
-  },
-  {
     "name_en": "Palatinate-Neuburg",
     "name_ko": "파라티나테-네우부르그",
     "lon": 11.183333333,
@@ -10800,18 +10776,6 @@
     "tier": 4
   },
   {
-    "name_en": "Afsharid Iran",
-    "name_ko": "아프샤르 제국",
-    "lon": 51.416666944,
-    "lat": 35.7,
-    "start_year": 1736,
-    "end_year": 1796,
-    "lineage_id": "L0173",
-    "color": "hsl(246, 70%, 55%)",
-    "qid": "Q63149558",
-    "tier": 4
-  },
-  {
     "name_en": "Kingdom of the Two Sicilies",
     "name_ko": "양시칠리아 왕국",
     "lon": 14.25,
@@ -10848,18 +10812,6 @@
     "tier": 4
   },
   {
-    "name_en": "First Saudi State",
-    "name_ko": "디리야 토후국",
-    "lon": 46.575556,
-    "lat": 24.733333,
-    "start_year": 1744,
-    "end_year": 1818,
-    "lineage_id": "L0148",
-    "color": "hsl(59, 70%, 55%)",
-    "qid": "Q146871",
-    "tier": 3
-  },
-  {
     "name_en": "Erivan Khanate",
     "name_ko": "에리반 칸국",
     "lon": 44.514444444,
@@ -10882,18 +10834,6 @@
     "color": "hsl(107, 70%, 55%)",
     "qid": "Q467627",
     "tier": 2
-  },
-  {
-    "name_en": "Sikh Confederacy",
-    "name_ko": "시크 연맹",
-    "lon": 74.9,
-    "lat": 31.6,
-    "start_year": 1733,
-    "end_year": 1799,
-    "lineage_id": null,
-    "color": "hsl(127, 70%, 55%)",
-    "qid": "Q2578028",
-    "tier": 4
   },
   {
     "name_en": "Karabakh Khanate",
@@ -10953,18 +10893,6 @@
     "lineage_id": null,
     "color": "hsl(300, 70%, 55%)",
     "qid": "Q2114397",
-    "tier": 3
-  },
-  {
-    "name_en": "Company rule in India",
-    "name_ko": "회사령 인도",
-    "lon": 88.4,
-    "lat": 22.6,
-    "start_year": 1757,
-    "end_year": 1858,
-    "lineage_id": null,
-    "color": "hsl(176, 70%, 55%)",
-    "qid": "Q2001966",
     "tier": 3
   },
   {
@@ -11266,18 +11194,6 @@
     "color": "hsl(214, 70%, 55%)",
     "qid": "Q729481",
     "tier": 4
-  },
-  {
-    "name_en": "Qajar Iran",
-    "name_ko": "카자르 제국",
-    "lon": 51.416666944,
-    "lat": 35.7,
-    "start_year": 1796,
-    "end_year": 1925,
-    "lineage_id": "L0173",
-    "color": "hsl(246, 70%, 55%)",
-    "qid": "Q63158027",
-    "tier": 3
   },
   {
     "name_en": "Cisalpine Republic",
@@ -11998,18 +11914,6 @@
     "color": "hsl(2, 70%, 55%)",
     "qid": "Q1117051",
     "tier": 4
-  },
-  {
-    "name_en": "Second Saudi State",
-    "name_ko": "네지드 토후국",
-    "lon": 45.5,
-    "lat": 23,
-    "start_year": 1818,
-    "end_year": 1891,
-    "lineage_id": null,
-    "color": "hsl(356, 70%, 55%)",
-    "qid": "Q146862",
-    "tier": 3
   },
   {
     "name_en": "Ajmer-Merwara",
@@ -12769,10 +12673,10 @@
   },
   {
     "name_en": "British Raj",
-    "name_ko": "인도 제국(영국령)",
+    "name_ko": "인도(영국령)",
     "lon": 88.337777777,
     "lat": 22.541111111,
-    "start_year": 1858,
+    "start_year": 1757,
     "end_year": 1947,
     "lineage_id": null,
     "color": "hsl(176, 70%, 55%)",
@@ -12922,18 +12826,6 @@
     "color": "hsl(58, 70%, 55%)",
     "qid": "Q1688526",
     "tier": 4
-  },
-  {
-    "name_en": "Khedivate of Egypt",
-    "name_ko": "이집트 케디브국",
-    "lon": 31.216666666,
-    "lat": 30.05,
-    "start_year": 1867,
-    "end_year": 1914,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q127861",
-    "tier": 3
   },
   {
     "name_en": "North German Confederation",
@@ -13500,18 +13392,6 @@
     "tier": 4
   },
   {
-    "name_en": "Emirate of Nejd and Hasa",
-    "name_ko": "네지드-하사 아미르국",
-    "lon": 46.72,
-    "lat": 24.63,
-    "start_year": 1902,
-    "end_year": 1921,
-    "lineage_id": null,
-    "color": "hsl(59, 70%, 55%)",
-    "qid": "Q96028967",
-    "tier": 4
-  },
-  {
     "name_en": "Orange River Colony",
     "name_ko": "오렌지강 식민지",
     "lon": 26.216666666,
@@ -13702,18 +13582,6 @@
     "color": "hsl(112, 70%, 55%)",
     "qid": "Q187035",
     "tier": 4
-  },
-  {
-    "name_en": "Sultanate of Egypt",
-    "name_ko": "이집트 술탄국",
-    "lon": 31.2167,
-    "lat": 30.05,
-    "start_year": 1914,
-    "end_year": 1922,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q370173",
-    "tier": 3
   },
   {
     "name_en": "Empire of China",
@@ -14136,18 +14004,6 @@
     "tier": 4
   },
   {
-    "name_en": "Mandatory Iraq",
-    "name_ko": "영국 위임통치령 메소포타미아",
-    "lon": 44.38333333,
-    "lat": 33.33333333,
-    "start_year": 1920,
-    "end_year": 1932,
-    "lineage_id": "L0007",
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q146720",
-    "tier": 3
-  },
-  {
     "name_en": "State of Aleppo",
     "name_ko": "알레포국",
     "lon": 37.1667,
@@ -14232,18 +14088,6 @@
     "tier": 4
   },
   {
-    "name_en": "Kingdom of Iraq",
-    "name_ko": "이라크 왕국",
-    "lon": 44.383333,
-    "lat": 33.333333,
-    "start_year": 1921,
-    "end_year": 1958,
-    "lineage_id": "L0007",
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q149805",
-    "tier": 3
-  },
-  {
     "name_en": "Republic of the Rif",
     "name_ko": "리프 공화국",
     "lon": -3.916666666,
@@ -14265,18 +14109,6 @@
     "lineage_id": "L0193",
     "color": "hsl(15, 70%, 55%)",
     "qid": "Q816709",
-    "tier": 3
-  },
-  {
-    "name_en": "Kingdom of Egypt",
-    "name_ko": "이집트 왕국",
-    "lon": 31.216666666,
-    "lat": 30.05,
-    "start_year": 1922,
-    "end_year": 1953,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q124943",
     "tier": 3
   },
   {
@@ -14316,30 +14148,6 @@
     "tier": 2
   },
   {
-    "name_en": "Syrian Federation",
-    "name_ko": "스이리아은 연방",
-    "lon": 36.3,
-    "lat": 33.516666666,
-    "start_year": 1922,
-    "end_year": 1925,
-    "lineage_id": "L0012",
-    "color": "hsl(156, 70%, 55%)",
-    "qid": "Q12183911",
-    "tier": 4
-  },
-  {
-    "name_en": "French Mandate for Syria and the Lebanon",
-    "name_ko": "프랑스 위임통치령 시리아",
-    "lon": 36.3,
-    "lat": 33.516666666,
-    "start_year": 1923,
-    "end_year": 1946,
-    "lineage_id": "L0012",
-    "color": "hsl(156, 70%, 55%)",
-    "qid": "Q139708",
-    "tier": 3
-  },
-  {
     "name_en": "Mongolian People's Republic",
     "name_ko": "몽골 인민공화국",
     "lon": 106.9,
@@ -14376,30 +14184,6 @@
     "tier": 4
   },
   {
-    "name_en": "Pahlavi Iran",
-    "name_ko": "팔라비 제국",
-    "lon": 51.39,
-    "lat": 35.69,
-    "start_year": 1925,
-    "end_year": 1979,
-    "lineage_id": null,
-    "color": "hsl(246, 70%, 55%)",
-    "qid": "Q107258515",
-    "tier": 3
-  },
-  {
-    "name_en": "Lebanese Republic under French mandate",
-    "name_ko": "프랑스 위임통치 레바논",
-    "lon": 35.76667,
-    "lat": 33.83333,
-    "start_year": 1926,
-    "end_year": 1943,
-    "lineage_id": "L0012",
-    "color": "hsl(156, 70%, 55%)",
-    "qid": "Q108865218",
-    "tier": 4
-  },
-  {
     "name_en": "Kingdom of Afghanistan",
     "name_ko": "아프가니스탄 왕국",
     "lon": 65,
@@ -14410,18 +14194,6 @@
     "color": "hsl(2, 70%, 55%)",
     "qid": "Q1138904",
     "tier": 3
-  },
-  {
-    "name_en": "Kingdom of Nejd and Hejaz",
-    "name_ko": "네지드-헤자즈 왕국",
-    "lon": 46.71,
-    "lat": 24.65,
-    "start_year": 1926,
-    "end_year": 1932,
-    "lineage_id": null,
-    "color": "hsl(59, 70%, 55%)",
-    "qid": "Q1756546",
-    "tier": 4
   },
   {
     "name_en": "Republic of Ararat",
@@ -14445,42 +14217,6 @@
     "lineage_id": "L0192",
     "color": "hsl(112, 70%, 55%)",
     "qid": "Q1048340",
-    "tier": 4
-  },
-  {
-    "name_en": "Second Syrian Republic",
-    "name_ko": "시리아 공화국",
-    "lon": 38,
-    "lat": 35,
-    "start_year": 1930,
-    "end_year": 1958,
-    "lineage_id": "L0014",
-    "color": "hsl(64, 70%, 55%)",
-    "qid": "Q146885",
-    "tier": 3
-  },
-  {
-    "name_en": "Syrian Republic under French mandate",
-    "name_ko": "프랑스 위임통치 시리아",
-    "lon": 36.3,
-    "lat": 33.516666666,
-    "start_year": 1930,
-    "end_year": 1946,
-    "lineage_id": "L0012",
-    "color": "hsl(156, 70%, 55%)",
-    "qid": "Q108868568",
-    "tier": 4
-  },
-  {
-    "name_en": "First Syrian Republic",
-    "name_ko": "시리아 제1공화국",
-    "lon": 38,
-    "lat": 35,
-    "start_year": 1930,
-    "end_year": 1950,
-    "lineage_id": "L0014",
-    "color": "hsl(64, 70%, 55%)",
-    "qid": "Q26234937",
     "tier": 4
   },
   {
@@ -14952,18 +14688,6 @@
     "tier": 2
   },
   {
-    "name_en": "All-Palestine Government",
-    "name_ko": "팔레스타인 정부 (1948년)",
-    "lon": 34.47,
-    "lat": 31.5,
-    "start_year": 1948,
-    "end_year": 1959,
-    "lineage_id": null,
-    "color": "hsl(29, 70%, 55%)",
-    "qid": "Q2051582",
-    "tier": 4
-  },
-  {
     "name_en": "Dominion of Ceylon",
     "name_ko": "실론 자치령",
     "lon": 79.842777777,
@@ -15120,18 +14844,6 @@
     "tier": 4
   },
   {
-    "name_en": "Republic of Egypt",
-    "name_ko": "이집트 공화국",
-    "lon": 31.216666666,
-    "lat": 30.05,
-    "start_year": 1953,
-    "end_year": 1958,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q3087763",
-    "tier": 4
-  },
-  {
     "name_en": "Federation of Rhodesia and Nyasaland",
     "name_ko": "로디지아 니아살랜드 연방",
     "lon": 31.029722,
@@ -15216,18 +14928,6 @@
     "tier": 4
   },
   {
-    "name_en": "United Arab Republic",
-    "name_ko": "아랍 연합 공화국",
-    "lon": 31.216666666,
-    "lat": 30.033333333,
-    "start_year": 1958,
-    "end_year": 1971,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q170468",
-    "tier": 2
-  },
-  {
     "name_en": "Republic of Upper Volta",
     "name_ko": "오트볼타 공화국",
     "lon": -1.7,
@@ -15252,18 +14952,6 @@
     "tier": 3
   },
   {
-    "name_en": "First Republic of Iraq",
-    "name_ko": "이라크 공화국(1958~1968)",
-    "lon": 44,
-    "lat": 33,
-    "start_year": 1958,
-    "end_year": 1968,
-    "lineage_id": "L0007",
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q3041595",
-    "tier": 4
-  },
-  {
     "name_en": "Malagasy Republic",
     "name_ko": "마다가스카르 공화국",
     "lon": 47.516666666,
@@ -15286,18 +14974,6 @@
     "color": "hsl(67, 70%, 55%)",
     "qid": "Q652560",
     "tier": 2
-  },
-  {
-    "name_en": "United Arab States",
-    "name_ko": "아랍 합중국",
-    "lon": 31.24,
-    "lat": 30.04,
-    "start_year": 1958,
-    "end_year": 1961,
-    "lineage_id": null,
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q856843",
-    "tier": 3
   },
   {
     "name_en": "United Suvadive Republic",
@@ -15408,42 +15084,6 @@
     "tier": 4
   },
   {
-    "name_en": "Federation of South Arabia",
-    "name_ko": "남아라비아 연방",
-    "lon": 48.076,
-    "lat": 15.33,
-    "start_year": 1962,
-    "end_year": 1967,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q834486",
-    "tier": 3
-  },
-  {
-    "name_en": "Ba'athist Syria",
-    "name_ko": "바트주의 시리아",
-    "lon": 36.29,
-    "lat": 33.51,
-    "start_year": 1963,
-    "end_year": 2024,
-    "lineage_id": null,
-    "color": "hsl(156, 70%, 55%)",
-    "qid": "Q131404661",
-    "tier": 3
-  },
-  {
-    "name_en": "Protectorate of South Arabia",
-    "name_ko": "남아라비아 보호령",
-    "lon": 47,
-    "lat": 14,
-    "start_year": 1963,
-    "end_year": 1967,
-    "lineage_id": null,
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q1517772",
-    "tier": 4
-  },
-  {
     "name_en": "Commonwealth realm of the Gambia",
     "name_ko": "연방 레아르므 가음브이",
     "lon": -15.5,
@@ -15478,18 +15118,6 @@
     "color": "hsl(187, 70%, 55%)",
     "qid": "Q199841",
     "tier": 2
-  },
-  {
-    "name_en": "Ba'athist Iraq",
-    "name_ko": "바트주의 이라크",
-    "lon": 44.433333,
-    "lat": 33.333333,
-    "start_year": 1968,
-    "end_year": 2003,
-    "lineage_id": "L0007",
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q3108185",
-    "tier": 4
   },
   {
     "name_en": "Republic of Rose Island",
@@ -15610,18 +15238,6 @@
     "color": "hsl(131, 70%, 55%)",
     "qid": "Q6500954",
     "tier": 1
-  },
-  {
-    "name_en": "Federation of Arab Republics",
-    "name_ko": "아랍 공화국 연방",
-    "lon": 31.24,
-    "lat": 30.04,
-    "start_year": 1972,
-    "end_year": 1977,
-    "lineage_id": null,
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q44642",
-    "tier": 3
   },
   {
     "name_en": "Republic of Afghanistan",
@@ -16198,18 +15814,6 @@
     "color": "hsl(240, 70%, 55%)",
     "qid": "Q295587",
     "tier": 4
-  },
-  {
-    "name_en": "Pahlavi dynasty",
-    "name_ko": "팔레비 왕조",
-    "lon": 51.4,
-    "lat": 35.7,
-    "start_year": 1925,
-    "end_year": 1979,
-    "lineage_id": null,
-    "color": "hsl(246, 70%, 55%)",
-    "qid": "Q170572",
-    "tier": 2
   },
   {
     "name_en": "Ancient Egypt",
@@ -18568,7 +18172,7 @@
     "name_ko": "이란",
     "lon": 51.4244,
     "lat": 35.6719,
-    "start_year": 1886,
+    "start_year": 1501,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(246, 70%, 55%)",
@@ -18592,7 +18196,7 @@
     "name_ko": "이집트",
     "lon": 31.25,
     "lat": 30.05,
-    "start_year": 1886,
+    "start_year": 1953,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(36, 70%, 55%)",
@@ -18652,7 +18256,7 @@
     "name_ko": "인도",
     "lon": 77.2,
     "lat": 28.6,
-    "start_year": 1886,
+    "start_year": 1947,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(244, 70%, 55%)",
@@ -19840,7 +19444,7 @@
     "name_ko": "사우디아라비아",
     "lon": 46.7728,
     "lat": 24.6408,
-    "start_year": 1932,
+    "start_year": 1744,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(59, 70%, 55%)",
