@@ -1890,34 +1890,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         }
       }
 
-      // [cl] ★ 라벨 추가 — 1886 이전만 (1886+는 renderCirclesForYear에서 통합 표시)
-      const firstFeature = geojson.features[0];
-      if (firstFeature && targetYear < CSHAPES_START_YEAR) {
-        const center = calcCentroid(firstFeature.geometry);
-        if (center) {
-          const koName = entity.name_ko || entity.name_en;
-          const enName = entity.name_en;
-          let labelText = koName;
-          if (koName !== enName && !/^[A-Za-z\s\-'().]+$/.test(koName)) {
-            labelText += `\n${enName}`;
-          }
-          const style = getLabelStyle(entity.tier);
-          ds.entities.add({
-            position: Cartesian3.fromDegrees(center[0], center[1]),
-            label: {
-              text: labelText,
-              font: style.font,
-              fillColor: Color.WHITE,
-              outlineColor: Color.BLACK,
-              outlineWidth: 4,   // [cl] 2배 렌더링이라 outline도 키움
-              style: 2, // FILL_AND_OUTLINE
-              pixelOffset: new Cartesian2(0, 0),
-              scaleByDistance: style.scale,
-              translucencyByDistance: style.translucency,
-            },
-          });
-        }
-      }
+      // [cl] OHM 라벨 제거 — 라벨은 renderCirclesForYear()에서 wikidata_circles.json 기반으로 통합 렌더링
+      // OHM은 폴리곤(국경선)만 담당, 라벨 이중 표시 방지 (2026-03-02)
     }
 
     if (!viewer.isDestroyed()) {
