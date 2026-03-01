@@ -1,5 +1,53 @@
 [
   {
+    "qid": "MANUAL_Q47690",
+    "name_en": "Indus Valley Civilisation",
+    "name_ko": "인더스 문명",
+    "tier": 1,
+    "start_year": -3300,
+    "end_year": -1300,
+    "snapshots": [
+      {
+        "rid": 9000035,
+        "start": -3300,
+        "end": -1300,
+        "file": "ohm_9000035.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q11768",
+    "name_en": "Ancient Egypt",
+    "name_ko": "고대 이집트",
+    "tier": 1,
+    "start_year": -3100,
+    "end_year": -30,
+    "snapshots": [
+      {
+        "rid": 9000053,
+        "start": -3100,
+        "end": -30,
+        "file": "ohm_9000053.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q173527",
+    "name_en": "Minoan civilization",
+    "name_ko": "미노스 문명",
+    "tier": 1,
+    "start_year": -2700,
+    "end_year": -1450,
+    "snapshots": [
+      {
+        "rid": 9000065,
+        "start": -2700,
+        "end": -1450,
+        "file": "ohm_9000065.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q128904",
     "name_en": "Elam",
     "name_ko": "엘람",
@@ -48,6 +96,86 @@
     ]
   },
   {
+    "qid": "Q175094",
+    "name_en": "Lagash",
+    "name_ko": "라가시",
+    "tier": 1,
+    "start_year": -2500,
+    "end_year": -2000,
+    "snapshots": [
+      {
+        "rid": 9000060,
+        "start": -2500,
+        "end": -2000,
+        "file": "ohm_9000060.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q11691",
+    "name_en": "Land of Punt",
+    "name_ko": "푼트",
+    "tier": 1,
+    "start_year": -2400,
+    "end_year": -1068,
+    "snapshots": [
+      {
+        "rid": 9000096,
+        "start": -2400,
+        "end": -1068,
+        "file": "ohm_9000096.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q28405",
+    "name_en": "Gojoseon",
+    "name_ko": "고조선",
+    "tier": 1,
+    "start_year": -2332,
+    "end_year": -107,
+    "snapshots": [
+      {
+        "rid": 9000008,
+        "start": -2332,
+        "end": -107,
+        "file": "ohm_9000008.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q35765",
+    "name_en": "Xia dynasty",
+    "name_ko": "하 왕조",
+    "tier": 1,
+    "start_year": -2070,
+    "end_year": -1600,
+    "snapshots": [
+      {
+        "rid": 9000001,
+        "start": -2070,
+        "end": -1600,
+        "file": "ohm_9000001.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q41137",
+    "name_en": "Assyrian Empire",
+    "name_ko": "아시리아",
+    "tier": 1,
+    "start_year": -2024,
+    "end_year": -910,
+    "snapshots": [
+      {
+        "rid": 9000066,
+        "start": -2024,
+        "end": -910,
+        "file": "ohm_9000066.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q47690",
     "name_en": "Babylonia",
     "name_ko": "바빌로니아",
@@ -60,6 +188,22 @@
         "start": -1879,
         "end": -1761,
         "file": "ohm_2854905.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q220738",
+    "name_en": "Colchis",
+    "name_ko": "콜키스",
+    "tier": 1,
+    "start_year": -1700,
+    "end_year": -163,
+    "snapshots": [
+      {
+        "rid": 9000080,
+        "start": -1700,
+        "end": -163,
+        "file": "ohm_9000080.geojson"
       }
     ]
   },
@@ -112,6 +256,38 @@
     ]
   },
   {
+    "qid": "Q180920",
+    "name_en": "New Kingdom of Egypt",
+    "name_ko": "이집트 신왕국",
+    "tier": 1,
+    "start_year": -1550,
+    "end_year": -1077,
+    "snapshots": [
+      {
+        "rid": 9000054,
+        "start": -1550,
+        "end": -1077,
+        "file": "ohm_9000054.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q135364",
+    "name_en": "Olmec civilization",
+    "name_ko": "올멕 문명",
+    "tier": 1,
+    "start_year": -1500,
+    "end_year": -400,
+    "snapshots": [
+      {
+        "rid": 9000104,
+        "start": -1500,
+        "end": -400,
+        "file": "ohm_9000104.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q178665",
     "name_en": "Mitanni",
     "name_ko": "미탄니",
@@ -124,6 +300,54 @@
         "start": -1499,
         "end": -1349,
         "file": "ohm_2851223.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q208299",
+    "name_en": "Moab",
+    "name_ko": "모압",
+    "tier": 1,
+    "start_year": -1300,
+    "end_year": -399,
+    "snapshots": [
+      {
+        "rid": 9000059,
+        "start": -1300,
+        "end": -399,
+        "file": "ohm_9000059.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q1193806",
+    "name_en": "Shu",
+    "name_ko": "고촉",
+    "tier": 2,
+    "start_year": -1200,
+    "end_year": -315,
+    "snapshots": [
+      {
+        "rid": 9000029,
+        "start": -1200,
+        "end": -315,
+        "file": "ohm_9000029.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q171513",
+    "name_en": "Magadha",
+    "name_ko": "마가다",
+    "tier": 1,
+    "start_year": -1200,
+    "end_year": -344,
+    "snapshots": [
+      {
+        "rid": 9000036,
+        "start": -1200,
+        "end": -344,
+        "file": "ohm_9000036.geojson"
       }
     ]
   },
@@ -156,6 +380,22 @@
     ]
   },
   {
+    "qid": "Q41127",
+    "name_en": "Lydia",
+    "name_ko": "리디아",
+    "tier": 1,
+    "start_year": -1199,
+    "end_year": -545,
+    "snapshots": [
+      {
+        "rid": 9000081,
+        "start": -1199,
+        "end": -545,
+        "file": "ohm_9000081.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q215764",
     "name_en": "Western Zhou",
     "name_ko": "서주",
@@ -172,6 +412,54 @@
     ]
   },
   {
+    "qid": "Q169940",
+    "name_en": "Kingdom of Kush",
+    "name_ko": "쿠시 왕국",
+    "tier": 1,
+    "start_year": -1070,
+    "end_year": 350,
+    "snapshots": [
+      {
+        "rid": 9000057,
+        "start": -1070,
+        "end": 350,
+        "file": "ohm_9000057.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q230547",
+    "name_en": "Yan (state)",
+    "name_ko": "연(燕)나라",
+    "tier": 2,
+    "start_year": -1044,
+    "end_year": -222,
+    "snapshots": [
+      {
+        "rid": 9000019,
+        "start": -1044,
+        "end": -222,
+        "file": "ohm_9000019.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q837855",
+    "name_en": "Qi",
+    "name_ko": "제",
+    "tier": 1,
+    "start_year": -1044,
+    "end_year": -220,
+    "snapshots": [
+      {
+        "rid": 9000020,
+        "start": -1044,
+        "end": -220,
+        "file": "ohm_9000020.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q5690",
     "name_en": "Sparta",
     "name_ko": "스파르타",
@@ -184,6 +472,38 @@
         "start": -900,
         "end": -371,
         "file": "ohm_2849727.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q219067",
+    "name_en": "Chavín culture",
+    "name_ko": "차빈 문명",
+    "tier": 1,
+    "start_year": -900,
+    "end_year": -200,
+    "snapshots": [
+      {
+        "rid": 9000105,
+        "start": -900,
+        "end": -200,
+        "file": "ohm_9000105.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q242309",
+    "name_en": "Qin (state)",
+    "name_ko": "진(秦) 제후국",
+    "tier": 1,
+    "start_year": -897,
+    "end_year": -221,
+    "snapshots": [
+      {
+        "rid": 9000021,
+        "start": -897,
+        "end": -221,
+        "file": "ohm_9000021.geojson"
       }
     ]
   },
@@ -262,6 +582,38 @@
     ]
   },
   {
+    "qid": "Q83958",
+    "name_en": "Macedonia",
+    "name_ko": "마케도니아 왕국",
+    "tier": 1,
+    "start_year": -807,
+    "end_year": -166,
+    "snapshots": [
+      {
+        "rid": 9000067,
+        "start": -807,
+        "end": -166,
+        "file": "ohm_9000067.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q215765",
+    "name_en": "Eastern Zhou",
+    "name_ko": "동주",
+    "tier": 2,
+    "start_year": -770,
+    "end_year": -256,
+    "snapshots": [
+      {
+        "rid": 9000017,
+        "start": -770,
+        "end": -256,
+        "file": "ohm_9000017.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q201038",
     "name_en": "Roman Kingdom",
     "name_ko": "로마 왕정",
@@ -280,6 +632,22 @@
         "start": -630,
         "end": -509,
         "file": "ohm_2849407.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q504759",
+    "name_en": "Chu",
+    "name_ko": "초",
+    "tier": 2,
+    "start_year": -721,
+    "end_year": -222,
+    "snapshots": [
+      {
+        "rid": 9000018,
+        "start": -721,
+        "end": -222,
+        "file": "ohm_9000018.geojson"
       }
     ]
   },
@@ -318,6 +686,22 @@
         "start": 800,
         "end": 1603,
         "file": "ohm_2875840.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q389688",
+    "name_en": "Achaemenid Empire",
+    "name_ko": "아케메네스 왕조",
+    "tier": 1,
+    "start_year": -549,
+    "end_year": -329,
+    "snapshots": [
+      {
+        "rid": 9000055,
+        "start": -549,
+        "end": -329,
+        "file": "ohm_9000055.geojson"
       }
     ]
   },
@@ -446,6 +830,118 @@
     ]
   },
   {
+    "qid": "MANUAL_Q766",
+    "name_en": "Classical Athens",
+    "name_ko": "고대 아테네",
+    "tier": 1,
+    "start_year": -508,
+    "end_year": -322,
+    "snapshots": [
+      {
+        "rid": 9000068,
+        "start": -508,
+        "end": -322,
+        "file": "ohm_9000068.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q80702",
+    "name_en": "Maurya empire",
+    "name_ko": "마우리아 제국",
+    "tier": 1,
+    "start_year": -321,
+    "end_year": -184,
+    "snapshots": [
+      {
+        "rid": 9000037,
+        "start": -321,
+        "end": -184,
+        "file": "ohm_9000037.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q170477",
+    "name_en": "Seleucid Empire",
+    "name_ko": "셀레우코스 제국",
+    "tier": 2,
+    "start_year": -311,
+    "end_year": -62,
+    "snapshots": [
+      {
+        "rid": 9000061,
+        "start": -311,
+        "end": -62,
+        "file": "ohm_9000061.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q188836",
+    "name_en": "Xiongnu",
+    "name_ko": "흉노",
+    "tier": 1,
+    "start_year": -300,
+    "end_year": 100,
+    "snapshots": [
+      {
+        "rid": 9000012,
+        "start": -300,
+        "end": 100,
+        "file": "ohm_9000012.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q212648",
+    "name_en": "Mauretania",
+    "name_ko": "마우레타니아",
+    "tier": 1,
+    "start_year": -300,
+    "end_year": 698,
+    "snapshots": [
+      {
+        "rid": 9000097,
+        "start": -300,
+        "end": 698,
+        "file": "ohm_9000097.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q938636",
+    "name_en": "Pandya dynasty",
+    "name_ko": "판드야",
+    "tier": 1,
+    "start_year": -299,
+    "end_year": 1650,
+    "snapshots": [
+      {
+        "rid": 9000041,
+        "start": -299,
+        "end": 1650,
+        "file": "ohm_9000041.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q188161",
+    "name_en": "Kingdom of Iberia",
+    "name_ko": "캅카스 이베리아",
+    "tier": 1,
+    "start_year": -298,
+    "end_year": 580,
+    "snapshots": [
+      {
+        "rid": 9000069,
+        "start": -298,
+        "end": 580,
+        "file": "ohm_9000069.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q1986139",
     "name_en": "Parthian Empire",
     "name_ko": "파르티아 제국",
@@ -462,6 +958,70 @@
     ]
   },
   {
+    "qid": "Q7183",
+    "name_en": "Qin dynasty",
+    "name_ko": "진나라",
+    "tier": 2,
+    "start_year": -221,
+    "end_year": -206,
+    "snapshots": [
+      {
+        "rid": 9000002,
+        "start": -221,
+        "end": -206,
+        "file": "ohm_9000002.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q131748",
+    "name_en": "Xianbei",
+    "name_ko": "선비",
+    "tier": 1,
+    "start_year": -209,
+    "end_year": 235,
+    "snapshots": [
+      {
+        "rid": 9000014,
+        "start": -209,
+        "end": 235,
+        "file": "ohm_9000014.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q827040",
+    "name_en": "Nanyue",
+    "name_ko": "남월국",
+    "tier": 2,
+    "start_year": -206,
+    "end_year": -110,
+    "snapshots": [
+      {
+        "rid": 9000028,
+        "start": -206,
+        "end": -110,
+        "file": "ohm_9000028.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q7209",
+    "name_en": "Han dynasty",
+    "name_ko": "한나라",
+    "tier": 1,
+    "start_year": -205,
+    "end_year": 220,
+    "snapshots": [
+      {
+        "rid": 9000003,
+        "start": -205,
+        "end": 220,
+        "file": "ohm_9000003.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q102679",
     "name_en": "Kingdom of Numidia",
     "name_ko": "누미디아",
@@ -474,6 +1034,70 @@
         "start": -201,
         "end": -146,
         "file": "ohm_2849527.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q487879",
+    "name_en": "Buyeo kingdom",
+    "name_ko": "부여",
+    "tier": 2,
+    "start_year": -200,
+    "end_year": 494,
+    "snapshots": [
+      {
+        "rid": 9000031,
+        "start": -200,
+        "end": 494,
+        "file": "ohm_9000031.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q1032006",
+    "name_en": "Pyu city-states",
+    "name_ko": "쀼 시국",
+    "tier": 1,
+    "start_year": -200,
+    "end_year": 1050,
+    "snapshots": [
+      {
+        "rid": 9000049,
+        "start": -200,
+        "end": 1050,
+        "file": "ohm_9000049.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q311618",
+    "name_en": "Indo-Scythians",
+    "name_ko": "인도-스키타이",
+    "tier": 1,
+    "start_year": -199,
+    "end_year": 400,
+    "snapshots": [
+      {
+        "rid": 9000043,
+        "start": -199,
+        "end": 400,
+        "file": "ohm_9000043.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q703340",
+    "name_en": "Wiman Chosŏn",
+    "name_ko": "위만조선",
+    "tier": 2,
+    "start_year": -193,
+    "end_year": -107,
+    "snapshots": [
+      {
+        "rid": 9000030,
+        "start": -193,
+        "end": -107,
+        "file": "ohm_9000030.geojson"
       }
     ]
   },
@@ -512,6 +1136,38 @@
         "start": -100,
         "end": 41,
         "file": "ohm_2894821.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q213168",
+    "name_en": "Nazca civilization",
+    "name_ko": "나스카 문명",
+    "tier": 1,
+    "start_year": -100,
+    "end_year": 800,
+    "snapshots": [
+      {
+        "rid": 9000106,
+        "start": -100,
+        "end": 800,
+        "file": "ohm_9000106.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q28370",
+    "name_en": "Goguryeo",
+    "name_ko": "고구려",
+    "tier": 1,
+    "start_year": -36,
+    "end_year": 668,
+    "snapshots": [
+      {
+        "rid": 9000009,
+        "start": -36,
+        "end": 668,
+        "file": "ohm_9000009.geojson"
       }
     ]
   },
@@ -640,6 +1296,38 @@
     ]
   },
   {
+    "qid": "Q129864",
+    "name_en": "Xin dynasty",
+    "name_ko": "신나라",
+    "tier": 2,
+    "start_year": 9,
+    "end_year": 23,
+    "snapshots": [
+      {
+        "rid": 9000033,
+        "start": 9,
+        "end": 23,
+        "file": "ohm_9000033.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q46362",
+    "name_en": "Kushan Empire",
+    "name_ko": "쿠샨 왕조",
+    "tier": 1,
+    "start_year": 30,
+    "end_year": 375,
+    "snapshots": [
+      {
+        "rid": 9000051,
+        "start": 30,
+        "end": 375,
+        "file": "ohm_9000051.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q139377",
     "name_en": "Kingdom of Aksum",
     "name_ko": "악숨 왕국",
@@ -658,6 +1346,22 @@
         "start": 632,
         "end": 960,
         "file": "ohm_2860225.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q273266",
+    "name_en": "Kingdom of Khotan",
+    "name_ko": "호탄 왕국",
+    "tier": 1,
+    "start_year": 56,
+    "end_year": 1006,
+    "snapshots": [
+      {
+        "rid": 9000091,
+        "start": 56,
+        "end": 1006,
+        "file": "ohm_9000091.geojson"
       }
     ]
   },
@@ -694,6 +1398,22 @@
     ]
   },
   {
+    "qid": "Q25777",
+    "name_en": "Sasanian Empire",
+    "name_ko": "사산 왕조",
+    "tier": 1,
+    "start_year": 224,
+    "end_year": 651,
+    "snapshots": [
+      {
+        "rid": 9000056,
+        "start": 224,
+        "end": 651,
+        "file": "ohm_9000056.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q28567",
     "name_en": "Maya civilization",
     "name_ko": "마야 문명",
@@ -706,6 +1426,86 @@
         "start": 250,
         "end": 900,
         "file": "ohm_2840633.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q1144936",
+    "name_en": "Wa (Japan)",
+    "name_ko": "왜국",
+    "tier": 1,
+    "start_year": 250,
+    "end_year": 670,
+    "snapshots": [
+      {
+        "rid": 9000015,
+        "start": 250,
+        "end": 670,
+        "file": "ohm_9000015.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q733",
+    "name_en": "Pallava dynasty",
+    "name_ko": "팔라바",
+    "tier": 1,
+    "start_year": 275,
+    "end_year": 897,
+    "snapshots": [
+      {
+        "rid": 9000042,
+        "start": 275,
+        "end": 897,
+        "file": "ohm_9000042.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q255283",
+    "name_en": "Eastern Jin",
+    "name_ko": "동진",
+    "tier": 2,
+    "start_year": 317,
+    "end_year": 420,
+    "snapshots": [
+      {
+        "rid": 9000032,
+        "start": 317,
+        "end": 420,
+        "file": "ohm_9000032.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q8534",
+    "name_en": "Gupta Empire",
+    "name_ko": "굽타 왕조",
+    "tier": 1,
+    "start_year": 320,
+    "end_year": 550,
+    "snapshots": [
+      {
+        "rid": 9000038,
+        "start": 320,
+        "end": 550,
+        "file": "ohm_9000038.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q155361",
+    "name_en": "Rouran Khaganate",
+    "name_ko": "유연",
+    "tier": 2,
+    "start_year": 330,
+    "end_year": 555,
+    "snapshots": [
+      {
+        "rid": 9000025,
+        "start": 330,
+        "end": 555,
+        "file": "ohm_9000025.geojson"
       }
     ]
   },
@@ -1160,6 +1960,22 @@
     ]
   },
   {
+    "qid": "Q179872",
+    "name_en": "Kingdom of Galicia",
+    "name_ko": "갈리시아 왕국",
+    "tier": 1,
+    "start_year": 410,
+    "end_year": 1833,
+    "snapshots": [
+      {
+        "rid": 9000071,
+        "start": 410,
+        "end": 1833,
+        "file": "ohm_9000071.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q126936",
     "name_en": "Visigothic Kingdom",
     "name_ko": "서고트 왕국",
@@ -1564,6 +2380,38 @@
     ]
   },
   {
+    "qid": "Q207833",
+    "name_en": "Kingdom of Makuria",
+    "name_ko": "마쿠리아",
+    "tier": 1,
+    "start_year": 500,
+    "end_year": 1518,
+    "snapshots": [
+      {
+        "rid": 9000058,
+        "start": 500,
+        "end": 1518,
+        "file": "ohm_9000058.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q105313",
+    "name_en": "Kingdom of Wessex",
+    "name_ko": "웨식스 왕국",
+    "tier": 1,
+    "start_year": 519,
+    "end_year": 927,
+    "snapshots": [
+      {
+        "rid": 9000072,
+        "start": 519,
+        "end": 927,
+        "file": "ohm_9000072.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q110888",
     "name_en": "Kingdom of Essex",
     "name_ko": "에식스 왕국",
@@ -1582,6 +2430,38 @@
         "start": 600,
         "end": 825,
         "file": "ohm_2840933.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q1068458",
+    "name_en": "Dvaravati",
+    "name_ko": "드바라바티",
+    "tier": 1,
+    "start_year": 550,
+    "end_year": 1050,
+    "snapshots": [
+      {
+        "rid": 9000048,
+        "start": 550,
+        "end": 1050,
+        "file": "ohm_9000048.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q205466",
+    "name_en": "Göktürks",
+    "name_ko": "돌궐",
+    "tier": 2,
+    "start_year": 552,
+    "end_year": 744,
+    "snapshots": [
+      {
+        "rid": 9000023,
+        "start": 552,
+        "end": 744,
+        "file": "ohm_9000023.geojson"
       }
     ]
   },
@@ -1706,6 +2586,22 @@
     ]
   },
   {
+    "qid": "Q7405",
+    "name_en": "Sui dynasty",
+    "name_ko": "수나라",
+    "tier": 2,
+    "start_year": 581,
+    "end_year": 618,
+    "snapshots": [
+      {
+        "rid": 9000022,
+        "start": 581,
+        "end": 618,
+        "file": "ohm_9000022.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q87791",
     "name_en": "Frisian Kingdom",
     "name_ko": "프리슬란트 왕국",
@@ -1734,6 +2630,38 @@
     ]
   },
   {
+    "qid": "Q28073",
+    "name_en": "Volga Bulgaria",
+    "name_ko": "볼가 불가르",
+    "tier": 1,
+    "start_year": 601,
+    "end_year": 1240,
+    "snapshots": [
+      {
+        "rid": 9000092,
+        "start": 601,
+        "end": 1240,
+        "file": "ohm_9000092.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q9683",
+    "name_en": "Tang dynasty",
+    "name_ko": "당나라",
+    "tier": 1,
+    "start_year": 618,
+    "end_year": 907,
+    "snapshots": [
+      {
+        "rid": 9000004,
+        "start": 618,
+        "end": 907,
+        "file": "ohm_9000004.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q12490507",
     "name_en": "Rashidun Caliphate",
     "name_ko": "정통 칼리파국",
@@ -1746,6 +2674,38 @@
         "start": 632,
         "end": 661,
         "file": "ohm_2820427.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q104037",
+    "name_en": "Srivijaya",
+    "name_ko": "스리비자야",
+    "tier": 1,
+    "start_year": 650,
+    "end_year": 1377,
+    "snapshots": [
+      {
+        "rid": 9000045,
+        "start": 650,
+        "end": 1377,
+        "file": "ohm_9000045.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q42910",
+    "name_en": "Khazar Khaganate",
+    "name_ko": "하자르 카간국",
+    "tier": 2,
+    "start_year": 650,
+    "end_year": 969,
+    "snapshots": [
+      {
+        "rid": 9000095,
+        "start": 650,
+        "end": 969,
+        "file": "ohm_9000095.geojson"
       }
     ]
   },
@@ -1806,6 +2766,54 @@
         "start": 661,
         "end": 750,
         "file": "ohm_2860163.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q17",
+    "name_en": "Japan",
+    "name_ko": "일본",
+    "tier": 1,
+    "start_year": 670,
+    "end_year": 2025,
+    "snapshots": [
+      {
+        "rid": 9000016,
+        "start": 670,
+        "end": 2025,
+        "file": "ohm_9000016.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q715257",
+    "name_en": "Later Silla",
+    "name_ko": "통일신라",
+    "tier": 1,
+    "start_year": 676,
+    "end_year": 935,
+    "snapshots": [
+      {
+        "rid": 9000010,
+        "start": 676,
+        "end": 935,
+        "file": "ohm_9000010.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q193714",
+    "name_en": "First Bulgarian Empire",
+    "name_ko": "불가리아 제1제국",
+    "tier": 2,
+    "start_year": 681,
+    "end_year": 1018,
+    "snapshots": [
+      {
+        "rid": 9000082,
+        "start": 681,
+        "end": 1018,
+        "file": "ohm_9000082.geojson"
       }
     ]
   },
@@ -1922,6 +2930,22 @@
     ]
   },
   {
+    "qid": "Q28322",
+    "name_en": "Balhae",
+    "name_ko": "발해",
+    "tier": 1,
+    "start_year": 698,
+    "end_year": 926,
+    "snapshots": [
+      {
+        "rid": 9000011,
+        "start": 698,
+        "end": 926,
+        "file": "ohm_9000011.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q1139762",
     "name_en": "Kanem-Bornu Empire",
     "name_ko": "카넴-보르누 제국",
@@ -1934,6 +2958,22 @@
         "start": 700,
         "end": 1380,
         "file": "ohm_2809431.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q16957",
+    "name_en": "Ifriqiya",
+    "name_ko": "이프리키야",
+    "tier": 1,
+    "start_year": 703,
+    "end_year": 1705,
+    "snapshots": [
+      {
+        "rid": 9000079,
+        "start": 703,
+        "end": 1705,
+        "file": "ohm_9000079.geojson"
       }
     ]
   },
@@ -2012,6 +3052,22 @@
         "start": 730,
         "end": 920,
         "file": "ohm_2805407.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q831218",
+    "name_en": "Uyghur Khaganate",
+    "name_ko": "위구르 카간국",
+    "tier": 2,
+    "start_year": 744,
+    "end_year": 840,
+    "snapshots": [
+      {
+        "rid": 9000024,
+        "start": 744,
+        "end": 840,
+        "file": "ohm_9000024.geojson"
       }
     ]
   },
@@ -2358,6 +3414,22 @@
     ]
   },
   {
+    "qid": "Q164800",
+    "name_en": "Khmer Empire",
+    "name_ko": "크메르 제국",
+    "tier": 1,
+    "start_year": 802,
+    "end_year": 1431,
+    "snapshots": [
+      {
+        "rid": 9000044,
+        "start": 802,
+        "end": 1431,
+        "file": "ohm_9000044.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q771193",
     "name_en": "Kingdom of Brittany",
     "name_ko": "브르타뉴 왕국",
@@ -2464,6 +3536,38 @@
         "start": 1194,
         "end": 1512,
         "file": "ohm_2803894.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q47307",
+    "name_en": "Kingdom of Navarre",
+    "name_ko": "나바라 왕국",
+    "tier": 1,
+    "start_year": 824,
+    "end_year": 1620,
+    "snapshots": [
+      {
+        "rid": 9000073,
+        "start": 824,
+        "end": 1620,
+        "file": "ohm_9000073.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q178544",
+    "name_en": "Great Moravia",
+    "name_ko": "대모라바 왕국",
+    "tier": 2,
+    "start_year": 833,
+    "end_year": 907,
+    "snapshots": [
+      {
+        "rid": 9000085,
+        "start": 833,
+        "end": 907,
+        "file": "ohm_9000085.geojson"
       }
     ]
   },
@@ -2602,6 +3706,22 @@
         "start": 843,
         "end": 855,
         "file": "ohm_2806639.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q153080",
+    "name_en": "East Francia",
+    "name_ko": "동프랑크 왕국",
+    "tier": 2,
+    "start_year": 843,
+    "end_year": 962,
+    "snapshots": [
+      {
+        "rid": 9000083,
+        "start": 843,
+        "end": 962,
+        "file": "ohm_9000083.geojson"
       }
     ]
   },
@@ -2804,6 +3924,38 @@
         "start": 879,
         "end": 933,
         "file": "ohm_2806709.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q166813",
+    "name_en": "Duchy of Burgundy",
+    "name_ko": "부르고뉴 공국",
+    "tier": 2,
+    "start_year": 880,
+    "end_year": 1477,
+    "snapshots": [
+      {
+        "rid": 9000084,
+        "start": 880,
+        "end": 1477,
+        "file": "ohm_9000084.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q170174",
+    "name_en": "Kievan Rus'",
+    "name_ko": "키예프 루스",
+    "tier": 1,
+    "start_year": 882,
+    "end_year": 1240,
+    "snapshots": [
+      {
+        "rid": 9000070,
+        "start": 882,
+        "end": 1240,
+        "file": "ohm_9000070.geojson"
       }
     ]
   },
@@ -3096,6 +4248,22 @@
     ]
   },
   {
+    "qid": "Q42891",
+    "name_en": "Liao dynasty",
+    "name_ko": "요나라",
+    "tier": 1,
+    "start_year": 916,
+    "end_year": 1125,
+    "snapshots": [
+      {
+        "rid": 9000013,
+        "start": 916,
+        "end": 1125,
+        "file": "ohm_9000013.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q28208",
     "name_en": "Goryeo",
     "name_ko": "고려",
@@ -3288,6 +4456,22 @@
     ]
   },
   {
+    "qid": "Q26472",
+    "name_en": "Dali Kingdom",
+    "name_ko": "대리국",
+    "tier": 2,
+    "start_year": 937,
+    "end_year": 1253,
+    "snapshots": [
+      {
+        "rid": 9000027,
+        "start": 937,
+        "end": 1253,
+        "file": "ohm_9000027.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q71747",
     "name_en": "Duchy of Brittany",
     "name_ko": "브르타뉴 공국",
@@ -3320,6 +4504,38 @@
     ]
   },
   {
+    "qid": "Q1326567",
+    "name_en": "Tuʻi Tonga Empire",
+    "name_ko": "통가 제국",
+    "tier": 1,
+    "start_year": 951,
+    "end_year": 1826,
+    "snapshots": [
+      {
+        "rid": 9000052,
+        "start": 951,
+        "end": 1826,
+        "file": "ohm_9000052.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q486820",
+    "name_en": "Kilwa Sultanate",
+    "name_ko": "킬와 술탄국",
+    "tier": 2,
+    "start_year": 957,
+    "end_year": 1513,
+    "snapshots": [
+      {
+        "rid": 9000108,
+        "start": 957,
+        "end": 1513,
+        "file": "ohm_9000108.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q104863335",
     "name_en": "Duchy of Poland",
     "name_ko": "포라은드 공국",
@@ -3344,6 +4560,22 @@
         "start": 981,
         "end": 990,
         "file": "ohm_2749429.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q7462",
+    "name_en": "Song dynasty",
+    "name_ko": "송나라",
+    "tier": 1,
+    "start_year": 960,
+    "end_year": 1279,
+    "snapshots": [
+      {
+        "rid": 9000005,
+        "start": 960,
+        "end": 1279,
+        "file": "ohm_9000005.geojson"
       }
     ]
   },
@@ -3718,6 +4950,22 @@
     ]
   },
   {
+    "qid": "Q107091",
+    "name_en": "Almoravid dynasty",
+    "name_ko": "무라비트 왕조",
+    "tier": 1,
+    "start_year": 1040,
+    "end_year": 1147,
+    "snapshots": [
+      {
+        "rid": 9000098,
+        "start": 1040,
+        "end": 1147,
+        "file": "ohm_9000098.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q205718",
     "name_en": "Zirid Dynasty",
     "name_ko": "지리드 왕조",
@@ -3802,6 +5050,22 @@
     ]
   },
   {
+    "qid": "Q200382",
+    "name_en": "Sultanate of Rum",
+    "name_ko": "룸 술탄국",
+    "tier": 2,
+    "start_year": 1077,
+    "end_year": 1308,
+    "snapshots": [
+      {
+        "rid": 9000086,
+        "start": 1077,
+        "end": 1308,
+        "file": "ohm_9000086.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q235030",
     "name_en": "Principality of Antioch",
     "name_ko": "안티오키아 공국",
@@ -3874,6 +5138,38 @@
         "start": 1109,
         "end": 1289,
         "file": "ohm_2839732.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q4970",
+    "name_en": "Jin dynasty (1115–1234)",
+    "name_ko": "금나라",
+    "tier": 1,
+    "start_year": 1115,
+    "end_year": 1234,
+    "snapshots": [
+      {
+        "rid": 9000006,
+        "start": 1115,
+        "end": 1234,
+        "file": "ohm_9000006.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q148540",
+    "name_en": "Republic of Florence",
+    "name_ko": "피렌체 공화국",
+    "tier": 2,
+    "start_year": 1115,
+    "end_year": 1532,
+    "snapshots": [
+      {
+        "rid": 9000089,
+        "start": 1115,
+        "end": 1532,
+        "file": "ohm_9000089.geojson"
       }
     ]
   },
@@ -4244,6 +5540,38 @@
     ]
   },
   {
+    "qid": "Q200029",
+    "name_en": "Benin Empire",
+    "name_ko": "베닌 제국",
+    "tier": 1,
+    "start_year": 1170,
+    "end_year": 1897,
+    "snapshots": [
+      {
+        "rid": 9000100,
+        "start": 1170,
+        "end": 1897,
+        "file": "ohm_9000100.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q35535",
+    "name_en": "Ayyubid dynasty",
+    "name_ko": "아이유브 왕조",
+    "tier": 2,
+    "start_year": 1171,
+    "end_year": 1341,
+    "snapshots": [
+      {
+        "rid": 9000062,
+        "start": 1171,
+        "end": 1341,
+        "file": "ohm_9000062.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q63134381",
     "name_en": "Khwarazmian Empire",
     "name_ko": "화레즘 제국",
@@ -4272,6 +5600,22 @@
         "start": 1192,
         "end": 1489,
         "file": "ohm_2800988.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q42585",
+    "name_en": "Kingdom of Bohemia",
+    "name_ko": "보헤미아 왕국",
+    "tier": 1,
+    "start_year": 1198,
+    "end_year": 1918,
+    "snapshots": [
+      {
+        "rid": 9000074,
+        "start": 1198,
+        "end": 1918,
+        "file": "ohm_9000074.geojson"
       }
     ]
   },
@@ -4472,6 +5816,54 @@
     ]
   },
   {
+    "qid": "Q179522",
+    "name_en": "Delhi Sultanate",
+    "name_ko": "델리 술탄 왕조",
+    "tier": 1,
+    "start_year": 1206,
+    "end_year": 1526,
+    "snapshots": [
+      {
+        "rid": 9000039,
+        "start": 1206,
+        "end": 1526,
+        "file": "ohm_9000039.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q216617",
+    "name_en": "Marinid dynasty",
+    "name_ko": "마리니드 왕조",
+    "tier": 2,
+    "start_year": 1215,
+    "end_year": 1465,
+    "snapshots": [
+      {
+        "rid": 9000109,
+        "start": 1215,
+        "end": 1465,
+        "file": "ohm_9000109.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q487230",
+    "name_en": "Chagatai Khanate",
+    "name_ko": "차가타이 칸국",
+    "tier": 1,
+    "start_year": 1225,
+    "end_year": 1687,
+    "snapshots": [
+      {
+        "rid": 9000093,
+        "start": 1225,
+        "end": 1687,
+        "file": "ohm_9000093.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q217196",
     "name_en": "Crown of Castile (1266-1300)",
     "name_ko": "카스티야 연합왕국",
@@ -4576,6 +5968,38 @@
     ]
   },
   {
+    "qid": "Q185729",
+    "name_en": "Mali Empire",
+    "name_ko": "말리 제국",
+    "tier": 1,
+    "start_year": 1235,
+    "end_year": 1670,
+    "snapshots": [
+      {
+        "rid": 9000099,
+        "start": 1235,
+        "end": 1670,
+        "file": "ohm_9000099.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q154849",
+    "name_en": "Grand Duchy of Lithuania",
+    "name_ko": "리투아니아 대공국",
+    "tier": 1,
+    "start_year": 1236,
+    "end_year": 1795,
+    "snapshots": [
+      {
+        "rid": 9000075,
+        "start": 1236,
+        "end": 1795,
+        "file": "ohm_9000075.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q156020",
     "name_en": "State of the Teutonic Order",
     "name_ko": "튜턴 기사단국",
@@ -4610,6 +6034,22 @@
     ]
   },
   {
+    "qid": "Q79965",
+    "name_en": "Golden Horde",
+    "name_ko": "킵차크 칸국",
+    "tier": 1,
+    "start_year": 1243,
+    "end_year": 1502,
+    "snapshots": [
+      {
+        "rid": 9000094,
+        "start": 1243,
+        "end": 1502,
+        "file": "ohm_9000094.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q163268",
     "name_en": "Principality of Tver",
     "name_ko": "트베리 공국",
@@ -4622,6 +6062,22 @@
         "start": 1246,
         "end": 1485,
         "file": "ohm_2890620.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q320802",
+    "name_en": "Mamluk Sultanate",
+    "name_ko": "맘루크 술탄국",
+    "tier": 2,
+    "start_year": 1250,
+    "end_year": 1517,
+    "snapshots": [
+      {
+        "rid": 9000063,
+        "start": 1250,
+        "end": 1517,
+        "file": "ohm_9000063.geojson"
       }
     ]
   },
@@ -4694,6 +6150,22 @@
     ]
   },
   {
+    "qid": "Q7313",
+    "name_en": "Yuan dynasty",
+    "name_ko": "원나라",
+    "tier": 2,
+    "start_year": 1271,
+    "end_year": 1368,
+    "snapshots": [
+      {
+        "rid": 9000026,
+        "start": 1271,
+        "end": 1368,
+        "file": "ohm_9000026.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q836676",
     "name_en": "Kingdom of Majorca",
     "name_ko": "마요르카 왕국",
@@ -4706,6 +6178,22 @@
         "start": 1276,
         "end": 1344,
         "file": "ohm_2860660.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q184105",
+    "name_en": "Majapahit",
+    "name_ko": "마자파힛 제국",
+    "tier": 1,
+    "start_year": 1293,
+    "end_year": 1527,
+    "snapshots": [
+      {
+        "rid": 9000046,
+        "start": 1293,
+        "end": 1527,
+        "file": "ohm_9000046.geojson"
       }
     ]
   },
@@ -5478,6 +6966,22 @@
     ]
   },
   {
+    "qid": "Q188897",
+    "name_en": "Lan Xang",
+    "name_ko": "란쌍 왕국",
+    "tier": 1,
+    "start_year": 1354,
+    "end_year": 1707,
+    "snapshots": [
+      {
+        "rid": 9000047,
+        "start": 1354,
+        "end": 1707,
+        "file": "ohm_9000047.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q760893",
     "name_en": "Jolof Empire",
     "name_ko": "졸로프",
@@ -5518,6 +7022,22 @@
     ]
   },
   {
+    "qid": "Q9903",
+    "name_en": "Ming dynasty",
+    "name_ko": "명나라",
+    "tier": 1,
+    "start_year": 1368,
+    "end_year": 1644,
+    "snapshots": [
+      {
+        "rid": 9000007,
+        "start": 1368,
+        "end": 1644,
+        "file": "ohm_9000007.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q1186434",
     "name_en": "Muang Phuan",
     "name_ko": "씨앙쿠앙 왕국",
@@ -5536,6 +7056,22 @@
         "start": 1407,
         "end": 1478,
         "file": "ohm_2747848.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q42585",
+    "name_en": "Timurid Empire",
+    "name_ko": "티무르 왕조",
+    "tier": 2,
+    "start_year": 1370,
+    "end_year": 1507,
+    "snapshots": [
+      {
+        "rid": 9000064,
+        "start": 1370,
+        "end": 1507,
+        "file": "ohm_9000064.geojson"
       }
     ]
   },
@@ -5584,6 +7120,22 @@
     ]
   },
   {
+    "qid": "Q189762",
+    "name_en": "Kingdom of Kongo",
+    "name_ko": "콩고 왕국",
+    "tier": 1,
+    "start_year": 1395,
+    "end_year": 1888,
+    "snapshots": [
+      {
+        "rid": 9000101,
+        "start": 1395,
+        "end": 1888,
+        "file": "ohm_9000101.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q1070691",
     "name_en": "Kingdom of Rwanda",
     "name_ko": "르완다 왕국",
@@ -5608,6 +7160,22 @@
         "start": 1650,
         "end": 1890,
         "file": "ohm_2863642.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q230912",
+    "name_en": "Oyo Empire",
+    "name_ko": "오요 제국",
+    "tier": 1,
+    "start_year": 1400,
+    "end_year": 1905,
+    "snapshots": [
+      {
+        "rid": 9000102,
+        "start": 1400,
+        "end": 1905,
+        "file": "ohm_9000102.geojson"
       }
     ]
   },
@@ -5730,6 +7298,22 @@
         "start": 1612,
         "end": 1872,
         "file": "ohm_2890079.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q686812",
+    "name_en": "Kingdom of Mutapa",
+    "name_ko": "무타파 제국",
+    "tier": 1,
+    "start_year": 1430,
+    "end_year": 1760,
+    "snapshots": [
+      {
+        "rid": 9000103,
+        "start": 1430,
+        "end": 1760,
+        "file": "ohm_9000103.geojson"
       }
     ]
   },
@@ -6102,6 +7686,22 @@
     ]
   },
   {
+    "qid": "Q487907",
+    "name_en": "Siberian Khanate",
+    "name_ko": "시비리 칸국",
+    "tier": 1,
+    "start_year": 1490,
+    "end_year": 1598,
+    "snapshots": [
+      {
+        "rid": 9000090,
+        "start": 1490,
+        "end": 1598,
+        "file": "ohm_9000090.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q778",
     "name_en": "",
     "name_ko": "",
@@ -6312,6 +7912,22 @@
     ]
   },
   {
+    "qid": "Q38872",
+    "name_en": "Prussia",
+    "name_ko": "프로이센",
+    "tier": 1,
+    "start_year": 1525,
+    "end_year": 1871,
+    "snapshots": [
+      {
+        "rid": 9000076,
+        "start": 1525,
+        "end": 1871,
+        "file": "ohm_9000076.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q1660566",
     "name_en": "Sultanate of Banjar",
     "name_ko": "반자르 술탄국",
@@ -6348,6 +7964,22 @@
         "start": 1801,
         "end": 1830,
         "file": "ohm_2871332.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q33296",
+    "name_en": "Mughal Empire",
+    "name_ko": "무굴 제국",
+    "tier": 1,
+    "start_year": 1526,
+    "end_year": 1857,
+    "snapshots": [
+      {
+        "rid": 9000040,
+        "start": 1526,
+        "end": 1857,
+        "file": "ohm_9000040.geojson"
       }
     ]
   },
@@ -6864,6 +8496,22 @@
         "start": 1824,
         "end": 1829,
         "file": "ohm_2871204.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q170072",
+    "name_en": "Dutch Republic",
+    "name_ko": "네덜란드 공화국",
+    "tier": 2,
+    "start_year": 1581,
+    "end_year": 1795,
+    "snapshots": [
+      {
+        "rid": 9000087,
+        "start": 1581,
+        "end": 1795,
+        "file": "ohm_9000087.geojson"
       }
     ]
   },
@@ -7596,6 +9244,22 @@
     ]
   },
   {
+    "qid": "Q152855",
+    "name_en": "Kingdom of Tungning",
+    "name_ko": "동녕국",
+    "tier": 2,
+    "start_year": 1661,
+    "end_year": 1683,
+    "snapshots": [
+      {
+        "rid": 9000034,
+        "start": 1661,
+        "end": 1683,
+        "file": "ohm_9000034.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q131429368",
     "name_en": "Alawi Sultanate",
     "name_ko": "아라위 술탄국",
@@ -7636,6 +9300,22 @@
         "start": 1975,
         "end": null,
         "file": "ohm_2806846.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "MANUAL_Q204920",
+    "name_en": "Ashanti Empire",
+    "name_ko": "아샨티 왕국",
+    "tier": 2,
+    "start_year": 1670,
+    "end_year": 1902,
+    "snapshots": [
+      {
+        "rid": 9000107,
+        "start": 1670,
+        "end": 1902,
+        "file": "ohm_9000107.geojson"
       }
     ]
   },
@@ -13296,6 +14976,22 @@
     ]
   },
   {
+    "qid": "Q185682",
+    "name_en": "French Indochina",
+    "name_ko": "프랑스령 인도차이나",
+    "tier": 1,
+    "start_year": 1887,
+    "end_year": 1954,
+    "snapshots": [
+      {
+        "rid": 9000050,
+        "start": 1887,
+        "end": 1954,
+        "file": "ohm_9000050.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q1658411",
     "name_en": "Raj of Sarawak",
     "name_ko": "사라왁 왕국",
@@ -14420,6 +16116,38 @@
     ]
   },
   {
+    "qid": "Q36704",
+    "name_en": "Yugoslavia",
+    "name_ko": "유고슬라비아",
+    "tier": 1,
+    "start_year": 1918,
+    "end_year": 1992,
+    "snapshots": [
+      {
+        "rid": 9000078,
+        "start": 1918,
+        "end": 1992,
+        "file": "ohm_9000078.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q41304",
+    "name_en": "Weimar Republic",
+    "name_ko": "바이마르 공화국",
+    "tier": 2,
+    "start_year": 1918,
+    "end_year": 1933,
+    "snapshots": [
+      {
+        "rid": 9000088,
+        "start": 1918,
+        "end": 1933,
+        "file": "ohm_9000088.geojson"
+      }
+    ]
+  },
+  {
     "qid": "Q203493",
     "name_en": "Kingdom of Romania",
     "name_ko": "루마니아 왕국",
@@ -15314,6 +17042,22 @@
         "start": 1932,
         "end": 1945,
         "file": "ohm_2885965.geojson"
+      }
+    ]
+  },
+  {
+    "qid": "Q7318",
+    "name_en": "Nazi Germany",
+    "name_ko": "나치 독일",
+    "tier": 1,
+    "start_year": 1933,
+    "end_year": 1945,
+    "snapshots": [
+      {
+        "rid": 9000077,
+        "start": 1933,
+        "end": 1945,
+        "file": "ohm_9000077.geojson"
       }
     ]
   },
