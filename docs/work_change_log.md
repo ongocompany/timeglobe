@@ -1239,6 +1239,24 @@
       * adaptive가 단순 판정 로그만 남기는 수준이 아니라, live 운영에서 실제로 `5 / 10 / 20`을 오가며 batch 크기를 조절하는 것 확인
       * 특히 `offset=105`에서 느린 shape probe를 감지해 `safe`로 내리고, 직후 `offset=110`에서 다시 `burst`로 올린 점이 핵심
       * 따라서 이후 person 후보 수집은 기본적으로 adaptive 모드로 굴리는 것이 수동 조절보다 합리적
+  * person 후보 adaptive 재기동 래퍼 추가 (`2026-02-28 21:19 KST`):
+    * 배경:
+      * adaptive batch runner는 `batch-count`를 채우면 정상 종료되므로, 프로세스가 비어 보이는 시점이 반복 발생.
+      * detached background 장기 실행은 이 agent 환경에서 신뢰성이 낮아, 사용자가 원하는 "로컬 터미널/cron 기준 안정적 재기동" 경로가 필요했음.
+    * 구현:
+      * `scripts/wikidata/runAdaptivePersonCandidatesOnce.mjs`
+        * 기존 adaptive batch runner를 `--resume` 기준으로 한 덩어리씩 실행하는 래퍼
+        * 기본 WDQS 운영값(`90000/3/2000/1200`)을 env 기본값으로 주입
+        * `.cache/person-candidates-adaptive-job.lock` 디렉터리 lock으로 overlap 방지
+        * stale lock은 자동 정리, 살아 있는 기존 실행이 있으면 `exit 0`
+      * `package.json`
+        * `npm run collect:person-candidates-adaptive-once` 추가
+    * 검증:
+      * `node --check scripts/wikidata/runAdaptivePersonCandidatesOnce.mjs` 통과
+      * `npm run collect:person-candidates-adaptive-once -- --batch-count 0` 실행 시 네트워크 없이 skip 동작 확인
+    * 운영 의미:
+      * 이제 long-running detached process를 유지하지 않고, cron이나 로컬 반복 호출로 adaptive 수집을 안정적으로 이어갈 수 있음.
+      * 권장 방식은 짧은 adaptive chunk를 lock 기반으로 주기 재기동하는 구조.
 
 ## [2026-02-28] [cl] BORDERPRECISION 기반 고대 국경 블러 셰이더 구현
 
@@ -1605,3 +1623,84 @@
 2. **Tier는 시간 함수** — 국가별 고정 Tier가 아니라 (국가 × 시기)별 동적 Tier
 3. **lineage_id로 계보 묶기** — 좌표+시간 기반 자동 부여 후 수동 검증
 4. **GeoGuessr처럼** — 캐주얼 유저는 얕은 층위, 덕후는 깊은 층위까지
+
+## [2026-03-01] [co] `/ops` 최소 모니터링 화면으로 재구성
+* 진형(jn)의 요청에 따라 `/ops`를 "현재 진행 여부 + 데이터 변화 추이" 중심 화면으로 단순화.
+* `src/app/api/ops/pipeline-status/route.ts`
+  * 전체 로그/체크포인트/raw report 나열 대신 메인 상태 판단용 파생 데이터 추가:
+    * `systemStatus`
+    * `primaryState`
+    * `fetchTrend`
+  * `person_candidates` live batch report만 골라 최근 12시간 `fetchedRows/normalizedRows` 시간대별 합계를 계산하도록 정리.
+  * `smoke`, `dryrun`, `test` 계열 state/report는 메인 상태 판정에서 제외.
+* `src/app/ops/page.tsx`
+  * 기존 다수 섹션(체크포인트, 로그 tail, recent reports, error feed 등) 제거.
+  * 현재 화면은 다음만 표시:
+    * 시스템 상태
+    * 프로세스 수
+    * 총 데이터 row 수
+    * 마지막 활동 시각
+    * 테이블별 row count
+    * 메인 batch 상태
+    * 시간대별 fetch 추이 SVG 그래프
+* 검증:
+  * `npm run build` 통과.
+
+## [2026-03-01] [co] Linux 상시 워커 + macOS 중앙 모니터링 경로 추가
+* 리눅스 상시 수집, 맥 모니터링 운영 방향에 맞춰 중앙 워커 모니터링 경로를 추가.
+* Supabase migration 추가:
+  * `supabase/migrations/20260301062000_collector_monitoring.sql`
+  * `collector_workers`: 현재 워커 heartbeat/state 저장
+  * `collector_batch_runs`: batch 실행 이력 저장
+* 신규 모듈 추가:
+  * `scripts/wikidata/workerMonitor.mjs`
+    * 워커 identity(`COLLECTOR_WORKER_ID/HOST/ROLE`) 해석
+    * `collector_workers` upsert
+    * `collector_batch_runs` append
+* `scripts/wikidata/runPersonCandidateBatches.mjs`
+  * 시작/진행/종료/에러 시 중앙 heartbeat publish 추가
+  * batch 완료 시 fetched/normalized/offset/probe profile을 중앙 이력 테이블에 기록
+  * 모니터링 테이블이 아직 없거나 접근 실패해도 수집 자체는 계속되도록 best-effort 처리
+* `/ops` 원격 모니터링 전환:
+  * `src/app/api/ops/pipeline-status/route.ts`
+    * 로컬 `.cache` fallback을 유지하되, Supabase의 `collector_workers`와 `collector_batch_runs`를 우선 사용
+    * 리눅스 워커 heartbeat가 있으면 macOS에서도 실행 워커 수, 현재 offset, 최근 fetch 추이를 중앙 기준으로 표시
+  * `src/app/ops/page.tsx`
+    * 현재 배치 카드에 remote worker 정보(host, offset, limit, heartbeat) 표시
+    * fetch trend source(local/remote) 표시
+* Linux 상시 실행 템플릿 추가:
+  * `ops/systemd/timeglobe-person-candidates.service`
+* 문서 갱신:
+  * `docs/02_Project_Structure.md`
+  * `docs/develop/06_[co]wikidata_pipeline_runbook.md`
+* 검증:
+  * `node --check scripts/wikidata/runPersonCandidateBatches.mjs`
+  * `node --check scripts/wikidata/workerMonitor.mjs`
+  * `npm run build`
+
+## [2026-03-01] [cl] OHM 역사적 국경선 폴리곤 데이터 확보
+
+### 데이터 소스 조사
+* 역사적 국경선 폴리곤 상업 사용 가능 소스 전수 조사
+  * CHGIS (Harvard): 학술 전용, 상업 사용 불가
+  * Centennia Historical Atlas: KML 전체 $12,500, 단일연도 $75
+  * Wikidata P3896 (geoshape): T1+T2 565개 중 14개만 보유
+  * **OpenHistoricalMap (OHM)**: CC0/ODbL 혼합, 상업 사용 OK (출처 표기)
+
+### OHM ↔ T1+T2 엔티티 매칭
+* OHM 전세계 admin_level=2 relation: 3,550개
+* QID 기반 매칭: 174/565 (30.8%)
+* **확장 매칭** (QID + 영어명 + 한국어명 + 별칭 + 부분문자열): **229/565 (40.5%)**
+  * T1: 81/188 (43.1%), T2: 148/377 (39.3%)
+  * 시기별 스냅샷 합계 1,000개 고유 relation
+
+### OHM 폴리곤 다운로드
+* `scripts/geo/downloadOhmPolygons.py` 작성 (Overpass API → GeoJSON 변환)
+* **988개 다운로드 성공** (실패 0, 스킵 12), 총 806MB
+* 저장: `public/geo/borders/ohm/ohm_{relation_id}.geojson`
+* `.gitignore`에 ohm/ 추가 (800MB+ 데이터, 스크립트로 재생성 가능)
+
+### 주요 파일
+* 신규: `scripts/geo/downloadOhmPolygons.py`
+* 수정: `.gitignore` (OHM 데이터 디렉토리 제외)
+* 데이터: `public/geo/borders/ohm/` (988개 GeoJSON, gitignore됨)

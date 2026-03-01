@@ -72,5 +72,8 @@ models_archive.tar.gz
 # Border GeoJSON (다운로드 스크립트로 재생성 가능)
 public/geo/borders/*.geojson
 
+# OHM 폴리곤 데이터 (downloadOhmPolygons.py로 재생성, 800MB+)
+public/geo/borders/ohm/
+
 # Cache files
 .cache/
