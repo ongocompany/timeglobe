@@ -1659,7 +1659,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     return data;
   }
 
-  // [cl] ★ 연도 기반 원형+라벨 렌더링 (1886 이전 전용, Wikidata 데이터)
+  // [cl] ★ 연도 기반 원형+라벨 렌더링 (전 구간 — 라벨은 우리 데이터 통일)
   function renderCirclesForYear(targetYear: number) {
     if (!viewer || viewer.isDestroyed() || !wikidataCirclesRef.current) return;
 
@@ -1669,20 +1669,18 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       circleDsRef.current = null;
     }
 
-    // [cl] 1886 이상이면 원형 렌더링 안 함 (CShapes가 담당)
-    if (targetYear >= CSHAPES_START_YEAR) return;
-
     const ds = new CustomDataSource("wikidata-circles");
     const circles = wikidataCirclesRef.current;
     const RADIUS = 50000; // 50km
 
+    // [cl] 1886 이상이면 CShapes 폴리곤이 국경선 담당 → 원형 없이 라벨만
+    const isCShapesEra = targetYear >= CSHAPES_START_YEAR;
+
     for (const entity of circles) {
       if (entity.start_year > targetYear || entity.end_year < targetYear) continue;
       // [cl] OHM 폴리곤이 있는 엔티티는 원형 스킵 (실제 국경선으로 대체)
-      if (ohmQidsRef.current.has(entity.qid)) continue;
+      if (!isCShapesEra && ohmQidsRef.current.has(entity.qid)) continue;
 
-      const fillColor = Color.fromCssColorString(entity.color).withAlpha(0.35);
-      const outlineColor = Color.fromCssColorString(entity.color).withAlpha(0.7);
       const position = Cartesian3.fromDegrees(entity.lon, entity.lat);
 
       // ── 라벨 텍스트: 한글명 우선, 없으면 영문 ──
@@ -1693,31 +1691,52 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         labelText += `\n${enName}`;
       }
 
-      // [cl] 원형 + 라벨을 하나의 엔티티로 추가 (Tier별 스타일)
       const style = getLabelStyle(entity.tier);
-      ds.entities.add({
-        position,
-        ellipse: {
-          semiMajorAxis: RADIUS,
-          semiMinorAxis: RADIUS,
-          material: fillColor,
-          outline: true,
-          outlineColor,
-          outlineWidth: 1,
-          classificationType: ClassificationType.BOTH,
-        },
-        label: {
-          text: labelText,
-          font: style.font,
-          fillColor: Color.WHITE,
-          outlineColor: Color.BLACK,
-          outlineWidth: 4,   // [cl] 2배 렌더링이라 outline도 키움
-          style: 2, // FILL_AND_OUTLINE
-          pixelOffset: new Cartesian2(0, -20),
-          scaleByDistance: style.scale,
-          translucencyByDistance: style.translucency,
-        },
-      });
+
+      if (isCShapesEra) {
+        // [cl] 1886+ CShapes 구간: 라벨만 표시 (원형 없음, 국경선은 CShapes가 담당)
+        ds.entities.add({
+          position,
+          label: {
+            text: labelText,
+            font: style.font,
+            fillColor: Color.WHITE,
+            outlineColor: Color.BLACK,
+            outlineWidth: 4,
+            style: 2, // FILL_AND_OUTLINE
+            pixelOffset: new Cartesian2(0, 0),
+            scaleByDistance: style.scale,
+            translucencyByDistance: style.translucency,
+          },
+        });
+      } else {
+        // [cl] 1886 이전: 원형 + 라벨 (기존 방식)
+        const fillColor = Color.fromCssColorString(entity.color).withAlpha(0.35);
+        const outlineColor = Color.fromCssColorString(entity.color).withAlpha(0.7);
+        ds.entities.add({
+          position,
+          ellipse: {
+            semiMajorAxis: RADIUS,
+            semiMinorAxis: RADIUS,
+            material: fillColor,
+            outline: true,
+            outlineColor,
+            outlineWidth: 1,
+            classificationType: ClassificationType.BOTH,
+          },
+          label: {
+            text: labelText,
+            font: style.font,
+            fillColor: Color.WHITE,
+            outlineColor: Color.BLACK,
+            outlineWidth: 4,
+            style: 2, // FILL_AND_OUTLINE
+            pixelOffset: new Cartesian2(0, -20),
+            scaleByDistance: style.scale,
+            translucencyByDistance: style.translucency,
+          },
+        });
+      }
     }
 
     viewer.dataSources.add(ds);
@@ -1742,15 +1761,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   async function renderOhmForYear(targetYear: number) {
     if (!viewer || viewer.isDestroyed() || !ohmIndexRef.current) return;
 
-    // [cl] 1886 이상이면 OHM 렌더링 안 함 (CShapes가 담당)
-    if (targetYear >= CSHAPES_START_YEAR) {
-      if (ohmDsRef.current) {
-        viewer.dataSources.remove(ohmDsRef.current, true);
-        ohmDsRef.current = null;
-      }
-      currentOhmYearRef.current = null;
-      return;
-    }
+    // [cl] OHM은 전 구간 렌더링 (CShapes 구간에서도 OHM 폴리곤 있으면 표시)
 
     // [cl] 같은 연도면 재렌더 스킵
     if (currentOhmYearRef.current === targetYear && ohmDsRef.current) return;
@@ -1870,9 +1881,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         }
       }
 
-      // [cl] ★ 라벨 추가 — 폴리곤 centroid 위치에 국가명 표시 (Tier별 스타일)
+      // [cl] ★ 라벨 추가 — 1886 이전만 (1886+는 renderCirclesForYear에서 통합 표시)
       const firstFeature = geojson.features[0];
-      if (firstFeature) {
+      if (firstFeature && targetYear < CSHAPES_START_YEAR) {
         const center = calcCentroid(firstFeature.geometry);
         if (center) {
           const koName = entity.name_ko || entity.name_en;
