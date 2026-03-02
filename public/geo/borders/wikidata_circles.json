@@ -13720,22 +13720,6 @@
     "sitelinks": 10
   },
   {
-    "name_en": "Empire of Brazil",
-    "name_ko": "브라질 제국",
-    "lon": -43.177128,
-    "lat": -22.905392,
-    "start_year": 1822,
-    "end_year": 1889,
-    "lineage_id": "L0184",
-    "color": "hsl(219, 70%, 55%)",
-    "qid": "Q217230",
-    "tier": 1,
-    "region": "latin_america",
-    "sitelinks": 63,
-    "t1_start": 1850,
-    "t1_end": 1850
-  },
-  {
     "name_en": "First Mexican Empire",
     "name_ko": "멕시코 제1제국",
     "lon": -99.130556,
@@ -20777,11 +20761,9 @@
     "lineage_id": null,
     "color": "hsl(130, 70%, 55%)",
     "qid": "Q778",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 274,
-    "t1_start": 2000,
-    "t1_end": 2025
+    "sitelinks": 274
   },
   {
     "name_en": "Cuba",
@@ -20809,11 +20791,9 @@
     "lineage_id": null,
     "color": "hsl(257, 70%, 55%)",
     "qid": "Q790",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 286,
-    "t1_start": 2000,
-    "t1_end": 2025
+    "sitelinks": 286
   },
   {
     "name_en": "Dominican Republic",
@@ -20825,11 +20805,9 @@
     "lineage_id": null,
     "color": "hsl(35, 70%, 55%)",
     "qid": "Q786",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 277,
-    "t1_start": 2000,
-    "t1_end": 2025
+    "sitelinks": 277
   },
   {
     "name_en": "Jamaica",
@@ -20841,11 +20819,9 @@
     "lineage_id": null,
     "color": "hsl(135, 70%, 55%)",
     "qid": "Q766",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 278,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 278
   },
   {
     "name_en": "Barbados",
@@ -20857,11 +20833,9 @@
     "lineage_id": null,
     "color": "hsl(73, 70%, 55%)",
     "qid": "Q244",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 272,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 272
   },
   {
     "name_en": "Mexico",
@@ -20889,11 +20863,9 @@
     "lineage_id": null,
     "color": "hsl(14, 70%, 55%)",
     "qid": "Q242",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 274,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 274
   },
   {
     "name_en": "Guatemala",
@@ -20905,11 +20877,9 @@
     "lineage_id": null,
     "color": "hsl(101, 70%, 55%)",
     "qid": "Q774",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 278,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 278
   },
   {
     "name_en": "Honduras",
@@ -20921,11 +20891,9 @@
     "lineage_id": null,
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q783",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 291,
-    "t1_start": 2020,
-    "t1_end": 2025
+    "sitelinks": 291
   },
   {
     "name_en": "El Salvador",
@@ -20937,11 +20905,9 @@
     "lineage_id": null,
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q792",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 283,
-    "t1_start": 2020,
-    "t1_end": 2025
+    "sitelinks": 283
   },
   {
     "name_en": "Nicaragua",
@@ -20953,11 +20919,9 @@
     "lineage_id": null,
     "color": "hsl(58, 70%, 55%)",
     "qid": "Q811",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 276,
-    "t1_start": 2020,
-    "t1_end": 2025
+    "sitelinks": 276
   },
   {
     "name_en": "Costa Rica",

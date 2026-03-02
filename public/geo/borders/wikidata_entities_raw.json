@@ -22756,24 +22756,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q217230",
-    "name_en": "Empire of Brazil",
-    "name_ko": "브라질 제국",
-    "start": "1822",
-    "end": "1889",
-    "lon": "-43.177128",
-    "lat": "-22.905392",
-    "type": "historical",
-    "lineage_id": "L0184",
-    "tier": 1,
-    "sitelinks": 63,
-    "region": "latin_america",
-    "score": 80.1,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1850,
-    "t1_end": 1850
-  },
-  {
     "qid": "Q285658",
     "name_en": "First Mexican Empire",
     "name_ko": "멕시코 제1제국",
@@ -35083,13 +35065,11 @@
     "lon": "-77.343",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 274,
-    "t1_start": 2000,
-    "t1_end": 2025
+    "sitelinks": 274
   },
   {
     "qid": "Q241",
@@ -35119,13 +35099,11 @@
     "lon": "-72.335",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 286,
-    "t1_start": 2000,
-    "t1_end": 2025
+    "sitelinks": 286
   },
   {
     "qid": "Q786",
@@ -35137,13 +35115,11 @@
     "lon": "-69.9",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 277,
-    "t1_start": 2000,
-    "t1_end": 2025
+    "sitelinks": 277
   },
   {
     "qid": "Q766",
@@ -35155,13 +35131,11 @@
     "lon": "-76.8",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 278,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 278
   },
   {
     "qid": "Q244",
@@ -35173,13 +35147,11 @@
     "lon": "-59.6167",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 272,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 272
   },
   {
     "qid": "Q96",
@@ -35209,13 +35181,11 @@
     "lon": "-88.7667",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 274,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 274
   },
   {
     "qid": "Q774",
@@ -35227,13 +35197,11 @@
     "lon": "-90.5269",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 278,
-    "t1_start": 2010,
-    "t1_end": 2025
+    "sitelinks": 278
   },
   {
     "qid": "Q783",
@@ -35245,13 +35213,11 @@
     "lon": "-87.2167",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 291,
-    "t1_start": 2020,
-    "t1_end": 2025
+    "sitelinks": 291
   },
   {
     "qid": "Q792",
@@ -35263,13 +35229,11 @@
     "lon": "-89.2031",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 283,
-    "t1_start": 2020,
-    "t1_end": 2025
+    "sitelinks": 283
   },
   {
     "qid": "Q811",
@@ -35281,13 +35245,11 @@
     "lon": "-86.2683",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 1,
-    "tier_reason": "sitelinks_top20_auto",
+    "tier": 2,
+    "tier_reason": "review_session7_americas",
     "region": "north_america",
     "score": 0,
-    "sitelinks": 276,
-    "t1_start": 2020,
-    "t1_end": 2025
+    "sitelinks": 276
   },
   {
     "qid": "Q800",

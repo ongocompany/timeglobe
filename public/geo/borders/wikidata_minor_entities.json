@@ -7082,5 +7082,23 @@
     "region": "central_asia",
     "score": 61.8,
     "tier_reason": "score_top55"
+  },
+  {
+    "qid": "Q217230",
+    "name_en": "Empire of Brazil",
+    "name_ko": "브라질 제국",
+    "start": "1822",
+    "end": "1889",
+    "lon": "-43.177128",
+    "lat": "-22.905392",
+    "type": "historical",
+    "lineage_id": "L0184",
+    "tier": 1,
+    "sitelinks": 63,
+    "region": "latin_america",
+    "score": 80.1,
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1850,
+    "t1_end": 1850
   }
 ]
