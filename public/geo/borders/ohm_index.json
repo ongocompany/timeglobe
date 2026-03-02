@@ -1,21 +1,5 @@
 [
   {
-    "qid": "MANUAL_Q47690",
-    "name_en": "Indus Valley Civilisation",
-    "name_ko": "인더스 문명",
-    "tier": 1,
-    "start_year": -3300,
-    "end_year": -1300,
-    "snapshots": [
-      {
-        "rid": 9000035,
-        "start": -3300,
-        "end": -1300,
-        "file": "ohm_9000035.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q11768",
     "name_en": "Ancient Egypt",
     "name_ko": "고대 이집트",
@@ -28,22 +12,6 @@
         "start": -3100,
         "end": -30,
         "file": "ohm_9000053.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q173527",
-    "name_en": "Minoan civilization",
-    "name_ko": "미노스 문명",
-    "tier": 3,
-    "start_year": -2700,
-    "end_year": -1450,
-    "snapshots": [
-      {
-        "rid": 9000065,
-        "start": -2700,
-        "end": -1450,
-        "file": "ohm_9000065.geojson"
       }
     ]
   },
@@ -76,54 +44,6 @@
         "start": -2686,
         "end": -2181,
         "file": "ohm_2852442.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q42534",
-    "name_en": "",
-    "name_ko": "인더스 문명",
-    "tier": 3,
-    "start_year": -2598,
-    "end_year": -1899,
-    "snapshots": [
-      {
-        "rid": 2853264,
-        "start": -2598,
-        "end": -1899,
-        "file": "ohm_2853264.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q175094",
-    "name_en": "Lagash",
-    "name_ko": "라가시",
-    "tier": 3,
-    "start_year": -2500,
-    "end_year": -2000,
-    "snapshots": [
-      {
-        "rid": 9000060,
-        "start": -2500,
-        "end": -2000,
-        "file": "ohm_9000060.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q11691",
-    "name_en": "Land of Punt",
-    "name_ko": "푼트",
-    "tier": 3,
-    "start_year": -2400,
-    "end_year": -1068,
-    "snapshots": [
-      {
-        "rid": 9000096,
-        "start": -2400,
-        "end": -1068,
-        "file": "ohm_9000096.geojson"
       }
     ]
   },
@@ -192,22 +112,6 @@
     ]
   },
   {
-    "qid": "Q220738",
-    "name_en": "Colchis",
-    "name_ko": "콜키스",
-    "tier": 3,
-    "start_year": -1700,
-    "end_year": -163,
-    "snapshots": [
-      {
-        "rid": 9000080,
-        "start": -1700,
-        "end": -163,
-        "file": "ohm_9000080.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q649262",
     "name_en": "Arzawa",
     "name_ko": "아르자와",
@@ -256,22 +160,6 @@
     ]
   },
   {
-    "qid": "Q180920",
-    "name_en": "New Kingdom of Egypt",
-    "name_ko": "이집트 신왕국",
-    "tier": 3,
-    "start_year": -1550,
-    "end_year": -1077,
-    "snapshots": [
-      {
-        "rid": 9000054,
-        "start": -1550,
-        "end": -1077,
-        "file": "ohm_9000054.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q135364",
     "name_en": "Olmec civilization",
     "name_ko": "올멕 문명",
@@ -304,22 +192,6 @@
     ]
   },
   {
-    "qid": "Q208299",
-    "name_en": "Moab",
-    "name_ko": "모압",
-    "tier": 3,
-    "start_year": -1300,
-    "end_year": -399,
-    "snapshots": [
-      {
-        "rid": 9000059,
-        "start": -1300,
-        "end": -399,
-        "file": "ohm_9000059.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1193806",
     "name_en": "Shu",
     "name_ko": "고촉",
@@ -332,22 +204,6 @@
         "start": -1200,
         "end": -315,
         "file": "ohm_9000029.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q171513",
-    "name_en": "Magadha",
-    "name_ko": "마가다",
-    "tier": 3,
-    "start_year": -1200,
-    "end_year": -344,
-    "snapshots": [
-      {
-        "rid": 9000036,
-        "start": -1200,
-        "end": -344,
-        "file": "ohm_9000036.geojson"
       }
     ]
   },
@@ -380,22 +236,6 @@
     ]
   },
   {
-    "qid": "Q41127",
-    "name_en": "Lydia",
-    "name_ko": "리디아",
-    "tier": 3,
-    "start_year": -1199,
-    "end_year": -545,
-    "snapshots": [
-      {
-        "rid": 9000081,
-        "start": -1199,
-        "end": -545,
-        "file": "ohm_9000081.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q215764",
     "name_en": "Western Zhou",
     "name_ko": "서주",
@@ -408,22 +248,6 @@
         "start": -1095,
         "end": -771,
         "file": "ohm_2694545.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q169940",
-    "name_en": "Kingdom of Kush",
-    "name_ko": "쿠시 왕국",
-    "tier": 3,
-    "start_year": -1070,
-    "end_year": 350,
-    "snapshots": [
-      {
-        "rid": 9000057,
-        "start": -1070,
-        "end": 350,
-        "file": "ohm_9000057.geojson"
       }
     ]
   },
@@ -460,38 +284,6 @@
     ]
   },
   {
-    "qid": "Q5690",
-    "name_en": "Sparta",
-    "name_ko": "스파르타",
-    "tier": 3,
-    "start_year": -900,
-    "end_year": -371,
-    "snapshots": [
-      {
-        "rid": 2849727,
-        "start": -900,
-        "end": -371,
-        "file": "ohm_2849727.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q219067",
-    "name_en": "Chavín culture",
-    "name_ko": "차빈 문명",
-    "tier": 3,
-    "start_year": -900,
-    "end_year": -200,
-    "snapshots": [
-      {
-        "rid": 9000105,
-        "start": -900,
-        "end": -200,
-        "file": "ohm_9000105.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q242309",
     "name_en": "Qin (state)",
     "name_ko": "진(秦) 제후국",
@@ -504,28 +296,6 @@
         "start": -897,
         "end": -221,
         "file": "ohm_9000021.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q10914393",
-    "name_en": "Neo-Assyrian Empire",
-    "name_ko": "신아시리아 제국",
-    "tier": 1,
-    "start_year": -858,
-    "end_year": -739,
-    "snapshots": [
-      {
-        "rid": 2854737,
-        "start": -858,
-        "end": -744,
-        "file": "ohm_2854737.geojson"
-      },
-      {
-        "rid": 2854811,
-        "start": -743,
-        "end": -739,
-        "file": "ohm_2854811.geojson"
       }
     ]
   },
@@ -648,22 +418,6 @@
         "start": -721,
         "end": -222,
         "file": "ohm_9000018.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q844930",
-    "name_en": "Attica",
-    "name_ko": "아트로파테네",
-    "tier": 3,
-    "start_year": -700,
-    "end_year": -200,
-    "snapshots": [
-      {
-        "rid": 2875405,
-        "start": -700,
-        "end": -200,
-        "file": "ohm_2875405.geojson"
       }
     ]
   },
@@ -830,54 +584,6 @@
     ]
   },
   {
-    "qid": "MANUAL_Q766",
-    "name_en": "Classical Athens",
-    "name_ko": "고대 아테네",
-    "tier": 3,
-    "start_year": -508,
-    "end_year": -322,
-    "snapshots": [
-      {
-        "rid": 9000068,
-        "start": -508,
-        "end": -322,
-        "file": "ohm_9000068.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q80702",
-    "name_en": "Maurya empire",
-    "name_ko": "마우리아 제국",
-    "tier": 1,
-    "start_year": -321,
-    "end_year": -184,
-    "snapshots": [
-      {
-        "rid": 9000037,
-        "start": -321,
-        "end": -184,
-        "file": "ohm_9000037.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q170477",
-    "name_en": "Seleucid Empire",
-    "name_ko": "셀레우코스 제국",
-    "tier": 3,
-    "start_year": -311,
-    "end_year": -62,
-    "snapshots": [
-      {
-        "rid": 9000061,
-        "start": -311,
-        "end": -62,
-        "file": "ohm_9000061.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q188836",
     "name_en": "Xiongnu",
     "name_ko": "흉노",
@@ -890,54 +596,6 @@
         "start": -300,
         "end": 100,
         "file": "ohm_9000012.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q212648",
-    "name_en": "Mauretania",
-    "name_ko": "마우레타니아",
-    "tier": 3,
-    "start_year": -300,
-    "end_year": 698,
-    "snapshots": [
-      {
-        "rid": 9000097,
-        "start": -300,
-        "end": 698,
-        "file": "ohm_9000097.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q938636",
-    "name_en": "Pandya dynasty",
-    "name_ko": "판드야",
-    "tier": 3,
-    "start_year": -299,
-    "end_year": 1650,
-    "snapshots": [
-      {
-        "rid": 9000041,
-        "start": -299,
-        "end": 1650,
-        "file": "ohm_9000041.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "MANUAL_Q188161",
-    "name_en": "Kingdom of Iberia",
-    "name_ko": "캅카스 이베리아",
-    "tier": 2,
-    "start_year": -298,
-    "end_year": 580,
-    "snapshots": [
-      {
-        "rid": 9000069,
-        "start": -298,
-        "end": 580,
-        "file": "ohm_9000069.geojson"
       }
     ]
   },
@@ -1054,38 +712,6 @@
     ]
   },
   {
-    "qid": "Q1032006",
-    "name_en": "Pyu city-states",
-    "name_ko": "쀼 시국",
-    "tier": 3,
-    "start_year": -200,
-    "end_year": 1050,
-    "snapshots": [
-      {
-        "rid": 9000049,
-        "start": -200,
-        "end": 1050,
-        "file": "ohm_9000049.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q311618",
-    "name_en": "Indo-Scythians",
-    "name_ko": "인도-스키타이",
-    "tier": 3,
-    "start_year": -199,
-    "end_year": 400,
-    "snapshots": [
-      {
-        "rid": 9000043,
-        "start": -199,
-        "end": 400,
-        "file": "ohm_9000043.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q703340",
     "name_en": "Wiman Chosŏn",
     "name_ko": "위만조선",
@@ -1098,60 +724,6 @@
         "start": -193,
         "end": -107,
         "file": "ohm_9000030.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1072949",
-    "name_en": "Western Han",
-    "name_ko": "한나라",
-    "tier": 3,
-    "start_year": -107,
-    "end_year": 8,
-    "snapshots": [
-      {
-        "rid": 2692874,
-        "start": -107,
-        "end": -75,
-        "file": "ohm_2692874.geojson"
-      },
-      {
-        "rid": 2890031,
-        "start": -74,
-        "end": 8,
-        "file": "ohm_2890031.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q28084",
-    "name_en": "Byeonhan",
-    "name_ko": "변한",
-    "tier": 3,
-    "start_year": -100,
-    "end_year": 41,
-    "snapshots": [
-      {
-        "rid": 2894821,
-        "start": -100,
-        "end": 41,
-        "file": "ohm_2894821.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q213168",
-    "name_en": "Nazca civilization",
-    "name_ko": "나스카 문명",
-    "tier": 3,
-    "start_year": -100,
-    "end_year": 800,
-    "snapshots": [
-      {
-        "rid": 9000106,
-        "start": -100,
-        "end": 800,
-        "file": "ohm_9000106.geojson"
       }
     ]
   },
@@ -1312,60 +884,6 @@
     ]
   },
   {
-    "qid": "Q46362",
-    "name_en": "Kushan Empire",
-    "name_ko": "쿠샨 왕조",
-    "tier": 3,
-    "start_year": 30,
-    "end_year": 375,
-    "snapshots": [
-      {
-        "rid": 9000051,
-        "start": 30,
-        "end": 375,
-        "file": "ohm_9000051.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q139377",
-    "name_en": "Kingdom of Aksum",
-    "name_ko": "악숨 왕국",
-    "tier": 1,
-    "start_year": 50,
-    "end_year": 960,
-    "snapshots": [
-      {
-        "rid": 2852460,
-        "start": 50,
-        "end": 632,
-        "file": "ohm_2852460.geojson"
-      },
-      {
-        "rid": 2860225,
-        "start": 632,
-        "end": 960,
-        "file": "ohm_2860225.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q273266",
-    "name_en": "Kingdom of Khotan",
-    "name_ko": "호탄 왕국",
-    "tier": 3,
-    "start_year": 56,
-    "end_year": 1006,
-    "snapshots": [
-      {
-        "rid": 9000091,
-        "start": 56,
-        "end": 1006,
-        "file": "ohm_9000091.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q208188",
     "name_en": "Wari Empire",
     "name_ko": "와리 제국",
@@ -1394,22 +912,6 @@
         "start": 200,
         "end": 1250,
         "file": "ohm_2822617.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q25777",
-    "name_en": "Sasanian Empire",
-    "name_ko": "사산 왕조",
-    "tier": 3,
-    "start_year": 224,
-    "end_year": 651,
-    "snapshots": [
-      {
-        "rid": 9000056,
-        "start": 224,
-        "end": 651,
-        "file": "ohm_9000056.geojson"
       }
     ]
   },
@@ -1446,22 +948,6 @@
     ]
   },
   {
-    "qid": "MANUAL_Q733",
-    "name_en": "Pallava dynasty",
-    "name_ko": "팔라바",
-    "tier": 3,
-    "start_year": 275,
-    "end_year": 897,
-    "snapshots": [
-      {
-        "rid": 9000042,
-        "start": 275,
-        "end": 897,
-        "file": "ohm_9000042.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q255283",
     "name_en": "Eastern Jin",
     "name_ko": "동진",
@@ -1474,22 +960,6 @@
         "start": 317,
         "end": 420,
         "file": "ohm_9000032.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q8534",
-    "name_en": "Gupta Empire",
-    "name_ko": "굽타 왕조",
-    "tier": 3,
-    "start_year": 320,
-    "end_year": 550,
-    "snapshots": [
-      {
-        "rid": 9000038,
-        "start": 320,
-        "end": 550,
-        "file": "ohm_9000038.geojson"
       }
     ]
   },
@@ -1960,22 +1430,6 @@
     ]
   },
   {
-    "qid": "Q179872",
-    "name_en": "Kingdom of Galicia",
-    "name_ko": "갈리시아 왕국",
-    "tier": 3,
-    "start_year": 410,
-    "end_year": 1833,
-    "snapshots": [
-      {
-        "rid": 9000071,
-        "start": 410,
-        "end": 1833,
-        "file": "ohm_9000071.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q126936",
     "name_en": "Visigothic Kingdom",
     "name_ko": "서고트 왕국",
@@ -2380,22 +1834,6 @@
     ]
   },
   {
-    "qid": "Q207833",
-    "name_en": "Kingdom of Makuria",
-    "name_ko": "마쿠리아",
-    "tier": 3,
-    "start_year": 500,
-    "end_year": 1518,
-    "snapshots": [
-      {
-        "rid": 9000058,
-        "start": 500,
-        "end": 1518,
-        "file": "ohm_9000058.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q105313",
     "name_en": "Kingdom of Wessex",
     "name_ko": "웨식스 왕국",
@@ -2430,22 +1868,6 @@
         "start": 600,
         "end": 825,
         "file": "ohm_2840933.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1068458",
-    "name_en": "Dvaravati",
-    "name_ko": "드바라바티",
-    "tier": 3,
-    "start_year": 550,
-    "end_year": 1050,
-    "snapshots": [
-      {
-        "rid": 9000048,
-        "start": 550,
-        "end": 1050,
-        "file": "ohm_9000048.geojson"
       }
     ]
   },
@@ -2564,28 +1986,6 @@
     ]
   },
   {
-    "qid": "Q2325193",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 568,
-    "end_year": 774,
-    "snapshots": [
-      {
-        "rid": 2889228,
-        "start": 568,
-        "end": 603,
-        "file": "ohm_2889228.geojson"
-      },
-      {
-        "rid": 2889229,
-        "start": 603,
-        "end": 774,
-        "file": "ohm_2889229.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q7405",
     "name_en": "Sui dynasty",
     "name_ko": "수나라",
@@ -2630,22 +2030,6 @@
     ]
   },
   {
-    "qid": "Q28073",
-    "name_en": "Volga Bulgaria",
-    "name_ko": "볼가 불가르",
-    "tier": 3,
-    "start_year": 601,
-    "end_year": 1240,
-    "snapshots": [
-      {
-        "rid": 9000092,
-        "start": 601,
-        "end": 1240,
-        "file": "ohm_9000092.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q9683",
     "name_en": "Tang dynasty",
     "name_ko": "당나라",
@@ -2674,38 +2058,6 @@
         "start": 632,
         "end": 661,
         "file": "ohm_2820427.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q104037",
-    "name_en": "Srivijaya",
-    "name_ko": "스리비자야",
-    "tier": 3,
-    "start_year": 650,
-    "end_year": 1377,
-    "snapshots": [
-      {
-        "rid": 9000045,
-        "start": 650,
-        "end": 1377,
-        "file": "ohm_9000045.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q42910",
-    "name_en": "Khazar Khaganate",
-    "name_ko": "하자르 카간국",
-    "tier": 3,
-    "start_year": 650,
-    "end_year": 969,
-    "snapshots": [
-      {
-        "rid": 9000095,
-        "start": 650,
-        "end": 969,
-        "file": "ohm_9000095.geojson"
       }
     ]
   },
@@ -2798,22 +2150,6 @@
         "start": 676,
         "end": 935,
         "file": "ohm_9000010.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q193714",
-    "name_en": "First Bulgarian Empire",
-    "name_ko": "불가리아 제1제국",
-    "tier": 3,
-    "start_year": 681,
-    "end_year": 1018,
-    "snapshots": [
-      {
-        "rid": 9000082,
-        "start": 681,
-        "end": 1018,
-        "file": "ohm_9000082.geojson"
       }
     ]
   },
@@ -2958,22 +2294,6 @@
         "start": 700,
         "end": 1380,
         "file": "ohm_2809431.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "MANUAL_Q16957",
-    "name_en": "Ifriqiya",
-    "name_ko": "이프리키야",
-    "tier": 2,
-    "start_year": 703,
-    "end_year": 1705,
-    "snapshots": [
-      {
-        "rid": 9000079,
-        "start": 703,
-        "end": 1705,
-        "file": "ohm_9000079.geojson"
       }
     ]
   },
@@ -3414,22 +2734,6 @@
     ]
   },
   {
-    "qid": "Q164800",
-    "name_en": "Khmer Empire",
-    "name_ko": "크메르 제국",
-    "tier": 3,
-    "start_year": 802,
-    "end_year": 1431,
-    "snapshots": [
-      {
-        "rid": 9000044,
-        "start": 802,
-        "end": 1431,
-        "file": "ohm_9000044.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q771193",
     "name_en": "Kingdom of Brittany",
     "name_ko": "브르타뉴 왕국",
@@ -3536,38 +2840,6 @@
         "start": 1194,
         "end": 1512,
         "file": "ohm_2803894.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q47307",
-    "name_en": "Kingdom of Navarre",
-    "name_ko": "나바라 왕국",
-    "tier": 3,
-    "start_year": 824,
-    "end_year": 1620,
-    "snapshots": [
-      {
-        "rid": 9000073,
-        "start": 824,
-        "end": 1620,
-        "file": "ohm_9000073.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q178544",
-    "name_en": "Great Moravia",
-    "name_ko": "대모라바 왕국",
-    "tier": 3,
-    "start_year": 833,
-    "end_year": 907,
-    "snapshots": [
-      {
-        "rid": 9000085,
-        "start": 833,
-        "end": 907,
-        "file": "ohm_9000085.geojson"
       }
     ]
   },
@@ -3924,38 +3196,6 @@
         "start": 879,
         "end": 933,
         "file": "ohm_2806709.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q166813",
-    "name_en": "Duchy of Burgundy",
-    "name_ko": "부르고뉴 공국",
-    "tier": 3,
-    "start_year": 880,
-    "end_year": 1477,
-    "snapshots": [
-      {
-        "rid": 9000084,
-        "start": 880,
-        "end": 1477,
-        "file": "ohm_9000084.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "MANUAL_Q170174",
-    "name_en": "Kievan Rus'",
-    "name_ko": "키예프 루스",
-    "tier": 2,
-    "start_year": 882,
-    "end_year": 1240,
-    "snapshots": [
-      {
-        "rid": 9000070,
-        "start": 882,
-        "end": 1240,
-        "file": "ohm_9000070.geojson"
       }
     ]
   },
@@ -4504,38 +3744,6 @@
     ]
   },
   {
-    "qid": "Q1326567",
-    "name_en": "Tuʻi Tonga Empire",
-    "name_ko": "통가 제국",
-    "tier": 3,
-    "start_year": 951,
-    "end_year": 1826,
-    "snapshots": [
-      {
-        "rid": 9000052,
-        "start": 951,
-        "end": 1826,
-        "file": "ohm_9000052.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q486820",
-    "name_en": "Kilwa Sultanate",
-    "name_ko": "킬와 술탄국",
-    "tier": 3,
-    "start_year": 957,
-    "end_year": 1513,
-    "snapshots": [
-      {
-        "rid": 9000108,
-        "start": 957,
-        "end": 1513,
-        "file": "ohm_9000108.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q104863335",
     "name_en": "Duchy of Poland",
     "name_ko": "포라은드 공국",
@@ -4720,22 +3928,6 @@
     ]
   },
   {
-    "qid": "Q237131",
-    "name_en": "Kingdom of France",
-    "name_ko": "프랑스 왕국",
-    "tier": 3,
-    "start_year": 987,
-    "end_year": 1050,
-    "snapshots": [
-      {
-        "rid": 2750108,
-        "start": 987,
-        "end": 1050,
-        "file": "ohm_2750108.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q34",
     "name_en": "Kingdom of Sweden",
     "name_ko": "스웨덴 왕국",
@@ -4866,74 +4058,6 @@
     ]
   },
   {
-    "qid": "Q1470101",
-    "name_en": "Kingdom of Hungary",
-    "name_ko": "헝가리 왕국",
-    "tier": 2,
-    "start_year": 1000,
-    "end_year": 1400,
-    "snapshots": [
-      {
-        "rid": 2891972,
-        "start": 1000,
-        "end": 1017,
-        "file": "ohm_2891972.geojson"
-      },
-      {
-        "rid": 2891978,
-        "start": 1017,
-        "end": 1043,
-        "file": "ohm_2891978.geojson"
-      },
-      {
-        "rid": 2836112,
-        "start": 1043,
-        "end": 1102,
-        "file": "ohm_2836112.geojson"
-      },
-      {
-        "rid": 2836151,
-        "start": 1102,
-        "end": 1400,
-        "file": "ohm_2836151.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q696908",
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "tier": 2,
-    "start_year": 1025,
-    "end_year": 1918,
-    "snapshots": [
-      {
-        "rid": 2836145,
-        "start": 1025,
-        "end": 1100,
-        "file": "ohm_2836145.geojson"
-      },
-      {
-        "rid": 2692576,
-        "start": 1815,
-        "end": 1835,
-        "file": "ohm_2692576.geojson"
-      },
-      {
-        "rid": 2830030,
-        "start": 1835,
-        "end": 1867,
-        "file": "ohm_2830030.geojson"
-      },
-      {
-        "rid": 2695684,
-        "start": 1916,
-        "end": 1918,
-        "file": "ohm_2695684.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q3708094",
     "name_en": "Seljuk Empire",
     "name_ko": "셀주크 제국",
@@ -4946,22 +4070,6 @@
         "start": 1037,
         "end": 1194,
         "file": "ohm_2865630.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q107091",
-    "name_en": "Almoravid dynasty",
-    "name_ko": "무라비트 왕조",
-    "tier": 3,
-    "start_year": 1040,
-    "end_year": 1147,
-    "snapshots": [
-      {
-        "rid": 9000098,
-        "start": 1040,
-        "end": 1147,
-        "file": "ohm_9000098.geojson"
       }
     ]
   },
@@ -5046,22 +4154,6 @@
         "start": 1660,
         "end": 1707,
         "file": "ohm_2802012.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q200382",
-    "name_en": "Sultanate of Rum",
-    "name_ko": "룸 술탄국",
-    "tier": 3,
-    "start_year": 1077,
-    "end_year": 1308,
-    "snapshots": [
-      {
-        "rid": 9000086,
-        "start": 1077,
-        "end": 1308,
-        "file": "ohm_9000086.geojson"
       }
     ]
   },
@@ -5196,88 +4288,6 @@
     ]
   },
   {
-    "qid": "Q188586",
-    "name_en": "Kingdom of Sicily",
-    "name_ko": "시칠리아 왕국",
-    "tier": 2,
-    "start_year": 1130,
-    "end_year": 1816,
-    "snapshots": [
-      {
-        "rid": 2806329,
-        "start": 1130,
-        "end": 1156,
-        "file": "ohm_2806329.geojson"
-      },
-      {
-        "rid": 2750742,
-        "start": 1156,
-        "end": 1302,
-        "file": "ohm_2750742.geojson"
-      },
-      {
-        "rid": 2750109,
-        "start": 1302,
-        "end": 1319,
-        "file": "ohm_2750109.geojson"
-      },
-      {
-        "rid": 2860519,
-        "start": 1319,
-        "end": 1377,
-        "file": "ohm_2860519.geojson"
-      },
-      {
-        "rid": 2860520,
-        "start": 1377,
-        "end": 1381,
-        "file": "ohm_2860520.geojson"
-      },
-      {
-        "rid": 2860522,
-        "start": 1381,
-        "end": 1388,
-        "file": "ohm_2860522.geojson"
-      },
-      {
-        "rid": 2860521,
-        "start": 1388,
-        "end": 1412,
-        "file": "ohm_2860521.geojson"
-      },
-      {
-        "rid": 2750110,
-        "start": 1412,
-        "end": 1516,
-        "file": "ohm_2750110.geojson"
-      },
-      {
-        "rid": 2750111,
-        "start": 1516,
-        "end": 1713,
-        "file": "ohm_2750111.geojson"
-      },
-      {
-        "rid": 2750112,
-        "start": 1713,
-        "end": 1720,
-        "file": "ohm_2750112.geojson"
-      },
-      {
-        "rid": 2750113,
-        "start": 1720,
-        "end": 1734,
-        "file": "ohm_2750113.geojson"
-      },
-      {
-        "rid": 2750114,
-        "start": 1734,
-        "end": 1816,
-        "file": "ohm_2750114.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q151536",
     "name_en": "Novgorod Republic",
     "name_ko": "노브고로드 공화국",
@@ -5302,46 +4312,6 @@
         "start": 1323,
         "end": 1478,
         "file": "ohm_2851881.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q45670",
-    "name_en": "Kingdom of Portugal",
-    "name_ko": "포르투갈 왕국",
-    "tier": 1,
-    "start_year": 1139,
-    "end_year": 1910,
-    "snapshots": [
-      {
-        "rid": 2740172,
-        "start": 1139,
-        "end": 1149,
-        "file": "ohm_2740172.geojson"
-      },
-      {
-        "rid": 2740171,
-        "start": 1150,
-        "end": 1199,
-        "file": "ohm_2740171.geojson"
-      },
-      {
-        "rid": 2692924,
-        "start": 1297,
-        "end": 1414,
-        "file": "ohm_2692924.geojson"
-      },
-      {
-        "rid": 2878364,
-        "start": 1415,
-        "end": 1801,
-        "file": "ohm_2878364.geojson"
-      },
-      {
-        "rid": 2860981,
-        "start": 1801,
-        "end": 1910,
-        "file": "ohm_2860981.geojson"
       }
     ]
   },
@@ -5540,38 +4510,6 @@
     ]
   },
   {
-    "qid": "Q200029",
-    "name_en": "Benin Empire",
-    "name_ko": "베닌 제국",
-    "tier": 3,
-    "start_year": 1170,
-    "end_year": 1897,
-    "snapshots": [
-      {
-        "rid": 9000100,
-        "start": 1170,
-        "end": 1897,
-        "file": "ohm_9000100.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q35535",
-    "name_en": "Ayyubid dynasty",
-    "name_ko": "아이유브 왕조",
-    "tier": 3,
-    "start_year": 1171,
-    "end_year": 1341,
-    "snapshots": [
-      {
-        "rid": 9000062,
-        "start": 1171,
-        "end": 1341,
-        "file": "ohm_9000062.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q63134381",
     "name_en": "Khwarazmian Empire",
     "name_ko": "화레즘 제국",
@@ -5600,22 +4538,6 @@
         "start": 1192,
         "end": 1489,
         "file": "ohm_2800988.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "MANUAL_Q42585",
-    "name_en": "Kingdom of Bohemia",
-    "name_ko": "보헤미아 왕국",
-    "tier": 2,
-    "start_year": 1198,
-    "end_year": 1918,
-    "snapshots": [
-      {
-        "rid": 9000074,
-        "start": 1198,
-        "end": 1918,
-        "file": "ohm_9000074.geojson"
       }
     ]
   },
@@ -5816,54 +4738,6 @@
     ]
   },
   {
-    "qid": "Q179522",
-    "name_en": "Delhi Sultanate",
-    "name_ko": "델리 술탄 왕조",
-    "tier": 3,
-    "start_year": 1206,
-    "end_year": 1526,
-    "snapshots": [
-      {
-        "rid": 9000039,
-        "start": 1206,
-        "end": 1526,
-        "file": "ohm_9000039.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q216617",
-    "name_en": "Marinid dynasty",
-    "name_ko": "마리니드 왕조",
-    "tier": 3,
-    "start_year": 1215,
-    "end_year": 1465,
-    "snapshots": [
-      {
-        "rid": 9000109,
-        "start": 1215,
-        "end": 1465,
-        "file": "ohm_9000109.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q487230",
-    "name_en": "Chagatai Khanate",
-    "name_ko": "차가타이 칸국",
-    "tier": 3,
-    "start_year": 1225,
-    "end_year": 1687,
-    "snapshots": [
-      {
-        "rid": 9000093,
-        "start": 1225,
-        "end": 1687,
-        "file": "ohm_9000093.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q217196",
     "name_en": "Crown of Castile (1266-1300)",
     "name_ko": "카스티야 연합왕국",
@@ -5968,38 +4842,6 @@
     ]
   },
   {
-    "qid": "Q185729",
-    "name_en": "Mali Empire",
-    "name_ko": "말리 제국",
-    "tier": 3,
-    "start_year": 1235,
-    "end_year": 1670,
-    "snapshots": [
-      {
-        "rid": 9000099,
-        "start": 1235,
-        "end": 1670,
-        "file": "ohm_9000099.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "MANUAL_Q154849",
-    "name_en": "Grand Duchy of Lithuania",
-    "name_ko": "리투아니아 대공국",
-    "tier": 3,
-    "start_year": 1236,
-    "end_year": 1795,
-    "snapshots": [
-      {
-        "rid": 9000075,
-        "start": 1236,
-        "end": 1795,
-        "file": "ohm_9000075.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q156020",
     "name_en": "State of the Teutonic Order",
     "name_ko": "튜턴 기사단국",
@@ -6062,22 +4904,6 @@
         "start": 1246,
         "end": 1485,
         "file": "ohm_2890620.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q320802",
-    "name_en": "Mamluk Sultanate",
-    "name_ko": "맘루크 술탄국",
-    "tier": 3,
-    "start_year": 1250,
-    "end_year": 1517,
-    "snapshots": [
-      {
-        "rid": 9000063,
-        "start": 1250,
-        "end": 1517,
-        "file": "ohm_9000063.geojson"
       }
     ]
   },
@@ -6178,22 +5004,6 @@
         "start": 1276,
         "end": 1344,
         "file": "ohm_2860660.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q184105",
-    "name_en": "Majapahit",
-    "name_ko": "마자파힛 제국",
-    "tier": 3,
-    "start_year": 1293,
-    "end_year": 1527,
-    "snapshots": [
-      {
-        "rid": 9000046,
-        "start": 1293,
-        "end": 1527,
-        "file": "ohm_9000046.geojson"
       }
     ]
   },
@@ -6700,40 +5510,6 @@
     ]
   },
   {
-    "qid": "Q2460755",
-    "name_en": "Kingdom of Sweden",
-    "name_ko": "스웨덴 왕국",
-    "tier": 3,
-    "start_year": 1323,
-    "end_year": 1611,
-    "snapshots": [
-      {
-        "rid": 2851882,
-        "start": 1323,
-        "end": 1561,
-        "file": "ohm_2851882.geojson"
-      },
-      {
-        "rid": 2851891,
-        "start": 1561,
-        "end": 1583,
-        "file": "ohm_2851891.geojson"
-      },
-      {
-        "rid": 2851888,
-        "start": 1583,
-        "end": 1595,
-        "file": "ohm_2851888.geojson"
-      },
-      {
-        "rid": 2851887,
-        "start": 1595,
-        "end": 1611,
-        "file": "ohm_2851887.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1315339",
     "name_en": "Lohara Dynasty",
     "name_ko": "로하라 왕조",
@@ -6966,22 +5742,6 @@
     ]
   },
   {
-    "qid": "Q188897",
-    "name_en": "Lan Xang",
-    "name_ko": "란쌍 왕국",
-    "tier": 3,
-    "start_year": 1354,
-    "end_year": 1707,
-    "snapshots": [
-      {
-        "rid": 9000047,
-        "start": 1354,
-        "end": 1707,
-        "file": "ohm_9000047.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q760893",
     "name_en": "Jolof Empire",
     "name_ko": "졸로프",
@@ -7060,22 +5820,6 @@
     ]
   },
   {
-    "qid": "MANUAL_Q42585",
-    "name_en": "Timurid Empire",
-    "name_ko": "티무르 왕조",
-    "tier": 2,
-    "start_year": 1370,
-    "end_year": 1507,
-    "snapshots": [
-      {
-        "rid": 9000064,
-        "start": 1370,
-        "end": 1507,
-        "file": "ohm_9000064.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q28179",
     "name_en": "Joseon",
     "name_ko": "조선",
@@ -7120,22 +5864,6 @@
     ]
   },
   {
-    "qid": "Q189762",
-    "name_en": "Kingdom of Kongo",
-    "name_ko": "콩고 왕국",
-    "tier": 3,
-    "start_year": 1395,
-    "end_year": 1888,
-    "snapshots": [
-      {
-        "rid": 9000101,
-        "start": 1395,
-        "end": 1888,
-        "file": "ohm_9000101.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1070691",
     "name_en": "Kingdom of Rwanda",
     "name_ko": "르완다 왕국",
@@ -7160,22 +5888,6 @@
         "start": 1650,
         "end": 1890,
         "file": "ohm_2863642.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q230912",
-    "name_en": "Oyo Empire",
-    "name_ko": "오요 제국",
-    "tier": 3,
-    "start_year": 1400,
-    "end_year": 1905,
-    "snapshots": [
-      {
-        "rid": 9000102,
-        "start": 1400,
-        "end": 1905,
-        "file": "ohm_9000102.geojson"
       }
     ]
   },
@@ -7302,22 +6014,6 @@
     ]
   },
   {
-    "qid": "Q686812",
-    "name_en": "Kingdom of Mutapa",
-    "name_ko": "무타파 제국",
-    "tier": 3,
-    "start_year": 1430,
-    "end_year": 1760,
-    "snapshots": [
-      {
-        "rid": 9000103,
-        "start": 1430,
-        "end": 1760,
-        "file": "ohm_9000103.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q28573",
     "name_en": "Inca Empire",
     "name_ko": "잉카 제국",
@@ -7404,22 +6100,6 @@
     ]
   },
   {
-    "qid": "Q11709",
-    "name_en": "Delhi Sultanate (Lodi)",
-    "name_ko": "델리 술탄 왕조",
-    "tier": 3,
-    "start_year": 1451,
-    "end_year": 1526,
-    "snapshots": [
-      {
-        "rid": 2847910,
-        "start": 1451,
-        "end": 1526,
-        "file": "ohm_2847910.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q422065",
     "name_en": "Sultanate of Sulu",
     "name_ko": "술루 술탄국",
@@ -7466,136 +6146,6 @@
         "start": 1520,
         "end": 1847,
         "file": "ohm_2849532.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Spain",
-    "name_en": "Spain",
-    "name_ko": "스페인",
-    "tier": 2,
-    "start_year": 1479,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2860657,
-        "start": 1479,
-        "end": 1483,
-        "file": "ohm_2860657.geojson"
-      },
-      {
-        "rid": 2860656,
-        "start": 1483,
-        "end": 1492,
-        "file": "ohm_2860656.geojson"
-      },
-      {
-        "rid": 2860655,
-        "start": 1492,
-        "end": 1493,
-        "file": "ohm_2860655.geojson"
-      },
-      {
-        "rid": 2860654,
-        "start": 1493,
-        "end": 1494,
-        "file": "ohm_2860654.geojson"
-      },
-      {
-        "rid": 2860653,
-        "start": 1494,
-        "end": 1501,
-        "file": "ohm_2860653.geojson"
-      },
-      {
-        "rid": 2860652,
-        "start": 1501,
-        "end": 1512,
-        "file": "ohm_2860652.geojson"
-      },
-      {
-        "rid": 2803891,
-        "start": 1512,
-        "end": 1529,
-        "file": "ohm_2803891.geojson"
-      },
-      {
-        "rid": 2692925,
-        "start": 1529,
-        "end": 1530,
-        "file": "ohm_2692925.geojson"
-      },
-      {
-        "rid": 2860553,
-        "start": 1530,
-        "end": 1540,
-        "file": "ohm_2860553.geojson"
-      },
-      {
-        "rid": 2860342,
-        "start": 1540,
-        "end": 1659,
-        "file": "ohm_2860342.geojson"
-      },
-      {
-        "rid": 2803886,
-        "start": 1659,
-        "end": 1700,
-        "file": "ohm_2803886.geojson"
-      },
-      {
-        "rid": 2803628,
-        "start": 1700,
-        "end": 1704,
-        "file": "ohm_2803628.geojson"
-      },
-      {
-        "rid": 2860495,
-        "start": 1704,
-        "end": 1708,
-        "file": "ohm_2860495.geojson"
-      },
-      {
-        "rid": 2860667,
-        "start": 1708,
-        "end": 1712,
-        "file": "ohm_2860667.geojson"
-      },
-      {
-        "rid": 2860494,
-        "start": 1712,
-        "end": 1713,
-        "file": "ohm_2860494.geojson"
-      },
-      {
-        "rid": 2860668,
-        "start": 1713,
-        "end": 1782,
-        "file": "ohm_2860668.geojson"
-      },
-      {
-        "rid": 2860666,
-        "start": 1782,
-        "end": 1798,
-        "file": "ohm_2860666.geojson"
-      },
-      {
-        "rid": 2878363,
-        "start": 1798,
-        "end": 1801,
-        "file": "ohm_2878363.geojson"
-      },
-      {
-        "rid": 2860665,
-        "start": 1801,
-        "end": 1802,
-        "file": "ohm_2860665.geojson"
-      },
-      {
-        "rid": 2860344,
-        "start": 1977,
-        "end": null,
-        "file": "ohm_2860344.geojson"
       }
     ]
   },
@@ -7686,25 +6236,9 @@
     ]
   },
   {
-    "qid": "Q487907",
-    "name_en": "Siberian Khanate",
-    "name_ko": "시비리 칸국",
-    "tier": 3,
-    "start_year": 1490,
-    "end_year": 1598,
-    "snapshots": [
-      {
-        "rid": 9000090,
-        "start": 1490,
-        "end": 1598,
-        "file": "ohm_9000090.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q778",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Bahamas",
+    "name_ko": "바하마",
     "tier": 2,
     "start_year": 1492,
     "end_year": 1783,
@@ -7844,90 +6378,6 @@
     ]
   },
   {
-    "qid": "Q82112",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1521,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2842083,
-        "start": 1521,
-        "end": 1800,
-        "file": "ohm_2842083.geojson"
-      },
-      {
-        "rid": 2867499,
-        "start": 1800,
-        "end": 1823,
-        "file": "ohm_2867499.geojson"
-      },
-      {
-        "rid": 2842069,
-        "start": 1823,
-        "end": 1824,
-        "file": "ohm_2842069.geojson"
-      },
-      {
-        "rid": 2842068,
-        "start": 1824,
-        "end": 1849,
-        "file": "ohm_2842068.geojson"
-      },
-      {
-        "rid": 2842067,
-        "start": 1849,
-        "end": 1869,
-        "file": "ohm_2842067.geojson"
-      },
-      {
-        "rid": 2842065,
-        "start": 1869,
-        "end": null,
-        "file": "ohm_2842065.geojson"
-      },
-      {
-        "rid": 2842066,
-        "start": 1869,
-        "end": 1869,
-        "file": "ohm_2842066.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q429381",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1525,
-    "end_year": 1596,
-    "snapshots": [
-      {
-        "rid": 2842613,
-        "start": 1525,
-        "end": 1596,
-        "file": "ohm_2842613.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q38872",
-    "name_en": "Prussia",
-    "name_ko": "프로이센",
-    "tier": 3,
-    "start_year": 1525,
-    "end_year": 1871,
-    "snapshots": [
-      {
-        "rid": 9000076,
-        "start": 1525,
-        "end": 1871,
-        "file": "ohm_9000076.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1660566",
     "name_en": "Sultanate of Banjar",
     "name_ko": "반자르 술탄국",
@@ -7984,70 +6434,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Nicaragua",
-    "name_en": "Nicaragua",
-    "name_ko": "니카라과",
-    "tier": 2,
-    "start_year": 1527,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2871214,
-        "start": 1527,
-        "end": 1554,
-        "file": "ohm_2871214.geojson"
-      },
-      {
-        "rid": 2871208,
-        "start": 1554,
-        "end": 1786,
-        "file": "ohm_2871208.geojson"
-      },
-      {
-        "rid": 2871408,
-        "start": 1821,
-        "end": 1824,
-        "file": "ohm_2871408.geojson"
-      },
-      {
-        "rid": 2871203,
-        "start": 1824,
-        "end": null,
-        "file": "ohm_2871203.geojson"
-      },
-      {
-        "rid": 2808081,
-        "start": 1838,
-        "end": 1844,
-        "file": "ohm_2808081.geojson"
-      },
-      {
-        "rid": 2808141,
-        "start": 1844,
-        "end": 1848,
-        "file": "ohm_2808141.geojson"
-      },
-      {
-        "rid": 2808140,
-        "start": 1848,
-        "end": 1860,
-        "file": "ohm_2808140.geojson"
-      },
-      {
-        "rid": 2871202,
-        "start": 1860,
-        "end": 1894,
-        "file": "ohm_2871202.geojson"
-      },
-      {
-        "rid": 2871201,
-        "start": 1894,
-        "end": null,
-        "file": "ohm_2871201.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q2437292",
     "name_en": "Nueva Galicia",
     "name_ko": "누에바 갈리시아",
@@ -8065,8 +6451,8 @@
   },
   {
     "qid": "Q244",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Barbados",
+    "name_ko": "바베이도스",
     "tier": 2,
     "start_year": 1532,
     "end_year": 2025,
@@ -8134,28 +6520,6 @@
         "start": 1885,
         "end": 1897,
         "file": "ohm_2865804.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q215530",
-    "name_en": "Kingdom of Ireland",
-    "name_ko": "아일랜드 왕국",
-    "tier": 2,
-    "start_year": 1542,
-    "end_year": 1800,
-    "snapshots": [
-      {
-        "rid": 2802031,
-        "start": 1542,
-        "end": 1641,
-        "file": "ohm_2802031.geojson"
-      },
-      {
-        "rid": 2697729,
-        "start": 1660,
-        "end": 1800,
-        "file": "ohm_2697729.geojson"
       }
     ]
   },
@@ -8386,162 +6750,6 @@
         "start": 1793,
         "end": 1793,
         "file": "ohm_2748128.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q16622609",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1573,
-    "end_year": 1829,
-    "snapshots": [
-      {
-        "rid": 2871213,
-        "start": 1573,
-        "end": 1593,
-        "file": "ohm_2871213.geojson"
-      },
-      {
-        "rid": 2871211,
-        "start": 1593,
-        "end": 1602,
-        "file": "ohm_2871211.geojson"
-      },
-      {
-        "rid": 2871210,
-        "start": 1602,
-        "end": 1812,
-        "file": "ohm_2871210.geojson"
-      },
-      {
-        "rid": 2871205,
-        "start": 1814,
-        "end": 1820,
-        "file": "ohm_2871205.geojson"
-      },
-      {
-        "rid": 2871407,
-        "start": 1821,
-        "end": 1824,
-        "file": "ohm_2871407.geojson"
-      },
-      {
-        "rid": 2871204,
-        "start": 1824,
-        "end": 1829,
-        "file": "ohm_2871204.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q170072",
-    "name_en": "Dutch Republic",
-    "name_ko": "네덜란드 공화국",
-    "tier": 1,
-    "start_year": 1581,
-    "end_year": 1795,
-    "snapshots": [
-      {
-        "rid": 9000087,
-        "start": 1581,
-        "end": 1795,
-        "file": "ohm_9000087.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q215443",
-    "name_en": "Swedish Empire",
-    "name_ko": "스웨덴 왕국",
-    "tier": 3,
-    "start_year": 1611,
-    "end_year": 1721,
-    "snapshots": [
-      {
-        "rid": 2851864,
-        "start": 1611,
-        "end": 1617,
-        "file": "ohm_2851864.geojson"
-      },
-      {
-        "rid": 2851883,
-        "start": 1617,
-        "end": 1629,
-        "file": "ohm_2851883.geojson"
-      },
-      {
-        "rid": 2851892,
-        "start": 1629,
-        "end": 1630,
-        "file": "ohm_2851892.geojson"
-      },
-      {
-        "rid": 2851940,
-        "start": 1630,
-        "end": 1645,
-        "file": "ohm_2851940.geojson"
-      },
-      {
-        "rid": 2851859,
-        "start": 1645,
-        "end": 1648,
-        "file": "ohm_2851859.geojson"
-      },
-      {
-        "rid": 2851938,
-        "start": 1648,
-        "end": 1653,
-        "file": "ohm_2851938.geojson"
-      },
-      {
-        "rid": 2851941,
-        "start": 1653,
-        "end": 1658,
-        "file": "ohm_2851941.geojson"
-      },
-      {
-        "rid": 2851863,
-        "start": 1658,
-        "end": 1660,
-        "file": "ohm_2851863.geojson"
-      },
-      {
-        "rid": 2852463,
-        "start": 1660,
-        "end": 1679,
-        "file": "ohm_2852463.geojson"
-      },
-      {
-        "rid": 2851858,
-        "start": 1679,
-        "end": 1719,
-        "file": "ohm_2851858.geojson"
-      },
-      {
-        "rid": 2896676,
-        "start": 1679,
-        "end": 1679,
-        "file": "ohm_2896676.geojson"
-      },
-      {
-        "rid": 2896787,
-        "start": 1679,
-        "end": 1679,
-        "file": "ohm_2896787.geojson"
-      },
-      {
-        "rid": 2851937,
-        "start": 1719,
-        "end": 1720,
-        "file": "ohm_2851937.geojson"
-      },
-      {
-        "rid": 2851939,
-        "start": 1720,
-        "end": 1721,
-        "file": "ohm_2851939.geojson"
       }
     ]
   },
@@ -9240,22 +7448,6 @@
     ]
   },
   {
-    "qid": "MANUAL_Q204920",
-    "name_en": "Ashanti Empire",
-    "name_ko": "아샨티 왕국",
-    "tier": 2,
-    "start_year": 1670,
-    "end_year": 1902,
-    "snapshots": [
-      {
-        "rid": 9000107,
-        "start": 1670,
-        "end": 1902,
-        "file": "ohm_9000107.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q83618",
     "name_en": "Maratha Empire",
     "name_ko": "마라타 왕국",
@@ -9268,34 +7460,6 @@
         "start": 1674,
         "end": 1818,
         "file": "ohm_2847581.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q5502051",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1679,
-    "end_year": 1758,
-    "snapshots": [
-      {
-        "rid": 2887740,
-        "start": 1679,
-        "end": 1693,
-        "file": "ohm_2887740.geojson"
-      },
-      {
-        "rid": 2887739,
-        "start": 1693,
-        "end": 1758,
-        "file": "ohm_2887739.geojson"
-      },
-      {
-        "rid": 2887737,
-        "start": 1758,
-        "end": 1758,
-        "file": "ohm_2887737.geojson"
       }
     ]
   },
@@ -9508,22 +7672,6 @@
         "start": 1867,
         "end": 1867,
         "file": "ohm_2856504.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q161885",
-    "name_en": "Kingdom of Great Britain",
-    "name_ko": "그레이트브리튼 왕국",
-    "tier": 3,
-    "start_year": 1707,
-    "end_year": 1800,
-    "snapshots": [
-      {
-        "rid": 2698449,
-        "start": 1707,
-        "end": 1800,
-        "file": "ohm_2698449.geojson"
       }
     ]
   },
@@ -9978,40 +8126,6 @@
     ]
   },
   {
-    "qid": "Q70972",
-    "name_en": "Kingdom of France",
-    "name_ko": "프랑스 왕국",
-    "tier": 3,
-    "start_year": 1766,
-    "end_year": 1792,
-    "snapshots": [
-      {
-        "rid": 2815505,
-        "start": 1766,
-        "end": 1769,
-        "file": "ohm_2815505.geojson"
-      },
-      {
-        "rid": 2810436,
-        "start": 1769,
-        "end": 1787,
-        "file": "ohm_2810436.geojson"
-      },
-      {
-        "rid": 2815278,
-        "start": 1787,
-        "end": 1791,
-        "file": "ohm_2815278.geojson"
-      },
-      {
-        "rid": 2810437,
-        "start": 1791,
-        "end": 1792,
-        "file": "ohm_2810437.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1115291",
     "name_en": "Thonburi Kingdom",
     "name_ko": "톤부리 왕조",
@@ -10219,8 +8333,8 @@
   },
   {
     "qid": "Q30",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "United States",
+    "name_ko": "미국",
     "tier": 1,
     "start_year": 1783,
     "end_year": 2025,
@@ -10584,56 +8698,6 @@
     ]
   },
   {
-    "qid": "Q5148518",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1787,
-    "end_year": 1907,
-    "snapshots": [
-      {
-        "rid": 2846166,
-        "start": 1787,
-        "end": 1840,
-        "file": "ohm_2846166.geojson"
-      },
-      {
-        "rid": 2846165,
-        "start": 1840,
-        "end": 1841,
-        "file": "ohm_2846165.geojson"
-      },
-      {
-        "rid": 2846163,
-        "start": 1852,
-        "end": 1901,
-        "file": "ohm_2846163.geojson"
-      },
-      {
-        "rid": 2846162,
-        "start": 1901,
-        "end": 1907,
-        "file": "ohm_2846162.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q63158027",
-    "name_en": "Qajar Iran",
-    "name_ko": "카자르 제국",
-    "tier": 2,
-    "start_year": 1789,
-    "end_year": 1813,
-    "snapshots": [
-      {
-        "rid": 2694887,
-        "start": 1789,
-        "end": 1813,
-        "file": "ohm_2694887.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q3324486",
     "name_en": "Prince-Bishopric of Montenegro",
     "name_ko": "몬테네그로 주교후국",
@@ -10646,70 +8710,6 @@
         "start": 1789,
         "end": 1852,
         "file": "ohm_2857706.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q58296",
-    "name_en": "French First Republic",
-    "name_ko": "프랑스 제1공화국",
-    "tier": 3,
-    "start_year": 1792,
-    "end_year": 1804,
-    "snapshots": [
-      {
-        "rid": 2696593,
-        "start": 1792,
-        "end": 1792,
-        "file": "ohm_2696593.geojson"
-      },
-      {
-        "rid": 2810438,
-        "start": 1792,
-        "end": 1793,
-        "file": "ohm_2810438.geojson"
-      },
-      {
-        "rid": 2810441,
-        "start": 1793,
-        "end": 1795,
-        "file": "ohm_2810441.geojson"
-      },
-      {
-        "rid": 2748539,
-        "start": 1795,
-        "end": 1796,
-        "file": "ohm_2748539.geojson"
-      },
-      {
-        "rid": 2812114,
-        "start": 1796,
-        "end": 1797,
-        "file": "ohm_2812114.geojson"
-      },
-      {
-        "rid": 2748156,
-        "start": 1797,
-        "end": 1798,
-        "file": "ohm_2748156.geojson"
-      },
-      {
-        "rid": 2748398,
-        "start": 1798,
-        "end": 1802,
-        "file": "ohm_2748398.geojson"
-      },
-      {
-        "rid": 2810435,
-        "start": 1798,
-        "end": 1798,
-        "file": "ohm_2810435.geojson"
-      },
-      {
-        "rid": 2809393,
-        "start": 1802,
-        "end": 1804,
-        "file": "ohm_2809393.geojson"
       }
     ]
   },
@@ -10992,118 +8992,6 @@
     ]
   },
   {
-    "qid": "Q1516442",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1801,
-    "end_year": 1919,
-    "snapshots": [
-      {
-        "rid": 2697728,
-        "start": 1801,
-        "end": 1919,
-        "file": "ohm_2697728.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q174193",
-    "name_en": "United Kingdom of Great Britain and Ireland",
-    "name_ko": "그레이트브리튼 아일랜드 연합왕국",
-    "tier": 3,
-    "start_year": 1801,
-    "end_year": 1922,
-    "snapshots": [
-      {
-        "rid": 2828388,
-        "start": 1801,
-        "end": 1922,
-        "file": "ohm_2828388.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q71084",
-    "name_en": "First French Empire",
-    "name_ko": "프랑스 제1제국",
-    "tier": 3,
-    "start_year": 1804,
-    "end_year": 1815,
-    "snapshots": [
-      {
-        "rid": 2696592,
-        "start": 1804,
-        "end": 1805,
-        "file": "ohm_2696592.geojson"
-      },
-      {
-        "rid": 2696591,
-        "start": 1805,
-        "end": 1807,
-        "file": "ohm_2696591.geojson"
-      },
-      {
-        "rid": 2810165,
-        "start": 1807,
-        "end": 1808,
-        "file": "ohm_2810165.geojson"
-      },
-      {
-        "rid": 2696590,
-        "start": 1808,
-        "end": 1809,
-        "file": "ohm_2696590.geojson"
-      },
-      {
-        "rid": 2696589,
-        "start": 1809,
-        "end": 1810,
-        "file": "ohm_2696589.geojson"
-      },
-      {
-        "rid": 2810164,
-        "start": 1809,
-        "end": 1809,
-        "file": "ohm_2810164.geojson"
-      },
-      {
-        "rid": 2696588,
-        "start": 1810,
-        "end": 1812,
-        "file": "ohm_2696588.geojson"
-      },
-      {
-        "rid": 2810166,
-        "start": 1810,
-        "end": 1810,
-        "file": "ohm_2810166.geojson"
-      },
-      {
-        "rid": 2696587,
-        "start": 1812,
-        "end": 1815,
-        "file": "ohm_2696587.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2006756",
-    "name_en": "First Empire of Haiti",
-    "name_ko": "아이티 제1제국",
-    "tier": 2,
-    "start_year": 1804,
-    "end_year": 1806,
-    "snapshots": [
-      {
-        "rid": 2841729,
-        "start": 1804,
-        "end": 1806,
-        "file": "ohm_2841729.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q600524",
     "name_en": "Sokoto Caliphate",
     "name_ko": "소코토 칼리프국",
@@ -11190,52 +9078,6 @@
     ]
   },
   {
-    "qid": "Q223936",
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "tier": 3,
-    "start_year": 1805,
-    "end_year": 1814,
-    "snapshots": [
-      {
-        "rid": 2832296,
-        "start": 1805,
-        "end": 1807,
-        "file": "ohm_2832296.geojson"
-      },
-      {
-        "rid": 2832297,
-        "start": 1805,
-        "end": 1805,
-        "file": "ohm_2832297.geojson"
-      },
-      {
-        "rid": 2832295,
-        "start": 1807,
-        "end": 1808,
-        "file": "ohm_2832295.geojson"
-      },
-      {
-        "rid": 2832294,
-        "start": 1808,
-        "end": 1809,
-        "file": "ohm_2832294.geojson"
-      },
-      {
-        "rid": 2832341,
-        "start": 1809,
-        "end": 1809,
-        "file": "ohm_2832341.geojson"
-      },
-      {
-        "rid": 2832596,
-        "start": 1809,
-        "end": 1814,
-        "file": "ohm_2832596.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q20135",
     "name_en": "Grand Duchy of Hesse",
     "name_ko": "헤센 대공국",
@@ -11272,22 +9114,6 @@
         "start": 1867,
         "end": 1871,
         "file": "ohm_2690436.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q13816636",
-    "name_en": "Principality Isenburg",
-    "name_ko": "공국 이세느부르그",
-    "tier": 3,
-    "start_year": 1806,
-    "end_year": 1815,
-    "snapshots": [
-      {
-        "rid": 2661274,
-        "start": 1806,
-        "end": 1815,
-        "file": "ohm_2661274.geojson"
       }
     ]
   },
@@ -11414,22 +9240,6 @@
     ]
   },
   {
-    "qid": "Q686965",
-    "name_en": "Anhalt-Bernburg",
-    "name_ko": "안할트-베르느부르그",
-    "tier": 2,
-    "start_year": 1806,
-    "end_year": 1863,
-    "snapshots": [
-      {
-        "rid": 2808603,
-        "start": 1806,
-        "end": 1863,
-        "file": "ohm_2808603.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q264970",
     "name_en": "Anhalt-Köthen",
     "name_ko": "안할트쾨텐",
@@ -11492,54 +9302,6 @@
         "start": 1807,
         "end": 1807,
         "file": "ohm_2810046.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q508488",
-    "name_en": "Duchy of Arenberg-Meppen",
-    "name_ko": "아레느베르그-메페은 공국",
-    "tier": 3,
-    "start_year": 1806,
-    "end_year": 1810,
-    "snapshots": [
-      {
-        "rid": 2832643,
-        "start": 1806,
-        "end": 1810,
-        "file": "ohm_2832643.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q701969",
-    "name_en": "Principality of Regensburg",
-    "name_ko": "레게느스부르그 공국",
-    "tier": 3,
-    "start_year": 1806,
-    "end_year": 1810,
-    "snapshots": [
-      {
-        "rid": 2835308,
-        "start": 1806,
-        "end": 1810,
-        "file": "ohm_2835308.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q569202",
-    "name_en": "Principality of Aschaffenburg",
-    "name_ko": "아시아페느부르그 공국",
-    "tier": 3,
-    "start_year": 1806,
-    "end_year": 1810,
-    "snapshots": [
-      {
-        "rid": 2835310,
-        "start": 1806,
-        "end": 1810,
-        "file": "ohm_2835310.geojson"
       }
     ]
   },
@@ -11626,22 +9388,6 @@
         "start": 1807,
         "end": 1867,
         "file": "ohm_2690420.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q825489",
-    "name_en": "County Pyrmont",
-    "name_ko": "코우은트이 프이르모은트",
-    "tier": 3,
-    "start_year": 1807,
-    "end_year": 1849,
-    "snapshots": [
-      {
-        "rid": 2690422,
-        "start": 1807,
-        "end": 1849,
-        "file": "ohm_2690422.geojson"
       }
     ]
   },
@@ -11883,8 +9629,8 @@
   },
   {
     "qid": "Q733",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Paraguay",
+    "name_ko": "파라과이",
     "tier": 2,
     "start_year": 1811,
     "end_year": 2025,
@@ -11928,88 +9674,6 @@
         "start": 1811,
         "end": 1820,
         "file": "ohm_2841726.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q8935",
-    "name_en": "First Republic of Venezuela",
-    "name_ko": "베네수엘라 제1공화국",
-    "tier": 2,
-    "start_year": 1811,
-    "end_year": 1812,
-    "snapshots": [
-      {
-        "rid": 2842582,
-        "start": 1811,
-        "end": 1812,
-        "file": "ohm_2842582.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Iran",
-    "name_en": "Iran",
-    "name_ko": "이란",
-    "tier": 2,
-    "start_year": 1813,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2694888,
-        "start": 1813,
-        "end": 1828,
-        "file": "ohm_2694888.geojson"
-      },
-      {
-        "rid": 2694889,
-        "start": 1828,
-        "end": 1935,
-        "file": "ohm_2694889.geojson"
-      },
-      {
-        "rid": 2694890,
-        "start": 1935,
-        "end": 2018,
-        "file": "ohm_2694890.geojson"
-      },
-      {
-        "rid": 2890061,
-        "start": 2018,
-        "end": null,
-        "file": "ohm_2890061.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q774783",
-    "name_en": "Sovereign Principality of the United Netherlands",
-    "name_ko": "연합 네덜란드 주권공국",
-    "tier": 3,
-    "start_year": 1813,
-    "end_year": 1815,
-    "snapshots": [
-      {
-        "rid": 2801355,
-        "start": 1813,
-        "end": 1815,
-        "file": "ohm_2801355.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q8950",
-    "name_en": "Second Republic of Venezuela",
-    "name_ko": "베네수엘라 제2공화국",
-    "tier": 2,
-    "start_year": 1813,
-    "end_year": 1814,
-    "snapshots": [
-      {
-        "rid": 2842580,
-        "start": 1813,
-        "end": 1814,
-        "file": "ohm_2842580.geojson"
       }
     ]
   },
@@ -12098,34 +9762,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Denmark",
-    "name_en": "Denmark",
-    "name_ko": "덴마크",
-    "tier": 2,
-    "start_year": 1814,
-    "end_year": 1864,
-    "snapshots": [
-      {
-        "rid": 2850548,
-        "start": 1814,
-        "end": 1815,
-        "file": "ohm_2850548.geojson"
-      },
-      {
-        "rid": 2870400,
-        "start": 1815,
-        "end": 1851,
-        "file": "ohm_2870400.geojson"
-      },
-      {
-        "rid": 2697046,
-        "start": 1851,
-        "end": 1864,
-        "file": "ohm_2697046.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q704300",
     "name_en": "Free City of Frankfurt",
     "name_ko": "프랑크푸르트 자유시",
@@ -12154,52 +9790,6 @@
         "start": 1815,
         "end": 1866,
         "file": "ohm_2690443.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Switzerland",
-    "name_en": "Switzerland",
-    "name_ko": "스위스",
-    "tier": 2,
-    "start_year": 1815,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2852042,
-        "start": 1815,
-        "end": 1816,
-        "file": "ohm_2852042.geojson"
-      },
-      {
-        "rid": 2747012,
-        "start": 1816,
-        "end": 1859,
-        "file": "ohm_2747012.geojson"
-      },
-      {
-        "rid": 2747011,
-        "start": 1859,
-        "end": 1862,
-        "file": "ohm_2747011.geojson"
-      },
-      {
-        "rid": 2852090,
-        "start": 1862,
-        "end": 1874,
-        "file": "ohm_2852090.geojson"
-      },
-      {
-        "rid": 2798802,
-        "start": 1874,
-        "end": 1967,
-        "file": "ohm_2798802.geojson"
-      },
-      {
-        "rid": 2692557,
-        "start": 1967,
-        "end": null,
-        "file": "ohm_2692557.geojson"
       }
     ]
   },
@@ -12248,28 +9838,6 @@
         "start": 1815,
         "end": 1848,
         "file": "ohm_2742091.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q15864",
-    "name_en": "United Kingdom of the Netherlands",
-    "name_ko": "네덜란드 연합왕국",
-    "tier": 2,
-    "start_year": 1815,
-    "end_year": 1839,
-    "snapshots": [
-      {
-        "rid": 2748546,
-        "start": 1815,
-        "end": 1839,
-        "file": "ohm_2748546.geojson"
-      },
-      {
-        "rid": 2877455,
-        "start": 1815,
-        "end": 1815,
-        "file": "ohm_2877455.geojson"
       }
     ]
   },
@@ -12385,8 +9953,8 @@
   },
   {
     "qid": "Q837",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Nepal",
+    "name_ko": "네팔",
     "tier": 2,
     "start_year": 1816,
     "end_year": 1923,
@@ -12407,8 +9975,8 @@
   },
   {
     "qid": "Q298",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Chile",
+    "name_ko": "칠레",
     "tier": 1,
     "start_year": 1817,
     "end_year": 2025,
@@ -12498,22 +10066,6 @@
     ]
   },
   {
-    "qid": "Q3355737",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1819,
-    "end_year": 1824,
-    "snapshots": [
-      {
-        "rid": 2842578,
-        "start": 1819,
-        "end": 1824,
-        "file": "ohm_2842578.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q95408244",
     "name_en": "Republic of Haiti (1820–1849)",
     "name_ko": "하이티 공화국 (1820–1849)",
@@ -12586,28 +10138,6 @@
         "start": 1820,
         "end": 1822,
         "file": "ohm_2848844.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q285658",
-    "name_en": "First Mexican Empire",
-    "name_ko": "멕시코 제1제국",
-    "tier": 2,
-    "start_year": 1821,
-    "end_year": 1823,
-    "snapshots": [
-      {
-        "rid": 2841088,
-        "start": 1821,
-        "end": 1822,
-        "file": "ohm_2841088.geojson"
-      },
-      {
-        "rid": 2807700,
-        "start": 1822,
-        "end": 1823,
-        "file": "ohm_2807700.geojson"
       }
     ]
   },
@@ -12746,84 +10276,6 @@
     ]
   },
   {
-    "qid": "Q5918684",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1821,
-    "end_year": 1822,
-    "snapshots": [
-      {
-        "rid": 2871489,
-        "start": 1821,
-        "end": 1822,
-        "file": "ohm_2871489.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q217230",
-    "name_en": "Empire of Brazil",
-    "name_ko": "브라질 제국",
-    "tier": 2,
-    "start_year": 1822,
-    "end_year": 1889,
-    "snapshots": [
-      {
-        "rid": 2848713,
-        "start": 1822,
-        "end": 1828,
-        "file": "ohm_2848713.geojson"
-      },
-      {
-        "rid": 2848712,
-        "start": 1828,
-        "end": 1867,
-        "file": "ohm_2848712.geojson"
-      },
-      {
-        "rid": 2848711,
-        "start": 1867,
-        "end": 1872,
-        "file": "ohm_2848711.geojson"
-      },
-      {
-        "rid": 2860728,
-        "start": 1872,
-        "end": 1889,
-        "file": "ohm_2860728.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q6136070",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1822,
-    "end_year": 1836,
-    "snapshots": [
-      {
-        "rid": 2848864,
-        "start": 1822,
-        "end": 1825,
-        "file": "ohm_2848864.geojson"
-      },
-      {
-        "rid": 2848869,
-        "start": 1825,
-        "end": 1829,
-        "file": "ohm_2848869.geojson"
-      },
-      {
-        "rid": 2848868,
-        "start": 1829,
-        "end": 1836,
-        "file": "ohm_2848868.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q190025",
     "name_en": "Federal Republic of Central America",
     "name_ko": "중앙아메리카 연방공화국",
@@ -12870,72 +10322,6 @@
     ]
   },
   {
-    "qid": "Q1109279",
-    "name_en": "First Mexican Republic",
-    "name_ko": "멕시코 제1공화국",
-    "tier": 2,
-    "start_year": 1823,
-    "end_year": 1835,
-    "snapshots": [
-      {
-        "rid": 2841085,
-        "start": 1823,
-        "end": 1824,
-        "file": "ohm_2841085.geojson"
-      },
-      {
-        "rid": 2841086,
-        "start": 1823,
-        "end": 1823,
-        "file": "ohm_2841086.geojson"
-      },
-      {
-        "rid": 2841087,
-        "start": 1823,
-        "end": 1823,
-        "file": "ohm_2841087.geojson"
-      },
-      {
-        "rid": 2859731,
-        "start": 1824,
-        "end": 1835,
-        "file": "ohm_2859731.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q3044695",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1824,
-    "end_year": 1830,
-    "snapshots": [
-      {
-        "rid": 2842575,
-        "start": 1824,
-        "end": 1830,
-        "file": "ohm_2842575.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q5775324",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1825,
-    "end_year": 1836,
-    "snapshots": [
-      {
-        "rid": 2848685,
-        "start": 1825,
-        "end": 1836,
-        "file": "ohm_2848685.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q3462133",
     "name_en": "Duchy of Saxe-Coburg and Gotha",
     "name_ko": "작센코부르크고타 공국",
@@ -12959,8 +10345,8 @@
   },
   {
     "qid": "Q77",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Uruguay",
+    "name_ko": "우루과이",
     "tier": 2,
     "start_year": 1828,
     "end_year": 2025,
@@ -12976,68 +10362,6 @@
         "start": 1851,
         "end": null,
         "file": "ohm_2802055.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Costa_Rica",
-    "name_en": "Costa Rica",
-    "name_ko": "코스타리카",
-    "tier": 2,
-    "start_year": 1829,
-    "end_year": 1941,
-    "snapshots": [
-      {
-        "rid": 2808147,
-        "start": 1829,
-        "end": 1831,
-        "file": "ohm_2808147.geojson"
-      },
-      {
-        "rid": 2808149,
-        "start": 1838,
-        "end": 1849,
-        "file": "ohm_2808149.geojson"
-      },
-      {
-        "rid": 2808163,
-        "start": 1849,
-        "end": 1941,
-        "file": "ohm_2808163.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Belgium",
-    "name_en": "Belgium",
-    "name_ko": "벨기에",
-    "tier": 2,
-    "start_year": 1830,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2693676,
-        "start": 1830,
-        "end": 1839,
-        "file": "ohm_2693676.geojson"
-      },
-      {
-        "rid": 2797729,
-        "start": 1839,
-        "end": 1920,
-        "file": "ohm_2797729.geojson"
-      },
-      {
-        "rid": 2692857,
-        "start": 1945,
-        "end": 1987,
-        "file": "ohm_2692857.geojson"
-      },
-      {
-        "rid": 2870557,
-        "start": 1987,
-        "end": null,
-        "file": "ohm_2870557.geojson"
       }
     ]
   },
@@ -13120,58 +10444,6 @@
     ]
   },
   {
-    "qid": "Q5062192",
-    "name_en": "Centralist Republic of Mexico",
-    "name_ko": "멕시코 공화국",
-    "tier": 2,
-    "start_year": 1835,
-    "end_year": 1846,
-    "snapshots": [
-      {
-        "rid": 2841084,
-        "start": 1835,
-        "end": 1836,
-        "file": "ohm_2841084.geojson"
-      },
-      {
-        "rid": 2692909,
-        "start": 1836,
-        "end": 1840,
-        "file": "ohm_2692909.geojson"
-      },
-      {
-        "rid": 2841081,
-        "start": 1840,
-        "end": 1841,
-        "file": "ohm_2841081.geojson"
-      },
-      {
-        "rid": 2841082,
-        "start": 1840,
-        "end": 1840,
-        "file": "ohm_2841082.geojson"
-      },
-      {
-        "rid": 2841083,
-        "start": 1840,
-        "end": 1840,
-        "file": "ohm_2841083.geojson"
-      },
-      {
-        "rid": 2841080,
-        "start": 1841,
-        "end": 1842,
-        "file": "ohm_2841080.geojson"
-      },
-      {
-        "rid": 2859730,
-        "start": 1842,
-        "end": 1846,
-        "file": "ohm_2859730.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q7893618",
     "name_en": "United Tribes of New Zealand",
     "name_ko": "뉴질랜드 부족연합",
@@ -13189,8 +10461,8 @@
   },
   {
     "qid": "Q736",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Ecuador",
+    "name_ko": "에콰도르",
     "tier": 2,
     "start_year": 1835,
     "end_year": 2025,
@@ -13266,61 +10538,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Honduras",
-    "name_en": "Honduras",
-    "name_ko": "온두라스",
-    "tier": 2,
-    "start_year": 1838,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2808171,
-        "start": 1838,
-        "end": 1852,
-        "file": "ohm_2808171.geojson"
-      },
-      {
-        "rid": 2808173,
-        "start": 1852,
-        "end": 1859,
-        "file": "ohm_2808173.geojson"
-      },
-      {
-        "rid": 2871199,
-        "start": 1859,
-        "end": 1861,
-        "file": "ohm_2871199.geojson"
-      },
-      {
-        "rid": 2808172,
-        "start": 1861,
-        "end": 1921,
-        "file": "ohm_2808172.geojson"
-      },
-      {
-        "rid": 2808167,
-        "start": 1921,
-        "end": 1922,
-        "file": "ohm_2808167.geojson"
-      },
-      {
-        "rid": 2808161,
-        "start": 1922,
-        "end": 2007,
-        "file": "ohm_2808161.geojson"
-      },
-      {
-        "rid": 2859748,
-        "start": 2007,
-        "end": null,
-        "file": "ohm_2859748.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q750",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Bolivia",
+    "name_ko": "볼리비아",
     "tier": 2,
     "start_year": 1839,
     "end_year": 2025,
@@ -13370,73 +10590,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Peru",
-    "name_en": "Peru",
-    "name_ko": "페루",
-    "tier": 2,
-    "start_year": 1839,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2848863,
-        "start": 1839,
-        "end": 1840,
-        "file": "ohm_2848863.geojson"
-      },
-      {
-        "rid": 2851023,
-        "start": 1840,
-        "end": 1864,
-        "file": "ohm_2851023.geojson"
-      },
-      {
-        "rid": 2851022,
-        "start": 1864,
-        "end": 1866,
-        "file": "ohm_2851022.geojson"
-      },
-      {
-        "rid": 2851021,
-        "start": 1866,
-        "end": 1883,
-        "file": "ohm_2851021.geojson"
-      },
-      {
-        "rid": 2848867,
-        "start": 1883,
-        "end": 1922,
-        "file": "ohm_2848867.geojson"
-      },
-      {
-        "rid": 2848866,
-        "start": 1922,
-        "end": 1925,
-        "file": "ohm_2848866.geojson"
-      },
-      {
-        "rid": 2863354,
-        "start": 1925,
-        "end": 1929,
-        "file": "ohm_2863354.geojson"
-      },
-      {
-        "rid": 2848865,
-        "start": 1929,
-        "end": 1942,
-        "file": "ohm_2848865.geojson"
-      },
-      {
-        "rid": 2806975,
-        "start": 1942,
-        "end": null,
-        "file": "ohm_2806975.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q774",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Guatemala",
+    "name_ko": "과테말라",
     "tier": 2,
     "start_year": 1839,
     "end_year": 1859,
@@ -13490,52 +10646,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Luxembourg",
-    "name_en": "Luxembourg",
-    "name_ko": "룩셈부르크",
-    "tier": 2,
-    "start_year": 1840,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2748545,
-        "start": 1840,
-        "end": 1940,
-        "file": "ohm_2748545.geojson"
-      },
-      {
-        "rid": 2867156,
-        "start": 1867,
-        "end": 2007,
-        "file": "ohm_2867156.geojson"
-      },
-      {
-        "rid": 2857075,
-        "start": 1920,
-        "end": null,
-        "file": "ohm_2857075.geojson"
-      },
-      {
-        "rid": 2692839,
-        "start": 1945,
-        "end": 2007,
-        "file": "ohm_2692839.geojson"
-      },
-      {
-        "rid": 2826452,
-        "start": 2007,
-        "end": null,
-        "file": "ohm_2826452.geojson"
-      },
-      {
-        "rid": 2867155,
-        "start": 2007,
-        "end": 2015,
-        "file": "ohm_2867155.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q8842943",
     "name_en": "Estado Libre del Istmo",
     "name_ko": "에스타도 리브레 이스트모",
@@ -13548,28 +10658,6 @@
         "start": 1840,
         "end": 1841,
         "file": "ohm_2872378.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_El_Salvador",
-    "name_en": "El Salvador",
-    "name_ko": "엘살바도르",
-    "tier": 2,
-    "start_year": 1841,
-    "end_year": 1922,
-    "snapshots": [
-      {
-        "rid": 2808164,
-        "start": 1841,
-        "end": 1921,
-        "file": "ohm_2808164.geojson"
-      },
-      {
-        "rid": 2808168,
-        "start": 1921,
-        "end": 1922,
-        "file": "ohm_2808168.geojson"
       }
     ]
   },
@@ -13590,55 +10678,9 @@
     ]
   },
   {
-    "qid": "Q7443295",
-    "name_en": "Second Federal Republic of Mexico",
-    "name_ko": "멕시코 제2연방공화국",
-    "tier": 2,
-    "start_year": 1846,
-    "end_year": 1863,
-    "snapshots": [
-      {
-        "rid": 2841222,
-        "start": 1846,
-        "end": 1848,
-        "file": "ohm_2841222.geojson"
-      },
-      {
-        "rid": 2841219,
-        "start": 1848,
-        "end": 1849,
-        "file": "ohm_2841219.geojson"
-      },
-      {
-        "rid": 2841221,
-        "start": 1848,
-        "end": 1848,
-        "file": "ohm_2841221.geojson"
-      },
-      {
-        "rid": 2841936,
-        "start": 1849,
-        "end": 1854,
-        "file": "ohm_2841936.geojson"
-      },
-      {
-        "rid": 2841220,
-        "start": 1854,
-        "end": 1859,
-        "file": "ohm_2841220.geojson"
-      },
-      {
-        "rid": 2862373,
-        "start": 1859,
-        "end": 1863,
-        "file": "ohm_2862373.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1014",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Liberia",
+    "name_ko": "라이베리아",
     "tier": 2,
     "start_year": 1847,
     "end_year": 2025,
@@ -13654,56 +10696,6 @@
         "start": 1857,
         "end": null,
         "file": "ohm_2828769.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q71092",
-    "name_en": "Second French Empire",
-    "name_ko": "프랑스 제2제국",
-    "tier": 3,
-    "start_year": 1848,
-    "end_year": 1870,
-    "snapshots": [
-      {
-        "rid": 2742092,
-        "start": 1848,
-        "end": 1852,
-        "file": "ohm_2742092.geojson"
-      },
-      {
-        "rid": 2696296,
-        "start": 1852,
-        "end": 1860,
-        "file": "ohm_2696296.geojson"
-      },
-      {
-        "rid": 2747010,
-        "start": 1860,
-        "end": 1862,
-        "file": "ohm_2747010.geojson"
-      },
-      {
-        "rid": 2696297,
-        "start": 1862,
-        "end": 1870,
-        "file": "ohm_2696297.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q3048062",
-    "name_en": "Orange River Sovereignty",
-    "name_ko": "오라응게 강 소베레이그은트이",
-    "tier": 2,
-    "start_year": 1848,
-    "end_year": 1854,
-    "snapshots": [
-      {
-        "rid": 2828467,
-        "start": 1848,
-        "end": 1854,
-        "file": "ohm_2828467.geojson"
       }
     ]
   },
@@ -13736,54 +10728,6 @@
         "start": 1848,
         "end": 1849,
         "file": "ohm_2850645.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2979717",
-    "name_en": "Second Empire of Haiti",
-    "name_ko": "아이티 제2제국",
-    "tier": 2,
-    "start_year": 1849,
-    "end_year": 1859,
-    "snapshots": [
-      {
-        "rid": 2841720,
-        "start": 1849,
-        "end": 1859,
-        "file": "ohm_2841720.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1061582",
-    "name_en": "Chan Santa Cruz",
-    "name_ko": "차은 사은트아 크루즈",
-    "tier": 2,
-    "start_year": 1849,
-    "end_year": 1901,
-    "snapshots": [
-      {
-        "rid": 2841938,
-        "start": 1849,
-        "end": 1901,
-        "file": "ohm_2841938.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1842",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1849,
-    "end_year": 1919,
-    "snapshots": [
-      {
-        "rid": 2857080,
-        "start": 1849,
-        "end": 1919,
-        "file": "ohm_2857080.geojson"
       }
     ]
   },
@@ -13844,28 +10788,6 @@
         "start": 1854,
         "end": 1902,
         "file": "ohm_2691740.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1335260",
-    "name_en": "Emirate of Afghanistan",
-    "name_ko": "아프가니스탄 토후국",
-    "tier": 2,
-    "start_year": 1855,
-    "end_year": 1926,
-    "snapshots": [
-      {
-        "rid": 2822864,
-        "start": 1855,
-        "end": 1918,
-        "file": "ohm_2822864.geojson"
-      },
-      {
-        "rid": 2695082,
-        "start": 1919,
-        "end": 1926,
-        "file": "ohm_2695082.geojson"
       }
     ]
   },
@@ -13972,76 +10894,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Guatemala",
-    "name_en": "Guatemala",
-    "name_ko": "과테말라",
-    "tier": 2,
-    "start_year": 1859,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2807642,
-        "start": 1859,
-        "end": 1883,
-        "file": "ohm_2807642.geojson"
-      },
-      {
-        "rid": 2808743,
-        "start": 1866,
-        "end": 1921,
-        "file": "ohm_2808743.geojson"
-      },
-      {
-        "rid": 2859574,
-        "start": 1883,
-        "end": 1895,
-        "file": "ohm_2859574.geojson"
-      },
-      {
-        "rid": 2859573,
-        "start": 1895,
-        "end": 1921,
-        "file": "ohm_2859573.geojson"
-      },
-      {
-        "rid": 2808098,
-        "start": 1921,
-        "end": 1922,
-        "file": "ohm_2808098.geojson"
-      },
-      {
-        "rid": 2808787,
-        "start": 1921,
-        "end": 1922,
-        "file": "ohm_2808787.geojson"
-      },
-      {
-        "rid": 2807664,
-        "start": 1922,
-        "end": 1976,
-        "file": "ohm_2807664.geojson"
-      },
-      {
-        "rid": 2808868,
-        "start": 1922,
-        "end": null,
-        "file": "ohm_2808868.geojson"
-      },
-      {
-        "rid": 2859740,
-        "start": 1976,
-        "end": 1992,
-        "file": "ohm_2859740.geojson"
-      },
-      {
-        "rid": 2859739,
-        "start": 1992,
-        "end": null,
-        "file": "ohm_2859739.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q2268597",
     "name_en": "United Provinces of Central Italy",
     "name_ko": "중앙이탈리아 연방",
@@ -14058,49 +10910,9 @@
     ]
   },
   {
-    "qid": "Q172579",
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "tier": 3,
-    "start_year": 1861,
-    "end_year": 1945,
-    "snapshots": [
-      {
-        "rid": 2697847,
-        "start": 1861,
-        "end": 1866,
-        "file": "ohm_2697847.geojson"
-      },
-      {
-        "rid": 2829426,
-        "start": 1866,
-        "end": 1870,
-        "file": "ohm_2829426.geojson"
-      },
-      {
-        "rid": 2696424,
-        "start": 1870,
-        "end": 1920,
-        "file": "ohm_2696424.geojson"
-      },
-      {
-        "rid": 2696325,
-        "start": 1920,
-        "end": 1924,
-        "file": "ohm_2696325.geojson"
-      },
-      {
-        "rid": 2795081,
-        "start": 1945,
-        "end": 1945,
-        "file": "ohm_2795081.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q414",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Argentina",
+    "name_ko": "아르헨티나",
     "tier": 1,
     "start_year": 1861,
     "end_year": 2025,
@@ -14168,22 +10980,6 @@
         "start": 1863,
         "end": 1867,
         "file": "ohm_2808169.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q371334",
-    "name_en": "Second Mexican Empire",
-    "name_ko": "멕시코 제2제국",
-    "tier": 2,
-    "start_year": 1863,
-    "end_year": 1867,
-    "snapshots": [
-      {
-        "rid": 2841218,
-        "start": 1863,
-        "end": 1867,
-        "file": "ohm_2841218.geojson"
       }
     ]
   },
@@ -14256,74 +11052,6 @@
     ]
   },
   {
-    "qid": "Q209065",
-    "name_en": "Kingdom of Greece",
-    "name_ko": "그리스 왕국",
-    "tier": 2,
-    "start_year": 1864,
-    "end_year": 1947,
-    "snapshots": [
-      {
-        "rid": 2855110,
-        "start": 1864,
-        "end": 1881,
-        "file": "ohm_2855110.geojson"
-      },
-      {
-        "rid": 2692556,
-        "start": 1881,
-        "end": 1912,
-        "file": "ohm_2692556.geojson"
-      },
-      {
-        "rid": 2692585,
-        "start": 1913,
-        "end": 1919,
-        "file": "ohm_2692585.geojson"
-      },
-      {
-        "rid": 2863749,
-        "start": 1919,
-        "end": 1920,
-        "file": "ohm_2863749.geojson"
-      },
-      {
-        "rid": 2863750,
-        "start": 1920,
-        "end": 1924,
-        "file": "ohm_2863750.geojson"
-      },
-      {
-        "rid": 2801340,
-        "start": 1924,
-        "end": 1936,
-        "file": "ohm_2801340.geojson"
-      },
-      {
-        "rid": 2873762,
-        "start": 1936,
-        "end": 1947,
-        "file": "ohm_2873762.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q6123742",
-    "name_en": "Second Republic",
-    "name_ko": "세코은드 공화국",
-    "tier": 2,
-    "start_year": 1865,
-    "end_year": 1916,
-    "snapshots": [
-      {
-        "rid": 2841713,
-        "start": 1865,
-        "end": 1916,
-        "file": "ohm_2841713.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q28513",
     "name_en": "Austria–Hungary",
     "name_ko": "오스트리아-헝가리 제국",
@@ -14368,40 +11096,6 @@
     ]
   },
   {
-    "qid": "Q5788450",
-    "name_en": "Restored Republic",
-    "name_ko": "복원된 공화국",
-    "tier": 3,
-    "start_year": 1867,
-    "end_year": 1917,
-    "snapshots": [
-      {
-        "rid": 2841217,
-        "start": 1867,
-        "end": 1883,
-        "file": "ohm_2841217.geojson"
-      },
-      {
-        "rid": 2859729,
-        "start": 1883,
-        "end": 1895,
-        "file": "ohm_2859729.geojson"
-      },
-      {
-        "rid": 2859728,
-        "start": 1895,
-        "end": 1901,
-        "file": "ohm_2859728.geojson"
-      },
-      {
-        "rid": 2841937,
-        "start": 1901,
-        "end": 1917,
-        "file": "ohm_2841937.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1094090",
     "name_en": "Republic of Ezo",
     "name_ko": "에조 공화국",
@@ -14414,116 +11108,6 @@
         "start": 1869,
         "end": 1869,
         "file": "ohm_2889930.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q70802",
-    "name_en": "French Third Republic",
-    "name_ko": "프랑스 제3공화국",
-    "tier": 3,
-    "start_year": 1870,
-    "end_year": 1940,
-    "snapshots": [
-      {
-        "rid": 2866010,
-        "start": 1870,
-        "end": 1871,
-        "file": "ohm_2866010.geojson"
-      },
-      {
-        "rid": 2866012,
-        "start": 1870,
-        "end": 1918,
-        "file": "ohm_2866012.geojson"
-      },
-      {
-        "rid": 2696298,
-        "start": 1871,
-        "end": 1890,
-        "file": "ohm_2696298.geojson"
-      },
-      {
-        "rid": 2696299,
-        "start": 1918,
-        "end": 1940,
-        "file": "ohm_2696299.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q43287",
-    "name_en": "German Empire",
-    "name_ko": "독일 제국",
-    "tier": 1,
-    "start_year": 1871,
-    "end_year": 1918,
-    "snapshots": [
-      {
-        "rid": 2691465,
-        "start": 1871,
-        "end": 1878,
-        "file": "ohm_2691465.geojson"
-      },
-      {
-        "rid": 2856857,
-        "start": 1878,
-        "end": 1890,
-        "file": "ohm_2856857.geojson"
-      },
-      {
-        "rid": 2692425,
-        "start": 1890,
-        "end": 1918,
-        "file": "ohm_2692425.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Canada",
-    "name_en": "Canada",
-    "name_ko": "캐나다",
-    "tier": 2,
-    "start_year": 1871,
-    "end_year": 1871,
-    "snapshots": [
-      {
-        "rid": 2693581,
-        "start": 1871,
-        "end": 1871,
-        "file": "ohm_2693581.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q678",
-    "name_en": "Kingdom of Tonga",
-    "name_ko": "라로통가 왕국",
-    "tier": 3,
-    "start_year": 1875,
-    "end_year": 1900,
-    "snapshots": [
-      {
-        "rid": 2846201,
-        "start": 1875,
-        "end": 1900,
-        "file": "ohm_2846201.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q684030",
-    "name_en": "Principality of Serbia",
-    "name_ko": "세르비아 공국",
-    "tier": 3,
-    "start_year": 1878,
-    "end_year": 1882,
-    "snapshots": [
-      {
-        "rid": 2692353,
-        "start": 1878,
-        "end": 1882,
-        "file": "ohm_2692353.geojson"
       }
     ]
   },
@@ -14544,28 +11128,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Italian_Somaliland",
-    "name_en": "Italian Somaliland",
-    "name_ko": "이탈리아령 소말릴란드",
-    "tier": 2,
-    "start_year": 1880,
-    "end_year": 1936,
-    "snapshots": [
-      {
-        "rid": 2690842,
-        "start": 1880,
-        "end": 1924,
-        "file": "ohm_2690842.geojson"
-      },
-      {
-        "rid": 2848511,
-        "start": 1924,
-        "end": 1936,
-        "file": "ohm_2848511.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q2017684",
     "name_en": "French protectorate of Tunisia",
     "name_ko": "프랑스령 튀니지",
@@ -14578,28 +11140,6 @@
         "start": 1881,
         "end": 1956,
         "file": "ohm_2690947.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q218",
-    "name_en": "Romania (1881-1913)",
-    "name_ko": "루마니아 왕국",
-    "tier": 2,
-    "start_year": 1881,
-    "end_year": 1918,
-    "snapshots": [
-      {
-        "rid": 2692219,
-        "start": 1881,
-        "end": 1913,
-        "file": "ohm_2692219.geojson"
-      },
-      {
-        "rid": 2693260,
-        "start": 1913,
-        "end": 1918,
-        "file": "ohm_2693260.geojson"
       }
     ]
   },
@@ -14628,28 +11168,6 @@
         "start": 1907,
         "end": 1942,
         "file": "ohm_2848286.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q241748",
-    "name_en": "Kingdom of Serbia",
-    "name_ko": "세르비아 왕국",
-    "tier": 2,
-    "start_year": 1882,
-    "end_year": 1918,
-    "snapshots": [
-      {
-        "rid": 2692716,
-        "start": 1882,
-        "end": 1913,
-        "file": "ohm_2692716.geojson"
-      },
-      {
-        "rid": 2746681,
-        "start": 1913,
-        "end": 1918,
-        "file": "ohm_2746681.geojson"
       }
     ]
   },
@@ -14710,22 +11228,6 @@
         "start": 1884,
         "end": 1966,
         "file": "ohm_2691741.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2566427",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1884,
-    "end_year": 1893,
-    "snapshots": [
-      {
-        "rid": 2828667,
-        "start": 1884,
-        "end": 1893,
-        "file": "ohm_2828667.geojson"
       }
     ]
   },
@@ -14808,22 +11310,6 @@
     ]
   },
   {
-    "qid": "Q4530733",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1885,
-    "end_year": 1895,
-    "snapshots": [
-      {
-        "rid": 2828468,
-        "start": 1885,
-        "end": 1895,
-        "file": "ohm_2828468.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q76048",
     "name_en": "Congo Free State",
     "name_ko": "콩고 자유국",
@@ -14863,8 +11349,8 @@
   },
   {
     "qid": "Q739",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Colombia",
+    "name_ko": "콜롬비아",
     "tier": 1,
     "start_year": 1886,
     "end_year": 2025,
@@ -14940,56 +11426,6 @@
         "start": 1888,
         "end": 1941,
         "file": "ohm_2848299.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q207521",
-    "name_en": "Ethiopian Empire",
-    "name_ko": "에티오피아 제국",
-    "tier": 1,
-    "start_year": 1889,
-    "end_year": 1936,
-    "snapshots": [
-      {
-        "rid": 2690843,
-        "start": 1889,
-        "end": 1936,
-        "file": "ohm_2690843.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Brazil",
-    "name_en": "Brazil",
-    "name_ko": "브라질",
-    "tier": 2,
-    "start_year": 1889,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2751092,
-        "start": 1889,
-        "end": 1904,
-        "file": "ohm_2751092.geojson"
-      },
-      {
-        "rid": 2751502,
-        "start": 1904,
-        "end": 1904,
-        "file": "ohm_2751502.geojson"
-      },
-      {
-        "rid": 2848710,
-        "start": 1904,
-        "end": 1908,
-        "file": "ohm_2848710.geojson"
-      },
-      {
-        "rid": 2848974,
-        "start": 1908,
-        "end": null,
-        "file": "ohm_2848974.geojson"
       }
     ]
   },
@@ -15140,25 +11576,9 @@
     ]
   },
   {
-    "qid": "Q1183",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1900,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2854024,
-        "start": 1900,
-        "end": null,
-        "file": "ohm_2854024.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q408",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Australia",
+    "name_ko": "호주",
     "tier": 1,
     "start_year": 1901,
     "end_year": 2025,
@@ -15202,22 +11622,6 @@
     ]
   },
   {
-    "qid": "Q34366",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1901,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2828364,
-        "start": 1901,
-        "end": null,
-        "file": "ohm_2828364.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1142179",
     "name_en": "Orange River Colony",
     "name_ko": "오렌지강 식민지",
@@ -15230,80 +11634,6 @@
         "start": 1902,
         "end": 1910,
         "file": "ohm_2691749.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q14905932",
-    "name_en": "Republic of Cuba",
-    "name_ko": "쿠바 공화국",
-    "tier": 2,
-    "start_year": 1902,
-    "end_year": 1925,
-    "snapshots": [
-      {
-        "rid": 2861552,
-        "start": 1902,
-        "end": 1906,
-        "file": "ohm_2861552.geojson"
-      },
-      {
-        "rid": 2861550,
-        "start": 1909,
-        "end": 1925,
-        "file": "ohm_2861550.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Panama",
-    "name_en": "Panama",
-    "name_ko": "파나마",
-    "tier": 2,
-    "start_year": 1903,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2808537,
-        "start": 1903,
-        "end": 1904,
-        "file": "ohm_2808537.geojson"
-      },
-      {
-        "rid": 2808535,
-        "start": 1904,
-        "end": 1913,
-        "file": "ohm_2808535.geojson"
-      },
-      {
-        "rid": 2873307,
-        "start": 1913,
-        "end": 1935,
-        "file": "ohm_2873307.geojson"
-      },
-      {
-        "rid": 2873306,
-        "start": 1935,
-        "end": 1941,
-        "file": "ohm_2873306.geojson"
-      },
-      {
-        "rid": 2859753,
-        "start": 1941,
-        "end": 1979,
-        "file": "ohm_2859753.geojson"
-      },
-      {
-        "rid": 2808536,
-        "start": 1979,
-        "end": 1996,
-        "file": "ohm_2808536.geojson"
-      },
-      {
-        "rid": 2859752,
-        "start": 1996,
-        "end": null,
-        "file": "ohm_2859752.geojson"
       }
     ]
   },
@@ -15404,43 +11734,9 @@
     ]
   },
   {
-    "qid": "Q193619",
-    "name_en": "Union of South Africa",
-    "name_ko": "남아프리카 연방",
-    "tier": 2,
-    "start_year": 1910,
-    "end_year": 1961,
-    "snapshots": [
-      {
-        "rid": 2691747,
-        "start": 1910,
-        "end": 1919,
-        "file": "ohm_2691747.geojson"
-      },
-      {
-        "rid": 2831848,
-        "start": 1919,
-        "end": 1922,
-        "file": "ohm_2831848.geojson"
-      },
-      {
-        "rid": 2831731,
-        "start": 1922,
-        "end": 1948,
-        "file": "ohm_2831731.geojson"
-      },
-      {
-        "rid": 2865917,
-        "start": 1948,
-        "end": 1961,
-        "file": "ohm_2865917.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q45",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Portugal",
+    "name_ko": "포르투갈",
     "tier": 1,
     "start_year": 1910,
     "end_year": 2025,
@@ -15516,22 +11812,6 @@
     ]
   },
   {
-    "qid": "Q582781",
-    "name_en": "Albania",
-    "name_ko": "프로비시오나르 고베르느메은트 아르바니아",
-    "tier": 3,
-    "start_year": 1912,
-    "end_year": 1914,
-    "snapshots": [
-      {
-        "rid": 2807008,
-        "start": 1912,
-        "end": 1914,
-        "file": "ohm_2807008.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q2444884",
     "name_en": "Tibet",
     "name_ko": "티베트",
@@ -15544,22 +11824,6 @@
         "start": 1912,
         "end": 1951,
         "file": "ohm_2828810.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q386496",
-    "name_en": "Kingdom of Montenegro",
-    "name_ko": "몬테네그로 왕국",
-    "tier": 2,
-    "start_year": 1913,
-    "end_year": 1918,
-    "snapshots": [
-      {
-        "rid": 2739656,
-        "start": 1913,
-        "end": 1918,
-        "file": "ohm_2739656.geojson"
       }
     ]
   },
@@ -15582,22 +11846,6 @@
         "start": 1918,
         "end": 1925,
         "file": "ohm_2800556.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q370173",
-    "name_en": "Sultanate of Egypt",
-    "name_ko": "이집트 술탄국",
-    "tier": 2,
-    "start_year": 1914,
-    "end_year": 1922,
-    "snapshots": [
-      {
-        "rid": 2803205,
-        "start": 1914,
-        "end": 1922,
-        "file": "ohm_2803205.geojson"
       }
     ]
   },
@@ -15700,310 +11948,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Mexico",
-    "name_en": "Mexico",
-    "name_ko": "멕시코",
-    "tier": 2,
-    "start_year": 1917,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2692906,
-        "start": 1917,
-        "end": 1970,
-        "file": "ohm_2692906.geojson"
-      },
-      {
-        "rid": 2871886,
-        "start": 1969,
-        "end": null,
-        "file": "ohm_2871886.geojson"
-      },
-      {
-        "rid": 2864028,
-        "start": 1970,
-        "end": null,
-        "file": "ohm_2864028.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2184",
-    "name_en": "Russian Republic",
-    "name_ko": "러시아 공화국",
-    "tier": 3,
-    "start_year": 1917,
-    "end_year": 1921,
-    "snapshots": [
-      {
-        "rid": 2852344,
-        "start": 1917,
-        "end": 1918,
-        "file": "ohm_2852344.geojson"
-      },
-      {
-        "rid": 2869933,
-        "start": 1917,
-        "end": 1917,
-        "file": "ohm_2869933.geojson"
-      },
-      {
-        "rid": 2850854,
-        "start": 1918,
-        "end": 1920,
-        "file": "ohm_2850854.geojson"
-      },
-      {
-        "rid": 2851272,
-        "start": 1920,
-        "end": 1921,
-        "file": "ohm_2851272.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1419681",
-    "name_en": "Crimean People's Republic",
-    "name_ko": "크림 인민공화국",
-    "tier": 2,
-    "start_year": 1917,
-    "end_year": 1918,
-    "snapshots": [
-      {
-        "rid": 2854274,
-        "start": 1917,
-        "end": 1918,
-        "file": "ohm_2854274.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q140359",
-    "name_en": "Czechoslovakia (1924-1936)",
-    "name_ko": "체코슬로바키아",
-    "tier": 3,
-    "start_year": 1918,
-    "end_year": 1938,
-    "snapshots": [
-      {
-        "rid": 2747877,
-        "start": 1918,
-        "end": 1920,
-        "file": "ohm_2747877.geojson"
-      },
-      {
-        "rid": 2693465,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2693465.geojson"
-      },
-      {
-        "rid": 2747876,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2747876.geojson"
-      },
-      {
-        "rid": 2747893,
-        "start": 1920,
-        "end": 1924,
-        "file": "ohm_2747893.geojson"
-      },
-      {
-        "rid": 2692233,
-        "start": 1924,
-        "end": 1936,
-        "file": "ohm_2692233.geojson"
-      },
-      {
-        "rid": 2692764,
-        "start": 1936,
-        "end": 1938,
-        "file": "ohm_2692764.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1206012",
-    "name_en": "German Reich (1920 01-02)",
-    "name_ko": "바이마르 공화국",
-    "tier": 3,
-    "start_year": 1918,
-    "end_year": 1945,
-    "snapshots": [
-      {
-        "rid": 2696519,
-        "start": 1918,
-        "end": 1920,
-        "file": "ohm_2696519.geojson"
-      },
-      {
-        "rid": 2692483,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2692483.geojson"
-      },
-      {
-        "rid": 2696516,
-        "start": 1920,
-        "end": 1922,
-        "file": "ohm_2696516.geojson"
-      },
-      {
-        "rid": 2696517,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2696517.geojson"
-      },
-      {
-        "rid": 2696518,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2696518.geojson"
-      },
-      {
-        "rid": 2741459,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2741459.geojson"
-      },
-      {
-        "rid": 2696515,
-        "start": 1922,
-        "end": 1935,
-        "file": "ohm_2696515.geojson"
-      },
-      {
-        "rid": 2694638,
-        "start": 1935,
-        "end": 1936,
-        "file": "ohm_2694638.geojson"
-      },
-      {
-        "rid": 2693085,
-        "start": 1936,
-        "end": 1938,
-        "file": "ohm_2693085.geojson"
-      },
-      {
-        "rid": 2704711,
-        "start": 1938,
-        "end": 1939,
-        "file": "ohm_2704711.geojson"
-      },
-      {
-        "rid": 2704712,
-        "start": 1938,
-        "end": 1938,
-        "file": "ohm_2704712.geojson"
-      },
-      {
-        "rid": 2704709,
-        "start": 1939,
-        "end": 1939,
-        "file": "ohm_2704709.geojson"
-      },
-      {
-        "rid": 2704710,
-        "start": 1939,
-        "end": 1939,
-        "file": "ohm_2704710.geojson"
-      },
-      {
-        "rid": 2704716,
-        "start": 1939,
-        "end": 1940,
-        "file": "ohm_2704716.geojson"
-      },
-      {
-        "rid": 2704713,
-        "start": 1940,
-        "end": 1941,
-        "file": "ohm_2704713.geojson"
-      },
-      {
-        "rid": 2704714,
-        "start": 1940,
-        "end": 1940,
-        "file": "ohm_2704714.geojson"
-      },
-      {
-        "rid": 2704715,
-        "start": 1940,
-        "end": 1940,
-        "file": "ohm_2704715.geojson"
-      },
-      {
-        "rid": 2692712,
-        "start": 1941,
-        "end": 1945,
-        "file": "ohm_2692712.geojson"
-      },
-      {
-        "rid": 2704717,
-        "start": 1941,
-        "end": 1941,
-        "file": "ohm_2704717.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Estonia",
-    "name_en": "Estonia",
-    "name_ko": "에스토니아",
-    "tier": 2,
-    "start_year": 1918,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801387,
-        "start": 1918,
-        "end": 1940,
-        "file": "ohm_2801387.geojson"
-      },
-      {
-        "rid": 2692826,
-        "start": 1991,
-        "end": 1996,
-        "file": "ohm_2692826.geojson"
-      },
-      {
-        "rid": 2870170,
-        "start": 1996,
-        "end": null,
-        "file": "ohm_2870170.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Armenia",
-    "name_en": "Armenia",
-    "name_ko": "아르메니아",
-    "tier": 2,
-    "start_year": 1918,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2698116,
-        "start": 1918,
-        "end": 1920,
-        "file": "ohm_2698116.geojson"
-      },
-      {
-        "rid": 2863796,
-        "start": 1920,
-        "end": 1921,
-        "file": "ohm_2863796.geojson"
-      },
-      {
-        "rid": 2694891,
-        "start": 1991,
-        "end": null,
-        "file": "ohm_2694891.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q245160",
     "name_en": "Democratic Republic of Georgia",
     "name_ko": "조지아 민주공화국",
@@ -16016,22 +11960,6 @@
         "start": 1918,
         "end": 1921,
         "file": "ohm_2698086.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q62567",
-    "name_en": "Kingdom of Iceland",
-    "name_ko": "아이슬란드 왕국",
-    "tier": 2,
-    "start_year": 1918,
-    "end_year": 1944,
-    "snapshots": [
-      {
-        "rid": 2801981,
-        "start": 1918,
-        "end": 1944,
-        "file": "ohm_2801981.geojson"
       }
     ]
   },
@@ -16158,70 +12086,6 @@
     ]
   },
   {
-    "qid": "Q207272",
-    "name_en": "Second Polish Republic",
-    "name_ko": "폴란드 제2공화국",
-    "tier": 2,
-    "start_year": 1920,
-    "end_year": 1939,
-    "snapshots": [
-      {
-        "rid": 2855669,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2855669.geojson"
-      },
-      {
-        "rid": 2855670,
-        "start": 1920,
-        "end": 1921,
-        "file": "ohm_2855670.geojson"
-      },
-      {
-        "rid": 2855675,
-        "start": 1920,
-        "end": 1920,
-        "file": "ohm_2855675.geojson"
-      },
-      {
-        "rid": 2855671,
-        "start": 1921,
-        "end": 1922,
-        "file": "ohm_2855671.geojson"
-      },
-      {
-        "rid": 2741472,
-        "start": 1922,
-        "end": 1924,
-        "file": "ohm_2741472.geojson"
-      },
-      {
-        "rid": 2855672,
-        "start": 1922,
-        "end": 1922,
-        "file": "ohm_2855672.geojson"
-      },
-      {
-        "rid": 2692205,
-        "start": 1924,
-        "end": 1938,
-        "file": "ohm_2692205.geojson"
-      },
-      {
-        "rid": 2747892,
-        "start": 1924,
-        "end": 1924,
-        "file": "ohm_2747892.geojson"
-      },
-      {
-        "rid": 2741574,
-        "start": 1938,
-        "end": 1939,
-        "file": "ohm_2741574.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q8272919",
     "name_en": "Republic of Lithuania",
     "name_ko": "리투아니아 제1공화국",
@@ -16256,58 +12120,6 @@
     ]
   },
   {
-    "qid": "Q600018",
-    "name_en": "Kingdom of Hungary",
-    "name_ko": "헝가리 왕국",
-    "tier": 2,
-    "start_year": 1920,
-    "end_year": 1944,
-    "snapshots": [
-      {
-        "rid": 2693462,
-        "start": 1920,
-        "end": 1921,
-        "file": "ohm_2693462.geojson"
-      },
-      {
-        "rid": 2695633,
-        "start": 1921,
-        "end": 1938,
-        "file": "ohm_2695633.geojson"
-      },
-      {
-        "rid": 2747873,
-        "start": 1938,
-        "end": 1939,
-        "file": "ohm_2747873.geojson"
-      },
-      {
-        "rid": 2747871,
-        "start": 1939,
-        "end": 1940,
-        "file": "ohm_2747871.geojson"
-      },
-      {
-        "rid": 2747872,
-        "start": 1939,
-        "end": 1939,
-        "file": "ohm_2747872.geojson"
-      },
-      {
-        "rid": 2747817,
-        "start": 1940,
-        "end": 1941,
-        "file": "ohm_2747817.geojson"
-      },
-      {
-        "rid": 2692359,
-        "start": 1941,
-        "end": 1944,
-        "file": "ohm_2692359.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q548114",
     "name_en": "Free State of Fiume",
     "name_ko": "리예카 자유국",
@@ -16336,28 +12148,6 @@
         "start": 1920,
         "end": 1940,
         "file": "ohm_2704702.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q158725",
-    "name_en": "Tanganyika Territory",
-    "name_ko": "탕가니카",
-    "tier": 3,
-    "start_year": 1920,
-    "end_year": 1961,
-    "snapshots": [
-      {
-        "rid": 2855612,
-        "start": 1920,
-        "end": 1961,
-        "file": "ohm_2855612.geojson"
-      },
-      {
-        "rid": 2801206,
-        "start": 1922,
-        "end": 1961,
-        "file": "ohm_2801206.geojson"
       }
     ]
   },
@@ -16448,38 +12238,6 @@
     ]
   },
   {
-    "qid": "Q133844233",
-    "name_en": "Federation of Central America",
-    "name_ko": "연방 세은트라르 아메리카",
-    "tier": 2,
-    "start_year": 1921,
-    "end_year": 1922,
-    "snapshots": [
-      {
-        "rid": 2807665,
-        "start": 1921,
-        "end": 1922,
-        "file": "ohm_2807665.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q816709",
-    "name_en": "Tuvan People's Republic",
-    "name_ko": "투바 인민공화국",
-    "tier": 2,
-    "start_year": 1921,
-    "end_year": 1944,
-    "snapshots": [
-      {
-        "rid": 2849759,
-        "start": 1921,
-        "end": 1944,
-        "file": "ohm_2849759.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q37102",
     "name_en": "Republic of the Rif",
     "name_ko": "리프 공화국",
@@ -16525,8 +12283,8 @@
   },
   {
     "qid": "Q145",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "United Kingdom",
+    "name_ko": "영국",
     "tier": 1,
     "start_year": 1922,
     "end_year": 2025,
@@ -16542,22 +12300,6 @@
         "start": 1987,
         "end": null,
         "file": "ohm_2873754.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q31747",
-    "name_en": "Irish Free State",
-    "name_ko": "아일랜드 자유국",
-    "tier": 2,
-    "start_year": 1922,
-    "end_year": 1937,
-    "snapshots": [
-      {
-        "rid": 2697727,
-        "start": 1922,
-        "end": 1937,
-        "file": "ohm_2697727.geojson"
       }
     ]
   },
@@ -16680,25 +12422,9 @@
     ]
   },
   {
-    "qid": "Q124943",
-    "name_en": "Kingdom of Egypt",
-    "name_ko": "이집트 왕국",
-    "tier": 2,
-    "start_year": 1922,
-    "end_year": 1953,
-    "snapshots": [
-      {
-        "rid": 2803204,
-        "start": 1922,
-        "end": 1953,
-        "file": "ohm_2803204.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q792",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "El Salvador",
+    "name_ko": "엘살바도르",
     "tier": 2,
     "start_year": 1922,
     "end_year": 2025,
@@ -16746,78 +12472,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Mongolia",
-    "name_en": "Mongolia",
-    "name_ko": "몽골",
-    "tier": 2,
-    "start_year": 1924,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2694470,
-        "start": 1924,
-        "end": null,
-        "file": "ohm_2694470.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q48742118",
-    "name_en": "Italy (1940-1941)",
-    "name_ko": "이탈리아 왕국",
-    "tier": 3,
-    "start_year": 1924,
-    "end_year": 1943,
-    "snapshots": [
-      {
-        "rid": 2747870,
-        "start": 1924,
-        "end": 1929,
-        "file": "ohm_2747870.geojson"
-      },
-      {
-        "rid": 2851104,
-        "start": 1929,
-        "end": 1940,
-        "file": "ohm_2851104.geojson"
-      },
-      {
-        "rid": 2696324,
-        "start": 1940,
-        "end": 1941,
-        "file": "ohm_2696324.geojson"
-      },
-      {
-        "rid": 2747829,
-        "start": 1941,
-        "end": 1942,
-        "file": "ohm_2747829.geojson"
-      },
-      {
-        "rid": 2747832,
-        "start": 1942,
-        "end": 1943,
-        "file": "ohm_2747832.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q51547013",
-    "name_en": "Third Dominican Republic",
-    "name_ko": "티르드 도미니카은 공화국",
-    "tier": 2,
-    "start_year": 1924,
-    "end_year": 1965,
-    "snapshots": [
-      {
-        "rid": 2841711,
-        "start": 1924,
-        "end": 1965,
-        "file": "ohm_2841711.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1923781",
     "name_en": "Albanian Republic",
     "name_ko": "알바니아 공화국",
@@ -16841,8 +12495,8 @@
   },
   {
     "qid": "Q241",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Cuba",
+    "name_ko": "쿠바",
     "tier": 1,
     "start_year": 1925,
     "end_year": 2025,
@@ -16878,22 +12532,6 @@
     ]
   },
   {
-    "qid": "Q1138904",
-    "name_en": "Kingdom of Afghanistan",
-    "name_ko": "아프가니스탄 왕국",
-    "tier": 2,
-    "start_year": 1926,
-    "end_year": 1973,
-    "snapshots": [
-      {
-        "rid": 2822863,
-        "start": 1926,
-        "end": 1973,
-        "file": "ohm_2822863.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1048340",
     "name_en": "Albanian Kingdom",
     "name_ko": "알바니아 왕국",
@@ -16906,22 +12544,6 @@
         "start": 1928,
         "end": 1939,
         "file": "ohm_2800554.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q191077",
-    "name_en": "Kingdom of Yugoslavia",
-    "name_ko": "유고슬라비아",
-    "tier": 3,
-    "start_year": 1929,
-    "end_year": 1939,
-    "snapshots": [
-      {
-        "rid": 2747831,
-        "start": 1929,
-        "end": 1939,
-        "file": "ohm_2747831.geojson"
       }
     ]
   },
@@ -16999,8 +12621,8 @@
   },
   {
     "qid": "Q790",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Haiti",
+    "name_ko": "아이티",
     "tier": 2,
     "start_year": 1934,
     "end_year": 2025,
@@ -17016,50 +12638,6 @@
         "start": 1977,
         "end": null,
         "file": "ohm_2874739.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q146328",
-    "name_en": "Commonwealth of the Philippines",
-    "name_ko": "필리핀 자치령",
-    "tier": 2,
-    "start_year": 1935,
-    "end_year": 1946,
-    "snapshots": [
-      {
-        "rid": 2889834,
-        "start": 1935,
-        "end": 1942,
-        "file": "ohm_2889834.geojson"
-      },
-      {
-        "rid": 2889831,
-        "start": 1945,
-        "end": 1946,
-        "file": "ohm_2889831.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Ireland",
-    "name_en": "Ireland",
-    "name_ko": "아일랜드",
-    "tier": 2,
-    "start_year": 1937,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2692985,
-        "start": 1937,
-        "end": 2006,
-        "file": "ohm_2692985.geojson"
-      },
-      {
-        "rid": 2873753,
-        "start": 2006,
-        "end": null,
-        "file": "ohm_2873753.geojson"
       }
     ]
   },
@@ -17098,28 +12676,6 @@
         "start": 1937,
         "end": 1963,
         "file": "ohm_2848223.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2010024",
-    "name_en": "Czechoslovakia (1938 09-11)",
-    "name_ko": "체코슬로바키아",
-    "tier": 3,
-    "start_year": 1938,
-    "end_year": 1939,
-    "snapshots": [
-      {
-        "rid": 2747874,
-        "start": 1938,
-        "end": 1938,
-        "file": "ohm_2747874.geojson"
-      },
-      {
-        "rid": 2857482,
-        "start": 1938,
-        "end": 1939,
-        "file": "ohm_2857482.geojson"
       }
     ]
   },
@@ -17190,40 +12746,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Thailand",
-    "name_en": "Thailand",
-    "name_ko": "태국",
-    "tier": 2,
-    "start_year": 1939,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801980,
-        "start": 1939,
-        "end": 1943,
-        "file": "ohm_2801980.geojson"
-      },
-      {
-        "rid": 2874870,
-        "start": 1941,
-        "end": 1943,
-        "file": "ohm_2874870.geojson"
-      },
-      {
-        "rid": 2848473,
-        "start": 1943,
-        "end": 1945,
-        "file": "ohm_2848473.geojson"
-      },
-      {
-        "rid": 2848474,
-        "start": 1945,
-        "end": null,
-        "file": "ohm_2848474.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q130280",
     "name_en": "Estonian Soviet Socialist Republic",
     "name_ko": "에스토니아 소비에트 사회주의 공화국",
@@ -17236,34 +12758,6 @@
         "start": 1940,
         "end": 1940,
         "file": "ohm_2694790.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q69808",
-    "name_en": "Vichy France",
-    "name_ko": "비시 프랑스",
-    "tier": 3,
-    "start_year": 1940,
-    "end_year": 1944,
-    "snapshots": [
-      {
-        "rid": 2747868,
-        "start": 1940,
-        "end": 1942,
-        "file": "ohm_2747868.geojson"
-      },
-      {
-        "rid": 2747869,
-        "start": 1942,
-        "end": 1943,
-        "file": "ohm_2747869.geojson"
-      },
-      {
-        "rid": 2696300,
-        "start": 1943,
-        "end": 1944,
-        "file": "ohm_2696300.geojson"
       }
     ]
   },
@@ -17291,8 +12785,8 @@
   },
   {
     "qid": "Q800",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Costa Rica",
+    "name_ko": "코스타리카",
     "tier": 2,
     "start_year": 1941,
     "end_year": 2025,
@@ -17312,106 +12806,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Lebanon",
-    "name_en": "Lebanon",
-    "name_ko": "레바논",
-    "tier": 2,
-    "start_year": 1943,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2748904,
-        "start": 1943,
-        "end": 1982,
-        "file": "ohm_2748904.geojson"
-      },
-      {
-        "rid": 2863756,
-        "start": 1982,
-        "end": 1994,
-        "file": "ohm_2863756.geojson"
-      },
-      {
-        "rid": 2863762,
-        "start": 1994,
-        "end": 2000,
-        "file": "ohm_2863762.geojson"
-      },
-      {
-        "rid": 2863755,
-        "start": 2000,
-        "end": null,
-        "file": "ohm_2863755.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q153660",
-    "name_en": "Italian Social Republic",
-    "name_ko": "이탈리아 사회공화국",
-    "tier": 3,
-    "start_year": 1943,
-    "end_year": 1945,
-    "snapshots": [
-      {
-        "rid": 2794958,
-        "start": 1943,
-        "end": 1944,
-        "file": "ohm_2794958.geojson"
-      },
-      {
-        "rid": 2794957,
-        "start": 1944,
-        "end": 1945,
-        "file": "ohm_2794957.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q3752897",
-    "name_en": "Italy (1944-1945)",
-    "name_ko": "이탈리아 왕국",
-    "tier": 3,
-    "start_year": 1943,
-    "end_year": 1945,
-    "snapshots": [
-      {
-        "rid": 2794960,
-        "start": 1943,
-        "end": 1944,
-        "file": "ohm_2794960.geojson"
-      },
-      {
-        "rid": 2794959,
-        "start": 1944,
-        "end": 1945,
-        "file": "ohm_2794959.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q16953965",
-    "name_en": "British Military Administration",
-    "name_ko": "영국 미리타르이 아드미니스트라티오은",
-    "tier": 2,
-    "start_year": 1943,
-    "end_year": 1951,
-    "snapshots": [
-      {
-        "rid": 2831555,
-        "start": 1943,
-        "end": 1949,
-        "file": "ohm_2831555.geojson"
-      },
-      {
-        "rid": 2831554,
-        "start": 1949,
-        "end": 1951,
-        "file": "ohm_2831554.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q704358",
     "name_en": "State of Burma",
     "name_ko": "버마국",
@@ -17424,156 +12818,6 @@
         "start": 1943,
         "end": 1945,
         "file": "ohm_2848253.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2027229",
-    "name_en": "Second Philippine Republic",
-    "name_ko": "필리핀 제2공화국",
-    "tier": 2,
-    "start_year": 1943,
-    "end_year": 1945,
-    "snapshots": [
-      {
-        "rid": 2889832,
-        "start": 1943,
-        "end": 1945,
-        "file": "ohm_2889832.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Iceland",
-    "name_en": "Iceland",
-    "name_ko": "아이슬란드",
-    "tier": 2,
-    "start_year": 1944,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801982,
-        "start": 1944,
-        "end": 1979,
-        "file": "ohm_2801982.geojson"
-      },
-      {
-        "rid": 2869966,
-        "start": 1979,
-        "end": null,
-        "file": "ohm_2869966.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Finland",
-    "name_en": "Finland",
-    "name_ko": "핀란드",
-    "tier": 2,
-    "start_year": 1944,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2855285,
-        "start": 1944,
-        "end": 1947,
-        "file": "ohm_2855285.geojson"
-      },
-      {
-        "rid": 2870047,
-        "start": 1947,
-        "end": 1985,
-        "file": "ohm_2870047.geojson"
-      },
-      {
-        "rid": 2852345,
-        "start": 1985,
-        "end": null,
-        "file": "ohm_2852345.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q211274",
-    "name_en": "Polish People's Republic",
-    "name_ko": "폴란드 인민공화국",
-    "tier": 2,
-    "start_year": 1945,
-    "end_year": 1989,
-    "snapshots": [
-      {
-        "rid": 2692206,
-        "start": 1945,
-        "end": 1948,
-        "file": "ohm_2692206.geojson"
-      },
-      {
-        "rid": 2692207,
-        "start": 1948,
-        "end": 1951,
-        "file": "ohm_2692207.geojson"
-      },
-      {
-        "rid": 2878199,
-        "start": 1951,
-        "end": 1952,
-        "file": "ohm_2878199.geojson"
-      },
-      {
-        "rid": 2878198,
-        "start": 1952,
-        "end": 1989,
-        "file": "ohm_2878198.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2454585",
-    "name_en": "Czechoslovak Republic (1945-1947)",
-    "name_ko": "체코슬로바키아",
-    "tier": 3,
-    "start_year": 1945,
-    "end_year": 1948,
-    "snapshots": [
-      {
-        "rid": 2692766,
-        "start": 1945,
-        "end": 1947,
-        "file": "ohm_2692766.geojson"
-      },
-      {
-        "rid": 2692767,
-        "start": 1947,
-        "end": 1948,
-        "file": "ohm_2692767.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q69829",
-    "name_en": "French Fourth Republic",
-    "name_ko": "프랑스 제4공화국",
-    "tier": 3,
-    "start_year": 1945,
-    "end_year": 1947,
-    "snapshots": [
-      {
-        "rid": 2696301,
-        "start": 1945,
-        "end": 1946,
-        "file": "ohm_2696301.geojson"
-      },
-      {
-        "rid": 2865990,
-        "start": 1946,
-        "end": 1947,
-        "file": "ohm_2865990.geojson"
-      },
-      {
-        "rid": 2873755,
-        "start": 1946,
-        "end": 1946,
-        "file": "ohm_2873755.geojson"
       }
     ]
   },
@@ -17616,50 +12860,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Cambodia",
-    "name_en": "Cambodia",
-    "name_ko": "캄보디아",
-    "tier": 2,
-    "start_year": 1945,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2746209,
-        "start": 1945,
-        "end": 1946,
-        "file": "ohm_2746209.geojson"
-      },
-      {
-        "rid": 2746263,
-        "start": 1946,
-        "end": null,
-        "file": "ohm_2746263.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Laos",
-    "name_en": "Laos",
-    "name_ko": "라오스",
-    "tier": 2,
-    "start_year": 1945,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2746245,
-        "start": 1945,
-        "end": 1946,
-        "file": "ohm_2746245.geojson"
-      },
-      {
-        "rid": 2747289,
-        "start": 1946,
-        "end": null,
-        "file": "ohm_2747289.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q15242873",
     "name_en": "Soviet Civil Administration",
     "name_ko": "소련 민정청",
@@ -17693,8 +12893,8 @@
   },
   {
     "qid": "Q252",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Indonesia",
+    "name_ko": "인도네시아",
     "tier": 1,
     "start_year": 1945,
     "end_year": 2025,
@@ -17734,22 +12934,6 @@
         "start": 1999,
         "end": null,
         "file": "ohm_2864435.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q940741",
-    "name_en": "Second Hungarian Republic",
-    "name_ko": "헝가리 제2공화국",
-    "tier": 2,
-    "start_year": 1945,
-    "end_year": 1949,
-    "snapshots": [
-      {
-        "rid": 2878067,
-        "start": 1945,
-        "end": 1949,
-        "file": "ohm_2878067.geojson"
       }
     ]
   },
@@ -17805,8 +12989,8 @@
   },
   {
     "qid": "Q928",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Philippines",
+    "name_ko": "필리핀",
     "tier": 1,
     "start_year": 1946,
     "end_year": 2025,
@@ -17826,113 +13010,9 @@
     ]
   },
   {
-    "qid": "Q976099",
-    "name_en": "Malayan Union",
-    "name_ko": "말라야 연합",
-    "tier": 2,
-    "start_year": 1946,
-    "end_year": 1948,
-    "snapshots": [
-      {
-        "rid": 2801991,
-        "start": 1946,
-        "end": 1948,
-        "file": "ohm_2801991.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q121932",
-    "name_en": "People's Republic of Bulgaria",
-    "name_ko": "불가리아 인민공화국",
-    "tier": 2,
-    "start_year": 1946,
-    "end_year": 1990,
-    "snapshots": [
-      {
-        "rid": 2848876,
-        "start": 1946,
-        "end": 1990,
-        "file": "ohm_2848876.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Spanish_West_Africa",
-    "name_en": "Spanish West Africa",
-    "name_ko": "스페인령 서아프리카",
-    "tier": 2,
-    "start_year": 1946,
-    "end_year": 1958,
-    "snapshots": [
-      {
-        "rid": 2860427,
-        "start": 1946,
-        "end": 1958,
-        "file": "ohm_2860427.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q17012",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1946,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2861171,
-        "start": 1946,
-        "end": 2007,
-        "file": "ohm_2861171.geojson"
-      },
-      {
-        "rid": 2861170,
-        "start": 2007,
-        "end": null,
-        "file": "ohm_2861170.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q467864",
-    "name_en": "People's Socialist Republic of Albania",
-    "name_ko": "알바니아 사회주의 인민공화국",
-    "tier": 2,
-    "start_year": 1946,
-    "end_year": 1991,
-    "snapshots": [
-      {
-        "rid": 2878107,
-        "start": 1946,
-        "end": 1976,
-        "file": "ohm_2878107.geojson"
-      },
-      {
-        "rid": 2878106,
-        "start": 1976,
-        "end": 1990,
-        "file": "ohm_2878106.geojson"
-      },
-      {
-        "rid": 2889965,
-        "start": 1976,
-        "end": 1976,
-        "file": "ohm_2889965.geojson"
-      },
-      {
-        "rid": 2889964,
-        "start": 1990,
-        "end": 1991,
-        "file": "ohm_2889964.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q142",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "France",
+    "name_ko": "프랑스",
     "tier": 1,
     "start_year": 1947,
     "end_year": 2025,
@@ -17998,25 +13078,9 @@
     ]
   },
   {
-    "qid": "Q917",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 2,
-    "start_year": 1947,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2800954,
-        "start": 1947,
-        "end": null,
-        "file": "ohm_2800954.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q664",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "New Zealand",
+    "name_ko": "뉴질랜드",
     "tier": 2,
     "start_year": 1947,
     "end_year": 2025,
@@ -18042,28 +13106,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Pakistan",
-    "name_en": "Pakistan",
-    "name_ko": "파키스탄",
-    "tier": 2,
-    "start_year": 1947,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801000,
-        "start": 1947,
-        "end": 1971,
-        "file": "ohm_2801000.geojson"
-      },
-      {
-        "rid": 2801022,
-        "start": 1971,
-        "end": null,
-        "file": "ohm_2801022.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q2006542",
     "name_en": "Dominion of Pakistan",
     "name_ko": "영국령 파키스탄 자치령",
@@ -18080,28 +13122,6 @@
     ]
   },
   {
-    "qid": "Q2685298",
-    "name_en": "Romanian People's Republic",
-    "name_ko": "로마니아은 페오프레스 공화국",
-    "tier": 2,
-    "start_year": 1947,
-    "end_year": 1965,
-    "snapshots": [
-      {
-        "rid": 2877964,
-        "start": 1947,
-        "end": 1958,
-        "file": "ohm_2877964.geojson"
-      },
-      {
-        "rid": 2877965,
-        "start": 1958,
-        "end": 1965,
-        "file": "ohm_2877965.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q33946",
     "name_en": "Czechoslovakia",
     "name_ko": "체코슬로바키아",
@@ -18114,114 +13134,6 @@
         "start": 1948,
         "end": 1960,
         "file": "ohm_2692234.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Israel",
-    "name_en": "Israel",
-    "name_ko": "이스라엘",
-    "tier": 2,
-    "start_year": 1948,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2734969,
-        "start": 1948,
-        "end": 1949,
-        "file": "ohm_2734969.geojson"
-      },
-      {
-        "rid": 2864015,
-        "start": 1949,
-        "end": 1967,
-        "file": "ohm_2864015.geojson"
-      },
-      {
-        "rid": 2742218,
-        "start": 1967,
-        "end": 1974,
-        "file": "ohm_2742218.geojson"
-      },
-      {
-        "rid": 2864017,
-        "start": 1974,
-        "end": 1982,
-        "file": "ohm_2864017.geojson"
-      },
-      {
-        "rid": 2734968,
-        "start": 1982,
-        "end": 1982,
-        "file": "ohm_2734968.geojson"
-      },
-      {
-        "rid": 2863758,
-        "start": 1982,
-        "end": 1994,
-        "file": "ohm_2863758.geojson"
-      },
-      {
-        "rid": 2863759,
-        "start": 1994,
-        "end": 2000,
-        "file": "ohm_2863759.geojson"
-      },
-      {
-        "rid": 2863757,
-        "start": 2000,
-        "end": null,
-        "file": "ohm_2863757.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Jordan",
-    "name_en": "Jordan",
-    "name_ko": "요르단",
-    "tier": 2,
-    "start_year": 1948,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2744317,
-        "start": 1948,
-        "end": 1965,
-        "file": "ohm_2744317.geojson"
-      },
-      {
-        "rid": 2744318,
-        "start": 1965,
-        "end": 1967,
-        "file": "ohm_2744318.geojson"
-      },
-      {
-        "rid": 2744265,
-        "start": 1967,
-        "end": 1984,
-        "file": "ohm_2744265.geojson"
-      },
-      {
-        "rid": 2744316,
-        "start": 1984,
-        "end": null,
-        "file": "ohm_2744316.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1479726",
-    "name_en": "Federation of Malaya",
-    "name_ko": "말라야 연방",
-    "tier": 2,
-    "start_year": 1948,
-    "end_year": 1963,
-    "snapshots": [
-      {
-        "rid": 2801992,
-        "start": 1948,
-        "end": 1963,
-        "file": "ohm_2801992.geojson"
       }
     ]
   },
@@ -18394,22 +13306,6 @@
     ]
   },
   {
-    "qid": "Q2003",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1949,
-    "end_year": 2001,
-    "snapshots": [
-      {
-        "rid": 2831079,
-        "start": 1949,
-        "end": 2001,
-        "file": "ohm_2831079.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q370372",
     "name_en": "Emirate of Cyrenaica",
     "name_ko": "키레나이카 토후국",
@@ -18422,22 +13318,6 @@
         "start": 1949,
         "end": 1951,
         "file": "ohm_2831556.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q16410",
-    "name_en": "Hungarian People's Republic",
-    "name_ko": "헝가리 인민공화국",
-    "tier": 2,
-    "start_year": 1949,
-    "end_year": 1989,
-    "snapshots": [
-      {
-        "rid": 2878068,
-        "start": 1949,
-        "end": 1989,
-        "file": "ohm_2878068.geojson"
       }
     ]
   },
@@ -18493,8 +13373,8 @@
   },
   {
     "qid": "Q668",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "India",
+    "name_ko": "인도",
     "tier": 1,
     "start_year": 1950,
     "end_year": 2025,
@@ -18514,28 +13394,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Libya",
-    "name_en": "Libya",
-    "name_ko": "리비아",
-    "tier": 2,
-    "start_year": 1951,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801143,
-        "start": 1951,
-        "end": 1959,
-        "file": "ohm_2801143.geojson"
-      },
-      {
-        "rid": 2888602,
-        "start": 1959,
-        "end": null,
-        "file": "ohm_2888602.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q654342",
     "name_en": "Federation of Rhodesia and Nyasaland",
     "name_ko": "로디지아 니아살랜드 연방",
@@ -18548,44 +13406,6 @@
         "start": 1953,
         "end": 1963,
         "file": "ohm_2803135.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q3087763",
-    "name_en": "Republic of Egypt",
-    "name_ko": "이집트 공화국",
-    "tier": 2,
-    "start_year": 1953,
-    "end_year": 1958,
-    "snapshots": [
-      {
-        "rid": 2878088,
-        "start": 1953,
-        "end": 1958,
-        "file": "ohm_2878088.geojson"
-      },
-      {
-        "rid": 2888605,
-        "start": 1958,
-        "end": 1958,
-        "file": "ohm_2888605.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q83286",
-    "name_en": "Yugoslavia (1954-1991)",
-    "name_ko": "유고슬라비아",
-    "tier": 3,
-    "start_year": 1954,
-    "end_year": 1991,
-    "snapshots": [
-      {
-        "rid": 2692867,
-        "start": 1954,
-        "end": 1991,
-        "file": "ohm_2692867.geojson"
       }
     ]
   },
@@ -18634,87 +13454,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Sudan",
-    "name_en": "Sudan",
-    "name_ko": "수단",
-    "tier": 2,
-    "start_year": 1956,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801037,
-        "start": 1956,
-        "end": 2011,
-        "file": "ohm_2801037.geojson"
-      },
-      {
-        "rid": 2801039,
-        "start": 2011,
-        "end": null,
-        "file": "ohm_2801039.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Tunisia",
-    "name_en": "Tunisia",
-    "name_ko": "튀니지",
-    "tier": 2,
-    "start_year": 1956,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801170,
-        "start": 1956,
-        "end": 1973,
-        "file": "ohm_2801170.geojson"
-      },
-      {
-        "rid": 2888601,
-        "start": 1973,
-        "end": null,
-        "file": "ohm_2888601.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Morocco",
-    "name_en": "Morocco",
-    "name_ko": "모로코",
-    "tier": 2,
-    "start_year": 1956,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2803495,
-        "start": 1956,
-        "end": 1958,
-        "file": "ohm_2803495.geojson"
-      },
-      {
-        "rid": 2860420,
-        "start": 1958,
-        "end": 1969,
-        "file": "ohm_2860420.geojson"
-      },
-      {
-        "rid": 2860419,
-        "start": 1969,
-        "end": 1973,
-        "file": "ohm_2860419.geojson"
-      },
-      {
-        "rid": 2888592,
-        "start": 1973,
-        "end": null,
-        "file": "ohm_2888592.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q117",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Ghana",
+    "name_ko": "가나",
     "tier": 2,
     "start_year": 1957,
     "end_year": null,
@@ -18772,34 +13514,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Central_African_Republic",
-    "name_en": "Central African Republic",
-    "name_ko": "중앙아프리카공화국",
-    "tier": 2,
-    "start_year": 1958,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2839927,
-        "start": 1958,
-        "end": 1960,
-        "file": "ohm_2839927.geojson"
-      },
-      {
-        "rid": 2839926,
-        "start": 1960,
-        "end": 1979,
-        "file": "ohm_2839926.geojson"
-      },
-      {
-        "rid": 2831663,
-        "start": 1979,
-        "end": null,
-        "file": "ohm_2831663.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q652560",
     "name_en": "West Indies Federation",
     "name_ko": "서인도 연방",
@@ -18822,31 +13536,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Iraq",
-    "name_en": "Iraq",
-    "name_ko": "이라크",
-    "tier": 2,
-    "start_year": 1958,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2849399,
-        "start": 1958,
-        "end": 1982,
-        "file": "ohm_2849399.geojson"
-      },
-      {
-        "rid": 2839205,
-        "start": 1982,
-        "end": null,
-        "file": "ohm_2839205.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q945",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Togo",
+    "name_ko": "토고",
     "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
@@ -18866,25 +13558,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_United_Kingdom",
-    "name_en": "United Kingdom",
-    "name_ko": "영국",
-    "tier": 1,
-    "start_year": 1960,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2696596,
-        "start": 1960,
-        "end": null,
-        "file": "ohm_2696596.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q229",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Cyprus",
+    "name_ko": "키프로스",
     "tier": 2,
     "start_year": 1960,
     "end_year": null,
@@ -18898,25 +13574,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Chad",
-    "name_en": "Chad",
-    "name_ko": "차드",
-    "tier": 2,
-    "start_year": 1960,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2801984,
-        "start": 1960,
-        "end": null,
-        "file": "ohm_2801984.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1032",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Niger",
+    "name_ko": "니제르",
     "tier": 2,
     "start_year": 1960,
     "end_year": null,
@@ -18926,22 +13586,6 @@
         "start": 1960,
         "end": null,
         "file": "ohm_2801985.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Senegal",
-    "name_en": "Senegal",
-    "name_ko": "세네갈",
-    "tier": 2,
-    "start_year": 1960,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2803501,
-        "start": 1960,
-        "end": null,
-        "file": "ohm_2803501.geojson"
       }
     ]
   },
@@ -18968,43 +13612,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Cameroon",
-    "name_en": "Cameroon",
-    "name_ko": "카메룬",
-    "tier": 2,
-    "start_year": 1960,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2828746,
-        "start": 1960,
-        "end": 1961,
-        "file": "ohm_2828746.geojson"
-      },
-      {
-        "rid": 2828745,
-        "start": 1961,
-        "end": 1974,
-        "file": "ohm_2828745.geojson"
-      },
-      {
-        "rid": 2886191,
-        "start": 1974,
-        "end": 2000,
-        "file": "ohm_2886191.geojson"
-      },
-      {
-        "rid": 2886190,
-        "start": 2000,
-        "end": null,
-        "file": "ohm_2886190.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q912",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Mali",
+    "name_ko": "말리",
     "tier": 2,
     "start_year": 1960,
     "end_year": null,
@@ -19018,25 +13628,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Mauritania",
-    "name_en": "Mauritania",
-    "name_ko": "모리타니",
-    "tier": 2,
-    "start_year": 1960,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2831371,
-        "start": 1960,
-        "end": null,
-        "file": "ohm_2831371.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q965",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Burkina Faso",
+    "name_ko": "부르키나파소",
     "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
@@ -19057,8 +13651,8 @@
   },
   {
     "qid": "Q1000",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Gabon",
+    "name_ko": "가봉",
     "tier": 2,
     "start_year": 1960,
     "end_year": 2025,
@@ -19106,40 +13700,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Belize",
-    "name_en": "Belize",
-    "name_ko": "벨리즈",
-    "tier": 2,
-    "start_year": 1960,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2847530,
-        "start": 1960,
-        "end": 1992,
-        "file": "ohm_2847530.geojson"
-      },
-      {
-        "rid": 2872096,
-        "start": 1981,
-        "end": null,
-        "file": "ohm_2872096.geojson"
-      },
-      {
-        "rid": 2872211,
-        "start": 1981,
-        "end": null,
-        "file": "ohm_2872211.geojson"
-      },
-      {
-        "rid": 2859220,
-        "start": 1992,
-        "end": null,
-        "file": "ohm_2859220.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q7559152",
     "name_en": "Somali Republic",
     "name_ko": "소말리 공화국",
@@ -19179,8 +13739,8 @@
   },
   {
     "qid": "Q258",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "South Africa",
+    "name_ko": "남아프리카공화국",
     "tier": 1,
     "start_year": 1961,
     "end_year": 2025,
@@ -19201,8 +13761,8 @@
   },
   {
     "qid": "Q1044",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Sierra Leone",
+    "name_ko": "시에라리온",
     "tier": 2,
     "start_year": 1961,
     "end_year": null,
@@ -19216,75 +13776,9 @@
     ]
   },
   {
-    "qid": "Q19929935",
-    "name_en": "Commonwealth realm of Tanganyika",
-    "name_ko": "연방 레아르므 타응가느이카",
-    "tier": 2,
-    "start_year": 1961,
-    "end_year": 1962,
-    "snapshots": [
-      {
-        "rid": 2831530,
-        "start": 1961,
-        "end": 1962,
-        "file": "ohm_2831530.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q131404661",
-    "name_en": "Ba'athist Syria",
-    "name_ko": "바트주의 시리아",
-    "tier": 2,
-    "start_year": 1961,
-    "end_year": 2024,
-    "snapshots": [
-      {
-        "rid": 2839206,
-        "start": 1961,
-        "end": 1967,
-        "file": "ohm_2839206.geojson"
-      },
-      {
-        "rid": 2864018,
-        "start": 1967,
-        "end": 1974,
-        "file": "ohm_2864018.geojson"
-      },
-      {
-        "rid": 2864016,
-        "start": 1974,
-        "end": 2024,
-        "file": "ohm_2864016.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Algeria",
-    "name_en": "Algeria",
-    "name_ko": "알제리",
-    "tier": 2,
-    "start_year": 1962,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801144,
-        "start": 1962,
-        "end": 1963,
-        "file": "ohm_2801144.geojson"
-      },
-      {
-        "rid": 2888597,
-        "start": 1963,
-        "end": null,
-        "file": "ohm_2888597.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1036",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Uganda",
+    "name_ko": "우간다",
     "tier": 2,
     "start_year": 1962,
     "end_year": 2025,
@@ -19344,25 +13838,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Burundi",
-    "name_en": "Burundi",
-    "name_ko": "부룬디",
-    "tier": 2,
-    "start_year": 1962,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2831661,
-        "start": 1962,
-        "end": null,
-        "file": "ohm_2831661.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1037",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Rwanda",
+    "name_ko": "르완다",
     "tier": 2,
     "start_year": 1962,
     "end_year": null,
@@ -19377,8 +13855,8 @@
   },
   {
     "qid": "Q766",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Jamaica",
+    "name_ko": "자메이카",
     "tier": 2,
     "start_year": 1962,
     "end_year": 2025,
@@ -19426,68 +13904,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_Malaysia",
-    "name_en": "Malaysia",
-    "name_ko": "말레이시아",
-    "tier": 2,
-    "start_year": 1963,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2801994,
-        "start": 1963,
-        "end": 1969,
-        "file": "ohm_2801994.geojson"
-      },
-      {
-        "rid": 2890057,
-        "start": 1969,
-        "end": null,
-        "file": "ohm_2890057.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q3511905",
-    "name_en": "First Nigerian Republic",
-    "name_ko": "원주민 니게리아은 공화국",
-    "tier": 2,
-    "start_year": 1963,
-    "end_year": 1975,
-    "snapshots": [
-      {
-        "rid": 2828658,
-        "start": 1963,
-        "end": 1966,
-        "file": "ohm_2828658.geojson"
-      },
-      {
-        "rid": 2828656,
-        "start": 1966,
-        "end": 1967,
-        "file": "ohm_2828656.geojson"
-      },
-      {
-        "rid": 2828655,
-        "start": 1967,
-        "end": 1970,
-        "file": "ohm_2828655.geojson"
-      },
-      {
-        "rid": 2828653,
-        "start": 1970,
-        "end": 1971,
-        "file": "ohm_2828653.geojson"
-      },
-      {
-        "rid": 2886193,
-        "start": 1971,
-        "end": 1975,
-        "file": "ohm_2886193.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q6392538",
     "name_en": "Kenya (1963–1964)",
     "name_ko": "케냐",
@@ -19520,25 +13936,9 @@
     ]
   },
   {
-    "qid": "Q233",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 2,
-    "start_year": 1964,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692917,
-        "start": 1964,
-        "end": null,
-        "file": "ohm_2692917.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1020",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Malawi",
+    "name_ko": "말라위",
     "tier": 2,
     "start_year": 1964,
     "end_year": null,
@@ -19569,8 +13969,8 @@
   },
   {
     "qid": "Q953",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Zambia",
+    "name_ko": "잠비아",
     "tier": 2,
     "start_year": 1964,
     "end_year": null,
@@ -19584,25 +13984,9 @@
     ]
   },
   {
-    "qid": "Q1026192",
-    "name_en": "People's Republic of Zanzibar",
-    "name_ko": "잔지바르 인민공화국",
-    "tier": 2,
-    "start_year": 1964,
-    "end_year": 1964,
-    "snapshots": [
-      {
-        "rid": 2831531,
-        "start": 1964,
-        "end": 1964,
-        "file": "ohm_2831531.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q334",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Singapore",
+    "name_ko": "싱가포르",
     "tier": 1,
     "start_year": 1965,
     "end_year": 2025,
@@ -19618,22 +14002,6 @@
         "start": 2008,
         "end": null,
         "file": "ohm_2890056.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Maldives",
-    "name_en": "Maldives",
-    "name_ko": "몰디브",
-    "tier": 2,
-    "start_year": 1965,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2801988,
-        "start": 1965,
-        "end": null,
-        "file": "ohm_2801988.geojson"
       }
     ]
   },
@@ -19661,8 +14029,8 @@
   },
   {
     "qid": "Q1013",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Lesotho",
+    "name_ko": "레소토",
     "tier": 2,
     "start_year": 1966,
     "end_year": null,
@@ -19677,8 +14045,8 @@
   },
   {
     "qid": "Q963",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Botswana",
+    "name_ko": "보츠와나",
     "tier": 2,
     "start_year": 1966,
     "end_year": null,
@@ -19693,8 +14061,8 @@
   },
   {
     "qid": "Q734",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Guyana",
+    "name_ko": "가이아나",
     "tier": 2,
     "start_year": 1966,
     "end_year": null,
@@ -19704,34 +14072,6 @@
         "start": 1966,
         "end": null,
         "file": "ohm_2806845.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Dominican_Republic",
-    "name_en": "Dominican Republic",
-    "name_ko": "도미니카 공화국",
-    "tier": 2,
-    "start_year": 1966,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2841709,
-        "start": 1966,
-        "end": 1967,
-        "file": "ohm_2841709.geojson"
-      },
-      {
-        "rid": 2874755,
-        "start": 1967,
-        "end": 2007,
-        "file": "ohm_2874755.geojson"
-      },
-      {
-        "rid": 2874754,
-        "start": 2007,
-        "end": null,
-        "file": "ohm_2874754.geojson"
       }
     ]
   },
@@ -19748,76 +14088,6 @@
         "start": 1967,
         "end": 1990,
         "file": "ohm_2743110.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Equatorial_Guinea",
-    "name_en": "Equatorial Guinea",
-    "name_ko": "적도기니",
-    "tier": 2,
-    "start_year": 1968,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2831664,
-        "start": 1968,
-        "end": 1984,
-        "file": "ohm_2831664.geojson"
-      },
-      {
-        "rid": 2886189,
-        "start": 1984,
-        "end": null,
-        "file": "ohm_2886189.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1027",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 2,
-    "start_year": 1968,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2831871,
-        "start": 1968,
-        "end": null,
-        "file": "ohm_2831871.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Kuwait",
-    "name_en": "Kuwait",
-    "name_ko": "쿠웨이트",
-    "tier": 2,
-    "start_year": 1970,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2825868,
-        "start": 1970,
-        "end": null,
-        "file": "ohm_2825868.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Oman",
-    "name_en": "Oman",
-    "name_ko": "오만",
-    "tier": 2,
-    "start_year": 1970,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2825873,
-        "start": 1970,
-        "end": null,
-        "file": "ohm_2825873.geojson"
       }
     ]
   },
@@ -19839,8 +14109,8 @@
   },
   {
     "qid": "Q902",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Bangladesh",
+    "name_ko": "방글라데시",
     "tier": 2,
     "start_year": 1971,
     "end_year": 2025,
@@ -19856,76 +14126,6 @@
         "start": 2015,
         "end": null,
         "file": "ohm_2801001.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Qatar",
-    "name_en": "Qatar",
-    "name_ko": "카타르",
-    "tier": 2,
-    "start_year": 1971,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2825869,
-        "start": 1971,
-        "end": null,
-        "file": "ohm_2825869.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Bahrain",
-    "name_en": "Bahrain",
-    "name_ko": "바레인",
-    "tier": 2,
-    "start_year": 1971,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2825870,
-        "start": 1971,
-        "end": null,
-        "file": "ohm_2825870.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_United_Arab_Emirates",
-    "name_en": "United Arab Emirates",
-    "name_ko": "아랍에미리트",
-    "tier": 2,
-    "start_year": 1971,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2825874,
-        "start": 1971,
-        "end": null,
-        "file": "ohm_2825874.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Egypt",
-    "name_en": "Egypt",
-    "name_ko": "이집트",
-    "tier": 2,
-    "start_year": 1971,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2828409,
-        "start": 1971,
-        "end": 1982,
-        "file": "ohm_2828409.geojson"
-      },
-      {
-        "rid": 2828408,
-        "start": 1982,
-        "end": null,
-        "file": "ohm_2828408.geojson"
       }
     ]
   },
@@ -19953,8 +14153,8 @@
   },
   {
     "qid": "Q854",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Sri Lanka",
+    "name_ko": "스리랑카",
     "tier": 2,
     "start_year": 1972,
     "end_year": null,
@@ -19964,38 +14164,6 @@
         "start": 1972,
         "end": null,
         "file": "ohm_2801003.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Guinea-Bissau",
-    "name_en": "Guinea-Bissau",
-    "name_ko": "기니비사우",
-    "tier": 2,
-    "start_year": 1973,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2803505,
-        "start": 1973,
-        "end": null,
-        "file": "ohm_2803505.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q2067309",
-    "name_en": "Republic of Afghanistan",
-    "name_ko": "아프그아니스타은 공화국",
-    "tier": 2,
-    "start_year": 1973,
-    "end_year": 1978,
-    "snapshots": [
-      {
-        "rid": 2822862,
-        "start": 1973,
-        "end": 1978,
-        "file": "ohm_2822862.geojson"
       }
     ]
   },
@@ -20017,8 +14185,8 @@
   },
   {
     "qid": "Q691",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Papua New Guinea",
+    "name_ko": "파푸아뉴기니",
     "tier": 2,
     "start_year": 1975,
     "end_year": null,
@@ -20033,8 +14201,8 @@
   },
   {
     "qid": "Q962",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Benin",
+    "name_ko": "베냉",
     "tier": 2,
     "start_year": 1975,
     "end_year": 2025,
@@ -20061,8 +14229,8 @@
   },
   {
     "qid": "Q916",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Angola",
+    "name_ko": "앙골라",
     "tier": 2,
     "start_year": 1975,
     "end_year": 2025,
@@ -20084,22 +14252,6 @@
         "start": 1992,
         "end": null,
         "file": "ohm_2887366.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Mozambique",
-    "name_en": "Mozambique",
-    "name_ko": "모잠비크",
-    "tier": 2,
-    "start_year": 1975,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2831660,
-        "start": 1975,
-        "end": null,
-        "file": "ohm_2831660.geojson"
       }
     ]
   },
@@ -20136,31 +14288,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Comoros",
-    "name_en": "Comoros",
-    "name_ko": "코모로",
-    "tier": 2,
-    "start_year": 1975,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2865792,
-        "start": 1975,
-        "end": 1982,
-        "file": "ohm_2865792.geojson"
-      },
-      {
-        "rid": 2885944,
-        "start": 1982,
-        "end": null,
-        "file": "ohm_2885944.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q977",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Djibouti",
+    "name_ko": "지부티",
     "tier": 2,
     "start_year": 1977,
     "end_year": null,
@@ -20174,73 +14304,9 @@
     ]
   },
   {
-    "qid": "Q98605707",
-    "name_en": "People's Revolutionary Republic of Guinea",
-    "name_ko": "페오프레스 레보루티오나르이 공화국 기네아",
-    "tier": 2,
-    "start_year": 1977,
-    "end_year": 1983,
-    "snapshots": [
-      {
-        "rid": 2862618,
-        "start": 1977,
-        "end": 1983,
-        "file": "ohm_2862618.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q476757",
-    "name_en": "Democratic Republic of Afghanistan",
-    "name_ko": "아프가니스탄 민주공화국",
-    "tier": 2,
-    "start_year": 1978,
-    "end_year": 1992,
-    "snapshots": [
-      {
-        "rid": 2822861,
-        "start": 1978,
-        "end": 1992,
-        "file": "ohm_2822861.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q685",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1978,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2831244,
-        "start": 1978,
-        "end": null,
-        "file": "ohm_2831244.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q3509510",
-    "name_en": "Second Nigerian Republic",
-    "name_ko": "세코은드 니게리아은 공화국",
-    "tier": 2,
-    "start_year": 1979,
-    "end_year": 1983,
-    "snapshots": [
-      {
-        "rid": 2828651,
-        "start": 1979,
-        "end": 1983,
-        "file": "ohm_2828651.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q954",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Zimbabwe",
+    "name_ko": "짐바브웨",
     "tier": 2,
     "start_year": 1980,
     "end_year": null,
@@ -20255,8 +14321,8 @@
   },
   {
     "qid": "Q242",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Belize",
+    "name_ko": "벨리즈",
     "tier": 2,
     "start_year": 1981,
     "end_year": 2025,
@@ -20283,8 +14349,8 @@
   },
   {
     "qid": "Q16",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Canada",
+    "name_ko": "캐나다",
     "tier": 1,
     "start_year": 1982,
     "end_year": 2025,
@@ -20304,95 +14370,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Guinea",
-    "name_en": "Guinea",
-    "name_ko": "기니",
-    "tier": 2,
-    "start_year": 1984,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2862617,
-        "start": 1984,
-        "end": null,
-        "file": "ohm_2862617.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Fiji",
-    "name_en": "Fiji",
-    "name_ko": "피지",
-    "tier": 2,
-    "start_year": 1987,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2846211,
-        "start": 1987,
-        "end": null,
-        "file": "ohm_2846211.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Poland",
-    "name_en": "Poland",
-    "name_ko": "폴란드",
-    "tier": 2,
-    "start_year": 1989,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2692126,
-        "start": 1989,
-        "end": 1991,
-        "file": "ohm_2692126.geojson"
-      },
-      {
-        "rid": 2870169,
-        "start": 1991,
-        "end": null,
-        "file": "ohm_2870169.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Hungary",
-    "name_en": "Hungary",
-    "name_ko": "헝가리",
-    "tier": 2,
-    "start_year": 1989,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692358,
-        "start": 1989,
-        "end": null,
-        "file": "ohm_2692358.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Bulgaria",
-    "name_en": "Bulgaria",
-    "name_ko": "불가리아",
-    "tier": 2,
-    "start_year": 1990,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692865,
-        "start": 1990,
-        "end": null,
-        "file": "ohm_2692865.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1030",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Namibia",
+    "name_ko": "나미비아",
     "tier": 2,
     "start_year": 1990,
     "end_year": null,
@@ -20402,50 +14382,6 @@
         "start": 1990,
         "end": null,
         "file": "ohm_2693153.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1998866",
-    "name_en": "Czechoslovak Federative Republic",
-    "name_ko": "체코슬로바키아",
-    "tier": 3,
-    "start_year": 1990,
-    "end_year": 1992,
-    "snapshots": [
-      {
-        "rid": 2877330,
-        "start": 1990,
-        "end": 1990,
-        "file": "ohm_2877330.geojson"
-      },
-      {
-        "rid": 2877331,
-        "start": 1990,
-        "end": 1992,
-        "file": "ohm_2877331.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Latvia",
-    "name_en": "Latvia",
-    "name_ko": "라트비아",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2692217,
-        "start": 1991,
-        "end": 1996,
-        "file": "ohm_2692217.geojson"
-      },
-      {
-        "rid": 2870171,
-        "start": 1996,
-        "end": null,
-        "file": "ohm_2870171.geojson"
       }
     ]
   },
@@ -20467,8 +14403,8 @@
   },
   {
     "qid": "Q217",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Moldova",
+    "name_ko": "몰도바",
     "tier": 2,
     "start_year": 1991,
     "end_year": null,
@@ -20478,136 +14414,6 @@
         "start": 1991,
         "end": null,
         "file": "ohm_2692836.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Slovenia",
-    "name_en": "Slovenia",
-    "name_ko": "슬로베니아",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692858,
-        "start": 1991,
-        "end": null,
-        "file": "ohm_2692858.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Croatia",
-    "name_en": "Croatia",
-    "name_ko": "크로아티아",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692859,
-        "start": 1991,
-        "end": null,
-        "file": "ohm_2692859.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Albania",
-    "name_en": "Albania",
-    "name_ko": "알바니아",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692864,
-        "start": 1991,
-        "end": null,
-        "file": "ohm_2692864.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Azerbaijan",
-    "name_en": "Azerbaijan",
-    "name_ko": "아제르바이잔",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2890062,
-        "start": 1991,
-        "end": 2018,
-        "file": "ohm_2890062.geojson"
-      },
-      {
-        "rid": 2694892,
-        "start": 2018,
-        "end": null,
-        "file": "ohm_2694892.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Georgia",
-    "name_en": "Georgia",
-    "name_ko": "조지아",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2694893,
-        "start": 1991,
-        "end": null,
-        "file": "ohm_2694893.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Kazakhstan",
-    "name_en": "Kazakhstan",
-    "name_ko": "카자흐스탄",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2697938,
-        "start": 1991,
-        "end": 2018,
-        "file": "ohm_2697938.geojson"
-      },
-      {
-        "rid": 2890063,
-        "start": 2018,
-        "end": null,
-        "file": "ohm_2890063.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Turkmenistan",
-    "name_en": "Turkmenistan",
-    "name_ko": "투르크메니스탄",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2697940,
-        "start": 1991,
-        "end": 2018,
-        "file": "ohm_2697940.geojson"
-      },
-      {
-        "rid": 2890064,
-        "start": 2018,
-        "end": null,
-        "file": "ohm_2890064.geojson"
       }
     ]
   },
@@ -20628,127 +14434,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_Somalia",
-    "name_en": "Somalia",
-    "name_ko": "소말리아",
-    "tier": 2,
-    "start_year": 1991,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2803442,
-        "start": 1991,
-        "end": null,
-        "file": "ohm_2803442.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q838261",
-    "name_en": "Federal Republic of Yugoslavia",
-    "name_ko": "유고슬라비아 연방 공화국",
-    "tier": 2,
-    "start_year": 1992,
-    "end_year": 2003,
-    "snapshots": [
-      {
-        "rid": 2692988,
-        "start": 1992,
-        "end": 2003,
-        "file": "ohm_2692988.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1415585",
-    "name_en": "Islamic State of Afghanistan",
-    "name_ko": "아프가니스탄 이슬람국",
-    "tier": 2,
-    "start_year": 1992,
-    "end_year": 1996,
-    "snapshots": [
-      {
-        "rid": 2822860,
-        "start": 1992,
-        "end": 1996,
-        "file": "ohm_2822860.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Slovakia",
-    "name_en": "Slovakia",
-    "name_ko": "슬로바키아",
-    "tier": 2,
-    "start_year": 1993,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692235,
-        "start": 1993,
-        "end": null,
-        "file": "ohm_2692235.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Czech_Republic",
-    "name_en": "Czech Republic",
-    "name_ko": "체코",
-    "tier": 2,
-    "start_year": 1993,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692745,
-        "start": 1993,
-        "end": null,
-        "file": "ohm_2692745.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Eritrea",
-    "name_en": "Eritrea",
-    "name_ko": "에리트레아",
-    "tier": 2,
-    "start_year": 1993,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2803445,
-        "start": 1993,
-        "end": null,
-        "file": "ohm_2803445.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Palestine",
-    "name_en": "Palestine",
-    "name_ko": "팔레스타인",
-    "tier": 2,
-    "start_year": 1994,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2864023,
-        "start": 1994,
-        "end": 2005,
-        "file": "ohm_2864023.geojson"
-      },
-      {
-        "rid": 2864022,
-        "start": 2005,
-        "end": null,
-        "file": "ohm_2864022.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1033",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Nigeria",
+    "name_ko": "나이지리아",
     "tier": 1,
     "start_year": 1998,
     "end_year": null,
@@ -20763,8 +14451,8 @@
   },
   {
     "qid": "Q717",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "Venezuela",
+    "name_ko": "베네수엘라",
     "tier": 2,
     "start_year": 1999,
     "end_year": null,
@@ -20774,54 +14462,6 @@
         "start": 1999,
         "end": null,
         "file": "ohm_2807217.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q113988063",
-    "name_en": "",
-    "name_ko": "",
-    "tier": 3,
-    "start_year": 1999,
-    "end_year": 2002,
-    "snapshots": [
-      {
-        "rid": 2864409,
-        "start": 1999,
-        "end": 2002,
-        "file": "ohm_2864409.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Saudi_Arabia",
-    "name_en": "Saudi Arabia",
-    "name_ko": "사우디아라비아",
-    "tier": 2,
-    "start_year": 1932,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2825871,
-        "start": 1932,
-        "end": null,
-        "file": "ohm_2825871.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Yemen",
-    "name_en": "Yemen",
-    "name_ko": "예멘",
-    "tier": 2,
-    "start_year": 2000,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2825872,
-        "start": 2000,
-        "end": null,
-        "file": "ohm_2825872.geojson"
       }
     ]
   },
@@ -20842,22 +14482,6 @@
     ]
   },
   {
-    "qid": "CSHAPES_East_Timor",
-    "name_en": "East Timor",
-    "name_ko": "동티모르",
-    "tier": 2,
-    "start_year": 2002,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2864408,
-        "start": 2002,
-        "end": null,
-        "file": "ohm_2864408.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q37024",
     "name_en": "Serbia and Montenegro",
     "name_ko": "세르비아 몬테네그로",
@@ -20874,117 +14498,9 @@
     ]
   },
   {
-    "qid": "CSHAPES_French_Polynesia",
-    "name_en": "French Polynesia",
-    "name_ko": "프랑스령 폴리네시아",
-    "tier": 2,
-    "start_year": 2003,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2876342,
-        "start": 2003,
-        "end": 2004,
-        "file": "ohm_2876342.geojson"
-      },
-      {
-        "rid": 2876341,
-        "start": 2004,
-        "end": null,
-        "file": "ohm_2876341.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q30747910",
-    "name_en": "Islamic Republic of Afghanistan",
-    "name_ko": "아프가니스탄 이슬람 공화국",
-    "tier": 2,
-    "start_year": 2004,
-    "end_year": 2021,
-    "snapshots": [
-      {
-        "rid": 2822857,
-        "start": 2004,
-        "end": 2021,
-        "file": "ohm_2822857.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Norway",
-    "name_en": "Norway",
-    "name_ko": "노르웨이",
-    "tier": 2,
-    "start_year": 2004,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2851792,
-        "start": 2004,
-        "end": null,
-        "file": "ohm_2851792.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Montenegro",
-    "name_en": "Montenegro",
-    "name_ko": "몬테네그로",
-    "tier": 2,
-    "start_year": 2006,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692714,
-        "start": 2006,
-        "end": null,
-        "file": "ohm_2692714.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Serbia",
-    "name_en": "Serbia",
-    "name_ko": "세르비아",
-    "tier": 2,
-    "start_year": 2006,
-    "end_year": 2025,
-    "snapshots": [
-      {
-        "rid": 2692989,
-        "start": 2006,
-        "end": 2008,
-        "file": "ohm_2692989.geojson"
-      },
-      {
-        "rid": 2692860,
-        "start": 2008,
-        "end": null,
-        "file": "ohm_2692860.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Kosovo",
-    "name_en": "Kosovo",
-    "name_ko": "코소보",
-    "tier": 2,
-    "start_year": 2008,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2692863,
-        "start": 2008,
-        "end": null,
-        "file": "ohm_2692863.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q958",
-    "name_en": "",
-    "name_ko": "",
+    "name_en": "South Sudan",
+    "name_ko": "남수단",
     "tier": 2,
     "start_year": 2011,
     "end_year": null,
@@ -20994,76 +14510,6 @@
         "start": 2011,
         "end": null,
         "file": "ohm_2801038.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Portugal",
-    "name_en": "Portugal",
-    "name_ko": "포르투갈",
-    "tier": 2,
-    "start_year": 2016,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2872161,
-        "start": 2016,
-        "end": null,
-        "file": "ohm_2872161.geojson"
-      },
-      {
-        "rid": 2872276,
-        "start": 2016,
-        "end": null,
-        "file": "ohm_2872276.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Afghanistan",
-    "name_en": "Afghanistan",
-    "name_ko": "아프가니스탄",
-    "tier": 2,
-    "start_year": 2021,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2822856,
-        "start": 2021,
-        "end": null,
-        "file": "ohm_2822856.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Greece",
-    "name_en": "Greece",
-    "name_ko": "그리스",
-    "tier": 2,
-    "start_year": 2021,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2873775,
-        "start": 2021,
-        "end": null,
-        "file": "ohm_2873775.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "CSHAPES_Syria",
-    "name_en": "Syria",
-    "name_ko": "시리아",
-    "tier": 2,
-    "start_year": 2023,
-    "end_year": null,
-    "snapshots": [
-      {
-        "rid": 2839207,
-        "start": 2023,
-        "end": null,
-        "file": "ohm_2839207.geojson"
       }
     ]
   }
