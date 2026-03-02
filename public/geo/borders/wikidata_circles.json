@@ -2125,11 +2125,9 @@
     "lineage_id": null,
     "color": "hsl(309, 70%, 55%)",
     "qid": "Q177076",
-    "tier": 1,
+    "tier": 2,
     "region": "central_asia",
-    "sitelinks": 59,
-    "t1_start": 0,
-    "t1_end": 450
+    "sitelinks": 59
   },
   {
     "name_en": "Teotihuacan civilization",
@@ -2140,10 +2138,10 @@
     "end_year": 700,
     "lineage_id": null,
     "color": "hsl(168, 70%, 55%)",
-    "qid": "Q116795888",
+    "qid": "Q172613",
     "tier": 1,
     "region": "latin_america",
-    "sitelinks": 0,
+    "sitelinks": 78,
     "t1_start": -100,
     "t1_end": 550
   },
@@ -2459,11 +2457,9 @@
     "lineage_id": null,
     "color": "hsl(137, 70%, 55%)",
     "qid": "Q466803",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 46,
-    "t1_start": 300,
-    "t1_end": 400
+    "sitelinks": 46
   },
   {
     "name_en": "Tuyuhun",
@@ -3317,11 +3313,9 @@
     "lineage_id": null,
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q105098",
-    "tier": 1,
+    "tier": 3,
     "region": "europe",
-    "sitelinks": 60,
-    "t1_start": 550,
-    "t1_end": 750
+    "sitelinks": 60
   },
   {
     "name_en": "Neustria",
@@ -3333,11 +3327,9 @@
     "lineage_id": null,
     "color": "hsl(133, 70%, 55%)",
     "qid": "Q106577",
-    "tier": 1,
+    "tier": 3,
     "region": "europe",
-    "sitelinks": 58,
-    "t1_start": 600,
-    "t1_end": 750
+    "sitelinks": 58
   },
   {
     "name_en": "Kingdom of Wessex",
@@ -3395,11 +3387,9 @@
     "lineage_id": null,
     "color": "hsl(317, 70%, 55%)",
     "qid": "Q1395011",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 46,
-    "t1_start": 543,
-    "t1_end": 753
+    "sitelinks": 46
   },
   {
     "name_en": "Kingdom of Toledo",
@@ -3810,20 +3800,6 @@
     "sitelinks": 14
   },
   {
-    "name_en": "county of Sundgau",
-    "name_ko": "코우은트이 수은드가우",
-    "lon": 7.355,
-    "lat": 48.081111111,
-    "start_year": 673,
-    "end_year": 1200,
-    "lineage_id": "L0062",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q252268",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 3
-  },
-  {
     "name_en": "Toltec Empire",
     "name_ko": "톨텍 제국",
     "lon": -98.84,
@@ -4010,20 +3986,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 8
-  },
-  {
-    "name_en": "county of Nordgau",
-    "name_ko": "코우은트이 노르드가우",
-    "lon": 7.581111111,
-    "lat": 48.563888888,
-    "start_year": 700,
-    "end_year": 1200,
-    "lineage_id": "L0052",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q832888",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 7
   },
   {
     "name_en": "Lavo Kingdom",
@@ -4279,11 +4241,9 @@
     "lineage_id": null,
     "color": "hsl(317, 70%, 55%)",
     "qid": "Q856691",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 42,
-    "t1_start": 753,
-    "t1_end": 982
+    "sitelinks": 42
   },
   {
     "name_en": "Papal States",
@@ -4328,8 +4288,8 @@
     "tier": 1,
     "region": "europe",
     "sitelinks": 57,
-    "t1_start": 800,
-    "t1_end": 800
+    "t1_start": 756,
+    "t1_end": 929
   },
   {
     "name_en": "Rustamid dynasty",
@@ -4616,20 +4576,6 @@
     "sitelinks": 32
   },
   {
-    "name_en": "Republic of Alexandria",
-    "name_ko": "아레크스아은드리아 공화국",
-    "lon": 29.916667,
-    "lat": 31.2,
-    "start_year": 816,
-    "end_year": 827,
-    "lineage_id": null,
-    "color": "hsl(56, 70%, 55%)",
-    "qid": "Q20108771",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 1
-  },
-  {
     "name_en": "Samanid Empire",
     "name_ko": "사만 토후국",
     "lon": 66,
@@ -4824,10 +4770,10 @@
     "end_year": 1279,
     "lineage_id": null,
     "color": "hsl(40, 70%, 55%)",
-    "qid": "Q6806806",
+    "qid": "Q151148",
     "tier": 1,
     "region": "south_asia",
-    "sitelinks": 11,
+    "sitelinks": 69,
     "t1_start": 848,
     "t1_end": 1279
   },
@@ -5784,20 +5730,6 @@
     "sitelinks": 25
   },
   {
-    "name_en": "Imperial Abbey of Wissembourg",
-    "name_ko": "이음프에리아르 아베이 위세음브우르그",
-    "lon": 7.946111111,
-    "lat": 49.0375,
-    "start_year": 974,
-    "end_year": 1789,
-    "lineage_id": "L0052",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q54818777",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 0
-  },
-  {
     "name_en": "Principality of Volhynia",
     "name_ko": "볼히니아 공국",
     "lon": 25.34,
@@ -5810,34 +5742,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 23
-  },
-  {
-    "name_en": "county of Louvain",
-    "name_ko": "코우은트이 로우바이은",
-    "lon": 4.7,
-    "lat": 50.883333,
-    "start_year": 988,
-    "end_year": 1290,
-    "lineage_id": "L0072",
-    "color": "hsl(39, 70%, 55%)",
-    "qid": "Q143309",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 13
-  },
-  {
-    "name_en": "Counts of Berga",
-    "name_ko": "코우은트스 베르가",
-    "lon": 1.845556,
-    "lat": 42.1,
-    "start_year": 988,
-    "end_year": 1117,
-    "lineage_id": null,
-    "color": "hsl(303, 70%, 55%)",
-    "qid": "Q956729",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 8
   },
   {
     "name_en": "Principality of Turov and Pinsk",
@@ -5866,20 +5770,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 31
-  },
-  {
-    "name_en": "county of Buren",
-    "name_ko": "코우은트이 부레은",
-    "lon": 5.41667,
-    "lat": 51.9667,
-    "start_year": 994,
-    "end_year": 1795,
-    "lineage_id": "L0072",
-    "color": "hsl(217, 70%, 55%)",
-    "qid": "Q283330",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 9
   },
   {
     "name_en": "Kingdom of Kano",
@@ -5952,22 +5842,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 21
-  },
-  {
-    "name_en": "Seljuk dynasty",
-    "name_ko": "셀주크 왕조",
-    "lon": 35.48,
-    "lat": 38.73,
-    "start_year": 1000,
-    "end_year": 1308,
-    "lineage_id": null,
-    "color": "hsl(35, 70%, 55%)",
-    "qid": "Q3708255",
-    "tier": 1,
-    "region": "middle_east",
-    "sitelinks": 78,
-    "t1_start": 1000,
-    "t1_end": 1300
   },
   {
     "name_en": "Bethio",
@@ -6365,11 +6239,9 @@
     "lineage_id": null,
     "color": "hsl(35, 70%, 55%)",
     "qid": "Q975405",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 74,
-    "t1_start": 1150,
-    "t1_end": 1200
+    "sitelinks": 74
   },
   {
     "name_en": "Khwarazmian Empire",
@@ -6770,22 +6642,6 @@
     "sitelinks": 8
   },
   {
-    "name_en": "Kingdom of Sicily",
-    "name_ko": "시칠리아 왕국",
-    "lon": 16.078888888,
-    "lat": 38.591944444,
-    "start_year": 1130,
-    "end_year": 1816,
-    "lineage_id": "L0088",
-    "color": "hsl(2, 70%, 55%)",
-    "qid": "Q188586",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 71,
-    "t1_start": 1800,
-    "t1_end": 1800
-  },
-  {
     "name_en": "Daewiguk",
     "name_ko": "대위국",
     "lon": 106.55,
@@ -6898,20 +6754,6 @@
     "tier": 2,
     "region": "unknown",
     "sitelinks": 8
-  },
-  {
-    "name_en": "Nabhani dynasty",
-    "name_ko": "나브하니 드이나스트이",
-    "lon": 57,
-    "lat": 21,
-    "start_year": 1154,
-    "end_year": 1624,
-    "lineage_id": null,
-    "color": "hsl(111, 70%, 55%)",
-    "qid": "Q11938308",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 9
   },
   {
     "name_en": "Duchy of Austria",
@@ -7226,20 +7068,6 @@
     "sitelinks": 51
   },
   {
-    "name_en": "County palatine of Cephalonia and Zakynthos",
-    "name_ko": "코우은트이 파라티네 세프아로니아 자크이은트호스",
-    "lon": 20.657,
-    "lat": 38.0086,
-    "start_year": 1185,
-    "end_year": 1479,
-    "lineage_id": "L0030",
-    "color": "hsl(144, 70%, 55%)",
-    "qid": "Q149846",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 17
-  },
-  {
     "name_en": "Second Bulgarian Empire",
     "name_ko": "불가리아 제2제국",
     "lon": 25.65,
@@ -7282,20 +7110,6 @@
     "sitelinks": 52
   },
   {
-    "name_en": "County Pyrmont",
-    "name_ko": "코우은트이 프이르모은트",
-    "lon": 9.24836,
-    "lat": 51.9836,
-    "start_year": 1194,
-    "end_year": 1922,
-    "lineage_id": "L0081",
-    "color": "hsl(280, 70%, 55%)",
-    "qid": "Q825489",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 5
-  },
-  {
     "name_en": "Kingdom of Cusco",
     "name_ko": "쿠스코 왕국",
     "lon": -71.97,
@@ -7319,11 +7133,9 @@
     "lineage_id": "L0093",
     "color": "hsl(180, 70%, 55%)",
     "qid": "Q42585",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 65,
-    "t1_start": 1850,
-    "t1_end": 1910
+    "sitelinks": 65
   },
   {
     "name_en": "House of Ögedei",
@@ -7996,20 +7808,6 @@
     "t1_end": 1502
   },
   {
-    "name_en": "Free City of Mainz",
-    "name_ko": "프레에 시트이 마이느즈",
-    "lon": 8.27111111,
-    "lat": 50,
-    "start_year": 1244,
-    "end_year": 1462,
-    "lineage_id": "L0081",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q1454024",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 3
-  },
-  {
     "name_en": "Principality of Tver",
     "name_ko": "트베리 공국",
     "lon": 36,
@@ -8052,20 +7850,6 @@
     "sitelinks": 18
   },
   {
-    "name_en": "Imperial City of Windsheim",
-    "name_ko": "이음프에리아르 시트이 위은드셰이므",
-    "lon": 10.417361111,
-    "lat": 49.5025,
-    "start_year": 1248,
-    "end_year": 1802,
-    "lineage_id": "L0081",
-    "color": "hsl(126, 70%, 55%)",
-    "qid": "Q2327097",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 3
-  },
-  {
     "name_en": "Mamluk Sultanate",
     "name_ko": "맘루크 술탄국",
     "lon": 31.3667,
@@ -8080,20 +7864,6 @@
     "sitelinks": 68,
     "t1_start": 1250,
     "t1_end": 1517
-  },
-  {
-    "name_en": "Anhalt-Bernburg",
-    "name_ko": "안할트-베르느부르그",
-    "lon": 11.7425,
-    "lat": 51.793611,
-    "start_year": 1252,
-    "end_year": 1863,
-    "lineage_id": "L0120",
-    "color": "hsl(280, 70%, 55%)",
-    "qid": "Q686965",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 25
   },
   {
     "name_en": "Ilkhanate",
@@ -8354,20 +8124,6 @@
     "sitelinks": 33
   },
   {
-    "name_en": "Free City of Haguenau",
-    "name_ko": "프레에 시트이 하게나우",
-    "lon": 7.787777777,
-    "lat": 48.816666666,
-    "start_year": 1275,
-    "end_year": 1679,
-    "lineage_id": "L0052",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q97940738",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 1
-  },
-  {
     "name_en": "Prince-Archbishopric of Salzburg",
     "name_ko": "잘츠부르크 대주교령",
     "lon": 13.033333,
@@ -8380,34 +8136,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 25
-  },
-  {
-    "name_en": "Free City of Colmar",
-    "name_ko": "프레에 시트이 코르마르",
-    "lon": 7.355,
-    "lat": 48.081111111,
-    "start_year": 1279,
-    "end_year": 1679,
-    "lineage_id": "L0063",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q97924757",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 1
-  },
-  {
-    "name_en": "Free City of Wissembourg",
-    "name_ko": "프레에 시트이 위세음브우르그",
-    "lon": 7.946111111,
-    "lat": 49.0375,
-    "start_year": 1281,
-    "end_year": 1679,
-    "lineage_id": "L0052",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q97943978",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 1
   },
   {
     "name_en": "Duchy of Teschen",
@@ -8438,20 +8166,6 @@
     "sitelinks": 13
   },
   {
-    "name_en": "Free Imperial City of Schlettstadt",
-    "name_ko": "프레에 이음프에리아르 시트이 시레츠타드트",
-    "lon": 7.454166666,
-    "lat": 48.259444444,
-    "start_year": 1281,
-    "end_year": 1679,
-    "lineage_id": "L0063",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q2112681",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 3
-  },
-  {
     "name_en": "Kingdom of Naples",
     "name_ko": "나폴리 왕국",
     "lon": 14.25,
@@ -8466,20 +8180,6 @@
     "sitelinks": 78,
     "t1_start": 1300,
     "t1_end": 1700
-  },
-  {
-    "name_en": "Free City of Obernai",
-    "name_ko": "프레에 시트이 오베르나이",
-    "lon": 7.481944444,
-    "lat": 48.462222222,
-    "start_year": 1283,
-    "end_year": 1679,
-    "lineage_id": "L0063",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q54810258",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 1
   },
   {
     "name_en": "Ban de la Roche",
@@ -8538,20 +8238,6 @@
     "sitelinks": 27
   },
   {
-    "name_en": "Free City of Munster",
-    "name_ko": "프레에 시트이 무느스테르",
-    "lon": 7.134166666,
-    "lat": 48.041388888,
-    "start_year": 1287,
-    "end_year": 1679,
-    "lineage_id": "L0063",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q97946582",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 2
-  },
-  {
     "name_en": "Duchy of Nysa",
     "name_ko": "느이사 공국",
     "lon": 17.333333333,
@@ -8594,20 +8280,6 @@
     "sitelinks": 16
   },
   {
-    "name_en": "Free City of Landau",
-    "name_ko": "프레에 시트이 라은드아",
-    "lon": 8.123055555,
-    "lat": 49.199444444,
-    "start_year": 1291,
-    "end_year": 1679,
-    "lineage_id": "L0052",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q2138849",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 2
-  },
-  {
     "name_en": "Lanna",
     "name_ko": "란나",
     "lon": 99,
@@ -8620,20 +8292,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 32
-  },
-  {
-    "name_en": "Free City of Kaysersberg",
-    "name_ko": "프레에 시트이 카이세르스베르그",
-    "lon": 7.260833333,
-    "lat": 48.139166666,
-    "start_year": 1293,
-    "end_year": 1679,
-    "lineage_id": "L0063",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q97940833",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 1
   },
   {
     "name_en": "Majapahit",
@@ -8766,20 +8424,6 @@
     "sitelinks": 38
   },
   {
-    "name_en": "Free City of Rosheim",
-    "name_ko": "프레에 시트이 로셰이므",
-    "lon": 7.469444444,
-    "lat": 48.496666666,
-    "start_year": 1303,
-    "end_year": 1679,
-    "lineage_id": "L0063",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q54810282",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 1
-  },
-  {
     "name_en": "Republic of Mulhouse",
     "name_ko": "무르호우세 공화국",
     "lon": 7.339166666,
@@ -8792,20 +8436,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 11
-  },
-  {
-    "name_en": "Federation of the Seven Communities",
-    "name_ko": "연방 세베은 코무니티에스",
-    "lon": 11.583679051,
-    "lat": 45.879308763,
-    "start_year": 1310,
-    "end_year": 1807,
-    "lineage_id": "L0065",
-    "color": "hsl(214, 70%, 55%)",
-    "qid": "Q5404684",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 6
   },
   {
     "name_en": "Duchy of Mirandola",
@@ -8834,20 +8464,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 14
-  },
-  {
-    "name_en": "Free City of Turckheim",
-    "name_ko": "프레에 시트이 투르크헤이므",
-    "lon": 7.280555555,
-    "lat": 48.086388888,
-    "start_year": 1312,
-    "end_year": 1679,
-    "lineage_id": "L0063",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q97941965",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 1
   },
   {
     "name_en": "Duchy of Siewierz",
@@ -9062,20 +8678,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 10
-  },
-  {
-    "name_en": "Despotate of Lovech",
-    "name_ko": "데스포타테 로베치",
-    "lon": 24.717222222,
-    "lat": 43.134722222,
-    "start_year": 1330,
-    "end_year": 1446,
-    "lineage_id": "L0032",
-    "color": "hsl(58, 70%, 55%)",
-    "qid": "Q113614156",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 2
   },
   {
     "name_en": "Samma dynasty",
@@ -9400,20 +9002,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 49
-  },
-  {
-    "name_en": "Free City of Seltz",
-    "name_ko": "프레에 시트이 세르츠",
-    "lon": 8.106944444,
-    "lat": 48.894166666,
-    "start_year": 1357,
-    "end_year": 1418,
-    "lineage_id": "L0052",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q97940882",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 0
   },
   {
     "name_en": "Republic of Ragusa",
@@ -9884,20 +9472,6 @@
     "sitelinks": 19
   },
   {
-    "name_en": "Kangra-Lambagraon",
-    "name_ko": "카응라-라음브아그라오은",
-    "lon": 76.2667,
-    "lat": 32.1,
-    "start_year": 1400,
-    "end_year": 1948,
-    "lineage_id": "L0071",
-    "color": "hsl(39, 70%, 55%)",
-    "qid": "Q3192661",
-    "tier": 2,
-    "region": "south_asia",
-    "sitelinks": 8
-  },
-  {
     "name_en": "Ardalan",
     "name_ko": "아르달란",
     "lon": 46.99,
@@ -9952,22 +9526,6 @@
     "tier": 2,
     "region": "south_asia",
     "sitelinks": 25
-  },
-  {
-    "name_en": "Spanish Empire",
-    "name_ko": "스페인 제국",
-    "lon": -3.68333333,
-    "lat": 40.41666667,
-    "start_year": 1402,
-    "end_year": 1976,
-    "lineage_id": "L0069",
-    "color": "hsl(331, 70%, 55%)",
-    "qid": "Q80702",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 104,
-    "t1_start": 1492,
-    "t1_end": 1800
   },
   {
     "name_en": "Serbian Despotate",
@@ -11014,20 +10572,6 @@
     "t1_end": 1736
   },
   {
-    "name_en": "Palatinate-Neuburg",
-    "name_ko": "파라티나테-네우부르그",
-    "lon": 11.183333333,
-    "lat": 48.733333333,
-    "start_year": 1505,
-    "end_year": 1808,
-    "lineage_id": "L0131",
-    "color": "hsl(126, 70%, 55%)",
-    "qid": "Q675127",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 27
-  },
-  {
     "name_en": "Kingdom of Beni Abbas",
     "name_ko": "베니 아바스 왕국",
     "lon": 4.5813,
@@ -11352,22 +10896,6 @@
     "sitelinks": 39
   },
   {
-    "name_en": "French colonial empire",
-    "name_ko": "프랑스 식민제국",
-    "lon": -2.35,
-    "lat": 48.85,
-    "start_year": 1534,
-    "end_year": 1980,
-    "lineage_id": null,
-    "color": "hsl(313, 70%, 55%)",
-    "qid": "Q179023",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 78,
-    "t1_start": 1550,
-    "t1_end": 1980
-  },
-  {
     "name_en": "Republic of Geneva",
     "name_ko": "제네바 공화국",
     "lon": 6.15,
@@ -11433,11 +10961,9 @@
     "lineage_id": "L0068",
     "color": "hsl(113, 70%, 55%)",
     "qid": "Q215530",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 69,
-    "t1_start": 1800,
-    "t1_end": 1800
+    "sitelinks": 69
   },
   {
     "name_en": "Tsardom of Russia",
@@ -11596,20 +11122,6 @@
     "sitelinks": 29
   },
   {
-    "name_en": "Free City of Riga",
-    "name_ko": "프레에 시트이 리가",
-    "lon": 24.10694,
-    "lat": 56.9475,
-    "start_year": 1561,
-    "end_year": 1582,
-    "lineage_id": "L0129",
-    "color": "hsl(38, 70%, 55%)",
-    "qid": "Q4124689",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 4
-  },
-  {
     "name_en": "Real Audiencia de Quito",
     "name_ko": "키토 아우디엔시아",
     "lon": -78.583333333,
@@ -11750,20 +11262,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 28
-  },
-  {
-    "name_en": "Calvinist Republic of Brussels",
-    "name_ko": "카르비니스트 공화국 브루세르스",
-    "lon": 4.351697,
-    "lat": 50.8465573,
-    "start_year": 1576,
-    "end_year": 1585,
-    "lineage_id": "L0121",
-    "color": "hsl(39, 70%, 55%)",
-    "qid": "Q26234049",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 3
   },
   {
     "name_en": "Dutch Republic",
@@ -11976,22 +11474,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 43
-  },
-  {
-    "name_en": "Dutch Empire",
-    "name_ko": "더치 제국",
-    "lon": 4.89,
-    "lat": 52.37,
-    "start_year": 1624,
-    "end_year": 1975,
-    "lineage_id": null,
-    "color": "hsl(217, 70%, 55%)",
-    "qid": "Q130654",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 63,
-    "t1_start": 1850,
-    "t1_end": 1910
   },
   {
     "name_en": "Kuba Kingdom",
@@ -12886,20 +12368,6 @@
     "t1_end": 1850
   },
   {
-    "name_en": "Restored Hanthawaddy Kingdom",
-    "name_ko": "레스토레드 하은트하와드이 왕국",
-    "lon": 96.470277777,
-    "lat": 17.324166666,
-    "start_year": 1740,
-    "end_year": 1757,
-    "lineage_id": "L0038",
-    "color": "hsl(255, 70%, 55%)",
-    "qid": "Q3302610",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 11
-  },
-  {
     "name_en": "Alawi",
     "name_ko": "아라위",
     "lon": 44.656,
@@ -13192,20 +12660,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 28
-  },
-  {
-    "name_en": "Bahrain and its Dependencies",
-    "name_ko": "바흐라이은 이츠 데페은드에느시에스",
-    "lon": 50.551111,
-    "lat": 26.0675,
-    "start_year": 1783,
-    "end_year": 1971,
-    "lineage_id": "L0112",
-    "color": "hsl(59, 70%, 55%)",
-    "qid": "Q17061755",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 4
   },
   {
     "name_en": "Emirate of Bukhara",
@@ -13686,20 +13140,6 @@
     "sitelinks": 5
   },
   {
-    "name_en": "Principality of Regensburg",
-    "name_ko": "레게느스부르그 공국",
-    "lon": 12.083333333,
-    "lat": 49.016666666,
-    "start_year": 1803,
-    "end_year": 1810,
-    "lineage_id": "L0131",
-    "color": "hsl(180, 70%, 55%)",
-    "qid": "Q701969",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 23
-  },
-  {
     "name_en": "Austrian Empire",
     "name_ko": "오스트리아 제국",
     "lon": 16.35,
@@ -13781,11 +13221,9 @@
     "lineage_id": "L0131",
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q154195",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 62,
-    "t1_start": 1850,
-    "t1_end": 1910
+    "sitelinks": 62
   },
   {
     "name_en": "Kingdom of Württemberg",
@@ -14290,20 +13728,6 @@
     "tier": 2,
     "region": "latin_america",
     "sitelinks": 74
-  },
-  {
-    "name_en": "Second Bani Khalid Emirate",
-    "name_ko": "세코은드 바니 크아리드 토후국",
-    "lon": 49.588345,
-    "lat": 25.363498,
-    "start_year": 1819,
-    "end_year": 1830,
-    "lineage_id": "L0163",
-    "color": "hsl(59, 70%, 55%)",
-    "qid": "Q111822288",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 2
   },
   {
     "name_en": "Palanpur Agency",
@@ -14978,20 +14402,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 22
-  },
-  {
-    "name_en": "Orange River Sovereignty",
-    "name_ko": "오라응게 강 소베레이그은트이",
-    "lon": 26.21666667,
-    "lat": -29.1,
-    "start_year": 1848,
-    "end_year": 1854,
-    "lineage_id": "L0187",
-    "color": "hsl(76, 70%, 55%)",
-    "qid": "Q3048062",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 12
   },
   {
     "name_en": "Second Empire of Haiti",
@@ -15712,34 +15122,6 @@
     "sitelinks": 15
   },
   {
-    "name_en": "Klein Vrystaat",
-    "name_ko": "크레이은 브르이스타아트",
-    "lon": 30.8,
-    "lat": -27,
-    "start_year": 1886,
-    "end_year": 1891,
-    "lineage_id": "L0185",
-    "color": "hsl(198, 70%, 55%)",
-    "qid": "Q1493843",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 14
-  },
-  {
-    "name_en": "Sultanate of Grande Comore",
-    "name_ko": "그라은드에 코모레 술탄국",
-    "lon": 43.33,
-    "lat": -11.58,
-    "start_year": 1886,
-    "end_year": 1904,
-    "lineage_id": null,
-    "color": "hsl(327, 70%, 55%)",
-    "qid": "Q25423982",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 2
-  },
-  {
     "name_en": "French Indochina",
     "name_ko": "프랑스령 인도차이나",
     "lon": 105.85,
@@ -16334,20 +15716,6 @@
     "sitelinks": 47
   },
   {
-    "name_en": "Autonomous Albanian Republic of Korçë",
-    "name_ko": "아토노모우스 아르바니아은 공화국 코르에",
-    "lon": 20.775277777,
-    "lat": 40.623055555,
-    "start_year": 1916,
-    "end_year": 1920,
-    "lineage_id": "L0192",
-    "color": "hsl(306, 70%, 55%)",
-    "qid": "Q1028133",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 13
-  },
-  {
     "name_en": "Kingdom of Poland",
     "name_ko": "폴란드 왕국",
     "lon": 21.01,
@@ -16688,20 +16056,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 38
-  },
-  {
-    "name_en": "Provisional National Government of the Southwestern Caucasus",
-    "name_ko": "프로비시오나르 나티오나르 고베르느메은트 소우스웨스테르은 카우카수스",
-    "lon": 43.056944444,
-    "lat": 46.606944444,
-    "start_year": 1918,
-    "end_year": 1919,
-    "lineage_id": null,
-    "color": "hsl(39, 70%, 55%)",
-    "qid": "Q1518576",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 22
   },
   {
     "name_en": "Republic of Lithuania",
@@ -17692,20 +17046,6 @@
     "sitelinks": 16
   },
   {
-    "name_en": "South Chahar Autonomous Government",
-    "name_ko": "남차하르 아토노모우스 고베르느메은트",
-    "lon": 114.883333333,
-    "lat": 40.816666666,
-    "start_year": 1937,
-    "end_year": 1939,
-    "lineage_id": "L0197",
-    "color": "hsl(298, 70%, 55%)",
-    "qid": "Q10955123",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 9
-  },
-  {
     "name_en": "Colony of Aden",
     "name_ko": "아덴 식민지",
     "lon": 45.0333,
@@ -17970,20 +17310,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 31
-  },
-  {
-    "name_en": "British Military Administration",
-    "name_ko": "영국 미리타르이 아드미니스트라티오은",
-    "lon": 16.6,
-    "lat": 31.2,
-    "start_year": 1943,
-    "end_year": 1951,
-    "lineage_id": null,
-    "color": "hsl(144, 70%, 55%)",
-    "qid": "Q16953965",
-    "tier": 2,
-    "region": "north_africa",
-    "sitelinks": 14
   },
   {
     "name_en": "State of Burma",
@@ -18814,20 +18140,6 @@
     "sitelinks": 67
   },
   {
-    "name_en": "Commonwealth realm of Sierra Leone",
-    "name_ko": "연방 레아르므 시에라 레오네",
-    "lon": -11.5,
-    "lat": 8.5,
-    "start_year": 1961,
-    "end_year": 1971,
-    "lineage_id": null,
-    "color": "hsl(305, 70%, 55%)",
-    "qid": "Q14920623",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 9
-  },
-  {
     "name_en": "Yemen Republic",
     "name_ko": "예멘 아랍 공화국",
     "lon": 44.206666666,
@@ -18898,20 +18210,6 @@
     "sitelinks": 29
   },
   {
-    "name_en": "Commonwealth realm of the Gambia",
-    "name_ko": "연방 레아르므 가음브이",
-    "lon": -15.5,
-    "lat": 13.5,
-    "start_year": 1965,
-    "end_year": 1970,
-    "lineage_id": null,
-    "color": "hsl(174, 70%, 55%)",
-    "qid": "Q7735661",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 13
-  },
-  {
     "name_en": "Socialist Republic of Romania",
     "name_ko": "루마니아 사회주의 공화국",
     "lon": 26.1,
@@ -18954,20 +18252,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 38
-  },
-  {
-    "name_en": "Commonwealth realm of Mauritius",
-    "name_ko": "연방 레아르므 마우리티우스",
-    "lon": 57.5,
-    "lat": -20.2,
-    "start_year": 1968,
-    "end_year": 1992,
-    "lineage_id": null,
-    "color": "hsl(28, 70%, 55%)",
-    "qid": "Q14759030",
-    "tier": 2,
-    "region": "unknown",
-    "sitelinks": 8
   },
   {
     "name_en": "Somali Democratic Republic",
@@ -19724,10 +19008,10 @@
     "end_year": 1227,
     "lineage_id": null,
     "color": "hsl(285, 70%, 55%)",
-    "qid": "Q190017",
+    "qid": "Q7427",
     "tier": 1,
     "region": "east_asia",
-    "sitelinks": 4,
+    "sitelinks": 60,
     "t1_start": 1038,
     "t1_end": 1227
   },
@@ -19850,10 +19134,10 @@
     "end_year": 263,
     "lineage_id": null,
     "color": "hsl(189, 70%, 55%)",
-    "qid": "Q173798",
+    "qid": "Q320925",
     "tier": 1,
     "region": "east_asia",
-    "sitelinks": 0,
+    "sitelinks": 46,
     "t1_start": 221,
     "t1_end": 263
   },
@@ -20145,7 +19429,7 @@
     "region": "latin_america",
     "sitelinks": 52,
     "t1_start": 600,
-    "t1_end": 600
+    "t1_end": 1000
   },
   {
     "name_en": "Moche civilization",
@@ -20157,11 +19441,9 @@
     "lineage_id": null,
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q208476",
-    "tier": 1,
+    "tier": 2,
     "region": "latin_america",
-    "sitelinks": 49,
-    "t1_start": 100,
-    "t1_end": 500
+    "sitelinks": 49
   },
   {
     "name_en": "Nazca civilization",
@@ -21616,22 +20898,6 @@
     "t1_end": -30
   },
   {
-    "name_en": "British Empire",
-    "name_ko": "대영 제국",
-    "lon": -0.12,
-    "lat": 51.5,
-    "start_year": 1583,
-    "end_year": 1997,
-    "lineage_id": null,
-    "color": "hsl(142, 70%, 55%)",
-    "qid": "Q8680",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 164,
-    "t1_start": 1600,
-    "t1_end": 1900
-  },
-  {
     "name_en": "Sumer",
     "name_ko": "수메르",
     "lon": 45.6,
@@ -22595,7 +21861,7 @@
   },
   {
     "name_en": "Turkey",
-    "name_ko": "터키/오스만",
+    "name_ko": "튀르키예",
     "lon": 32.8644,
     "lat": 39.9272,
     "start_year": 1886,
@@ -22606,7 +21872,7 @@
     "tier": 1,
     "region": "middle_east",
     "sitelinks": 417,
-    "t1_start": 1900,
+    "t1_start": 1923,
     "t1_end": 2025
   },
   {
