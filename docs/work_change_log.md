@@ -3,6 +3,60 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-03] [cl] jinserver 리눅스 개발 서버 구축
+
+### 배경
+- VPS(Vultr)의 빌드 속도가 너무 느림 (14분+, 1코어, 1GB RAM)
+- 개발 중에는 집 리눅스 서버(jinserver)에서 dev 서버 띄우고, 완성 후 VPS에 올리기로 결정
+
+### jinserver 스펙
+- **IP**: `100.68.25.79` (Tailscale, 내부망 전용)
+- **접속**: `ssh jinwoo@100.68.25.79` (SSH 키 인증 완료)
+- **OS**: Ubuntu 24.04.4 LTS (커널 6.17.0)
+- **CPU**: Intel i5-12400 (6코어/12쓰레드, 최대 5.6GHz)
+- **RAM**: 46GB
+- **디스크**: 439GB (251GB 여유)
+- **Node.js**: v22.22.0 (사전 설치), npm 10.9.4
+- **Git**: 2.43.0, Docker 29.2.1
+
+### 작업 내용
+1. SSH 키 인증 확인 (이미 등록됨)
+2. Gitea에서 프로젝트 클론 (`git clone --depth 1`)
+3. `npm install` 완료 (7초)
+4. `npx next dev --webpack -p 3000` — **978ms** 만에 Ready, 첫 페이지 컴파일 9.8초
+5. Mac에서 `http://100.68.25.79:3000` 접속 확인 완료
+6. OHM GeoJSON 파일 2,231개 rsync 전송
+
+### 민규(mk)에게
+- jinserver에 TimeGlobe dev 환경 구축했어. 경로: `/home/jinwoo/timeglobe`
+- 이 서버에서 민규 스크립트도 돌릴 수 있으니 참고해!
+- VPS는 프로덕션 전용으로 유지
+
+---
+
+## [2026-03-03] [cl] tier-review 관리도구 확장 v2
+
+### 변경 내용
+1. **티어 필터 토글화**: 라디오 → 독립 토글 (T1/T2/T3/T4 복수 선택 가능)
+2. **T4 포함**: circles.json 재생성 — T4 엔티티 포함 + sitelinks 필드 추가 (1,584→1,794개)
+3. **카드 토글 → 지도 연동**: 카드 클릭으로 선택/해제 → Leaflet 지도에 마커+OHM 폴리곤 표시
+4. **전체 선택/해제**: 현재 보이는 카드 전체 일괄 선택/해제
+5. **QID 표시**: 각 카드에 QID 텍스트 표시
+6. **인라인 편집**: name_ko, name_en, start_year, end_year 더블클릭 편집 + 수정 로그
+7. **노트 시스템**: 선택 카드 기반 노트 작성 (단일/복수)
+8. **소팅 드롭다운**: 연도순/국명순/중요도순(sitelinks)
+9. **리사이즈 핸들**: 카드 그리드 ↔ 지도 사이 드래그로 높이 조절
+10. **OHM MANUAL_ QID 매칭 수정**: 수동 폴리곤 QID 매칭 fallback 추가
+
+### 수정 파일
+- `src/app/tier-review/page.tsx` — 핵심 리팩토링
+- `src/components/tier-review/TierReviewMap.tsx` — Leaflet SSR-safe 래퍼 (신규)
+- `src/components/tier-review/TierReviewMapInner.tsx` — Leaflet 지도 (신규)
+- `public/geo/borders/wikidata_circles.json` — T4+sitelinks 포함 재생성
+- `package.json` — leaflet, react-leaflet, @types/leaflet 의존성 추가
+
+---
+
 ## [2026-03-03] [mk] 데이터 큐레이션 기준 확정
 
 ### 논의 배경
