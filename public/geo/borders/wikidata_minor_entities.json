@@ -10321,5 +10321,39 @@
     "score": 27.2,
     "tier_reason": "score_rest",
     "minor_reason": "duplicate_of_poland"
+  },
+  {
+    "qid": "Q1472105",
+    "name_en": "Kingdom of Haiti",
+    "name_ko": "하이티 왕국",
+    "start": "1811",
+    "end": "1820",
+    "lon": "",
+    "lat": "",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 22,
+    "region": "unknown",
+    "score": 65,
+    "tier_reason": "score_top25",
+    "minor_reason": "regime_change_of_parent"
+  },
+  {
+    "qid": "Q11681694",
+    "name_en": "Republic of Spanish Haiti",
+    "name_ko": "스페인령 아이티 공화국",
+    "start": "1821",
+    "end": "1822",
+    "lon": "",
+    "lat": "",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 9,
+    "region": "unknown",
+    "score": 44.9,
+    "tier_reason": "score_top55",
+    "minor_reason": "regime_change_of_parent"
   }
 ]

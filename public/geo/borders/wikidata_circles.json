@@ -8031,7 +8031,7 @@
     "lineage_id": null,
     "color": "hsl(116, 70%, 55%)",
     "qid": "Q27842",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 16
   },
@@ -10341,7 +10341,7 @@
     "lineage_id": null,
     "color": "hsl(307, 70%, 55%)",
     "qid": "Q3136850",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 15
   },
@@ -11853,7 +11853,7 @@
     "lineage_id": null,
     "color": "hsl(49, 70%, 55%)",
     "qid": "Q83444",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 21
   },
@@ -12175,7 +12175,7 @@
     "lineage_id": null,
     "color": "hsl(138, 70%, 55%)",
     "qid": "Q3028514",
-    "tier": 2,
+    "tier": 3,
     "region": "unknown",
     "sitelinks": 17
   },
@@ -13547,7 +13547,7 @@
     "lineage_id": null,
     "color": "hsl(125, 70%, 55%)",
     "qid": "Q3486676",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 25
   },
@@ -13673,7 +13673,7 @@
     "lineage_id": null,
     "color": "hsl(286, 70%, 55%)",
     "qid": "Q2424187",
-    "tier": 2,
+    "tier": 3,
     "region": "unknown",
     "sitelinks": 18
   },
@@ -14099,7 +14099,7 @@
   },
   {
     "name_en": "Kingdom of Sedang",
-    "name_ko": "세다응 왕국",
+    "name_ko": "세당 왕국",
     "lon": 107.983333,
     "lat": 14.383333,
     "start_year": 1888,
@@ -14107,7 +14107,7 @@
     "lineage_id": "L0180",
     "color": "hsl(351, 70%, 55%)",
     "qid": "Q2096935",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 18
   },
