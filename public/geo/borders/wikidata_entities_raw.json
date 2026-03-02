@@ -8464,38 +8464,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q273874",
-    "name_en": "Buyid dynasty",
-    "name_ko": "부와이흐 왕조",
-    "start": "934",
-    "end": "1062",
-    "lon": "44.4",
-    "lat": "33.3",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 52,
-    "region": "middle_east",
-    "score": 72,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q828665",
-    "name_en": "Ikhshidid dynasty",
-    "name_ko": "이크시드 왕조",
-    "start": "935",
-    "end": "969",
-    "lon": "31.24",
-    "lat": "30.04",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 40,
-    "region": "middle_east",
-    "score": 62.4,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q26472",
     "name_en": "Dali Kingdom",
     "name_ko": "대리국",
@@ -9237,22 +9205,6 @@
     "region": "unknown",
     "score": 34.3,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q878309",
-    "name_en": "Ly dynasty",
-    "name_ko": "리 왕조",
-    "start": "1009",
-    "end": "1226",
-    "lon": "105.85",
-    "lat": "21.03",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 25,
-    "region": "southeast_asia",
-    "score": 60.3,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q1483495",
@@ -10464,11 +10416,11 @@
     "lat": "51.9362",
     "type": "historical",
     "lineage_id": "L0081",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "europe",
     "score": 59.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q3403551",
@@ -11221,11 +11173,11 @@
     "lat": "53.55",
     "type": "historical",
     "lineage_id": "L0122",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "europe",
     "score": 22.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q2326511",
@@ -11805,11 +11757,11 @@
     "lat": "49.45",
     "type": "historical",
     "lineage_id": "L0130",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "europe",
     "score": 48.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q3937987",
@@ -11941,22 +11893,6 @@
     "region": "europe",
     "score": 28.2,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q3111454",
-    "name_en": "Tran dynasty",
-    "name_ko": "쩐 왕조",
-    "start": "1226",
-    "end": "1400",
-    "lon": "105.838611111",
-    "lat": "21.0375",
-    "type": "historical",
-    "lineage_id": "L0109",
-    "tier": 2,
-    "sitelinks": 32,
-    "region": "southeast_asia",
-    "score": 67.7,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q2553863",
@@ -12563,22 +12499,6 @@
     "tier_reason": "score_top25"
   },
   {
-    "qid": "Q3053276",
-    "name_en": "Byzantine Empire under the Palaiologos dynasty",
-    "name_ko": "팔레올로고스 왕조의 비잔티움 제국",
-    "start": "1261",
-    "end": "1453",
-    "lon": "23.570826707",
-    "lat": "40.558410126",
-    "type": "historical",
-    "lineage_id": "L0032",
-    "tier": 2,
-    "sitelinks": 14,
-    "region": "europe",
-    "score": 45.2,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q106394714",
     "name_en": "Signoria of Verona",
     "name_ko": "시그노리아 베로나",
@@ -12604,11 +12524,11 @@
     "lat": "48.580555555",
     "type": "historical",
     "lineage_id": "L0052",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "europe",
     "score": 18.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q170770",
@@ -14951,11 +14871,11 @@
     "lat": "48.75",
     "type": "historical",
     "lineage_id": "L0130",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 23,
     "region": "europe",
     "score": 52.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q16601665",
@@ -15015,11 +14935,11 @@
     "lat": "51.75",
     "type": "historical",
     "lineage_id": "L0120",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 26,
     "region": "europe",
     "score": 63.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q278874",
@@ -15031,11 +14951,11 @@
     "lat": "51.82138",
     "type": "historical",
     "lineage_id": "L0120",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 26,
     "region": "europe",
     "score": 63,
-    "tier_reason": "score_top55"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q3845765",
@@ -15532,22 +15452,6 @@
     "region": "north_america",
     "score": 58,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q878276",
-    "name_en": "Later Lê dynasty",
-    "name_ko": "후 레 왕조",
-    "start": "1428",
-    "end": "1789",
-    "lon": "105.85",
-    "lat": "21.016666666",
-    "type": "historical",
-    "lineage_id": "L0109",
-    "tier": 2,
-    "sitelinks": 4,
-    "region": "southeast_asia",
-    "score": 28.7,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q15535871",
@@ -17238,22 +17142,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q15221446",
-    "name_en": "Ottoman Arabia",
-    "name_ko": "오스만 치하 아라비아",
-    "start": "1517",
-    "end": "1918",
-    "lon": "46.72",
-    "lat": "24.63",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 16,
-    "region": "middle_east",
-    "score": 56.3,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q19805959",
     "name_en": "Golconda Sultanate",
     "name_ko": "고르코은드아 술탄국",
@@ -18087,11 +17975,11 @@
     "lat": "48.088055555",
     "type": "historical",
     "lineage_id": "L0053",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 34,
     "region": "europe",
     "score": 65.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q673865",
@@ -18103,11 +17991,11 @@
     "lat": "48.35",
     "type": "historical",
     "lineage_id": "L0053",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 28,
     "region": "europe",
     "score": 61.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q3715875",
@@ -18890,11 +18778,11 @@
     "lat": "52.26",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 33,
     "region": "europe",
     "score": 63.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q1178974",
@@ -19300,22 +19188,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q391189",
-    "name_en": "Taiwan under Qing dynasty rule",
-    "name_ko": "청나라 치하 대만",
-    "start": "1683",
-    "end": "1895",
-    "lon": "121.5",
-    "lat": "25.04",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 19,
-    "region": "east_asia",
-    "score": 53.8,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q16958904",
     "name_en": "Kingdom of the Morea",
     "name_ko": "모레아 왕국",
@@ -19664,11 +19536,11 @@
     "lat": "49.24",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "europe",
     "score": 33.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q11024667",
@@ -20733,22 +20605,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q1115291",
-    "name_en": "Thonburi Kingdom",
-    "name_ko": "톤부리 왕조",
-    "start": "1768",
-    "end": "1782",
-    "lon": "100.49",
-    "lat": "13.75",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 30,
-    "region": "southeast_asia",
-    "score": 65.8,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q48724193",
     "name_en": "Pahang Kingdom",
     "name_ko": "파항 왕국",
@@ -20826,22 +20682,6 @@
     "sitelinks": 19,
     "region": "southeast_asia",
     "score": 52.4,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1034173",
-    "name_en": "Tây Sơn dynasty",
-    "name_ko": "떠이선 왕조",
-    "start": "1778",
-    "end": "1802",
-    "lon": "109.2",
-    "lat": "13.8",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 24,
-    "region": "southeast_asia",
-    "score": 56.2,
     "tier_reason": "score_rest"
   },
   {
@@ -21082,22 +20922,6 @@
     "sitelinks": 55,
     "region": "north_america",
     "score": 80.3,
-    "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q188553",
-    "name_en": "Batavian Republic",
-    "name_ko": "바타비아 공화국",
-    "start": "1795",
-    "end": "1806",
-    "lon": "4.313611111",
-    "lat": "52.079166666",
-    "type": "historical",
-    "lineage_id": "L0121",
-    "tier": 2,
-    "sitelinks": 65,
-    "region": "europe",
-    "score": 75.5,
     "tier_reason": "score_top25"
   },
   {
@@ -21528,11 +21352,11 @@
     "lat": "52.37",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "europe",
     "score": 17.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_state_or_city"
   },
   {
     "qid": "Q48723590",
@@ -21580,22 +21404,6 @@
     "sitelinks": 17,
     "region": "unknown",
     "score": 59.4,
-    "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q6500483",
-    "name_en": "Nguyen dynasty",
-    "name_ko": "응우옌 왕조",
-    "start": "1802",
-    "end": "1945",
-    "lon": "108.0",
-    "lat": "16.0",
-    "type": "historical",
-    "lineage_id": "L0180",
-    "tier": 2,
-    "sitelinks": 41,
-    "region": "southeast_asia",
-    "score": 75.6,
     "tier_reason": "score_top25"
   },
   {
@@ -27217,86 +27025,6 @@
     "region": "southeast_asia",
     "score": 86.9,
     "tier_reason": "score_top8"
-  },
-  {
-    "qid": "Q326025",
-    "name_en": "Đinh dynasty",
-    "name_ko": "딩 왕조",
-    "start": "968",
-    "end": "980",
-    "lat": "20.3",
-    "lon": "105.9",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 11,
-    "region": "southeast_asia",
-    "score": 35.8,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q326098",
-    "name_en": "Early Lê dynasty",
-    "name_ko": "전 레 왕조",
-    "start": "980",
-    "end": "1009",
-    "lat": "20.3",
-    "lon": "105.9",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 0,
-    "region": "southeast_asia",
-    "score": 4.9,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1130368",
-    "name_en": "Hồ dynasty",
-    "name_ko": "호 왕조",
-    "start": "1400",
-    "end": "1407",
-    "lat": "19.8",
-    "lon": "105.8",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 45,
-    "region": "southeast_asia",
-    "score": 71.8,
-    "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q1130497",
-    "name_en": "Mạc dynasty",
-    "name_ko": "막 왕조",
-    "start": "1527",
-    "end": "1592",
-    "lat": "20.9",
-    "lon": "106.3",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 20,
-    "region": "southeast_asia",
-    "score": 52.1,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q725951",
-    "name_en": "Sailendra dynasty",
-    "name_ko": "사일렌드라 왕조",
-    "start": "750",
-    "end": "850",
-    "lat": "-7.6",
-    "lon": "110.4",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 49,
-    "region": "southeast_asia",
-    "score": 74.3,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q48435",
