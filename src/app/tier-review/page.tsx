@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useMemo, useCallback, useRef } from "react";
+import TierReviewMap from "@/components/tier-review/TierReviewMap";
+import type { MapCircleEntity } from "@/components/tier-review/TierReviewMap";
 
 // [cl] Tier 리뷰 페이지 — 시기별 전체 티어 + 리스트 뷰
 
@@ -28,12 +30,51 @@ interface CircleEntity {
   region: string;
   qid: string;
   color: string;
+  lon: number;
+  lat: number;
+  sitelinks: number;
   t1_start?: number;
   t1_end?: number;
 }
 
+// [cl] OHM 인덱스 엔트리
+interface OhmSnapshot {
+  rid: number;
+  start: number;
+  end: number;
+  file: string;
+}
+
+interface OhmIndexEntry {
+  qid: string;
+  name_en: string;
+  name_ko: string;
+  tier: number;
+  start_year: number;
+  end_year: number;
+  snapshots: OhmSnapshot[];
+}
+
+// [cl] 인라인 편집 로그
+interface EditLogEntry {
+  qid: string;
+  field: string;
+  old_value: string;
+  new_value: string;
+  year_context: number;
+  timestamp: string;
+}
+
+// [cl] 노트
+interface Note {
+  id: string;
+  qids: string[];
+  year: number;
+  text: string;
+  created_at: string;
+}
+
 type ViewTab = "list" | "timeline";
-type TierFilter = "all" | "1" | "2" | "3";
 
 const REGION_KO: Record<string, string> = {
   east_asia: "동아시아",
@@ -72,6 +113,12 @@ const TIER_COLORS: Record<number, string> = {
   4: "#6b7280",
 };
 
+const TIER_LABELS: Record<number, string> = {
+  1: "주요 국가",
+  2: "지역 주요",
+  3: "일반",
+  4: "기타",
+};
 
 const ALL_REGIONS = Object.keys(REGION_KO);
 
@@ -103,17 +150,44 @@ interface ReviewComment {
 }
 
 // ═══════════════════════════════════════════════════
-// [cl] 시기별 보기 (Timeline View) — 전체 티어 통합
+// [cl] 시기별 보기 (Timeline View) — v2 리팩토링
+// 토글 필터 + 카드 토글 선택 + 소팅 + 지도 연동
 // ═══════════════════════════════════════════════════
 function TimelineView() {
   const [circles, setCircles] = useState<CircleEntity[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [filterRegion, setFilterRegion] = useState("all");
-  const [tierFilter, setTierFilter] = useState<TierFilter>("all");
-  const [t3Expanded, setT3Expanded] = useState(false);
   const [search, setSearch] = useState("");
 
+  // [cl] 티어 필터 — Set 기반 독립 토글 (복수 선택)
+  const [activeTiers, setActiveTiers] = useState<Set<number>>(
+    new Set([1, 2, 3])
+  );
+
+  // [cl] 카드 토글 선택 (QID 기반)
+  const [selectedQids, setSelectedQids] = useState<Set<string>>(new Set());
+
+  // [cl] 소팅
+  const [sortBy, setSortBy] = useState<"year" | "name" | "sitelinks">("year");
+
+  // [cl] OHM 폴리곤
+  const [ohmIndex, setOhmIndex] = useState<OhmIndexEntry[] | null>(null);
+  const [ohmPolygons, setOhmPolygons] = useState<Map<string, any>>(new Map());
+
+  // [cl] 인라인 편집
+  const [editingField, setEditingField] = useState<{
+    qid: string;
+    field: string;
+  } | null>(null);
+  const [editValue, setEditValue] = useState("");
+  const [editLog, setEditLog] = useState<EditLogEntry[]>([]);
+
+  // [cl] 노트
+  const [notes, setNotes] = useState<Note[]>([]);
+  const [noteDraft, setNoteDraft] = useState("");
+
+  // [cl] circles 데이터 로드
   useEffect(() => {
     fetch("/geo/borders/wikidata_circles.json")
       .then((r) => r.json())
@@ -126,6 +200,14 @@ function TimelineView() {
       .catch(() => setLoading(false));
   }, []);
 
+  // [cl] OHM index 로드
+  useEffect(() => {
+    fetch("/geo/borders/ohm_index.json")
+      .then((r) => r.json())
+      .then((data) => setOhmIndex(data))
+      .catch(() => {});
+  }, []);
+
   const currentYear = SNAPSHOT_YEARS[selectedIdx] ?? 800;
 
   // [cl] 현재 연도에 활성인 엔티티들
@@ -135,9 +217,63 @@ function TimelineView() {
     );
   }, [circles, currentYear]);
 
-  // [cl] 티어별 + 필터별 분류
-  const grouped = useMemo(() => {
+  // [cl] OHM 폴리곤 fetch 함수
+  const fetchOhmPolygon = useCallback(
+    (qid: string) => {
+      if (!ohmIndex) return;
+      const entry = ohmIndex.find((e) => e.qid === qid);
+      if (!entry || !entry.snapshots || entry.snapshots.length === 0) return;
+
+      // 현재 연도에 포함되는 스냅샷 중 가장 적합한 것
+      let best: OhmSnapshot | null = null;
+      for (const s of entry.snapshots) {
+        if (s.start <= currentYear && s.end >= currentYear) {
+          if (!best || s.start > best.start) best = s;
+        }
+      }
+      // 없으면 가장 가까운 것
+      if (!best) {
+        best = entry.snapshots.reduce((closest, s) => {
+          const distS = Math.min(
+            Math.abs(s.start - currentYear),
+            Math.abs(s.end - currentYear)
+          );
+          const distC = closest
+            ? Math.min(
+                Math.abs(closest.start - currentYear),
+                Math.abs(closest.end - currentYear)
+              )
+            : Infinity;
+          return distS < distC ? s : closest;
+        }, null as OhmSnapshot | null);
+      }
+
+      if (!best) return;
+
+      const url = `/geo/borders/ohm/ohm_${best.rid}.geojson`;
+      fetch(url)
+        .then((r) => {
+          if (!r.ok) throw new Error("Not found");
+          return r.json();
+        })
+        .then((geojson) => {
+          setOhmPolygons((old) => {
+            const m = new Map(old);
+            m.set(qid, geojson);
+            return m;
+          });
+        })
+        .catch(() => {});
+    },
+    [ohmIndex, currentYear]
+  );
+
+  // [cl] 필터링 + 소팅
+  const filtered = useMemo(() => {
     let pool = activeEntities;
+
+    // 티어 필터 (Set 기반)
+    pool = pool.filter((e) => activeTiers.has(e.tier));
 
     // 권역 필터
     if (filterRegion !== "all") {
@@ -150,18 +286,31 @@ function TimelineView() {
       pool = pool.filter(
         (e) =>
           e.name_ko?.toLowerCase().includes(q) ||
-          e.name_en.toLowerCase().includes(q)
+          e.name_en.toLowerCase().includes(q) ||
+          e.qid?.toLowerCase().includes(q)
       );
     }
 
-    const t1 = pool.filter((e) => e.tier === 1);
-    const t2 = pool.filter((e) => e.tier === 2);
-    const t3 = pool.filter((e) => e.tier === 3);
+    // 소팅
+    const sorted = [...pool];
+    switch (sortBy) {
+      case "year":
+        sorted.sort((a, b) => a.start_year - b.start_year);
+        break;
+      case "name":
+        sorted.sort((a, b) =>
+          (a.name_ko || "").localeCompare(b.name_ko || "")
+        );
+        break;
+      case "sitelinks":
+        sorted.sort((a, b) => (b.sitelinks || 0) - (a.sitelinks || 0));
+        break;
+    }
 
-    return { t1, t2, t3, total: pool.length };
-  }, [activeEntities, filterRegion, search]);
+    return sorted;
+  }, [activeEntities, activeTiers, filterRegion, search, sortBy]);
 
-  // [cl] 권역별 통계 (전체)
+  // [cl] 권역별 통계
   const regionStats = useMemo(() => {
     const map: Record<string, number> = {};
     activeEntities.forEach((e) => {
@@ -170,17 +319,169 @@ function TimelineView() {
     return map;
   }, [activeEntities]);
 
-  // [cl] T3를 권역별로 그룹핑
-  const t3ByRegion = useMemo(() => {
-    const map: Record<string, CircleEntity[]> = {};
-    grouped.t3.forEach((e) => {
-      const r = e.region || "unknown";
-      if (!map[r]) map[r] = [];
-      map[r].push(e);
+  // [cl] 티어별 카운트 (티어 이외 필터 적용 후)
+  const tierCounts = useMemo(() => {
+    const counts: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    let pool = activeEntities;
+    if (filterRegion !== "all")
+      pool = pool.filter((e) => e.region === filterRegion);
+    if (search.trim()) {
+      const q = search.trim().toLowerCase();
+      pool = pool.filter(
+        (e) =>
+          e.name_ko?.toLowerCase().includes(q) ||
+          e.name_en.toLowerCase().includes(q) ||
+          e.qid?.toLowerCase().includes(q)
+      );
+    }
+    pool.forEach((e) => {
+      counts[e.tier] = (counts[e.tier] || 0) + 1;
     });
-    // 권역별 정렬 (개수 내림차순)
-    return Object.entries(map).sort((a, b) => b[1].length - a[1].length);
-  }, [grouped.t3]);
+    return counts;
+  }, [activeEntities, filterRegion, search]);
+
+  // [cl] 카드 토글
+  const toggleCard = useCallback(
+    (qid: string) => {
+      setSelectedQids((prev) => {
+        const next = new Set(prev);
+        if (next.has(qid)) {
+          next.delete(qid);
+          setOhmPolygons((old) => {
+            const m = new Map(old);
+            m.delete(qid);
+            return m;
+          });
+        } else {
+          next.add(qid);
+          fetchOhmPolygon(qid);
+        }
+        return next;
+      });
+    },
+    [fetchOhmPolygon]
+  );
+
+  // [cl] 전체 선택
+  const selectAll = useCallback(() => {
+    const qids = new Set(
+      filtered.map((e) => e.qid).filter(Boolean) as string[]
+    );
+    setSelectedQids(qids);
+    qids.forEach((qid) => fetchOhmPolygon(qid));
+  }, [filtered, fetchOhmPolygon]);
+
+  // [cl] 전체 해제
+  const deselectAll = useCallback(() => {
+    setSelectedQids(new Set());
+    setOhmPolygons(new Map());
+  }, []);
+
+  // [cl] 티어 토글
+  const toggleTier = useCallback((tier: number) => {
+    setActiveTiers((prev) => {
+      const next = new Set(prev);
+      if (next.has(tier)) next.delete(tier);
+      else next.add(tier);
+      return next;
+    });
+  }, []);
+
+  // [cl] 선택된 엔티티들 (지도 전달용)
+  const mapEntities: MapCircleEntity[] = useMemo(() => {
+    return circles
+      .filter((c) => selectedQids.has(c.qid))
+      .map((c) => ({
+        name_en: c.name_en,
+        name_ko: c.name_ko,
+        lon: c.lon,
+        lat: c.lat,
+        qid: c.qid,
+        tier: c.tier,
+        color: c.color,
+      }));
+  }, [circles, selectedQids]);
+
+  // [cl] 인라인 편집 시작
+  const startEdit = useCallback(
+    (qid: string, field: string, currentValue: string) => {
+      setEditingField({ qid, field });
+      setEditValue(currentValue);
+    },
+    []
+  );
+
+  // [cl] 인라인 편집 저장
+  const saveEdit = useCallback(() => {
+    if (!editingField) return;
+    const { qid, field } = editingField;
+    const entity = circles.find((c) => c.qid === qid);
+    if (!entity) {
+      setEditingField(null);
+      return;
+    }
+
+    const oldValue = String((entity as any)[field] ?? "");
+    if (editValue.trim() === oldValue) {
+      setEditingField(null);
+      return;
+    }
+
+    // circles 상태 업데이트
+    setCircles((prev) =>
+      prev.map((c) => {
+        if (c.qid !== qid) return c;
+        if (field === "start_year" || field === "end_year") {
+          const num = parseInt(editValue);
+          if (isNaN(num)) return c;
+          return { ...c, [field]: num };
+        }
+        return { ...c, [field]: editValue.trim() };
+      })
+    );
+
+    // 수정 로그
+    setEditLog((prev) => [
+      ...prev,
+      {
+        qid,
+        field,
+        old_value: oldValue,
+        new_value: editValue.trim(),
+        year_context: currentYear,
+        timestamp: new Date().toISOString(),
+      },
+    ]);
+
+    setEditingField(null);
+  }, [editingField, editValue, circles, currentYear]);
+
+  // [cl] 노트 저장
+  const saveNote = useCallback(() => {
+    if (!noteDraft.trim() || selectedQids.size === 0) return;
+    const newNote: Note = {
+      id: String(Date.now()),
+      qids: Array.from(selectedQids),
+      year: currentYear,
+      text: noteDraft.trim(),
+      created_at: new Date().toISOString(),
+    };
+    setNotes((prev) => [...prev, newNote]);
+    setNoteDraft("");
+  }, [noteDraft, selectedQids, currentYear]);
+
+  // [cl] 지도 마커 클릭 → 카드 토글 해제
+  const handleMarkerClick = useCallback(
+    (qid: string) => {
+      toggleCard(qid);
+    },
+    [toggleCard]
+  );
+
+  // [cl] 수정된 QID 목록 (편집 표시용)
+  const editedQids = useMemo(() => {
+    return new Set(editLog.map((e) => e.qid));
+  }, [editLog]);
 
   if (loading) {
     return (
@@ -189,10 +490,6 @@ function TimelineView() {
       </div>
     );
   }
-
-  const showT1 = tierFilter === "all" || tierFilter === "1";
-  const showT2 = tierFilter === "all" || tierFilter === "2";
-  const showT3 = tierFilter === "all" || tierFilter === "3";
 
   return (
     <div>
@@ -253,14 +550,15 @@ function TimelineView() {
             color: "#555",
           }}
         >
-          {[-3000, -2000, -1000, -500, 0, 500, 1000, 1500, 1800, 2025]
-            .map((y) => (
+          {[-3000, -2000, -1000, -500, 0, 500, 1000, 1500, 1800, 2025].map(
+            (y) => (
               <span key={y}>{yearLabel(y === 0 ? 1 : y)}</span>
-            ))}
+            )
+          )}
         </div>
       </div>
 
-      {/* ── 티어 필터 + 검색 바 ── */}
+      {/* ── 필터 바: 티어 토글 + 권역 + 소팅 + 전체 선택/해제 ── */}
       <div
         style={{
           display: "flex",
@@ -270,30 +568,16 @@ function TimelineView() {
           alignItems: "center",
         }}
       >
-        {/* 티어 필터 버튼 */}
-        {(["all", "1", "2", "3"] as TierFilter[]).map((tf) => {
-          const count =
-            tf === "all"
-              ? grouped.total
-              : tf === "1"
-                ? grouped.t1.length
-                : tf === "2"
-                  ? grouped.t2.length
-                  : grouped.t3.length;
-          const label =
-            tf === "all"
-              ? "전체"
-              : `T${tf}`;
-          const color =
-            tf === "all"
-              ? "#06b6d4"
-              : TIER_COLORS[parseInt(tf)];
-          const isActive = tierFilter === tf;
+        {/* [cl] 티어 독립 토글 버튼 */}
+        {[1, 2, 3, 4].map((tier) => {
+          const isActive = activeTiers.has(tier);
+          const color = TIER_COLORS[tier];
+          const count = tierCounts[tier] || 0;
 
           return (
             <button
-              key={tf}
-              onClick={() => setTierFilter(tf)}
+              key={tier}
+              onClick={() => toggleTier(tier)}
               style={{
                 padding: "6px 14px",
                 borderRadius: 6,
@@ -303,16 +587,25 @@ function TimelineView() {
                 cursor: "pointer",
                 fontWeight: 700,
                 fontSize: 13,
+                opacity: isActive ? 1 : 0.6,
+                transition: "all 0.15s",
               }}
             >
-              {label} ({count})
+              T{tier} ({count})
             </button>
           );
         })}
 
-        <div style={{ width: 1, height: 24, background: "#333", margin: "0 4px" }} />
+        <div
+          style={{
+            width: 1,
+            height: 24,
+            background: "#333",
+            margin: "0 4px",
+          }}
+        />
 
-        {/* 권역 필터 */}
+        {/* [cl] 권역 필터 */}
         <select
           value={filterRegion}
           onChange={(e) => setFilterRegion(e.target.value)}
@@ -335,10 +628,71 @@ function TimelineView() {
             ))}
         </select>
 
-        {/* 검색 */}
+        {/* [cl] 소팅 드롭다운 */}
+        <select
+          value={sortBy}
+          onChange={(e) =>
+            setSortBy(e.target.value as "year" | "name" | "sitelinks")
+          }
+          style={{
+            padding: "6px 12px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+            fontSize: 13,
+          }}
+        >
+          <option value="year">연도순</option>
+          <option value="name">국명순</option>
+          <option value="sitelinks">중요도순</option>
+        </select>
+
+        <div
+          style={{
+            width: 1,
+            height: 24,
+            background: "#333",
+            margin: "0 4px",
+          }}
+        />
+
+        {/* [cl] 전체 선택 / 해제 */}
+        <button
+          onClick={selectAll}
+          style={{
+            padding: "5px 12px",
+            borderRadius: 4,
+            border: "1px solid #06b6d4",
+            background: "transparent",
+            color: "#06b6d4",
+            cursor: "pointer",
+            fontSize: 12,
+            fontWeight: 600,
+          }}
+        >
+          전체 선택
+        </button>
+        <button
+          onClick={deselectAll}
+          style={{
+            padding: "5px 12px",
+            borderRadius: 4,
+            border: "1px solid #666",
+            background: "transparent",
+            color: "#888",
+            cursor: "pointer",
+            fontSize: 12,
+            fontWeight: 600,
+          }}
+        >
+          전체 해제
+        </button>
+
+        {/* [cl] 검색 */}
         <input
           type="text"
-          placeholder="검색..."
+          placeholder="검색 (한글/영문/QID)..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           style={{
@@ -348,12 +702,18 @@ function TimelineView() {
             border: "1px solid #444",
             borderRadius: 4,
             fontSize: 13,
-            width: 160,
+            width: 180,
           }}
         />
 
-        <span style={{ fontSize: 13, color: "#888", marginLeft: "auto" }}>
-          T1:{grouped.t1.length} T2:{grouped.t2.length} T3:{grouped.t3.length}
+        {/* [cl] 카운트 요약 */}
+        <span style={{ fontSize: 12, color: "#888", marginLeft: "auto" }}>
+          {filtered.length}개 표시
+          {selectedQids.size > 0 && (
+            <span style={{ color: "#06b6d4", marginLeft: 8 }}>
+              {selectedQids.size}개 선택
+            </span>
+          )}
         </span>
       </div>
 
@@ -364,7 +724,7 @@ function TimelineView() {
           height: 8,
           borderRadius: 4,
           overflow: "hidden",
-          marginBottom: 20,
+          marginBottom: 16,
           background: "#222",
         }}
       >
@@ -383,90 +743,189 @@ function TimelineView() {
           ))}
       </div>
 
-      {/* ═══ T1 섹션 ═══ */}
-      {showT1 && grouped.t1.length > 0 && (
-        <div style={{ marginBottom: 24 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              marginBottom: 10,
-            }}
-          >
-            <span
-              style={{
-                background: TIER_COLORS[1],
-                color: "#fff",
-                padding: "2px 10px",
-                borderRadius: 4,
-                fontWeight: 800,
-                fontSize: 13,
-              }}
-            >
-              T1
-            </span>
-            <span style={{ color: "#ef4444", fontWeight: 600, fontSize: 14 }}>
-              주요 국가 · {grouped.t1.length}개
-            </span>
-            <div
-              style={{
-                flex: 1,
-                height: 1,
-                background: "#ef444440",
-                marginLeft: 8,
-              }}
-            />
-          </div>
-
+      {/* ═══ 카드 그리드 (플랫, 스크롤) ═══ */}
+      <div
+        style={{
+          maxHeight: "45vh",
+          overflowY: "auto",
+          marginBottom: 16,
+          padding: "4px 0",
+        }}
+      >
+        {filtered.length > 0 ? (
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
               gap: 8,
             }}
           >
-            {grouped.t1.map((entity) => {
+            {filtered.map((entity) => {
+              const isSelected = selectedQids.has(entity.qid);
               const regionColor = REGION_COLORS[entity.region] || "#666";
+              const tierColor = TIER_COLORS[entity.tier] || "#666";
+              const isEdited = editedQids.has(entity.qid);
+              const isEditingThis = editingField?.qid === entity.qid;
 
               return (
                 <div
                   key={entity.qid || entity.name_en}
+                  onClick={() => {
+                    if (!isEditingThis) toggleCard(entity.qid);
+                  }}
                   style={{
                     background: "#1a1a1a",
-                    border: `1px solid #ef444430`,
+                    border: isSelected
+                      ? "2px solid #06b6d4"
+                      : `1px solid ${tierColor}30`,
                     borderRadius: 8,
-                    padding: "10px 14px",
+                    padding: "10px 12px",
                     borderLeft: `4px solid ${regionColor}`,
+                    cursor: "pointer",
+                    transition: "all 0.15s",
+                    boxShadow: isSelected
+                      ? "0 0 12px rgba(6,182,212,0.2)"
+                      : "none",
+                    position: "relative",
                   }}
                 >
-                  <div style={{ marginBottom: 4 }}>
-                    <div
-                      style={{
-                        fontSize: 14,
-                        fontWeight: 700,
-                        color: "#fff",
-                      }}
-                    >
-                      {entity.name_ko}
-                    </div>
-                    <div style={{ fontSize: 11, color: "#888" }}>
-                      {entity.name_en}
-                    </div>
-                  </div>
-
+                  {/* [cl] 티어 배지 + 수정 표시 */}
                   <div
                     style={{
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
-                      marginTop: 6,
+                      marginBottom: 4,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: 9,
+                        padding: "1px 6px",
+                        borderRadius: 3,
+                        background: tierColor,
+                        color: "#fff",
+                        fontWeight: 700,
+                      }}
+                    >
+                      T{entity.tier}
+                    </span>
+                    {isEdited && (
+                      <span
+                        style={{ fontSize: 12, color: "#f59e0b" }}
+                        title="수정됨"
+                      >
+                        ✎
+                      </span>
+                    )}
+                  </div>
+
+                  {/* [cl] name_ko — 더블클릭으로 편집 */}
+                  {editingField?.qid === entity.qid &&
+                  editingField.field === "name_ko" ? (
+                    <input
+                      type="text"
+                      value={editValue}
+                      onChange={(e) => setEditValue(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") saveEdit();
+                        if (e.key === "Escape") setEditingField(null);
+                      }}
+                      onBlur={saveEdit}
+                      onClick={(e) => e.stopPropagation()}
+                      autoFocus
+                      style={{
+                        width: "100%",
+                        padding: "2px 4px",
+                        background: "#0a0a0a",
+                        color: "#fff",
+                        border: "1px solid #06b6d4",
+                        borderRadius: 3,
+                        fontSize: 14,
+                        fontWeight: 700,
+                        marginBottom: 2,
+                      }}
+                    />
+                  ) : (
+                    <div
+                      onDoubleClick={(e) => {
+                        e.stopPropagation();
+                        startEdit(entity.qid, "name_ko", entity.name_ko);
+                      }}
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "#fff",
+                        marginBottom: 2,
+                      }}
+                      title="더블클릭으로 편집"
+                    >
+                      {entity.name_ko || entity.name_en}
+                    </div>
+                  )}
+
+                  {/* [cl] name_en — 더블클릭으로 편집 */}
+                  {editingField?.qid === entity.qid &&
+                  editingField.field === "name_en" ? (
+                    <input
+                      type="text"
+                      value={editValue}
+                      onChange={(e) => setEditValue(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") saveEdit();
+                        if (e.key === "Escape") setEditingField(null);
+                      }}
+                      onBlur={saveEdit}
+                      onClick={(e) => e.stopPropagation()}
+                      autoFocus
+                      style={{
+                        width: "100%",
+                        padding: "1px 4px",
+                        background: "#0a0a0a",
+                        color: "#888",
+                        border: "1px solid #06b6d4",
+                        borderRadius: 3,
+                        fontSize: 11,
+                        marginBottom: 2,
+                      }}
+                    />
+                  ) : (
+                    <div
+                      onDoubleClick={(e) => {
+                        e.stopPropagation();
+                        startEdit(entity.qid, "name_en", entity.name_en);
+                      }}
+                      style={{ fontSize: 11, color: "#888", marginBottom: 2 }}
+                      title="더블클릭으로 편집"
+                    >
+                      {entity.name_en}
+                    </div>
+                  )}
+
+                  {/* [cl] QID */}
+                  <div
+                    style={{
+                      fontSize: 10,
+                      color: "#555",
+                      marginBottom: 4,
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    {entity.qid}
+                  </div>
+
+                  {/* [cl] 기간 + 권역 */}
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
                     }}
                   >
                     <span
                       style={{
                         fontSize: 10,
-                        padding: "1px 8px",
+                        padding: "1px 6px",
                         borderRadius: 10,
                         background: `${regionColor}20`,
                         color: regionColor,
@@ -475,248 +934,255 @@ function TimelineView() {
                     >
                       {REGION_KO[entity.region] || entity.region}
                     </span>
+
+                    {/* [cl] 기간 — 더블클릭 편집 */}
                     <span
+                      onDoubleClick={(e) => {
+                        e.stopPropagation();
+                        startEdit(
+                          entity.qid,
+                          "start_year",
+                          String(entity.start_year)
+                        );
+                      }}
                       style={{
                         fontSize: 10,
                         color: "#666",
                         fontFamily: "monospace",
+                        cursor: "text",
                       }}
+                      title="더블클릭으로 시작연도 편집"
                     >
-                      {entity.start_year <= 0
-                        ? `BC${Math.abs(entity.start_year)}`
-                        : entity.start_year}
+                      {editingField?.qid === entity.qid &&
+                      editingField.field === "start_year" ? (
+                        <input
+                          type="text"
+                          value={editValue}
+                          onChange={(e) => setEditValue(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") saveEdit();
+                            if (e.key === "Escape") setEditingField(null);
+                          }}
+                          onBlur={saveEdit}
+                          onClick={(e) => e.stopPropagation()}
+                          autoFocus
+                          style={{
+                            width: 50,
+                            padding: "0 2px",
+                            background: "#0a0a0a",
+                            color: "#fff",
+                            border: "1px solid #06b6d4",
+                            borderRadius: 2,
+                            fontSize: 10,
+                            fontFamily: "monospace",
+                          }}
+                        />
+                      ) : (
+                        yearLabel(entity.start_year)
+                      )}
                       ~
-                      {entity.end_year <= 0
-                        ? `BC${Math.abs(entity.end_year)}`
-                        : entity.end_year}
+                      {editingField?.qid === entity.qid &&
+                      editingField.field === "end_year" ? (
+                        <input
+                          type="text"
+                          value={editValue}
+                          onChange={(e) => setEditValue(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") saveEdit();
+                            if (e.key === "Escape") setEditingField(null);
+                          }}
+                          onBlur={saveEdit}
+                          onClick={(e) => e.stopPropagation()}
+                          autoFocus
+                          style={{
+                            width: 50,
+                            padding: "0 2px",
+                            background: "#0a0a0a",
+                            color: "#fff",
+                            border: "1px solid #06b6d4",
+                            borderRadius: 2,
+                            fontSize: 10,
+                            fontFamily: "monospace",
+                          }}
+                        />
+                      ) : (
+                        <span
+                          onDoubleClick={(e) => {
+                            e.stopPropagation();
+                            startEdit(
+                              entity.qid,
+                              "end_year",
+                              String(entity.end_year)
+                            );
+                          }}
+                          title="더블클릭으로 종료연도 편집"
+                        >
+                          {yearLabel(entity.end_year)}
+                        </span>
+                      )}
                     </span>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
 
-      {/* ═══ T2 섹션 ═══ */}
-      {showT2 && grouped.t2.length > 0 && (
-        <div style={{ marginBottom: 24 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              marginBottom: 10,
-            }}
-          >
-            <span
-              style={{
-                background: TIER_COLORS[2],
-                color: "#fff",
-                padding: "2px 10px",
-                borderRadius: 4,
-                fontWeight: 800,
-                fontSize: 13,
-              }}
-            >
-              T2
-            </span>
-            <span style={{ color: "#f59e0b", fontWeight: 600, fontSize: 14 }}>
-              지역 주요 · {grouped.t2.length}개
-            </span>
-            <div
-              style={{
-                flex: 1,
-                height: 1,
-                background: "#f59e0b40",
-                marginLeft: 8,
-              }}
-            />
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-              gap: 6,
-            }}
-          >
-            {grouped.t2.map((entity) => {
-              const regionColor = REGION_COLORS[entity.region] || "#666";
-              return (
-                <div
-                  key={entity.qid || entity.name_en}
-                  style={{
-                    background: "#1a1a1a",
-                    border: `1px solid #f59e0b30`,
-                    borderRadius: 6,
-                    padding: "6px 10px",
-                    borderLeft: `3px solid ${regionColor}`,
-                  }}
-                >
-                  <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>
-                    {entity.name_ko}
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      marginTop: 3,
-                    }}
-                  >
-                    <span style={{ fontSize: 10, color: regionColor }}>
-                      {REGION_KO[entity.region] || entity.region}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: 9,
-                        color: "#555",
-                        fontFamily: "monospace",
-                      }}
-                    >
-                      {entity.start_year}~{entity.end_year}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* ═══ T3 섹션 ═══ */}
-      {showT3 && grouped.t3.length > 0 && (
-        <div style={{ marginBottom: 24 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              marginBottom: 10,
-              cursor: "pointer",
-            }}
-            onClick={() => setT3Expanded(!t3Expanded)}
-          >
-            <span
-              style={{
-                background: TIER_COLORS[3],
-                color: "#fff",
-                padding: "2px 10px",
-                borderRadius: 4,
-                fontWeight: 800,
-                fontSize: 13,
-              }}
-            >
-              T3
-            </span>
-            <span style={{ color: "#3b82f6", fontWeight: 600, fontSize: 14 }}>
-              기타 · {grouped.t3.length}개
-            </span>
-            <span style={{ fontSize: 12, color: "#555" }}>
-              {t3Expanded ? "▼ 접기" : "▶ 펼치기"}
-            </span>
-            <div
-              style={{
-                flex: 1,
-                height: 1,
-                background: "#3b82f640",
-                marginLeft: 8,
-              }}
-            />
-          </div>
-
-          {t3Expanded && (
-            <div
-              style={{
-                background: "#141418",
-                borderRadius: 8,
-                padding: "12px 16px",
-                border: "1px solid #222",
-              }}
-            >
-              {t3ByRegion.map(([region, entities]) => (
-                <div key={region} style={{ marginBottom: 12 }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                      marginBottom: 6,
-                    }}
-                  >
+                  {/* [cl] sitelinks (중요도 참고용) */}
+                  {entity.sitelinks > 0 && (
                     <div
                       style={{
-                        width: 10,
-                        height: 10,
-                        borderRadius: 2,
-                        background: REGION_COLORS[region] || "#666",
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontSize: 12,
-                        fontWeight: 600,
-                        color: REGION_COLORS[region] || "#666",
+                        fontSize: 9,
+                        color: "#444",
+                        marginTop: 3,
+                        textAlign: "right",
                       }}
                     >
-                      {REGION_KO[region] || region} ({entities.length})
-                    </span>
-                  </div>
+                      SL:{entity.sitelinks}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div style={{ padding: 40, textAlign: "center", color: "#555" }}>
+            해당 조건에 맞는 엔티티가 없습니다.
+          </div>
+        )}
+      </div>
+
+      {/* ═══ 노트 영역 (선택된 카드 있을 때만) ═══ */}
+      {selectedQids.size > 0 && (
+        <div
+          style={{
+            background: "#1a1a1a",
+            borderRadius: 8,
+            padding: "12px 16px",
+            marginBottom: 16,
+            border: "1px solid #333",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: 8,
+            }}
+          >
+            <span style={{ fontSize: 12, color: "#06b6d4", fontWeight: 600 }}>
+              {selectedQids.size === 1
+                ? `${circles.find((c) => c.qid === Array.from(selectedQids)[0])?.name_ko || ""} 노트`
+                : `${selectedQids.size}개 선택 · ${yearLabel(currentYear)}`}
+            </span>
+            <span style={{ fontSize: 10, color: "#555" }}>
+              {Array.from(selectedQids).join(", ")}
+            </span>
+          </div>
+
+          <div style={{ display: "flex", gap: 8 }}>
+            <input
+              type="text"
+              value={noteDraft}
+              onChange={(e) => setNoteDraft(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") saveNote();
+              }}
+              placeholder="노트 입력 (Enter로 저장)..."
+              style={{
+                flex: 1,
+                padding: "8px 12px",
+                background: "#0a0a0a",
+                color: "#fff",
+                border: "1px solid #444",
+                borderRadius: 6,
+                fontSize: 13,
+              }}
+            />
+            <button
+              onClick={saveNote}
+              disabled={!noteDraft.trim()}
+              style={{
+                padding: "8px 16px",
+                background: noteDraft.trim() ? "#06b6d4" : "#333",
+                color: "#fff",
+                border: "none",
+                borderRadius: 6,
+                cursor: noteDraft.trim() ? "pointer" : "default",
+                fontWeight: 600,
+                fontSize: 13,
+              }}
+            >
+              저장
+            </button>
+          </div>
+
+          {/* [cl] 기존 노트 표시 */}
+          {notes.length > 0 && (
+            <div style={{ marginTop: 10 }}>
+              {notes
+                .filter((n) =>
+                  n.qids.some((qid) => selectedQids.has(qid))
+                )
+                .slice(-5)
+                .map((note) => (
                   <div
+                    key={note.id}
                     style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: 4,
-                      paddingLeft: 16,
+                      padding: "6px 10px",
+                      background: "#0f0f0f",
+                      borderRadius: 4,
+                      marginBottom: 4,
+                      fontSize: 12,
+                      border: "1px solid #222",
                     }}
                   >
-                    {entities.map((e) => (
-                      <span
-                        key={e.qid || e.name_en}
-                        title={`${e.name_en} (${e.start_year}~${e.end_year})`}
-                        style={{
-                          fontSize: 11,
-                          padding: "2px 8px",
-                          borderRadius: 4,
-                          background: "#1e1e24",
-                          color: "#aaa",
-                          border: "1px solid #2a2a30",
-                          cursor: "default",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {e.name_ko || e.name_en}
-                      </span>
-                    ))}
+                    <span style={{ color: "#06b6d4" }}>
+                      [{yearLabel(note.year)}]
+                    </span>{" "}
+                    <span style={{ color: "#ccc" }}>{note.text}</span>
+                    <span style={{ color: "#444", marginLeft: 8, fontSize: 10 }}>
+                      {note.qids.join(", ")}
+                    </span>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           )}
         </div>
       )}
 
-      {grouped.total === 0 && (
-        <div style={{ padding: 40, textAlign: "center", color: "#555" }}>
-          해당 조건에 맞는 엔티티가 없습니다.
-        </div>
-      )}
+      {/* ═══ Leaflet 지도 ═══ */}
+      <TierReviewMap
+        selectedEntities={mapEntities}
+        ohmPolygons={ohmPolygons}
+        onMarkerClick={handleMarkerClick}
+      />
 
       {/* ── 범례 ── */}
       <div
         style={{
-          marginTop: 20,
+          marginTop: 16,
           padding: "12px 16px",
           background: "#1a1a1a",
           borderRadius: 8,
           border: "1px solid #2a2a2a",
         }}
       >
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 8 }}>
+        <div
+          style={{
+            display: "flex",
+            gap: 16,
+            flexWrap: "wrap",
+            marginBottom: 8,
+          }}
+        >
           <div style={{ fontSize: 11, color: "#666" }}>티어:</div>
-          {[1, 2, 3].map((t) => (
-            <div key={t} style={{ display: "flex", gap: 4, alignItems: "center", fontSize: 12 }}>
+          {[1, 2, 3, 4].map((t) => (
+            <div
+              key={t}
+              style={{
+                display: "flex",
+                gap: 4,
+                alignItems: "center",
+                fontSize: 12,
+              }}
+            >
               <div
                 style={{
                   width: 12,
@@ -726,12 +1192,7 @@ function TimelineView() {
                 }}
               />
               <span style={{ color: "#aaa" }}>
-                T{t}{" "}
-                {t === 1
-                  ? "(최대 줌아웃)"
-                  : t === 2
-                    ? "(지역 줌)"
-                    : "(근접 줌)"}
+                T{t} ({TIER_LABELS[t]})
               </span>
             </div>
           ))}
@@ -746,7 +1207,12 @@ function TimelineView() {
             .map(([key, label]) => (
               <div
                 key={key}
-                style={{ display: "flex", gap: 4, alignItems: "center", fontSize: 11 }}
+                style={{
+                  display: "flex",
+                  gap: 4,
+                  alignItems: "center",
+                  fontSize: 11,
+                }}
               >
                 <div
                   style={{
@@ -760,6 +1226,13 @@ function TimelineView() {
               </div>
             ))}
         </div>
+
+        {/* [cl] 수정 로그 카운트 */}
+        {editLog.length > 0 && (
+          <div style={{ marginTop: 8, fontSize: 11, color: "#f59e0b" }}>
+            ✎ {editLog.length}건 수정됨 (세션 내)
+          </div>
+        )}
       </div>
     </div>
   );
@@ -781,9 +1254,13 @@ function ListView({
 
   const [filterRegion, setFilterRegion] = useState<string>("all");
   const [filterTier, setFilterTier] = useState<string>("all");
-  const [filterFlag, setFilterFlag] = useState<"all" | "flagged" | "commented">("all");
+  const [filterFlag, setFilterFlag] = useState<
+    "all" | "flagged" | "commented"
+  >("all");
   const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState<"score" | "sitelinks" | "name_ko" | "name_en" | "tier">("score");
+  const [sortBy, setSortBy] = useState<
+    "score" | "sitelinks" | "name_ko" | "name_en" | "tier"
+  >("score");
   const [sortDesc, setSortDesc] = useState(true);
 
   const [flagged, setFlagged] = useState<Set<number>>(new Set());
@@ -824,10 +1301,14 @@ function ListView({
   const filtered = useMemo(() => {
     let result = entities.map((e, i) => ({ ...e, _idx: i }));
 
-    if (filterRegion !== "all") result = result.filter((e) => e.region === filterRegion);
-    if (filterTier !== "all") result = result.filter((e) => e.tier === parseInt(filterTier));
-    if (filterFlag === "flagged") result = result.filter((e) => flagged.has(e._idx));
-    else if (filterFlag === "commented") result = result.filter((e) => comments[e._idx]);
+    if (filterRegion !== "all")
+      result = result.filter((e) => e.region === filterRegion);
+    if (filterTier !== "all")
+      result = result.filter((e) => e.tier === parseInt(filterTier));
+    if (filterFlag === "flagged")
+      result = result.filter((e) => flagged.has(e._idx));
+    else if (filterFlag === "commented")
+      result = result.filter((e) => comments[e._idx]);
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       result = result.filter(
@@ -840,55 +1321,90 @@ function ListView({
 
     result.sort((a, b) => {
       let va: any, vb: any;
-      if (sortBy === "score") { va = a.score ?? 0; vb = b.score ?? 0; }
-      else if (sortBy === "sitelinks") { va = a.sitelinks ?? 0; vb = b.sitelinks ?? 0; }
-      else if (sortBy === "tier") { va = a.tier ?? 99; vb = b.tier ?? 99; }
-      else if (sortBy === "name_ko") { va = a.name_ko ?? "zzz"; vb = b.name_ko ?? "zzz"; }
-      else { va = a.name_en; vb = b.name_en; }
+      if (sortBy === "score") {
+        va = a.score ?? 0;
+        vb = b.score ?? 0;
+      } else if (sortBy === "sitelinks") {
+        va = a.sitelinks ?? 0;
+        vb = b.sitelinks ?? 0;
+      } else if (sortBy === "tier") {
+        va = a.tier ?? 99;
+        vb = b.tier ?? 99;
+      } else if (sortBy === "name_ko") {
+        va = a.name_ko ?? "zzz";
+        vb = b.name_ko ?? "zzz";
+      } else {
+        va = a.name_en;
+        vb = b.name_en;
+      }
       if (va < vb) return sortDesc ? 1 : -1;
       if (va > vb) return sortDesc ? -1 : 1;
       return 0;
     });
 
     return result;
-  }, [entities, filterRegion, filterTier, filterFlag, search, sortBy, sortDesc, flagged, comments]);
+  }, [
+    entities,
+    filterRegion,
+    filterTier,
+    filterFlag,
+    search,
+    sortBy,
+    sortDesc,
+    flagged,
+    comments,
+  ]);
 
   const toggleFlag = useCallback((idx: number) => {
     setFlagged((prev) => {
       const next = new Set(prev);
-      if (next.has(idx)) next.delete(idx); else next.add(idx);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
       return next;
     });
   }, []);
 
-  const saveComment = useCallback((idx: number) => {
-    if (commentDraft.trim()) {
-      setComments((prev) => ({ ...prev, [idx]: commentDraft.trim() }));
-      setFlagged((prev) => new Set(prev).add(idx));
-    } else {
-      setComments((prev) => { const next = { ...prev }; delete next[idx]; return next; });
-    }
-    setEditingComment(null);
-    setCommentDraft("");
-  }, [commentDraft]);
+  const saveComment = useCallback(
+    (idx: number) => {
+      if (commentDraft.trim()) {
+        setComments((prev) => ({ ...prev, [idx]: commentDraft.trim() }));
+        setFlagged((prev) => new Set(prev).add(idx));
+      } else {
+        setComments((prev) => {
+          const next = { ...prev };
+          delete next[idx];
+          return next;
+        });
+      }
+      setEditingComment(null);
+      setCommentDraft("");
+    },
+    [commentDraft]
+  );
 
-  const changeTier = useCallback((idx: number, newTier: number) => {
-    setEntities((prev) => {
-      const next = [...prev];
-      next[idx] = { ...next[idx], tier: newTier };
-      return next;
-    });
-    setDirty((prev) => new Set(prev).add(idx));
-  }, [setEntities]);
+  const changeTier = useCallback(
+    (idx: number, newTier: number) => {
+      setEntities((prev) => {
+        const next = [...prev];
+        next[idx] = { ...next[idx], tier: newTier };
+        return next;
+      });
+      setDirty((prev) => new Set(prev).add(idx));
+    },
+    [setEntities]
+  );
 
-  const changeRegion = useCallback((idx: number, newRegion: string) => {
-    setEntities((prev) => {
-      const next = [...prev];
-      next[idx] = { ...next[idx], region: newRegion };
-      return next;
-    });
-    setDirty((prev) => new Set(prev).add(idx));
-  }, [setEntities]);
+  const changeRegion = useCallback(
+    (idx: number, newRegion: string) => {
+      setEntities((prev) => {
+        const next = [...prev];
+        next[idx] = { ...next[idx], region: newRegion };
+        return next;
+      });
+      setDirty((prev) => new Set(prev).add(idx));
+    },
+    [setEntities]
+  );
 
   const save = async () => {
     if (dirty.size === 0) return;
@@ -917,13 +1433,17 @@ function ListView({
 
   const stats = useMemo(() => {
     const byTier: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0 };
-    entities.forEach((e) => { byTier[e.tier ?? 4] = (byTier[e.tier ?? 4] || 0) + 1; });
+    entities.forEach((e) => {
+      byTier[e.tier ?? 4] = (byTier[e.tier ?? 4] || 0) + 1;
+    });
     return byTier;
   }, [entities]);
 
   const regionStats = useMemo(() => {
     const map: Record<string, number> = {};
-    entities.forEach((e) => { map[e.region ?? "unknown"] = (map[e.region ?? "unknown"] || 0) + 1; });
+    entities.forEach((e) => {
+      map[e.region ?? "unknown"] = (map[e.region ?? "unknown"] || 0) + 1;
+    });
     return map;
   }, [entities]);
 
@@ -933,16 +1453,27 @@ function ListView({
   return (
     <div>
       {/* 통계 바 */}
-      <div style={{ display: "flex", gap: 12, marginBottom: 12, flexWrap: "wrap" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 12,
+          marginBottom: 12,
+          flexWrap: "wrap",
+        }}
+      >
         {[1, 2, 3, 4].map((t) => (
           <div
             key={t}
-            onClick={() => setFilterTier(filterTier === String(t) ? "all" : String(t))}
+            onClick={() =>
+              setFilterTier(filterTier === String(t) ? "all" : String(t))
+            }
             style={{
-              padding: "6px 16px", borderRadius: 6,
+              padding: "6px 16px",
+              borderRadius: 6,
               background: filterTier === String(t) ? TIER_COLORS[t] : "#222",
               border: `2px solid ${TIER_COLORS[t]}`,
-              cursor: "pointer", fontWeight: 600,
+              cursor: "pointer",
+              fontWeight: 600,
             }}
           >
             Tier {t}: {stats[t] ?? 0}개
@@ -951,29 +1482,41 @@ function ListView({
         <div
           onClick={() => setFilterTier("all")}
           style={{
-            padding: "6px 16px", borderRadius: 6,
+            padding: "6px 16px",
+            borderRadius: 6,
             background: filterTier === "all" ? "#444" : "#222",
-            border: "2px solid #555", cursor: "pointer",
+            border: "2px solid #555",
+            cursor: "pointer",
           }}
         >
           전체
         </div>
         <div
-          onClick={() => setFilterFlag(filterFlag === "flagged" ? "all" : "flagged")}
+          onClick={() =>
+            setFilterFlag(filterFlag === "flagged" ? "all" : "flagged")
+          }
           style={{
-            padding: "6px 16px", borderRadius: 6,
+            padding: "6px 16px",
+            borderRadius: 6,
             background: filterFlag === "flagged" ? "#a855f7" : "#222",
-            border: "2px solid #a855f7", cursor: "pointer", fontWeight: 600,
+            border: "2px solid #a855f7",
+            cursor: "pointer",
+            fontWeight: 600,
           }}
         >
           체크됨: {flagCount}개
         </div>
         <div
-          onClick={() => setFilterFlag(filterFlag === "commented" ? "all" : "commented")}
+          onClick={() =>
+            setFilterFlag(filterFlag === "commented" ? "all" : "commented")
+          }
           style={{
-            padding: "6px 16px", borderRadius: 6,
+            padding: "6px 16px",
+            borderRadius: 6,
             background: filterFlag === "commented" ? "#ec4899" : "#222",
-            border: "2px solid #ec4899", cursor: "pointer", fontWeight: 600,
+            border: "2px solid #ec4899",
+            cursor: "pointer",
+            fontWeight: 600,
           }}
         >
           코멘트: {commentCount}개
@@ -981,15 +1524,31 @@ function ListView({
       </div>
 
       {/* 필터 바 */}
-      <div style={{ display: "flex", gap: 12, marginBottom: 16, flexWrap: "wrap", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 12,
+          marginBottom: 16,
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+      >
         <select
           value={filterRegion}
           onChange={(e) => setFilterRegion(e.target.value)}
-          style={{ padding: "6px 12px", background: "#222", color: "#fff", border: "1px solid #444", borderRadius: 4 }}
+          style={{
+            padding: "6px 12px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+          }}
         >
           <option value="all">모든 권역</option>
           {ALL_REGIONS.map((r) => (
-            <option key={r} value={r}>{REGION_KO[r]} ({regionStats[r] ?? 0})</option>
+            <option key={r} value={r}>
+              {REGION_KO[r]} ({regionStats[r] ?? 0})
+            </option>
           ))}
         </select>
 
@@ -998,13 +1557,26 @@ function ListView({
           placeholder="검색 (한글/영문/QID)"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          style={{ padding: "6px 12px", background: "#222", color: "#fff", border: "1px solid #444", borderRadius: 4, width: 250 }}
+          style={{
+            padding: "6px 12px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+            width: 250,
+          }}
         />
 
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value as any)}
-          style={{ padding: "6px 12px", background: "#222", color: "#fff", border: "1px solid #444", borderRadius: 4 }}
+          style={{
+            padding: "6px 12px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+          }}
         >
           <option value="score">스코어순</option>
           <option value="sitelinks">Sitelinks순</option>
@@ -1015,7 +1587,14 @@ function ListView({
 
         <button
           onClick={() => setSortDesc(!sortDesc)}
-          style={{ padding: "6px 12px", background: "#333", color: "#fff", border: "1px solid #555", borderRadius: 4, cursor: "pointer" }}
+          style={{
+            padding: "6px 12px",
+            background: "#333",
+            color: "#fff",
+            border: "1px solid #555",
+            borderRadius: 4,
+            cursor: "pointer",
+          }}
         >
           {sortDesc ? "▼ 내림" : "▲ 오름"}
         </button>
@@ -1027,35 +1606,50 @@ function ListView({
           disabled={commentSaving || (flagCount === 0 && commentCount === 0)}
           style={{
             padding: "6px 16px",
-            background: (flagCount > 0 || commentCount > 0) ? "#a855f7" : "#333",
-            color: "#fff", border: "none", borderRadius: 6,
-            cursor: (flagCount > 0 || commentCount > 0) ? "pointer" : "default",
+            background: flagCount > 0 || commentCount > 0 ? "#a855f7" : "#333",
+            color: "#fff",
+            border: "none",
+            borderRadius: 6,
+            cursor:
+              flagCount > 0 || commentCount > 0 ? "pointer" : "default",
             fontWeight: 600,
           }}
         >
           {commentSaving ? "저장 중..." : `코멘트 저장 (${commentCount}개)`}
         </button>
-        {commentSaveMsg && <span style={{ color: "#a855f7", fontWeight: 600 }}>{commentSaveMsg}</span>}
+        {commentSaveMsg && (
+          <span style={{ color: "#a855f7", fontWeight: 600 }}>
+            {commentSaveMsg}
+          </span>
+        )}
 
         <button
           onClick={save}
           disabled={dirty.size === 0 || saving}
           style={{
-            marginLeft: "auto", padding: "8px 24px",
+            marginLeft: "auto",
+            padding: "8px 24px",
             background: dirty.size > 0 ? "#22c55e" : "#333",
-            color: "#fff", border: "none", borderRadius: 6,
+            color: "#fff",
+            border: "none",
+            borderRadius: 6,
             cursor: dirty.size > 0 ? "pointer" : "default",
-            fontWeight: 700, fontSize: 15,
+            fontWeight: 700,
+            fontSize: 15,
           }}
         >
           {saving ? "저장 중..." : `Tier 저장 (${dirty.size}개 변경)`}
         </button>
-        {saveMsg && <span style={{ color: "#22c55e", fontWeight: 600 }}>{saveMsg}</span>}
+        {saveMsg && (
+          <span style={{ color: "#22c55e", fontWeight: 600 }}>{saveMsg}</span>
+        )}
       </div>
 
       {/* 테이블 */}
       <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+        <table
+          style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}
+        >
           <thead>
             <tr style={{ borderBottom: "2px solid #333", textAlign: "left" }}>
               <th style={{ padding: "8px 4px", width: 30 }}>V</th>
@@ -1082,7 +1676,13 @@ function ListView({
                   key={e._idx}
                   style={{
                     borderBottom: "1px solid #222",
-                    background: isFlagged ? "#2a1a2a" : isDirty ? "#1a2a1a" : i % 2 === 0 ? "#161616" : "#111",
+                    background: isFlagged
+                      ? "#2a1a2a"
+                      : isDirty
+                        ? "#1a2a1a"
+                        : i % 2 === 0
+                          ? "#161616"
+                          : "#111",
                   }}
                 >
                   <td style={{ padding: "4px", textAlign: "center" }}>
@@ -1090,7 +1690,12 @@ function ListView({
                       type="checkbox"
                       checked={isFlagged}
                       onChange={() => toggleFlag(e._idx)}
-                      style={{ width: 16, height: 16, cursor: "pointer", accentColor: "#a855f7" }}
+                      style={{
+                        width: 16,
+                        height: 16,
+                        cursor: "pointer",
+                        accentColor: "#a855f7",
+                      }}
                     />
                   </td>
                   <td style={{ padding: "4px", color: "#666" }}>{i + 1}</td>
@@ -1101,9 +1706,15 @@ function ListView({
                           key={t}
                           onClick={() => changeTier(e._idx, t)}
                           style={{
-                            width: 26, height: 24, border: "none", borderRadius: 3,
-                            cursor: "pointer", fontWeight: 700, fontSize: 11,
-                            background: e.tier === t ? TIER_COLORS[t] : "#2a2a2a",
+                            width: 26,
+                            height: 24,
+                            border: "none",
+                            borderRadius: 3,
+                            cursor: "pointer",
+                            fontWeight: 700,
+                            fontSize: 11,
+                            background:
+                              e.tier === t ? TIER_COLORS[t] : "#2a2a2a",
                             color: e.tier === t ? "#fff" : "#555",
                           }}
                         >
@@ -1112,13 +1723,29 @@ function ListView({
                       ))}
                     </div>
                   </td>
-                  <td style={{ padding: "4px", color: "#888", fontSize: 11 }}>{e.score?.toFixed(1) ?? "—"}</td>
-                  <td style={{ padding: "4px", color: "#aaa", fontSize: 12 }}>{e.sitelinks ?? 0}</td>
-                  <td style={{ padding: "4px", fontWeight: e.name_ko ? 600 : 400, color: e.name_ko ? "#fff" : "#555" }}>
+                  <td
+                    style={{ padding: "4px", color: "#888", fontSize: 11 }}
+                  >
+                    {e.score?.toFixed(1) ?? "—"}
+                  </td>
+                  <td
+                    style={{ padding: "4px", color: "#aaa", fontSize: 12 }}
+                  >
+                    {e.sitelinks ?? 0}
+                  </td>
+                  <td
+                    style={{
+                      padding: "4px",
+                      fontWeight: e.name_ko ? 600 : 400,
+                      color: e.name_ko ? "#fff" : "#555",
+                    }}
+                  >
                     {e.name_ko || "—"}
                   </td>
                   <td style={{ padding: "4px" }}>{e.name_en}</td>
-                  <td style={{ padding: "4px", color: "#888", fontSize: 11 }}>
+                  <td
+                    style={{ padding: "4px", color: "#888", fontSize: 11 }}
+                  >
                     {e.start ?? "?"} ~ {e.end ?? "?"}
                   </td>
                   <td style={{ padding: "4px" }}>
@@ -1126,12 +1753,19 @@ function ListView({
                       value={e.region ?? "unknown"}
                       onChange={(ev) => changeRegion(e._idx, ev.target.value)}
                       style={{
-                        padding: "2px 4px", background: "#222", color: "#ccc",
-                        border: "1px solid #444", borderRadius: 3, fontSize: 11, width: "100%",
+                        padding: "2px 4px",
+                        background: "#222",
+                        color: "#ccc",
+                        border: "1px solid #444",
+                        borderRadius: 3,
+                        fontSize: 11,
+                        width: "100%",
                       }}
                     >
                       {ALL_REGIONS.map((r) => (
-                        <option key={r} value={r}>{REGION_KO[r]}</option>
+                        <option key={r} value={r}>
+                          {REGION_KO[r]}
+                        </option>
                       ))}
                     </select>
                   </td>
@@ -1144,20 +1778,33 @@ function ListView({
                           onChange={(ev) => setCommentDraft(ev.target.value)}
                           onKeyDown={(ev) => {
                             if (ev.key === "Enter") saveComment(e._idx);
-                            if (ev.key === "Escape") { setEditingComment(null); setCommentDraft(""); }
+                            if (ev.key === "Escape") {
+                              setEditingComment(null);
+                              setCommentDraft("");
+                            }
                           }}
                           autoFocus
                           placeholder="코멘트 입력 (Enter 저장)"
                           style={{
-                            flex: 1, padding: "3px 6px", background: "#1a1a2a", color: "#fff",
-                            border: "1px solid #a855f7", borderRadius: 3, fontSize: 12,
+                            flex: 1,
+                            padding: "3px 6px",
+                            background: "#1a1a2a",
+                            color: "#fff",
+                            border: "1px solid #a855f7",
+                            borderRadius: 3,
+                            fontSize: 12,
                           }}
                         />
                         <button
                           onClick={() => saveComment(e._idx)}
                           style={{
-                            padding: "3px 8px", background: "#a855f7", color: "#fff",
-                            border: "none", borderRadius: 3, cursor: "pointer", fontSize: 11,
+                            padding: "3px 8px",
+                            background: "#a855f7",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: 3,
+                            cursor: "pointer",
+                            fontSize: 11,
                           }}
                         >
                           OK
@@ -1165,11 +1812,20 @@ function ListView({
                       </div>
                     ) : (
                       <div
-                        onClick={() => { setEditingComment(e._idx); setCommentDraft(comments[e._idx] || ""); }}
+                        onClick={() => {
+                          setEditingComment(e._idx);
+                          setCommentDraft(comments[e._idx] || "");
+                        }}
                         style={{
-                          padding: "3px 6px", minHeight: 24, cursor: "text", borderRadius: 3, fontSize: 12,
+                          padding: "3px 6px",
+                          minHeight: 24,
+                          cursor: "text",
+                          borderRadius: 3,
+                          fontSize: 12,
                           background: hasComment ? "#1a1a2a" : "transparent",
-                          border: hasComment ? "1px solid #a855f766" : "1px solid transparent",
+                          border: hasComment
+                            ? "1px solid #a855f766"
+                            : "1px solid transparent",
                           color: hasComment ? "#d8b4fe" : "#444",
                         }}
                       >
@@ -1213,7 +1869,14 @@ export default function TierReviewPage() {
 
   if (loading) {
     return (
-      <div style={{ padding: 40, color: "#fff", background: "#111", minHeight: "100vh" }}>
+      <div
+        style={{
+          padding: 40,
+          color: "#fff",
+          background: "#111",
+          minHeight: "100vh",
+        }}
+      >
         로딩 중...
       </div>
     );
@@ -1229,7 +1892,14 @@ export default function TierReviewPage() {
         fontFamily: "'Pretendard', sans-serif",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 16,
+        }}
+      >
         <h1 style={{ margin: 0, fontSize: 24 }}>
           Tier Review — {entities.length}개 엔티티
         </h1>
@@ -1240,11 +1910,17 @@ export default function TierReviewPage() {
         <button
           onClick={() => setActiveTab("timeline")}
           style={{
-            padding: "10px 24px", borderRadius: 8,
+            padding: "10px 24px",
+            borderRadius: 8,
             background: activeTab === "timeline" ? "#06b6d4" : "#222",
             color: activeTab === "timeline" ? "#fff" : "#888",
-            border: activeTab === "timeline" ? "2px solid #06b6d4" : "2px solid #333",
-            cursor: "pointer", fontWeight: 700, fontSize: 14,
+            border:
+              activeTab === "timeline"
+                ? "2px solid #06b6d4"
+                : "2px solid #333",
+            cursor: "pointer",
+            fontWeight: 700,
+            fontSize: 14,
           }}
         >
           시기별 보기
@@ -1252,11 +1928,15 @@ export default function TierReviewPage() {
         <button
           onClick={() => setActiveTab("list")}
           style={{
-            padding: "10px 24px", borderRadius: 8,
+            padding: "10px 24px",
+            borderRadius: 8,
             background: activeTab === "list" ? "#06b6d4" : "#222",
             color: activeTab === "list" ? "#fff" : "#888",
-            border: activeTab === "list" ? "2px solid #06b6d4" : "2px solid #333",
-            cursor: "pointer", fontWeight: 700, fontSize: 14,
+            border:
+              activeTab === "list" ? "2px solid #06b6d4" : "2px solid #333",
+            cursor: "pointer",
+            fontWeight: 700,
+            fontSize: 14,
           }}
         >
           전체 리스트
@@ -1265,7 +1945,9 @@ export default function TierReviewPage() {
 
       {/* ── 탭 컨텐츠 ── */}
       {activeTab === "timeline" && <TimelineView />}
-      {activeTab === "list" && <ListView entities={entities} setEntities={setEntities} />}
+      {activeTab === "list" && (
+        <ListView entities={entities} setEntities={setEntities} />
+      )}
     </div>
   );
 }

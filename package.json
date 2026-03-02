@@ -26,13 +26,16 @@
     "@gltf-transform/extensions": "^4.3.0",
     "@gltf-transform/functions": "^4.3.0",
     "@number-flow/react": "^0.5.14",
+    "@types/leaflet": "^1.9.21",
     "cesium": "^1.138.0",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.575.0",
     "motion": "^12.34.3",
     "next": "16.1.6",
     "oh-my-claude-sisyphus": "^4.5.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-leaflet": "^5.0.0",
     "resium": "^1.19.4"
   },
   "devDependencies": {
