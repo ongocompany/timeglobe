@@ -6323,7 +6323,7 @@
     "lineage_id": null,
     "color": "hsl(20, 70%, 55%)",
     "qid": "Q2214985",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 1
   },
@@ -6547,7 +6547,7 @@
     "lineage_id": "L0055",
     "color": "hsl(293, 70%, 55%)",
     "qid": "Q2564694",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 11
   },
@@ -6925,7 +6925,7 @@
     "lineage_id": "L0126",
     "color": "hsl(168, 70%, 55%)",
     "qid": "Q640010",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 13
   },
@@ -7611,7 +7611,7 @@
     "lineage_id": "L0068",
     "color": "hsl(113, 70%, 55%)",
     "qid": "Q5327935",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 2
   },
@@ -7653,7 +7653,7 @@
     "lineage_id": "L0105",
     "color": "hsl(214, 70%, 55%)",
     "qid": "Q15890801",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 12
   },
@@ -8045,7 +8045,7 @@
     "lineage_id": "L0135",
     "color": "hsl(316, 70%, 55%)",
     "qid": "Q144395",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 1
   },
@@ -8709,7 +8709,7 @@
   },
   {
     "name_en": "Yawnghwe",
-    "name_ko": "야우응흐웨",
+    "name_ko": "냐웅쉐",
     "lon": 96.935,
     "lat": 20.663333333,
     "start_year": 1359,
@@ -8717,7 +8717,7 @@
     "lineage_id": "L0042",
     "color": "hsl(159, 70%, 55%)",
     "qid": "Q18750170",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 4
   },
@@ -10081,7 +10081,7 @@
   },
   {
     "name_en": "Bhurshut",
-    "name_ko": "브후르슈트",
+    "name_ko": "부르슈트",
     "lon": 88.04,
     "lat": 22.76,
     "start_year": 1500,
@@ -10089,7 +10089,7 @@
     "lineage_id": "L0025",
     "color": "hsl(174, 70%, 55%)",
     "qid": "Q4902206",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 6
   },
@@ -10123,7 +10123,7 @@
   },
   {
     "name_en": "Mukriyan",
-    "name_ko": "무크리야은",
+    "name_ko": "무크리얀",
     "lon": 45.72222222,
     "lat": 36.76305556,
     "start_year": 1500,
@@ -10131,7 +10131,7 @@
     "lineage_id": "L0026",
     "color": "hsl(32, 70%, 55%)",
     "qid": "Q3675486",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 10
   },
@@ -10327,7 +10327,7 @@
     "lineage_id": "L0152",
     "color": "hsl(45, 70%, 55%)",
     "qid": "Q552822",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 14
   },
@@ -10719,7 +10719,7 @@
     "lineage_id": null,
     "color": "hsl(301, 70%, 55%)",
     "qid": "Q1759249",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 13
   },
@@ -11405,7 +11405,7 @@
     "lineage_id": null,
     "color": "hsl(269, 70%, 55%)",
     "qid": "Q10920088",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 7
   },
@@ -12181,7 +12181,7 @@
   },
   {
     "name_en": "Changbhakar",
-    "name_ko": "차응브하카르",
+    "name_ko": "창바카르",
     "lon": 81.81666667,
     "lat": 23.73333333,
     "start_year": 1790,
@@ -12189,7 +12189,7 @@
     "lineage_id": "L0021",
     "color": "hsl(163, 70%, 55%)",
     "qid": "Q932370",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 7
   },
@@ -12265,7 +12265,7 @@
   },
   {
     "name_en": "Republic of Graaff-Reinet",
-    "name_ko": "흐라프-레이넷 공화국",
+    "name_ko": "그라프라이넷 공화국",
     "lon": 24.53333282,
     "lat": -32.25,
     "start_year": 1795,
@@ -12273,7 +12273,7 @@
     "lineage_id": null,
     "color": "hsl(209, 70%, 55%)",
     "qid": "Q2145348",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 8
   },
@@ -12371,7 +12371,7 @@
     "lineage_id": null,
     "color": "hsl(195, 70%, 55%)",
     "qid": "Q1540575",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 11
   },
@@ -12819,7 +12819,7 @@
     "lineage_id": "L0106",
     "color": "hsl(215, 70%, 55%)",
     "qid": "Q16595757",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 3
   },
@@ -12959,7 +12959,7 @@
     "lineage_id": "L0043",
     "color": "hsl(358, 70%, 55%)",
     "qid": "Q412980",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 9
   },
@@ -13029,7 +13029,7 @@
     "lineage_id": null,
     "color": "hsl(334, 70%, 55%)",
     "qid": "Q3267672",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 11
   },
@@ -13043,7 +13043,7 @@
     "lineage_id": "L0149",
     "color": "hsl(323, 70%, 55%)",
     "qid": "Q932487",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 5
   },
@@ -13169,7 +13169,7 @@
     "lineage_id": null,
     "color": "hsl(313, 70%, 55%)",
     "qid": "Q1269910",
-    "tier": 2,
+    "tier": 3,
     "region": "north_america",
     "sitelinks": 9
   },
@@ -13295,7 +13295,7 @@
     "lineage_id": null,
     "color": "hsl(273, 70%, 55%)",
     "qid": "Q7893618",
-    "tier": 2,
+    "tier": 3,
     "region": "oceania",
     "sitelinks": 8
   },
@@ -13477,7 +13477,7 @@
     "lineage_id": "L0188",
     "color": "hsl(76, 70%, 55%)",
     "qid": "Q13035917",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 5
   },
@@ -13497,7 +13497,7 @@
   },
   {
     "name_en": "Republic of Zoutpansberg",
-    "name_ko": "조우트판스베르그 공화국",
+    "name_ko": "주트판스베르그 공화국",
     "lon": 29.77,
     "lat": -23.0525,
     "start_year": 1849,
@@ -13505,7 +13505,7 @@
     "lineage_id": null,
     "color": "hsl(5, 70%, 55%)",
     "qid": "Q99930377",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 6
   },
@@ -13589,7 +13589,7 @@
     "lineage_id": "L0185",
     "color": "hsl(344, 70%, 55%)",
     "qid": "Q958477",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 6
   },
@@ -13945,7 +13945,7 @@
   },
   {
     "name_en": "Republic of Zululand",
-    "name_ko": "주루라은드 공화국",
+    "name_ko": "줄루랜드 공화국",
     "lon": 30.071652,
     "lat": -29.118375,
     "start_year": 1884,
@@ -13953,7 +13953,7 @@
     "lineage_id": null,
     "color": "hsl(344, 70%, 55%)",
     "qid": "Q21076534",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 1
   },
@@ -14057,7 +14057,7 @@
   },
   {
     "name_en": "Upingtonia",
-    "name_ko": "우피응토니아",
+    "name_ko": "우핑토니아",
     "lon": 18.116666666,
     "lat": -19.566666666,
     "start_year": 1885,
@@ -14065,7 +14065,7 @@
     "lineage_id": "L0189",
     "color": "hsl(351, 70%, 55%)",
     "qid": "Q8146595",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 12
   },
@@ -14289,7 +14289,7 @@
     "lineage_id": "L0018",
     "color": "hsl(275, 70%, 55%)",
     "qid": "Q2028318",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 11
   },
@@ -14639,7 +14639,7 @@
     "lineage_id": "L0104",
     "color": "hsl(357, 70%, 55%)",
     "qid": "Q965346",
-    "tier": 2,
+    "tier": 3,
     "region": "north_africa",
     "sitelinks": 14
   },
@@ -16011,7 +16011,7 @@
     "lineage_id": null,
     "color": "hsl(56, 70%, 55%)",
     "qid": "Q41510",
-    "tier": 2,
+    "tier": 3,
     "region": "north_america",
     "sitelinks": 5
   },
@@ -16375,7 +16375,7 @@
     "lineage_id": null,
     "color": "hsl(321, 70%, 55%)",
     "qid": "Q200573",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 0
   },

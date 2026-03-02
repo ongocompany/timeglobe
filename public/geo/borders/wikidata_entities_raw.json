@@ -8958,11 +8958,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 30.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q953432",
@@ -9015,18 +9015,18 @@
   {
     "qid": "Q48698054",
     "name_en": "Montsoreau",
-    "name_ko": "모은트소레아",
+    "name_ko": "몽소로",
     "start": "1000",
     "end": "1804",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 29.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q831310",
@@ -9134,11 +9134,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "unknown",
     "score": 60.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q174306",
@@ -9184,11 +9184,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "unknown",
     "score": 45.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q3960415",
@@ -9273,18 +9273,18 @@
   {
     "qid": "Q12491034",
     "name_en": "Kahuripan",
-    "name_ko": "카후리파은",
+    "name_ko": "카후리판",
     "start": "1019",
     "end": "1045",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 12,
     "region": "unknown",
     "score": 52.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q7216494",
@@ -9398,11 +9398,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "unknown",
     "score": 44.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q491790",
@@ -9483,22 +9483,6 @@
     "region": "unknown",
     "score": 50.2,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q98400506",
-    "name_en": "Venetian Empire",
-    "name_ko": "베네치아 제국",
-    "start": "1050",
-    "end": "1750",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 0,
-    "region": "unknown",
-    "score": 15.7,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q104192614",
@@ -10400,11 +10384,11 @@
     "lat": "42.75",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "central_asia",
     "score": 11.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q107380",
@@ -10784,11 +10768,11 @@
     "lat": "52.97909",
     "type": "historical",
     "lineage_id": "L0055",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "europe",
     "score": 38.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2670639",
@@ -11141,11 +11125,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 49.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q420759",
@@ -11365,11 +11349,11 @@
     "lat": "6.6500001",
     "type": "historical",
     "lineage_id": "L0126",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "sub_saharan",
     "score": 53.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2863018",
@@ -11773,11 +11757,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 32.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q3136869",
@@ -11977,18 +11961,18 @@
   {
     "qid": "Q3818611",
     "name_en": "Usfurids",
-    "name_ko": "우스푸리드스",
+    "name_ko": "우스푸리드",
     "start": "1232",
     "end": "1392",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 37.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q54805326",
@@ -12396,11 +12380,11 @@
     "lat": "53.916666666",
     "type": "historical",
     "lineage_id": "L0068",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "europe",
     "score": 23.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2029522",
@@ -12460,11 +12444,11 @@
     "lat": "45.45",
     "type": "historical",
     "lineage_id": "L0105",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 12,
     "region": "europe",
     "score": 40.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q11750535",
@@ -13095,11 +13079,11 @@
     "lat": "23.283333333",
     "type": "historical",
     "lineage_id": "L0135",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "south_asia",
     "score": 23.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2605410",
@@ -13676,11 +13660,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "unknown",
     "score": 44.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q389004",
@@ -14328,18 +14312,18 @@
   {
     "qid": "Q18750170",
     "name_en": "Yawnghwe",
-    "name_ko": "야우응흐웨",
+    "name_ko": "냐웅쉐",
     "start": "1359",
     "end": "1959",
     "lon": "96.935",
     "lat": "20.663333333",
     "type": "historical",
     "lineage_id": "L0042",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "southeast_asia",
     "score": 34.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q178085",
@@ -14724,11 +14708,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "unknown",
     "score": 26.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q894030",
@@ -15056,18 +15040,18 @@
   {
     "qid": "Q4221180",
     "name_en": "Khongoray",
-    "name_ko": "크오응고라이",
+    "name_ko": "홍고라이",
     "start": "1399",
     "end": "1703",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "unknown",
     "score": 46.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q4332415",
@@ -15335,11 +15319,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
     "score": 58.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2365048",
@@ -15383,11 +15367,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 49.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q473748",
@@ -15893,18 +15877,18 @@
   {
     "qid": "Q1644002",
     "name_en": "Gyaaman",
-    "name_ko": "그야아마은",
+    "name_ko": "갸만",
     "start": "1450",
     "end": "1895",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "unknown",
     "score": 48.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q4118614",
@@ -16159,11 +16143,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 19.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q109252949",
@@ -16632,18 +16616,18 @@
   {
     "qid": "Q4902206",
     "name_en": "Bhurshut",
-    "name_ko": "브후르슈트",
+    "name_ko": "부르슈트",
     "start": "1500",
     "end": "1800",
     "lon": "88.04",
     "lat": "22.76",
     "type": "historical",
     "lineage_id": "L0025",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "south_asia",
     "score": 35.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q967246",
@@ -16680,18 +16664,18 @@
   {
     "qid": "Q3675486",
     "name_en": "Mukriyan",
-    "name_ko": "무크리야은",
+    "name_ko": "무크리얀",
     "start": "1500",
     "end": "1900",
     "lon": "45.72222222",
     "lat": "36.76305556",
     "type": "historical",
     "lineage_id": "L0026",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "central_asia",
     "score": 38.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q3813189",
@@ -16863,11 +16847,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 33.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q112062660",
@@ -17151,11 +17135,11 @@
     "lat": "53.793888888",
     "type": "historical",
     "lineage_id": "L0152",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "europe",
     "score": 44,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q3136850",
@@ -17812,11 +17796,11 @@
     "lat": "-0.25",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "latin_america",
     "score": 56.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1623936",
@@ -18183,11 +18167,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 47.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q889897",
@@ -18448,18 +18432,18 @@
   {
     "qid": "Q11088223",
     "name_en": "Ming Zheng",
-    "name_ko": "미응 지에응",
+    "name_ko": "명정",
     "start": "1628",
     "end": "1683",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 34.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q221357",
@@ -18634,11 +18618,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "unknown",
     "score": 3.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1812976",
@@ -18666,11 +18650,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "unknown",
     "score": 41.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q700229",
@@ -18730,11 +18714,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "unknown",
     "score": 54.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q310650",
@@ -19069,11 +19053,11 @@
     "lat": "23.1",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "southeast_asia",
     "score": 29.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q2485209",
@@ -19101,11 +19085,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 12.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1192936",
@@ -19181,11 +19165,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "unknown",
     "score": 2.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q6037274",
@@ -19302,18 +19286,18 @@
   {
     "qid": "Q4848487",
     "name_en": "Bailundu",
-    "name_ko": "바이루은드우",
+    "name_ko": "바일룬두",
     "start": "1700",
     "end": "1903",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 35.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q6733951",
@@ -19737,18 +19721,18 @@
   {
     "qid": "Q640998",
     "name_en": "Senior jüz",
-    "name_ko": "세니오르 주위즈",
+    "name_ko": "울루 주즈",
     "start": "1718",
     "end": "1822",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "unknown",
     "score": 57.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q102133106",
@@ -20060,18 +20044,18 @@
   {
     "qid": "Q5675285",
     "name_en": "Kazembe",
-    "name_ko": "카제음브에",
+    "name_ko": "카젬베",
     "start": "1740",
     "end": "1899",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "unknown",
     "score": 56.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2121839",
@@ -20131,11 +20115,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "unknown",
     "score": 59.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q210198",
@@ -20262,11 +20246,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 34.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2578028",
@@ -20758,11 +20742,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "unknown",
     "score": 55.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q806233",
@@ -20783,18 +20767,18 @@
   {
     "qid": "Q932370",
     "name_en": "Changbhakar",
-    "name_ko": "차응브하카르",
+    "name_ko": "창바카르",
     "start": "1790",
     "end": "1948",
     "lon": "81.81666667",
     "lat": "23.73333333",
     "type": "historical",
     "lineage_id": "L0021",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "south_asia",
     "score": 35.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q692015",
@@ -20895,18 +20879,18 @@
   {
     "qid": "Q2145348",
     "name_en": "Republic of Graaff-Reinet",
-    "name_ko": "흐라프-레이넷 공화국",
+    "name_ko": "그라프라이넷 공화국",
     "start": "1795",
     "end": "1796",
     "lon": "24.53333282",
     "lat": "-32.25",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "sub_saharan",
     "score": 30.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q463289",
@@ -21014,11 +20998,11 @@
     "lat": "36.04333333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "europe",
     "score": 33,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q992220",
@@ -21030,11 +21014,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 11,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q8050352",
@@ -21105,18 +21089,18 @@
   {
     "qid": "Q806435",
     "name_en": "Bang Assu",
-    "name_ko": "바응 아수",
+    "name_ko": "방아수",
     "start": "1800",
     "end": "1890",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 31.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q11910203",
@@ -21786,11 +21770,11 @@
     "lat": "44.383333333",
     "type": "historical",
     "lineage_id": "L0106",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "europe",
     "score": 17.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q158445",
@@ -21939,18 +21923,18 @@
   {
     "qid": "Q929693",
     "name_en": "New Fatherland",
-    "name_ko": "뉴 파테르라은드",
+    "name_ko": "뉴파더랜드",
     "start": "1817",
     "end": "1823",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 33.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q146862",
@@ -21978,11 +21962,11 @@
     "lat": "26.45",
     "type": "historical",
     "lineage_id": "L0043",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "south_asia",
     "score": 40.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q28669042",
@@ -22090,11 +22074,11 @@
     "lat": "-30.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "latin_america",
     "score": 34.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q135766054",
@@ -22106,11 +22090,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 10.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q932487",
@@ -22122,11 +22106,11 @@
     "lat": "16.83333333",
     "type": "historical",
     "lineage_id": "L0149",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "south_asia",
     "score": 29.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q3892131",
@@ -22314,11 +22298,11 @@
     "lat": "47.51",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "north_america",
     "score": 31.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2088141",
@@ -22410,11 +22394,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
     "score": 52.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q889912",
@@ -22522,11 +22506,11 @@
     "lat": "-36.84",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "oceania",
     "score": 56.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q162192",
@@ -22698,11 +22682,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 18.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q107368497",
@@ -22739,18 +22723,18 @@
   {
     "qid": "Q137392980",
     "name_en": "Möng Leng",
-    "name_ko": "므외응 레응",
+    "name_ko": "뭉렝",
     "start": "1840",
     "end": "1887",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 10.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q8842943",
@@ -22787,18 +22771,18 @@
   {
     "qid": "Q56314483",
     "name_en": "Kara-Kyrgyz Khanate",
-    "name_ko": "카라키르기즈 칸국",
+    "name_ko": "카라키르기스 칸국",
     "start": "1841",
     "end": "1867",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 42.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q671658",
@@ -22858,27 +22842,11 @@
     "lat": "-28.538056",
     "type": "historical",
     "lineage_id": "L0188",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "sub_saharan",
     "score": 24.1,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q96404668",
-    "name_en": "Emirate of Qatar",
-    "name_ko": "카타르 토후국",
-    "start": "1847",
-    "end": "1971",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 0,
-    "region": "unknown",
-    "score": 2.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2037576",
@@ -22915,18 +22883,18 @@
   {
     "qid": "Q99930377",
     "name_en": "Republic of Zoutpansberg",
-    "name_ko": "조우트판스베르그 공화국",
+    "name_ko": "주트판스베르그 공화국",
     "start": "1849",
     "end": "1858",
     "lon": "29.77",
     "lat": "-23.0525",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "sub_saharan",
     "score": 26.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q661340",
@@ -23018,11 +22986,11 @@
     "lat": "-27.633333333",
     "type": "historical",
     "lineage_id": "L0185",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "sub_saharan",
     "score": 26.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q7314427",
@@ -23034,11 +23002,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
     "score": 47,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q218023",
@@ -23244,11 +23212,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 29.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q3326429",
@@ -23422,11 +23390,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 9.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q135235625",
@@ -23438,11 +23406,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 9.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q815731",
@@ -23639,18 +23607,18 @@
   {
     "qid": "Q21076534",
     "name_en": "Republic of Zululand",
-    "name_ko": "주루라은드 공화국",
+    "name_ko": "줄루랜드 공화국",
     "start": "1884",
     "end": "1887",
     "lon": "30.071652",
     "lat": "-29.118375",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "sub_saharan",
     "score": 8.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q662653",
@@ -23767,18 +23735,18 @@
   {
     "qid": "Q8146595",
     "name_en": "Upingtonia",
-    "name_ko": "우피응토니아",
+    "name_ko": "우핑토니아",
     "start": "1885",
     "end": "1887",
     "lon": "18.116666666",
     "lat": "-19.566666666",
     "type": "historical",
     "lineage_id": "L0189",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 12,
     "region": "sub_saharan",
     "score": 39.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q2975232",
@@ -24113,11 +24081,11 @@
     "lat": "41.926944",
     "type": "historical",
     "lineage_id": "L0018",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "middle_east",
     "score": 34.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q96028967",
@@ -24647,11 +24615,11 @@
     "lat": "32.5319",
     "type": "historical",
     "lineage_id": "L0104",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "north_africa",
     "score": 43.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1436243",
@@ -25469,11 +25437,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "unknown",
     "score": 55.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q49910",
@@ -26087,11 +26055,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "unknown",
     "score": 42.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1517772",
@@ -26169,11 +26137,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 30.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1044668",
@@ -26267,11 +26235,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
     "score": 50,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived"
   },
   {
     "qid": "Q114415093",
@@ -26491,11 +26459,11 @@
     "lat": "38.58",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "north_america",
     "score": 21.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1798813",
@@ -26959,11 +26927,11 @@
     "lon": "78.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "south_asia",
     "score": 5.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "bad_transliteration"
   },
   {
     "qid": "Q1138819",

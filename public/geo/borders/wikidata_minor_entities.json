@@ -10355,5 +10355,39 @@
     "score": 44.9,
     "tier_reason": "score_top55",
     "minor_reason": "regime_change_of_parent"
+  },
+  {
+    "qid": "Q98400506",
+    "name_en": "Venetian Empire",
+    "name_ko": "베네치아 제국",
+    "start": "1050",
+    "end": "1750",
+    "lon": "",
+    "lat": "",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 0,
+    "region": "unknown",
+    "score": 15.7,
+    "tier_reason": "score_rest",
+    "minor_reason": "duplicate_of_Q4948_venice"
+  },
+  {
+    "qid": "Q96404668",
+    "name_en": "Emirate of Qatar",
+    "name_ko": "카타르 토후국",
+    "start": "1847",
+    "end": "1971",
+    "lon": "",
+    "lat": "",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 0,
+    "region": "unknown",
+    "score": 2.5,
+    "tier_reason": "score_rest",
+    "minor_reason": "duplicate_of_Q846_qatar"
   }
 ]

@@ -5513,7 +5513,7 @@
     "qid": "Q1315339",
     "name_en": "Lohara Dynasty",
     "name_ko": "로하라 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1324,
     "end_year": 1338,
     "snapshots": [
@@ -10113,7 +10113,7 @@
     "qid": "Q3267672",
     "name_en": "Republic of Entre Ríos",
     "name_ko": "엔트레리오스 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1820,
     "end_year": 1821,
     "snapshots": [
@@ -10447,7 +10447,7 @@
     "qid": "Q7893618",
     "name_en": "United Tribes of New Zealand",
     "name_ko": "뉴질랜드 부족연합",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1835,
     "end_year": 1840,
     "snapshots": [
@@ -13561,7 +13561,7 @@
     "qid": "Q7842409",
     "name_en": "Trinidad and Tobago",
     "name_ko": "트리니다드 토바고",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1962,
     "end_year": 2025,
     "snapshots": [
