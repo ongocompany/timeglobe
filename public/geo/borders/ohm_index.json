@@ -2673,7 +2673,7 @@
     "qid": "Q207600",
     "name_en": "Aghlabids",
     "name_ko": "아글라브 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 800,
     "end_year": 909,
     "snapshots": [
@@ -4077,7 +4077,7 @@
     "qid": "Q205718",
     "name_en": "Zirid Dynasty",
     "name_ko": "지리드 왕조",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1044,
     "end_year": 1148,
     "snapshots": [

@@ -6186,11 +6186,11 @@
     "lat": "34.3",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 4,
     "sitelinks": 22,
     "region": "east_asia",
     "score": 47.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived_chinese_dynasty"
   },
   {
     "qid": "Q2047076",
@@ -6828,11 +6828,11 @@
     "lat": "35.4",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 35,
     "region": "europe",
     "score": 64.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q13107370",
@@ -6931,22 +6931,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q431575",
-    "name_en": "Idrisid dynasty",
-    "name_ko": "이드리스 왕조",
-    "start": "788",
-    "end": "974",
-    "lon": "-5.0",
-    "lat": "34.06",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 52,
-    "region": "north_africa",
-    "score": 66.4,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q207600",
     "name_en": "Aghlabids",
     "name_ko": "아글라브 왕조",
@@ -6956,11 +6940,11 @@
     "lat": "35.67",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 56,
     "region": "europe",
     "score": 74.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q5324",
@@ -7891,22 +7875,6 @@
     "tier_reason": "score_top25"
   },
   {
-    "qid": "Q140446",
-    "name_en": "Zagwe dynasty",
-    "name_ko": "자그웨 왕조",
-    "start": "900",
-    "end": "1270",
-    "lon": "39.04",
-    "lat": "12.03",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 30,
-    "region": "middle_east",
-    "score": 59.3,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q459188",
     "name_en": "Kingdom of the Isles",
     "name_ko": "군도 왕국",
@@ -8764,11 +8732,11 @@
     "lat": "36.81",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 38,
     "region": "europe",
     "score": 66.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q14624218",
@@ -9232,11 +9200,11 @@
     "lat": "36.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 33,
     "region": "europe",
     "score": 61.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q3281269",
@@ -9640,11 +9608,11 @@
     "lat": "40.65",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 43,
     "region": "middle_east",
     "score": 62.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q4147015",
@@ -10237,11 +10205,11 @@
     "lat": "37.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 32,
     "region": "middle_east",
     "score": 61.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q568473",
@@ -10480,11 +10448,11 @@
     "lat": "36.35",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 47,
     "region": "middle_east",
     "score": 62.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q549817",
@@ -11620,22 +11588,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q582861",
-    "name_en": "Marinid dynasty",
-    "name_ko": "마리니드 왕조",
-    "start": "1215",
-    "end": "1465",
-    "lon": "-5.0",
-    "lat": "34.06",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 53,
-    "region": "north_africa",
-    "score": 82.9,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q3560494",
     "name_en": "Eastern Xia",
     "name_ko": "대진국",
@@ -11920,11 +11872,11 @@
     "lat": "36.81",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 48,
     "region": "europe",
     "score": 77.2,
-    "tier_reason": "score_top25"
+    "tier_reason": "dynasty_no_parent"
   },
   {
     "qid": "Q836676",
@@ -12920,22 +12872,6 @@
     "tier_reason": "score_top25"
   },
   {
-    "qid": "Q2096678",
-    "name_en": "Candar dynasty",
-    "name_ko": "잔다르 왕조",
-    "start": "1291",
-    "end": "1461",
-    "lon": "33.4",
-    "lat": "41.8",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 16,
-    "region": "middle_east",
-    "score": 42.2,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q1059707",
     "name_en": "Lanna",
     "name_ko": "란나",
@@ -13438,22 +13374,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q877670",
-    "name_en": "Muzaffarids of Iran",
-    "name_ko": "무자파르 왕조",
-    "start": "1314",
-    "end": "1393",
-    "lon": "52.5",
-    "lat": "29.6",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 30,
-    "region": "middle_east",
-    "score": 51.7,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q3446223",
     "name_en": "Sagaing Kingdom",
     "name_ko": "사가잉 왕국",
@@ -13745,38 +13665,6 @@
     "region": "middle_east",
     "score": 63.6,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q1067513",
-    "name_en": "Injuids",
-    "name_ko": "인주 왕조",
-    "start": "1335",
-    "end": "1357",
-    "lon": "52.5",
-    "lat": "29.6",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 16,
-    "region": "middle_east",
-    "score": 36.7,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1089675",
-    "name_en": "Chobanids",
-    "name_ko": "추판 왕조",
-    "start": "1335",
-    "end": "1357",
-    "lon": "46.3",
-    "lat": "38.07",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 24,
-    "region": "central_asia",
-    "score": 57.1,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q167639",
@@ -16166,22 +16054,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q970799",
-    "name_en": "Wattasid dynasty",
-    "name_ko": "와타스 왕조",
-    "start": "1472",
-    "end": "1554",
-    "lon": "-5.0",
-    "lat": "34.06",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 38,
-    "region": "north_africa",
-    "score": 68.1,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q933592",
     "name_en": "Duchy of Massa and Carrara",
     "name_ko": "마사에카라라 공국",
@@ -17611,22 +17483,6 @@
     "tier_reason": "kingdom_low_sitelinks"
   },
   {
-    "qid": "Q1136188",
-    "name_en": "Saadi dynasty",
-    "name_ko": "사아드 왕조",
-    "start": "1549",
-    "end": "1659",
-    "lon": "-8.0",
-    "lat": "31.63",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 41,
-    "region": "north_africa",
-    "score": 77.1,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q1479630",
     "name_en": "Kingdom of Loango",
     "name_ko": "로앙고 군주국",
@@ -18746,11 +18602,11 @@
     "lat": "34.3",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 4,
     "sitelinks": 6,
     "region": "east_asia",
     "score": 31.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_chinese_dynasty"
   },
   {
     "qid": "Q573072",
@@ -20315,22 +20171,6 @@
     "region": "unknown",
     "score": 11.7,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q146597",
-    "name_en": "Zand dynasty",
-    "name_ko": "잔드 왕조",
-    "start": "1750",
-    "end": "1794",
-    "lon": "53.0",
-    "lat": "32.0",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 50,
-    "region": "central_asia",
-    "score": 69.5,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q12191529",
@@ -26475,11 +26315,11 @@
     "lat": "34.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 4,
     "sitelinks": 3,
     "region": "east_asia",
     "score": 16.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_chinese_dynasty"
   },
   {
     "qid": "Q1037040",
@@ -26685,22 +26525,6 @@
     "t1_start": 1368,
     "t1_end": 1644,
     "t1_sources": 4
-  },
-  {
-    "qid": "Q295587",
-    "name_en": "Afsharid dynasty",
-    "name_ko": "아프샤르 왕조",
-    "start": "1736",
-    "end": "1796",
-    "lat": "36.3",
-    "lon": "59.6",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 15,
-    "region": "central_asia",
-    "score": 36.6,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q11768",

@@ -3747,7 +3747,7 @@
     "lineage_id": null,
     "color": "hsl(277, 70%, 55%)",
     "qid": "Q835435",
-    "tier": 2,
+    "tier": 4,
     "region": "east_asia",
     "sitelinks": 22
   },
@@ -4153,7 +4153,7 @@
     "lineage_id": null,
     "color": "hsl(47, 70%, 55%)",
     "qid": "Q940123",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 35
   },
@@ -4228,20 +4228,6 @@
     "sitelinks": 19
   },
   {
-    "name_en": "Idrisid dynasty",
-    "name_ko": "이드리스 왕조",
-    "lon": -5,
-    "lat": 34.06,
-    "start_year": 788,
-    "end_year": 974,
-    "lineage_id": null,
-    "color": "hsl(268, 70%, 55%)",
-    "qid": "Q431575",
-    "tier": 2,
-    "region": "north_africa",
-    "sitelinks": 52
-  },
-  {
     "name_en": "Aghlabids",
     "name_ko": "아글라브 왕조",
     "lon": 10.1,
@@ -4251,7 +4237,7 @@
     "lineage_id": null,
     "color": "hsl(339, 70%, 55%)",
     "qid": "Q207600",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 56
   },
@@ -4914,20 +4900,6 @@
     "sitelinks": 34
   },
   {
-    "name_en": "Zagwe dynasty",
-    "name_ko": "자그웨 왕조",
-    "lon": 39.04,
-    "lat": 12.03,
-    "start_year": 900,
-    "end_year": 1270,
-    "lineage_id": null,
-    "color": "hsl(225, 70%, 55%)",
-    "qid": "Q140446",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 30
-  },
-  {
     "name_en": "Kingdom of the Isles",
     "name_ko": "군도 왕국",
     "lon": -5.5,
@@ -5511,7 +5483,7 @@
     "lineage_id": null,
     "color": "hsl(307, 70%, 55%)",
     "qid": "Q205718",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 38
   },
@@ -5763,7 +5735,7 @@
     "lineage_id": null,
     "color": "hsl(136, 70%, 55%)",
     "qid": "Q588672",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 33
   },
@@ -5973,7 +5945,7 @@
     "lineage_id": null,
     "color": "hsl(307, 70%, 55%)",
     "qid": "Q846670",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 43
   },
@@ -6239,7 +6211,7 @@
     "lineage_id": null,
     "color": "hsl(64, 70%, 55%)",
     "qid": "Q1133431",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 32
   },
@@ -6393,7 +6365,7 @@
     "lineage_id": null,
     "color": "hsl(48, 70%, 55%)",
     "qid": "Q189545",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 47
   },
@@ -7126,20 +7098,6 @@
     "sitelinks": 8
   },
   {
-    "name_en": "Marinid dynasty",
-    "name_ko": "마리니드 왕조",
-    "lon": -5,
-    "lat": 34.06,
-    "start_year": 1215,
-    "end_year": 1465,
-    "lineage_id": null,
-    "color": "hsl(268, 70%, 55%)",
-    "qid": "Q582861",
-    "tier": 2,
-    "region": "north_africa",
-    "sitelinks": 53
-  },
-  {
     "name_en": "Eastern Xia",
     "name_ko": "대진국",
     "lon": 129.5,
@@ -7345,7 +7303,7 @@
     "lineage_id": null,
     "color": "hsl(307, 70%, 55%)",
     "qid": "Q752662",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 48
   },
@@ -7952,20 +7910,6 @@
     "sitelinks": 53
   },
   {
-    "name_en": "Candar dynasty",
-    "name_ko": "잔다르 왕조",
-    "lon": 33.4,
-    "lat": 41.8,
-    "start_year": 1291,
-    "end_year": 1461,
-    "lineage_id": null,
-    "color": "hsl(249, 70%, 55%)",
-    "qid": "Q2096678",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 16
-  },
-  {
     "name_en": "Lanna",
     "name_ko": "란나",
     "lon": 99,
@@ -8218,20 +8162,6 @@
     "sitelinks": 11
   },
   {
-    "name_en": "Muzaffarids of Iran",
-    "name_ko": "무자파르 왕조",
-    "lon": 52.5,
-    "lat": 29.6,
-    "start_year": 1314,
-    "end_year": 1393,
-    "lineage_id": null,
-    "color": "hsl(68, 70%, 55%)",
-    "qid": "Q877670",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 30
-  },
-  {
     "name_en": "Duchy of Oświęcim",
     "name_ko": "오위시므 공국",
     "lon": 19.2381,
@@ -8384,34 +8314,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 37
-  },
-  {
-    "name_en": "Injuids",
-    "name_ko": "인주 왕조",
-    "lon": 52.5,
-    "lat": 29.6,
-    "start_year": 1335,
-    "end_year": 1357,
-    "lineage_id": null,
-    "color": "hsl(68, 70%, 55%)",
-    "qid": "Q1067513",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 16
-  },
-  {
-    "name_en": "Chobanids",
-    "name_ko": "추판 왕조",
-    "lon": 46.3,
-    "lat": 38.07,
-    "start_year": 1335,
-    "end_year": 1357,
-    "lineage_id": null,
-    "color": "hsl(32, 70%, 55%)",
-    "qid": "Q1089675",
-    "tier": 2,
-    "region": "central_asia",
-    "sitelinks": 24
   },
   {
     "name_en": "Vijayanagara Empire",
@@ -9744,20 +9646,6 @@
     "sitelinks": 23
   },
   {
-    "name_en": "Wattasid dynasty",
-    "name_ko": "와타스 왕조",
-    "lon": -5,
-    "lat": 34.06,
-    "start_year": 1472,
-    "end_year": 1554,
-    "lineage_id": null,
-    "color": "hsl(268, 70%, 55%)",
-    "qid": "Q970799",
-    "tier": 2,
-    "region": "north_africa",
-    "sitelinks": 38
-  },
-  {
     "name_en": "Duchy of Massa and Carrara",
     "name_ko": "마사에카라라 공국",
     "lon": 10.133333333,
@@ -10584,20 +10472,6 @@
     "sitelinks": 17
   },
   {
-    "name_en": "Saadi dynasty",
-    "name_ko": "사아드 왕조",
-    "lon": -8,
-    "lat": 31.63,
-    "start_year": 1549,
-    "end_year": 1659,
-    "lineage_id": null,
-    "color": "hsl(100, 70%, 55%)",
-    "qid": "Q1136188",
-    "tier": 2,
-    "region": "north_africa",
-    "sitelinks": 41
-  },
-  {
     "name_en": "Kingdom of Loango",
     "name_ko": "로앙고 군주국",
     "lon": 11.8378,
@@ -11209,7 +11083,7 @@
     "lineage_id": null,
     "color": "hsl(277, 70%, 55%)",
     "qid": "Q1178974",
-    "tier": 2,
+    "tier": 4,
     "region": "east_asia",
     "sitelinks": 6
   },
@@ -11968,20 +11842,6 @@
     "tier": 2,
     "region": "central_asia",
     "sitelinks": 34
-  },
-  {
-    "name_en": "Zand dynasty",
-    "name_ko": "잔드 왕조",
-    "lon": 53,
-    "lat": 32,
-    "start_year": 1750,
-    "end_year": 1794,
-    "lineage_id": null,
-    "color": "hsl(25, 70%, 55%)",
-    "qid": "Q146597",
-    "tier": 2,
-    "region": "central_asia",
-    "sitelinks": 50
   },
   {
     "name_en": "Konbaung dynasty",
@@ -16025,7 +15885,7 @@
     "lineage_id": null,
     "color": "hsl(17, 70%, 55%)",
     "qid": "Q1798813",
-    "tier": 2,
+    "tier": 4,
     "region": "east_asia",
     "sitelinks": 3
   },
@@ -16182,20 +16042,6 @@
     "tier": 1,
     "region": "east_asia",
     "sitelinks": 132
-  },
-  {
-    "name_en": "Afsharid dynasty",
-    "name_ko": "아프샤르 왕조",
-    "lon": 59.6,
-    "lat": 36.3,
-    "start_year": 1736,
-    "end_year": 1796,
-    "lineage_id": null,
-    "color": "hsl(169, 70%, 55%)",
-    "qid": "Q295587",
-    "tier": 2,
-    "region": "central_asia",
-    "sitelinks": 15
   },
   {
     "name_en": "Ancient Egypt",
