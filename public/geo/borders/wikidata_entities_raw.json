@@ -6609,11 +6609,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "unknown",
     "score": 42.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q2477776",
@@ -7657,11 +7657,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 44.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q2162698",
@@ -7852,11 +7852,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 52.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q6201794",
@@ -8530,18 +8530,18 @@
   {
     "qid": "Q25400571",
     "name_en": "Emirate of Aleppo",
-    "name_ko": "아레포 토후국",
+    "name_ko": "알레포 토후국",
     "start": "944",
     "end": "1128",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 24,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q842390",
@@ -9592,11 +9592,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "unknown",
     "score": 3.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q697787",
@@ -9624,11 +9624,11 @@
     "lat": "26.575719",
     "type": "historical",
     "lineage_id": "L0111",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "middle_east",
     "score": 8.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q61950933",
@@ -9704,11 +9704,11 @@
     "lat": "26.570873",
     "type": "historical",
     "lineage_id": "L0111",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "middle_east",
     "score": 27.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q975405",
@@ -9956,18 +9956,18 @@
   {
     "qid": "Q62070228",
     "name_en": "Emirate of Homs",
-    "name_ko": "호므스 토후국",
+    "name_ko": "홈스 토후국",
     "start": "1097",
     "end": "1103",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "unknown",
     "score": 0.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q232806",
@@ -10333,11 +10333,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 12.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q1688151",
@@ -11734,7 +11734,7 @@
   {
     "qid": "Q889374",
     "name_en": "Warsangali Sultanate",
-    "name_ko": "와르사응가리 술탄국",
+    "name_ko": "와르상갈리 술탄국",
     "start": "1218",
     "end": "1886",
     "lon": "",
@@ -11846,18 +11846,18 @@
   {
     "qid": "Q85804030",
     "name_en": "Sultanate of Tarim",
-    "name_ko": "타리므 술탄국",
+    "name_ko": "타림 술탄국",
     "start": "1224",
     "end": "1519",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 26.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q487829",
@@ -13207,27 +13207,27 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 18.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q20427320",
     "name_en": "Soppeng Sultanate",
-    "name_ko": "소페응 술탄국",
+    "name_ko": "소펭 술탄국",
     "start": "1300",
     "end": "1940",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 34.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q874954",
@@ -15765,18 +15765,18 @@
   {
     "qid": "Q56885910",
     "name_en": "Emirate of Diriyah",
-    "name_ko": "디리야흐 토후국",
+    "name_ko": "디리야 토후국",
     "start": "1446",
     "end": "1743",
     "lon": "46.575556111",
     "lat": "24.733333055",
     "type": "historical",
     "lineage_id": "L0148",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "middle_east",
     "score": 30,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q2077648",
@@ -16136,18 +16136,18 @@
   {
     "qid": "Q30592233",
     "name_en": "Pahang Sultanate",
-    "name_ko": "파하응 술탄국",
+    "name_ko": "파항 술탄국",
     "start": "1470",
     "end": "1623",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 34,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q112682866",
@@ -17103,11 +17103,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 28.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q584435",
@@ -17128,7 +17128,7 @@
   {
     "qid": "Q19805959",
     "name_en": "Golconda Sultanate",
-    "name_ko": "고르코은드아 술탄국",
+    "name_ko": "골콘다 술탄국",
     "start": "1518",
     "end": "1687",
     "lon": "",
@@ -17250,11 +17250,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 31.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q1660566",
@@ -17426,11 +17426,11 @@
     "lat": "9.08333333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "sub_saharan",
     "score": 40,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q1588434",
@@ -18359,11 +18359,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 47.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q100273061",
@@ -18650,11 +18650,11 @@
     "lat": "17.499503",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "north_africa",
     "score": 39.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q42345047",
@@ -18826,11 +18826,11 @@
     "lat": "23.61",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "middle_east",
     "score": 35,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q10921634",
@@ -19002,11 +19002,11 @@
     "lat": "25.404932",
     "type": "historical",
     "lineage_id": "L0163",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "middle_east",
     "score": 32.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q722071",
@@ -19414,18 +19414,18 @@
   {
     "qid": "Q25421257",
     "name_en": "Emirate of Tagant",
-    "name_ko": "타가은트 토후국",
+    "name_ko": "타간트 토후국",
     "start": "1700",
     "end": "1905",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 24.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q16472864",
@@ -19820,18 +19820,18 @@
   {
     "qid": "Q3503559",
     "name_en": "Sultanate of Serdang",
-    "name_ko": "세르다응 술탄국",
+    "name_ko": "세르당 술탄국",
     "start": "1723",
     "end": "1946",
     "lon": "98.956266",
     "lat": "3.5674287",
     "type": "historical",
     "lineage_id": "L0160",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "southeast_asia",
     "score": 31.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q11295580",
@@ -19900,18 +19900,18 @@
   {
     "qid": "Q4154364",
     "name_en": "Sultanate of Damagaram",
-    "name_ko": "다마가라므 술탄국",
+    "name_ko": "다마가람 술탄국",
     "start": "1731",
     "end": "1899",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 49.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q20395973",
@@ -20191,18 +20191,18 @@
   {
     "qid": "Q12844379",
     "name_en": "Kazakh sultanate",
-    "name_ko": "카자크 수르타나테",
+    "name_ko": "카자흐 술탄국",
     "start": "1747",
     "end": "1801",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 44.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q112610225",
@@ -20351,18 +20351,18 @@
   {
     "qid": "Q12191529",
     "name_en": "Emirate of Lengeh",
-    "name_ko": "레응게흐 토후국",
+    "name_ko": "렝게 토후국",
     "start": "1750",
     "end": "1899",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 22.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q7937982",
@@ -21046,11 +21046,11 @@
     "lat": "10.7489",
     "type": "historical",
     "lineage_id": "L0178",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "sub_saharan",
     "score": 23.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q188161",
@@ -21192,11 +21192,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 33,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q2121850",
@@ -22467,18 +22467,18 @@
   {
     "qid": "Q25424205",
     "name_en": "Sultanate of Mohéli",
-    "name_ko": "모흐에리 술탄국",
+    "name_ko": "모헬리 술탄국",
     "start": "1830",
     "end": "1909",
     "lon": "43.73",
     "lat": "-12.32",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "sub_saharan",
     "score": 19.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_emirate_sultanate"
   },
   {
     "qid": "Q832554",
@@ -22499,7 +22499,7 @@
   {
     "qid": "Q3591817",
     "name_en": "Emirate of Abdelkader",
-    "name_ko": "아브데르카데르 토후국",
+    "name_ko": "압델카데르 토후국",
     "start": "1832",
     "end": "1847",
     "lon": "",
@@ -24428,7 +24428,7 @@
   {
     "qid": "Q85800761",
     "name_en": "Al Aidh Emirate",
-    "name_ko": "아드흐 토후국",
+    "name_ko": "아이드 토후국",
     "start": "1916",
     "end": "1920",
     "lon": "",

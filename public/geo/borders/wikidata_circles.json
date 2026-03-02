@@ -5959,7 +5959,7 @@
     "lineage_id": "L0111",
     "color": "hsl(59, 70%, 55%)",
     "qid": "Q120060873",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 1
   },
@@ -6001,7 +6001,7 @@
     "lineage_id": "L0111",
     "color": "hsl(59, 70%, 55%)",
     "qid": "Q12229205",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 5
   },
@@ -9535,7 +9535,7 @@
   },
   {
     "name_en": "Emirate of Diriyah",
-    "name_ko": "디리야흐 토후국",
+    "name_ko": "디리야 토후국",
     "lon": 46.575556111,
     "lat": 24.733333055,
     "start_year": 1446,
@@ -9543,7 +9543,7 @@
     "lineage_id": "L0148",
     "color": "hsl(356, 70%, 55%)",
     "qid": "Q56885910",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 5
   },
@@ -10481,7 +10481,7 @@
     "lineage_id": null,
     "color": "hsl(256, 70%, 55%)",
     "qid": "Q4903979",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 9
   },
@@ -11167,7 +11167,7 @@
     "lineage_id": null,
     "color": "hsl(22, 70%, 55%)",
     "qid": "Q1812976",
-    "tier": 2,
+    "tier": 3,
     "region": "north_africa",
     "sitelinks": 8
   },
@@ -11251,7 +11251,7 @@
     "lineage_id": null,
     "color": "hsl(111, 70%, 55%)",
     "qid": "Q16881283",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 8
   },
@@ -11363,7 +11363,7 @@
     "lineage_id": "L0163",
     "color": "hsl(59, 70%, 55%)",
     "qid": "Q56376885",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 8
   },
@@ -11747,7 +11747,7 @@
   },
   {
     "name_en": "Sultanate of Serdang",
-    "name_ko": "세르다응 술탄국",
+    "name_ko": "세르당 술탄국",
     "lon": 98.956266,
     "lat": 3.5674287,
     "start_year": 1723,
@@ -11755,7 +11755,7 @@
     "lineage_id": "L0160",
     "color": "hsl(8, 70%, 55%)",
     "qid": "Q3503559",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 6
   },
@@ -12385,7 +12385,7 @@
     "lineage_id": "L0178",
     "color": "hsl(340, 70%, 55%)",
     "qid": "Q8050352",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 4
   },
@@ -13231,7 +13231,7 @@
   },
   {
     "name_en": "Sultanate of Mohéli",
-    "name_ko": "모흐에리 술탄국",
+    "name_ko": "모헬리 술탄국",
     "lon": 43.73,
     "lat": -12.32,
     "start_year": 1830,
@@ -13239,7 +13239,7 @@
     "lineage_id": null,
     "color": "hsl(207, 70%, 55%)",
     "qid": "Q25424205",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 3
   },
