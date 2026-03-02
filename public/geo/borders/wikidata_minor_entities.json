@@ -10253,5 +10253,39 @@
     "score": 53.8,
     "tier_reason": "score_top55",
     "minor_reason": "dynasty_or_regime_of_parent_country"
+  },
+  {
+    "qid": "Q212278",
+    "name_en": "Kingdom of Holland",
+    "name_ko": "홀란트 왕국",
+    "start": "1806",
+    "end": "1810",
+    "lon": "4.89",
+    "lat": "52.37",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 56,
+    "region": "europe",
+    "score": 70.3,
+    "tier_reason": "score_top55",
+    "minor_reason": "vassal_or_regime_change"
+  },
+  {
+    "qid": "Q4202331",
+    "name_en": "Kingdom of Chiangmai",
+    "name_ko": "치아응마이 왕국",
+    "start": "1802",
+    "end": "1884",
+    "lon": "98.9833",
+    "lat": "18.7889",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 5,
+    "region": "southeast_asia",
+    "score": 24.5,
+    "tier_reason": "score_rest",
+    "minor_reason": "vassal_or_regime_change"
   }
 ]

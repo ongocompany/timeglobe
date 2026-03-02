@@ -131,7 +131,7 @@
     "qid": "Q12406731",
     "name_en": "Old Hittite Kingdom",
     "name_ko": "오르드 히타이트 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": -1649,
     "end_year": -1499,
     "snapshots": [
@@ -425,7 +425,7 @@
     "qid": "Q4671762",
     "name_en": "Kingdom of Leinster",
     "name_ko": "레이느스테르 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": -600,
     "end_year": 1603,
     "snapshots": [
@@ -1341,7 +1341,7 @@
     "qid": "Q2578706",
     "name_en": "Kingdom of Ceredigion",
     "name_ko": "세레디기오은 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 400,
     "end_year": 872,
     "snapshots": [
@@ -1525,7 +1525,7 @@
     "qid": "Q2253783",
     "name_en": "Kingdom of Glywysing",
     "name_ko": "글러으어싱",
-    "tier": 2,
+    "tier": 3,
     "start_year": 430,
     "end_year": 1055,
     "snapshots": [
@@ -1563,7 +1563,7 @@
     "qid": "Q954585",
     "name_en": "Kingdom of Brycheiniog",
     "name_ko": "브러체이니옥",
-    "tier": 2,
+    "tier": 3,
     "start_year": 450,
     "end_year": 1045,
     "snapshots": [
@@ -2771,7 +2771,7 @@
     "qid": "Q3446210",
     "name_en": "Kingdom of Pamplona",
     "name_ko": "파음프로나 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 824,
     "end_year": 1512,
     "snapshots": [
@@ -3171,7 +3171,7 @@
     "qid": "Q193398",
     "name_en": "Champa",
     "name_ko": "참파 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 877,
     "end_year": 1069,
     "snapshots": [
@@ -3683,7 +3683,7 @@
     "qid": "Q91329095",
     "name_en": "Kingdom of Burgundy",
     "name_ko": "부르고뉴 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 933,
     "end_year": 1032,
     "snapshots": [
@@ -5101,7 +5101,7 @@
     "qid": "Q11295580",
     "name_en": "Kingdom of Nan",
     "name_ko": "나은 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1298,
     "end_year": 1433,
     "snapshots": [
@@ -5801,7 +5801,7 @@
     "qid": "Q1186434",
     "name_en": "Muang Phuan",
     "name_ko": "씨앙쿠앙 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1369,
     "end_year": 1478,
     "snapshots": [
@@ -5867,7 +5867,7 @@
     "qid": "Q1070691",
     "name_en": "Kingdom of Rwanda",
     "name_ko": "르완다 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1400,
     "end_year": 1890,
     "snapshots": [
@@ -5911,7 +5911,7 @@
     "qid": "Q6412684",
     "name_en": "Kingdom of the Canary Islands",
     "name_ko": "카나리아 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1404,
     "end_year": 1448,
     "snapshots": [
@@ -6223,7 +6223,7 @@
     "qid": "Q3482103",
     "name_en": "Shilluk Kingdom",
     "name_ko": "씰룩 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1490,
     "end_year": 1861,
     "snapshots": [
@@ -6601,7 +6601,7 @@
     "qid": "Q16850784",
     "name_en": "Kingdom of Jolof",
     "name_ko": "조로프 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1549,
     "end_year": 1890,
     "snapshots": [
@@ -11519,7 +11519,7 @@
     "qid": "Q23022146",
     "name_en": "Kingdom of Tonga",
     "name_ko": "통가 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1900,
     "end_year": 1970,
     "snapshots": [
