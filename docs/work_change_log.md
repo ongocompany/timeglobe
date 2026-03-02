@@ -3,6 +3,32 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-03] [mk] Map Display 메뉴 추가
+
+### 작업 내용
+메인화면 좌상단에 Map Display 아코디언 메뉴 추가.
+
+**기능:**
+- **폴리곤 / 경계만** 토글: OHM 국경선 채우기 ON/OFF
+  - 폴리곤: 기존 컬러 채우기 + 아웃라인 (기본값)
+  - 경계만: 아웃라인만 표시, 지형 가시성 향상
+- **국명 티어 토글 (T1~T4)**: 각 티어 독립 ON/OFF
+  - T1(황금): 대제국/주요 왕조
+  - T2(파랑): 일반 국가
+  - T3(초록): 소국/지역 세력
+  - T4(흰): 부족/소규모 정권
+
+**수정 파일:**
+- `src/app/page.tsx` — ViewMode에 "map-display" 추가, 상태/메뉴 UI 추가, CesiumGlobe에 props 전달
+- `src/components/GlobeLoader.tsx` — visibleTiers, showPolygonFill props 통과
+- `src/components/CesiumGlobe.tsx`
+  - SceneSetupProps/CesiumGlobeProps에 visibleTiers/showPolygonFill 추가
+  - renderCirclesForYear: visibleTiersRef 기반 티어 필터 적용
+  - renderOhmForYear: showPolygonFillRef 기반 채우기 조건부 렌더링
+  - prop 변경 시 자동 재렌더링 useEffect 추가
+
+---
+
 ## [2026-03-03] [cl] jinserver 리눅스 개발 서버 구축
 
 ### 배경
