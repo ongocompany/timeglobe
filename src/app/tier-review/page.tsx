@@ -74,7 +74,7 @@ interface Note {
   created_at: string;
 }
 
-type ViewTab = "list" | "timeline";
+type ViewTab = "list" | "timeline" | "dump";
 
 const REGION_KO: Record<string, string> = {
   east_asia: "동아시아",
@@ -1930,6 +1930,610 @@ function ListView({
 }
 
 // ═══════════════════════════════════════════════════
+// [cl] 덤프 데이터 브라우저 — 1차 파싱 결과 조회
+// ═══════════════════════════════════════════════════
+
+const DUMP_CATEGORIES = [
+  { id: "events", label: "사건", color: "#ef4444" },
+  { id: "hist", label: "역사 엔티티", color: "#f59e0b" },
+  { id: "persons", label: "인물", color: "#3b82f6" },
+  { id: "places", label: "장소", color: "#22c55e" },
+] as const;
+
+// [cl] 카테고리별 kind 한국어 매핑
+const KIND_LABELS: Record<string, string> = {
+  // events
+  battle: "전투", war: "전쟁", revolution: "혁명", treaty: "조약",
+  pandemic: "팬데믹", disaster: "재해", siege: "포위전",
+  genocide: "제노사이드", military_operation: "군사작전",
+  expedition: "탐험", terrorist_attack: "테러", discovery: "발견", event: "사건",
+  // hist_entities
+  state: "국가", tribe: "부족", intl_org: "국제기구", caliphate: "칼리프국",
+  grand_duchy: "대공국", city_state: "도시국가", empire: "제국",
+  confederation: "연맹", dynasty: "왕조", kingdom: "왕국",
+  tribal_confederation: "부족연맹", principality: "공국", civilization: "문명",
+};
+
+interface DumpEntry {
+  qid: string;
+  name_ko?: string;
+  name_en?: string;
+  name_ja?: string;
+  name_zh?: string;
+  desc_ko?: string;
+  desc_en?: string;
+  sitelinks?: number;
+  ko_wiki?: string;
+  en_wiki?: string;
+  // events
+  event_kind?: string;
+  point_in_time?: number;
+  start_year?: number;
+  end_year?: number;
+  anchor_year?: number;
+  location?: string;
+  country?: string;
+  conflict?: string;
+  // hist_entities
+  entity_kind?: string;
+  capital?: string;
+  // persons
+  birth_year?: number;
+  death_year?: number;
+  birth_place?: string;
+  citizenship?: string;
+  occupation?: string;
+  // common
+  lat?: number;
+  lon?: number;
+}
+
+interface DumpStats {
+  total: number;
+  hasKo: number;
+  hasCoord: number;
+  kinds: Record<string, number>;
+  slDistribution: Record<string, number>;
+}
+
+function DumpBrowseView() {
+  const [category, setCategory] = useState("events");
+  const [data, setData] = useState<DumpEntry[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [stats, setStats] = useState<DumpStats | null>(null);
+
+  // [cl] 필터/페이지네이션 상태
+  const [page, setPage] = useState(1);
+  const [limit] = useState(100);
+  const [total, setTotal] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [sort, setSort] = useState("sitelinks");
+  const [order, setOrder] = useState("desc");
+  const [search, setSearch] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [kind, setKind] = useState("all");
+  const [hasKo, setHasKo] = useState("all");
+  const [minSl, setMinSl] = useState(0);
+
+  // [cl] 데이터 fetch
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const params = new URLSearchParams({
+        category,
+        page: String(page),
+        limit: String(limit),
+        sort,
+        order,
+        search,
+        kind,
+        hasKo,
+        minSl: String(minSl),
+      });
+      const res = await fetch(`/api/dump-browse?${params}`);
+      const json = await res.json();
+
+      if (json.error) {
+        setError(json.error + (json.hint ? ` (${json.hint})` : ""));
+        setData([]);
+        return;
+      }
+
+      setData(json.data || []);
+      setTotal(json.total || 0);
+      setTotalPages(json.totalPages || 0);
+      setStats(json.stats || null);
+    } catch (e) {
+      setError("API 호출 실패 — jinserver에서 dev 서버가 실행 중인지 확인하세요.");
+      setData([]);
+    } finally {
+      setLoading(false);
+    }
+  }, [category, page, limit, sort, order, search, kind, hasKo, minSl]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  // [cl] 카테고리 변경 시 필터 초기화
+  const changeCategory = useCallback((cat: string) => {
+    setCategory(cat);
+    setPage(1);
+    setKind("all");
+    setSearch("");
+    setSearchInput("");
+    setMinSl(0);
+  }, []);
+
+  // [cl] 검색 실행 (Enter 또는 버튼)
+  const doSearch = useCallback(() => {
+    setSearch(searchInput);
+    setPage(1);
+  }, [searchInput]);
+
+  // [cl] 정렬 토글
+  const toggleSort = useCallback(
+    (field: string) => {
+      if (sort === field) {
+        setOrder(order === "desc" ? "asc" : "desc");
+      } else {
+        setSort(field);
+        setOrder("desc");
+      }
+      setPage(1);
+    },
+    [sort, order]
+  );
+
+  // [cl] 연도 표시
+  const getYear = (e: DumpEntry): string => {
+    if (e.point_in_time != null) return String(e.point_in_time);
+    const s = e.start_year ?? e.birth_year ?? e.anchor_year;
+    const ed = e.end_year ?? e.death_year;
+    if (s == null) return "—";
+    if (ed == null) return `${s}~`;
+    return `${s}~${ed}`;
+  };
+
+  // [cl] kind 라벨
+  const getKind = (e: DumpEntry): string => {
+    const k = e.event_kind || e.entity_kind || e.occupation || "—";
+    return KIND_LABELS[k] || k;
+  };
+
+  // [cl] kind 원본값
+  const getKindRaw = (e: DumpEntry): string => {
+    return e.event_kind || e.entity_kind || e.occupation || "unknown";
+  };
+
+  // [cl] 정렬된 kind 목록
+  const sortedKinds = useMemo(() => {
+    if (!stats?.kinds) return [];
+    return Object.entries(stats.kinds)
+      .sort((a, b) => b[1] - a[1]);
+  }, [stats]);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column" as const, flex: 1, minHeight: 0, overflow: "hidden" }}>
+      {/* ── 카테고리 서브탭 ── */}
+      <div style={{ display: "flex", gap: 4, marginBottom: 12, flexShrink: 0 }}>
+        {DUMP_CATEGORIES.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => changeCategory(cat.id)}
+            style={{
+              padding: "8px 20px",
+              borderRadius: 6,
+              border: `2px solid ${cat.color}`,
+              background: category === cat.id ? cat.color : "transparent",
+              color: category === cat.id ? "#fff" : cat.color,
+              cursor: "pointer",
+              fontWeight: 700,
+              fontSize: 13,
+              opacity: category === cat.id ? 1 : 0.7,
+              transition: "all 0.15s",
+            }}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      {/* ── 통계 바 ── */}
+      {stats && !loading && (
+        <div
+          style={{
+            display: "flex",
+            gap: 16,
+            marginBottom: 12,
+            flexShrink: 0,
+            flexWrap: "wrap",
+            alignItems: "center",
+            padding: "10px 16px",
+            background: "#1a1a1a",
+            borderRadius: 8,
+            border: "1px solid #333",
+          }}
+        >
+          <span style={{ fontSize: 13, color: "#ccc" }}>
+            전체 <b style={{ color: "#fff" }}>{stats.total.toLocaleString()}</b>
+          </span>
+          <span style={{ fontSize: 13, color: "#22c55e" }}>
+            한국어 <b>{stats.hasKo.toLocaleString()}</b>
+            <span style={{ color: "#555", fontSize: 11 }}>
+              {" "}({((stats.hasKo / stats.total) * 100).toFixed(1)}%)
+            </span>
+          </span>
+          <span style={{ fontSize: 13, color: "#06b6d4" }}>
+            좌표 <b>{stats.hasCoord.toLocaleString()}</b>
+          </span>
+
+          {/* SL 분포 미니바 */}
+          <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: "auto" }}>
+            <span style={{ fontSize: 10, color: "#666" }}>SL분포:</span>
+            {Object.entries(stats.slDistribution).map(([key, count]) => {
+              const labels: Record<string, string> = {
+                s0: "0", s1_5: "1-5", s6_20: "6-20",
+                s21_50: "21-50", s51_100: "51-100", s100plus: "100+",
+              };
+              const colors: Record<string, string> = {
+                s0: "#333", s1_5: "#555", s6_20: "#777",
+                s21_50: "#f59e0b", s51_100: "#ef4444", s100plus: "#22c55e",
+              };
+              const pct = (count / stats.total) * 100;
+              return (
+                <div
+                  key={key}
+                  title={`SL ${labels[key]}: ${count.toLocaleString()} (${pct.toFixed(1)}%)`}
+                  style={{
+                    height: 16,
+                    width: Math.max(4, pct * 1.5),
+                    background: colors[key],
+                    borderRadius: 2,
+                  }}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* ── 필터 바 ── */}
+      <div
+        style={{
+          display: "flex",
+          gap: 8,
+          marginBottom: 12,
+          flexShrink: 0,
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+      >
+        {/* 유형 필터 */}
+        <select
+          value={kind}
+          onChange={(e) => { setKind(e.target.value); setPage(1); }}
+          style={{
+            padding: "6px 10px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+            fontSize: 12,
+          }}
+        >
+          <option value="all">모든 유형</option>
+          {sortedKinds.map(([k, cnt]) => (
+            <option key={k} value={k}>
+              {KIND_LABELS[k] || k} ({cnt.toLocaleString()})
+            </option>
+          ))}
+        </select>
+
+        {/* 한국어 필터 */}
+        <select
+          value={hasKo}
+          onChange={(e) => { setHasKo(e.target.value); setPage(1); }}
+          style={{
+            padding: "6px 10px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+            fontSize: 12,
+          }}
+        >
+          <option value="all">한국어 전체</option>
+          <option value="yes">한국어 있음</option>
+          <option value="no">한국어 없음</option>
+        </select>
+
+        {/* SL 최소값 */}
+        <select
+          value={minSl}
+          onChange={(e) => { setMinSl(parseInt(e.target.value)); setPage(1); }}
+          style={{
+            padding: "6px 10px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+            fontSize: 12,
+          }}
+        >
+          <option value="0">SL 전체</option>
+          <option value="1">SL 1+</option>
+          <option value="5">SL 5+</option>
+          <option value="10">SL 10+</option>
+          <option value="20">SL 20+</option>
+          <option value="50">SL 50+</option>
+          <option value="100">SL 100+</option>
+        </select>
+
+        <div style={{ width: 1, height: 24, background: "#333" }} />
+
+        {/* 검색 */}
+        <input
+          type="text"
+          placeholder="검색 (이름/QID/설명)..."
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
+          style={{
+            padding: "6px 12px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
+            borderRadius: 4,
+            fontSize: 12,
+            width: 200,
+          }}
+        />
+        <button
+          onClick={doSearch}
+          style={{
+            padding: "6px 12px",
+            background: "#333",
+            color: "#ccc",
+            border: "1px solid #555",
+            borderRadius: 4,
+            cursor: "pointer",
+            fontSize: 12,
+          }}
+        >
+          검색
+        </button>
+
+        {/* 결과 카운트 */}
+        <span style={{ fontSize: 12, color: "#888", marginLeft: "auto" }}>
+          {loading ? "로딩..." : `${total.toLocaleString()}건`}
+          {search && <span style={{ color: "#f59e0b" }}> (검색: &quot;{search}&quot;)</span>}
+        </span>
+      </div>
+
+      {/* ── 에러 메시지 ── */}
+      {error && (
+        <div style={{
+          padding: "16px 20px",
+          background: "#2a1a1a",
+          border: "1px solid #ef4444",
+          borderRadius: 8,
+          color: "#ef4444",
+          fontSize: 13,
+          marginBottom: 12,
+          flexShrink: 0,
+        }}>
+          {error}
+        </div>
+      )}
+
+      {/* ── 테이블 ── */}
+      <div style={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+          <thead>
+            <tr style={{ borderBottom: "2px solid #333", textAlign: "left", position: "sticky", top: 0, background: "#111", zIndex: 1 }}>
+              <th style={{ padding: "8px 4px", width: 35, color: "#888" }}>#</th>
+              <th
+                onClick={() => toggleSort("sitelinks")}
+                style={{ padding: "8px 4px", width: 45, cursor: "pointer", color: sort === "sitelinks" ? "#06b6d4" : "#ccc" }}
+              >
+                SL {sort === "sitelinks" ? (order === "desc" ? "▼" : "▲") : ""}
+              </th>
+              <th style={{ padding: "8px 4px", width: 90, color: "#888" }}>QID</th>
+              <th
+                onClick={() => toggleSort("name_ko")}
+                style={{ padding: "8px 4px", width: 160, cursor: "pointer", color: sort === "name_ko" ? "#06b6d4" : "#ccc" }}
+              >
+                한국어명 {sort === "name_ko" ? (order === "desc" ? "▼" : "▲") : ""}
+              </th>
+              <th
+                onClick={() => toggleSort("name_en")}
+                style={{ padding: "8px 4px", cursor: "pointer", color: sort === "name_en" ? "#06b6d4" : "#ccc" }}
+              >
+                영문명 {sort === "name_en" ? (order === "desc" ? "▼" : "▲") : ""}
+              </th>
+              <th style={{ padding: "8px 4px", width: 80, color: "#888" }}>유형</th>
+              <th
+                onClick={() => toggleSort("year")}
+                style={{ padding: "8px 4px", width: 100, cursor: "pointer", color: sort === "year" ? "#06b6d4" : "#ccc" }}
+              >
+                연도 {sort === "year" ? (order === "desc" ? "▼" : "▲") : ""}
+              </th>
+              <th style={{ padding: "8px 4px", width: 200, color: "#888" }}>설명</th>
+              <th style={{ padding: "8px 4px", width: 120, color: "#888" }}>
+                {category === "persons" ? "직업" : category === "events" ? "위치" : "수도"}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((e, i) => {
+              const idx = (page - 1) * limit + i + 1;
+              const sl = e.sitelinks || 0;
+              const slColor = sl >= 100 ? "#22c55e" : sl >= 50 ? "#f59e0b" : sl >= 20 ? "#888" : "#555";
+
+              return (
+                <tr
+                  key={e.qid}
+                  style={{
+                    borderBottom: "1px solid #1a1a1a",
+                    background: i % 2 === 0 ? "#141414" : "#111",
+                  }}
+                >
+                  <td style={{ padding: "6px 4px", color: "#555", fontSize: 11 }}>{idx}</td>
+                  <td style={{ padding: "6px 4px", color: slColor, fontWeight: sl >= 50 ? 700 : 400, fontFamily: "monospace" }}>
+                    {sl}
+                  </td>
+                  <td style={{ padding: "6px 4px", color: "#555", fontFamily: "monospace", fontSize: 10 }}>
+                    {e.qid}
+                  </td>
+                  <td style={{
+                    padding: "6px 4px",
+                    fontWeight: e.name_ko ? 600 : 400,
+                    color: e.name_ko ? "#fff" : "#444",
+                  }}>
+                    {e.name_ko || "—"}
+                  </td>
+                  <td style={{ padding: "6px 4px", color: "#aaa", fontSize: 11 }}>
+                    {e.name_en || "—"}
+                  </td>
+                  <td style={{ padding: "6px 4px" }}>
+                    <span style={{
+                      fontSize: 10,
+                      padding: "1px 6px",
+                      borderRadius: 3,
+                      background: "#222",
+                      border: "1px solid #333",
+                      color: "#aaa",
+                    }}>
+                      {getKind(e)}
+                    </span>
+                  </td>
+                  <td style={{ padding: "6px 4px", color: "#888", fontFamily: "monospace", fontSize: 11 }}>
+                    {getYear(e)}
+                  </td>
+                  <td style={{ padding: "6px 4px", color: "#666", fontSize: 11, maxWidth: 200, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    {e.desc_ko || e.desc_en || "—"}
+                  </td>
+                  <td style={{ padding: "6px 4px", color: "#777", fontSize: 11 }}>
+                    {category === "persons"
+                      ? e.occupation || "—"
+                      : category === "events"
+                        ? (e.location || e.country || "—")
+                        : (e.capital || "—")
+                    }
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        {data.length === 0 && !loading && !error && (
+          <div style={{ padding: 40, textAlign: "center", color: "#555" }}>
+            해당 조건에 맞는 데이터가 없습니다.
+          </div>
+        )}
+
+        {loading && (
+          <div style={{ padding: 40, textAlign: "center", color: "#888" }}>
+            데이터 로딩 중...
+          </div>
+        )}
+      </div>
+
+      {/* ── 페이지네이션 ── */}
+      {totalPages > 1 && (
+        <div
+          style={{
+            display: "flex",
+            gap: 4,
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "12px 0",
+            flexShrink: 0,
+            borderTop: "1px solid #222",
+          }}
+        >
+          <button
+            onClick={() => setPage(1)}
+            disabled={page <= 1}
+            style={paginationBtnStyle(page <= 1)}
+          >
+            ≪
+          </button>
+          <button
+            onClick={() => setPage(page - 1)}
+            disabled={page <= 1}
+            style={paginationBtnStyle(page <= 1)}
+          >
+            ◀
+          </button>
+
+          {/* 페이지 번호 버튼 (최대 9개) */}
+          {(() => {
+            const pages: number[] = [];
+            let start = Math.max(1, page - 4);
+            let end = Math.min(totalPages, start + 8);
+            if (end - start < 8) start = Math.max(1, end - 8);
+            for (let p = start; p <= end; p++) pages.push(p);
+            return pages.map((p) => (
+              <button
+                key={p}
+                onClick={() => setPage(p)}
+                style={{
+                  ...paginationBtnStyle(false),
+                  background: p === page ? "#06b6d4" : "#222",
+                  color: p === page ? "#fff" : "#888",
+                  fontWeight: p === page ? 700 : 400,
+                }}
+              >
+                {p}
+              </button>
+            ));
+          })()}
+
+          <button
+            onClick={() => setPage(page + 1)}
+            disabled={page >= totalPages}
+            style={paginationBtnStyle(page >= totalPages)}
+          >
+            ▶
+          </button>
+          <button
+            onClick={() => setPage(totalPages)}
+            disabled={page >= totalPages}
+            style={paginationBtnStyle(page >= totalPages)}
+          >
+            ≫
+          </button>
+
+          <span style={{ fontSize: 11, color: "#666", marginLeft: 12 }}>
+            {((page - 1) * limit + 1).toLocaleString()}~{Math.min(page * limit, total).toLocaleString()} / {total.toLocaleString()}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// [cl] 페이지네이션 버튼 스타일
+function paginationBtnStyle(disabled: boolean): React.CSSProperties {
+  return {
+    padding: "4px 10px",
+    borderRadius: 4,
+    border: "1px solid #333",
+    background: "#222",
+    color: disabled ? "#444" : "#ccc",
+    cursor: disabled ? "default" : "pointer",
+    fontSize: 12,
+    fontWeight: 600,
+    opacity: disabled ? 0.5 : 1,
+  };
+}
+
+// ═══════════════════════════════════════════════════
 // [cl] 메인 페이지 — 탭 전환
 // ═══════════════════════════════════════════════════
 export default function TierReviewPage() {
@@ -2025,6 +2629,22 @@ export default function TierReviewPage() {
         >
           전체 리스트
         </button>
+        <button
+          onClick={() => setActiveTab("dump")}
+          style={{
+            padding: "10px 24px",
+            borderRadius: 8,
+            background: activeTab === "dump" ? "#a855f7" : "#222",
+            color: activeTab === "dump" ? "#fff" : "#888",
+            border:
+              activeTab === "dump" ? "2px solid #a855f7" : "2px solid #333",
+            cursor: "pointer",
+            fontWeight: 700,
+            fontSize: 14,
+          }}
+        >
+          덤프 데이터
+        </button>
       </div>
 
       {/* ── 탭 컨텐츠 (flex: 1로 남은 공간 전부 차지) ── */}
@@ -2033,6 +2653,7 @@ export default function TierReviewPage() {
         {activeTab === "list" && (
           <ListView entities={entities} setEntities={setEntities} />
         )}
+        {activeTab === "dump" && <DumpBrowseView />}
       </div>
     </div>
   );
