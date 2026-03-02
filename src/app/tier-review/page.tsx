@@ -187,6 +187,60 @@ function TimelineView() {
   const [notes, setNotes] = useState<Note[]>([]);
   const [noteDraft, setNoteDraft] = useState("");
 
+  // [cl] 리사이즈 핸들 — 카드/지도 영역 높이 조절
+  const [cardHeight, setCardHeight] = useState(45); // vh
+  const [mapHeight, setMapHeight] = useState(35); // vh
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartRef = useRef<{
+    y: number;
+    cardH: number;
+    mapH: number;
+  } | null>(null);
+
+  // [cl] 리사이즈 드래그 핸들러
+  const handleResizeStart = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      setIsDragging(true);
+      dragStartRef.current = {
+        y: e.clientY,
+        cardH: cardHeight,
+        mapH: mapHeight,
+      };
+    },
+    [cardHeight, mapHeight]
+  );
+
+  useEffect(() => {
+    if (!isDragging) return;
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!dragStartRef.current) return;
+      const delta = e.clientY - dragStartRef.current.y;
+      const vh = window.innerHeight / 100;
+      const deltaVh = delta / vh;
+      const newCardH = Math.max(
+        15,
+        Math.min(70, dragStartRef.current.cardH + deltaVh)
+      );
+      const newMapH = Math.max(
+        15,
+        Math.min(70, dragStartRef.current.mapH - deltaVh)
+      );
+      setCardHeight(newCardH);
+      setMapHeight(newMapH);
+    };
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      dragStartRef.current = null;
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging]);
+
   // [cl] circles 데이터 로드
   useEffect(() => {
     fetch("/geo/borders/wikidata_circles.json")
@@ -221,7 +275,10 @@ function TimelineView() {
   const fetchOhmPolygon = useCallback(
     (qid: string) => {
       if (!ohmIndex) return;
-      const entry = ohmIndex.find((e) => e.qid === qid);
+      // [cl] MANUAL_ 접두어 매칭도 시도
+      const entry =
+        ohmIndex.find((e) => e.qid === qid) ||
+        ohmIndex.find((e) => e.qid === `MANUAL_${qid}`);
       if (!entry || !entry.snapshots || entry.snapshots.length === 0) return;
 
       // 현재 연도에 포함되는 스냅샷 중 가장 적합한 것
@@ -746,9 +803,9 @@ function TimelineView() {
       {/* ═══ 카드 그리드 (플랫, 스크롤) ═══ */}
       <div
         style={{
-          maxHeight: "45vh",
+          maxHeight: `${cardHeight}vh`,
           overflowY: "auto",
-          marginBottom: 16,
+          marginBottom: 0,
           padding: "4px 0",
         }}
       >
@@ -1147,12 +1204,41 @@ function TimelineView() {
         </div>
       )}
 
+      {/* ═══ 리사이즈 핸들 ═══ */}
+      <div
+        onMouseDown={handleResizeStart}
+        style={{
+          height: 10,
+          background: isDragging ? "#06b6d4" : "#262626",
+          cursor: "row-resize",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: 4,
+          margin: "4px 0",
+          transition: isDragging ? "none" : "background 0.2s",
+          userSelect: "none",
+          border: `1px solid ${isDragging ? "#06b6d4" : "#333"}`,
+        }}
+      >
+        <div
+          style={{
+            width: 40,
+            height: 3,
+            borderRadius: 2,
+            background: isDragging ? "#fff" : "#555",
+          }}
+        />
+      </div>
+
       {/* ═══ Leaflet 지도 ═══ */}
-      <TierReviewMap
-        selectedEntities={mapEntities}
-        ohmPolygons={ohmPolygons}
-        onMarkerClick={handleMarkerClick}
-      />
+      <div style={{ height: `${mapHeight}vh` }}>
+        <TierReviewMap
+          selectedEntities={mapEntities}
+          ohmPolygons={ohmPolygons}
+          onMarkerClick={handleMarkerClick}
+        />
+      </div>
 
       {/* ── 범례 ── */}
       <div
