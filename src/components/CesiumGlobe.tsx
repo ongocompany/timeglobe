@@ -1471,8 +1471,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     },
     2: {
       font: "bold 38px sans-serif",                            // 실효 ~19px
-      scale: new NearFarScalar(2e6, 0.55, 1.5e7, 0.25),
-      translucency: new NearFarScalar(3e6, 1.0, 2e7, 0),
+      scale: new NearFarScalar(2e6, 0.55, 2e7, 0.275),        // [cl] T1과 같은 far(20,000km), 비율 유지
+      translucency: new NearFarScalar(5e6, 1.0, 3e7, 0.3),   // [cl] T1과 동일 → 20,000km+에서도 보임
     },
     3: {
       font: "bold 32px sans-serif",                            // 실효 ~16px
