@@ -3,6 +3,36 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-03] [mk] 나무위키 덤프 수집 + 뷰어 구축
+
+### 작업 내용
+- **나무위키 2021-03 덤프 확보**: Notion 공유 페이지에서 직접 URL 추출 → jinserver wget 다운로드
+  - 파일: `namuwiki210301.7z` (1.9GB) → `namuwiki_20210301.json` (5.6GB, 867,024건)
+  - 저장: `/mnt/data2/namuwiki/`
+- **SQLite 변환 스크립트 작성** (`scripts/wikidata/buildNamuwikiSqlite.py`)
+  - ijson 스트리밍 파싱 (메모리 효율)
+  - articles 테이블 + categories 테이블 + FTS5 인덱스
+  - `[[분류:xxx]]` 태그 자동 추출
+- **나무위키 뷰어 구현**
+  - API: `GET /api/namuwiki` (search/article/categories/category 4가지 모드)
+  - 페이지: `/namuwiki-viewer` (표제어 검색 + 분류 브라우저 + 본문 뷰어)
+  - 나무위키 마크업 → HTML 변환 (헤딩/링크/굵게/각주 등)
+- **서버 인프라 개선**
+  - `/mnt/data2` fstab 영구 등록 (재부팅 후 자동 마운트)
+  - Next.js dev 서버 systemd 서비스 등록 (`timeglobe-dev.service`)
+
+### 수정 파일
+- `scripts/wikidata/buildNamuwikiSqlite.py` — 신규 생성
+- `src/app/api/namuwiki/route.ts` — 신규 생성
+- `src/app/namuwiki-viewer/page.tsx` — 신규 생성
+- `package.json` — `better-sqlite3` 추가
+
+### 진행 중
+- SQLite 빌드: jinserver 백그라운드 실행 중 (완료 시 뷰어 자동 활성화)
+- parseDump pass2: artworks_final.json, inventions_final.json 생성 중
+
+---
+
 ## [2026-03-02] [cl] T2 대규모 정리 — 81개 감소 (816→735)
 
 ### 작업 내용
