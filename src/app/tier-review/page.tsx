@@ -1934,6 +1934,7 @@ function ListView({
 // ═══════════════════════════════════════════════════
 
 const DUMP_CATEGORIES = [
+  { id: "korean", label: "한국어 전체", color: "#a855f7" },
   { id: "events", label: "사건", color: "#ef4444" },
   { id: "hist", label: "역사 엔티티", color: "#f59e0b" },
   { id: "persons", label: "인물", color: "#3b82f6" },
@@ -1947,11 +1948,28 @@ const KIND_LABELS: Record<string, string> = {
   pandemic: "팬데믹", disaster: "재해", siege: "포위전",
   genocide: "제노사이드", military_operation: "군사작전",
   expedition: "탐험", terrorist_attack: "테러", discovery: "발견", event: "사건",
+  rebellion: "반란", reform: "개혁", historical_period: "역사시대",
   // hist_entities
   state: "국가", tribe: "부족", intl_org: "국제기구", caliphate: "칼리프국",
   grand_duchy: "대공국", city_state: "도시국가", empire: "제국",
   confederation: "연맹", dynasty: "왕조", kingdom: "왕국",
   tribal_confederation: "부족연맹", principality: "공국", civilization: "문명",
+  // [cl] korean_all P31 QID → 한국어 (주요 타입만)
+  Q5: "인물", Q515: "도시", Q6256: "국가", Q3624078: "역사적 나라",
+  Q486972: "거주지", Q178561: "전투", Q198: "전쟁", Q12136: "질병",
+  Q7889: "비디오 게임", Q5398426: "TV 시리즈", Q11424: "영화",
+  Q7725634: "문학작품", Q482994: "앨범", Q134556: "싱글",
+  Q4167410: "위키미디어", Q13442814: "위키미디어",
+  Q532: "촌락", Q3957: "마을", Q1549591: "대도시",
+  Q8502: "산", Q23442: "섬", Q4022: "강",
+  Q12280: "다리", Q12518: "탑", Q16970: "교회",
+  Q3947: "집", Q41176: "건물", Q33506: "박물관",
+  Q7278: "정치혁명", Q10931: "혁명", Q124734: "반란",
+  Q3199915: "팬데믹", Q7892: "전염병", Q8161: "기근",
+  Q35127: "웹사이트", Q7366: "노래", Q2188189: "음악작품",
+  Q571: "책", Q277759: "도서시리즈", Q8274: "만화",
+  Q15416: "TV 프로그램", Q21198: "컴퓨터 과학",
+  Q12973014: "스포츠 리그", Q476028: "스포츠 대회",
 };
 
 interface DumpEntry {
@@ -1989,6 +2007,13 @@ interface DumpEntry {
   // common
   lat?: number;
   lon?: number;
+  // [cl] korean_all
+  p31?: string[];
+  coord?: number[];
+  dissolved?: number;
+  occupation_qids?: string[];
+  citizenship_qid?: string;
+  image?: string;
 }
 
 interface DumpStats {
@@ -2000,7 +2025,7 @@ interface DumpStats {
 }
 
 function DumpBrowseView() {
-  const [category, setCategory] = useState("events");
+  const [category, setCategory] = useState("korean");
   const [data, setData] = useState<DumpEntry[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -2093,22 +2118,30 @@ function DumpBrowseView() {
   // [cl] 연도 표시
   const getYear = (e: DumpEntry): string => {
     if (e.point_in_time != null) return String(e.point_in_time);
-    if (e.inception != null) return String(e.inception);
-    const s = e.start_year ?? e.birth_year ?? e.anchor_year;
-    const ed = e.end_year ?? e.death_year;
-    if (s == null) return "—";
+    const s = e.start_year ?? e.birth_year ?? e.anchor_year ?? e.inception;
+    const ed = e.end_year ?? e.death_year ?? e.dissolved;
+    if (s == null && ed == null) return "—";
+    if (s == null) return `~${ed}`;
     if (ed == null) return `${s}~`;
+    if (s === ed) return String(s);
     return `${s}~${ed}`;
   };
 
   // [cl] kind 라벨
   const getKind = (e: DumpEntry): string => {
+    if (category === "korean") {
+      const p = (e.p31 && e.p31[0]) || "—";
+      return KIND_LABELS[p] || p;
+    }
     const k = e.event_kind || e.entity_kind || e.occupation || "—";
     return KIND_LABELS[k] || k;
   };
 
   // [cl] kind 원본값
   const getKindRaw = (e: DumpEntry): string => {
+    if (category === "korean") {
+      return (e.p31 && e.p31[0]) || "unknown";
+    }
     return e.event_kind || e.entity_kind || e.occupation || "unknown";
   };
 
@@ -2367,7 +2400,7 @@ function DumpBrowseView() {
               </th>
               <th style={{ padding: "8px 4px", width: 200, color: "#888" }}>설명</th>
               <th style={{ padding: "8px 4px", width: 120, color: "#888" }}>
-                {category === "persons" ? "출생지/직업" : category === "events" ? "위치" : category === "places" ? "국가" : "수도"}
+                {category === "korean" ? "P31" : category === "persons" ? "출생지/직업" : category === "events" ? "위치" : category === "places" ? "국가" : "수도"}
               </th>
             </tr>
           </thead>
@@ -2421,13 +2454,15 @@ function DumpBrowseView() {
                     {e.desc_ko || e.desc_en || "—"}
                   </td>
                   <td style={{ padding: "6px 4px", color: "#777", fontSize: 11 }}>
-                    {category === "persons"
-                      ? (e.birth_place || e.occupation || "—")
-                      : category === "events"
-                        ? (e.location || e.country || "—")
-                        : category === "places"
-                          ? (e.country || "—")
-                          : (e.capital || "—")
+                    {category === "korean"
+                      ? (e.p31 ? e.p31.map(p => KIND_LABELS[p] || p).join(", ") : "—")
+                      : category === "persons"
+                        ? (e.birth_place || e.occupation || "—")
+                        : category === "events"
+                          ? (e.location || e.country || "—")
+                          : category === "places"
+                            ? (e.country || "—")
+                            : (e.capital || "—")
                     }
                   </td>
                 </tr>
