@@ -22,18 +22,20 @@
  그렇다고 너무 상세히 알려줄 필요까지는 없어. 치명적이거나 중요한 변경일때 항상 말해줘.
 
 ## 5. 작업 후 자동 push 규칙
-- 코드 작성이나 문서 수정 등 **어떤 작업이든 마치면 즉시** `git add → commit → push` 해. (초기 단계이므로 브랜치 분리 없이 진행)
+- 코드 작성이나 문서 수정 등 **어떤 작업이든 마치면 즉시** `git add → commit → git push dev main` 해.
+- **push 대상은 `dev` (jinserver 100.68.25.79)** — origin(VPS)에는 절대 push하지 마!
 - 커밋 메시지 형식: `[민철][작업종류] 작업 내용 요약` (예: `[민철][Docs]`, `[민철][Feat]`, `[민철][Fix]` 등)
 
 ## 6. 프로젝트 규칙
 - **프로젝트명**: TimeGlobe
 - **저장소 (Gitea)**: http://git.timeglobe.kr/jinadmin/timeglobe
-- **저장소 remote**: `origin` (VPS Gitea), `nas` / `nas-gitea` (NAS 백업)
-- **배포**: http://timeglobe.kr (Vultr VPS, PM2 + Nginx, push 시 자동 배포)
+- **저장소 remote**: `dev` (jinserver 개발서버), `origin` (VPS Gitea — 배포용, 직접 push 금지), `nas` (형 개인 저장소)
+- **개발**: jinserver (100.68.25.79) — `git push dev main`으로 자동 반영
+- **배포**: http://timeglobe.kr (Vultr VPS) — 형이 직접 지시할 때만 origin에 push
 
 ## 7. 세션 시작과 종료시
-- 세션 시작시 `git pull origin main`을 실행해줘
-- 세션 종료시 `git push origin main`을 실행해줘
+- 세션 시작시 `git pull dev main`을 실행해줘
+- 세션 종료시 `git push dev main`을 실행해줘
 
 ## 8. 협업규칙
 ** 이 프로젝트는 진(jn), 민철(cl,claude), 지훈(gm,gemini), 태훈(co,codex)가 함께 개발하는 프로젝트야. **
