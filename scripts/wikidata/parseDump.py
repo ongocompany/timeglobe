@@ -728,6 +728,32 @@ def pass1_stream(dump_path):
                     conn.commit()
                     label_batch = []
 
+                # ── 진행 리포트 (30초마다, 전체 엔티티 기준) ── [mk v2 fix]
+                now = time.time()
+                if now - last_report >= 30:
+                    elapsed = now - start_time
+                    speed = entity_count / elapsed
+                    print(
+                        f"[pass1] {entity_count:,} ent | skip:{skipped_count:,} | "
+                        f"new: P:{counts['person']:,} E:{counts['event']:,} "
+                        f"Pl:{counts['place']:,} H:{counts['hist']:,} "
+                        f"Art:{counts['artwork']:,} Inv:{counts['invention']:,} | "
+                        f"cb:{len(coord_batch):,} lb:{len(label_batch):,} | "
+                        f"{speed:.0f}/s | {elapsed/60:.1f}m",
+                        flush=True
+                    )
+                    last_report = now
+
+                    with open(PROGRESS_PATH, "w") as pf:
+                        json.dump({
+                            "phase": "pass1",
+                            "entities_processed": entity_count,
+                            "skipped_existing": skipped_count,
+                            "new_counts": counts,
+                            "elapsed_min": round(elapsed / 60, 1),
+                            "speed_per_sec": round(speed),
+                        }, pf)
+
                 # ── P31 분류 ──
                 p31_ids = get_p31_ids(claims)
 
@@ -768,31 +794,6 @@ def pass1_stream(dump_path):
 
                 out_files[type_key].write(json.dumps(rec, ensure_ascii=False) + "\n")
                 counts[type_key] += 1
-
-                # ── 진행 리포트 (30초마다) ──
-                now = time.time()
-                if now - last_report >= 30:
-                    elapsed = now - start_time
-                    speed = entity_count / elapsed
-                    print(
-                        f"[pass1] {entity_count:,} ent | skip:{skipped_count:,} | "
-                        f"new: P:{counts['person']:,} E:{counts['event']:,} "
-                        f"Pl:{counts['place']:,} H:{counts['hist']:,} "
-                        f"Art:{counts['artwork']:,} Inv:{counts['invention']:,} | "
-                        f"cb:{len(coord_batch):,} lb:{len(label_batch):,} | "
-                        f"{speed:.0f}/s | {elapsed/60:.1f}m"
-                    )
-                    last_report = now
-
-                    with open(PROGRESS_PATH, "w") as pf:
-                        json.dump({
-                            "phase": "pass1",
-                            "entities_processed": entity_count,
-                            "skipped_existing": skipped_count,
-                            "new_counts": counts,
-                            "elapsed_min": round(elapsed / 60, 1),
-                            "speed_per_sec": round(speed),
-                        }, pf)
 
     finally:
         # 남은 배치 flush

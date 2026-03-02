@@ -3,6 +3,55 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-02] [cl] OHM 경계선 개편 + T1 altitude-responsive 굵기
+
+### 작업 내용
+- **showFill/showBorder 분리**: `showPolygonFill` → `showFill` + `showBorder` 독립 토글
+  - CesiumGlobeProps/GlobeLoader/page.tsx 모두 업데이트
+- **OHM 티어 필터 버그 수정**: renderOhmForYear에 visibleTiersRef 체크 추가
+- **OHM 경계선 티어별 스타일**:
+  - T1: 5px solid, T2: 3px solid, T3: 3px dashed 회색, T4: 1px solid
+  - PolylineDashMaterialProperty로 T3 점선 구현
+- **ohm_index.json 티어 동기화**: wikidata_entities_raw.json 기준으로 469개 엔티티 티어 수정 (T1: 0→76)
+- **T1 고도 반응형 border width**: preRender event + ConstantProperty.setValue
+  - 10000km 이하=5px, 2000km마다 1px감소, 18000km이상=1px
+  - CallbackProperty(FPS 저하) → preRender O(1) 체크로 최적화
+
+### 수정 파일
+- `src/components/CesiumGlobe.tsx` — showFill/showBorder, 티어 필터, 경계선 스타일, preRender
+- `src/components/GlobeLoader.tsx` — props 업데이트
+- `src/app/page.tsx` — showFill/showBorder 상태 분리
+- `public/geo/borders/ohm_index.json` — 469개 티어 동기화
+
+---
+
+## [2026-03-02] [mk] parseDump.py SQLite 방식 + dump-review UI + 샘플 데이터
+
+### 작업 내용
+
+#### parseDump.py v2 (SQLite + 재시작 스킵)
+- **문제**: coord_map/label_map 인메모리 dict가 30M+ 엔티티로 성장 → 12GB RAM 사용, OOM 위험
+- **해결**: SQLite (WAL 모드, batch 50K) + APPEND 모드 + 기존 QID 스킵
+  - `maps.db` — coords, labels 테이블 (INSERT OR IGNORE)
+  - 기존 .jsonl 파일 QID 로딩 → 스킵 (오버라이트 없이 이어쓰기)
+  - pass2: 참조된 QID만 선별 로드 → 메모리 절약
+  - **결과**: RAM 12GB → 700MB로 대폭 감소
+  - progress report 버그 수정: 전체 엔티티 기준으로 이동 + flush=True
+- jinserver 재시작 완료 (PID 701415), SQLite 적재 진행 중 (16:37 기준 coords: 145만, labels: 1,140만)
+
+#### dump-review UI (기존 구현 확인 + 샘플 업데이트)
+- dump-review UI 이미 구현됨 (`src/app/dump-review/page.tsx`, `/api/dump-curation/route.ts`)
+- 샘플 데이터 업데이트:
+  - `hist_entities_raw.jsonl`: 12,370 → 22,074건 (jinserver에서 복사)
+  - `events_raw.jsonl`: 16,187 → 26,840건 (jinserver에서 복사)
+
+### 수정 파일
+- `scripts/wikidata/parseDump.py` — SQLite 방식으로 전면 재작성 (v2)
+- `data/dump_samples/hist_entities_raw.jsonl` — 최신 데이터
+- `data/dump_samples/events_raw.jsonl` — 최신 데이터
+
+---
+
 ## [2026-03-03] [mk] Map Display 메뉴 추가
 
 ### 작업 내용
