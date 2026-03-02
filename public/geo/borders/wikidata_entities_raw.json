@@ -1803,7 +1803,7 @@
   {
     "qid": "Q16084290",
     "name_en": "Illyrian kingdom",
-    "name_ko": "일리리아 키응도므",
+    "name_ko": "일리리아 왕국",
     "start": "BC 700",
     "end": "BC 134",
     "lon": "",
@@ -3628,18 +3628,18 @@
   {
     "qid": "Q5326812",
     "name_en": "Early history of Kedah",
-    "name_ko": "초기 히스토르이 케다흐",
+    "name_ko": "케다 초기 역사",
     "start": "200",
     "end": "1136",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 57.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "small_entity_or_transliteration"
   },
   {
     "qid": "Q6412538",
@@ -4641,7 +4641,7 @@
   {
     "qid": "Q28455836",
     "name_en": "old Pahang kingdom",
-    "name_ko": "오르드 파하응 키응도므",
+    "name_ko": "고(古) 파항 왕국",
     "start": "450",
     "end": "1454",
     "lon": "",
@@ -5662,7 +5662,7 @@
   {
     "qid": "Q24897370",
     "name_en": "Chahamanas of Shakambhari",
-    "name_ko": "차하마나스 샤카음브하리",
+    "name_ko": "차하마나 왕조",
     "start": "600",
     "end": "1200",
     "lon": "",
@@ -5763,7 +5763,7 @@
   {
     "qid": "Q76821846",
     "name_en": "first Islamic state",
-    "name_ko": "무함마드의 메디나 시기",
+    "name_ko": "메디나 이슬람 국가",
     "start": "622",
     "end": "632",
     "lon": "39.616666666",
@@ -10182,7 +10182,7 @@
   {
     "qid": "Q50825947",
     "name_en": "Daju kingdom",
-    "name_ko": "다주 키응도므",
+    "name_ko": "다주 왕국",
     "start": "1100",
     "end": "1400",
     "lon": "",
@@ -10262,7 +10262,7 @@
   {
     "qid": "Q568473",
     "name_en": "Burgraviate of Nuremberg",
-    "name_ko": "부르그라비아테 누레음브에르그",
+    "name_ko": "뉘른베르크 성백작령",
     "start": "1105",
     "end": "1440",
     "lon": "",
@@ -12044,7 +12044,7 @@
   {
     "qid": "Q556263",
     "name_en": "Brunswick-Lüneburg",
-    "name_ko": "브라운슈바이크뤼네부르크 공작령",
+    "name_ko": "브라운슈바이크-뤼네부르크 공작령",
     "start": "1235",
     "end": "1806",
     "lon": "10.521111111",
@@ -13296,18 +13296,18 @@
   {
     "qid": "Q3456410",
     "name_en": "Republic of Mulhouse",
-    "name_ko": "무르호우세 공화국",
+    "name_ko": "뮐루즈 공화국",
     "start": "1308",
     "end": "1798",
     "lon": "7.339166666",
     "lat": "47.748611111",
     "type": "historical",
     "lineage_id": "L0063",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "europe",
     "score": 45.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_entity_or_transliteration"
   },
   {
     "qid": "Q3446213",
@@ -13928,18 +13928,18 @@
   {
     "qid": "Q6753657",
     "name_en": "Maona of Chios and Phocaea",
-    "name_ko": "마오나 치오스 프오카이",
+    "name_ko": "키오스-포카이아 마오나",
     "start": "1346",
     "end": "1566",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "unknown",
     "score": 44.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "small_entity_or_transliteration"
   },
   {
     "qid": "Q7245121",
@@ -15717,7 +15717,7 @@
   {
     "qid": "Q701983",
     "name_en": "Palatinate-Zweibrücken",
-    "name_ko": "파라티나테-즈웨이브르위크에은",
+    "name_ko": "팔츠-츠바이브뤼켄",
     "start": "1444",
     "end": "1801",
     "lon": "7.366666666",
@@ -16712,7 +16712,7 @@
   {
     "qid": "Q3813189",
     "name_en": "Kasa kingdom",
-    "name_ko": "카사 키응도므",
+    "name_ko": "카사 왕국",
     "start": "1500",
     "end": "1600",
     "lon": "",
@@ -17160,7 +17160,7 @@
   {
     "qid": "Q552822",
     "name_en": "Mecklenburg-Güstrow",
-    "name_ko": "메클렌부르크-그위스트로우",
+    "name_ko": "메클렌부르크-귀스트로",
     "start": "1520",
     "end": "1695",
     "lon": "12.176388888",
@@ -17677,7 +17677,7 @@
   {
     "qid": "Q16656928",
     "name_en": "Kazan kingdom",
-    "name_ko": "카잔 키응도므",
+    "name_ko": "카잔 왕국",
     "start": "1552",
     "end": "1708",
     "lon": "",
@@ -18398,22 +18398,6 @@
     "tier_reason": "kingdom_low_sitelinks"
   },
   {
-    "qid": "Q11876909",
-    "name_en": "State of Brazil",
-    "name_ko": "브라질국",
-    "start": "1621",
-    "end": "1815",
-    "lon": "-38.51",
-    "lat": "-12.97",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 11,
-    "region": "latin_america",
-    "score": 43.7,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q256961",
     "name_en": "Electorate of Bavaria",
     "name_ko": "바이에른 선제후국",
@@ -18723,7 +18707,7 @@
   {
     "qid": "Q2442581",
     "name_en": "Dutch Loango-Angola",
-    "name_ko": "네덜란드 로아응고-아응고라",
+    "name_ko": "네덜란드령 로앙고-앙골라",
     "start": "1641",
     "end": "1648",
     "lon": "",
@@ -18835,18 +18819,18 @@
   {
     "qid": "Q892272",
     "name_en": "Bundu",
-    "name_ko": "부은드우",
+    "name_ko": "분두",
     "start": "1650",
     "end": "1890",
     "lon": "-12.470621",
     "lat": "14.347762",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "sub_saharan",
     "score": 37.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_entity_or_transliteration"
   },
   {
     "qid": "Q16881283",
@@ -19462,7 +19446,7 @@
   {
     "qid": "Q16472864",
     "name_en": "Soyo kingdom",
-    "name_ko": "소요 키응도므",
+    "name_ko": "소요 왕국",
     "start": "1700",
     "end": "1885",
     "lon": "",
@@ -20076,7 +20060,7 @@
   {
     "qid": "Q118279244",
     "name_en": "Ngwane kingdom",
-    "name_ko": "응와네 키응도므",
+    "name_ko": "응와네 왕국",
     "start": "1740",
     "end": "1881",
     "lon": "",
@@ -21249,18 +21233,18 @@
   {
     "qid": "Q6389173",
     "name_en": "Kengcheng",
-    "name_ko": "케응체응",
+    "name_ko": "치앙캥",
     "start": "1800",
     "end": "1896",
     "lon": "100.867",
     "lat": "21.35",
     "type": "historical",
     "lineage_id": "L0170",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "southeast_asia",
     "score": 15.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_entity_or_transliteration"
   },
   {
     "qid": "Q1641428",
@@ -22707,7 +22691,7 @@
   {
     "qid": "Q1511207",
     "name_en": "Matabele kingdom",
-    "name_ko": "마타베레 키응도므",
+    "name_ko": "마타벨레 왕국",
     "start": "1837",
     "end": "1893",
     "lon": "",
@@ -22819,18 +22803,18 @@
   {
     "qid": "Q8842943",
     "name_en": "Estado Libre del Istmo",
-    "name_ko": "에스타도 리브레 이스트모",
+    "name_ko": "이스트모 자유주",
     "start": "1840",
     "end": "1841",
     "lon": "-79.5",
     "lat": "9.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "latin_america",
     "score": 23.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "small_entity_or_transliteration"
   },
   {
     "qid": "Q2935756",
@@ -23317,7 +23301,7 @@
   {
     "qid": "Q3326429",
     "name_en": "mutasarrifate of Mount Lebanon",
-    "name_ko": "레바논 산 무타사르리피야",
+    "name_ko": "레바논 산 무타사리프국",
     "start": "1861",
     "end": "1918",
     "lon": "35.766666666",
@@ -24218,7 +24202,7 @@
   {
     "qid": "Q1656908",
     "name_en": "Emirate of Asir",
-    "name_ko": "아시르 이드리드 토후국",
+    "name_ko": "아시르 토후국",
     "start": "1906",
     "end": "1934",
     "lon": "42.616667",
@@ -25864,7 +25848,7 @@
   {
     "qid": "Q2051582",
     "name_en": "All-Palestine Government",
-    "name_ko": "팔레스타인 정부 (1948년)",
+    "name_ko": "전팔레스타인 정부",
     "start": "1948",
     "end": "1959",
     "lon": "34.47",

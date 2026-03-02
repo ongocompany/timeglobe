@@ -3445,7 +3445,7 @@
   },
   {
     "name_en": "first Islamic state",
-    "name_ko": "무함마드의 메디나 시기",
+    "name_ko": "메디나 이슬람 국가",
     "lon": 39.616666666,
     "lat": 24.466666666,
     "start_year": 622,
@@ -7407,7 +7407,7 @@
   },
   {
     "name_en": "Brunswick-Lüneburg",
-    "name_ko": "브라운슈바이크뤼네부르크 공작령",
+    "name_ko": "브라운슈바이크-뤼네부르크 공작령",
     "lon": 10.521111111,
     "lat": 52.269166666,
     "start_year": 1235,
@@ -8107,7 +8107,7 @@
   },
   {
     "name_en": "Republic of Mulhouse",
-    "name_ko": "무르호우세 공화국",
+    "name_ko": "뮐루즈 공화국",
     "lon": 7.339166666,
     "lat": 47.748611111,
     "start_year": 1308,
@@ -8115,7 +8115,7 @@
     "lineage_id": "L0063",
     "color": "hsl(121, 70%, 55%)",
     "qid": "Q3456410",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 11
   },
@@ -9507,7 +9507,7 @@
   },
   {
     "name_en": "Palatinate-Zweibrücken",
-    "name_ko": "파라티나테-즈웨이브르위크에은",
+    "name_ko": "팔츠-츠바이브뤼켄",
     "lon": 7.366666666,
     "lat": 49.25,
     "start_year": 1444,
@@ -10319,7 +10319,7 @@
   },
   {
     "name_en": "Mecklenburg-Güstrow",
-    "name_ko": "메클렌부르크-그위스트로우",
+    "name_ko": "메클렌부르크-귀스트로",
     "lon": 12.176388888,
     "lat": 53.793888888,
     "start_year": 1520,
@@ -11018,20 +11018,6 @@
     "sitelinks": 26
   },
   {
-    "name_en": "State of Brazil",
-    "name_ko": "브라질국",
-    "lon": -38.51,
-    "lat": -12.97,
-    "start_year": 1621,
-    "end_year": 1815,
-    "lineage_id": null,
-    "color": "hsl(159, 70%, 55%)",
-    "qid": "Q11876909",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 11
-  },
-  {
     "name_en": "Electorate of Bavaria",
     "name_ko": "바이에른 선제후국",
     "lon": 11.58,
@@ -11243,7 +11229,7 @@
   },
   {
     "name_en": "Bundu",
-    "name_ko": "부은드우",
+    "name_ko": "분두",
     "lon": -12.470621,
     "lat": 14.347762,
     "start_year": 1650,
@@ -11251,7 +11237,7 @@
     "lineage_id": null,
     "color": "hsl(332, 70%, 55%)",
     "qid": "Q892272",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 9
   },
@@ -12489,7 +12475,7 @@
   },
   {
     "name_en": "Kengcheng",
-    "name_ko": "케응체응",
+    "name_ko": "치앙캥",
     "lon": 100.867,
     "lat": 21.35,
     "start_year": 1800,
@@ -12497,7 +12483,7 @@
     "lineage_id": "L0170",
     "color": "hsl(178, 70%, 55%)",
     "qid": "Q6389173",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 2
   },
@@ -13441,7 +13427,7 @@
   },
   {
     "name_en": "Estado Libre del Istmo",
-    "name_ko": "에스타도 리브레 이스트모",
+    "name_ko": "이스트모 자유주",
     "lon": -79.5,
     "lat": 9,
     "start_year": 1840,
@@ -13449,7 +13435,7 @@
     "lineage_id": null,
     "color": "hsl(51, 70%, 55%)",
     "qid": "Q8842943",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 5
   },
@@ -13735,7 +13721,7 @@
   },
   {
     "name_en": "mutasarrifate of Mount Lebanon",
-    "name_ko": "레바논 산 무타사르리피야",
+    "name_ko": "레바논 산 무타사리프국",
     "lon": 35.766666666,
     "lat": 33.833333333,
     "start_year": 1861,
@@ -14337,7 +14323,7 @@
   },
   {
     "name_en": "Emirate of Asir",
-    "name_ko": "아시르 이드리드 토후국",
+    "name_ko": "아시르 토후국",
     "lon": 42.616667,
     "lat": 17.15,
     "start_year": 1906,
@@ -15527,7 +15513,7 @@
   },
   {
     "name_en": "All-Palestine Government",
-    "name_ko": "팔레스타인 정부 (1948년)",
+    "name_ko": "전팔레스타인 정부",
     "lon": 34.47,
     "lat": 31.5,
     "start_year": 1948,

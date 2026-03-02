@@ -7195,7 +7195,7 @@
     "qid": "Q3456410",
     "name_en": "Republic of Mulhouse",
     "name_ko": "무르호우세 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1648,
     "end_year": 1798,
     "snapshots": [
@@ -7499,7 +7499,7 @@
     "qid": "Q892272",
     "name_en": "Bundu",
     "name_ko": "부은드우",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1690,
     "end_year": 1885,
     "snapshots": [
@@ -10649,7 +10649,7 @@
     "qid": "Q8842943",
     "name_en": "Estado Libre del Istmo",
     "name_ko": "에스타도 리브레 이스트모",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1840,
     "end_year": 1841,
     "snapshots": [

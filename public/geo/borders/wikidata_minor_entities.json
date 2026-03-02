@@ -10287,5 +10287,22 @@
     "score": 24.5,
     "tier_reason": "score_rest",
     "minor_reason": "vassal_or_regime_change"
+  },
+  {
+    "qid": "Q11876909",
+    "name_en": "State of Brazil",
+    "name_ko": "브라질국",
+    "start": "1621",
+    "end": "1815",
+    "lon": "-38.51",
+    "lat": "-12.97",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 11,
+    "region": "latin_america",
+    "score": 43.7,
+    "tier_reason": "score_rest",
+    "minor_reason": "colonial_period_of_parent"
   }
 ]
