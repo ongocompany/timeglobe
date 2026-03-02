@@ -11112,22 +11112,6 @@
     ]
   },
   {
-    "qid": "Q958291",
-    "name_en": "United Principalities of Moldavia and Wallachia",
-    "name_ko": "몰다비아 왈라키아 연합공국",
-    "tier": 2,
-    "start_year": 1878,
-    "end_year": 1881,
-    "snapshots": [
-      {
-        "rid": 2692354,
-        "start": 1878,
-        "end": 1881,
-        "file": "ohm_2692354.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q2017684",
     "name_en": "French protectorate of Tunisia",
     "name_ko": "프랑스령 튀니지",
@@ -11532,28 +11516,6 @@
     ]
   },
   {
-    "qid": "Q541455",
-    "name_en": "Anglo-Egyptian Sudan",
-    "name_ko": "앵글로-이집트 수단",
-    "tier": 2,
-    "start_year": 1899,
-    "end_year": 1956,
-    "snapshots": [
-      {
-        "rid": 2831546,
-        "start": 1899,
-        "end": 1934,
-        "file": "ohm_2831546.geojson"
-      },
-      {
-        "rid": 2803203,
-        "start": 1934,
-        "end": 1956,
-        "file": "ohm_2803203.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q23022146",
     "name_en": "Kingdom of Tonga",
     "name_ko": "통가 왕국",
@@ -11684,52 +11646,6 @@
         "start": 1907,
         "end": 1980,
         "file": "ohm_2846175.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q147909",
-    "name_en": "Kingdom of Bulgaria",
-    "name_ko": "불가리아 왕국",
-    "tier": 2,
-    "start_year": 1908,
-    "end_year": 1946,
-    "snapshots": [
-      {
-        "rid": 2742283,
-        "start": 1908,
-        "end": 1913,
-        "file": "ohm_2742283.geojson"
-      },
-      {
-        "rid": 2746680,
-        "start": 1913,
-        "end": 1919,
-        "file": "ohm_2746680.geojson"
-      },
-      {
-        "rid": 2848878,
-        "start": 1919,
-        "end": 1940,
-        "file": "ohm_2848878.geojson"
-      },
-      {
-        "rid": 2855603,
-        "start": 1940,
-        "end": 1941,
-        "file": "ohm_2855603.geojson"
-      },
-      {
-        "rid": 2695478,
-        "start": 1941,
-        "end": 1944,
-        "file": "ohm_2695478.geojson"
-      },
-      {
-        "rid": 2848877,
-        "start": 1944,
-        "end": 1946,
-        "file": "ohm_2848877.geojson"
       }
     ]
   },
@@ -11948,22 +11864,6 @@
     ]
   },
   {
-    "qid": "Q245160",
-    "name_en": "Democratic Republic of Georgia",
-    "name_ko": "조지아 민주공화국",
-    "tier": 2,
-    "start_year": 1918,
-    "end_year": 1921,
-    "snapshots": [
-      {
-        "rid": 2698086,
-        "start": 1918,
-        "end": 1921,
-        "file": "ohm_2698086.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1639475",
     "name_en": "Mountainous Republic of the Northern Caucasus",
     "name_ko": "북캅카스 산악공화국",
@@ -12012,58 +11912,6 @@
     ]
   },
   {
-    "qid": "Q203493",
-    "name_en": "Kingdom of Romania",
-    "name_ko": "루마니아 왕국",
-    "tier": 2,
-    "start_year": 1919,
-    "end_year": 1947,
-    "snapshots": [
-      {
-        "rid": 2693464,
-        "start": 1919,
-        "end": 1921,
-        "file": "ohm_2693464.geojson"
-      },
-      {
-        "rid": 2693259,
-        "start": 1921,
-        "end": 1940,
-        "file": "ohm_2693259.geojson"
-      },
-      {
-        "rid": 2693256,
-        "start": 1940,
-        "end": 1941,
-        "file": "ohm_2693256.geojson"
-      },
-      {
-        "rid": 2693257,
-        "start": 1940,
-        "end": 1940,
-        "file": "ohm_2693257.geojson"
-      },
-      {
-        "rid": 2693258,
-        "start": 1940,
-        "end": 1940,
-        "file": "ohm_2693258.geojson"
-      },
-      {
-        "rid": 2693255,
-        "start": 1941,
-        "end": 1944,
-        "file": "ohm_2693255.geojson"
-      },
-      {
-        "rid": 2877966,
-        "start": 1945,
-        "end": 1947,
-        "file": "ohm_2877966.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q216173",
     "name_en": "Free City of Danzig",
     "name_ko": "단치히 자유시",
@@ -12082,40 +11930,6 @@
         "start": 1920,
         "end": 1920,
         "file": "ohm_2696571.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q8272919",
-    "name_en": "Republic of Lithuania",
-    "name_ko": "리투아니아 제1공화국",
-    "tier": 2,
-    "start_year": 1920,
-    "end_year": 1940,
-    "snapshots": [
-      {
-        "rid": 2693086,
-        "start": 1920,
-        "end": 1923,
-        "file": "ohm_2693086.geojson"
-      },
-      {
-        "rid": 2692218,
-        "start": 1923,
-        "end": 1939,
-        "file": "ohm_2692218.geojson"
-      },
-      {
-        "rid": 2848250,
-        "start": 1939,
-        "end": 1940,
-        "file": "ohm_2848250.geojson"
-      },
-      {
-        "rid": 2855606,
-        "start": 1939,
-        "end": 1939,
-        "file": "ohm_2855606.geojson"
       }
     ]
   },
@@ -12148,22 +11962,6 @@
         "start": 1920,
         "end": 1940,
         "file": "ohm_2704702.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q146720",
-    "name_en": "Mandatory Iraq",
-    "name_ko": "영국 위임통치령 메소포타미아",
-    "tier": 2,
-    "start_year": 1920,
-    "end_year": 1932,
-    "snapshots": [
-      {
-        "rid": 2839465,
-        "start": 1920,
-        "end": 1932,
-        "file": "ohm_2839465.geojson"
       }
     ]
   },
@@ -12450,50 +12248,6 @@
     ]
   },
   {
-    "qid": "Q12183911",
-    "name_en": "Syrian Federation",
-    "name_ko": "스이리아은 연방",
-    "tier": 2,
-    "start_year": 1922,
-    "end_year": 1925,
-    "snapshots": [
-      {
-        "rid": 2863992,
-        "start": 1922,
-        "end": 1924,
-        "file": "ohm_2863992.geojson"
-      },
-      {
-        "rid": 2864020,
-        "start": 1924,
-        "end": 1925,
-        "file": "ohm_2864020.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1923781",
-    "name_en": "Albanian Republic",
-    "name_ko": "알바니아 공화국",
-    "tier": 2,
-    "start_year": 1925,
-    "end_year": 1928,
-    "snapshots": [
-      {
-        "rid": 2885839,
-        "start": 1925,
-        "end": 1926,
-        "file": "ohm_2885839.geojson"
-      },
-      {
-        "rid": 2800555,
-        "start": 1926,
-        "end": 1928,
-        "file": "ohm_2800555.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q241",
     "name_en": "Cuba",
     "name_ko": "쿠바",
@@ -12512,78 +12266,6 @@
         "start": 1978,
         "end": null,
         "file": "ohm_2871299.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q146880",
-    "name_en": "State of Syria",
-    "name_ko": "시리아국",
-    "tier": 2,
-    "start_year": 1925,
-    "end_year": 1930,
-    "snapshots": [
-      {
-        "rid": 2863991,
-        "start": 1925,
-        "end": 1930,
-        "file": "ohm_2863991.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q1048340",
-    "name_en": "Albanian Kingdom",
-    "name_ko": "알바니아 왕국",
-    "tier": 2,
-    "start_year": 1928,
-    "end_year": 1939,
-    "snapshots": [
-      {
-        "rid": 2800554,
-        "start": 1928,
-        "end": 1939,
-        "file": "ohm_2800554.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q26234937",
-    "name_en": "First Syrian Republic",
-    "name_ko": "시리아 제1공화국",
-    "tier": 2,
-    "start_year": 1930,
-    "end_year": 1958,
-    "snapshots": [
-      {
-        "rid": 2863990,
-        "start": 1930,
-        "end": 1936,
-        "file": "ohm_2863990.geojson"
-      },
-      {
-        "rid": 2863989,
-        "start": 1936,
-        "end": 1938,
-        "file": "ohm_2863989.geojson"
-      },
-      {
-        "rid": 2863988,
-        "start": 1938,
-        "end": 1945,
-        "file": "ohm_2863988.geojson"
-      },
-      {
-        "rid": 2879261,
-        "start": 1945,
-        "end": 1949,
-        "file": "ohm_2879261.geojson"
-      },
-      {
-        "rid": 2864014,
-        "start": 1949,
-        "end": 1958,
-        "file": "ohm_2864014.geojson"
       }
     ]
   },
@@ -14006,28 +13688,6 @@
     ]
   },
   {
-    "qid": "Q842794",
-    "name_en": "Socialist Republic of Romania",
-    "name_ko": "루마니아 사회주의 공화국",
-    "tier": 2,
-    "start_year": 1965,
-    "end_year": 1991,
-    "snapshots": [
-      {
-        "rid": 2877968,
-        "start": 1965,
-        "end": 1989,
-        "file": "ohm_2877968.geojson"
-      },
-      {
-        "rid": 2877967,
-        "start": 1989,
-        "end": 1991,
-        "file": "ohm_2877967.geojson"
-      }
-    ]
-  },
-  {
     "qid": "Q1013",
     "name_en": "Lesotho",
     "name_ko": "레소토",
@@ -14478,22 +14138,6 @@
         "start": 2002,
         "end": 2004,
         "file": "ohm_2822858.geojson"
-      }
-    ]
-  },
-  {
-    "qid": "Q37024",
-    "name_en": "Serbia and Montenegro",
-    "name_ko": "세르비아 몬테네그로",
-    "tier": 2,
-    "start_year": 2003,
-    "end_year": 2006,
-    "snapshots": [
-      {
-        "rid": 2692987,
-        "start": 2003,
-        "end": 2006,
-        "file": "ohm_2692987.geojson"
       }
     ]
   },

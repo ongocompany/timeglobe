@@ -15614,22 +15614,6 @@
     "tier_reason": "score_top8"
   },
   {
-    "qid": "Q4919413",
-    "name_en": "Post-Angkor Cambodia",
-    "name_ko": "캄보디아의 암흑기",
-    "start": "1431",
-    "end": "1863",
-    "lon": "104.92",
-    "lat": "11.55",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 15,
-    "region": "southeast_asia",
-    "score": 52.8,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q1885093",
     "name_en": "Mahra Sultanate",
     "name_ko": "마흐라 술탄국",
@@ -20749,22 +20733,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q1078602",
-    "name_en": "Kingdom of Nepal",
-    "name_ko": "네팔 왕국",
-    "start": "1768",
-    "end": "2008",
-    "lon": "85.316666666",
-    "lat": "27.7",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 38,
-    "region": "south_asia",
-    "score": 69.5,
-    "tier_reason": "review_session7"
-  },
-  {
     "qid": "Q1115291",
     "name_en": "Thonburi Kingdom",
     "name_ko": "톤부리 왕조",
@@ -23651,22 +23619,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q958291",
-    "name_en": "United Principalities of Moldavia and Wallachia",
-    "name_ko": "몰다비아 왈라키아 연합공국",
-    "start": "1859",
-    "end": "1881",
-    "lon": "26.1",
-    "lat": "44.43",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 38,
-    "region": "europe",
-    "score": 58.3,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q999381",
     "name_en": "Jefferson Territory",
     "name_ko": "제퍼슨 영토",
@@ -23809,22 +23761,6 @@
     "region": "unknown",
     "score": 39.9,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q127861",
-    "name_en": "Khedivate of Egypt",
-    "name_ko": "이집트 케디브국",
-    "start": "1867",
-    "end": "1914",
-    "lon": "31.216666666",
-    "lat": "30.05",
-    "type": "historical",
-    "lineage_id": "L0008",
-    "tier": 2,
-    "sitelinks": 43,
-    "region": "middle_east",
-    "score": 74.2,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q150981",
@@ -24019,38 +23955,6 @@
     "region": "sub_saharan",
     "score": 52.8,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q203493",
-    "name_en": "Kingdom of Romania",
-    "name_ko": "루마니아 왕국",
-    "start": "1881",
-    "end": "1947",
-    "lon": "26.1",
-    "lat": "44.416666666",
-    "type": "historical",
-    "lineage_id": "L0044",
-    "tier": 2,
-    "sitelinks": 64,
-    "region": "europe",
-    "score": 76,
-    "tier_reason": "review_session7"
-  },
-  {
-    "qid": "Q444912",
-    "name_en": "Romanian Old Kingdom",
-    "name_ko": "로마니아은 오르드 왕국",
-    "start": "1881",
-    "end": "1918",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 16,
-    "region": "unknown",
-    "score": 61.7,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q2017684",
@@ -24584,22 +24488,6 @@
     "tier_reason": "score_top25"
   },
   {
-    "qid": "Q541455",
-    "name_en": "Anglo-Egyptian Sudan",
-    "name_ko": "앵글로-이집트 수단",
-    "start": "1899",
-    "end": "1956",
-    "lon": "32.533055555",
-    "lat": "15.633055555",
-    "type": "historical",
-    "lineage_id": "L0191",
-    "tier": 2,
-    "sitelinks": 42,
-    "region": "middle_east",
-    "score": 73.4,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q564809",
     "name_en": "Republic of Acre",
     "name_ko": "아크레 공화국",
@@ -24776,38 +24664,6 @@
     "tier_reason": "score_top8"
   },
   {
-    "qid": "Q147909",
-    "name_en": "Kingdom of Bulgaria",
-    "name_ko": "불가리아 왕국",
-    "start": "1908",
-    "end": "1946",
-    "lon": "23.31666667",
-    "lat": "42.7",
-    "type": "historical",
-    "lineage_id": "L0033",
-    "tier": 2,
-    "sitelinks": 57,
-    "region": "europe",
-    "score": 70.6,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q2475921",
-    "name_en": "Bogd Khanate of Mongolia",
-    "name_ko": "복드 칸국",
-    "start": "1911",
-    "end": "1924",
-    "lon": "106.9",
-    "lat": "47.9",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 33,
-    "region": "east_asia",
-    "score": 62.6,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q56282578",
     "name_en": "Uryankhay Republic",
     "name_ko": "우르야응크하이 공화국",
@@ -24888,22 +24744,6 @@
     "region": "east_asia",
     "score": 24.6,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1562357",
-    "name_en": "Republic of Central Albania",
-    "name_ko": "중앙아르바니아 공화국",
-    "start": "1913",
-    "end": "1914",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 15,
-    "region": "unknown",
-    "score": 59.4,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q187035",
@@ -25066,22 +24906,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q2381337",
-    "name_en": "Ukrainian People's Republic of Soviets",
-    "name_ko": "우크라이나 인민소비에트공화국",
-    "start": "1917",
-    "end": "1918",
-    "lon": "36.2167",
-    "lat": "49.9833",
-    "type": "historical",
-    "lineage_id": "L0194",
-    "tier": 2,
-    "sitelinks": 19,
-    "region": "europe",
-    "score": 39.5,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q2872689",
     "name_en": "Turkestan Autonomy",
     "name_ko": "튀르키스탄 자치령",
@@ -25111,22 +24935,6 @@
     "sitelinks": 1,
     "region": "unknown",
     "score": 11.6,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q964024",
-    "name_en": "Moldavian Democratic Republic",
-    "name_ko": "몰다비아 민주공화국",
-    "start": "1917",
-    "end": "1918",
-    "lon": "28.8172",
-    "lat": "47.0222",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 32,
-    "region": "europe",
-    "score": 51.5,
     "tier_reason": "score_rest"
   },
   {
@@ -25194,54 +25002,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q80211",
-    "name_en": "Lithuanian Soviet Socialist Republic",
-    "name_ko": "리투아니아 소비에트 사회주의 공화국",
-    "start": "1918",
-    "end": "1919",
-    "lon": "24.0",
-    "lat": "56.0",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 24,
-    "region": "europe",
-    "score": 45.2,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q139670",
-    "name_en": "First Republic of Armenia",
-    "name_ko": "아르메니아 민주 공화국",
-    "start": "1918",
-    "end": "1920",
-    "lon": "44.514166666",
-    "lat": "40.176111111",
-    "type": "historical",
-    "lineage_id": "L0074",
-    "tier": 2,
-    "sitelinks": 52,
-    "region": "middle_east",
-    "score": 74.2,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q245160",
-    "name_en": "Democratic Republic of Georgia",
-    "name_ko": "조지아 민주공화국",
-    "start": "1918",
-    "end": "1921",
-    "lon": "44.783333333",
-    "lat": "41.716666666",
-    "type": "historical",
-    "lineage_id": "L0079",
-    "tier": 2,
-    "sitelinks": 55,
-    "region": "middle_east",
-    "score": 75.7,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q303836",
     "name_en": "Republic of Tarnobrzeg",
     "name_ko": "타르노브르제그 공화국",
@@ -25294,22 +25054,6 @@
     "t1_end": 1990
   },
   {
-    "qid": "Q2369784",
-    "name_en": "Interwar Latvia",
-    "name_ko": "라트비아 제1공화국",
-    "start": "1918",
-    "end": "1940",
-    "lon": "24.11",
-    "lat": "56.95",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 14,
-    "region": "europe",
-    "score": 34.1,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q2468597",
     "name_en": "Turkish Republic of Aras",
     "name_ko": "아라스 튀르크 공화국",
@@ -25358,22 +25102,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q580188",
-    "name_en": "Kingdom of Yemen",
-    "name_ko": "예멘 왕국",
-    "start": "1918",
-    "end": "1970",
-    "lon": "44.21",
-    "lat": "15.35",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 45,
-    "region": "middle_east",
-    "score": 71.6,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q605000",
     "name_en": "North Caucasian Soviet Republic",
     "name_ko": "북카프카스 SR",
@@ -25419,22 +25147,6 @@
     "sitelinks": 38,
     "region": "europe",
     "score": 56.3,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q8272919",
-    "name_en": "Republic of Lithuania",
-    "name_ko": "리투아니아 제1공화국",
-    "start": "1918",
-    "end": "1940",
-    "lon": "25.28",
-    "lat": "54.69",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 18,
-    "region": "europe",
-    "score": 38.6,
     "tier_reason": "score_rest"
   },
   {
@@ -25518,22 +25230,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q2300296",
-    "name_en": "Latvian Socialist Soviet Republic",
-    "name_ko": "라트비아은 소시아리스트 소비에트 공화국",
-    "start": "1918",
-    "end": "1920",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 24,
-    "region": "unknown",
-    "score": 68.2,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q2308885",
     "name_en": "Lemko Republic",
     "name_ko": "레므코 공화국",
@@ -25582,22 +25278,6 @@
     "tier_reason": "sitelinks_top20_auto",
     "t1_start": 1920,
     "t1_end": 1930
-  },
-  {
-    "qid": "Q76236",
-    "name_en": "Lithuanian–Byelorussian Soviet Socialist Republic",
-    "name_ko": "리투아니아-벨로루시 소비에트 사회주의 공화국",
-    "start": "1919",
-    "end": "1920",
-    "lon": "27.0",
-    "lat": "54.0",
-    "type": "historical",
-    "lineage_id": "L0196",
-    "tier": 2,
-    "sitelinks": 38,
-    "region": "europe",
-    "score": 56.1,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q133356",
@@ -25872,22 +25552,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q146720",
-    "name_en": "Mandatory Iraq",
-    "name_ko": "영국 위임통치령 메소포타미아",
-    "start": "1920",
-    "end": "1932",
-    "lon": "44.38333333",
-    "lat": "33.33333333",
-    "type": "historical",
-    "lineage_id": "L0007",
-    "tier": 2,
-    "sitelinks": 36,
-    "region": "middle_east",
-    "score": 65.5,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q146872",
     "name_en": "State of Aleppo",
     "name_ko": "알레포국",
@@ -25920,22 +25584,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q523380",
-    "name_en": "Republic of Central Lithuania",
-    "name_ko": "중앙리투아니아 공화국",
-    "start": "1920",
-    "end": "1922",
-    "lon": "25.75",
-    "lat": "54.5",
-    "type": "historical",
-    "lineage_id": "L0196",
-    "tier": 2,
-    "sitelinks": 37,
-    "region": "europe",
-    "score": 55.1,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q548114",
     "name_en": "Free State of Fiume",
     "name_ko": "리예카 자유국",
@@ -25949,22 +25597,6 @@
     "sitelinks": 41,
     "region": "europe",
     "score": 59.6,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q90579326",
-    "name_en": "Socialist Soviet Republic of Armenia",
-    "name_ko": "소시아리스트 소비에트 공화국 아르메니아",
-    "start": "1920",
-    "end": "1936",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 4,
-    "region": "unknown",
-    "score": 30.7,
     "tier_reason": "score_rest"
   },
   {
@@ -26048,22 +25680,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q55659450",
-    "name_en": "Socialist Soviet Republic of Georgia",
-    "name_ko": "소시아리스트 소비에트 공화국 조지아",
-    "start": "1921",
-    "end": "1936",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 2,
-    "region": "unknown",
-    "score": 20.2,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q149832",
     "name_en": "Kingdom of Kurdistan",
     "name_ko": "쿠르디스탄 왕국",
@@ -26110,22 +25726,6 @@
     "region": "sub_saharan",
     "score": 72.8,
     "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q12183911",
-    "name_en": "Syrian Federation",
-    "name_ko": "스이리아은 연방",
-    "start": "1922",
-    "end": "1925",
-    "lon": "36.3",
-    "lat": "33.516666666",
-    "type": "historical",
-    "lineage_id": "L0012",
-    "tier": 2,
-    "sitelinks": 21,
-    "region": "middle_east",
-    "score": 48.7,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q139708",
@@ -26192,38 +25792,6 @@
     "tier_reason": "review_session7_ssr"
   },
   {
-    "qid": "Q146880",
-    "name_en": "State of Syria",
-    "name_ko": "시리아국",
-    "start": "1925",
-    "end": "1930",
-    "lon": "36.291944",
-    "lat": "33.513056",
-    "type": "historical",
-    "lineage_id": "L0012",
-    "tier": 2,
-    "sitelinks": 26,
-    "region": "middle_east",
-    "score": 54.3,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1923781",
-    "name_en": "Albanian Republic",
-    "name_ko": "알바니아 공화국",
-    "start": "1925",
-    "end": "1928",
-    "lon": "20.0",
-    "lat": "41.0",
-    "type": "historical",
-    "lineage_id": "L0192",
-    "tier": 2,
-    "sitelinks": 28,
-    "region": "europe",
-    "score": 48.1,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q108865218",
     "name_en": "Lebanese Republic under French mandate",
     "name_ko": "프랑스 위임통치 레바논",
@@ -26272,38 +25840,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q1048340",
-    "name_en": "Albanian Kingdom",
-    "name_ko": "알바니아 왕국",
-    "start": "1928",
-    "end": "1939",
-    "lon": "20.0",
-    "lat": "41.0",
-    "type": "historical",
-    "lineage_id": "L0192",
-    "tier": 2,
-    "sitelinks": 30,
-    "region": "europe",
-    "score": 50,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q146885",
-    "name_en": "Second Syrian Republic",
-    "name_ko": "시리아 공화국",
-    "start": "1930",
-    "end": "1958",
-    "lon": "38.0",
-    "lat": "35.0",
-    "type": "historical",
-    "lineage_id": "L0014",
-    "tier": 2,
-    "sitelinks": 35,
-    "region": "middle_east",
-    "score": 65.1,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q108868568",
     "name_en": "Syrian Republic under French mandate",
     "name_ko": "프랑스 위임통치 시리아",
@@ -26317,22 +25853,6 @@
     "sitelinks": 4,
     "region": "middle_east",
     "score": 20.8,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q26234937",
-    "name_en": "First Syrian Republic",
-    "name_ko": "시리아 제1공화국",
-    "start": "1930",
-    "end": "1950",
-    "lon": "38.0",
-    "lat": "35.0",
-    "type": "historical",
-    "lineage_id": "L0014",
-    "tier": 2,
-    "sitelinks": 19,
-    "region": "middle_east",
-    "score": 46.3,
     "tier_reason": "score_rest"
   },
   {
@@ -26484,22 +26004,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q12714608",
-    "name_en": "Fascist Romania",
-    "name_ko": "파스시스트 로마니아",
-    "start": "1937",
-    "end": "1938",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 6,
-    "region": "unknown",
-    "score": 37.7,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q49910",
     "name_en": "Colony of Aden",
     "name_ko": "아덴 식민지",
@@ -26628,22 +26132,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q62519",
-    "name_en": "Finnish Democratic Republic",
-    "name_ko": "핀란드 민주공화국",
-    "start": "1939",
-    "end": "1940",
-    "lon": "30.0",
-    "lat": "61.8",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 40,
-    "region": "europe",
-    "score": 58.5,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q130280",
     "name_en": "Estonian Soviet Socialist Republic",
     "name_ko": "에스토니아 소비에트 사회주의 공화국",
@@ -26769,22 +26257,6 @@
     "sitelinks": 23,
     "region": "europe",
     "score": 43.8,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q777147",
-    "name_en": "Albanian Kingdom",
-    "name_ko": "알바니아 왕국",
-    "start": "1943",
-    "end": "1944",
-    "lon": "19.82",
-    "lat": "41.535",
-    "type": "historical",
-    "lineage_id": "L0192",
-    "tier": 2,
-    "sitelinks": 1,
-    "region": "europe",
-    "score": 8.3,
     "tier_reason": "score_rest"
   },
   {
@@ -26982,22 +26454,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q870055",
-    "name_en": "Kingdom of Laos",
-    "name_ko": "라오스 왕국",
-    "start": "1947",
-    "end": "1975",
-    "lon": "102.6",
-    "lat": "17.966666666",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 45,
-    "region": "southeast_asia",
-    "score": 73.9,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q21816219",
     "name_en": "Trust Territory of Nauru",
     "name_ko": "트루스트 영토 나우루",
@@ -27162,22 +26618,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q31454",
-    "name_en": "Kingdom of Libya",
-    "name_ko": "리비아 왕국",
-    "start": "1951",
-    "end": "1969",
-    "lon": "13.185833",
-    "lat": "32.902222",
-    "type": "historical",
-    "lineage_id": "L0104",
-    "tier": 2,
-    "sitelinks": 47,
-    "region": "north_africa",
-    "score": 76.8,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q2603305",
     "name_en": "Federation of Ethiopia and Eritrea",
     "name_ko": "에티오피아-에리트레아 연방",
@@ -27191,22 +26631,6 @@
     "sitelinks": 14,
     "region": "sub_saharan",
     "score": 39.3,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q2638486",
-    "name_en": "Kingdom of Cambodia",
-    "name_ko": "캄보디아 왕국 (1953년-1970년)",
-    "start": "1953",
-    "end": "1970",
-    "lon": "104.92",
-    "lat": "11.55",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 23,
-    "region": "southeast_asia",
-    "score": 49.6,
     "tier_reason": "score_rest"
   },
   {
@@ -27308,22 +26732,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q3486796",
-    "name_en": "Republic of the Sudan(1956-1969)",
-    "name_ko": "수단 공화국 (1956-1969)",
-    "start": "1956",
-    "end": "1969",
-    "lon": "32.533333333",
-    "lat": "15.633333333",
-    "type": "historical",
-    "lineage_id": "L0191",
-    "tier": 2,
-    "sitelinks": 18,
-    "region": "middle_east",
-    "score": 45.2,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q5555325",
     "name_en": "Dominion of Ghana",
     "name_ko": "도미니오은 그아나",
@@ -27388,22 +26796,6 @@
     "region": "sub_saharan",
     "score": 61,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q3456487",
-    "name_en": "Sudanese Republic",
-    "name_ko": "수다네세 공화국",
-    "start": "1958",
-    "end": "1959",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 6,
-    "region": "unknown",
-    "score": 37.4,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q6740997",
@@ -27566,22 +26958,6 @@
     "tier_reason": "score_top25"
   },
   {
-    "qid": "Q267584",
-    "name_en": "Yemen Republic",
-    "name_ko": "예멘 아랍 공화국",
-    "start": "1962",
-    "end": "1990",
-    "lon": "44.206666666",
-    "lat": "15.354722222",
-    "type": "historical",
-    "lineage_id": "L0027",
-    "tier": 2,
-    "sitelinks": 51,
-    "region": "middle_east",
-    "score": 74.1,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q7842409",
     "name_en": "Trinidad and Tobago",
     "name_ko": "트리니다드 토바고",
@@ -27660,22 +27036,6 @@
     "region": "unknown",
     "score": 59.1,
     "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q842794",
-    "name_en": "Socialist Republic of Romania",
-    "name_ko": "루마니아 사회주의 공화국",
-    "start": "1965",
-    "end": "1989",
-    "lon": "26.1",
-    "lat": "44.43",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 60,
-    "region": "europe",
-    "score": 71.7,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q199841",
@@ -27773,38 +27133,6 @@
     "sitelinks": 30,
     "region": "southeast_asia",
     "score": 59,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q2347668",
-    "name_en": "Libyan Arab Republic",
-    "name_ko": "리비아 아랍 공화국",
-    "start": "1969",
-    "end": "1977",
-    "lon": "17.0",
-    "lat": "27.0",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 19,
-    "region": "north_africa",
-    "score": 51.1,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q5866728",
-    "name_en": "Democratic Republic of Sudan",
-    "name_ko": "데모크라티크 공화국 수단",
-    "start": "1969",
-    "end": "1985",
-    "lon": "32.533333333",
-    "lat": "15.633333333",
-    "type": "historical",
-    "lineage_id": "L0191",
-    "tier": 2,
-    "sitelinks": 14,
-    "region": "middle_east",
-    "score": 40.1,
     "tier_reason": "score_rest"
   },
   {
@@ -28050,22 +27378,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q7242857",
-    "name_en": "Pridnestrovian Moldavian Soviet Socialist Republic",
-    "name_ko": "트란스니스트리아 몰도바 소비에트 사회주의 공화국",
-    "start": "1990",
-    "end": "1991",
-    "lon": "29.6",
-    "lat": "46.84",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 10,
-    "region": "europe",
-    "score": 29.3,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q244165",
     "name_en": "Republic of Artsakh",
     "name_ko": "아르차흐 공화국",
@@ -28080,22 +27392,6 @@
     "region": "central_asia",
     "score": 89.1,
     "tier_reason": "review_session7"
-  },
-  {
-    "qid": "Q3456400",
-    "name_en": "Republic of Georgia (1990–1992)",
-    "name_ko": "조지아 공화국 (1990–1992)",
-    "start": "1991",
-    "end": "1992",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 2,
-    "region": "unknown",
-    "score": 19,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q65362",
@@ -28176,22 +27472,6 @@
     "region": "south_asia",
     "score": 40.9,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q37024",
-    "name_en": "Serbia and Montenegro",
-    "name_ko": "세르비아 몬테네그로",
-    "start": "2003",
-    "end": "2006",
-    "lon": "19.78",
-    "lat": "43.15",
-    "type": "historical",
-    "lineage_id": "L0192",
-    "tier": 2,
-    "sitelinks": 121,
-    "region": "europe",
-    "score": 72.7,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q965174",
@@ -28303,38 +27583,6 @@
     "sitelinks": 3,
     "region": "east_asia",
     "score": 16.6,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q738541",
-    "name_en": "Carpatho-Ukraine",
-    "name_ko": "카르파티아 우크라이나",
-    "start": "1939",
-    "end": "1939",
-    "lon": "22.29",
-    "lat": "48.62",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 8,
-    "region": "europe",
-    "score": 26.4,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q2621887",
-    "name_en": "Ukrainian State",
-    "name_ko": "우크라이나국",
-    "start": "1918",
-    "end": "1918",
-    "lon": "30.52",
-    "lat": "50.45",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 4,
-    "region": "europe",
-    "score": 19.3,
     "tier_reason": "score_rest"
   },
   {
