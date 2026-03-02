@@ -3,6 +3,21 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-03] [mk] 데이터 큐레이션 기준 확정
+
+### 논의 배경
+Wikidata 덤프(`latest-all.json.gz`) 다운로드 완료 → 파싱 전 큐레이션 기준 먼저 결정.
+
+### 확정된 공통 제거 기준 (jn 결정)
+1. `lat == null OR lon == null` → 제외 (지구본 배치 불가)
+2. `anchor_year == null` → 제외 (타임라인 배치 불가)
+3. `name_ko == null AND name_en == null` → 제외 (표시 이름 없음)
+4. `sitelinks < 10` → 제외 (역사적 공인도 부족)
+5. `anchor_year > 2021` → 제외 (러시아-우크라이나 침공 이전까지, 현재진행형 이슈 회피)
+
+### 산출물
+- `docs/develop/11_[mk]curation_criteria.md` 작성 (타입별 세부 기준 포함)
+
 ## [2026-03-03] [mk] 민규 팀 합류 + 다중 AI 세션 협업 체계 구축
 
 ### 민규(mk) 소개 — 민철에게 (꼭 읽어!)
@@ -1779,3 +1794,27 @@
 * 신규: `scripts/geo/downloadOhmPolygons.py`
 * 수정: `.gitignore` (OHM 데이터 디렉토리 제외)
 * 데이터: `public/geo/borders/ohm/` (988개 GeoJSON, gitignore됨)
+
+---
+## [2026-03-02][mk] dump-review 큐레이션 UI 신규 추가
+
+### 작업 내용
+Wikidata 덤프 파싱 데이터 큐레이션 관리 웹 UI 구축.
+
+**생성 파일:**
+- `data/dump_samples/hist_entities_raw.jsonl` — 12,374건 (jinserver에서 복사)
+- `data/dump_samples/events_raw.jsonl` — 16,187건
+- `data/dump_samples/places_sample.jsonl` — sitelinks 상위 1,000건
+- `data/dump_samples/persons_sample.jsonl` — sitelinks 상위 500건
+- `data/curation_decisions.json` — 결정 저장소 (초기값)
+- `src/app/api/dump-curation/route.ts` — GET(필터/페이지네이션) + POST(결정저장) + stats
+- `src/app/dump-review/page.tsx` — 4탭 큐레이션 UI (hist/event/place/person)
+- `.claude/launch.json` — 로컬 dev 서버 설정
+
+**주요 기능:**
+- 4개 타입 탭 + 타입별 통계(전체/포함/제외/미결정)
+- 검색, sitelinks 슬라이더, 연도범위, 결정상태 필터
+- 개별 결정 버튼(✅포함/❌제외/⏭️건너뜀) + 키보드 단축키(A/D/S/↑↓)
+- 일괄처리: sitelinks<10 제외, 좌표없는것 제외
+- 상세 패널: Wikidata/위키백과 링크 포함
+- 결정 즉시 `data/curation_decisions.json`에 자동저장
