@@ -3053,7 +3053,7 @@
   },
   {
     "name_en": "Kingdom of Ceredigion",
-    "name_ko": "세레디기오은 왕국",
+    "name_ko": "케레디기온 왕국",
     "lon": -4.0166,
     "lat": 53.2333,
     "start_year": 500,
@@ -3109,7 +3109,7 @@
   },
   {
     "name_en": "Meirionnydd",
-    "name_ko": "메이리오느이드",
+    "name_ko": "메이리오니드",
     "lon": -3.835,
     "lat": 52.758,
     "start_year": 500,
@@ -3117,7 +3117,7 @@
     "lineage_id": "L0054",
     "color": "hsl(293, 70%, 55%)",
     "qid": "Q1088024",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 7
   },
@@ -3347,7 +3347,7 @@
   },
   {
     "name_en": "Kingdom of Morgannwg",
-    "name_ko": "모르가느우그 왕국",
+    "name_ko": "모르간우그 왕국",
     "lon": -3.25,
     "lat": 51.6,
     "start_year": 580,
@@ -6525,7 +6525,7 @@
   },
   {
     "name_en": "Dauphiné of Viennois",
-    "name_ko": "다우프이느에 비에노이스",
+    "name_ko": "도피네 비엔누아",
     "lon": 4.8747,
     "lat": 45.5256,
     "start_year": 1142,
@@ -6533,7 +6533,7 @@
     "lineage_id": "L0095",
     "color": "hsl(143, 70%, 55%)",
     "qid": "Q19955992",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 3
   },
@@ -6595,7 +6595,7 @@
   },
   {
     "name_en": "Powys Wenwynwyn",
-    "name_ko": "포우스 웨느우느우은",
+    "name_ko": "포위스 웬윈윈",
     "lon": -4.016666666,
     "lat": 53.233333333,
     "start_year": 1160,
@@ -6603,7 +6603,7 @@
     "lineage_id": "L0055",
     "color": "hsl(293, 70%, 55%)",
     "qid": "Q2670639",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 11
   },
@@ -7939,7 +7939,7 @@
   },
   {
     "name_en": "Ban de la Roche",
-    "name_ko": "바은 로체",
+    "name_ko": "반 드 라 로슈",
     "lon": 7.208611111,
     "lat": 48.454722222,
     "start_year": 1284,
@@ -7947,7 +7947,7 @@
     "lineage_id": "L0063",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q2465074",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 4
   },
@@ -11187,7 +11187,7 @@
   },
   {
     "name_en": "Asahan Sultanate",
-    "name_ko": "아사하은 술탄국",
+    "name_ko": "아사한 술탄국",
     "lon": 99.1667,
     "lat": 3,
     "start_year": 1630,
@@ -11383,7 +11383,7 @@
   },
   {
     "name_en": "Kénédougou Kingdom",
-    "name_ko": "크에느에도우고우 왕국",
+    "name_ko": "케네두구 왕국",
     "lon": -6.916667,
     "lat": 10.783333,
     "start_year": 1650,
@@ -11523,7 +11523,7 @@
   },
   {
     "name_en": "Emirate of Beihan",
-    "name_ko": "베이하은 토후국",
+    "name_ko": "베이한 토후국",
     "lon": 45.6667,
     "lat": 13.4167,
     "start_year": 1680,
@@ -11621,7 +11621,7 @@
   },
   {
     "name_en": "Anziku Kingdom",
-    "name_ko": "테케 소왕국",
+    "name_ko": "테케 왕국",
     "lon": 15.28,
     "lat": -4.27,
     "start_year": 1700,
@@ -11845,7 +11845,7 @@
   },
   {
     "name_en": "Anhalt-Bernburg-Schaumburg-Hoym",
-    "name_ko": "안할트-베르느부르그-시아음브우르그-호이므",
+    "name_ko": "안할트-베른부르크-샤움부르크-호임",
     "lon": 11.3,
     "lat": 51.783056,
     "start_year": 1718,
@@ -11853,7 +11853,7 @@
     "lineage_id": "L0120",
     "color": "hsl(280, 70%, 55%)",
     "qid": "Q1843786",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 12
   },
@@ -12307,7 +12307,7 @@
   },
   {
     "name_en": "British Bencoolen",
-    "name_ko": "영국 베느코오레은",
+    "name_ko": "영국령 벵쿨렌",
     "lon": 102.251848,
     "lat": -3.787093,
     "start_year": 1785,
@@ -12315,7 +12315,7 @@
     "lineage_id": null,
     "color": "hsl(325, 70%, 55%)",
     "qid": "Q4969562",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 7
   },
@@ -12461,7 +12461,7 @@
   },
   {
     "name_en": "Transpadane Republic",
-    "name_ko": "트라느스파다네 공화국",
+    "name_ko": "트란스파다나 공화국",
     "lon": 9.17,
     "lat": 45.467,
     "start_year": 1796,
@@ -13245,7 +13245,7 @@
   },
   {
     "name_en": "Palanpur Agency",
-    "name_ko": "파라느푸르 아게느크이",
+    "name_ko": "팔란푸르 에이전시",
     "lon": 72.436981,
     "lat": 24.169308,
     "start_year": 1819,
@@ -13253,7 +13253,7 @@
     "lineage_id": "L0135",
     "color": "hsl(358, 70%, 55%)",
     "qid": "Q1237976",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 4
   },
@@ -13365,7 +13365,7 @@
     "lineage_id": null,
     "color": "hsl(18, 70%, 55%)",
     "qid": "Q288200",
-    "tier": 2,
+    "tier": 3,
     "region": "north_america",
     "sitelinks": 15
   },
@@ -13763,7 +13763,7 @@
   },
   {
     "name_en": "Republic of Kliprivier",
-    "name_ko": "크리프리비에르 공화국",
+    "name_ko": "클립리비에르 공화국",
     "lon": 24.518611,
     "lat": -28.538056,
     "start_year": 1847,
@@ -13791,7 +13791,7 @@
   },
   {
     "name_en": "Republic of Zoutpansberg",
-    "name_ko": "조우트파느스베르그 공화국",
+    "name_ko": "조우트판스베르그 공화국",
     "lon": 29.77,
     "lat": -23.0525,
     "start_year": 1849,
@@ -14449,7 +14449,7 @@
   },
   {
     "name_en": "Franceville, New Hebrides",
-    "name_ko": "프라느세비레 뉴 헤브리데스",
+    "name_ko": "프랑스빌",
     "lon": 168.314,
     "lat": -17.7375,
     "start_year": 1889,
@@ -14457,7 +14457,7 @@
     "lineage_id": null,
     "color": "hsl(324, 70%, 55%)",
     "qid": "Q5479650",
-    "tier": 2,
+    "tier": 3,
     "region": "oceania",
     "sitelinks": 5
   },
@@ -14631,7 +14631,7 @@
   },
   {
     "name_en": "Gurian Republic",
-    "name_ko": "구리아은 공화국",
+    "name_ko": "구리아 공화국",
     "lon": 42.000556,
     "lat": 41.926944,
     "start_year": 1902,
@@ -15983,7 +15983,7 @@
     "lineage_id": null,
     "color": "hsl(20, 70%, 55%)",
     "qid": "Q60770428",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 14
   },
@@ -16339,7 +16339,7 @@
   },
   {
     "name_en": "United Suvadive Republic",
-    "name_ko": "수바디베 공화국",
+    "name_ko": "수바디브 공화국",
     "lon": 73,
     "lat": 0.5,
     "start_year": 1959,
@@ -16591,7 +16591,7 @@
   },
   {
     "name_en": "Democratic Republic of East Timor",
-    "name_ko": "데모크라티크 공화국 이스트 티모르",
+    "name_ko": "동티모르 민주공화국",
     "lon": 125.56,
     "lat": -8.55,
     "start_year": 1975,
@@ -16599,7 +16599,7 @@
     "lineage_id": null,
     "color": "hsl(211, 70%, 55%)",
     "qid": "Q114415093",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 6
   },
@@ -16689,7 +16689,7 @@
   },
   {
     "name_en": "SAO Eastern Slavonia, Baranja and Western Syrmia",
-    "name_ko": "SAO 동슬라보니아, 바라냐 및 서시르미아",
+    "name_ko": "SAO 동슬라보니아",
     "lon": 18.66,
     "lat": 45.34,
     "start_year": 1991,
@@ -16697,7 +16697,7 @@
     "lineage_id": null,
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q65362",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 22
   },
@@ -16717,7 +16717,7 @@
   },
   {
     "name_en": "United Nations Transitional Administration for Eastern Slavonia, Baranja and Western Sirmium",
-    "name_ko": "유엔 동슬라보니아 바라냐 서시르미움 과도행정기구",
+    "name_ko": "유엔 동슬라보니아 과도행정기구",
     "lon": 18.66,
     "lat": 45.34,
     "start_year": 1996,
@@ -16725,7 +16725,7 @@
     "lineage_id": null,
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q1257607",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 22
   },
@@ -16739,7 +16739,7 @@
     "lineage_id": null,
     "color": "hsl(189, 70%, 55%)",
     "qid": "Q4689103",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 29
   },
@@ -16753,7 +16753,7 @@
     "lineage_id": "L0007",
     "color": "hsl(104, 70%, 55%)",
     "qid": "Q965174",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 25
   },

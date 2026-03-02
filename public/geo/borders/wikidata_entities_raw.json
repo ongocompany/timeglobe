@@ -446,7 +446,7 @@
   {
     "qid": "Q425405",
     "name_en": "Kingdom of Ḫana",
-    "name_ko": "아나 왕국",
+    "name_ko": "하나 왕국",
     "start": "BC 1800",
     "end": "BC 1700",
     "lon": "",
@@ -529,7 +529,7 @@
   {
     "qid": "Q12406731",
     "name_en": "Old Hittite Kingdom",
-    "name_ko": "오르드 히타이트 왕국",
+    "name_ko": "히타이트 구왕국",
     "start": "BC 1649",
     "end": "BC 1499",
     "lon": "",
@@ -1559,7 +1559,7 @@
   {
     "qid": "Q777779",
     "name_en": "Kingdom of Awsan",
-    "name_ko": "아사은 왕국",
+    "name_ko": "아우산 왕국",
     "start": "BC 800",
     "end": "BC 700",
     "lon": "",
@@ -1838,7 +1838,7 @@
   {
     "qid": "Q27982794",
     "name_en": "Kingdom of Cyrene",
-    "name_ko": "크이레네 왕국",
+    "name_ko": "키레네 왕국",
     "start": "BC 629",
     "end": "BC 95",
     "lon": "",
@@ -1873,7 +1873,7 @@
   {
     "qid": "Q95982472",
     "name_en": "Kingdom of Cilicia (ancient)",
-    "name_ko": "킬리키아 왕국 (고대)",
+    "name_ko": "킬리키아 왕국(고대)",
     "start": "BC 611",
     "end": "BC 548",
     "lon": "",
@@ -2004,7 +2004,7 @@
   {
     "qid": "Q133325368",
     "name_en": "Magadhan Empire",
-    "name_ko": "마가드하은 제국",
+    "name_ko": "마가다 제국",
     "start": "BC 543",
     "end": "28",
     "lon": "",
@@ -2680,7 +2680,7 @@
   {
     "qid": "Q17034723",
     "name_en": "Jiaodong Kingdom",
-    "name_ko": "지아도응 왕국",
+    "name_ko": "교동국",
     "start": "BC 205",
     "end": "8",
     "lon": "",
@@ -2696,18 +2696,18 @@
   {
     "qid": "Q17034965",
     "name_en": "Linjiang",
-    "name_ko": "리느지아응",
+    "name_ko": "임강국",
     "start": "BC 205",
     "end": "BC 201",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 15.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q17059107",
@@ -2906,7 +2906,7 @@
   {
     "qid": "Q10908451",
     "name_en": "Nanhai Kingdom",
-    "name_ko": "나느하이 왕국",
+    "name_ko": "남해국",
     "start": "BC 194",
     "end": "BC 173",
     "lon": "",
@@ -2938,7 +2938,7 @@
   {
     "qid": "Q20507218",
     "name_en": "Kingdom of Artaxerxes",
-    "name_ko": "아르타크스에르크스에스 왕국",
+    "name_ko": "아르탁세르크세스 왕국",
     "start": "BC 188",
     "end": "1",
     "lon": "",
@@ -3146,7 +3146,7 @@
   {
     "qid": "Q2111229",
     "name_en": "Kingdom of Chalcis",
-    "name_ko": "차르시스 왕국",
+    "name_ko": "칼키스 왕국",
     "start": "BC 80",
     "end": "92",
     "lon": "",
@@ -3283,7 +3283,7 @@
   {
     "qid": "Q21523635",
     "name_en": "Kingdom of Ce",
-    "name_ko": "Ce 왕국",
+    "name_ko": "체 왕국",
     "start": "1",
     "end": "900",
     "lon": "",
@@ -3449,18 +3449,18 @@
   {
     "qid": "Q10565487",
     "name_en": "Chen princedom",
-    "name_ko": "체은 프리느세도므",
+    "name_ko": "진 제후국",
     "start": "88",
     "end": "197",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 13,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q206789",
@@ -3500,7 +3500,7 @@
   {
     "qid": "Q18126839",
     "name_en": "Kingdom of Pong",
-    "name_ko": "포응 왕국",
+    "name_ko": "퐁 왕국",
     "start": "100",
     "end": "1479",
     "lon": "",
@@ -3564,7 +3564,7 @@
   {
     "qid": "Q22343505",
     "name_en": "Kingdom K'antu",
-    "name_ko": "왕국 카은트우",
+    "name_ko": "칸투 왕국",
     "start": "100",
     "end": "900",
     "lon": "",
@@ -3612,7 +3612,7 @@
   {
     "qid": "Q2249661",
     "name_en": "United Provinces of New Granada",
-    "name_ko": "우니테드 프로비느세스 뉴 그라나다",
+    "name_ko": "누에바그라나다 연합주",
     "start": "1811",
     "end": "1816",
     "lon": "",
@@ -3714,7 +3714,7 @@
   {
     "qid": "Q4667453",
     "name_en": "Abhira Kingdom",
-    "name_ko": "아브히라 왕국",
+    "name_ko": "아비라 왕국",
     "start": "248",
     "end": "415",
     "lon": "",
@@ -3858,7 +3858,7 @@
   {
     "qid": "Q605292",
     "name_en": "Kindah Kingdom",
-    "name_ko": "키은드아흐 왕국",
+    "name_ko": "킨다 왕국",
     "start": "300",
     "end": "600",
     "lon": "",
@@ -3954,18 +3954,18 @@
   {
     "qid": "Q2602572",
     "name_en": "Afrighids",
-    "name_ko": "아프리그이드스",
+    "name_ko": "아프리기드 왕조",
     "start": "305",
     "end": "995",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "unknown",
     "score": 72.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1149098",
@@ -4239,7 +4239,7 @@
   {
     "qid": "Q4671762",
     "name_en": "Kingdom of Leinster",
-    "name_ko": "레이느스테르 왕국",
+    "name_ko": "렌스터 왕국",
     "start": "400",
     "end": "1171",
     "lon": "",
@@ -4255,23 +4255,23 @@
   {
     "qid": "Q16685194",
     "name_en": "Pachan kingdom",
-    "name_ko": "파차은 키응도므",
+    "name_ko": "파찬 왕국",
     "start": "400",
     "end": "900",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 32.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q114178255",
     "name_en": "Kingdom of the Angles",
-    "name_ko": "아응레스 왕국",
+    "name_ko": "앵글 왕국",
     "start": "400",
     "end": "600",
     "lon": "",
@@ -4287,7 +4287,7 @@
   {
     "qid": "Q22338414",
     "name_en": "Kingdom Saal",
-    "name_ko": "왕국 사아르",
+    "name_ko": "사알 왕국",
     "start": "400",
     "end": "900",
     "lon": "",
@@ -4449,7 +4449,7 @@
   {
     "qid": "Q13590051",
     "name_en": "Kingdom of the Burgundians",
-    "name_ko": "부르고뉴족 왕국",
+    "name_ko": "부르군트 왕국",
     "start": "411",
     "end": "534",
     "lon": "",
@@ -4657,7 +4657,7 @@
   {
     "qid": "Q2784785",
     "name_en": "Kingdom of the Gepids",
-    "name_ko": "게피드스 왕국",
+    "name_ko": "게피드 왕국",
     "start": "454",
     "end": "567",
     "lon": "",
@@ -4886,7 +4886,7 @@
   {
     "qid": "Q2578706",
     "name_en": "Kingdom of Ceredigion",
-    "name_ko": "세레디기오은 왕국",
+    "name_ko": "케레디기온 왕국",
     "start": "500",
     "end": "680",
     "lon": "-4.0166",
@@ -4934,7 +4934,7 @@
   {
     "qid": "Q633573",
     "name_en": "Kingdom of Rheged",
-    "name_ko": "르헤게드 왕국",
+    "name_ko": "레게드 왕국",
     "start": "500",
     "end": "650",
     "lon": "",
@@ -4966,34 +4966,34 @@
   {
     "qid": "Q7054713",
     "name_en": "North Caucasian Huns",
-    "name_ko": "북카우카시아은 훈족",
+    "name_ko": "북캅카스 훈족",
     "start": "500",
     "end": "1000",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 59.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q16829979",
     "name_en": "Domnonée",
-    "name_ko": "도므노느에",
+    "name_ko": "돔노네",
     "start": "500",
     "end": "652",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 51.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q829356",
@@ -5014,18 +5014,18 @@
   {
     "qid": "Q1088024",
     "name_en": "Meirionnydd",
-    "name_ko": "메이리오느이드",
+    "name_ko": "메이리오니드",
     "start": "500",
     "end": "900",
     "lon": "-3.835",
     "lat": "52.758",
     "type": "historical",
     "lineage_id": "L0054",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "europe",
     "score": 35.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1333032",
@@ -5062,7 +5062,7 @@
   {
     "qid": "Q22569992",
     "name_en": "Kingdom Tzu'",
-    "name_ko": "왕국 츠우",
+    "name_ko": "추 왕국",
     "start": "500",
     "end": "900",
     "lon": "",
@@ -5142,7 +5142,7 @@
   {
     "qid": "Q6412672",
     "name_en": "Kingdom of Uí Failghe",
-    "name_ko": "Uí 파이르그에 왕국",
+    "name_ko": "이 파일게 왕국",
     "start": "507",
     "end": "1550",
     "lon": "",
@@ -5534,7 +5534,7 @@
   {
     "qid": "Q13131807",
     "name_en": "Kingdom of Morgannwg",
-    "name_ko": "모르가느우그 왕국",
+    "name_ko": "모르간우그 왕국",
     "start": "580",
     "end": "1093",
     "lon": "-3.25",
@@ -5550,7 +5550,7 @@
   {
     "qid": "Q12389905",
     "name_en": "Galicia in the Visigothic Kingdom",
-    "name_ko": "갈리시아 in 비시고티크 왕국",
+    "name_ko": "서고트 갈리시아",
     "start": "585",
     "end": "714",
     "lon": "",
@@ -5630,18 +5630,18 @@
   {
     "qid": "Q20536461",
     "name_en": "Vardan Khudahs",
-    "name_ko": "바르다은 크우다흐스",
+    "name_ko": "바르단 쿠다",
     "start": "600",
     "end": "800",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 23.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q15104874",
@@ -6032,7 +6032,7 @@
   {
     "qid": "Q5519387",
     "name_en": "Galuh Kingdom",
-    "name_ko": "가루흐 왕국",
+    "name_ko": "갈루 왕국",
     "start": "669",
     "end": "1482",
     "lon": "",
@@ -6115,7 +6115,7 @@
   {
     "qid": "Q3196064",
     "name_en": "Danube Bulgar Khanate",
-    "name_ko": "다누베 불가르 칸국",
+    "name_ko": "다뉴브 불가르 칸국",
     "start": "681",
     "end": "864",
     "lon": "",
@@ -6392,7 +6392,7 @@
   {
     "qid": "Q110442770",
     "name_en": "Taank Kingdom",
-    "name_ko": "타아응크 왕국",
+    "name_ko": "타크 왕국",
     "start": "700",
     "end": "1000",
     "lon": "",
@@ -6602,7 +6602,7 @@
   {
     "qid": "Q3446273",
     "name_en": "Emirate of Tlemcen",
-    "name_ko": "트레므세은 토후국",
+    "name_ko": "틀렘센 토후국",
     "start": "742",
     "end": "789",
     "lon": "",
@@ -7080,7 +7080,7 @@
   {
     "qid": "Q2300246",
     "name_en": "Kingdom of Fez",
-    "name_ko": "페즈 왕국",
+    "name_ko": "페스 왕국",
     "start": "800",
     "end": "1900",
     "lon": "",
@@ -7275,7 +7275,7 @@
   {
     "qid": "Q3446210",
     "name_en": "Kingdom of Pamplona",
-    "name_ko": "파음프로나 왕국",
+    "name_ko": "팜플로나 왕국",
     "start": "824",
     "end": "1162",
     "lon": "",
@@ -7602,7 +7602,7 @@
   {
     "qid": "Q17526620",
     "name_en": "Kingdom of Shirvan",
-    "name_ko": "시르바은 왕국",
+    "name_ko": "시르반 왕국",
     "start": "861",
     "end": "1538",
     "lon": "",
@@ -8301,7 +8301,7 @@
   {
     "qid": "Q5692614",
     "name_en": "Kingdom of Najera",
-    "name_ko": "나제라 왕국",
+    "name_ko": "나헤라 왕국",
     "start": "923",
     "end": "1113",
     "lon": "",
@@ -8821,7 +8821,7 @@
   {
     "qid": "Q3653113",
     "name_en": "Kingdom of Syunik",
-    "name_ko": "스유니크 왕국",
+    "name_ko": "슈니크 왕국",
     "start": "987",
     "end": "1170",
     "lon": "",
@@ -8853,7 +8853,7 @@
   {
     "qid": "Q2387381",
     "name_en": "Tmutarakan Rus",
-    "name_ko": "트무타라카은 루스",
+    "name_ko": "트무타라칸",
     "start": "988",
     "end": "1094",
     "lon": "",
@@ -9031,7 +9031,7 @@
   {
     "qid": "Q7260839",
     "name_en": "Purang-Guge Kingdom",
-    "name_ko": "푸라응-구게 왕국",
+    "name_ko": "푸랑-구게 왕국",
     "start": "1000",
     "end": "1100",
     "lon": "",
@@ -9337,7 +9337,7 @@
   {
     "qid": "Q7216494",
     "name_en": "First Kingdom of Kakheti",
-    "name_ko": "원주민 왕국 카크에티",
+    "name_ko": "카헤티 제1왕국",
     "start": "1020",
     "end": "1104",
     "lon": "",
@@ -9439,7 +9439,7 @@
   {
     "qid": "Q4833464",
     "name_en": "West Kara-Khanid Khanate",
-    "name_ko": "서카라-크아니드 칸국",
+    "name_ko": "서카라한 칸국",
     "start": "1040",
     "end": "1212",
     "lon": "",
@@ -9471,7 +9471,7 @@
   {
     "qid": "Q6773257",
     "name_en": "Eastern Karakhanids Khanate",
-    "name_ko": "동카라크아니드스 칸국",
+    "name_ko": "동카라한 칸국",
     "start": "1042",
     "end": "1212",
     "lon": "",
@@ -9535,7 +9535,7 @@
   {
     "qid": "Q98400506",
     "name_en": "Venetian Empire",
-    "name_ko": "베네티아은 제국",
+    "name_ko": "베네치아 제국",
     "start": "1050",
     "end": "1750",
     "lon": "",
@@ -9583,7 +9583,7 @@
   {
     "qid": "Q21005050",
     "name_en": "Kingdom of Morgannwg",
-    "name_ko": "모르가느우그 왕국",
+    "name_ko": "모르간우그 왕국",
     "start": "1063",
     "end": "1091",
     "lon": "",
@@ -9681,7 +9681,7 @@
   {
     "qid": "Q61950933",
     "name_en": "Kingdom of Dalmatia",
-    "name_ko": "다르마티아 왕국",
+    "name_ko": "달마티아 왕국",
     "start": "1069",
     "end": "1433",
     "lon": "",
@@ -9956,7 +9956,7 @@
   {
     "qid": "Q19855565",
     "name_en": "Dazhong Kingdom",
-    "name_ko": "다지오응 왕국",
+    "name_ko": "대중국",
     "start": "1094",
     "end": "1096",
     "lon": "",
@@ -10102,7 +10102,7 @@
   {
     "qid": "Q3456423",
     "name_en": "Republic of Volterra",
-    "name_ko": "보르테라 공화국",
+    "name_ko": "볼테라 공화국",
     "start": "1100",
     "end": "1361",
     "lon": "",
@@ -10489,7 +10489,7 @@
   {
     "qid": "Q130261957",
     "name_en": "Kingdom of Calicut",
-    "name_ko": "카리쿠트 왕국",
+    "name_ko": "캘리컷 왕국",
     "start": "1124",
     "end": "1806",
     "lon": "",
@@ -10729,18 +10729,18 @@
   {
     "qid": "Q19955992",
     "name_en": "Dauphiné of Viennois",
-    "name_ko": "다우프이느에 비에노이스",
+    "name_ko": "도피네 비엔누아",
     "start": "1142",
     "end": "1349",
     "lon": "4.8747",
     "lat": "45.5256",
     "type": "historical",
     "lineage_id": "L0095",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "europe",
     "score": 24.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q5154037",
@@ -10761,7 +10761,7 @@
   {
     "qid": "Q97178418",
     "name_en": "Kingdom of Artaxoa",
-    "name_ko": "아르타크스오 왕국",
+    "name_ko": "아르탁소 왕국",
     "start": "1144",
     "end": "1158",
     "lon": "",
@@ -10841,18 +10841,18 @@
   {
     "qid": "Q2670639",
     "name_en": "Powys Wenwynwyn",
-    "name_ko": "포우스 웨느우느우은",
+    "name_ko": "포위스 웬윈윈",
     "start": "1160",
     "end": "1283",
     "lon": "-4.016666666",
     "lat": "53.233333333",
     "type": "historical",
     "lineage_id": "L0055",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "europe",
     "score": 38.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q12817455",
@@ -11230,18 +11230,18 @@
   {
     "qid": "Q2326511",
     "name_en": "Respublica Bernensis",
-    "name_ko": "레스푸브리카 베르네느시스",
+    "name_ko": "베른 공화국",
     "start": "1191",
     "end": "1798",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 33.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q213638",
@@ -11262,7 +11262,7 @@
   {
     "qid": "Q3933247",
     "name_en": "Republic of Noli",
-    "name_ko": "노리 공화국",
+    "name_ko": "놀리 공화국",
     "start": "1192",
     "end": "1797",
     "lon": "",
@@ -12073,7 +12073,7 @@
   {
     "qid": "Q3456472",
     "name_en": "Republic of Metz",
-    "name_ko": "메츠 공화국",
+    "name_ko": "메스 공화국",
     "start": "1234",
     "end": "1552",
     "lon": "",
@@ -12287,7 +12287,7 @@
   {
     "qid": "Q1617495",
     "name_en": "Kingdom of Jaén",
-    "name_ko": "자에은 왕국",
+    "name_ko": "하엔 왕국",
     "start": "1246",
     "end": "1833",
     "lon": "",
@@ -12370,7 +12370,7 @@
   {
     "qid": "Q109534069",
     "name_en": "Kingdom of Wolaita",
-    "name_ko": "워라이타 왕국",
+    "name_ko": "월라이타 왕국",
     "start": "1251",
     "end": "1897",
     "lon": "",
@@ -12386,7 +12386,7 @@
   {
     "qid": "Q6750512",
     "name_en": "Mankessim Kingdom",
-    "name_ko": "마응크에시므 왕국",
+    "name_ko": "만케심 왕국",
     "start": "1252",
     "end": "1844",
     "lon": "",
@@ -12744,18 +12744,18 @@
   {
     "qid": "Q830084",
     "name_en": "Brunswick-Wolfenbüttel",
-    "name_ko": "브라운슈바이크-워르페느브위테르",
+    "name_ko": "브라운슈바이크-볼펜뷔텔",
     "start": "1269",
     "end": "1815",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 27,
     "region": "unknown",
     "score": 79.8,
-    "tier_reason": "score_top8"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q2657134",
@@ -12840,18 +12840,18 @@
   {
     "qid": "Q20102312",
     "name_en": "Crown of Majorca",
-    "name_ko": "크로우은 마조르카",
+    "name_ko": "마요르카 왕관",
     "start": "1276",
     "end": "1349",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 11.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q701614",
@@ -12922,18 +12922,18 @@
   {
     "qid": "Q2465074",
     "name_en": "Ban de la Roche",
-    "name_ko": "바은 로체",
+    "name_ko": "반 드 라 로슈",
     "start": "1284",
     "end": "1789",
     "lon": "7.208611111",
     "lat": "48.454722222",
     "type": "historical",
     "lineage_id": "L0063",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "europe",
     "score": 33.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q157727",
@@ -13101,7 +13101,7 @@
   {
     "qid": "Q3446205",
     "name_en": "Myinsaing Kingdom",
-    "name_ko": "므이느사이응 왕국",
+    "name_ko": "민사잉 왕국",
     "start": "1297",
     "end": "1313",
     "lon": "",
@@ -13200,18 +13200,18 @@
   {
     "qid": "Q3393334",
     "name_en": "Signoria of Florence",
-    "name_ko": "시그노리아 프로레느세",
+    "name_ko": "피렌체 시뇨리아",
     "start": "1300",
     "end": "1494",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
     "score": 52.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q542168",
@@ -13392,7 +13392,7 @@
   {
     "qid": "Q3446213",
     "name_en": "Pinya Kingdom",
-    "name_ko": "피느야 왕국",
+    "name_ko": "핀야 왕국",
     "start": "1310",
     "end": "1364",
     "lon": "",
@@ -13552,7 +13552,7 @@
   {
     "qid": "Q3446223",
     "name_en": "Sagaing Kingdom",
-    "name_ko": "사가이응 왕국",
+    "name_ko": "사가잉 왕국",
     "start": "1315",
     "end": "1364",
     "lon": "",
@@ -13698,7 +13698,7 @@
   {
     "qid": "Q55599391",
     "name_en": "Kingdom of Sardinia",
-    "name_ko": "사르데냐 왕국",
+    "name_ko": "사르데냐 왕국(아라곤)",
     "start": "1324",
     "end": "1713",
     "lon": "",
@@ -14072,7 +14072,7 @@
   {
     "qid": "Q3177715",
     "name_en": "Pagaruyung Kingdom",
-    "name_ko": "파가루유응 왕국",
+    "name_ko": "파가루융 왕국",
     "start": "1347",
     "end": "1833",
     "lon": "",
@@ -14312,18 +14312,18 @@
   {
     "qid": "Q51089496",
     "name_en": "Nassau-Sonnenberg",
-    "name_ko": "나사우-소네느베르그",
+    "name_ko": "나사우-조넨베르크",
     "start": "1355",
     "end": "1390",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 9.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q156199",
@@ -14392,7 +14392,7 @@
   {
     "qid": "Q20477316",
     "name_en": "Khanate of Tyumen",
-    "name_ko": "트유메은 칸국",
+    "name_ko": "튜멘 칸국",
     "start": "1359",
     "end": "1563",
     "lon": "",
@@ -14536,18 +14536,18 @@
   {
     "qid": "Q865584",
     "name_en": "Princedom of Albania",
-    "name_ko": "프리느세도므 아르바니아",
+    "name_ko": "알바니아 후국",
     "start": "1368",
     "end": "1392",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 17,
     "region": "unknown",
     "score": 60.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q887803",
@@ -14619,7 +14619,7 @@
   {
     "qid": "Q4130471",
     "name_en": "Vyatka Republic",
-    "name_ko": "브야트카 공화국",
+    "name_ko": "뱌트카 공화국",
     "start": "1374",
     "end": "1489",
     "lon": "",
@@ -15264,7 +15264,7 @@
   {
     "qid": "Q23668714",
     "name_en": "Yatenga Kingdom",
-    "name_ko": "야테응가 왕국",
+    "name_ko": "야텡가 왕국",
     "start": "1400",
     "end": "1895",
     "lon": "",
@@ -15680,18 +15680,18 @@
   {
     "qid": "Q1638408",
     "name_en": "Rinpungpa",
-    "name_ko": "리느푸응파",
+    "name_ko": "린풍파",
     "start": "1435",
     "end": "1565",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 49.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q109853245",
@@ -15829,7 +15829,7 @@
   {
     "qid": "Q112963228",
     "name_en": "Kingdom of Palembang",
-    "name_ko": "파레음브아응 왕국",
+    "name_ko": "팔렘방 왕국",
     "start": "1445",
     "end": "1659",
     "lon": "",
@@ -15973,18 +15973,18 @@
   {
     "qid": "Q705240",
     "name_en": "House of Hohenlohe",
-    "name_ko": "호우세 호헤느로헤",
+    "name_ko": "호엔로에 가문",
     "start": "1450",
     "end": "1806",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 23,
     "region": "unknown",
     "score": 73.4,
-    "tier_reason": "score_top8"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1644002",
@@ -16264,7 +16264,7 @@
   {
     "qid": "Q112682866",
     "name_en": "Kyrgyz Khanate",
-    "name_ko": "크이르그이즈 칸국",
+    "name_ko": "키르기즈 칸국",
     "start": "1470",
     "end": "1842",
     "lon": "",
@@ -16856,7 +16856,7 @@
   {
     "qid": "Q55229963",
     "name_en": "Kingdom of Fazughli",
-    "name_ko": "파주그리 왕국",
+    "name_ko": "파주글리 왕국",
     "start": "1500",
     "end": "1685",
     "lon": "",
@@ -16904,7 +16904,7 @@
   {
     "qid": "Q6374014",
     "name_en": "Kasanze Kingdom",
-    "name_ko": "카사느제 왕국",
+    "name_ko": "카산제 왕국",
     "start": "1500",
     "end": "1648",
     "lon": "",
@@ -16952,7 +16952,7 @@
   {
     "qid": "Q25459957",
     "name_en": "Kingdom of Banggai",
-    "name_ko": "바응가이 왕국",
+    "name_ko": "방가이 왕국",
     "start": "1500",
     "end": "1907",
     "lon": "",
@@ -16968,7 +16968,7 @@
   {
     "qid": "Q4453007",
     "name_en": "Tashkent Khanate",
-    "name_ko": "타시케은트 칸국",
+    "name_ko": "타슈켄트 칸국",
     "start": "1501",
     "end": "1627",
     "lon": "",
@@ -17176,7 +17176,7 @@
   {
     "qid": "Q16188096",
     "name_en": "Kingdom of Larantuka",
-    "name_ko": "라라은트우카 왕국",
+    "name_ko": "라란투카 왕국",
     "start": "1515",
     "end": "1904",
     "lon": "",
@@ -17304,7 +17304,7 @@
   {
     "qid": "Q20978063",
     "name_en": "Kingdom of New Spain",
-    "name_ko": "뉴 스페인 왕국",
+    "name_ko": "누에바에스파냐 왕국",
     "start": "1521",
     "end": "1535",
     "lon": "",
@@ -17355,7 +17355,7 @@
   {
     "qid": "Q625380",
     "name_en": "Eastern Hungarian Kingdom",
-    "name_ko": "동후응가리아은 왕국",
+    "name_ko": "동헝가리 왕국",
     "start": "1526",
     "end": "1570",
     "lon": "",
@@ -17515,7 +17515,7 @@
   {
     "qid": "Q1557298",
     "name_en": "Soran Emirate",
-    "name_ko": "소라은 토후국",
+    "name_ko": "소란 토후국",
     "start": "1530",
     "end": "1835",
     "lon": "",
@@ -17563,7 +17563,7 @@
   {
     "qid": "Q1588434",
     "name_en": "Thanjavur Nayak kingdom",
-    "name_ko": "타느자부르 나야크 키응도므",
+    "name_ko": "탄자부르 나야크 왕국",
     "start": "1532",
     "end": "1673",
     "lon": "",
@@ -17741,7 +17741,7 @@
   {
     "qid": "Q16850784",
     "name_en": "Kingdom of Jolof",
-    "name_ko": "조로프 왕국",
+    "name_ko": "졸로프 왕국",
     "start": "1549",
     "end": "1890",
     "lon": "",
@@ -18448,18 +18448,18 @@
   {
     "qid": "Q3456432",
     "name_en": "République des Sept-Dizains",
-    "name_ko": "르에푸브리케 세프트-디자이느스",
+    "name_ko": "발레 7구 공화국",
     "start": "1613",
     "end": "1798",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 37.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1062546",
@@ -18624,7 +18624,7 @@
   {
     "qid": "Q2634240",
     "name_en": "Asahan Sultanate",
-    "name_ko": "아사하은 술탄국",
+    "name_ko": "아사한 술탄국",
     "start": "1630",
     "end": "1946",
     "lon": "99.1667",
@@ -18672,7 +18672,7 @@
   {
     "qid": "Q973988",
     "name_en": "Kingdom of Matamba",
-    "name_ko": "마타음브아 왕국",
+    "name_ko": "마탐바 왕국",
     "start": "1631",
     "end": "1744",
     "lon": "",
@@ -18915,7 +18915,7 @@
   {
     "qid": "Q573072",
     "name_en": "Neapolitan Republic",
-    "name_ko": "네아포리타은 공화국",
+    "name_ko": "나폴리 공화국",
     "start": "1647",
     "end": "1648",
     "lon": "",
@@ -18995,7 +18995,7 @@
   {
     "qid": "Q15824804",
     "name_en": "Kénédougou Kingdom",
-    "name_ko": "크에느에도우고우 왕국",
+    "name_ko": "케네두구 왕국",
     "start": "1650",
     "end": "1898",
     "lon": "-6.916667",
@@ -19190,7 +19190,7 @@
   {
     "qid": "Q3530610",
     "name_en": "Thanjavur Maratha kingdom",
-    "name_ko": "타느자부르 마라타 키응도므",
+    "name_ko": "탄자부르 마라타 왕국",
     "start": "1674",
     "end": "1855",
     "lon": "",
@@ -19222,7 +19222,7 @@
   {
     "qid": "Q2485209",
     "name_en": "Emirate of Beihan",
-    "name_ko": "베이하은 토후국",
+    "name_ko": "베이한 토후국",
     "start": "1680",
     "end": "1967",
     "lon": "45.6667",
@@ -19270,7 +19270,7 @@
   {
     "qid": "Q1740542",
     "name_en": "Quba Khanate",
-    "name_ko": "크바 칸국",
+    "name_ko": "쿠바 칸국",
     "start": "1680",
     "end": "1810",
     "lon": "",
@@ -19334,7 +19334,7 @@
   {
     "qid": "Q96051590",
     "name_en": "Republic „Otto Luoghi“",
-    "name_ko": "공화국 „Otto 루오그이",
+    "name_ko": "오토 루오기 공화국",
     "start": "1686",
     "end": "1797",
     "lon": "",
@@ -19446,7 +19446,7 @@
   {
     "qid": "Q4778463",
     "name_en": "Anziku Kingdom",
-    "name_ko": "테케 소왕국",
+    "name_ko": "테케 왕국",
     "start": "1700",
     "end": "1892",
     "lon": "15.28",
@@ -19494,7 +19494,7 @@
   {
     "qid": "Q17166174",
     "name_en": "Mbunda Kingdom",
-    "name_ko": "음브우은드아 왕국",
+    "name_ko": "음분다 왕국",
     "start": "1700",
     "end": "1914",
     "lon": "",
@@ -19542,7 +19542,7 @@
   {
     "qid": "Q1322953",
     "name_en": "Kingdom of Sanwi",
-    "name_ko": "사느위 왕국",
+    "name_ko": "산위 왕국",
     "start": "1700",
     "end": "1896",
     "lon": "",
@@ -19558,7 +19558,7 @@
   {
     "qid": "Q4337218",
     "name_en": "Kingdom of Orungu",
-    "name_ko": "오루응구 왕국",
+    "name_ko": "오룽구 왕국",
     "start": "1700",
     "end": "1927",
     "lon": "",
@@ -19849,7 +19849,7 @@
   {
     "qid": "Q3932080",
     "name_en": "Kingdom of Sardinia and Corsica",
-    "name_ko": "사르디니아 코르시카 왕국",
+    "name_ko": "사르데냐-코르시카 왕국",
     "start": "1713",
     "end": "1720",
     "lon": "",
@@ -19881,18 +19881,18 @@
   {
     "qid": "Q1843786",
     "name_en": "Anhalt-Bernburg-Schaumburg-Hoym",
-    "name_ko": "안할트-베르느부르그-시아음브우르그-호이므",
+    "name_ko": "안할트-베른부르크-샤움부르크-호임",
     "start": "1718",
     "end": "1812",
     "lon": "11.3",
     "lat": "51.783056",
     "type": "historical",
     "lineage_id": "L0120",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 12,
     "region": "europe",
     "score": 37.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q640998",
@@ -19948,7 +19948,7 @@
   {
     "qid": "Q81893195",
     "name_en": "Kingdom of Rohilkhand",
-    "name_ko": "로히르크아은드 왕국",
+    "name_ko": "로힐칸드 왕국",
     "start": "1721",
     "end": "1774",
     "lon": "",
@@ -19996,7 +19996,7 @@
   {
     "qid": "Q11295580",
     "name_en": "Kingdom of Nan",
-    "name_ko": "나은 왕국",
+    "name_ko": "난 왕국",
     "start": "1727",
     "end": "1931",
     "lon": "",
@@ -20044,7 +20044,7 @@
   {
     "qid": "Q3503548",
     "name_en": "Sultanate of Bulungan",
-    "name_ko": "부루응가은 술탄국",
+    "name_ko": "불룬간 술탄국",
     "start": "1731",
     "end": "1964",
     "lon": "",
@@ -20188,7 +20188,7 @@
   {
     "qid": "Q19746028",
     "name_en": "Mempawah Kingdom",
-    "name_ko": "메음프아와흐 왕국",
+    "name_ko": "멤파와 왕국",
     "start": "1740",
     "end": "1945",
     "lon": "",
@@ -20335,7 +20335,7 @@
   {
     "qid": "Q4498927",
     "name_en": "Khoy Khanate",
-    "name_ko": "크오 칸국",
+    "name_ko": "호이 칸국",
     "start": "1747",
     "end": "1813",
     "lon": "",
@@ -20383,7 +20383,7 @@
   {
     "qid": "Q1740529",
     "name_en": "Derbent Khanate",
-    "name_ko": "데르베은트 칸국",
+    "name_ko": "데르벤트 칸국",
     "start": "1747",
     "end": "1806",
     "lon": "",
@@ -20399,7 +20399,7 @@
   {
     "qid": "Q1740536",
     "name_en": "Ganja khanate",
-    "name_ko": "가느자 크아나테",
+    "name_ko": "간자 칸국",
     "start": "1747",
     "end": "1805",
     "lon": "",
@@ -20463,23 +20463,23 @@
   {
     "qid": "Q105582386",
     "name_en": "Isaaq chieftainship",
-    "name_ko": "이사아크 치에프타이느시프",
+    "name_ko": "이삭 족장국",
     "start": "1749",
     "end": "1884",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "unknown",
     "score": 55.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q23502363",
     "name_en": "Khanate of Gilan",
-    "name_ko": "기라은 칸국",
+    "name_ko": "길란 칸국",
     "start": "1749",
     "end": "1787",
     "lon": "",
@@ -20751,7 +20751,7 @@
   {
     "qid": "Q48724193",
     "name_en": "Pahang Kingdom",
-    "name_ko": "파하응 왕국",
+    "name_ko": "파항 왕국",
     "start": "1770",
     "end": "1881",
     "lon": "",
@@ -20847,7 +20847,7 @@
   {
     "qid": "Q501684",
     "name_en": "Kingdom of Gomma",
-    "name_ko": "고마 왕국",
+    "name_ko": "곰마 왕국",
     "start": "1780",
     "end": "1886",
     "lon": "",
@@ -20911,18 +20911,18 @@
   {
     "qid": "Q4969562",
     "name_en": "British Bencoolen",
-    "name_ko": "영국 베느코오레은",
+    "name_ko": "영국령 벵쿨렌",
     "start": "1785",
     "end": "1824",
     "lon": "102.251848",
     "lat": "-3.787093",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "southeast_asia",
     "score": 30.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q3028514",
@@ -20943,7 +20943,7 @@
   {
     "qid": "Q3456469",
     "name_en": "Republic of Liège",
-    "name_ko": "리에게 공화국",
+    "name_ko": "리에주 공화국",
     "start": "1789",
     "end": "1791",
     "lon": "",
@@ -21023,18 +21023,18 @@
   {
     "qid": "Q684430",
     "name_en": "Rauracian Republic",
-    "name_ko": "라우라시아은 공화국",
+    "name_ko": "라우라시아 공화국",
     "start": "1792",
     "end": "1793",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "unknown",
     "score": 57,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q83536",
@@ -21135,7 +21135,7 @@
   {
     "qid": "Q729481",
     "name_en": "Transpadane Republic",
-    "name_ko": "트라느스파다네 공화국",
+    "name_ko": "트란스파다나 공화국",
     "start": "1796",
     "end": "1797",
     "lon": "9.17",
@@ -21247,7 +21247,7 @@
   {
     "qid": "Q992220",
     "name_en": "Etrurian Republic",
-    "name_ko": "에트루리아은 공화국",
+    "name_ko": "에트루리아 공화국",
     "start": "1799",
     "end": "1801",
     "lon": "",
@@ -21585,7 +21585,7 @@
   {
     "qid": "Q1398212",
     "name_en": "Valais Republic",
-    "name_ko": "바라이스 공화국",
+    "name_ko": "발레 공화국",
     "start": "1802",
     "end": "1810",
     "lon": "",
@@ -21987,7 +21987,7 @@
   {
     "qid": "Q7416493",
     "name_en": "Kingdom of Reman",
-    "name_ko": "레마은 왕국",
+    "name_ko": "레만 왕국",
     "start": "1810",
     "end": "1902",
     "lon": "",
@@ -22003,7 +22003,7 @@
   {
     "qid": "Q42378126",
     "name_en": "Kingdom of Setul Mambang Segara",
-    "name_ko": "세투르 마음브아응 세가라 왕국",
+    "name_ko": "스틀 맘방 스가라 왕국",
     "start": "1810",
     "end": "1916",
     "lon": "",
@@ -22371,18 +22371,18 @@
   {
     "qid": "Q1237976",
     "name_en": "Palanpur Agency",
-    "name_ko": "파라느푸르 아게느크이",
+    "name_ko": "팔란푸르 에이전시",
     "start": "1819",
     "end": "1933",
     "lon": "72.436981",
     "lat": "24.169308",
     "type": "historical",
     "lineage_id": "L0135",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "south_asia",
     "score": 24.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q157734",
@@ -22483,7 +22483,7 @@
   {
     "qid": "Q95408244",
     "name_en": "Republic of Haiti (1820–1849)",
-    "name_ko": "하이티 공화국 (1820–1849)",
+    "name_ko": "아이티 공화국(1820)",
     "start": "1820",
     "end": "1849",
     "lon": "",
@@ -22515,7 +22515,7 @@
   {
     "qid": "Q11681694",
     "name_en": "Republic of Spanish Haiti",
-    "name_ko": "스페인 하이티 공화국",
+    "name_ko": "스페인령 아이티 공화국",
     "start": "1821",
     "end": "1822",
     "lon": "",
@@ -22531,18 +22531,18 @@
   {
     "qid": "Q6851943",
     "name_en": "Military-Political System of Samos",
-    "name_ko": "미리타르이-포리티카르 스이스테므 사모스",
+    "name_ko": "사모스 군정",
     "start": "1821",
     "end": "1834",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "unknown",
     "score": 25.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q7251405",
@@ -22586,11 +22586,11 @@
     "lat": "19.43",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "north_america",
     "score": 33.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q9063401",
@@ -22691,7 +22691,7 @@
   {
     "qid": "Q2088141",
     "name_en": "Caucasian Imamate",
-    "name_ko": "카우카시아은 이마마테",
+    "name_ko": "캅카스 이맘국",
     "start": "1828",
     "end": "1859",
     "lon": "",
@@ -23059,7 +23059,7 @@
   {
     "qid": "Q131443094",
     "name_en": "Ibadan Republic",
-    "name_ko": "이바다은 공화국",
+    "name_ko": "이바단 공화국",
     "start": "1838",
     "end": "1893",
     "lon": "",
@@ -23075,7 +23075,7 @@
   {
     "qid": "Q28517256",
     "name_en": "Peruvian Republic",
-    "name_ko": "페루비아은 공화국",
+    "name_ko": "페루 공화국(남페루)",
     "start": "1838",
     "end": "1839",
     "lon": "",
@@ -23171,7 +23171,7 @@
   {
     "qid": "Q56314483",
     "name_en": "Kara-Kyrgyz Khanate",
-    "name_ko": "카라-크이르그이즈 칸국",
+    "name_ko": "카라키르기즈 칸국",
     "start": "1841",
     "end": "1867",
     "lon": "",
@@ -23251,7 +23251,7 @@
   {
     "qid": "Q13035917",
     "name_en": "Republic of Kliprivier",
-    "name_ko": "크리프리비에르 공화국",
+    "name_ko": "클립리비에르 공화국",
     "start": "1847",
     "end": "1848",
     "lon": "24.518611",
@@ -23299,23 +23299,23 @@
   {
     "qid": "Q18285930",
     "name_en": "German Empire of 1848/1849",
-    "name_ko": "게르마은 제국 1848/1849",
+    "name_ko": "독일 제국(1848)",
     "start": "1848",
     "end": "1849",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 18,
     "region": "unknown",
     "score": 60.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q99930377",
     "name_en": "Republic of Zoutpansberg",
-    "name_ko": "조우트파느스베르그 공화국",
+    "name_ko": "조우트판스베르그 공화국",
     "start": "1849",
     "end": "1858",
     "lon": "29.77",
@@ -23427,7 +23427,7 @@
   {
     "qid": "Q7314427",
     "name_en": "Republic of Baja California",
-    "name_ko": "바자 캘리포니아 공화국",
+    "name_ko": "바하칼리포르니아 공화국",
     "start": "1853",
     "end": "1854",
     "lon": "",
@@ -23749,18 +23749,18 @@
   {
     "qid": "Q4199254",
     "name_en": "Sultanate Taranchinsky",
-    "name_ko": "술탄국 타라느치느스크이",
+    "name_ko": "타란치 술탄국",
     "start": "1864",
     "end": "1881",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "unknown",
     "score": 39.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q150981",
@@ -23799,7 +23799,7 @@
   {
     "qid": "Q60043695",
     "name_en": "Kingdom of Talamanca",
-    "name_ko": "타라마느카 왕국",
+    "name_ko": "탈라만카 왕국",
     "start": "1867",
     "end": "1910",
     "lon": "",
@@ -23863,7 +23863,7 @@
   {
     "qid": "Q21849591",
     "name_en": "Diggers Republic",
-    "name_ko": "디게르스 공화국",
+    "name_ko": "디거스 공화국",
     "start": "1870",
     "end": "1871",
     "lon": "",
@@ -23879,7 +23879,7 @@
   {
     "qid": "Q135235625",
     "name_en": "Republic of Maganja da Costa",
-    "name_ko": "마가느자 코스타 공화국",
+    "name_ko": "마간자다코스타 공화국",
     "start": "1874",
     "end": "1898",
     "lon": "",
@@ -24023,7 +24023,7 @@
   {
     "qid": "Q7273754",
     "name_en": "Zheltuga Republic",
-    "name_ko": "지에르투가 공화국",
+    "name_ko": "젤투가 공화국",
     "start": "1883",
     "end": "1886",
     "lon": "",
@@ -24295,18 +24295,18 @@
   {
     "qid": "Q5479650",
     "name_en": "Franceville, New Hebrides",
-    "name_ko": "프라느세비레 뉴 헤브리데스",
+    "name_ko": "프랑스빌",
     "start": "1889",
     "end": "1890",
     "lon": "168.314",
     "lat": "-17.7375",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "oceania",
     "score": 21.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1232988",
@@ -24474,7 +24474,7 @@
   {
     "qid": "Q3496573",
     "name_en": "Republic of Zamboanga",
-    "name_ko": "자음브오응가 공화국",
+    "name_ko": "삼보앙가 공화국",
     "start": "1899",
     "end": "1909",
     "lon": "",
@@ -24570,7 +24570,7 @@
   {
     "qid": "Q2028318",
     "name_en": "Gurian Republic",
-    "name_ko": "구리아은 공화국",
+    "name_ko": "구리아 공화국",
     "start": "1902",
     "end": "1906",
     "lon": "42.000556",
@@ -24924,34 +24924,34 @@
   {
     "qid": "Q4430531",
     "name_en": "Soi︠u︡z obʺedinennykh gort︠s︡ev Gorskai︠a︡ Respublika",
-    "name_ko": "소이즈 오브에디네느이크 고르트스에브 고르스카이 레스푸브리카",
+    "name_ko": "산악공화국",
     "start": "1917",
     "end": "1919",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 11.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q7308003",
     "name_en": "Regency Council",
-    "name_ko": "레게느크이 의회",
+    "name_ko": "섭정의회",
     "start": "1917",
     "end": "1918",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "unknown",
     "score": 52.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1639475",
@@ -25004,7 +25004,7 @@
   {
     "qid": "Q303836",
     "name_en": "Republic of Tarnobrzeg",
-    "name_ko": "타르노브르제그 공화국",
+    "name_ko": "타르노브제크 공화국",
     "start": "1918",
     "end": "1919",
     "lon": "",
@@ -25072,7 +25072,7 @@
   {
     "qid": "Q2510537",
     "name_en": "Komancza Republic",
-    "name_ko": "코마느크자 공화국",
+    "name_ko": "코만차 공화국",
     "start": "1918",
     "end": "1919",
     "lon": "",
@@ -25152,18 +25152,18 @@
   {
     "qid": "Q9301958",
     "name_en": "Rada Narodowa Księstwa Cieszyńskiego",
-    "name_ko": "라다 나로도와 크시스트와 시에스즈이스키에고",
+    "name_ko": "체신 국민의회",
     "start": "1918",
     "end": "1920",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 11.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q38251605",
@@ -25378,7 +25378,7 @@
   {
     "qid": "Q12167518",
     "name_en": "Kholodny Yar Republic",
-    "name_ko": "크오로드느이 야르 공화국",
+    "name_ko": "홀로드니야르 공화국",
     "start": "1919",
     "end": "1922",
     "lon": "",
@@ -25410,7 +25410,7 @@
   {
     "qid": "Q4412594",
     "name_en": "Republic of Uhtua",
-    "name_ko": "우흐투아 공화국",
+    "name_ko": "우흐타 공화국",
     "start": "1919",
     "end": "1920",
     "lon": "",
@@ -25762,18 +25762,18 @@
   {
     "qid": "Q10872373",
     "name_en": "Army and Navy Marshal stronghold of the Republic of China",
-    "name_ko": "아르므이 나브이 마르샤르 스트로응호르드 공화국 치나",
+    "name_ko": "중화민국 육해군 원수부",
     "start": "1923",
     "end": "1925",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 34.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q484578",
@@ -26198,7 +26198,7 @@
   {
     "qid": "Q1967443",
     "name_en": "Zuyev Republic",
-    "name_ko": "주예브 공화국",
+    "name_ko": "주예프 공화국",
     "start": "1941",
     "end": "1947",
     "lon": "",
@@ -26383,11 +26383,11 @@
     "lat": "39.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "east_asia",
     "score": 36.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q310293",
@@ -26636,7 +26636,7 @@
   {
     "qid": "Q21296156",
     "name_en": "Republic of Venezuela",
-    "name_ko": "베네주에라 공화국",
+    "name_ko": "베네수엘라 공화국",
     "start": "1953",
     "end": "1999",
     "lon": "",
@@ -26734,7 +26734,7 @@
   {
     "qid": "Q5555325",
     "name_en": "Dominion of Ghana",
-    "name_ko": "도미니오은 그아나",
+    "name_ko": "가나 자치령",
     "start": "1957",
     "end": "1960",
     "lon": "",
@@ -26848,7 +26848,7 @@
   {
     "qid": "Q150069",
     "name_en": "United Suvadive Republic",
-    "name_ko": "수바디베 공화국",
+    "name_ko": "수바디브 공화국",
     "start": "1959",
     "end": "1963",
     "lon": "73.0",
@@ -27008,18 +27008,18 @@
   {
     "qid": "Q48769061",
     "name_en": "Sultanate of Zanzibar",
-    "name_ko": "자느지바르 술탄국",
+    "name_ko": "잔지바르 술탄국",
     "start": "1963",
     "end": "1964",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 9.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q6392538",
@@ -27074,7 +27074,7 @@
   {
     "qid": "Q138028374",
     "name_en": "Republic of Equatorial Guinea",
-    "name_ko": "에콰토리아르 기네아 공화국",
+    "name_ko": "적도기니 공화국",
     "start": "1968",
     "end": "1979",
     "lon": "",
@@ -27236,7 +27236,7 @@
   {
     "qid": "Q4393602",
     "name_en": "Republic of the North Solomons",
-    "name_ko": "노르스 소로모느스 공화국",
+    "name_ko": "북솔로몬 공화국",
     "start": "1975",
     "end": "1976",
     "lon": "",
@@ -27252,18 +27252,18 @@
   {
     "qid": "Q114415093",
     "name_en": "Democratic Republic of East Timor",
-    "name_ko": "데모크라티크 공화국 이스트 티모르",
+    "name_ko": "동티모르 민주공화국",
     "start": "1975",
     "end": "1976",
     "lon": "125.56",
     "lat": "-8.55",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 6,
     "region": "southeast_asia",
     "score": 24,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q189988",
@@ -27300,7 +27300,7 @@
   {
     "qid": "Q129619467",
     "name_en": "First Republic of Seychelles",
-    "name_ko": "원주민 공화국 세이체레스",
+    "name_ko": "세이셸 제1공화국",
     "start": "1976",
     "end": "1977",
     "lon": "",
@@ -27316,7 +27316,7 @@
   {
     "qid": "Q117089833",
     "name_en": "Republic of Seychelles",
-    "name_ko": "세이체레스 공화국",
+    "name_ko": "세이셸 공화국",
     "start": "1977",
     "end": "2004",
     "lon": "",
@@ -27396,18 +27396,18 @@
   {
     "qid": "Q65362",
     "name_en": "SAO Eastern Slavonia, Baranja and Western Syrmia",
-    "name_ko": "SAO 동슬라보니아, 바라냐 및 서시르미아",
+    "name_ko": "SAO 동슬라보니아",
     "start": "1991",
     "end": "1992",
     "lon": "18.66",
     "lat": "45.34",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 22,
     "region": "europe",
     "score": 42.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1274468",
@@ -27428,34 +27428,34 @@
   {
     "qid": "Q1257607",
     "name_en": "United Nations Transitional Administration for Eastern Slavonia, Baranja and Western Sirmium",
-    "name_ko": "유엔 동슬라보니아 바라냐 서시르미움 과도행정기구",
+    "name_ko": "유엔 동슬라보니아 과도행정기구",
     "start": "1996",
     "end": "1998",
     "lon": "18.66",
     "lat": "45.34",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 22,
     "region": "europe",
     "score": 42.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q67200271",
     "name_en": "Democratic Republic of Mohéli",
-    "name_ko": "데모크라티크 공화국 모흐에리",
+    "name_ko": "모엘리 민주공화국",
     "start": "1997",
     "end": "1998",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 9,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q4689103",
@@ -27467,11 +27467,11 @@
     "lat": "34.53",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 29,
     "region": "south_asia",
     "score": 40.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q965174",
@@ -27483,11 +27483,11 @@
     "lat": "33.333333333",
     "type": "historical",
     "lineage_id": "L0007",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 25,
     "region": "middle_east",
     "score": 49.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign_or_minor"
   },
   {
     "qid": "Q1322424",
