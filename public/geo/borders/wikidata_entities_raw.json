@@ -25535,22 +25535,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q243610",
-    "name_en": "Ukrainian People's Republic",
-    "name_ko": "우크라이나 인민공화국",
-    "start": "1917",
-    "end": "1921",
-    "lon": "30.5",
-    "lat": "50.45",
-    "type": "historical",
-    "lineage_id": "L0094",
-    "tier": 2,
-    "sitelinks": 63,
-    "region": "europe",
-    "score": 73.5,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q2381337",
     "name_en": "Ukrainian People's Republic of Soviets",
     "name_ko": "우크라이나 인민소비에트공화국",
@@ -25613,22 +25597,6 @@
     "region": "europe",
     "score": 51.5,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1419681",
-    "name_en": "Crimean People's Republic",
-    "name_ko": "크림 인민공화국",
-    "start": "1917",
-    "end": "1918",
-    "lon": "33.860833",
-    "lat": "44.752778",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 46,
-    "region": "europe",
-    "score": 63.2,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q7308003",
@@ -25809,22 +25777,6 @@
     "tier_reason": "sitelinks_top20_auto",
     "t1_start": 1920,
     "t1_end": 1990
-  },
-  {
-    "qid": "Q457167",
-    "name_en": "West Ukrainian People's Republic",
-    "name_ko": "서우크라이나 인민공화국",
-    "start": "1918",
-    "end": "1923",
-    "lon": "24.032222222",
-    "lat": "49.8425",
-    "type": "historical",
-    "lineage_id": "L0175",
-    "tier": 2,
-    "sitelinks": 57,
-    "region": "europe",
-    "score": 69.8,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q2369784",
@@ -26080,22 +26032,6 @@
     "sitelinks": 27,
     "region": "europe",
     "score": 47.5,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1778994",
-    "name_en": "Kuban People's Republic",
-    "name_ko": "쿠반 인민공화국",
-    "start": "1918",
-    "end": "1920",
-    "lon": "38.96666667",
-    "lat": "45.03333333",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 33,
-    "region": "europe",
-    "score": 52.1,
     "tier_reason": "score_rest"
   },
   {
@@ -26661,22 +26597,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q816709",
-    "name_en": "Tuvan People's Republic",
-    "name_ko": "투바 인민공화국",
-    "start": "1921",
-    "end": "1944",
-    "lon": "94.39",
-    "lat": "51.698",
-    "type": "historical",
-    "lineage_id": "L0193",
-    "tier": 2,
-    "sitelinks": 55,
-    "region": "central_asia",
-    "score": 71.3,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q55659450",
     "name_en": "Socialist Soviet Republic of Georgia",
     "name_ko": "소시아리스트 소비에트 공화국 조지아",
@@ -26835,24 +26755,6 @@
     "region": "unknown",
     "score": 34.2,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q212056",
-    "name_en": "Mongolian People's Republic",
-    "name_ko": "몽골 인민공화국",
-    "start": "1924",
-    "end": "1992",
-    "lon": "106.9",
-    "lat": "47.9",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 63,
-    "region": "east_asia",
-    "score": 75.3,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1990,
-    "t1_end": 1990
   },
   {
     "qid": "Q265824",
@@ -27629,22 +27531,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q484370",
-    "name_en": "People's Republic of Korea",
-    "name_ko": "조선인민공화국",
-    "start": "1945",
-    "end": "1945",
-    "lon": "127.233333333",
-    "lat": "38.316666666",
-    "type": "historical",
-    "lineage_id": "L0097",
-    "tier": 2,
-    "sitelinks": 32,
-    "region": "east_asia",
-    "score": 42,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q5870215",
     "name_en": "Third Republic of the Philippines",
     "name_ko": "필리핀의 역사",
@@ -27675,42 +27561,6 @@
     "region": "east_asia",
     "score": 52.6,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q121932",
-    "name_en": "People's Republic of Bulgaria",
-    "name_ko": "불가리아 인민공화국",
-    "start": "1946",
-    "end": "1990",
-    "lon": "23.3333",
-    "lat": "42.7",
-    "type": "historical",
-    "lineage_id": "L0033",
-    "tier": 1,
-    "sitelinks": 56,
-    "region": "europe",
-    "score": 69.9,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1990,
-    "t1_end": 1990
-  },
-  {
-    "qid": "Q467864",
-    "name_en": "People's Socialist Republic of Albania",
-    "name_ko": "알바니아 사회주의 인민공화국",
-    "start": "1946",
-    "end": "1992",
-    "lon": "19.82",
-    "lat": "41.33",
-    "type": "historical",
-    "lineage_id": "L0192",
-    "tier": 1,
-    "sitelinks": 56,
-    "region": "europe",
-    "score": 69.7,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1990,
-    "t1_end": 1990
   },
   {
     "qid": "Q2625496",
@@ -27983,22 +27833,6 @@
     "region": "north_africa",
     "score": 56.4,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q16410",
-    "name_en": "Hungarian People's Republic",
-    "name_ko": "헝가리 인민공화국",
-    "start": "1949",
-    "end": "1989",
-    "lon": "19.0",
-    "lat": "47.0",
-    "type": "historical",
-    "lineage_id": "L0101",
-    "tier": 2,
-    "sitelinks": 53,
-    "region": "europe",
-    "score": 67.7,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q16957",
@@ -28811,22 +28645,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q1152126",
-    "name_en": "People's Republic of the Congo",
-    "name_ko": "콩고 인민공화국",
-    "start": "1969",
-    "end": "1992",
-    "lon": "15.283333333",
-    "lat": "-4.266666666",
-    "type": "historical",
-    "lineage_id": "L0199",
-    "tier": 2,
-    "sitelinks": 32,
-    "region": "sub_saharan",
-    "score": 57.4,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q2347668",
     "name_en": "Libyan Arab Republic",
     "name_ko": "리비아 아랍 공화국",
@@ -28989,22 +28807,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q617078",
-    "name_en": "People's Republic of Mozambique",
-    "name_ko": "모잠비크 인민공화국",
-    "start": "1975",
-    "end": "1990",
-    "lon": "35.0",
-    "lat": "18.25",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 31,
-    "region": "middle_east",
-    "score": 60,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q4393602",
     "name_en": "Republic of the North Solomons",
     "name_ko": "노르스 소로모느스 공화국",
@@ -29035,38 +28837,6 @@
     "region": "southeast_asia",
     "score": 24,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q862701",
-    "name_en": "People's Republic of Benin",
-    "name_ko": "베냉 인민공화국",
-    "start": "1975",
-    "end": "1990",
-    "lon": "2.6",
-    "lat": "6.5",
-    "type": "historical",
-    "lineage_id": "L0127",
-    "tier": 2,
-    "sitelinks": 36,
-    "region": "sub_saharan",
-    "score": 60.5,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q2208280",
-    "name_en": "People's Republic of Angola",
-    "name_ko": "앙골라 인민공화국",
-    "start": "1975",
-    "end": "1992",
-    "lon": "13.23",
-    "lat": "-8.84",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 34,
-    "region": "sub_saharan",
-    "score": 59.4,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q189988",
@@ -29548,22 +29318,6 @@
     "sitelinks": 0,
     "region": "europe",
     "score": 0,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1026192",
-    "name_en": "People's Republic of Zanzibar",
-    "name_ko": "잔지바르 인민공화국",
-    "start": "1964",
-    "end": "1964",
-    "lon": "39.19",
-    "lat": "-6.16",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 5,
-    "region": "sub_saharan",
-    "score": 21.5,
     "tier_reason": "score_rest"
   },
   {
@@ -37598,5 +37352,33 @@
     "tier_reason": "review_session7_australia",
     "region": "oceania",
     "sitelinks": 4
+  },
+  {
+    "qid": "Q971",
+    "name_en": "Republic of the Congo",
+    "name_ko": "콩고 공화국",
+    "start": "1960",
+    "end": "Present",
+    "lat": "-4.27",
+    "lon": "15.28",
+    "type": "modern_state",
+    "tier": 2,
+    "tier_reason": "review_session7_missing",
+    "region": "sub_saharan",
+    "sitelinks": 294
+  },
+  {
+    "qid": "Q924",
+    "name_en": "Tanzania",
+    "name_ko": "탄자니아",
+    "start": "1964",
+    "end": "Present",
+    "lat": "-6.17",
+    "lon": "35.74",
+    "type": "modern_state",
+    "tier": 2,
+    "tier_reason": "review_session7_missing",
+    "region": "sub_saharan",
+    "sitelinks": 314
   }
 ]
