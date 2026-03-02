@@ -8,8 +8,13 @@ artwork(문화/예술), invention(발명/기술) 전부 추출.
 
 사용법:
   python3 parseDump.py                # 전체 실행 (pass1 + pass2)
-  python3 parseDump.py --resolve-only # coord_map 있을 때 pass2만
+  python3 parseDump.py --resolve-only # SQLite maps 있을 때 pass2만
   python3 parseDump.py --stats-only   # 결과 파일 통계만
+
+[mk v2] SQLite coord/label maps + 재시작 스킵 지원:
+  - coord_map/label_map: 인메모리 dict 대신 SQLite (WAL, batch 50K)
+  - 기존 .jsonl 파일의 QID는 스킵 (오버라이트 없이 이어쓰기)
+  - 프로세스 재시작 시 이전 진행분 보존
 
 출력 (모두 /mnt/data2/wikidata/output/):
   persons_raw.jsonl        → pass1: person 원본
@@ -18,8 +23,7 @@ artwork(문화/예술), invention(발명/기술) 전부 추출.
   hist_entities_raw.jsonl  → pass1: 역사 국가/왕조/제국 원본
   artworks_raw.jsonl       → pass1: 문화/예술 작품 원본 [NEW]
   inventions_raw.jsonl     → pass1: 발명/기술 원본 [NEW]
-  coord_map.json           → 전 엔티티 QID→좌표 매핑
-  label_map.json           → QID→라벨 매핑
+  maps.db                  → SQLite: coords + labels 맵 (coord_map.json/label_map.json 대체)
   persons_final.json       → pass2 완료
   events_final.json        → pass2 완료
   places_final.json        → pass2 완료
@@ -34,12 +38,17 @@ import json
 import sys
 import os
 import time
+import sqlite3
 
 # ── 설정 ──────────────────────────────────────────────
 DUMP_PATH = "/mnt/data2/wikidata/latest-all.json.gz"
 OUTPUT_DIR = "/mnt/data2/wikidata/output"
 
-# 출력 파일 경로
+# SQLite DB (coord/label 맵 저장, 인메모리 dict 대체) [mk v2]
+DB_PATH = os.path.join(OUTPUT_DIR, "maps.db")
+BATCH_SIZE = 50000  # SQLite INSERT 배치 크기
+
+# 출력 파일 경로 (레거시 JSON 맵은 더 이상 사용 안 함)
 COORD_MAP_PATH = os.path.join(OUTPUT_DIR, "coord_map.json")
 LABEL_MAP_PATH = os.path.join(OUTPUT_DIR, "label_map.json")
 PROGRESS_PATH = os.path.join(OUTPUT_DIR, "progress.json")
@@ -215,6 +224,126 @@ Q_HIST_ENTITIES = {
     "Q170156",    # confederation (연맹)
     "Q30062429",  # federal state (연방 주)
 }
+
+
+# ── SQLite 유틸리티 [mk v2] ────────────────────────────
+
+def init_db():
+    """SQLite DB 초기화 (coord/label 맵 저장용)"""
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("PRAGMA synchronous=NORMAL")
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS coords (
+            qid TEXT PRIMARY KEY,
+            lat REAL NOT NULL,
+            lon REAL NOT NULL
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS labels (
+            qid TEXT PRIMARY KEY,
+            ko TEXT,
+            en TEXT
+        )
+    """)
+    conn.commit()
+    return conn
+
+
+def load_existing_qids():
+    """기존 .jsonl 파일에서 QID 집합 로딩 (재시작 스킵용)"""
+    existing = {}
+    for key, path in RAW_PATHS.items():
+        qids = set()
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        rec = json.loads(line)
+                        qid = rec.get("qid")
+                        if qid:
+                            qids.add(qid)
+                    except json.JSONDecodeError:
+                        pass
+        existing[key] = qids
+        print(f"  [{key}] 기존 QID: {len(qids):,}")
+    return existing
+
+
+def load_maps_for_pass2():
+    """
+    pass2용 coord/label 맵 로딩 [mk v2]
+    - 출력 .jsonl 파일에서 참조된 QID만 선별해서 SQLite에서 가져옴
+    - 전체 7천만+ 라벨 대신 필요한 것만 로드 → 메모리 절약
+    """
+    print("[pass2 prep] 참조된 QID 수집 중...")
+
+    # 타입별로 참조 QID 필드 정의
+    qid_fields = {
+        "person":    ["birth_place_qid", "death_place_qid", "citizenship_qid", "occupation_qid"],
+        "event":     ["location_qid", "country_qid", "conflict_qid", "part_of_qid"],
+        "place":     ["country_qid"],
+        "hist":      ["capital_qid", "country_qid"],
+        "artwork":   ["creator_qid", "location_qid", "country_qid", "genre_qid", "movement_qid"],
+        "invention": ["inventor_qid", "location_qid", "country_qid"],
+    }
+
+    needed_qids = set()
+    for type_key, fields in qid_fields.items():
+        path = RAW_PATHS[type_key]
+        if not os.path.exists(path):
+            continue
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rec = json.loads(line)
+                    for field in fields:
+                        qid = rec.get(field)
+                        if qid:
+                            needed_qids.add(qid)
+                except json.JSONDecodeError:
+                    pass
+
+    print(f"  참조 QID 수: {len(needed_qids):,}")
+
+    if not os.path.exists(DB_PATH):
+        print(f"  [WARN] {DB_PATH} 없음 — 빈 맵으로 진행")
+        return {}, {}
+
+    print("[pass2 prep] SQLite에서 coord/label 로딩...")
+    conn = sqlite3.connect(DB_PATH)
+
+    coord_map = {}
+    label_map = {}
+
+    # 청크 단위로 SELECT (SQLite parameter limit 대비)
+    CHUNK = 9000
+    needed_list = list(needed_qids)
+    for i in range(0, len(needed_list), CHUNK):
+        chunk = needed_list[i:i + CHUNK]
+        placeholders = ",".join("?" * len(chunk))
+
+        for row in conn.execute(
+            f"SELECT qid, lat, lon FROM coords WHERE qid IN ({placeholders})", chunk
+        ):
+            coord_map[row[0]] = (row[1], row[2])
+
+        for row in conn.execute(
+            f"SELECT qid, ko, en FROM labels WHERE qid IN ({placeholders})", chunk
+        ):
+            label_map[row[0]] = {"ko": row[1], "en": row[2]}
+
+    conn.close()
+    print(f"  로딩된 coords: {len(coord_map):,}")
+    print(f"  로딩된 labels: {len(label_map):,}")
+    return coord_map, label_map
 
 
 # ── 유틸리티 함수들 ───────────────────────────────────
@@ -523,21 +652,39 @@ def extract_hist_entity(entity, claims, p31_ids):
 
 
 # ── pass1: 스트리밍 추출 ─────────────────────────────
+# [mk v2] SQLite + 재시작 스킵 지원
 
 def pass1_stream(dump_path):
-    """1-pass gz 스트리밍으로 모든 타입 동시 추출"""
+    """1-pass gz 스트리밍으로 모든 타입 동시 추출 (SQLite 맵 + 스킵 지원)"""
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    coord_map = {}   # QID → (lat, lon)
-    label_map = {}   # QID → {"ko": ..., "en": ...}
+    # 기존 QID 로딩 (재시작 스킵용)
+    print(f"[pass1] 기존 QID 로딩...")
+    existing_qids = load_existing_qids()
+    total_existing = sum(len(v) for v in existing_qids.values())
+    print(f"  기존 레코드 합계: {total_existing:,}")
+
+    # SQLite 초기화
+    print(f"[pass1] SQLite DB 초기화: {DB_PATH}")
+    conn = init_db()
+    coord_count_before = conn.execute("SELECT COUNT(*) FROM coords").fetchone()[0]
+    label_count_before = conn.execute("SELECT COUNT(*) FROM labels").fetchone()[0]
+    print(f"  SQLite 기존 - coords: {coord_count_before:,}, labels: {label_count_before:,}")
+
     counts = {"person": 0, "event": 0, "place": 0, "hist": 0, "artwork": 0, "invention": 0}
     entity_count = 0
+    skipped_count = 0
     start_time = time.time()
     last_report = start_time
 
-    print(f"[pass1] 스트리밍 시작: {dump_path}")
+    # SQLite 배치 버퍼
+    coord_batch = []   # [(qid, lat, lon), ...]
+    label_batch = []   # [(qid, ko, en), ...]
 
-    out_files = {k: open(v, "w", encoding="utf-8") for k, v in RAW_PATHS.items()}
+    print(f"[pass1] 스트리밍 시작 (APPEND 모드): {dump_path}")
+
+    # 출력 파일: APPEND 모드로 열기 (기존 데이터 보존) [mk v2]
+    out_files = {k: open(v, "a", encoding="utf-8") for k, v in RAW_PATHS.items()}
 
     try:
         with gzip.open(dump_path, "rt", encoding="utf-8") as gz:
@@ -555,75 +702,84 @@ def pass1_stream(dump_path):
                 qid = entity.get("id", "")
                 claims = entity.get("claims", {})
 
-                # ── 모든 엔티티: 좌표 수집 ──
+                # ── 모든 엔티티: 좌표 수집 → SQLite batch ──
                 coord = first_coord(claims)
-                if coord:
-                    coord_map[qid] = coord
+                if coord and coord[0] is not None:
+                    coord_batch.append((qid, coord[0], coord[1]))
 
-                # ── 모든 엔티티: 라벨 수집 (장소/국가 이름 resolve용) ──
-                # 메모리 절약: ko 또는 en 라벨이 있는 것만
+                # ── 모든 엔티티: 라벨 수집 → SQLite batch ──
                 ko = get_label(entity, "ko")
                 en = get_label(entity, "en")
                 if ko or en:
-                    label_map[qid] = {"ko": ko, "en": en}
+                    label_batch.append((qid, ko, en))
+
+                # SQLite 배치 flush (50K마다)
+                if len(coord_batch) >= BATCH_SIZE:
+                    conn.executemany(
+                        "INSERT OR IGNORE INTO coords VALUES (?,?,?)", coord_batch
+                    )
+                    conn.commit()
+                    coord_batch = []
+
+                if len(label_batch) >= BATCH_SIZE:
+                    conn.executemany(
+                        "INSERT OR IGNORE INTO labels VALUES (?,?,?)", label_batch
+                    )
+                    conn.commit()
+                    label_batch = []
 
                 # ── P31 분류 ──
                 p31_ids = get_p31_ids(claims)
 
+                # 타입 판별
                 if Q_HUMAN in p31_ids:
-                    rec = extract_person(entity, claims)
-                    out_files["person"].write(
-                        json.dumps(rec, ensure_ascii=False) + "\n"
-                    )
-                    counts["person"] += 1
-
+                    type_key = "person"
                 elif p31_ids & Q_EVENTS:
-                    rec = extract_event(entity, claims, p31_ids)
-                    out_files["event"].write(
-                        json.dumps(rec, ensure_ascii=False) + "\n"
-                    )
-                    counts["event"] += 1
-
+                    type_key = "event"
                 elif p31_ids & Q_HIST_ENTITIES:
-                    rec = extract_hist_entity(entity, claims, p31_ids)
-                    out_files["hist"].write(
-                        json.dumps(rec, ensure_ascii=False) + "\n"
-                    )
-                    counts["hist"] += 1
-
+                    type_key = "hist"
                 elif p31_ids & Q_ARTWORKS:
-                    rec = extract_artwork(entity, claims, p31_ids)
-                    out_files["artwork"].write(
-                        json.dumps(rec, ensure_ascii=False) + "\n"
-                    )
-                    counts["artwork"] += 1
-
+                    type_key = "artwork"
                 elif p31_ids & Q_INVENTIONS:
-                    rec = extract_invention(entity, claims, p31_ids)
-                    out_files["invention"].write(
-                        json.dumps(rec, ensure_ascii=False) + "\n"
-                    )
-                    counts["invention"] += 1
-
+                    type_key = "invention"
                 elif p31_ids & Q_PLACES:
+                    type_key = "place"
+                else:
+                    continue  # 해당 없는 타입
+
+                # ── 기존 QID면 스킵 (이미 출력 파일에 있음) ── [mk v2]
+                if qid in existing_qids[type_key]:
+                    skipped_count += 1
+                    continue
+
+                # 추출 및 저장
+                if type_key == "person":
+                    rec = extract_person(entity, claims)
+                elif type_key == "event":
+                    rec = extract_event(entity, claims, p31_ids)
+                elif type_key == "hist":
+                    rec = extract_hist_entity(entity, claims, p31_ids)
+                elif type_key == "artwork":
+                    rec = extract_artwork(entity, claims, p31_ids)
+                elif type_key == "invention":
+                    rec = extract_invention(entity, claims, p31_ids)
+                else:  # place
                     rec = extract_place(entity, claims)
-                    out_files["place"].write(
-                        json.dumps(rec, ensure_ascii=False) + "\n"
-                    )
-                    counts["place"] += 1
+
+                out_files[type_key].write(json.dumps(rec, ensure_ascii=False) + "\n")
+                counts[type_key] += 1
 
                 # ── 진행 리포트 (30초마다) ──
                 now = time.time()
                 if now - last_report >= 30:
                     elapsed = now - start_time
                     speed = entity_count / elapsed
-                    total = sum(counts.values())
                     print(
-                        f"[pass1] {entity_count:,} ent | "
-                        f"P:{counts['person']:,} E:{counts['event']:,} "
+                        f"[pass1] {entity_count:,} ent | skip:{skipped_count:,} | "
+                        f"new: P:{counts['person']:,} E:{counts['event']:,} "
                         f"Pl:{counts['place']:,} H:{counts['hist']:,} "
                         f"Art:{counts['artwork']:,} Inv:{counts['invention']:,} | "
-                        f"coord:{len(coord_map):,} label:{len(label_map):,} | "
+                        f"cb:{len(coord_batch):,} lb:{len(label_batch):,} | "
                         f"{speed:.0f}/s | {elapsed/60:.1f}m"
                     )
                     last_report = now
@@ -632,34 +788,43 @@ def pass1_stream(dump_path):
                         json.dump({
                             "phase": "pass1",
                             "entities_processed": entity_count,
-                            "counts": counts,
-                            "coord_map_size": len(coord_map),
-                            "label_map_size": len(label_map),
+                            "skipped_existing": skipped_count,
+                            "new_counts": counts,
                             "elapsed_min": round(elapsed / 60, 1),
                             "speed_per_sec": round(speed),
                         }, pf)
 
     finally:
+        # 남은 배치 flush
+        if coord_batch:
+            conn.executemany(
+                "INSERT OR IGNORE INTO coords VALUES (?,?,?)", coord_batch
+            )
+        if label_batch:
+            conn.executemany(
+                "INSERT OR IGNORE INTO labels VALUES (?,?,?)", label_batch
+            )
+        conn.commit()
+        conn.close()
         for f in out_files.values():
             f.close()
 
     elapsed = time.time() - start_time
     print(f"\n[pass1 완료] {elapsed/60:.1f}분")
-    print(f"  총 엔티티: {entity_count:,}")
+    print(f"  총 엔티티 스캔: {entity_count:,}")
+    print(f"  스킵 (기존): {skipped_count:,}")
     for k, v in counts.items():
-        print(f"  {k}: {v:,}")
-    print(f"  coord_map: {len(coord_map):,}")
-    print(f"  label_map: {len(label_map):,}")
+        print(f"  {k} 신규 추가: {v:,}")
 
-    # 맵 저장
-    print(f"[pass1] coord_map 저장 중...")
-    with open(COORD_MAP_PATH, "w") as f:
-        json.dump(coord_map, f)
-    print(f"[pass1] label_map 저장 중...")
-    with open(LABEL_MAP_PATH, "w") as f:
-        json.dump(label_map, f, ensure_ascii=False)
+    # 최종 SQLite 크기 확인
+    conn2 = sqlite3.connect(DB_PATH)
+    coord_total = conn2.execute("SELECT COUNT(*) FROM coords").fetchone()[0]
+    label_total = conn2.execute("SELECT COUNT(*) FROM labels").fetchone()[0]
+    conn2.close()
+    print(f"  SQLite coords: {coord_total:,}")
+    print(f"  SQLite labels: {label_total:,}")
 
-    return coord_map, label_map, counts
+    return counts
 
 
 # ── pass2: 좌표 resolve + 최종 정리 ──────────────────
@@ -817,10 +982,10 @@ def print_stats(type_name, records, anchor_key):
         1 for r in records
         if r.get("name_ko") and r.get(anchor_key) is not None and r.get("lat") is not None
     )
-    size_mb = os.path.getsize(FINAL_PATHS.get(
-        type_name.replace("hist_entity", "hist"),
-        FINAL_PATHS.get(type_name, "")
-    )) / (1024 * 1024) if type_name.replace("hist_entity", "hist") in FINAL_PATHS else 0
+    type_key = type_name.replace("hist_entity", "hist")
+    size_mb = 0
+    if type_key in FINAL_PATHS and os.path.exists(FINAL_PATHS[type_key]):
+        size_mb = os.path.getsize(FINAL_PATHS[type_key]) / (1024 * 1024)
 
     print(f"\n  === {type_name} 통계 ===")
     print(f"    총: {len(records):,}")
@@ -843,11 +1008,8 @@ def print_stats(type_name, records, anchor_key):
 
 def main():
     if len(sys.argv) > 1 and sys.argv[1] == "--resolve-only":
-        print("[resolve-only] coord_map + label_map 로딩...")
-        with open(COORD_MAP_PATH, "r") as f:
-            coord_map = json.load(f)
-        with open(LABEL_MAP_PATH, "r") as f:
-            label_map = json.load(f)
+        print("[resolve-only] SQLite에서 coord/label 로딩...")
+        coord_map, label_map = load_maps_for_pass2()
         print(f"  coord_map: {len(coord_map):,} | label_map: {len(label_map):,}")
         pass2_resolve(coord_map, label_map)
         return
@@ -873,7 +1035,11 @@ def main():
         print(f"  wget -c https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.gz -O {DUMP_PATH}")
         sys.exit(1)
 
-    coord_map, label_map, counts = pass1_stream(DUMP_PATH)
+    # pass1: 스트리밍 추출 (SQLite + 스킵)
+    pass1_stream(DUMP_PATH)
+
+    # pass2: 참조 QID만 SQLite에서 로드 후 resolve
+    coord_map, label_map = load_maps_for_pass2()
     pass2_resolve(coord_map, label_map)
 
 

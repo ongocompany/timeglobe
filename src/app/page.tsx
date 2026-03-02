@@ -383,12 +383,13 @@ export default function Home() {
       prev.includes(name) ? prev.filter((c) => c !== name) : [...prev, name]
     );
   // [mk] 지도 표시 설정
-  const [showPolygonFill, setShowPolygonFill] = useState(true);
   const [visibleTiers, setVisibleTiers] = useState<number[]>([1, 2, 3, 4]);
   const toggleTier = (tier: number) =>
     setVisibleTiers((prev) =>
       prev.includes(tier) ? prev.filter((t) => t !== tier) : [...prev, tier].sort()
     );
+  const [showFill, setShowFill] = useState(true);
+  const [showBorder, setShowBorder] = useState(true);
   const carouselOpen = viewMode === "orbit";
 
   // [cl] 시네마틱 워프 시퀀스 (~5.2초):
@@ -539,7 +540,8 @@ export default function Home() {
           // onSpinWarp={handleSpinWarp} // [cl] 랜덤 타임머신 임시 비활성화 (리뷰 중 오작동 방지)
           currentYear={currentYear}
           visibleTiers={visibleTiers}
-          showPolygonFill={showPolygonFill}
+          showFill={showFill}
+          showBorder={showBorder}
         />
       </div>
 
@@ -652,24 +654,6 @@ export default function Home() {
             style={{ maxHeight: viewMode === "map-display" ? "200px" : "0px", opacity: viewMode === "map-display" ? 1 : 0 }}
           >
             <div className="pl-5 pt-2 pb-1 flex flex-col gap-3">
-              {/* 표시 방식 */}
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[10px] text-white/35 uppercase tracking-wider">표시 방식</span>
-                <div className="flex gap-1.5">
-                  <button
-                    onClick={() => setShowPolygonFill(true)}
-                    className={`px-2 py-0.5 rounded text-[10px] transition-all duration-200 border ${showPolygonFill ? "bg-white/15 border-white/30 text-white/90" : "bg-transparent border-white/15 text-white/35 hover:text-white/60 hover:border-white/25"}`}
-                  >
-                    폴리곤
-                  </button>
-                  <button
-                    onClick={() => setShowPolygonFill(false)}
-                    className={`px-2 py-0.5 rounded text-[10px] transition-all duration-200 border ${!showPolygonFill ? "bg-white/15 border-white/30 text-white/90" : "bg-transparent border-white/15 text-white/35 hover:text-white/60 hover:border-white/25"}`}
-                  >
-                    경계만
-                  </button>
-                </div>
-              </div>
               {/* 국명 티어 */}
               <div className="flex flex-col gap-1.5">
                 <span className="text-[10px] text-white/35 uppercase tracking-wider">국명 티어</span>
@@ -687,6 +671,24 @@ export default function Home() {
                       </button>
                     );
                   })}
+                </div>
+              </div>
+              {/* 국경 표시 */}
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[10px] text-white/35 uppercase tracking-wider">국경 표시</span>
+                <div className="flex gap-1.5">
+                  <button
+                    onClick={() => setShowFill((v) => !v)}
+                    className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all duration-200 border ${showFill ? "bg-white/15 border-white/30 text-white/90" : "bg-transparent border-white/15 text-white/25 hover:text-white/50 hover:border-white/25"}`}
+                  >
+                    폴리곤
+                  </button>
+                  <button
+                    onClick={() => setShowBorder((v) => !v)}
+                    className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all duration-200 border ${showBorder ? "bg-white/15 border-white/30 text-white/90" : "bg-transparent border-white/15 text-white/25 hover:text-white/50 hover:border-white/25"}`}
+                  >
+                    경계
+                  </button>
                 </div>
               </div>
             </div>
