@@ -1794,6 +1794,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const ey = entity.end_year ?? 2025;
       if (sy > targetYear || ey < targetYear) continue;
 
+      // [mk] 티어 필터: 비활성 티어는 OHM 폴리곤도 숨김
+      if (!visibleTiersRef.current.includes(entity.tier ?? 3)) continue;
+
       // [cl] 가장 적합한 스냅샷: targetYear를 포함하는 스냅샷 중 가장 좁은 범위
       let best: OhmSnapshot | null = null;
       let bestSpan = Infinity;
@@ -1988,11 +1991,20 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     renderOhmForYear(currentYear);
   }, [currentYear]);
 
-  // [mk] ★ visibleTiers 변경 시 라벨 재렌더링
+  // [mk] ★ visibleTiers 변경 시 라벨 + OHM 폴리곤 재렌더링
   useEffect(() => {
     visibleTiersRef.current = visibleTiers ?? [1, 2, 3, 4];
-    if (!viewer || !wikidataCirclesRef.current) return;
-    renderCirclesForYear(currentYear);
+    if (!viewer) return;
+    if (wikidataCirclesRef.current) renderCirclesForYear(currentYear);
+    // [mk] OHM도 tier 필터 적용 — 캐시 무효화 후 재렌더
+    if (ohmIndexRef.current) {
+      if (ohmDsRef.current && !viewer.isDestroyed()) {
+        viewer.dataSources.remove(ohmDsRef.current, true);
+        ohmDsRef.current = null;
+      }
+      currentOhmYearRef.current = null;
+      renderOhmForYear(currentYear);
+    }
   }, [visibleTiers]);
 
   // [mk] ★ showFill / showBorder 변경 시 OHM 재렌더링 (캐시 무효화 후)
