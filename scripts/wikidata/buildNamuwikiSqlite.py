@@ -86,12 +86,13 @@ def build(batch_size=5000):
             cat_rows.append(cats)
 
             if len(art_rows) >= batch_size:
+                c.execute("SELECT COALESCE(MAX(id),0) FROM articles")
+                prev_max = c.fetchone()[0]
                 c.executemany(
                     "INSERT INTO articles(title, text, redirect, namespace) VALUES(?,?,?,?)",
                     art_rows
                 )
-                last_id = c.lastrowid
-                first_id = last_id - len(art_rows) + 1
+                first_id = prev_max + 1
                 for j, cats in enumerate(cat_rows):
                     art_id = first_id + j
                     for cat in cats:
@@ -107,12 +108,13 @@ def build(batch_size=5000):
 
     # 남은 배치
     if art_rows:
+        c.execute("SELECT COALESCE(MAX(id),0) FROM articles")
+        prev_max = c.fetchone()[0]
         c.executemany(
             "INSERT INTO articles(title, text, redirect, namespace) VALUES(?,?,?,?)",
             art_rows
         )
-        last_id = c.lastrowid
-        first_id = last_id - len(art_rows) + 1
+        first_id = prev_max + 1
         for j, cats in enumerate(cat_rows):
             art_id = first_id + j
             for cat in cats:
