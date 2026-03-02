@@ -7429,7 +7429,7 @@
     "qid": "Q19901436",
     "name_en": "Suriname",
     "name_ko": "수리남",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1667,
     "end_year": 2025,
     "snapshots": [
@@ -12855,7 +12855,7 @@
     "qid": "Q2051582",
     "name_en": "All-Palestine Government",
     "name_ko": "팔레스타인 정부 (1948년)",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1948,
     "end_year": 1956,
     "snapshots": [
@@ -13007,7 +13007,7 @@
     "qid": "Q523435",
     "name_en": "United States of Indonesia",
     "name_ko": "인도네시아 합중국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1949,
     "end_year": 1950,
     "snapshots": [

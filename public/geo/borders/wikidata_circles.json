@@ -15437,7 +15437,7 @@
     "lineage_id": null,
     "color": "hsl(209, 70%, 55%)",
     "qid": "Q2625496",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 17
   },
@@ -15521,7 +15521,7 @@
     "lineage_id": null,
     "color": "hsl(29, 70%, 55%)",
     "qid": "Q2051582",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 21
   },
@@ -15591,7 +15591,7 @@
     "lineage_id": null,
     "color": "hsl(103, 70%, 55%)",
     "qid": "Q523435",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 31
   },
@@ -15633,7 +15633,7 @@
     "lineage_id": null,
     "color": "hsl(303, 70%, 55%)",
     "qid": "Q1414395",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 27
   },
@@ -15661,7 +15661,7 @@
     "lineage_id": null,
     "color": "hsl(43, 70%, 55%)",
     "qid": "Q19901436",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 10
   },
@@ -15689,7 +15689,7 @@
     "lineage_id": null,
     "color": "hsl(164, 70%, 55%)",
     "qid": "Q2342822",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 37
   },
@@ -15717,7 +15717,7 @@
     "lineage_id": null,
     "color": "hsl(35, 70%, 55%)",
     "qid": "Q150069",
-    "tier": 2,
+    "tier": 3,
     "region": "unknown",
     "sitelinks": 20
   },
@@ -15731,7 +15731,7 @@
     "lineage_id": null,
     "color": "hsl(318, 70%, 55%)",
     "qid": "Q639073",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 29
   },
@@ -15773,7 +15773,7 @@
     "lineage_id": "L0066",
     "color": "hsl(57, 70%, 55%)",
     "qid": "Q1044668",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 38
   },
@@ -15871,7 +15871,7 @@
     "lineage_id": null,
     "color": "hsl(32, 70%, 55%)",
     "qid": "Q2504040",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 27
   },
@@ -15899,7 +15899,7 @@
     "lineage_id": "L0047",
     "color": "hsl(309, 70%, 55%)",
     "qid": "Q244165",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 129
   },
