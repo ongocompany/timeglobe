@@ -32089,9 +32089,9 @@
     "t1_end": -1700
   },
   {
-    "qid": null,
+    "qid": "Q17500081",
     "name_en": "Ganden Phodrang",
-    "name_ko": "간덴포탕",
+    "name_ko": "티베트",
     "start": "1642",
     "end": "1912",
     "lat": "29.65",
@@ -32099,7 +32099,7 @@
     "type": "historical",
     "lineage_id": null,
     "tier": 1,
-    "sitelinks": 0,
+    "sitelinks": 55,
     "region": "south_asia",
     "score": 5.4,
     "tier_reason": "sitelinks_top20_auto",
