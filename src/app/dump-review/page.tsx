@@ -144,6 +144,8 @@ export default function DumpReviewPage() {
 
   // ── 초기 + 탭/필터 변경 시 로드 ──
   useEffect(() => {
+    setItems([]);       // 탭 전환 시 이전 데이터 즉시 클리어
+    setTotal(0);
     setOffset(0);
     setFocusedIdx(0);
     setSelectedQid(null);
@@ -255,7 +257,7 @@ export default function DumpReviewPage() {
       </header>
 
       {/* ── 탭 + 통계바 ── */}
-      <div className="border-b border-zinc-800 px-4 flex items-center gap-0 flex-shrink-0 overflow-x-auto">
+      <div className="border-b border-zinc-800 px-2 flex items-center gap-0 flex-shrink-0 overflow-x-auto scrollbar-none">
         {TYPE_KEYS.map(type => {
           const s = stats?.[type];
           const pct = s && s.total > 0 ? Math.round(((s.include + s.exclude + s.skip) / s.total) * 100) : 0;
@@ -263,7 +265,7 @@ export default function DumpReviewPage() {
             <button
               key={type}
               onClick={() => setActiveType(type)}
-              className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`px-3 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                 activeType === type
                   ? 'border-blue-500 text-blue-400'
                   : 'border-transparent text-zinc-400 hover:text-zinc-200'
