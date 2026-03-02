@@ -3225,7 +3225,7 @@
     "qid": "Q2723760",
     "name_en": "Giudicato of Gallura",
     "name_ko": "기우디카토 가루라",
-    "tier": 2,
+    "tier": 3,
     "start_year": 900,
     "end_year": 1207,
     "snapshots": [
@@ -3241,7 +3241,7 @@
     "qid": "Q1761381",
     "name_en": "Giudicato of Logudoro",
     "name_ko": "기우디카토 로구도로",
-    "tier": 2,
+    "tier": 3,
     "start_year": 900,
     "end_year": 1259,
     "snapshots": [
@@ -4013,7 +4013,7 @@
     "qid": "Q2297073",
     "name_en": "Giudicato of Cagliari",
     "name_ko": "기우디카토 카그리아리",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1000,
     "end_year": 1215,
     "snapshots": [

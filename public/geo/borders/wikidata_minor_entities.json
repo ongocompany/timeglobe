@@ -10304,5 +10304,22 @@
     "score": 43.7,
     "tier_reason": "score_rest",
     "minor_reason": "colonial_period_of_parent"
+  },
+  {
+    "qid": "Q11710624",
+    "name_en": "I Rzeczpospolita",
+    "name_ko": "I 르제크즈포스포리타",
+    "start": "1454",
+    "end": "1795",
+    "lon": "",
+    "lat": "",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 2,
+    "region": "unknown",
+    "score": 27.2,
+    "tier_reason": "score_rest",
+    "minor_reason": "duplicate_of_poland"
   }
 ]

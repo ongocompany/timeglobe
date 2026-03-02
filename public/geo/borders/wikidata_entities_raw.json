@@ -1641,18 +1641,18 @@
   {
     "qid": "Q3979194",
     "name_en": "Syrakousai",
-    "name_ko": "스이라코우사이",
+    "name_ko": "시라쿠사",
     "start": "BC 732",
     "end": "BC 210",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 40.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q504759",
@@ -2087,18 +2087,18 @@
   {
     "qid": "Q96337601",
     "name_en": "Cultura Tarija",
-    "name_ko": "쿠르투라 타리자",
+    "name_ko": "타리하 문화",
     "start": "BC 500",
     "end": "1470",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 38.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1358851",
@@ -4673,18 +4673,18 @@
   {
     "qid": "Q13563256",
     "name_en": "Dalmatia",
-    "name_ko": "다르마티아",
+    "name_ko": "달마티아",
     "start": "454",
     "end": "480",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 20.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1247508",
@@ -5126,18 +5126,18 @@
   {
     "qid": "Q5919137",
     "name_en": "Empire of Theodoric the Great",
-    "name_ko": "테오도리크 그레아트 제국",
+    "name_ko": "테오도리크 대왕 왕국",
     "start": "507",
     "end": "549",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 13.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q6412672",
@@ -5339,7 +5339,7 @@
   {
     "qid": "Q2526751",
     "name_en": "Dál nAraidi",
-    "name_ko": "드아르 나라이디",
+    "name_ko": "달 나라이디",
     "start": "550",
     "end": "1150",
     "lon": "",
@@ -6344,7 +6344,7 @@
   {
     "qid": "Q16824911",
     "name_en": "Bukhar Khudahs",
-    "name_ko": "부크아르 크우다흐스",
+    "name_ko": "부하라 후다흐",
     "start": "700",
     "end": "800",
     "lon": "",
@@ -6805,18 +6805,18 @@
   {
     "qid": "Q3588911",
     "name_en": "Emirate of Sijilmassa",
-    "name_ko": "시지르마사 토후국",
+    "name_ko": "시질마사 토후국",
     "start": "758",
     "end": "1055",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "unknown",
     "score": 8.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q940123",
@@ -7000,18 +7000,18 @@
   {
     "qid": "Q2723760",
     "name_en": "Giudicato of Gallura",
-    "name_ko": "기우디카토 가루라",
+    "name_ko": "갈루라 주디카토",
     "start": "800",
     "end": "1296",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "unknown",
     "score": 70,
-    "tier_reason": "score_top25"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q11913591",
@@ -7064,7 +7064,7 @@
   {
     "qid": "Q1241847",
     "name_en": "Judicate of Arborea",
-    "name_ko": "주디카테 아르보레아",
+    "name_ko": "아르보레아 주디카토",
     "start": "800",
     "end": "1420",
     "lon": "",
@@ -7112,18 +7112,18 @@
   {
     "qid": "Q1761381",
     "name_en": "Giudicato of Logudoro",
-    "name_ko": "기우디카토 로구도로",
+    "name_ko": "로구도로 주디카토",
     "start": "800",
     "end": "1259",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "unknown",
     "score": 66.6,
-    "tier_reason": "score_top25"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q16624774",
@@ -7618,7 +7618,7 @@
   {
     "qid": "Q1392840",
     "name_en": "Rurik's state",
-    "name_ko": "노브고로드 루스",
+    "name_ko": "류리크 국가",
     "start": "862",
     "end": "882",
     "lon": "31.27",
@@ -7957,7 +7957,7 @@
   {
     "qid": "Q2534729",
     "name_en": "Tournaisis",
-    "name_ko": "토우르나이시스",
+    "name_ko": "투르네지",
     "start": "900",
     "end": "1794",
     "lon": "",
@@ -8450,7 +8450,7 @@
   {
     "qid": "Q1096374",
     "name_en": "Banu Ilyas",
-    "name_ko": "바누 이르야스",
+    "name_ko": "바누 일리야스",
     "start": "932",
     "end": "968",
     "lon": "",
@@ -8610,18 +8610,18 @@
   {
     "qid": "Q5124786",
     "name_en": "Civitas Schinesghe",
-    "name_ko": "치비타스 스키네스게",
+    "name_ko": "시비타스 스키네스게",
     "start": "960",
     "end": "1025",
     "lon": "18.7",
     "lat": "52.4",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "europe",
     "score": 31.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q104863335",
@@ -8869,7 +8869,7 @@
   {
     "qid": "Q796651",
     "name_en": "Azcapotzalco",
-    "name_ko": "아즈카포츠아르코",
+    "name_ko": "아스카포찰코",
     "start": "995",
     "end": "1428",
     "lon": "",
@@ -9063,18 +9063,18 @@
   {
     "qid": "Q2297073",
     "name_en": "Giudicato of Cagliari",
-    "name_ko": "기우디카토 카그리아리",
+    "name_ko": "칼리아리 주디카토",
     "start": "1000",
     "end": "1258",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "unknown",
     "score": 61.6,
-    "tier_reason": "score_top25"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1627613",
@@ -9095,18 +9095,18 @@
   {
     "qid": "Q3827580",
     "name_en": "Banu Khazrun",
-    "name_ko": "바누 크아즈루은",
+    "name_ko": "바누 하즈룬",
     "start": "1001",
     "end": "1146",
     "lon": "13.18746",
     "lat": "32.87519",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "north_africa",
     "score": 31.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1232887",
@@ -9193,18 +9193,18 @@
   {
     "qid": "Q3960415",
     "name_en": "Signoria di Correggio",
-    "name_ko": "시그노리아 코레기오",
+    "name_ko": "코레조 시뇨리아",
     "start": "1009",
     "end": "1635",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 34.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1483495",
@@ -9455,18 +9455,18 @@
   {
     "qid": "Q11919179",
     "name_en": "Taifa Tudela",
-    "name_ko": "타이파 투데라",
+    "name_ko": "타이파 투델라",
     "start": "1046",
     "end": "1057",
     "lon": "-1.605291361",
     "lat": "42.059425722",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "europe",
     "score": 20.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q680530",
@@ -9510,11 +9510,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "unknown",
     "score": 1.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q430309",
@@ -9569,18 +9569,18 @@
   {
     "qid": "Q121856128",
     "name_en": "Emirate of al-Zajjaj",
-    "name_ko": "자주자주 토후국",
+    "name_ko": "자자주 토후국",
     "start": "1065",
     "end": "1067",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 12.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q125675829",
@@ -9697,7 +9697,7 @@
   {
     "qid": "Q12229205",
     "name_en": "Uyunid Emirate",
-    "name_ko": "우유니드 토후국",
+    "name_ko": "우윤 왕조",
     "start": "1076",
     "end": "1238",
     "lon": "50.001306",
@@ -9828,18 +9828,18 @@
   {
     "qid": "Q28597313",
     "name_en": "Palatinate of Rhine",
-    "name_ko": "파라티나테 르히네",
+    "name_ko": "라인 팔츠",
     "start": "1085",
     "end": "1356",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 17.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q2301372",
@@ -10777,7 +10777,7 @@
   {
     "qid": "Q2564694",
     "name_en": "Powys Fadog",
-    "name_ko": "포우스 파도그",
+    "name_ko": "포이스 파도그",
     "start": "1160",
     "end": "1277",
     "lon": "-3.15903",
@@ -10875,18 +10875,18 @@
   {
     "qid": "Q2280660",
     "name_en": "Marquisate of Finale",
-    "name_ko": "마르키사테 피나레",
+    "name_ko": "피날레 후작령",
     "start": "1162",
     "end": "1797",
     "lon": "8.31666667",
     "lat": "44.16666667",
     "type": "historical",
     "lineage_id": "L0105",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "europe",
     "score": 45.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q2086556",
@@ -11054,18 +11054,18 @@
   {
     "qid": "Q19872858",
     "name_en": "Earldom of Ulster",
-    "name_ko": "이르르도므 우르스테르",
+    "name_ko": "얼스터 백작령",
     "start": "1177",
     "end": "1461",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 26.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q684501",
@@ -11134,7 +11134,7 @@
   {
     "qid": "Q5269336",
     "name_en": "Dharmasraya",
-    "name_ko": "드하르마스라야",
+    "name_ko": "다르마스라야",
     "start": "1183",
     "end": "1347",
     "lon": "",
@@ -11342,23 +11342,23 @@
   {
     "qid": "Q21660639",
     "name_en": "Burhanids",
-    "name_ko": "부르하니드스",
+    "name_ko": "부르한 왕조",
     "start": "1200",
     "end": "1206",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 30.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q640010",
     "name_en": "Great Ardra",
-    "name_ko": "그레아트 아르드라",
+    "name_ko": "대아르드라",
     "start": "1200",
     "end": "1724",
     "lon": "2.1500001",
@@ -11406,18 +11406,18 @@
   {
     "qid": "Q124298",
     "name_en": "Marquisate of Bodonitsa",
-    "name_ko": "마르키사테 보도니차",
+    "name_ko": "보도니차 후작령",
     "start": "1204",
     "end": "1414",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "unknown",
     "score": 60.6,
-    "tier_reason": "score_top25"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q178897",
@@ -12076,18 +12076,18 @@
   {
     "qid": "Q91394308",
     "name_en": "Emirate of Algiers",
-    "name_ko": "아르기에르스 토후국",
+    "name_ko": "알제 토후국",
     "start": "1235",
     "end": "1516",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 16.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1796198",
@@ -12373,18 +12373,18 @@
   {
     "qid": "Q16824250",
     "name_en": "West Breifne",
-    "name_ko": "서브레이프네",
+    "name_ko": "서브레이프니",
     "start": "1256",
     "end": "1605",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 27.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q5327935",
@@ -12501,18 +12501,18 @@
   {
     "qid": "Q106394714",
     "name_en": "Signoria of Verona",
-    "name_ko": "시그노리아 베로나",
+    "name_ko": "베로나 시뇨리아",
     "start": "1262",
     "end": "1405",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 22.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q95895695",
@@ -12616,18 +12616,18 @@
   {
     "qid": "Q11935621",
     "name_en": "Marquisate of Millesimo",
-    "name_ko": "마르키사테 미레시모",
+    "name_ko": "밀레시모 후작령",
     "start": "1268",
     "end": "1799",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 23.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q83988995",
@@ -13184,18 +13184,18 @@
   {
     "qid": "Q107354812",
     "name_en": "Emirate of Çemişgezek",
-    "name_ko": "에미게제크 토후국",
+    "name_ko": "체미슈게젝 토후국",
     "start": "1300",
     "end": "1663",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 4,
     "region": "unknown",
     "score": 38.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q7636789",
@@ -13271,11 +13271,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 19.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1900716",
@@ -13392,18 +13392,18 @@
   {
     "qid": "Q3960417",
     "name_en": "Signoria di Carrara",
-    "name_ko": "시그노리아 카라라",
+    "name_ko": "카라라 시뇨리아",
     "start": "1313",
     "end": "1473",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 21.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q55522",
@@ -13584,7 +13584,7 @@
   {
     "qid": "Q385084",
     "name_en": "Great Perm",
-    "name_ko": "그레아트 페르므",
+    "name_ko": "대페름",
     "start": "1323",
     "end": "1708",
     "lon": "",
@@ -13848,18 +13848,18 @@
   {
     "qid": "Q95993051",
     "name_en": "Signoria of Volterra",
-    "name_ko": "시그노리아 보르테라",
+    "name_ko": "볼테라 시뇨리아",
     "start": "1340",
     "end": "1361",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 9.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q4318679",
@@ -14264,7 +14264,7 @@
   {
     "qid": "Q927154",
     "name_en": "Tsardom of Vidin",
-    "name_ko": "차르도므 비디은",
+    "name_ko": "비딘 차르국",
     "start": "1356",
     "end": "1396",
     "lon": "",
@@ -14960,18 +14960,18 @@
   {
     "qid": "Q3845765",
     "name_en": "Marquisate of Zuccarello",
-    "name_ko": "마르키사테 주카레로",
+    "name_ko": "추카렐로 후작령",
     "start": "1397",
     "end": "1624",
     "lon": "8.11585",
     "lat": "44.111027777",
     "type": "historical",
     "lineage_id": "L0105",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "europe",
     "score": 20.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q34762",
@@ -15120,18 +15120,18 @@
   {
     "qid": "Q6816525",
     "name_en": "Menceyato of Anaga",
-    "name_ko": "메느세야토 아나가",
+    "name_ko": "아나가 멘세야토",
     "start": "1400",
     "end": "1496",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "unknown",
     "score": 46,
-    "tier_reason": "score_top55"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q638522",
@@ -15296,18 +15296,18 @@
   {
     "qid": "Q15695801",
     "name_en": "Marquisate of Oristano",
-    "name_ko": "마르키사테 오리스타노",
+    "name_ko": "오리스타노 후작령",
     "start": "1410",
     "end": "1478",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 7,
     "region": "unknown",
     "score": 42.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1589163",
@@ -15971,36 +15971,20 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q11710624",
-    "name_en": "I Rzeczpospolita",
-    "name_ko": "I 르제크즈포스포리타",
-    "start": "1454",
-    "end": "1795",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 2,
-    "region": "unknown",
-    "score": 27.2,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q20009975",
     "name_en": "Marquisate of Zibello",
-    "name_ko": "마르키사테 지베로",
+    "name_ko": "지벨로 후작령",
     "start": "1459",
     "end": "1802",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "unknown",
     "score": 32.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q2919545",
@@ -16248,18 +16232,18 @@
   {
     "qid": "Q4690373",
     "name_en": "Afshar Beylik",
-    "name_ko": "아프샤르 베이",
+    "name_ko": "아프샤르 베이국",
     "start": "1480",
     "end": "1534",
     "lon": "41.276944444",
     "lat": "39.908611111",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "middle_east",
     "score": 9.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1292987",
@@ -17741,18 +17725,18 @@
   {
     "qid": "Q131588685",
     "name_en": "Emirate of  Al Qawasim",
-    "name_ko": "크아와시므 토후국",
+    "name_ko": "카와심 토후국",
     "start": "1560",
     "end": "1820",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 25.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q100272879",
@@ -18256,18 +18240,18 @@
   {
     "qid": "Q4347782",
     "name_en": "Skewbald Horde",
-    "name_ko": "스케우바르드 오르다",
+    "name_ko": "얼룩 오르다",
     "start": "1600",
     "end": "1602",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 5,
     "region": "unknown",
     "score": 34.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1474791",
@@ -18947,7 +18931,7 @@
   {
     "qid": "Q3379274",
     "name_en": "Saxe-Marksuhl",
-    "name_ko": "사크스에-마르크수흐르",
+    "name_ko": "작센-마르크줄",
     "start": "1662",
     "end": "1671",
     "lon": "",
@@ -19011,7 +18995,7 @@
   {
     "qid": "Q56376885",
     "name_en": "Bani Khalid Emirate",
-    "name_ko": "바니 크아리드 토후국",
+    "name_ko": "바니 할리드 토후국",
     "start": "1669",
     "end": "1796",
     "lon": "49.548316",
@@ -19366,18 +19350,18 @@
   {
     "qid": "Q21530380",
     "name_en": "Dar Qimr",
-    "name_ko": "다르 크이므르",
+    "name_ko": "다르 키므르",
     "start": "1700",
     "end": "1918",
     "lon": "25.0",
     "lat": "13.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "middle_east",
     "score": 12.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q862518",
@@ -19561,18 +19545,18 @@
   {
     "qid": "Q1232141",
     "name_en": "Emirate of Jelgooji",
-    "name_ko": "제르고오지 토후국",
+    "name_ko": "젤고지 토후국",
     "start": "1705",
     "end": "1827",
     "lon": "-1.62694444",
     "lat": "14.1",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "sub_saharan",
     "score": 20.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q338248",
@@ -19939,11 +19923,11 @@
     "lat": "18.54656",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "north_africa",
     "score": 20.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q83572",
@@ -20140,7 +20124,7 @@
   {
     "qid": "Q2122499",
     "name_en": "Surakarta Sunanate",
-    "name_ko": "수라카르타 수나나테",
+    "name_ko": "수라카르타 수난국",
     "start": "1745",
     "end": "1946",
     "lon": "",
@@ -20223,18 +20207,18 @@
   {
     "qid": "Q112610225",
     "name_en": "Qajars of Merv",
-    "name_ko": "크아자르스 메르브",
+    "name_ko": "메르브 카자르",
     "start": "1747",
     "end": "1788",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "unknown",
     "score": 26.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1740529",
@@ -20559,34 +20543,34 @@
   {
     "qid": "Q136355443",
     "name_en": "Unaizah Emirate",
-    "name_ko": "우나이자흐 토후국",
+    "name_ko": "우나이자 토후국",
     "start": "1768",
     "end": "1904",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 15.9,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q136389404",
     "name_en": "Buraydah Emirate",
-    "name_ko": "부라이다흐 토후국",
+    "name_ko": "부라이다 토후국",
     "start": "1768",
     "end": "1908",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 15.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q48724193",
@@ -20911,7 +20895,7 @@
   {
     "qid": "Q2145348",
     "name_en": "Republic of Graaff-Reinet",
-    "name_ko": "그라아프-레이네트 공화국",
+    "name_ko": "흐라프-레이넷 공화국",
     "start": "1795",
     "end": "1796",
     "lon": "24.53333282",
@@ -21153,18 +21137,18 @@
   {
     "qid": "Q35583423",
     "name_en": "Emirate of Almathami",
-    "name_ko": "아르마타미 토후국",
+    "name_ko": "무타미 토후국",
     "start": "1800",
     "end": "1818",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 19.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q1077630",
@@ -21667,18 +21651,18 @@
   {
     "qid": "Q58053082",
     "name_en": "Emirate of Liptako",
-    "name_ko": "리프타코 토후국",
+    "name_ko": "립타코 토후국",
     "start": "1809",
     "end": "1897",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 20.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q62633",
@@ -22003,7 +21987,7 @@
   {
     "qid": "Q412980",
     "name_en": "Ajmer-Merwara",
-    "name_ko": "아주메르-메르와라",
+    "name_ko": "아지메르-메르와라",
     "start": "1818",
     "end": "1936",
     "lon": "74.64",
@@ -22819,18 +22803,18 @@
   {
     "qid": "Q2935756",
     "name_en": "Canada East",
-    "name_ko": "카나다 이스트",
+    "name_ko": "동부 캐나다",
     "start": "1841",
     "end": "1867",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 2,
     "region": "unknown",
     "score": 19.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q56314483",
@@ -22915,7 +22899,7 @@
   {
     "qid": "Q96404668",
     "name_en": "Emirate of Qatar",
-    "name_ko": "크아타르 토후국",
+    "name_ko": "카타르 토후국",
     "start": "1847",
     "end": "1971",
     "lon": "",
@@ -23527,18 +23511,18 @@
   {
     "qid": "Q31073145",
     "name_en": "Emirat de Gazni",
-    "name_ko": "에미라트 가즈니",
+    "name_ko": "가즈니 토후국",
     "start": "1879",
     "end": "1880",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 9.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q838416",
@@ -25510,7 +25494,7 @@
   {
     "qid": "Q3348640",
     "name_en": "Italian Ethiopia",
-    "name_ko": "이탈리아 에티오피아",
+    "name_ko": "이탈리아령 에티오피아",
     "start": "1936",
     "end": "1941",
     "lon": "",
@@ -26564,18 +26548,18 @@
   {
     "qid": "Q1037040",
     "name_en": "Parthenopean Republic",
-    "name_ko": "파르테노페아 공화국",
+    "name_ko": "파르테노페 공화국",
     "start": "1799",
     "end": "1799",
     "lon": "14.27",
     "lat": "40.85",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 0,
     "region": "europe",
     "score": 0,
-    "tier_reason": "score_rest"
+    "tier_reason": "micro_entity_transliteration"
   },
   {
     "qid": "Q35765",

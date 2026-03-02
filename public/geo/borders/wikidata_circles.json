@@ -4705,7 +4705,7 @@
   },
   {
     "name_en": "Rurik's state",
-    "name_ko": "노브고로드 루스",
+    "name_ko": "류리크 국가",
     "lon": 31.27,
     "lat": 58.52,
     "start_year": 862,
@@ -5447,7 +5447,7 @@
   },
   {
     "name_en": "Civitas Schinesghe",
-    "name_ko": "치비타스 스키네스게",
+    "name_ko": "시비타스 스키네스게",
     "lon": 18.7,
     "lat": 52.4,
     "start_year": 960,
@@ -5455,7 +5455,7 @@
     "lineage_id": null,
     "color": "hsl(10, 70%, 55%)",
     "qid": "Q5124786",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 9
   },
@@ -5685,7 +5685,7 @@
   },
   {
     "name_en": "Banu Khazrun",
-    "name_ko": "바누 크아즈루은",
+    "name_ko": "바누 하즈룬",
     "lon": 13.18746,
     "lat": 32.87519,
     "start_year": 1001,
@@ -5693,7 +5693,7 @@
     "lineage_id": null,
     "color": "hsl(357, 70%, 55%)",
     "qid": "Q3827580",
-    "tier": 2,
+    "tier": 3,
     "region": "north_africa",
     "sitelinks": 5
   },
@@ -5895,7 +5895,7 @@
   },
   {
     "name_en": "Taifa Tudela",
-    "name_ko": "타이파 투데라",
+    "name_ko": "타이파 투델라",
     "lon": -1.605291361,
     "lat": 42.059425722,
     "start_year": 1046,
@@ -5903,7 +5903,7 @@
     "lineage_id": null,
     "color": "hsl(35, 70%, 55%)",
     "qid": "Q11919179",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 4
   },
@@ -5993,7 +5993,7 @@
   },
   {
     "name_en": "Uyunid Emirate",
-    "name_ko": "우유니드 토후국",
+    "name_ko": "우윤 왕조",
     "lon": 50.001306,
     "lat": 26.570873,
     "start_year": 1076,
@@ -6539,7 +6539,7 @@
   },
   {
     "name_en": "Powys Fadog",
-    "name_ko": "포우스 파도그",
+    "name_ko": "포이스 파도그",
     "lon": -3.15903,
     "lat": 52.97909,
     "start_year": 1160,
@@ -6623,7 +6623,7 @@
   },
   {
     "name_en": "Marquisate of Finale",
-    "name_ko": "마르키사테 피나레",
+    "name_ko": "피날레 후작령",
     "lon": 8.31666667,
     "lat": 44.16666667,
     "start_year": 1162,
@@ -6631,7 +6631,7 @@
     "lineage_id": "L0105",
     "color": "hsl(215, 70%, 55%)",
     "qid": "Q2280660",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 9
   },
@@ -6917,7 +6917,7 @@
   },
   {
     "name_en": "Great Ardra",
-    "name_ko": "그레아트 아르드라",
+    "name_ko": "대아르드라",
     "lon": 2.1500001,
     "lat": 6.6500001,
     "start_year": 1200,
@@ -9087,7 +9087,7 @@
   },
   {
     "name_en": "Marquisate of Zuccarello",
-    "name_ko": "마르키사테 주카레로",
+    "name_ko": "추카렐로 후작령",
     "lon": 8.11585,
     "lat": 44.111027777,
     "start_year": 1397,
@@ -9095,7 +9095,7 @@
     "lineage_id": "L0105",
     "color": "hsl(215, 70%, 55%)",
     "qid": "Q3845765",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 2
   },
@@ -9787,7 +9787,7 @@
   },
   {
     "name_en": "Afshar Beylik",
-    "name_ko": "아프샤르 베이",
+    "name_ko": "아프샤르 베이국",
     "lon": 41.276944444,
     "lat": 39.908611111,
     "start_year": 1480,
@@ -9795,7 +9795,7 @@
     "lineage_id": null,
     "color": "hsl(321, 70%, 55%)",
     "qid": "Q4690373",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 1
   },
@@ -11355,7 +11355,7 @@
   },
   {
     "name_en": "Bani Khalid Emirate",
-    "name_ko": "바니 크아리드 토후국",
+    "name_ko": "바니 할리드 토후국",
     "lon": 49.548316,
     "lat": 25.404932,
     "start_year": 1669,
@@ -11509,7 +11509,7 @@
   },
   {
     "name_en": "Dar Qimr",
-    "name_ko": "다르 크이므르",
+    "name_ko": "다르 키므르",
     "lon": 25,
     "lat": 13,
     "start_year": 1700,
@@ -11517,7 +11517,7 @@
     "lineage_id": null,
     "color": "hsl(252, 70%, 55%)",
     "qid": "Q21530380",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 1
   },
@@ -11579,7 +11579,7 @@
   },
   {
     "name_en": "Emirate of Jelgooji",
-    "name_ko": "제르고오지 토후국",
+    "name_ko": "젤고지 토후국",
     "lon": -1.62694444,
     "lat": 14.1,
     "start_year": 1705,
@@ -11587,7 +11587,7 @@
     "lineage_id": null,
     "color": "hsl(224, 70%, 55%)",
     "qid": "Q1232141",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 3
   },
@@ -11797,7 +11797,7 @@
     "lineage_id": null,
     "color": "hsl(51, 70%, 55%)",
     "qid": "Q20395973",
-    "tier": 2,
+    "tier": 3,
     "region": "north_africa",
     "sitelinks": 3
   },
@@ -12265,7 +12265,7 @@
   },
   {
     "name_en": "Republic of Graaff-Reinet",
-    "name_ko": "그라아프-레이네트 공화국",
+    "name_ko": "흐라프-레이넷 공화국",
     "lon": 24.53333282,
     "lat": -32.25,
     "start_year": 1795,
@@ -12951,7 +12951,7 @@
   },
   {
     "name_en": "Ajmer-Merwara",
-    "name_ko": "아주메르-메르와라",
+    "name_ko": "아지메르-메르와라",
     "lon": 74.64,
     "lat": 26.45,
     "start_year": 1818,
@@ -16031,7 +16031,7 @@
   },
   {
     "name_en": "Parthenopean Republic",
-    "name_ko": "파르테노페아 공화국",
+    "name_ko": "파르테노페 공화국",
     "lon": 14.27,
     "lat": 40.85,
     "start_year": 1799,
@@ -16039,7 +16039,7 @@
     "lineage_id": null,
     "color": "hsl(39, 70%, 55%)",
     "qid": "Q1037040",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 0
   },
