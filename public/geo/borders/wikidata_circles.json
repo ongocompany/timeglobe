@@ -12357,7 +12357,7 @@
     "lineage_id": null,
     "color": "hsl(39, 70%, 55%)",
     "qid": "Q692015",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 34
   },
@@ -12528,20 +12528,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 38
-  },
-  {
-    "name_en": "Helvetic Republic",
-    "name_ko": "헬베티아 공화국",
-    "lon": 7.45,
-    "lat": 46.95,
-    "start_year": 1798,
-    "end_year": 1803,
-    "lineage_id": null,
-    "color": "hsl(121, 70%, 55%)",
-    "qid": "Q206696",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 54
   },
   {
     "name_en": "Gozo",
@@ -13034,20 +13020,6 @@
     "sitelinks": 30
   },
   {
-    "name_en": "Restoration in Switzerland",
-    "name_ko": "스위스의 복고와 재생",
-    "lon": 7.45,
-    "lat": 46.95,
-    "start_year": 1814,
-    "end_year": 1848,
-    "lineage_id": null,
-    "color": "hsl(121, 70%, 55%)",
-    "qid": "Q568452",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 14
-  },
-  {
     "name_en": "Genoese Republic",
     "name_ko": "제노바 공화국",
     "lon": 8.933333333,
@@ -13088,20 +13060,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 38
-  },
-  {
-    "name_en": "Bourbon Restoration in France",
-    "name_ko": "부르봉 왕정복고",
-    "lon": 2.35,
-    "lat": 48.86,
-    "start_year": 1815,
-    "end_year": 1830,
-    "lineage_id": null,
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q207162",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 52
   },
   {
     "name_en": "Kingdom of Lombardy–Venetia",
@@ -13217,7 +13175,7 @@
   },
   {
     "name_en": "Nagpur kingdom",
-    "name_ko": "나그푸르 키응도므",
+    "name_ko": "나그푸르 왕국",
     "lon": 79.09,
     "lat": 21.15,
     "start_year": 1818,
@@ -13225,7 +13183,7 @@
     "lineage_id": null,
     "color": "hsl(332, 70%, 55%)",
     "qid": "Q4311709",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 14
   },
@@ -13270,20 +13228,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 27
-  },
-  {
-    "name_en": "Trucial States",
-    "name_ko": "휴전 오만",
-    "lon": 54,
-    "lat": 23.783333333,
-    "start_year": 1820,
-    "end_year": 1971,
-    "lineage_id": null,
-    "color": "hsl(66, 70%, 55%)",
-    "qid": "Q1852345",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 34
   },
   {
     "name_en": "Republic of Entre Ríos",
@@ -13379,7 +13323,7 @@
     "lineage_id": "L0186",
     "color": "hsl(101, 70%, 55%)",
     "qid": "Q9063401",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 4
   },
@@ -13508,20 +13452,6 @@
     "tier": 2,
     "region": "sub_saharan",
     "sitelinks": 3
-  },
-  {
-    "name_en": "Republic of New Granada",
-    "name_ko": "누에바그라나다 연방",
-    "lon": -74.05,
-    "lat": 4.65,
-    "start_year": 1831,
-    "end_year": 1858,
-    "lineage_id": "L0084",
-    "color": "hsl(176, 70%, 55%)",
-    "qid": "Q630882",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 33
   },
   {
     "name_en": "Argentine Confederation",
@@ -13746,20 +13676,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 27
-  },
-  {
-    "name_en": "First Republic (Dominican Republic)",
-    "name_ko": "도미니카 제1공화국",
-    "lon": -69.9,
-    "lat": 18.47,
-    "start_year": 1844,
-    "end_year": 1861,
-    "lineage_id": null,
-    "color": "hsl(35, 70%, 55%)",
-    "qid": "Q51545918",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 9
   },
   {
     "name_en": "Republic of Kliprivier",
@@ -14014,34 +13930,6 @@
     "sitelinks": 9
   },
   {
-    "name_en": "United Provinces of Central Italy",
-    "name_ko": "중앙이탈리아 연방",
-    "lon": 11.25,
-    "lat": 43.77,
-    "start_year": 1859,
-    "end_year": 1860,
-    "lineage_id": null,
-    "color": "hsl(49, 70%, 55%)",
-    "qid": "Q2268597",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 27
-  },
-  {
-    "name_en": "Union",
-    "name_ko": "연방 (미국 남북 전쟁)",
-    "lon": -77.04,
-    "lat": 38.9,
-    "start_year": 1861,
-    "end_year": 1865,
-    "lineage_id": null,
-    "color": "hsl(187, 70%, 55%)",
-    "qid": "Q214102",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 44
-  },
-  {
     "name_en": "mutasarrifate of Mount Lebanon",
     "name_ko": "레바논 산 무타사르리피야",
     "lon": 35.766666666,
@@ -14054,20 +13942,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 16
-  },
-  {
-    "name_en": "United States of Colombia",
-    "name_ko": "콜롬비아 합중국",
-    "lon": -74.05,
-    "lat": 4.65,
-    "start_year": 1863,
-    "end_year": 1886,
-    "lineage_id": "L0084",
-    "color": "hsl(176, 70%, 55%)",
-    "qid": "Q1061488",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 29
   },
   {
     "name_en": "Duchy of Anhalt",
@@ -14247,7 +14121,7 @@
     "lineage_id": null,
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q1362278",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 7
   },
@@ -16044,48 +15918,6 @@
     "sitelinks": 80
   },
   {
-    "name_en": "Republic of Upper Volta",
-    "name_ko": "오트볼타 공화국",
-    "lon": -1.7,
-    "lat": 12.1,
-    "start_year": 1958,
-    "end_year": 1984,
-    "lineage_id": null,
-    "color": "hsl(224, 70%, 55%)",
-    "qid": "Q797422",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 49
-  },
-  {
-    "name_en": "Republic of Dahomey",
-    "name_ko": "다호메이 공화국",
-    "lon": 2.6,
-    "lat": 6.466666666,
-    "start_year": 1958,
-    "end_year": 1975,
-    "lineage_id": "L0127",
-    "color": "hsl(168, 70%, 55%)",
-    "qid": "Q798431",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 36
-  },
-  {
-    "name_en": "Malagasy Republic",
-    "name_ko": "마다가스카르 공화국",
-    "lon": 47.516666666,
-    "lat": -18.933333333,
-    "start_year": 1958,
-    "end_year": 1975,
-    "lineage_id": "L0153",
-    "color": "hsl(206, 70%, 55%)",
-    "qid": "Q6740997",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 12
-  },
-  {
     "name_en": "United Suvadive Republic",
     "name_ko": "수바디브 공화국",
     "lon": 73,
@@ -16098,20 +15930,6 @@
     "tier": 2,
     "region": "unknown",
     "sitelinks": 20
-  },
-  {
-    "name_en": "Somali Republic",
-    "name_ko": "소말리 공화국",
-    "lon": 45.35,
-    "lat": 2.033333333,
-    "start_year": 1960,
-    "end_year": 1969,
-    "lineage_id": null,
-    "color": "hsl(317, 70%, 55%)",
-    "qid": "Q7559152",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 17
   },
   {
     "name_en": "South Kasai",
@@ -16168,20 +15986,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 38
-  },
-  {
-    "name_en": "Somali Democratic Republic",
-    "name_ko": "소말리아 민주공화국",
-    "lon": 45.34,
-    "lat": 2.05,
-    "start_year": 1969,
-    "end_year": 1991,
-    "lineage_id": null,
-    "color": "hsl(317, 70%, 55%)",
-    "qid": "Q1477220",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 33
   },
   {
     "name_en": "Dominion of Fiji",
@@ -16322,20 +16126,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 22
-  },
-  {
-    "name_en": "Republic of Bosnia and Herzegovina",
-    "name_ko": "보스니아 헤르체고비나 공화국",
-    "lon": 18.416667,
-    "lat": 43.866667,
-    "start_year": 1992,
-    "end_year": 1995,
-    "lineage_id": null,
-    "color": "hsl(249, 70%, 55%)",
-    "qid": "Q1274468",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 43
   },
   {
     "name_en": "United Nations Transitional Administration for Eastern Slavonia, Baranja and Western Sirmium",
