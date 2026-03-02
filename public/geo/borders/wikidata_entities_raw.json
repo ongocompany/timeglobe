@@ -9,11 +9,13 @@
     "lat": "35.601944",
     "type": "historical",
     "lineage_id": "L0001",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 66,
     "region": "middle_east",
     "score": 75.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1450,
+    "t1_end": -1200
   },
   {
     "qid": "Q1739282",
@@ -25,11 +27,13 @@
     "lat": "19.600802",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 22,
     "region": "middle_east",
     "score": 64.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2500,
+    "t1_end": -1500
   },
   {
     "qid": "Q246690",
@@ -41,11 +45,13 @@
     "lat": "34.35",
     "type": "historical",
     "lineage_id": "L0004",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 5,
     "region": "central_asia",
     "score": 71.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2000,
+    "t1_end": -1650
   },
   {
     "qid": "Q748846",
@@ -57,11 +63,13 @@
     "lat": "26.23",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 43,
     "region": "middle_east",
     "score": 79.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -3000,
+    "t1_end": -950
   },
   {
     "qid": "Q5743",
@@ -73,11 +81,13 @@
     "lat": "35.798056",
     "type": "historical",
     "lineage_id": "L0001",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 55,
     "region": "middle_east",
     "score": 78.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2950,
+    "t1_end": -2250
   },
   {
     "qid": "Q2267498",
@@ -105,11 +115,13 @@
     "lat": "29.844667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 71,
     "region": "middle_east",
     "score": 81.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2700,
+    "t1_end": -2250
   },
   {
     "qid": "Q128904",
@@ -140,11 +152,13 @@
     "lat": "31.411389",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 60,
     "region": "central_asia",
     "score": 89.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2500,
+    "t1_end": -2000
   },
   {
     "qid": "Q5780",
@@ -156,11 +170,13 @@
     "lat": "16.935138888",
     "type": "historical",
     "lineage_id": "L0009",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 64,
     "region": "middle_east",
     "score": 86.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2500,
+    "t1_end": -1500
   },
   {
     "qid": "Q41642",
@@ -191,11 +207,13 @@
     "lat": "36.113054",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 9,
     "region": "middle_east",
     "score": 36,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2400,
+    "t1_end": -2000
   },
   {
     "qid": "Q282350",
@@ -207,11 +225,13 @@
     "lat": "9.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 51,
     "region": "sub_saharan",
     "score": 97.4,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2400,
+    "t1_end": -1100
   },
   {
     "qid": "Q483421",
@@ -239,11 +259,13 @@
     "lat": "33.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 21,
     "region": "east_asia",
     "score": 79,
-    "tier_reason": "korea_t2"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2300,
+    "t1_end": -1250
   },
   {
     "qid": "Q4461035",
@@ -312,11 +334,13 @@
     "lat": "30.96",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 48,
     "region": "central_asia",
     "score": 63.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2100,
+    "t1_end": -2050
   },
   {
     "qid": "Q191324",
@@ -328,11 +352,13 @@
     "lat": "25.720556",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 61,
     "region": "middle_east",
     "score": 68,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2000,
+    "t1_end": -1800
   },
   {
     "qid": "Q41137",
@@ -344,11 +370,13 @@
     "lat": "36.0",
     "type": "historical",
     "lineage_id": "L0015",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 116,
     "region": "middle_east",
     "score": 106,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2000,
+    "t1_end": -950
   },
   {
     "qid": "Q617218",
@@ -360,11 +388,13 @@
     "lat": "36.2",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 30,
     "region": "middle_east",
     "score": 56.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2000,
+    "t1_end": -1600
   },
   {
     "qid": "Q552241",
@@ -408,11 +438,13 @@
     "lat": "36.829722222",
     "type": "historical",
     "lineage_id": "L0013",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 44,
     "region": "middle_east",
     "score": 80.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1900,
+    "t1_end": -900
   },
   {
     "qid": "Q47690",
@@ -459,11 +491,13 @@
     "lat": "42.26666667",
     "type": "historical",
     "lineage_id": "L0016",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 63,
     "region": "europe",
     "score": 99.9,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1700,
+    "t1_end": -200
   },
   {
     "qid": "Q6406219",
@@ -475,11 +509,13 @@
     "lat": "25.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 6,
     "region": "south_asia",
     "score": 31.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1650,
+    "t1_end": -1650
   },
   {
     "qid": "Q178665",
@@ -510,11 +546,13 @@
     "lat": "40.019722222",
     "type": "historical",
     "lineage_id": "L0019",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 20,
     "region": "middle_east",
     "score": 51.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1550,
+    "t1_end": -1250
   },
   {
     "qid": "Q12406731",
@@ -558,11 +596,13 @@
     "lat": "39.96",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 19,
     "region": "middle_east",
     "score": 45.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1400,
+    "t1_end": -1400
   },
   {
     "qid": "Q599590",
@@ -670,11 +710,13 @@
     "lat": "30.328611111",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 58,
     "region": "middle_east",
     "score": 83.6,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1300,
+    "t1_end": -550
   },
   {
     "qid": "Q326304",
@@ -686,11 +728,13 @@
     "lat": "31.501666666",
     "type": "historical",
     "lineage_id": "L0010",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 57,
     "region": "middle_east",
     "score": 87.5,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1300,
+    "t1_end": -400
   },
   {
     "qid": "Q878726",
@@ -817,11 +861,13 @@
     "lat": "41.74691",
     "type": "historical",
     "lineage_id": "L0022",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 42,
     "region": "europe",
     "score": 70.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1200,
+    "t1_end": -950
   },
   {
     "qid": "Q770281",
@@ -865,11 +911,13 @@
     "lat": "29.283055555",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 40,
     "region": "south_asia",
     "score": 76.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1200,
+    "t1_end": -1050
   },
   {
     "qid": "Q620765",
@@ -916,11 +964,13 @@
     "lat": "15.4",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 46,
     "region": "middle_east",
     "score": 84.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1150,
+    "t1_end": 250
   },
   {
     "qid": "Q112980583",
@@ -964,11 +1014,13 @@
     "lat": "35.183333333",
     "type": "historical",
     "lineage_id": "L0020",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 41,
     "region": "middle_east",
     "score": 78,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1100,
+    "t1_end": -350
   },
   {
     "qid": "Q1065073",
@@ -1175,11 +1227,13 @@
     "lat": "31.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 60,
     "region": "central_asia",
     "score": 86.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -850,
+    "t1_end": -650
   },
   {
     "qid": "Q727710",
@@ -1335,11 +1389,13 @@
     "lat": "15.45",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 45,
     "region": "middle_east",
     "score": 82.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -950,
+    "t1_end": -300
   },
   {
     "qid": "Q230407",
@@ -1351,11 +1407,13 @@
     "lat": "32.276111111",
     "type": "historical",
     "lineage_id": "L0010",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 65,
     "region": "middle_east",
     "score": 77,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -900,
+    "t1_end": -750
   },
   {
     "qid": "Q48685",
@@ -1367,11 +1425,13 @@
     "lat": "31.532569",
     "type": "historical",
     "lineage_id": "L0010",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 85,
     "region": "middle_east",
     "score": 86,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -900,
+    "t1_end": -600
   },
   {
     "qid": "Q10914393",
@@ -1667,11 +1727,13 @@
     "lat": "41.88333333",
     "type": "historical",
     "lineage_id": "L0022",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 76,
     "region": "europe",
     "score": 77,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -750,
+    "t1_end": -550
   },
   {
     "qid": "Q3979194",
@@ -1699,11 +1761,13 @@
     "lat": "30.422777777",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 47,
     "region": "east_asia",
     "score": 84.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -550,
+    "t1_end": -250
   },
   {
     "qid": "Q756854",
@@ -2009,11 +2073,13 @@
     "lat": "27.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 52,
     "region": "south_asia",
     "score": 81.2,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -550,
+    "t1_end": -350
   },
   {
     "qid": "Q389688",
@@ -2354,11 +2420,13 @@
     "lat": "37.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 52,
     "region": "central_asia",
     "score": 88.6,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -300,
+    "t1_end": 200
   },
   {
     "qid": "Q373189",
@@ -2370,11 +2438,13 @@
     "lat": "40.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 67,
     "region": "middle_east",
     "score": 78.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -300,
+    "t1_end": -100
   },
   {
     "qid": "Q62943",
@@ -2459,11 +2529,13 @@
     "lat": "32.06",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 48,
     "region": "north_africa",
     "score": 96.7,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -300,
+    "t1_end": 450
   },
   {
     "qid": "Q713397",
@@ -2555,11 +2627,13 @@
     "lat": "9.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 43,
     "region": "south_asia",
     "score": 93.8,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 300,
+    "t1_end": 300
   },
   {
     "qid": "Q1651832",
@@ -2587,11 +2661,13 @@
     "lat": "41.44",
     "type": "historical",
     "lineage_id": "L0016",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 64,
     "region": "middle_east",
     "score": 92.2,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -250,
+    "t1_end": 550
   },
   {
     "qid": "Q16718949",
@@ -2887,11 +2963,13 @@
     "lat": "35.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 74,
     "region": "europe",
     "score": 72.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -200,
+    "t1_end": -50
   },
   {
     "qid": "Q12584384",
@@ -2967,11 +3045,13 @@
     "lat": "28.49",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 47,
     "region": "south_asia",
     "score": 88.4,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -150,
+    "t1_end": 400
   },
   {
     "qid": "Q10908451",
@@ -3143,11 +3223,13 @@
     "lat": "13.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 48,
     "region": "middle_east",
     "score": 78.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -100,
+    "t1_end": 450
   },
   {
     "qid": "Q129854572",
@@ -3239,11 +3321,13 @@
     "lat": "45.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 58,
     "region": "europe",
     "score": 74.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -50,
+    "t1_end": 100
   },
   {
     "qid": "Q28456",
@@ -3344,11 +3428,13 @@
     "lat": "40.364722",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 59,
     "region": "central_asia",
     "score": 88.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 0,
+    "t1_end": 450
   },
   {
     "qid": "Q21523635",
@@ -3887,11 +3973,13 @@
     "lat": "12.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 46,
     "region": "south_asia",
     "score": 86.9,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 300,
+    "t1_end": 400
   },
   {
     "qid": "Q1196201",
@@ -4117,11 +4205,13 @@
     "lat": "47.556666666",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 50,
     "region": "east_asia",
     "score": 78.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 350,
+    "t1_end": 500
   },
   {
     "qid": "Q2030487",
@@ -4248,11 +4338,13 @@
     "lat": "41.893055555",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 98,
     "region": "europe",
     "score": 86.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 400,
+    "t1_end": 450
   },
   {
     "qid": "Q313136",
@@ -4424,11 +4516,13 @@
     "lat": "36.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 62,
     "region": "south_asia",
     "score": 85,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 450,
+    "t1_end": 650
   },
   {
     "qid": "Q1048918",
@@ -4472,11 +4566,13 @@
     "lat": "42.8825",
     "type": "historical",
     "lineage_id": "L0056",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 49,
     "region": "europe",
     "score": 93.8,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 450,
+    "t1_end": 500
   },
   {
     "qid": "Q956451",
@@ -4824,11 +4920,13 @@
     "lat": "39.87",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 68,
     "region": "europe",
     "score": 83.6,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 500,
+    "t1_end": 700
   },
   {
     "qid": "Q676184",
@@ -4907,11 +5005,13 @@
     "lat": "56.086135",
     "type": "historical",
     "lineage_id": "L0057",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 49,
     "region": "europe",
     "score": 79.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 500,
+    "t1_end": 500
   },
   {
     "qid": "Q87791",
@@ -5259,11 +5359,13 @@
     "lat": "49.12",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 60,
     "region": "europe",
     "score": 81.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 550,
+    "t1_end": 750
   },
   {
     "qid": "Q106577",
@@ -5275,11 +5377,13 @@
     "lat": "48.86",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 58,
     "region": "europe",
     "score": 80.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 600,
+    "t1_end": 750
   },
   {
     "qid": "Q105313",
@@ -5291,11 +5395,13 @@
     "lat": "51.2",
     "type": "historical",
     "lineage_id": "L0058",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 74,
     "region": "europe",
     "score": 89.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 550,
+    "t1_end": 900
   },
   {
     "qid": "Q105092",
@@ -5307,11 +5413,13 @@
     "lat": "52.6",
     "type": "historical",
     "lineage_id": "L0054",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 69,
     "region": "europe",
     "score": 87.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 550,
+    "t1_end": 900
   },
   {
     "qid": "Q110888",
@@ -5761,11 +5869,13 @@
     "lat": "54.966666666",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 72,
     "region": "central_asia",
     "score": 94.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 650,
+    "t1_end": 1200
   },
   {
     "qid": "Q4401190",
@@ -5940,11 +6050,13 @@
     "lat": "24.47",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 75,
     "region": "middle_east",
     "score": 71.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 650,
+    "t1_end": 650
   },
   {
     "qid": "Q234197",
@@ -6023,11 +6135,13 @@
     "lat": "55.0",
     "type": "historical",
     "lineage_id": "L0054",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 61,
     "region": "europe",
     "score": 82.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 700,
+    "t1_end": 800
   },
   {
     "qid": "Q501754",
@@ -6336,11 +6450,13 @@
     "lat": "45.583",
     "type": "historical",
     "lineage_id": "L0064",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 94,
     "region": "europe",
     "score": 104.6,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 700,
+    "t1_end": 1750
   },
   {
     "qid": "Q28322",
@@ -6659,11 +6775,13 @@
     "lat": "43.3625",
     "type": "historical",
     "lineage_id": "L0077",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 66,
     "region": "europe",
     "score": 81.2,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 750,
+    "t1_end": 900
   },
   {
     "qid": "Q2638136",
@@ -6876,11 +6994,13 @@
     "lat": "41.9",
     "type": "historical",
     "lineage_id": "L0023",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 90,
     "region": "europe",
     "score": 103.6,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 800,
+    "t1_end": 1850
   },
   {
     "qid": "Q1188046",
@@ -6908,11 +7028,13 @@
     "lat": "37.88",
     "type": "historical",
     "lineage_id": "L0080",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 57,
     "region": "europe",
     "score": 76.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 800,
+    "t1_end": 800
   },
   {
     "qid": "Q3588911",
@@ -7554,11 +7676,13 @@
     "lat": "57.0",
     "type": "historical",
     "lineage_id": "L0057",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 75,
     "region": "europe",
     "score": 97.7,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 850,
+    "t1_end": 1700
   },
   {
     "qid": "Q468902",
@@ -7586,11 +7710,13 @@
     "lat": "48.86",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 62,
     "region": "europe",
     "score": 78.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 850,
+    "t1_end": 900
   },
   {
     "qid": "Q680997",
@@ -8379,11 +8505,13 @@
     "lat": "42.598333333",
     "type": "historical",
     "lineage_id": "L0077",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 66,
     "region": "europe",
     "score": 95.9,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 950,
+    "t1_end": 950
   },
   {
     "qid": "Q842091",
@@ -8609,11 +8737,13 @@
     "lat": "37.88333333",
     "type": "historical",
     "lineage_id": "L0080",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 72,
     "region": "europe",
     "score": 80.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 950,
+    "t1_end": 1000
   },
   {
     "qid": "Q6831333",
@@ -9284,11 +9414,13 @@
     "lat": "47.0",
     "type": "historical",
     "lineage_id": "L0101",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 73,
     "region": "europe",
     "score": 98.4,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1000,
+    "t1_end": 1930
   },
   {
     "qid": "Q11907143",
@@ -9380,11 +9512,13 @@
     "lat": "38.73",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 78,
     "region": "middle_east",
     "score": 86.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1000,
+    "t1_end": 1300
   },
   {
     "qid": "Q7260839",
@@ -9556,11 +9690,13 @@
     "lat": "44.4075",
     "type": "historical",
     "lineage_id": "L0105",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 75,
     "region": "europe",
     "score": 96,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1050,
+    "t1_end": 1750
   },
   {
     "qid": "Q154667",
@@ -10058,11 +10194,13 @@
     "lat": "42.35",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 67,
     "region": "europe",
     "score": 93.5,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1800,
+    "t1_end": 1800
   },
   {
     "qid": "Q121856128",
@@ -10218,11 +10356,13 @@
     "lat": "38.73",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 74,
     "region": "middle_east",
     "score": 83.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1150,
+    "t1_end": 1200
   },
   {
     "qid": "Q63134381",
@@ -10525,11 +10665,13 @@
     "lat": "31.78",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 77,
     "region": "middle_east",
     "score": 81.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1100,
+    "t1_end": 1250
   },
   {
     "qid": "Q2109946",
@@ -11056,11 +11198,13 @@
     "lat": "38.591944444",
     "type": "historical",
     "lineage_id": "L0088",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 71,
     "region": "europe",
     "score": 92.7,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1800,
+    "t1_end": 1800
   },
   {
     "qid": "Q6831903",
@@ -11443,11 +11587,13 @@
     "lat": "42.816944444",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 65,
     "region": "europe",
     "score": 97.1,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 850,
+    "t1_end": 900
   },
   {
     "qid": "Q204920",
@@ -11894,11 +12040,13 @@
     "lat": "50.0875",
     "type": "historical",
     "lineage_id": "L0093",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 65,
     "region": "europe",
     "score": 91.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1850,
+    "t1_end": 1910
   },
   {
     "qid": "Q294652",
@@ -12070,11 +12218,13 @@
     "lat": "41.01",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 78,
     "region": "middle_east",
     "score": 79.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1250,
+    "t1_end": 1250
   },
   {
     "qid": "Q178913",
@@ -13444,7 +13594,7 @@
     "score": 94.7,
     "tier_reason": "score_top8",
     "t1_start": 1270,
-    "t1_end": 1975,
+    "t1_end": 1769,
     "t1_sources": 2
   },
   {
@@ -13697,11 +13847,13 @@
     "lat": "40.83",
     "type": "historical",
     "lineage_id": "L0096",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 78,
     "region": "europe",
     "score": 90.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1300,
+    "t1_end": 1700
   },
   {
     "qid": "Q6412664",
@@ -14679,11 +14831,13 @@
     "lat": "45.07",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 78,
     "region": "europe",
     "score": 88.9,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1350,
+    "t1_end": 1700
   },
   {
     "qid": "Q55599391",
@@ -15824,11 +15978,13 @@
     "lat": "34.56972222",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 25,
     "region": "middle_east",
     "score": 50.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1350,
+    "t1_end": -1250
   },
   {
     "qid": "Q9643578",
@@ -17017,11 +17173,13 @@
     "lat": "44.755",
     "type": "historical",
     "lineage_id": "L0136",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 86,
     "region": "europe",
     "score": 89.4,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1450,
+    "t1_end": 1750
   },
   {
     "qid": "Q2393278",
@@ -18930,11 +19088,13 @@
     "lat": "48.85",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 78,
     "region": "europe",
     "score": 88.8,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1550,
+    "t1_end": 1980
   },
   {
     "qid": "Q23366230",
@@ -19042,11 +19202,13 @@
     "lat": "53.333333333",
     "type": "historical",
     "lineage_id": "L0068",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 69,
     "region": "europe",
     "score": 82.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1800,
+    "t1_end": 1800
   },
   {
     "qid": "Q186096",
@@ -19058,11 +19220,13 @@
     "lat": "55.750555555",
     "type": "historical",
     "lineage_id": "L0115",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 78,
     "region": "europe",
     "score": 83.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1550,
+    "t1_end": 1700
   },
   {
     "qid": "Q1052040",
@@ -20008,11 +20172,13 @@
     "lat": "52.37",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 63,
     "region": "europe",
     "score": 81.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1850,
+    "t1_end": 1910
   },
   {
     "qid": "Q209327",
@@ -20671,9 +20837,9 @@
     "sitelinks": 74,
     "region": "south_asia",
     "score": 83.6,
-    "tier_reason": "score_top25",
-    "t1_start": 1674,
-    "t1_end": 1818,
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1750,
+    "t1_end": 1800,
     "t1_sources": 3
   },
   {
@@ -21748,11 +21914,13 @@
     "lat": "40.83333333",
     "type": "historical",
     "lineage_id": "L0096",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 74,
     "region": "europe",
     "score": 81.2,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1750,
+    "t1_end": 1850
   },
   {
     "qid": "Q3302610",
@@ -21908,11 +22076,11 @@
     "lat": "34.53",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 56,
     "region": "south_asia",
     "score": 76,
-    "tier_reason": "score_top25",
+    "tier_reason": "manual_demote_session7",
     "t1_start": 1747,
     "t1_end": 1826,
     "t1_sources": 1
@@ -22327,11 +22495,13 @@
     "lat": "27.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 38,
     "region": "south_asia",
     "score": 69.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2000
   },
   {
     "qid": "Q1115291",
@@ -22951,11 +23121,13 @@
     "lat": "-5.0",
     "type": "historical",
     "lineage_id": "L0140",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 82,
     "region": "southeast_asia",
     "score": 86,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1800,
+    "t1_end": 1940
   },
   {
     "qid": "Q507346",
@@ -23367,11 +23539,13 @@
     "lat": "48.2",
     "type": "historical",
     "lineage_id": "L0118",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 103,
     "region": "europe",
     "score": 85.6,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1850,
+    "t1_end": 1850
   },
   {
     "qid": "Q2006756",
@@ -23447,11 +23621,13 @@
     "lat": "48.133333333",
     "type": "historical",
     "lineage_id": "L0131",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 62,
     "region": "europe",
     "score": 75.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1850,
+    "t1_end": 1910
   },
   {
     "qid": "Q159631",
@@ -24471,11 +24647,13 @@
     "lat": "-22.905392",
     "type": "historical",
     "lineage_id": "L0184",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 63,
     "region": "latin_america",
     "score": 80.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1850,
+    "t1_end": 1850
   },
   {
     "qid": "Q285658",
@@ -25703,11 +25881,13 @@
     "lat": "22.541111111",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 107,
     "region": "south_asia",
     "score": 88,
-    "tier_reason": "score_top8"
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1858,
+    "t1_end": 1947
   },
   {
     "qid": "Q202775",
@@ -26023,11 +26203,13 @@
     "lat": "48.2075",
     "type": "historical",
     "lineage_id": "L0118",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 145,
     "region": "europe",
     "score": 90.2,
-    "tier_reason": "score_top8"
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1867,
+    "t1_end": 1918
   },
   {
     "qid": "Q60043695",
@@ -26060,22 +26242,6 @@
     "region": "unknown",
     "score": 39.6,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q188712",
-    "name_en": "Empire of Japan",
-    "name_ko": "일본 제국",
-    "start": "1868",
-    "end": "1947",
-    "lon": "139.752777777",
-    "lat": "35.6825",
-    "type": "historical",
-    "lineage_id": "L0125",
-    "tier": 2,
-    "sitelinks": 97,
-    "region": "east_asia",
-    "score": 84.6,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q533558",
@@ -26140,22 +26306,6 @@
     "region": "unknown",
     "score": 9.6,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q43287",
-    "name_en": "German Empire",
-    "name_ko": "독일 제국",
-    "start": "1871",
-    "end": "1918",
-    "lon": "13.376111111",
-    "lat": "52.518611111",
-    "type": "historical",
-    "lineage_id": "L0152",
-    "tier": 2,
-    "sitelinks": 127,
-    "region": "europe",
-    "score": 88.2,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q135235625",
@@ -26247,11 +26397,13 @@
     "lat": "44.416666666",
     "type": "historical",
     "lineage_id": "L0044",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 64,
     "region": "europe",
     "score": 76,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1900,
+    "t1_end": 1920
   },
   {
     "qid": "Q444912",
@@ -26295,11 +26447,13 @@
     "lat": "44.810833333",
     "type": "historical",
     "lineage_id": "L0182",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 63,
     "region": "europe",
     "score": 74.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1900,
+    "t1_end": 1910
   },
   {
     "qid": "Q30899490",
@@ -26519,11 +26673,13 @@
     "lat": "-5.854722222",
     "type": "historical",
     "lineage_id": "L0154",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 66,
     "region": "sub_saharan",
     "score": 80.9,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1900,
+    "t1_end": 1900
   },
   {
     "qid": "Q153963",
@@ -26631,11 +26787,13 @@
     "lat": "21.033333333",
     "type": "historical",
     "lineage_id": "L0110",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 77,
     "region": "southeast_asia",
     "score": 82.9,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1900,
+    "t1_end": 1950
   },
   {
     "qid": "Q2096935",
@@ -27178,11 +27336,13 @@
     "lat": "-29.0",
     "type": "historical",
     "lineage_id": "L0188",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 64,
     "region": "sub_saharan",
     "score": 79.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1910,
+    "t1_end": 1910
   },
   {
     "qid": "Q386496",
@@ -27290,11 +27450,13 @@
     "lat": "40.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 71,
     "region": "east_asia",
     "score": 78.1,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1930
   },
   {
     "qid": "Q15524976",
@@ -27754,11 +27916,13 @@
     "lat": "52.23",
     "type": "historical",
     "lineage_id": "L0099",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 66,
     "region": "europe",
     "score": 75.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1920
   },
   {
     "qid": "Q245160",
@@ -27818,11 +27982,13 @@
     "lat": "50.083333333",
     "type": "historical",
     "lineage_id": "L0093",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 166,
     "region": "europe",
     "score": 92.2,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1990
   },
   {
     "qid": "Q36704",
@@ -27834,11 +28000,13 @@
     "lat": "44.82",
     "type": "historical",
     "lineage_id": "L0182",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 177,
     "region": "europe",
     "score": 93.4,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1990
   },
   {
     "qid": "Q457167",
@@ -28250,11 +28418,13 @@
     "lat": "52.52",
     "type": "historical",
     "lineage_id": "L0152",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 112,
     "region": "europe",
     "score": 84.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1930
   },
   {
     "qid": "Q76236",
@@ -28282,11 +28452,13 @@
     "lat": "50.444444444",
     "type": "historical",
     "lineage_id": "L0094",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 95,
     "region": "europe",
     "score": 83.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1990
   },
   {
     "qid": "Q2895",
@@ -28298,11 +28470,13 @@
     "lat": "54.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 84,
     "region": "europe",
     "score": 81.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1990
   },
   {
     "qid": "Q28278",
@@ -28522,11 +28696,13 @@
     "lat": "40.3",
     "type": "historical",
     "lineage_id": "L0047",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 96,
     "region": "central_asia",
     "score": 84.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1990
   },
   {
     "qid": "Q132856",
@@ -28538,11 +28714,13 @@
     "lat": "40.1833",
     "type": "historical",
     "lineage_id": "L0074",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 88,
     "region": "middle_east",
     "score": 84.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1920,
+    "t1_end": 1990
   },
   {
     "qid": "Q146562",
@@ -28746,11 +28924,13 @@
     "lat": "41.7167",
     "type": "historical",
     "lineage_id": "L0079",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 81,
     "region": "middle_east",
     "score": 83.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1930,
+    "t1_end": 1990
   },
   {
     "qid": "Q146740",
@@ -29018,11 +29198,13 @@
     "lat": "47.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 63,
     "region": "east_asia",
     "score": 75.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1990,
+    "t1_end": 1990
   },
   {
     "qid": "Q265824",
@@ -29050,11 +29232,13 @@
     "lat": "40.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 76,
     "region": "south_asia",
     "score": 82.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1930,
+    "t1_end": 1990
   },
   {
     "qid": "Q51547013",
@@ -29306,11 +29490,13 @@
     "lat": "43.883333333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 80,
     "region": "east_asia",
     "score": 80,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1940,
+    "t1_end": 1940
   },
   {
     "qid": "Q7318",
@@ -29322,11 +29508,13 @@
     "lat": "52.511111111",
     "type": "historical",
     "lineage_id": "L0152",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 174,
     "region": "europe",
     "score": 91.8,
-    "tier_reason": "score_top8"
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1933,
+    "t1_end": 1945
   },
   {
     "qid": "Q824489",
@@ -29402,11 +29590,13 @@
     "lat": "48.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 84,
     "region": "central_asia",
     "score": 79.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1940,
+    "t1_end": 1990
   },
   {
     "qid": "Q2994258",
@@ -29658,11 +29848,13 @@
     "lat": "59.435833333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 79,
     "region": "europe",
     "score": 79.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1940,
+    "t1_end": 1990
   },
   {
     "qid": "Q2507497",
@@ -29850,11 +30042,13 @@
     "lat": "52.21666667",
     "type": "historical",
     "lineage_id": "L0099",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 67,
     "region": "europe",
     "score": 76.7,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1980,
+    "t1_end": 1980
   },
   {
     "qid": "Q10988528",
@@ -29882,11 +30076,13 @@
     "lat": "21.033333",
     "type": "historical",
     "lineage_id": "L0110",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 82,
     "region": "southeast_asia",
     "score": 82.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1950,
+    "t1_end": 1970
   },
   {
     "qid": "Q210542",
@@ -29978,11 +30174,13 @@
     "lat": "42.7",
     "type": "historical",
     "lineage_id": "L0033",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 56,
     "region": "europe",
     "score": 69.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1990,
+    "t1_end": 1990
   },
   {
     "qid": "Q467864",
@@ -29994,11 +30192,13 @@
     "lat": "41.33",
     "type": "historical",
     "lineage_id": "L0192",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 56,
     "region": "europe",
     "score": 69.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1990,
+    "t1_end": 1990
   },
   {
     "qid": "Q2625496",
@@ -30378,11 +30578,13 @@
     "lat": "52.052",
     "type": "historical",
     "lineage_id": "L0120",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 156,
     "region": "europe",
     "score": 90.5,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1950,
+    "t1_end": 1980
   },
   {
     "qid": "Q523435",
@@ -30410,11 +30612,13 @@
     "lat": "50.733888888",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 118,
     "region": "europe",
     "score": 86.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1950,
+    "t1_end": 1990
   },
   {
     "qid": "Q941881",
@@ -30554,11 +30758,13 @@
     "lat": "15.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 129,
     "region": "north_america",
     "score": 89.5,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1960,
+    "t1_end": 2010
   },
   {
     "qid": "Q19901436",
@@ -30586,11 +30792,13 @@
     "lat": "10.776944444",
     "type": "historical",
     "lineage_id": "L0198",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 97,
     "region": "southeast_asia",
     "score": 85.4,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1960,
+    "t1_end": 1970
   },
   {
     "qid": "Q2342822",
@@ -30666,11 +30874,13 @@
     "lat": "30.033333333",
     "type": "historical",
     "lineage_id": "L0008",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 80,
     "region": "middle_east",
     "score": 81.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1960,
+    "t1_end": 1970
   },
   {
     "qid": "Q797422",
@@ -31098,11 +31308,13 @@
     "lat": "33.51",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 35,
     "region": "middle_east",
     "score": 74.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2020
   },
   {
     "qid": "Q132690253",
@@ -31258,11 +31470,13 @@
     "lat": "12.8",
     "type": "historical",
     "lineage_id": "L0165",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 67,
     "region": "middle_east",
     "score": 78.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1980,
+    "t1_end": 1990
   },
   {
     "qid": "Q125881268",
@@ -31290,11 +31504,13 @@
     "lat": "33.333333",
     "type": "historical",
     "lineage_id": "L0007",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 28,
     "region": "middle_east",
     "score": 61.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2000
   },
   {
     "qid": "Q138028374",
@@ -31466,11 +31682,13 @@
     "lat": "-4.4",
     "type": "historical",
     "lineage_id": "L0199",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 69,
     "region": "sub_saharan",
     "score": 81.5,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1980,
+    "t1_end": 1990
   },
   {
     "qid": "Q488521",
@@ -31706,11 +31924,13 @@
     "lat": "32.902222",
     "type": "historical",
     "lineage_id": "L0104",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 36,
     "region": "north_africa",
     "score": 74,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2010
   },
   {
     "qid": "Q117089833",
@@ -31754,11 +31974,13 @@
     "lat": "-12.183333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 7,
     "region": "sub_saharan",
     "score": 55.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2000
   },
   {
     "qid": "Q3509510",
@@ -31898,11 +32120,13 @@
     "lat": "39.817222222",
     "type": "historical",
     "lineage_id": "L0047",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 129,
     "region": "central_asia",
     "score": 89.1,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2020
   },
   {
     "qid": "Q3456400",
@@ -31946,11 +32170,13 @@
     "lat": "37.1175",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 40,
     "region": "south_asia",
     "score": 64.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2000
   },
   {
     "qid": "Q7784940",
@@ -31962,11 +32188,13 @@
     "lat": "-18.933333333",
     "type": "historical",
     "lineage_id": "L0153",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 5,
     "region": "sub_saharan",
     "score": 24.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2010
   },
   {
     "qid": "Q838261",
@@ -31978,11 +32206,13 @@
     "lat": "44.8167",
     "type": "historical",
     "lineage_id": "L0182",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 46,
     "region": "europe",
     "score": 62.9,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2000
   },
   {
     "qid": "Q1274468",
@@ -32010,11 +32240,13 @@
     "lat": "34.532777777",
     "type": "historical",
     "lineage_id": "L0048",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 57,
     "region": "south_asia",
     "score": 78.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2000,
+    "t1_end": 2000
   },
   {
     "qid": "Q1257607",
@@ -32138,11 +32370,13 @@
     "lat": "34.532777777",
     "type": "historical",
     "lineage_id": "L0048",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 48,
     "region": "south_asia",
     "score": 69.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 2010,
+    "t1_end": 2020
   },
   {
     "qid": "Q1322424",
@@ -32346,11 +32580,13 @@
     "lon": "112.4",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 195,
     "region": "east_asia",
     "score": 102.7,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2050,
+    "t1_end": -1600
   },
   {
     "qid": "Q35123",
@@ -32549,11 +32785,13 @@
     "lon": "51.4",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 88,
     "region": "central_asia",
     "score": 81.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1930,
+    "t1_end": 1970
   },
   {
     "qid": "Q11768",
@@ -32584,11 +32822,13 @@
     "lon": "12.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 365,
     "region": "europe",
     "score": 112.8,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 950,
+    "t1_end": 1500
   },
   {
     "qid": "Q34",
@@ -32604,9 +32844,9 @@
     "sitelinks": 366,
     "region": "europe",
     "score": 110.9,
-    "tier_reason": "score_top8",
-    "t1_start": 1611,
-    "t1_end": 1721,
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 1550,
+    "t1_end": 2025,
     "t1_sources": 2
   },
   {
@@ -32716,22 +32956,6 @@
     "t1_start": 386,
     "t1_end": 534,
     "t1_sources": 2
-  },
-  {
-    "qid": "Q148",
-    "name_en": "People's Republic of China",
-    "name_ko": "중화인민공화국",
-    "start": "1949",
-    "end": "Present",
-    "lat": "39.9",
-    "lon": "116.4",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 393,
-    "region": "east_asia",
-    "score": 103.2,
-    "tier_reason": "score_top8"
   },
   {
     "qid": "Q193398",
@@ -32989,11 +33213,13 @@
     "lon": "-73.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 52,
     "region": "latin_america",
     "score": 85.6,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 600,
+    "t1_end": 600
   },
   {
     "qid": "Q208476",
@@ -33005,11 +33231,13 @@
     "lon": "-79.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 49,
     "region": "latin_america",
     "score": 73.9,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 100,
+    "t1_end": 500
   },
   {
     "qid": "Q210547",
@@ -33021,11 +33249,13 @@
     "lon": "-75.1",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 52,
     "region": "latin_america",
     "score": 95.6,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -100,
+    "t1_end": 600
   },
   {
     "qid": "Q220898",
@@ -33072,11 +33302,13 @@
     "lon": "23.72",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 284,
     "region": "europe",
     "score": 101.5,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -500,
+    "t1_end": -350
   },
   {
     "qid": "Q5765",
@@ -33088,11 +33320,13 @@
     "lon": "22.43",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 162,
     "region": "europe",
     "score": 105.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -900,
+    "t1_end": -200
   },
   {
     "qid": "Q173183",
@@ -33250,11 +33484,13 @@
     "lon": "107.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 48,
     "region": "east_asia",
     "score": 89.2,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -850,
+    "t1_end": -250
   },
   {
     "qid": "Q230855",
@@ -33378,11 +33614,13 @@
     "lon": "118.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 62,
     "region": "east_asia",
     "score": 77.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 500,
+    "t1_end": 500
   },
   {
     "qid": "Q192702",
@@ -33394,11 +33632,13 @@
     "lon": "118.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 67,
     "region": "east_asia",
     "score": 75.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 550,
+    "t1_end": 550
   },
   {
     "qid": "Q193292",
@@ -33442,11 +33682,13 @@
     "lon": "108.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 70,
     "region": "east_asia",
     "score": 77.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 550,
+    "t1_end": 550
   },
   {
     "qid": "Q188737",
@@ -33458,11 +33700,13 @@
     "lon": "114.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 77,
     "region": "east_asia",
     "score": 80.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 550,
+    "t1_end": 550
   },
   {
     "qid": "Q189817",
@@ -33570,11 +33814,13 @@
     "lon": "112.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 79,
     "region": "east_asia",
     "score": 90,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -200,
+    "t1_end": 200
   },
   {
     "qid": "Q326439",
@@ -34466,11 +34712,13 @@
     "lon": "105.4",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 0,
     "region": "southeast_asia",
     "score": 50,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2850,
+    "t1_end": -1700
   },
   {
     "qid": null,
@@ -34482,11 +34730,13 @@
     "lon": "105.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 0,
     "region": "southeast_asia",
     "score": 1,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2850,
+    "t1_end": -1700
   },
   {
     "qid": null,
@@ -34498,11 +34748,13 @@
     "lon": "105.98",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 0,
     "region": "southeast_asia",
     "score": 1.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2850,
+    "t1_end": -1700
   },
   {
     "qid": null,
@@ -34514,11 +34766,13 @@
     "lon": "105.98",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 0,
     "region": "southeast_asia",
     "score": 0.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2850,
+    "t1_end": -1700
   },
   {
     "qid": null,
@@ -34530,11 +34784,13 @@
     "lon": "105.85",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 0,
     "region": "southeast_asia",
     "score": 5.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2850,
+    "t1_end": -1700
   },
   {
     "qid": null,
@@ -34546,11 +34802,13 @@
     "lon": "107.59",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 0,
     "region": "southeast_asia",
     "score": 4.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2850,
+    "t1_end": -1700
   },
   {
     "qid": null,
@@ -34562,11 +34820,13 @@
     "lon": "91.11",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 0,
     "region": "south_asia",
     "score": 5.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -2850,
+    "t1_end": -1700
   },
   {
     "qid": null,
@@ -34594,18 +34854,20 @@
     "lon": "135.80",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "region": "east_asia",
     "sitelinks": 80,
     "score": 91.1,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": 250,
+    "t1_end": 650
   },
   {
     "qid": "Q17",
     "name_en": "Japan",
     "name_ko": "일본",
     "start": "670",
-    "end": "1868",
+    "end": "Present",
     "lat": "35.01",
     "lon": "135.77",
     "type": "historical",
@@ -34616,7 +34878,7 @@
     "score": 118.5,
     "tier_reason": "score_top8",
     "t1_start": 600,
-    "t1_end": 1800,
+    "t1_end": 2025,
     "t1_sources": 3
   },
   {
@@ -34629,11 +34891,13 @@
     "lon": "32.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 92,
     "region": "middle_east",
     "score": 88.1,
-    "tier_reason": "score_top8"
+    "tier_reason": "sitelinks_top20_auto",
+    "t1_start": -1550,
+    "t1_end": -1100
   },
   {
     "qid": "CSHAPES_United_States",
@@ -34645,7 +34909,11 @@
     "lon": "-77.0367",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1776,
+    "t1_end": 2025,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Alaska",
@@ -34657,7 +34925,8 @@
     "lon": "-134.412",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Puerto_Rico",
@@ -34669,7 +34938,8 @@
     "lon": "-66.1057",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Canada",
@@ -34681,7 +34951,8 @@
     "lon": "-75.69",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Newfoundland",
@@ -34693,7 +34964,8 @@
     "lon": "-52.681",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Bahamas",
@@ -34705,7 +34977,8 @@
     "lon": "-77.343",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Cuba",
@@ -34717,7 +34990,8 @@
     "lon": "-82.3642",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Haiti",
@@ -34729,7 +35003,8 @@
     "lon": "-72.335",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Dominican_Republic",
@@ -34741,7 +35016,8 @@
     "lon": "-69.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Jamaica",
@@ -34753,7 +35029,8 @@
     "lon": "-76.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Trinidad",
@@ -34765,7 +35042,8 @@
     "lon": "-61.5167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Barbados",
@@ -34777,7 +35055,8 @@
     "lon": "-59.6167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Guadeloupe",
@@ -34789,7 +35068,8 @@
     "lon": "-61.72",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Martinique",
@@ -34801,7 +35081,8 @@
     "lon": "-61.0588",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Mexico",
@@ -34813,7 +35094,8 @@
     "lon": "-99.1386",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Belize",
@@ -34825,7 +35107,8 @@
     "lon": "-88.7667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Guatemala",
@@ -34837,7 +35120,8 @@
     "lon": "-90.5269",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Honduras",
@@ -34849,7 +35133,8 @@
     "lon": "-87.2167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_El_Salvador",
@@ -34861,7 +35146,8 @@
     "lon": "-89.2031",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Nicaragua",
@@ -34873,7 +35159,8 @@
     "lon": "-86.2683",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Costa_Rica",
@@ -34885,7 +35172,8 @@
     "lon": "-84.0833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Colombia",
@@ -34897,7 +35185,8 @@
     "lon": "-74.0833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Venezuela",
@@ -34909,7 +35198,8 @@
     "lon": "-66.9167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Guyana",
@@ -34921,7 +35211,8 @@
     "lon": "-58.1667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_French_Guyana",
@@ -34933,7 +35224,8 @@
     "lon": "-52.33",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Ecuador",
@@ -34945,7 +35237,8 @@
     "lon": "-78.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Peru",
@@ -34957,7 +35250,8 @@
     "lon": "-77.05",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Brazil",
@@ -34969,7 +35263,8 @@
     "lon": "-47.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Bolivia",
@@ -34981,7 +35276,8 @@
     "lon": "-68.15",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Paraguay",
@@ -34993,7 +35289,8 @@
     "lon": "-57.6667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Chile",
@@ -35005,7 +35302,8 @@
     "lon": "-70.6667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Argentina",
@@ -35017,7 +35315,8 @@
     "lon": "-58.6725",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Uruguay",
@@ -35029,7 +35328,8 @@
     "lon": "-56.1708",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_United_Kingdom",
@@ -35041,7 +35341,11 @@
     "lon": "-0.116667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1707,
+    "t1_end": 2025,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Netherlands",
@@ -35053,7 +35357,8 @@
     "lon": "4.91667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Belgium",
@@ -35065,7 +35370,8 @@
     "lon": "4.33333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Luxembourg",
@@ -35077,7 +35383,8 @@
     "lon": "6.13",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_France",
@@ -35089,7 +35396,11 @@
     "lon": "2.33333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1100,
+    "t1_end": 2025,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Switzerland",
@@ -35101,7 +35412,8 @@
     "lon": "7.46667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Spain",
@@ -35113,7 +35425,8 @@
     "lon": "-3.68333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Portugal",
@@ -35125,7 +35438,8 @@
     "lon": "-9.13333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Germany_Prussia",
@@ -35137,7 +35451,11 @@
     "lon": "13.4",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1871,
+    "t1_end": 1945,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Austria-Hungary",
@@ -35149,7 +35467,8 @@
     "lon": "16.3667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Italy/Sardinia",
@@ -35161,7 +35480,11 @@
     "lon": "12.4833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1861,
+    "t1_end": 2025,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Malta",
@@ -35173,7 +35496,8 @@
     "lon": "14.5147",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Serbia",
@@ -35185,7 +35509,8 @@
     "lon": "20.4681",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Montenegro",
@@ -35197,7 +35522,8 @@
     "lon": "19.2636",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Greece",
@@ -35209,7 +35535,8 @@
     "lon": "23.7333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Bulgaria",
@@ -35221,7 +35548,8 @@
     "lon": "23.3167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Rumania",
@@ -35233,7 +35561,8 @@
     "lon": "26.1",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_USSR",
@@ -35245,7 +35574,11 @@
     "lon": "37.6156",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1922,
+    "t1_end": 1991,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Sweden",
@@ -35257,7 +35590,8 @@
     "lon": "18.0745",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Denmark",
@@ -35269,7 +35603,8 @@
     "lon": "12.567",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Iceland",
@@ -35281,7 +35616,8 @@
     "lon": "-21.95",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Cape_Verde",
@@ -35293,7 +35629,8 @@
     "lon": "-23.5167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Guinea-Bissau",
@@ -35305,7 +35642,8 @@
     "lon": "-15.58",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Equatorial_Guinea",
@@ -35317,7 +35655,8 @@
     "lon": "8.7371",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Senegal",
@@ -35329,7 +35668,8 @@
     "lon": "-17.4553",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Liberia",
@@ -35341,7 +35681,8 @@
     "lon": "-10.8047",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Sierra_Leone",
@@ -35353,7 +35694,8 @@
     "lon": "-13.2342",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Ghana",
@@ -35365,7 +35707,8 @@
     "lon": "-0.216667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_German_Togoland",
@@ -35377,7 +35720,8 @@
     "lon": "1.23136",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Gabon",
@@ -35389,7 +35733,8 @@
     "lon": "9.45",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Congo",
@@ -35401,7 +35746,8 @@
     "lon": "15.2847",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Djibouti",
@@ -35413,7 +35759,8 @@
     "lon": "43.1506",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Ethiopia",
@@ -35425,7 +35772,8 @@
     "lon": "38.7751",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Eritrea",
@@ -35437,7 +35785,8 @@
     "lon": "38.9333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Angola",
@@ -35449,7 +35798,8 @@
     "lon": "13.2344",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Mozambique",
@@ -35461,7 +35811,8 @@
     "lon": "32.5892",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Natal",
@@ -35473,7 +35824,8 @@
     "lon": "30.39",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Transvaal",
@@ -35485,7 +35837,8 @@
     "lon": "28.2294",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Namibia",
@@ -35497,7 +35850,8 @@
     "lon": "17.0836",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Lesotho",
@@ -35509,7 +35863,8 @@
     "lon": "27.4833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Botswana",
@@ -35521,7 +35876,8 @@
     "lon": "25.9119",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Madagascar_Malagasy",
@@ -35533,7 +35889,8 @@
     "lon": "47.5167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Reunion",
@@ -35569,7 +35926,8 @@
     "lon": "-6.83",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Spanish_West_Africa",
@@ -35581,7 +35939,8 @@
     "lon": "-15.9368",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Algeria",
@@ -35593,7 +35952,8 @@
     "lon": "3.05056",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Tunisia",
@@ -35605,7 +35965,8 @@
     "lon": "10.1797",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Iran",
@@ -35617,7 +35978,8 @@
     "lon": "51.4244",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Turkey",
@@ -35629,7 +35991,8 @@
     "lon": "32.8644",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Egypt",
@@ -35641,7 +36004,8 @@
     "lon": "31.25",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Oman",
@@ -35653,7 +36017,8 @@
     "lon": "58.5933",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Afghanistan",
@@ -35665,19 +36030,24 @@
     "lon": "69.1833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "south_asia"
   },
   {
     "qid": "CSHAPES_China",
     "name_en": "China",
     "name_ko": "중국",
-    "start": "1886",
+    "start": "1912",
     "end": "Present",
     "lat": "39.9289",
     "lon": "116.388",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1912,
+    "t1_end": 2025,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Korea",
@@ -35689,7 +36059,8 @@
     "lon": "127",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_India",
@@ -35701,7 +36072,11 @@
     "lon": "77.2",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 1,
+    "tier_reason": "manual_promote_session7",
+    "t1_start": 1886,
+    "t1_end": 2025,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Bhutan",
@@ -35713,7 +36088,8 @@
     "lon": "89.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Sri_Lanka",
@@ -35725,7 +36101,8 @@
     "lon": "79.8478",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "south_asia"
   },
   {
     "qid": "CSHAPES_Nepal",
@@ -35737,7 +36114,8 @@
     "lon": "85.3167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Thailand",
@@ -35749,7 +36127,8 @@
     "lon": "100.517",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Cambodia",
@@ -35761,7 +36140,8 @@
     "lon": "104.917",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Vietnam_Annam/Cochin_China/Ton",
@@ -35773,7 +36153,8 @@
     "lon": "107.58",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Unfederated_Malay_States",
@@ -35785,7 +36166,8 @@
     "lon": "103.741",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Straits_Settlements",
@@ -35797,7 +36179,8 @@
     "lon": "103.852",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Philippines",
@@ -35809,7 +36192,8 @@
     "lon": "120.982",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Indonesia",
@@ -35821,7 +36205,8 @@
     "lon": "106.829",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_East_Timor",
@@ -35833,7 +36218,8 @@
     "lon": "125.574",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_New_South_Wales",
@@ -35845,7 +36231,8 @@
     "lon": "151.185",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Western_Australia",
@@ -35857,7 +36244,8 @@
     "lon": "115.84",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_South_Australia",
@@ -35869,7 +36257,8 @@
     "lon": "138.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Victoria",
@@ -35881,7 +36270,8 @@
     "lon": "144.975",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Queensland",
@@ -35893,7 +36283,8 @@
     "lon": "153.035",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Tasmania",
@@ -35905,7 +36296,8 @@
     "lon": "147.295",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Papua",
@@ -35917,7 +36309,8 @@
     "lon": "147.193",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_New_Guinea_German_New_Guinea_K",
@@ -35929,7 +36322,8 @@
     "lon": "152.143",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_New_Zealand",
@@ -35941,7 +36335,8 @@
     "lon": "174.783",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_New_Caledonia_and_Dependencies",
@@ -35953,7 +36348,8 @@
     "lon": "166.458",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Fiji",
@@ -35965,7 +36361,8 @@
     "lon": "178.43",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Bosnia",
@@ -35977,7 +36374,8 @@
     "lon": "18.383",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Herzegovina",
@@ -35989,7 +36387,8 @@
     "lon": "17.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Lagos",
@@ -36001,7 +36400,8 @@
     "lon": "3.38587",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Oil_Rivers_Protectorate",
@@ -36013,7 +36413,8 @@
     "lon": "8.31667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 3
+    "tier": 3,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_British_Bechuanaland",
@@ -36025,7 +36426,8 @@
     "lon": "24.73",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Bokhara",
@@ -36037,7 +36439,8 @@
     "lon": "64.43",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Khiva",
@@ -36049,7 +36452,8 @@
     "lon": "60.3557",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Perak",
@@ -36061,7 +36465,8 @@
     "lon": "100.72",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Selangore",
@@ -36073,7 +36478,8 @@
     "lon": "101.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_German_Solomon_Islands",
@@ -36085,7 +36491,8 @@
     "lon": "155.624",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Maldives",
@@ -36109,7 +36516,8 @@
     "lon": "36.8167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Sabah_North_Borneo",
@@ -36121,7 +36529,8 @@
     "lon": "118.108",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Sarawak",
@@ -36133,7 +36542,8 @@
     "lon": "110.33",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Brunei",
@@ -36145,7 +36555,8 @@
     "lon": "114.933",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Pahang",
@@ -36157,7 +36568,8 @@
     "lon": "103.39",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Gambia_The",
@@ -36169,7 +36581,8 @@
     "lon": "-16.5917",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Ivory_Coast",
@@ -36181,7 +36594,8 @@
     "lon": "-5.28333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Zimbabwe",
@@ -36193,7 +36607,8 @@
     "lon": "31.0447",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Italian_Somaliland",
@@ -36205,7 +36620,8 @@
     "lon": "45.3667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Tanzania_Tanganyika",
@@ -36217,7 +36633,8 @@
     "lon": "35.7419",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Malawi",
@@ -36229,7 +36646,8 @@
     "lon": "33.7833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_United_Arab_Emirates",
@@ -36241,7 +36659,8 @@
     "lon": "54.3667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Laos",
@@ -36253,7 +36672,8 @@
     "lon": "102.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Solomon_Islands",
@@ -36265,7 +36685,8 @@
     "lon": "159.95",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Guinea",
@@ -36277,7 +36698,8 @@
     "lon": "-13.6619",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Uganda",
@@ -36289,7 +36711,8 @@
     "lon": "32.5656",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_French_West_Africa",
@@ -36301,7 +36724,8 @@
     "lon": "-16.51",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Benin",
@@ -36313,7 +36737,8 @@
     "lon": "2.61667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Swaziland_Eswatini",
@@ -36325,7 +36750,8 @@
     "lon": "31.1333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Taiwan",
@@ -36337,7 +36763,8 @@
     "lon": "121.525",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Hawaii",
@@ -36349,7 +36776,8 @@
     "lon": "-157.856",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_Sudan",
@@ -36361,7 +36789,8 @@
     "lon": "32.5342",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Southern_Nigeria",
@@ -36373,7 +36802,8 @@
     "lon": "8.31667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Northern_Nigeria",
@@ -36385,7 +36815,8 @@
     "lon": "6.15",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Chad",
@@ -36397,7 +36828,8 @@
     "lon": "15.2167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Northeastern_Rhodesia",
@@ -36409,7 +36841,8 @@
     "lon": "32.6333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Northwestern_Rhodesia",
@@ -36421,7 +36854,8 @@
     "lon": "25.86",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Australia",
@@ -36433,7 +36867,8 @@
     "lon": "149.217",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "oceania"
   },
   {
     "qid": "CSHAPES_Panama",
@@ -36445,7 +36880,8 @@
     "lon": "-79.5333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_america"
   },
   {
     "qid": "CSHAPES_French_Polynesia",
@@ -36469,7 +36905,8 @@
     "lon": "-16.0274",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Norway",
@@ -36481,7 +36918,8 @@
     "lon": "10.7522",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Mali",
@@ -36493,7 +36931,8 @@
     "lon": "-7.97491",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Niger",
@@ -36505,7 +36944,8 @@
     "lon": "2.11667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Southern_Sakhalin_Island",
@@ -36517,7 +36957,8 @@
     "lon": "142.74",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Central_African_Republic",
@@ -36529,7 +36970,8 @@
     "lon": "18.5829",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_South_Africa",
@@ -36541,7 +36983,8 @@
     "lon": "28.2294",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Zambia",
@@ -36553,7 +36996,8 @@
     "lon": "28.2833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Spanish_Morocco",
@@ -36565,7 +37009,8 @@
     "lon": "-5.36667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Libya",
@@ -36577,7 +37022,8 @@
     "lon": "13.18",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Albania",
@@ -36589,7 +37035,8 @@
     "lon": "19.8189",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Cyprus",
@@ -36601,7 +37048,8 @@
     "lon": "33.3667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Nigeria",
@@ -36613,7 +37061,8 @@
     "lon": "7.53333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Qatar",
@@ -36625,7 +37074,8 @@
     "lon": "51.5333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Finland",
@@ -36637,7 +37087,8 @@
     "lon": "24.9342",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Poland",
@@ -36649,7 +37100,8 @@
     "lon": "21",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Austria",
@@ -36661,7 +37113,8 @@
     "lon": "16.3667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Hungary",
@@ -36673,7 +37126,8 @@
     "lon": "19.0833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Estonia",
@@ -36685,7 +37139,8 @@
     "lon": "24.7281",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Latvia",
@@ -36697,7 +37152,8 @@
     "lon": "24.1333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Lithuania",
@@ -36709,7 +37165,8 @@
     "lon": "25.3167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Yemen",
@@ -36721,7 +37178,8 @@
     "lon": "44.1833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Danzig",
@@ -36733,7 +37191,8 @@
     "lon": "18.64",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Burkina_Faso",
@@ -36745,7 +37204,8 @@
     "lon": "-1.52472",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Cameroon",
@@ -36757,7 +37217,8 @@
     "lon": "11.5167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Rwanda-Urundi",
@@ -36769,7 +37230,8 @@
     "lon": "29.36",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Iraq",
@@ -36781,7 +37243,8 @@
     "lon": "44.3939",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Syria",
@@ -36793,7 +37256,8 @@
     "lon": "36.3",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Lebanon",
@@ -36805,7 +37269,8 @@
     "lon": "35.5097",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Jordan",
@@ -36817,7 +37282,8 @@
     "lon": "35.9333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Palestine",
@@ -36829,7 +37295,8 @@
     "lon": "35.2066",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Ireland",
@@ -36841,7 +37308,8 @@
     "lon": "-6.24889",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Mongolia",
@@ -36853,7 +37321,8 @@
     "lon": "106.917",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Togo",
@@ -36865,7 +37334,8 @@
     "lon": "1.23136",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Inini",
@@ -36877,7 +37347,8 @@
     "lon": "-53.2764",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "latin_america"
   },
   {
     "qid": "CSHAPES_Saudi_Arabia",
@@ -36889,7 +37360,8 @@
     "lon": "46.7728",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Aden",
@@ -36901,7 +37373,8 @@
     "lon": "45.0333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Burma",
@@ -36913,7 +37386,8 @@
     "lon": "96.1186",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_East_Aden_Protectorate",
@@ -36925,7 +37399,8 @@
     "lon": "49.1259",
     "type": "historical",
     "lineage_id": null,
-    "tier": 3
+    "tier": 3,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Korea_Democratic_People's_Repu",
@@ -36937,7 +37412,8 @@
     "lon": "125.755",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Korea_Republic_of",
@@ -36965,7 +37441,8 @@
     "lon": "43.2403",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Malaysia",
@@ -36977,7 +37454,8 @@
     "lon": "101.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Singapore",
@@ -36989,7 +37467,8 @@
     "lon": "103.856",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Pakistan",
@@ -37001,7 +37480,8 @@
     "lon": "73.1667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Jammu_and_Kashmir",
@@ -37013,7 +37493,8 @@
     "lon": "74.7973",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Kashmir_North_Azad",
@@ -37025,7 +37506,8 @@
     "lon": "74.4643",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "central_asia"
   },
   {
     "qid": "CSHAPES_Israel",
@@ -37037,7 +37519,8 @@
     "lon": "35.2066",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Gaza",
@@ -37049,7 +37532,8 @@
     "lon": "34.4668",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_West_Bank",
@@ -37061,7 +37545,8 @@
     "lon": "35.2339",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_West_Irian_Dutch_New_Guinea",
@@ -37073,7 +37558,8 @@
     "lon": "140.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Papua_New_Guinea",
@@ -37085,7 +37571,8 @@
     "lon": "147.193",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Vietnam_Democratic_Republic_of",
@@ -37097,7 +37584,8 @@
     "lon": "105.85",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Vietnam_Republic_of",
@@ -37109,7 +37597,8 @@
     "lon": "106.667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "southeast_asia"
   },
   {
     "qid": "CSHAPES_Southern_zone_of_Spanish_Moroc",
@@ -37121,7 +37610,8 @@
     "lon": "-12.9222",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "north_africa"
   },
   {
     "qid": "CSHAPES_Somalia",
@@ -37133,7 +37623,8 @@
     "lon": "45.3667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Kuwait",
@@ -37145,7 +37636,8 @@
     "lon": "47.9783",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Burundi",
@@ -37157,7 +37649,8 @@
     "lon": "29.36",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Rwanda",
@@ -37169,7 +37662,8 @@
     "lon": "30.0606",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Bahrain",
@@ -37181,7 +37675,8 @@
     "lon": "50.5831",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Bangladesh",
@@ -37193,7 +37688,8 @@
     "lon": "90.4086",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "east_asia"
   },
   {
     "qid": "CSHAPES_Macedonia_FYROM/North_Macedoni",
@@ -37205,7 +37701,8 @@
     "lon": "21.428",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Moldova",
@@ -37217,7 +37714,8 @@
     "lon": "28.8575",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Ukraine",
@@ -37229,7 +37727,8 @@
     "lon": "30.5167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Byelarus",
@@ -37241,7 +37740,8 @@
     "lon": "27.5667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Armenia",
@@ -37253,7 +37753,8 @@
     "lon": "44.5136",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Georgia",
@@ -37265,7 +37766,8 @@
     "lon": "44.7908",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Azerbaijan",
@@ -37277,7 +37779,8 @@
     "lon": "49.8822",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Turkmenistan",
@@ -37289,7 +37792,8 @@
     "lon": "58.3833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "middle_east"
   },
   {
     "qid": "CSHAPES_Tajikistan",
@@ -37301,7 +37805,8 @@
     "lon": "68.7739",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "central_asia"
   },
   {
     "qid": "CSHAPES_Kyrgyzstan",
@@ -37313,7 +37818,8 @@
     "lon": "74.6003",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "central_asia"
   },
   {
     "qid": "CSHAPES_Uzbekistan",
@@ -37325,7 +37831,8 @@
     "lon": "69.25",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "central_asia"
   },
   {
     "qid": "CSHAPES_Kazakhstan",
@@ -37337,7 +37844,8 @@
     "lon": "71.4278",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "central_asia"
   },
   {
     "qid": "CSHAPES_Croatia",
@@ -37349,7 +37857,8 @@
     "lon": "15.9819",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Bosnia-Herzegovina",
@@ -37361,7 +37870,8 @@
     "lon": "18.3833",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Slovenia",
@@ -37373,7 +37883,8 @@
     "lon": "14.5144",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Czech_Republic",
@@ -37385,7 +37896,8 @@
     "lon": "14.4667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Slovakia",
@@ -37397,7 +37909,8 @@
     "lon": "17.1167",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_Kosovo",
@@ -37409,7 +37922,8 @@
     "lon": "21.1667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "europe"
   },
   {
     "qid": "CSHAPES_South_Sudan",
@@ -37421,7 +37935,8 @@
     "lon": "31.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "CSHAPES_Zanzibar",
@@ -37433,7 +37948,8 @@
     "lon": "39.1956",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2
+    "tier": 2,
+    "region": "sub_saharan"
   },
   {
     "qid": "Q46083",
@@ -37449,7 +37965,7 @@
     "tier_reason": "new_for_t1",
     "region": "middle_east",
     "score": 0,
-    "sitelinks": 0,
+    "sitelinks": 96,
     "t1_start": -1600,
     "t1_end": -1178,
     "t1_sources": 4
@@ -37468,7 +37984,7 @@
     "tier_reason": "new_for_t1",
     "region": "middle_east",
     "score": 0,
-    "sitelinks": 0,
+    "sitelinks": 16,
     "t1_start": -1531,
     "t1_end": -1155,
     "t1_sources": 2
@@ -37487,7 +38003,7 @@
     "tier_reason": "new_for_t1",
     "region": "europe",
     "score": 0,
-    "sitelinks": 0,
+    "sitelinks": 173,
     "t1_start": -800,
     "t1_end": -146,
     "t1_sources": 4
@@ -37506,7 +38022,7 @@
     "tier_reason": "new_for_t1",
     "region": "north_africa",
     "score": 0,
-    "sitelinks": 0,
+    "sitelinks": 38,
     "t1_start": -305,
     "t1_end": -30,
     "t1_sources": 3
@@ -37525,7 +38041,7 @@
     "tier_reason": "new_for_t1",
     "region": "europe",
     "score": 0,
-    "sitelinks": 0,
+    "sitelinks": 164,
     "t1_start": 1600,
     "t1_end": 1900,
     "t1_sources": 4
@@ -37544,7 +38060,7 @@
     "tier_reason": "t1_master",
     "region": "middle_east",
     "score": 0,
-    "sitelinks": 0,
+    "sitelinks": 135,
     "t1_start": -3500,
     "t1_end": -2000,
     "t1_sources": 4
@@ -37563,9 +38079,2512 @@
     "tier_reason": "t1_master",
     "region": "europe",
     "score": 0,
-    "sitelinks": 0,
+    "sitelinks": 125,
     "t1_start": 1500,
     "t1_end": 1918,
     "t1_sources": 2
+  },
+  {
+    "qid": "Q148",
+    "name_en": "China",
+    "name_ko": "중국",
+    "start": "1949",
+    "end": "Present",
+    "lat": "39.9",
+    "lon": "116.4",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 1,
+    "sitelinks": 393,
+    "region": "east_asia",
+    "score": 103.2,
+    "tier_reason": "manual_promote_session7",
+    "minor_reason": "naming_tier_session7",
+    "t1_start": 1949,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q30",
+    "name_en": "United States",
+    "name_ko": "미국",
+    "start": "1886",
+    "end": "Present",
+    "lat": "38.895",
+    "lon": "-77.0367",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 422,
+    "t1_start": 1776,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q16",
+    "name_en": "Canada",
+    "name_ko": "캐나다",
+    "start": "1886",
+    "end": "Present",
+    "lat": "45.4208",
+    "lon": "-75.69",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 390,
+    "t1_start": 2000,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q778",
+    "name_en": "Bahamas",
+    "name_ko": "바하마",
+    "start": "1886",
+    "end": "Present",
+    "lat": "25.0774",
+    "lon": "-77.343",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 274,
+    "t1_start": 2000,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q241",
+    "name_en": "Cuba",
+    "name_ko": "쿠바",
+    "start": "1886",
+    "end": "Present",
+    "lat": "23.1319",
+    "lon": "-82.3642",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 304,
+    "t1_start": 2000,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q790",
+    "name_en": "Haiti",
+    "name_ko": "아이티",
+    "start": "1886",
+    "end": "Present",
+    "lat": "18.5392",
+    "lon": "-72.335",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 286,
+    "t1_start": 2000,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q786",
+    "name_en": "Dominican Republic",
+    "name_ko": "도미니카 공화국",
+    "start": "1886",
+    "end": "Present",
+    "lat": "18.4667",
+    "lon": "-69.9",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 277,
+    "t1_start": 2000,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q766",
+    "name_en": "Jamaica",
+    "name_ko": "자메이카",
+    "start": "1886",
+    "end": "Present",
+    "lat": "18",
+    "lon": "-76.8",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 278,
+    "t1_start": 2010,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q244",
+    "name_en": "Barbados",
+    "name_ko": "바베이도스",
+    "start": "1886",
+    "end": "Present",
+    "lat": "13.1",
+    "lon": "-59.6167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 272,
+    "t1_start": 2010,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q96",
+    "name_en": "Mexico",
+    "name_ko": "멕시코",
+    "start": "1886",
+    "end": "Present",
+    "lat": "19.4342",
+    "lon": "-99.1386",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 398,
+    "t1_start": 2010,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q242",
+    "name_en": "Belize",
+    "name_ko": "벨리즈",
+    "start": "1886",
+    "end": "Present",
+    "lat": "17.25",
+    "lon": "-88.7667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 274,
+    "t1_start": 2010,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q774",
+    "name_en": "Guatemala",
+    "name_ko": "과테말라",
+    "start": "1886",
+    "end": "Present",
+    "lat": "14.6211",
+    "lon": "-90.5269",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 278,
+    "t1_start": 2010,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q783",
+    "name_en": "Honduras",
+    "name_ko": "온두라스",
+    "start": "1886",
+    "end": "Present",
+    "lat": "14.1",
+    "lon": "-87.2167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 291,
+    "t1_start": 2020,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q792",
+    "name_en": "El Salvador",
+    "name_ko": "엘살바도르",
+    "start": "1886",
+    "end": "Present",
+    "lat": "13.7086",
+    "lon": "-89.2031",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 283,
+    "t1_start": 2020,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q811",
+    "name_en": "Nicaragua",
+    "name_ko": "니카라과",
+    "start": "1886",
+    "end": "Present",
+    "lat": "12.1508",
+    "lon": "-86.2683",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 276,
+    "t1_start": 2020,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q800",
+    "name_en": "Costa Rica",
+    "name_ko": "코스타리카",
+    "start": "1886",
+    "end": "Present",
+    "lat": "9.93333",
+    "lon": "-84.0833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 296
+  },
+  {
+    "qid": "Q739",
+    "name_en": "Colombia",
+    "name_ko": "콜롬비아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "4.6",
+    "lon": "-74.0833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 360
+  },
+  {
+    "qid": "Q717",
+    "name_en": "Venezuela",
+    "name_ko": "베네수엘라",
+    "start": "1886",
+    "end": "Present",
+    "lat": "10.5",
+    "lon": "-66.9167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 340
+  },
+  {
+    "qid": "Q734",
+    "name_en": "Guyana",
+    "name_ko": "가이아나",
+    "start": "1886",
+    "end": "Present",
+    "lat": "6.8",
+    "lon": "-58.1667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 281
+  },
+  {
+    "qid": "Q736",
+    "name_en": "Ecuador",
+    "name_ko": "에콰도르",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-0.21667",
+    "lon": "-78.5",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 312
+  },
+  {
+    "qid": "Q419",
+    "name_en": "Peru",
+    "name_ko": "페루",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-12.05",
+    "lon": "-77.05",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 328
+  },
+  {
+    "qid": "Q155",
+    "name_en": "Brazil",
+    "name_ko": "브라질",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-15.8",
+    "lon": "-47.9",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 381,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q750",
+    "name_en": "Bolivia",
+    "name_ko": "볼리비아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-16.5",
+    "lon": "-68.15",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 308
+  },
+  {
+    "qid": "Q733",
+    "name_en": "Paraguay",
+    "name_ko": "파라과이",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-25.2667",
+    "lon": "-57.6667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 304
+  },
+  {
+    "qid": "Q298",
+    "name_en": "Chile",
+    "name_ko": "칠레",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-33.45",
+    "lon": "-70.6667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 378,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q414",
+    "name_en": "Argentina",
+    "name_ko": "아르헨티나",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-34.5875",
+    "lon": "-58.6725",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 366,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q77",
+    "name_en": "Uruguay",
+    "name_ko": "우루과이",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-34.8581",
+    "lon": "-56.1708",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "latin_america",
+    "score": 0,
+    "sitelinks": 317
+  },
+  {
+    "qid": "Q145",
+    "name_en": "United Kingdom",
+    "name_ko": "영국",
+    "start": "1707",
+    "end": "Present",
+    "lat": "51.5",
+    "lon": "-0.116667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 387,
+    "t1_start": 1707,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q55",
+    "name_en": "Netherlands",
+    "name_ko": "네덜란드",
+    "start": "1886",
+    "end": "Present",
+    "lat": "52.35",
+    "lon": "4.91667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 367,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q31",
+    "name_en": "Belgium",
+    "name_ko": "벨기에",
+    "start": "1886",
+    "end": "Present",
+    "lat": "50.8333",
+    "lon": "4.33333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 370,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q32",
+    "name_en": "Luxembourg",
+    "name_ko": "룩셈부르크",
+    "start": "1886",
+    "end": "Present",
+    "lat": "49.6117",
+    "lon": "6.13",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 332
+  },
+  {
+    "qid": "Q142",
+    "name_en": "France",
+    "name_ko": "프랑스",
+    "start": "987",
+    "end": "Present",
+    "lat": "48.8667",
+    "lon": "2.33333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 405,
+    "t1_start": 1100,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q39",
+    "name_en": "Switzerland",
+    "name_ko": "스위스",
+    "start": "1886",
+    "end": "Present",
+    "lat": "46.9167",
+    "lon": "7.46667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 381,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q29",
+    "name_en": "Spain",
+    "name_ko": "스페인",
+    "start": "1886",
+    "end": "Present",
+    "lat": "40.4",
+    "lon": "-3.68333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 388,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q45",
+    "name_en": "Portugal",
+    "name_ko": "포르투갈",
+    "start": "1886",
+    "end": "Present",
+    "lat": "38.7167",
+    "lon": "-9.13333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 365,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q183",
+    "name_en": "Germany",
+    "name_ko": "독일",
+    "start": "1886",
+    "end": "Present",
+    "lat": "52.5167",
+    "lon": "13.4",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 400,
+    "t1_start": 1871,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q38",
+    "name_en": "Italy",
+    "name_ko": "이탈리아",
+    "start": "1861",
+    "end": "Present",
+    "lat": "41.9",
+    "lon": "12.4833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 404,
+    "t1_start": 1861,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q403",
+    "name_en": "Serbia",
+    "name_ko": "세르비아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "44.8186",
+    "lon": "20.4681",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 347
+  },
+  {
+    "qid": "Q236",
+    "name_en": "Montenegro",
+    "name_ko": "몬테네그로",
+    "start": "1886",
+    "end": "Present",
+    "lat": "42.4411",
+    "lon": "19.2636",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 319
+  },
+  {
+    "qid": "Q41",
+    "name_en": "Greece",
+    "name_ko": "그리스",
+    "start": "1886",
+    "end": "Present",
+    "lat": "37.9833",
+    "lon": "23.7333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 371,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q219",
+    "name_en": "Bulgaria",
+    "name_ko": "불가리아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "42.6833",
+    "lon": "23.3167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 358
+  },
+  {
+    "qid": "Q15180",
+    "name_en": "Soviet Union",
+    "name_ko": "소련",
+    "start": "1922",
+    "end": "1991",
+    "lat": "55.7522",
+    "lon": "37.6156",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 274,
+    "t1_start": 1922,
+    "t1_end": 1991
+  },
+  {
+    "qid": "Q189",
+    "name_en": "Iceland",
+    "name_ko": "아이슬란드",
+    "start": "1886",
+    "end": "Present",
+    "lat": "64.15",
+    "lon": "-21.95",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 350
+  },
+  {
+    "qid": "Q1007",
+    "name_en": "Guinea-Bissau",
+    "name_ko": "기니비사우",
+    "start": "1886",
+    "end": "Present",
+    "lat": "11.8588",
+    "lon": "-15.58",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 294
+  },
+  {
+    "qid": "Q983",
+    "name_en": "Equatorial Guinea",
+    "name_ko": "적도기니",
+    "start": "1886",
+    "end": "Present",
+    "lat": "3.75041",
+    "lon": "8.7371",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 280
+  },
+  {
+    "qid": "Q1041",
+    "name_en": "Senegal",
+    "name_ko": "세네갈",
+    "start": "1886",
+    "end": "Present",
+    "lat": "14.7089",
+    "lon": "-17.4553",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 301
+  },
+  {
+    "qid": "Q1014",
+    "name_en": "Liberia",
+    "name_ko": "라이베리아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "6.31056",
+    "lon": "-10.8047",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 289
+  },
+  {
+    "qid": "Q1044",
+    "name_en": "Sierra Leone",
+    "name_ko": "시에라리온",
+    "start": "1886",
+    "end": "Present",
+    "lat": "8.49",
+    "lon": "-13.2342",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 288
+  },
+  {
+    "qid": "Q117",
+    "name_en": "Ghana",
+    "name_ko": "가나",
+    "start": "1886",
+    "end": "Present",
+    "lat": "5.55",
+    "lon": "-0.216667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 318
+  },
+  {
+    "qid": "Q1000",
+    "name_en": "Gabon",
+    "name_ko": "가봉",
+    "start": "1886",
+    "end": "Present",
+    "lat": "0.38333",
+    "lon": "9.45",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 291
+  },
+  {
+    "qid": "Q977",
+    "name_en": "Djibouti",
+    "name_ko": "지부티",
+    "start": "1886",
+    "end": "Present",
+    "lat": "11.5704",
+    "lon": "43.1506",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 294
+  },
+  {
+    "qid": "Q115",
+    "name_en": "Ethiopia",
+    "name_ko": "에티오피아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "9.01393",
+    "lon": "38.7751",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 340
+  },
+  {
+    "qid": "Q986",
+    "name_en": "Eritrea",
+    "name_ko": "에리트레아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "15.3333",
+    "lon": "38.9333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 303
+  },
+  {
+    "qid": "Q916",
+    "name_en": "Angola",
+    "name_ko": "앙골라",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-8.83833",
+    "lon": "13.2344",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 318
+  },
+  {
+    "qid": "Q1029",
+    "name_en": "Mozambique",
+    "name_ko": "모잠비크",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-25.9653",
+    "lon": "32.5892",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 299
+  },
+  {
+    "qid": "Q1030",
+    "name_en": "Namibia",
+    "name_ko": "나미비아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-22.57",
+    "lon": "17.0836",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 312
+  },
+  {
+    "qid": "Q1013",
+    "name_en": "Lesotho",
+    "name_ko": "레소토",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-29.3167",
+    "lon": "27.4833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 276
+  },
+  {
+    "qid": "Q963",
+    "name_en": "Botswana",
+    "name_ko": "보츠와나",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-24.6464",
+    "lon": "25.9119",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 308
+  },
+  {
+    "qid": "Q1028",
+    "name_en": "Morocco",
+    "name_ko": "모로코",
+    "start": "1886",
+    "end": "Present",
+    "lat": "34.02",
+    "lon": "-6.83",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_africa",
+    "score": 0,
+    "sitelinks": 328
+  },
+  {
+    "qid": "Q262",
+    "name_en": "Algeria",
+    "name_ko": "알제리",
+    "start": "1886",
+    "end": "Present",
+    "lat": "36.7631",
+    "lon": "3.05056",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 363,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q948",
+    "name_en": "Tunisia",
+    "name_ko": "튀니지",
+    "start": "1886",
+    "end": "Present",
+    "lat": "36.8028",
+    "lon": "10.1797",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 324
+  },
+  {
+    "qid": "Q794",
+    "name_en": "Iran",
+    "name_ko": "이란",
+    "start": "1886",
+    "end": "Present",
+    "lat": "35.6719",
+    "lon": "51.4244",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 368,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q43",
+    "name_en": "Turkey",
+    "name_ko": "터키/오스만",
+    "start": "1886",
+    "end": "Present",
+    "lat": "39.9272",
+    "lon": "32.8644",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 417,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q79",
+    "name_en": "Egypt",
+    "name_ko": "이집트",
+    "start": "1886",
+    "end": "Present",
+    "lat": "30.05",
+    "lon": "31.25",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "north_africa",
+    "score": 0,
+    "sitelinks": 383,
+    "t1_start": 1900,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q842",
+    "name_en": "Oman",
+    "name_ko": "오만",
+    "start": "1886",
+    "end": "Present",
+    "lat": "23.6133",
+    "lon": "58.5933",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 291
+  },
+  {
+    "qid": "Q889",
+    "name_en": "Afghanistan",
+    "name_ko": "아프가니스탄",
+    "start": "1886",
+    "end": "Present",
+    "lat": "34.5167",
+    "lon": "69.1833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 356
+  },
+  {
+    "qid": "Q668",
+    "name_en": "India",
+    "name_ko": "인도",
+    "start": "1886",
+    "end": "Present",
+    "lat": "28.6",
+    "lon": "77.2",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "east_asia",
+    "score": 0,
+    "sitelinks": 395,
+    "t1_start": 1886,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q854",
+    "name_en": "Sri Lanka",
+    "name_ko": "스리랑카",
+    "start": "1886",
+    "end": "Present",
+    "lat": "6.93194",
+    "lon": "79.8478",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "south_asia",
+    "score": 0,
+    "sitelinks": 304
+  },
+  {
+    "qid": "Q837",
+    "name_en": "Nepal",
+    "name_ko": "네팔",
+    "start": "1886",
+    "end": "Present",
+    "lat": "27.7167",
+    "lon": "85.3167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "east_asia",
+    "score": 0,
+    "sitelinks": 320
+  },
+  {
+    "qid": "Q869",
+    "name_en": "Thailand",
+    "name_ko": "태국",
+    "start": "1886",
+    "end": "Present",
+    "lat": "13.75",
+    "lon": "100.517",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "southeast_asia",
+    "score": 0,
+    "sitelinks": 347
+  },
+  {
+    "qid": "Q424",
+    "name_en": "Cambodia",
+    "name_ko": "캄보디아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "11.55",
+    "lon": "104.917",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "southeast_asia",
+    "score": 0,
+    "sitelinks": 327
+  },
+  {
+    "qid": "Q928",
+    "name_en": "Philippines",
+    "name_ko": "필리핀",
+    "start": "1886",
+    "end": "Present",
+    "lat": "14.6042",
+    "lon": "120.982",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "southeast_asia",
+    "score": 0,
+    "sitelinks": 327
+  },
+  {
+    "qid": "Q252",
+    "name_en": "Indonesia",
+    "name_ko": "인도네시아",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-6.17444",
+    "lon": "106.829",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "southeast_asia",
+    "score": 0,
+    "sitelinks": 358
+  },
+  {
+    "qid": "Q574",
+    "name_en": "East Timor",
+    "name_ko": "동티모르",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-8.55861",
+    "lon": "125.574",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "oceania",
+    "score": 0,
+    "sitelinks": 285
+  },
+  {
+    "qid": "Q664",
+    "name_en": "New Zealand",
+    "name_ko": "뉴질랜드",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-41.3",
+    "lon": "174.783",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "oceania",
+    "score": 0,
+    "sitelinks": 341
+  },
+  {
+    "qid": "Q712",
+    "name_en": "Fiji",
+    "name_ko": "피지",
+    "start": "1886",
+    "end": "Present",
+    "lat": "-18.1341",
+    "lon": "178.43",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "oceania",
+    "score": 0,
+    "sitelinks": 273
+  },
+  {
+    "qid": "Q826",
+    "name_en": "Maldives",
+    "name_ko": "몰디브",
+    "start": "1887",
+    "end": "Present",
+    "lat": "4.16667",
+    "lon": "73.5",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "south_asia",
+    "score": 0,
+    "sitelinks": 285
+  },
+  {
+    "qid": "Q114",
+    "name_en": "Kenya",
+    "name_ko": "케냐",
+    "start": "1888",
+    "end": "Present",
+    "lat": "-1.28333",
+    "lon": "36.8167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 333
+  },
+  {
+    "qid": "Q1008",
+    "name_en": "Ivory Coast",
+    "name_ko": "코트디부아르",
+    "start": "1889",
+    "end": "Present",
+    "lat": "6.81667",
+    "lon": "-5.28333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 305
+  },
+  {
+    "qid": "Q954",
+    "name_en": "Zimbabwe",
+    "name_ko": "짐바브웨",
+    "start": "1889",
+    "end": "Present",
+    "lat": "-17.8178",
+    "lon": "31.0447",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 316
+  },
+  {
+    "qid": "Q1020",
+    "name_en": "Malawi",
+    "name_ko": "말라위",
+    "start": "1891",
+    "end": "Present",
+    "lat": "-13.9833",
+    "lon": "33.7833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 292
+  },
+  {
+    "qid": "Q878",
+    "name_en": "United Arab Emirates",
+    "name_ko": "아랍에미리트",
+    "start": "1892",
+    "end": "Present",
+    "lat": "24.4667",
+    "lon": "54.3667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 313
+  },
+  {
+    "qid": "Q819",
+    "name_en": "Laos",
+    "name_ko": "라오스",
+    "start": "1893",
+    "end": "Present",
+    "lat": "17.9667",
+    "lon": "102.6",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "southeast_asia",
+    "score": 0,
+    "sitelinks": 312
+  },
+  {
+    "qid": "Q1006",
+    "name_en": "Guinea",
+    "name_ko": "기니",
+    "start": "1894",
+    "end": "Present",
+    "lat": "9.55133",
+    "lon": "-13.6619",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 295
+  },
+  {
+    "qid": "Q1036",
+    "name_en": "Uganda",
+    "name_ko": "우간다",
+    "start": "1894",
+    "end": "Present",
+    "lat": "0.31556",
+    "lon": "32.5656",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 309
+  },
+  {
+    "qid": "Q962",
+    "name_en": "Benin",
+    "name_ko": "베냉",
+    "start": "1895",
+    "end": "Present",
+    "lat": "6.48333",
+    "lon": "2.61667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 303
+  },
+  {
+    "qid": "Q865",
+    "name_en": "Taiwan",
+    "name_ko": "대만",
+    "start": "1895",
+    "end": "Present",
+    "lat": "25.0392",
+    "lon": "121.525",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "east_asia",
+    "score": 0,
+    "sitelinks": 311
+  },
+  {
+    "qid": "Q1049",
+    "name_en": "Sudan",
+    "name_ko": "수단",
+    "start": "1899",
+    "end": "Present",
+    "lat": "15.5881",
+    "lon": "32.5342",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_africa",
+    "score": 0,
+    "sitelinks": 329
+  },
+  {
+    "qid": "Q657",
+    "name_en": "Chad",
+    "name_ko": "차드",
+    "start": "1900",
+    "end": "Present",
+    "lat": "11.7167",
+    "lon": "15.2167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 308
+  },
+  {
+    "qid": "Q408",
+    "name_en": "Australia",
+    "name_ko": "호주",
+    "start": "1901",
+    "end": "Present",
+    "lat": "-35.2833",
+    "lon": "149.217",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "oceania",
+    "score": 0,
+    "sitelinks": 391,
+    "t1_start": 1910,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q804",
+    "name_en": "Panama",
+    "name_ko": "파나마",
+    "start": "1903",
+    "end": "Present",
+    "lat": "8.96667",
+    "lon": "-79.5333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_america",
+    "score": 0,
+    "sitelinks": 297
+  },
+  {
+    "qid": "Q1025",
+    "name_en": "Mauritania",
+    "name_ko": "모리타니",
+    "start": "1904",
+    "end": "Present",
+    "lat": "18.1194",
+    "lon": "-16.0274",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_africa",
+    "score": 0,
+    "sitelinks": 298
+  },
+  {
+    "qid": "Q20",
+    "name_en": "Norway",
+    "name_ko": "노르웨이",
+    "start": "1905",
+    "end": "Present",
+    "lat": "59.9139",
+    "lon": "10.7522",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 389,
+    "t1_start": 1910,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q912",
+    "name_en": "Mali",
+    "name_ko": "말리",
+    "start": "1905",
+    "end": "Present",
+    "lat": "12.6177",
+    "lon": "-7.97491",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 309
+  },
+  {
+    "qid": "Q1032",
+    "name_en": "Niger",
+    "name_ko": "니제르",
+    "start": "1905",
+    "end": "Present",
+    "lat": "13.5167",
+    "lon": "2.11667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 298
+  },
+  {
+    "qid": "Q929",
+    "name_en": "Central African Republic",
+    "name_ko": "중앙아프리카공화국",
+    "start": "1906",
+    "end": "Present",
+    "lat": "4.36808",
+    "lon": "18.5829",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 296
+  },
+  {
+    "qid": "Q258",
+    "name_en": "South Africa",
+    "name_ko": "남아프리카공화국",
+    "start": "1910",
+    "end": "Present",
+    "lat": "-25.7069",
+    "lon": "28.2294",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 362
+  },
+  {
+    "qid": "Q953",
+    "name_en": "Zambia",
+    "name_ko": "잠비아",
+    "start": "1911",
+    "end": "Present",
+    "lat": "-15.4167",
+    "lon": "28.2833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 302
+  },
+  {
+    "qid": "Q1016",
+    "name_en": "Libya",
+    "name_ko": "리비아",
+    "start": "1912",
+    "end": "Present",
+    "lat": "32.8925",
+    "lon": "13.18",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "north_africa",
+    "score": 0,
+    "sitelinks": 329
+  },
+  {
+    "qid": "Q222",
+    "name_en": "Albania",
+    "name_ko": "알바니아",
+    "start": "1913",
+    "end": "Present",
+    "lat": "41.3275",
+    "lon": "19.8189",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 382,
+    "t1_start": 1920,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q229",
+    "name_en": "Cyprus",
+    "name_ko": "키프로스",
+    "start": "1914",
+    "end": "Present",
+    "lat": "35.1667",
+    "lon": "33.3667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 319
+  },
+  {
+    "qid": "Q1033",
+    "name_en": "Nigeria",
+    "name_ko": "나이지리아",
+    "start": "1914",
+    "end": "Present",
+    "lat": "9.08333",
+    "lon": "7.53333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 343
+  },
+  {
+    "qid": "Q846",
+    "name_en": "Qatar",
+    "name_ko": "카타르",
+    "start": "1916",
+    "end": "Present",
+    "lat": "25.2867",
+    "lon": "51.5333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 285
+  },
+  {
+    "qid": "Q33",
+    "name_en": "Finland",
+    "name_ko": "핀란드",
+    "start": "1917",
+    "end": "Present",
+    "lat": "60.1756",
+    "lon": "24.9342",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 399,
+    "t1_start": 1920,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q36",
+    "name_en": "Poland",
+    "name_ko": "폴란드",
+    "start": "1918",
+    "end": "Present",
+    "lat": "52.25",
+    "lon": "21",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 386,
+    "t1_start": 1920,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q40",
+    "name_en": "Austria",
+    "name_ko": "오스트리아",
+    "start": "1918",
+    "end": "Present",
+    "lat": "48.2",
+    "lon": "16.3667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 365
+  },
+  {
+    "qid": "Q28",
+    "name_en": "Hungary",
+    "name_ko": "헝가리",
+    "start": "1918",
+    "end": "Present",
+    "lat": "47.5",
+    "lon": "19.0833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 352
+  },
+  {
+    "qid": "Q191",
+    "name_en": "Estonia",
+    "name_ko": "에스토니아",
+    "start": "1918",
+    "end": "Present",
+    "lat": "59.4339",
+    "lon": "24.7281",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 349
+  },
+  {
+    "qid": "Q211",
+    "name_en": "Latvia",
+    "name_ko": "라트비아",
+    "start": "1918",
+    "end": "Present",
+    "lat": "56.9667",
+    "lon": "24.1333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 331
+  },
+  {
+    "qid": "Q37",
+    "name_en": "Lithuania",
+    "name_ko": "리투아니아",
+    "start": "1918",
+    "end": "Present",
+    "lat": "54.6833",
+    "lon": "25.3167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 348
+  },
+  {
+    "qid": "Q805",
+    "name_en": "Yemen",
+    "name_ko": "예멘",
+    "start": "1918",
+    "end": "Present",
+    "lat": "15.2833",
+    "lon": "44.1833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 309
+  },
+  {
+    "qid": "Q965",
+    "name_en": "Burkina Faso",
+    "name_ko": "부르키나파소",
+    "start": "1919",
+    "end": "Present",
+    "lat": "12.3703",
+    "lon": "-1.52472",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 303
+  },
+  {
+    "qid": "Q1009",
+    "name_en": "Cameroon",
+    "name_ko": "카메룬",
+    "start": "1919",
+    "end": "Present",
+    "lat": "3.86667",
+    "lon": "11.5167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 308
+  },
+  {
+    "qid": "Q796",
+    "name_en": "Iraq",
+    "name_ko": "이라크",
+    "start": "1920",
+    "end": "Present",
+    "lat": "33.3386",
+    "lon": "44.3939",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 344
+  },
+  {
+    "qid": "Q858",
+    "name_en": "Syria",
+    "name_ko": "시리아",
+    "start": "1920",
+    "end": "Present",
+    "lat": "33.5",
+    "lon": "36.3",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 332
+  },
+  {
+    "qid": "Q822",
+    "name_en": "Lebanon",
+    "name_ko": "레바논",
+    "start": "1920",
+    "end": "Present",
+    "lat": "33.8719",
+    "lon": "35.5097",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 325
+  },
+  {
+    "qid": "Q810",
+    "name_en": "Jordan",
+    "name_ko": "요르단",
+    "start": "1920",
+    "end": "Present",
+    "lat": "31.95",
+    "lon": "35.9333",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 309
+  },
+  {
+    "qid": "Q27",
+    "name_en": "Ireland",
+    "name_ko": "아일랜드",
+    "start": "1921",
+    "end": "Present",
+    "lat": "53.3331",
+    "lon": "-6.24889",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 337
+  },
+  {
+    "qid": "Q711",
+    "name_en": "Mongolia",
+    "name_ko": "몽골",
+    "start": "1921",
+    "end": "Present",
+    "lat": "47.9167",
+    "lon": "106.917",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "east_asia",
+    "score": 0,
+    "sitelinks": 316
+  },
+  {
+    "qid": "Q945",
+    "name_en": "Togo",
+    "name_ko": "토고",
+    "start": "1922",
+    "end": "Present",
+    "lat": "6.1725",
+    "lon": "1.23136",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 296
+  },
+  {
+    "qid": "Q851",
+    "name_en": "Saudi Arabia",
+    "name_ko": "사우디아라비아",
+    "start": "1932",
+    "end": "Present",
+    "lat": "24.6408",
+    "lon": "46.7728",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 342
+  },
+  {
+    "qid": "Q884",
+    "name_en": "Korea, Republic of",
+    "name_ko": "대한민국",
+    "start": "1945",
+    "end": "Present",
+    "lat": "37.5664",
+    "lon": "127",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "east_asia",
+    "score": 0,
+    "sitelinks": 347,
+    "t1_start": 1945,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q970",
+    "name_en": "Comoros",
+    "name_ko": "코모로",
+    "start": "1946",
+    "end": "Present",
+    "lat": "-11.7042",
+    "lon": "43.2403",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 278
+  },
+  {
+    "qid": "Q833",
+    "name_en": "Malaysia",
+    "name_ko": "말레이시아",
+    "start": "1946",
+    "end": "Present",
+    "lat": "3.16667",
+    "lon": "101.7",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "southeast_asia",
+    "score": 0,
+    "sitelinks": 337
+  },
+  {
+    "qid": "Q334",
+    "name_en": "Singapore",
+    "name_ko": "싱가포르",
+    "start": "1946",
+    "end": "Present",
+    "lat": "1.29306",
+    "lon": "103.856",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "southeast_asia",
+    "score": 0,
+    "sitelinks": 327
+  },
+  {
+    "qid": "Q843",
+    "name_en": "Pakistan",
+    "name_ko": "파키스탄",
+    "start": "1947",
+    "end": "Present",
+    "lat": "33.7",
+    "lon": "73.1667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "east_asia",
+    "score": 0,
+    "sitelinks": 349
+  },
+  {
+    "qid": "Q801",
+    "name_en": "Israel",
+    "name_ko": "이스라엘",
+    "start": "1948",
+    "end": "Present",
+    "lat": "31.7784",
+    "lon": "35.2066",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 373,
+    "t1_start": 1950,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q691",
+    "name_en": "Papua New Guinea",
+    "name_ko": "파푸아뉴기니",
+    "start": "1949",
+    "end": "Present",
+    "lat": "-9.46472",
+    "lon": "147.193",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "oceania",
+    "score": 0,
+    "sitelinks": 284
+  },
+  {
+    "qid": "Q1045",
+    "name_en": "Somalia",
+    "name_ko": "소말리아",
+    "start": "1960",
+    "end": "Present",
+    "lat": "2.06667",
+    "lon": "45.3667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 317
+  },
+  {
+    "qid": "Q817",
+    "name_en": "Kuwait",
+    "name_ko": "쿠웨이트",
+    "start": "1961",
+    "end": "Present",
+    "lat": "29.3697",
+    "lon": "47.9783",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 302
+  },
+  {
+    "qid": "Q967",
+    "name_en": "Burundi",
+    "name_ko": "부룬디",
+    "start": "1962",
+    "end": "Present",
+    "lat": "-3.37611",
+    "lon": "29.36",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 295
+  },
+  {
+    "qid": "Q1037",
+    "name_en": "Rwanda",
+    "name_ko": "르완다",
+    "start": "1962",
+    "end": "Present",
+    "lat": "-1.95361",
+    "lon": "30.0606",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 298
+  },
+  {
+    "qid": "Q398",
+    "name_en": "Bahrain",
+    "name_ko": "바레인",
+    "start": "1971",
+    "end": "Present",
+    "lat": "26.2361",
+    "lon": "50.5831",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 299
+  },
+  {
+    "qid": "Q902",
+    "name_en": "Bangladesh",
+    "name_ko": "방글라데시",
+    "start": "1971",
+    "end": "Present",
+    "lat": "23.723",
+    "lon": "90.4086",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "east_asia",
+    "score": 0,
+    "sitelinks": 337
+  },
+  {
+    "qid": "Q217",
+    "name_en": "Moldova",
+    "name_ko": "몰도바",
+    "start": "1991",
+    "end": "Present",
+    "lat": "47.0056",
+    "lon": "28.8575",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 327
+  },
+  {
+    "qid": "Q212",
+    "name_en": "Ukraine",
+    "name_ko": "우크라이나",
+    "start": "1991",
+    "end": "Present",
+    "lat": "50.4333",
+    "lon": "30.5167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "sitelinks_top20_auto",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 382,
+    "t1_start": 2000,
+    "t1_end": 2025
+  },
+  {
+    "qid": "Q399",
+    "name_en": "Armenia",
+    "name_ko": "아르메니아",
+    "start": "1991",
+    "end": "Present",
+    "lat": "40.1811",
+    "lon": "44.5136",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 346
+  },
+  {
+    "qid": "Q230",
+    "name_en": "Georgia",
+    "name_ko": "조지아",
+    "start": "1991",
+    "end": "Present",
+    "lat": "41.725",
+    "lon": "44.7908",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 342
+  },
+  {
+    "qid": "Q227",
+    "name_en": "Azerbaijan",
+    "name_ko": "아제르바이잔",
+    "start": "1991",
+    "end": "Present",
+    "lat": "40.3953",
+    "lon": "49.8822",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 356
+  },
+  {
+    "qid": "Q874",
+    "name_en": "Turkmenistan",
+    "name_ko": "투르크메니스탄",
+    "start": "1991",
+    "end": "Present",
+    "lat": "37.95",
+    "lon": "58.3833",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 295
+  },
+  {
+    "qid": "Q863",
+    "name_en": "Tajikistan",
+    "name_ko": "타지키스탄",
+    "start": "1991",
+    "end": "Present",
+    "lat": "38.56",
+    "lon": "68.7739",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "central_asia",
+    "score": 0,
+    "sitelinks": 304
+  },
+  {
+    "qid": "Q813",
+    "name_en": "Kyrgyzstan",
+    "name_ko": "키르기스스탄",
+    "start": "1991",
+    "end": "Present",
+    "lat": "42.8731",
+    "lon": "74.6003",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "central_asia",
+    "score": 0,
+    "sitelinks": 314
+  },
+  {
+    "qid": "Q265",
+    "name_en": "Uzbekistan",
+    "name_ko": "우즈베키스탄",
+    "start": "1991",
+    "end": "Present",
+    "lat": "41.3167",
+    "lon": "69.25",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "central_asia",
+    "score": 0,
+    "sitelinks": 306
+  },
+  {
+    "qid": "Q232",
+    "name_en": "Kazakhstan",
+    "name_ko": "카자흐스탄",
+    "start": "1991",
+    "end": "Present",
+    "lat": "51.1811",
+    "lon": "71.4278",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "central_asia",
+    "score": 0,
+    "sitelinks": 344
+  },
+  {
+    "qid": "Q224",
+    "name_en": "Croatia",
+    "name_ko": "크로아티아",
+    "start": "1992",
+    "end": "Present",
+    "lat": "45.815",
+    "lon": "15.9819",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 350
+  },
+  {
+    "qid": "Q215",
+    "name_en": "Slovenia",
+    "name_ko": "슬로베니아",
+    "start": "1992",
+    "end": "Present",
+    "lat": "46.0553",
+    "lon": "14.5144",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 330
+  },
+  {
+    "qid": "Q213",
+    "name_en": "Czech Republic",
+    "name_ko": "체코",
+    "start": "1993",
+    "end": "Present",
+    "lat": "50.0833",
+    "lon": "14.4667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 349
+  },
+  {
+    "qid": "Q214",
+    "name_en": "Slovakia",
+    "name_ko": "슬로바키아",
+    "start": "1993",
+    "end": "Present",
+    "lat": "48.15",
+    "lon": "17.1167",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 335
+  },
+  {
+    "qid": "Q1246",
+    "name_en": "Kosovo",
+    "name_ko": "코소보",
+    "start": "2008",
+    "end": "Present",
+    "lat": "42.6667",
+    "lon": "21.1667",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 278
+  },
+  {
+    "qid": "Q958",
+    "name_en": "South Sudan",
+    "name_ko": "남수단",
+    "start": "2011",
+    "end": "Present",
+    "lat": "4.85",
+    "lon": "31.6",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "migrated_from_cshapes",
+    "region": "sub_saharan",
+    "score": 0,
+    "sitelinks": 279
+  },
+  {
+    "qid": "Q159",
+    "name_en": "Russia",
+    "name_ko": "러시아",
+    "start": "1991",
+    "end": "Present",
+    "lat": "55.75",
+    "lon": "37.62",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "manual_cl_session7",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 416,
+    "t1_start": 1991,
+    "t1_end": 2025
   }
 ]

@@ -4126,5 +4126,39 @@
     "lineage_id": null,
     "tier": 2,
     "minor_reason": "naming_convention_session4"
+  },
+  {
+    "qid": "Q188712",
+    "name_en": "Empire of Japan",
+    "name_ko": "일본 제국",
+    "start": "1868",
+    "end": "1947",
+    "lon": "139.752777777",
+    "lat": "35.6825",
+    "type": "historical",
+    "lineage_id": "L0125",
+    "tier": 1,
+    "sitelinks": 97,
+    "region": "east_asia",
+    "score": 84.6,
+    "tier_reason": "manual_promote_session7",
+    "minor_reason": "naming_tier_session7"
+  },
+  {
+    "qid": "Q43287",
+    "name_en": "German Empire",
+    "name_ko": "독일 제국",
+    "start": "1871",
+    "end": "1918",
+    "lon": "13.376111111",
+    "lat": "52.518611111",
+    "type": "historical",
+    "lineage_id": "L0152",
+    "tier": 1,
+    "sitelinks": 127,
+    "region": "europe",
+    "score": 88.2,
+    "tier_reason": "manual_promote_session7",
+    "minor_reason": "naming_tier_session7"
   }
 ]

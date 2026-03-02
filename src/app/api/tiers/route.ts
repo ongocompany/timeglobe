@@ -7,11 +7,14 @@ const RAW_PATH = path.join(
   "public/geo/borders/wikidata_entities_raw.json"
 );
 
-// [cl] GET: raw 데이터 로드
+// [cl] GET: raw 데이터 로드 (CSHAPES 제외 — 폴리곤 데이터 소스일 뿐)
 export async function GET() {
   try {
     const data = JSON.parse(fs.readFileSync(RAW_PATH, "utf-8"));
-    return NextResponse.json(data);
+    const filtered = data.filter(
+      (e: any) => !String(e.qid || "").startsWith("CSHAPES")
+    );
+    return NextResponse.json(filtered);
   } catch (err) {
     return NextResponse.json(
       { error: "Failed to load data" },
