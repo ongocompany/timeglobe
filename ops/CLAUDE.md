@@ -46,6 +46,29 @@
 > **꼭 지켜줘**: 위 파일들 건드리기 전에 진형한테 먼저 물어봐!
 > **work_change_log.md는 민철과 공유** — 항상 `[mk]` 태그로 기록해.
 
+## ⚠️ 지도 데이터 접근 규칙 (필수)
+
+### circles.json 재생성 규칙
+진형이 circles.json 재생성을 요청할 경우, **반드시 아래 스크립트만 사용할 것**:
+```bash
+python3 scripts/wikidata/rebuildCircles.py
+```
+- 이 스크립트는 내부적으로 `fixLabelCoords.py`를 자동 실행 (좌표 패치 보장)
+- **절대 인라인 Python으로 circles.json 직접 생성 금지** — 좌표 패치가 유실됨
+- `wikidata_entities_raw.json` → circles.json 변환 + 무게중심 좌표 보정 일체 포함
+
+### 지도 데이터 작업 전 확인 의무
+다음 파일들을 수정하는 작업을 요청받으면, **실행 전 반드시 진형에게 확인**해:
+- `public/geo/borders/wikidata_circles.json`
+- `public/geo/borders/wikidata_entities_raw.json`
+- `public/geo/borders/ohm_index.json`
+- `public/geo/borders/ohm/` (OHM GeoJSON 파일들)
+
+확인 멘트 예시:
+> "형, 이거 지도 데이터 건드리는 작업인데 괜찮아요? `[파일명]` 수정할게요."
+
+진형의 명시적 OK 없이는 절대 진행하지 마.
+
 ---
 
 ## 커밋 규칙 (민규 전용)
