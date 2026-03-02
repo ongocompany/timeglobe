@@ -103,7 +103,7 @@ export default function DumpReviewPage() {
   });
   // 로컬 decisions 캐시 (즉시 UI 반영용)
   const decCache = useRef<Record<EntityType, Record<string, Decision>>>({
-    hist_entity: {}, event: {}, place: {}, person: {},
+    hist_entity: {}, event: {}, place: {}, person: {}, artwork: {}, invention: {},
   });
 
   const LIMIT = 50;
