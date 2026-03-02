@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Wikidata JSON dump → TimeGlobe 전체 데이터 추출 스크립트 (cl)
+Wikidata JSON dump → TimeGlobe 전체 데이터 추출 스크립트 (cl/mk)
 
-1-pass gz 스트리밍으로 person, event, place, historical entity 전부 추출.
+1-pass gz 스트리밍으로 person, event, place, historical entity,
+artwork(문화/예술), invention(발명/기술) 전부 추출.
 기존 WDQS API 5건씩 긁던 것을 dump 한방으로 대체.
 
 사용법:
@@ -11,17 +12,21 @@ Wikidata JSON dump → TimeGlobe 전체 데이터 추출 스크립트 (cl)
   python3 parseDump.py --stats-only   # 결과 파일 통계만
 
 출력 (모두 /mnt/data2/wikidata/output/):
-  persons_raw.jsonl       → pass1에서 추출한 person 원본
-  events_raw.jsonl        → pass1에서 추출한 event 원본
-  places_raw.jsonl        → pass1에서 추출한 place 원본
-  hist_entities_raw.jsonl → pass1에서 추출한 역사 국가/제국 원본
-  coord_map.json          → 전 엔티티 QID→좌표 매핑
-  label_map.json          → 장소/국가 QID→라벨 매핑 (person 좌표 설명용)
-  persons_final.json      → pass2 좌표 resolve 완료
-  events_final.json       → pass2 좌표 resolve 완료
-  places_final.json       → pass2 정리 완료
-  hist_entities_final.json→ pass2 정리 완료
-  progress.json           → 실시간 진행 상황
+  persons_raw.jsonl        → pass1: person 원본
+  events_raw.jsonl         → pass1: event 원본 (전쟁/혁명/재해/탐험/발견)
+  places_raw.jsonl         → pass1: place 원본 (도시/건물/유적)
+  hist_entities_raw.jsonl  → pass1: 역사 국가/왕조/제국 원본
+  artworks_raw.jsonl       → pass1: 문화/예술 작품 원본 [NEW]
+  inventions_raw.jsonl     → pass1: 발명/기술 원본 [NEW]
+  coord_map.json           → 전 엔티티 QID→좌표 매핑
+  label_map.json           → QID→라벨 매핑
+  persons_final.json       → pass2 완료
+  events_final.json        → pass2 완료
+  places_final.json        → pass2 완료
+  hist_entities_final.json → pass2 완료
+  artworks_final.json      → pass2 완료 [NEW]
+  inventions_final.json    → pass2 완료 [NEW]
+  progress.json            → 실시간 진행 상황
 """
 
 import gzip
@@ -40,16 +45,20 @@ LABEL_MAP_PATH = os.path.join(OUTPUT_DIR, "label_map.json")
 PROGRESS_PATH = os.path.join(OUTPUT_DIR, "progress.json")
 
 RAW_PATHS = {
-    "person": os.path.join(OUTPUT_DIR, "persons_raw.jsonl"),
-    "event": os.path.join(OUTPUT_DIR, "events_raw.jsonl"),
-    "place": os.path.join(OUTPUT_DIR, "places_raw.jsonl"),
-    "hist": os.path.join(OUTPUT_DIR, "hist_entities_raw.jsonl"),
+    "person":   os.path.join(OUTPUT_DIR, "persons_raw.jsonl"),
+    "event":    os.path.join(OUTPUT_DIR, "events_raw.jsonl"),
+    "place":    os.path.join(OUTPUT_DIR, "places_raw.jsonl"),
+    "hist":     os.path.join(OUTPUT_DIR, "hist_entities_raw.jsonl"),
+    "artwork":  os.path.join(OUTPUT_DIR, "artworks_raw.jsonl"),    # [mk]
+    "invention":os.path.join(OUTPUT_DIR, "inventions_raw.jsonl"),  # [mk]
 }
 FINAL_PATHS = {
-    "person": os.path.join(OUTPUT_DIR, "persons_final.json"),
-    "event": os.path.join(OUTPUT_DIR, "events_final.json"),
-    "place": os.path.join(OUTPUT_DIR, "places_final.json"),
-    "hist": os.path.join(OUTPUT_DIR, "hist_entities_final.json"),
+    "person":   os.path.join(OUTPUT_DIR, "persons_final.json"),
+    "event":    os.path.join(OUTPUT_DIR, "events_final.json"),
+    "place":    os.path.join(OUTPUT_DIR, "places_final.json"),
+    "hist":     os.path.join(OUTPUT_DIR, "hist_entities_final.json"),
+    "artwork":  os.path.join(OUTPUT_DIR, "artworks_final.json"),   # [mk]
+    "invention":os.path.join(OUTPUT_DIR, "inventions_final.json"), # [mk]
 }
 
 # ── Wikidata Property IDs ─────────────────────────────
@@ -74,6 +83,14 @@ P_LOCATION = "P276"         # 위치 (이벤트)
 P_CAPITAL = "P36"           # 수도
 P_CONFLICT = "P607"         # 관련 분쟁
 P_PART_OF = "P361"          # ~의 일부
+P_CREATOR = "P170"          # creator (제작자/예술가)
+P_AUTHOR = "P50"            # author (저자)
+P_COMPOSER = "P86"          # composer (작곡가)
+P_DIRECTOR = "P57"          # director (감독)
+P_GENRE = "P136"            # genre (장르)
+P_MOVEMENT = "P135"         # movement (예술 운동/사조)
+P_MATERIAL = "P186"         # material used (재료)
+P_INVENTOR = "P61"          # discoverer or inventor (발명가)
 
 # ── 엔티티 분류용 Q-ID 집합 ──────────────────────────
 
@@ -143,6 +160,32 @@ Q_PLACES = {
     "Q41176",     # building (건물)
     "Q839954",    # archaeological site (고고학 유적)
     "Q9842",      # UNESCO World Heritage Site
+}
+
+# Artwork 계열 (문화/예술 작품) [mk 추가]
+Q_ARTWORKS = {
+    "Q838948",    # work of art (예술 작품) — 핵심
+    "Q3305213",   # painting (회화/그림)
+    "Q860861",    # sculpture (조각)
+    "Q4502142",   # visual artwork (시각 예술 작품)
+    "Q47461344",  # written work (문서 작품)
+    "Q7725634",   # literary work (문학 작품)
+    "Q207628",    # musical work/composition (음악 작품)
+    "Q11424",     # film (영화)
+    "Q8274",      # manuscript (필사본/고문서)
+    "Q6882426",   # opera (오페라)
+    "Q179700",    # statue (동상)
+    "Q17537576",  # creative work (창작물)
+    "Q134307",    # symphony (교향곡)
+    "Q105543609", # musical work (음악 창작물, 대체)
+}
+
+# Invention 계열 (발명/기술) [mk 추가]
+Q_INVENTIONS = {
+    "Q20937557",  # invention (발명) — 핵심
+    "Q11019",     # machine (기계)
+    "Q39546",     # tool (도구)
+    "Q327333",    # technology (기술적 창작물)
 }
 
 # Historical entity (국가/왕조/제국) 계열
@@ -376,6 +419,71 @@ def extract_place(entity, claims):
     }
 
 
+def extract_artwork(entity, claims, p31_ids):
+    """artwork(문화/예술 작품) 엔티티 추출 [mk]"""
+    inception = first_year(claims, P_INCEPTION)
+
+    # 서브타입
+    artwork_kind = "artwork"
+    kind_map = {
+        "Q3305213": "painting",
+        "Q860861": "sculpture",
+        "Q179700": "sculpture",
+        "Q47461344": "written_work",
+        "Q7725634": "literary_work",
+        "Q207628": "musical_work",
+        "Q134307": "musical_work",
+        "Q105543609": "musical_work",
+        "Q6882426": "opera",
+        "Q11424": "film",
+        "Q8274": "manuscript",
+    }
+    for qid in p31_ids:
+        if qid in kind_map:
+            artwork_kind = kind_map[qid]
+            break
+
+    # 창작자: P170(creator) > P50(author) > P86(composer) > P57(director)
+    creator_qid = None
+    for p in [P_CREATOR, P_AUTHOR, P_COMPOSER, P_DIRECTOR]:
+        creator_qid = first_entity_id(claims, p)
+        if creator_qid:
+            break
+
+    return {
+        **common_fields(entity),
+        "type": "artwork",
+        "artwork_kind": artwork_kind,
+        "inception": inception,
+        "anchor_year": inception,
+        "direct_coord": first_coord(claims),
+        "creator_qid": creator_qid,
+        "location_qid": first_entity_id(claims, P_LOCATION),
+        "country_qid": first_entity_id(claims, P_COUNTRY),
+        "genre_qid": first_entity_id(claims, P_GENRE),
+        "movement_qid": first_entity_id(claims, P_MOVEMENT),
+    }
+
+
+def extract_invention(entity, claims, p31_ids):
+    """invention(발명/기술) 엔티티 추출 [mk]"""
+    inception = first_year(claims, P_INCEPTION)
+    start_time = first_year(claims, P_START_TIME)
+    point_in_time = first_year(claims, P_POINT_IN_TIME)
+    anchor_year = inception or point_in_time or start_time
+
+    return {
+        **common_fields(entity),
+        "type": "invention",
+        "inception": inception,
+        "anchor_year": anchor_year,
+        "direct_coord": first_coord(claims),
+        "inventor_qid": first_entity_id(claims, P_INVENTOR),
+        "country_qid": first_entity_id(claims, P_COUNTRY),
+        "location_qid": first_entity_id(claims, P_LOCATION),
+    }
+
+
 def extract_hist_entity(entity, claims, p31_ids):
     """historical entity (국가/왕조/제국) 추출"""
     inception = first_year(claims, P_INCEPTION)
@@ -422,7 +530,7 @@ def pass1_stream(dump_path):
 
     coord_map = {}   # QID → (lat, lon)
     label_map = {}   # QID → {"ko": ..., "en": ...}
-    counts = {"person": 0, "event": 0, "place": 0, "hist": 0}
+    counts = {"person": 0, "event": 0, "place": 0, "hist": 0, "artwork": 0, "invention": 0}
     entity_count = 0
     start_time = time.time()
     last_report = start_time
@@ -483,6 +591,20 @@ def pass1_stream(dump_path):
                     )
                     counts["hist"] += 1
 
+                elif p31_ids & Q_ARTWORKS:
+                    rec = extract_artwork(entity, claims, p31_ids)
+                    out_files["artwork"].write(
+                        json.dumps(rec, ensure_ascii=False) + "\n"
+                    )
+                    counts["artwork"] += 1
+
+                elif p31_ids & Q_INVENTIONS:
+                    rec = extract_invention(entity, claims, p31_ids)
+                    out_files["invention"].write(
+                        json.dumps(rec, ensure_ascii=False) + "\n"
+                    )
+                    counts["invention"] += 1
+
                 elif p31_ids & Q_PLACES:
                     rec = extract_place(entity, claims)
                     out_files["place"].write(
@@ -499,7 +621,8 @@ def pass1_stream(dump_path):
                     print(
                         f"[pass1] {entity_count:,} ent | "
                         f"P:{counts['person']:,} E:{counts['event']:,} "
-                        f"Pl:{counts['place']:,} H:{counts['hist']:,} | "
+                        f"Pl:{counts['place']:,} H:{counts['hist']:,} "
+                        f"Art:{counts['artwork']:,} Inv:{counts['invention']:,} | "
                         f"coord:{len(coord_map):,} label:{len(label_map):,} | "
                         f"{speed:.0f}/s | {elapsed/60:.1f}m"
                     )
@@ -646,6 +769,42 @@ def pass2_resolve(coord_map, label_map):
         json.dump(hists, f, ensure_ascii=False, indent=1)
     print_stats("hist_entity", hists, anchor_key="start_year")
 
+    # ── Artwork [mk] ──
+    print("[pass2] artwork 처리 중...")
+    artworks = []
+    with open(RAW_PATHS["artwork"], "r", encoding="utf-8") as f:
+        for line in f:
+            a = json.loads(line)
+            a = resolve_coord(a, coord_map, ["location_qid", "country_qid"])
+            a = resolve_label(a, label_map, "creator_qid", "creator")
+            a = resolve_label(a, label_map, "location_qid", "location")
+            a = resolve_label(a, label_map, "country_qid", "country")
+            a = resolve_label(a, label_map, "genre_qid", "genre")
+            a = resolve_label(a, label_map, "movement_qid", "movement")
+            artworks.append(a)
+
+    artworks.sort(key=lambda x: x["sitelinks"], reverse=True)
+    with open(FINAL_PATHS["artwork"], "w", encoding="utf-8") as f:
+        json.dump(artworks, f, ensure_ascii=False, indent=1)
+    print_stats("artwork", artworks, anchor_key="inception")
+
+    # ── Invention [mk] ──
+    print("[pass2] invention 처리 중...")
+    inventions = []
+    with open(RAW_PATHS["invention"], "r", encoding="utf-8") as f:
+        for line in f:
+            inv = json.loads(line)
+            inv = resolve_coord(inv, coord_map, ["location_qid", "country_qid"])
+            inv = resolve_label(inv, label_map, "inventor_qid", "inventor")
+            inv = resolve_label(inv, label_map, "location_qid", "location")
+            inv = resolve_label(inv, label_map, "country_qid", "country")
+            inventions.append(inv)
+
+    inventions.sort(key=lambda x: x["sitelinks"], reverse=True)
+    with open(FINAL_PATHS["invention"], "w", encoding="utf-8") as f:
+        json.dump(inventions, f, ensure_ascii=False, indent=1)
+    print_stats("invention", inventions, anchor_key="inception")
+
     print(f"\n[pass2 완료] 모든 파일 저장됨: {OUTPUT_DIR}/")
 
 
@@ -694,15 +853,19 @@ def main():
         return
 
     if len(sys.argv) > 1 and sys.argv[1] == "--stats-only":
+        anchor_key_map = {
+            "person":   "anchor_year",
+            "event":    "anchor_year",
+            "place":    "inception",
+            "hist":     "start_year",
+            "artwork":  "inception",
+            "invention":"inception",
+        }
         for type_name, path in FINAL_PATHS.items():
             if os.path.exists(path):
                 with open(path, "r") as f:
                     data = json.load(f)
-                anchor_key = {
-                    "person": "anchor_year", "event": "anchor_year",
-                    "place": "inception", "hist": "start_year",
-                }[type_name]
-                print_stats(type_name, data, anchor_key)
+                print_stats(type_name, data, anchor_key_map.get(type_name, "anchor_year"))
         return
 
     if not os.path.exists(DUMP_PATH):
