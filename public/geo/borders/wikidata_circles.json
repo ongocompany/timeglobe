@@ -16310,20 +16310,6 @@
     "sitelinks": 12
   },
   {
-    "name_en": "West Indies Federation",
-    "name_ko": "서인도 연방",
-    "lon": -61.6333,
-    "lat": 10.6833,
-    "start_year": 1958,
-    "end_year": 1962,
-    "lineage_id": null,
-    "color": "hsl(39, 70%, 55%)",
-    "qid": "Q652560",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 46
-  },
-  {
     "name_en": "United Arab States",
     "name_ko": "아랍 합중국",
     "lon": 31.24,
@@ -16366,20 +16352,6 @@
     "sitelinks": 42
   },
   {
-    "name_en": "Republic of the Congo (Léopoldville)",
-    "name_ko": "콩고 공화국 (레오폴드빌)",
-    "lon": 15.4,
-    "lat": -4.4,
-    "start_year": 1960,
-    "end_year": 1971,
-    "lineage_id": "L0199",
-    "color": "hsl(246, 70%, 55%)",
-    "qid": "Q618399",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 25
-  },
-  {
     "name_en": "Somali Republic",
     "name_ko": "소말리 공화국",
     "lon": 45.35,
@@ -16406,34 +16378,6 @@
     "tier": 2,
     "region": "sub_saharan",
     "sitelinks": 29
-  },
-  {
-    "name_en": "Tanganyika",
-    "name_ko": "탕가니카",
-    "lon": 39.28333333,
-    "lat": -6.8,
-    "start_year": 1961,
-    "end_year": 1964,
-    "lineage_id": null,
-    "color": "hsl(218, 70%, 55%)",
-    "qid": "Q431731",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 67
-  },
-  {
-    "name_en": "Federation of South Arabia",
-    "name_ko": "남아라비아 연방",
-    "lon": 48.076,
-    "lat": 15.33,
-    "start_year": 1962,
-    "end_year": 1967,
-    "lineage_id": "L0179",
-    "color": "hsl(261, 70%, 55%)",
-    "qid": "Q834486",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 35
   },
   {
     "name_en": "Protectorate of South Arabia",
@@ -16506,20 +16450,6 @@
     "sitelinks": 30
   },
   {
-    "name_en": "Khmer Republic",
-    "name_ko": "크메르 공화국",
-    "lon": 104.933611111,
-    "lat": 11.561666666,
-    "start_year": 1970,
-    "end_year": 1975,
-    "lineage_id": "L0070",
-    "color": "hsl(341, 70%, 55%)",
-    "qid": "Q1054184",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 37
-  },
-  {
     "name_en": "Dominion of Fiji",
     "name_ko": "피지 자치령",
     "lon": 178,
@@ -16548,20 +16478,6 @@
     "sitelinks": 69
   },
   {
-    "name_en": "Federation of Arab Republics",
-    "name_ko": "아랍 공화국 연방",
-    "lon": 31.24,
-    "lat": 30.04,
-    "start_year": 1972,
-    "end_year": 1977,
-    "lineage_id": null,
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q44642",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 41
-  },
-  {
     "name_en": "Autonomous Turkish Cypriot Administration",
     "name_ko": "튀르크 키프로스 자치 정부",
     "lon": 33.38,
@@ -16585,7 +16501,7 @@
     "lineage_id": null,
     "color": "hsl(141, 70%, 55%)",
     "qid": "Q2368688",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 15
   },
@@ -16602,34 +16518,6 @@
     "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 6
-  },
-  {
-    "name_en": "Central African Empire",
-    "name_ko": "중앙아프리카 제국",
-    "lon": 20.9,
-    "lat": 6.7,
-    "start_year": 1976,
-    "end_year": 1979,
-    "lineage_id": null,
-    "color": "hsl(332, 70%, 55%)",
-    "qid": "Q189988",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 39
-  },
-  {
-    "name_en": "Democratic Kampuchea",
-    "name_ko": "민주 캄푸치아",
-    "lon": 105.6,
-    "lat": 12.25,
-    "start_year": 1975,
-    "end_year": 1979,
-    "lineage_id": "L0070",
-    "color": "hsl(351, 70%, 55%)",
-    "qid": "Q330988",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 45
   },
   {
     "name_en": "Senegambia Confederation",
@@ -16669,7 +16557,7 @@
     "lineage_id": null,
     "color": "hsl(2, 70%, 55%)",
     "qid": "Q4416710",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 17
   },
@@ -16767,7 +16655,7 @@
     "lineage_id": null,
     "color": "hsl(286, 70%, 55%)",
     "qid": "Q1322424",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 21
   },
