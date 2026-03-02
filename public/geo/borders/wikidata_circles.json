@@ -7267,7 +7267,7 @@
   },
   {
     "name_en": "White Horde",
-    "name_ko": "백장 한국",
+    "name_ko": "백장 오르다",
     "lon": 65,
     "lat": 50,
     "start_year": 1227,
@@ -7477,7 +7477,7 @@
   },
   {
     "name_en": "Golden Horde",
-    "name_ko": "킵차크 칸국",
+    "name_ko": "킵차크 오르다",
     "lon": 60,
     "lat": 52,
     "start_year": 1243,
@@ -9311,7 +9311,7 @@
   },
   {
     "name_en": "Great Horde",
-    "name_ko": "대 칸국",
+    "name_ko": "대 오르다",
     "lon": 60,
     "lat": 50,
     "start_year": 1433,
@@ -9325,7 +9325,7 @@
   },
   {
     "name_en": "Khanate of Qazan",
-    "name_ko": "카잔 한국",
+    "name_ko": "카잔 칸국",
     "lon": 49.15,
     "lat": 55.78333333,
     "start_year": 1438,
@@ -9353,7 +9353,7 @@
   },
   {
     "name_en": "Nogai Horde",
-    "name_ko": "노가이 칸국",
+    "name_ko": "노가이 오르다",
     "lon": 43,
     "lat": 47,
     "start_year": 1440,
@@ -9367,7 +9367,7 @@
   },
   {
     "name_en": "Crimean Khanate",
-    "name_ko": "크림 한국",
+    "name_ko": "크림 칸국",
     "lon": 33.8525,
     "lat": 44.755,
     "start_year": 1441,
@@ -9619,7 +9619,7 @@
   },
   {
     "name_en": "Astrakhan Khanate",
-    "name_ko": "아스트라한 한국",
+    "name_ko": "아스트라한 칸국",
     "lon": 48.03,
     "lat": 46.35,
     "start_year": 1466,
@@ -9955,7 +9955,7 @@
   },
   {
     "name_en": "Khanate of Bukhara",
-    "name_ko": "부하라 한국",
+    "name_ko": "부하라 칸국",
     "lon": 64.428611111,
     "lat": 39.774722222,
     "start_year": 1500,
