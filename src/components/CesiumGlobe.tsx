@@ -1443,9 +1443,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] OHM 매칭된 QID set (원형 렌더링에서 제외용)
   const ohmQidsRef = useRef<Set<string>>(new Set());
   const ohmNamesRef = useRef<Set<string>>(new Set());
-  // [mk] T1 경계선 엔티티 목록 — 고도 변화 시 width만 업데이트
+  // [mk] T1/T2 경계선 엔티티 목록 — 고도 변화 시 width/show 업데이트
   const t1BorderEntitiesRef = useRef<import("cesium").Entity[]>([]);
-  const lastT1WidthRef = useRef<number>(5);
+  const t2BorderEntitiesRef = useRef<import("cesium").Entity[]>([]); // [cl] T2: 1.5만km+ 에서만 표시
+  const lastT1WidthRef = useRef<number>(3);    // [cl] 초기값 3px (최대)
+  const lastT2VisibleRef = useRef<boolean>(true); // [cl] T2 초기 가시 상태
   // [mk] 지도 표시 설정 refs (prop 변경 시 렌더 함수에서 즉시 반영)
   const visibleTiersRef = useRef<number[]>(visibleTiers ?? [1, 2, 3, 4]);
   const showFillRef = useRef<boolean>(showFill ?? true);
@@ -1791,8 +1793,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] 같은 연도면 재렌더 스킵
     if (currentOhmYearRef.current === targetYear && ohmDsRef.current) return;
 
-    // [mk] 재렌더 시 T1 엔티티 목록 초기화 (DataSource 새로 생성되므로)
+    // [cl] 재렌더 시 T1/T2 엔티티 목록 초기화 (DataSource 새로 생성되므로)
     t1BorderEntitiesRef.current = [];
+    t2BorderEntitiesRef.current = [];
 
     // [cl] 해당 연도에 활성화된 엔티티 + 최적 스냅샷 선택
     const activeEntities: { entity: OhmEntity; rid: number }[] = [];
@@ -1904,28 +1907,26 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           }
         }
 
-        // [mk] 외곽선 (showBorder ON 시에만 추가) — Tier별 스타일
-        if (showBorderRef.current) {
+        // [cl] 외곽선 — T1/T2만 표시, T3/T4는 국경선 없음
+        if (showBorderRef.current && entityTier <= 2) {
           const outlineRings = extractRings(feature.geometry);
-          // [mk] T1=고도 반응형(초기값, preRender로 갱신), T2=3px, T3=3px 점선(회색), T4=1px
-          const borderWidth = entityTier === 1 ? lastT1WidthRef.current : entityTier === 2 ? 3 : entityTier === 3 ? 3 : 1;
-          const borderMaterial = entityTier === 3
-            ? new PolylineDashMaterialProperty({
-                color: Color.fromCssColorString("rgba(180,180,180,0.65)"),
-                dashLength: 14,
-              })
-            : outlineColor;
+          // [cl] T1/T2 동일 width (preRender에서 고도 반응형 갱신)
+          // T2는 초기 고도가 1.5만km 미만이면 숨김 (preRender에서 show 갱신)
+          const initAltKm = viewer.camera.positionCartographic.height / 1000;
+          const t2InitShow = initAltKm >= 15000;
           for (const positions of outlineRings) {
             if (positions.length < 2) continue;
             const ent = ds.entities.add({
               polyline: {
                 positions,
-                width: borderWidth,
-                material: borderMaterial,
+                width: lastT1WidthRef.current,
+                material: outlineColor,
+                show: entityTier === 1 ? true : t2InitShow,
               },
             });
-            // [mk] T1 엔티티만 ref에 수집 (preRender에서 width 갱신용)
+            // [cl] Tier별 ref에 수집 (preRender에서 width/show 갱신)
             if (entityTier === 1) t1BorderEntitiesRef.current.push(ent);
+            if (entityTier === 2) t2BorderEntitiesRef.current.push(ent);
           }
         }
       }
@@ -1954,15 +1955,31 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // 나중에 CShapes 복원 시 이 블록 주석 해제.
     // loadBorderIndex().then(async (idx) => { ... }).catch(() => {});
 
-    // [mk] T1 경계선 고도 반응형 — preRender로 구간 변경 시에만 width 갱신 (매 프레임 경량 체크)
+    // [cl] T1/T2 경계선 고도 반응형 — preRender로 구간 변경 시에만 갱신 (매 프레임 경량 체크)
+    // T1: 5,000km↓=1px ~ 15,000km↑=3px 선형 보간
+    // T2: 15,000km 이상에서만 표시 (T1과 동일 width), 미만이면 숨김
     const onPreRender = () => {
       if (viewer.isDestroyed()) return;
       const altKm = viewer.camera.positionCartographic.height / 1000;
-      const newWidth = altKm <= 10000 ? 5 : Math.max(1, 5 - Math.floor((altKm - 10000) / 2000));
-      if (newWidth === lastT1WidthRef.current) return; // 구간 변화 없으면 스킵
-      lastT1WidthRef.current = newWidth;
-      for (const ent of t1BorderEntitiesRef.current) {
-        if (ent.polyline?.width) (ent.polyline.width as ConstantProperty).setValue(newWidth);
+      const newWidth = Math.min(3, Math.max(1, 1 + 2 * (altKm - 5000) / 10000));
+      const newT2Vis = altKm >= 15000;
+      const widthChanged = Math.abs(newWidth - lastT1WidthRef.current) > 0.05;
+      const t2VisChanged = newT2Vis !== lastT2VisibleRef.current;
+      if (!widthChanged && !t2VisChanged) return;
+      if (widthChanged) {
+        lastT1WidthRef.current = newWidth;
+        for (const ent of t1BorderEntitiesRef.current) {
+          if (ent.polyline?.width) (ent.polyline.width as ConstantProperty).setValue(newWidth);
+        }
+        for (const ent of t2BorderEntitiesRef.current) {
+          if (ent.polyline?.width) (ent.polyline.width as ConstantProperty).setValue(newWidth);
+        }
+      }
+      if (t2VisChanged) {
+        lastT2VisibleRef.current = newT2Vis;
+        for (const ent of t2BorderEntitiesRef.current) {
+          ent.show = newT2Vis;
+        }
       }
     };
     viewer.scene.preRender.addEventListener(onPreRender);
