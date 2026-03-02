@@ -6696,22 +6696,6 @@
     "sitelinks": 22
   },
   {
-    "name_en": "Kingdom of Portugal",
-    "name_ko": "포르투갈 왕국",
-    "lon": -9.18333333,
-    "lat": 38.7,
-    "start_year": 1139,
-    "end_year": 1910,
-    "lineage_id": "L0116",
-    "color": "hsl(173, 70%, 55%)",
-    "qid": "Q45670",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 61,
-    "t1_start": 1415,
-    "t1_end": 1800
-  },
-  {
     "name_en": "Dauphiné of Viennois",
     "name_ko": "다우프이느에 비에노이스",
     "lon": 4.8747,
@@ -10904,20 +10888,6 @@
     "sitelinks": 39
   },
   {
-    "name_en": "Kingdom of Ireland",
-    "name_ko": "아일랜드 왕국",
-    "lon": -6.25,
-    "lat": 53.333333333,
-    "start_year": 1542,
-    "end_year": 1801,
-    "lineage_id": "L0068",
-    "color": "hsl(113, 70%, 55%)",
-    "qid": "Q215530",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 69
-  },
-  {
     "name_en": "Tsardom of Russia",
     "name_ko": "러시아 차르국",
     "lon": 37.6175,
@@ -12132,20 +12102,6 @@
     "sitelinks": 12
   },
   {
-    "name_en": "Kingdom of Serbia",
-    "name_ko": "세르비아 왕국 (1718년~1739년)",
-    "lon": 20.47,
-    "lat": 44.82,
-    "start_year": 1718,
-    "end_year": 1739,
-    "lineage_id": null,
-    "color": "hsl(249, 70%, 55%)",
-    "qid": "Q2603851",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 25
-  },
-  {
     "name_en": "Russian Empire",
     "name_ko": "러시아 제국",
     "lon": 30.33,
@@ -13076,20 +13032,6 @@
     "t1_end": 1850
   },
   {
-    "name_en": "First Empire of Haiti",
-    "name_ko": "아이티 제1제국",
-    "lon": -72.33333333,
-    "lat": 19.1,
-    "start_year": 1804,
-    "end_year": 1806,
-    "lineage_id": "L0181",
-    "color": "hsl(257, 70%, 55%)",
-    "qid": "Q2006756",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 27
-  },
-  {
     "name_en": "Sokoto Caliphate",
     "name_ko": "소코토 칼리프국",
     "lon": 5.247777777,
@@ -13314,20 +13256,6 @@
     "sitelinks": 62
   },
   {
-    "name_en": "First Republic of Venezuela",
-    "name_ko": "베네수엘라 제1공화국",
-    "lon": -67.533333333,
-    "lat": 10.083333333,
-    "start_year": 1810,
-    "end_year": 1812,
-    "lineage_id": "L0183",
-    "color": "hsl(116, 70%, 55%)",
-    "qid": "Q8935",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 16
-  },
-  {
     "name_en": "United Provinces of the Río de la Plata",
     "name_ko": "남미연합주국",
     "lon": -58.4,
@@ -13340,20 +13268,6 @@
     "tier": 2,
     "region": "latin_america",
     "sitelinks": 45
-  },
-  {
-    "name_en": "Second Republic of Venezuela",
-    "name_ko": "베네수엘라 제2공화국",
-    "lon": -67.53333333,
-    "lat": 10.08333333,
-    "start_year": 1813,
-    "end_year": 1814,
-    "lineage_id": "L0183",
-    "color": "hsl(116, 70%, 55%)",
-    "qid": "Q8950",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 14
   },
   {
     "name_en": "Kingdom of Hanover",
@@ -13494,34 +13408,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 44
-  },
-  {
-    "name_en": "United Kingdom of Portugal, Brazil and the Algarves",
-    "name_ko": "포르투갈 브라질 알가르브 연합왕국",
-    "lon": -43.233,
-    "lat": -22.9,
-    "start_year": 1815,
-    "end_year": 1822,
-    "lineage_id": "L0184",
-    "color": "hsl(219, 70%, 55%)",
-    "qid": "Q903779",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 37
-  },
-  {
-    "name_en": "Principality of Serbia",
-    "name_ko": "세르비아 공국",
-    "lon": 20.4625,
-    "lat": 44.810833333,
-    "start_year": 1815,
-    "end_year": 1882,
-    "lineage_id": "L0182",
-    "color": "hsl(249, 70%, 55%)",
-    "qid": "Q684030",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 42
   },
   {
     "name_en": "United States of the Ionian Islands",
@@ -13720,34 +13606,6 @@
     "sitelinks": 10
   },
   {
-    "name_en": "First Mexican Empire",
-    "name_ko": "멕시코 제1제국",
-    "lon": -99.130556,
-    "lat": 19.410556,
-    "start_year": 1822,
-    "end_year": 1823,
-    "lineage_id": "L0139",
-    "color": "hsl(18, 70%, 55%)",
-    "qid": "Q285658",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 53
-  },
-  {
-    "name_en": "First Hellenic Republic",
-    "name_ko": "그리스 제1공화국",
-    "lon": 22.796388888,
-    "lat": 37.565555555,
-    "start_year": 1822,
-    "end_year": 1832,
-    "lineage_id": "L0128",
-    "color": "hsl(162, 70%, 55%)",
-    "qid": "Q528546",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 38
-  },
-  {
     "name_en": "Federal Republic of Central America",
     "name_ko": "중앙아메리카 연방공화국",
     "lon": -90.516666666,
@@ -13788,34 +13646,6 @@
     "tier": 2,
     "region": "latin_america",
     "sitelinks": 4
-  },
-  {
-    "name_en": "First Mexican Republic",
-    "name_ko": "멕시코 제1공화국",
-    "lon": -99.13333333,
-    "lat": 19.43333333,
-    "start_year": 1823,
-    "end_year": 1835,
-    "lineage_id": "L0139",
-    "color": "hsl(18, 70%, 55%)",
-    "qid": "Q1109279",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 19
-  },
-  {
-    "name_en": "Emirate of Afghanistan",
-    "name_ko": "아프가니스탄 토후국",
-    "lon": 69.13,
-    "lat": 34.54,
-    "start_year": 1823,
-    "end_year": 1926,
-    "lineage_id": null,
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q1335260",
-    "tier": 2,
-    "region": "south_asia",
-    "sitelinks": 43
   },
   {
     "name_en": "British rule in Myanmar",
@@ -13972,20 +13802,6 @@
     "sitelinks": 29
   },
   {
-    "name_en": "Kingdom of Greece",
-    "name_ko": "그리스 왕국",
-    "lon": 23.740223,
-    "lat": 37.972399,
-    "start_year": 1832,
-    "end_year": 1973,
-    "lineage_id": "L0128",
-    "color": "hsl(162, 70%, 55%)",
-    "qid": "Q209065",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 62
-  },
-  {
     "name_en": "Principality of Samos",
     "name_ko": "사모스 공국",
     "lon": 26.983333333,
@@ -14012,20 +13828,6 @@
     "tier": 2,
     "region": "sub_saharan",
     "sitelinks": 8
-  },
-  {
-    "name_en": "Centralist Republic of Mexico",
-    "name_ko": "멕시코 공화국",
-    "lon": -99.13,
-    "lat": 19.43,
-    "start_year": 1835,
-    "end_year": 1846,
-    "lineage_id": null,
-    "color": "hsl(18, 70%, 55%)",
-    "qid": "Q5062192",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 17
   },
   {
     "name_en": "United Tribes of New Zealand",
@@ -14224,20 +14026,6 @@
     "sitelinks": 9
   },
   {
-    "name_en": "Second Federal Republic of Mexico",
-    "name_ko": "멕시코 제2연방공화국",
-    "lon": -99.13333333,
-    "lat": 19.43333333,
-    "start_year": 1846,
-    "end_year": 1863,
-    "lineage_id": "L0139",
-    "color": "hsl(18, 70%, 55%)",
-    "qid": "Q7443295",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 12
-  },
-  {
     "name_en": "Republic of Kliprivier",
     "name_ko": "크리프리비에르 공화국",
     "lon": 24.518611,
@@ -14264,20 +14052,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 22
-  },
-  {
-    "name_en": "Second Empire of Haiti",
-    "name_ko": "아이티 제2제국",
-    "lon": -72.33333333,
-    "lat": 19.1,
-    "start_year": 1849,
-    "end_year": 1859,
-    "lineage_id": "L0181",
-    "color": "hsl(257, 70%, 55%)",
-    "qid": "Q2979717",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 20
   },
   {
     "name_en": "Republic of Zoutpansberg",
@@ -14590,20 +14364,6 @@
     "sitelinks": 21
   },
   {
-    "name_en": "Second Mexican Empire",
-    "name_ko": "멕시코 제2제국",
-    "lon": -99,
-    "lat": 19.433333,
-    "start_year": 1864,
-    "end_year": 1867,
-    "lineage_id": "L0139",
-    "color": "hsl(168, 70%, 55%)",
-    "qid": "Q371334",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 42
-  },
-  {
     "name_en": "Yettishar",
     "name_ko": "예티샤르",
     "lon": 76,
@@ -14744,20 +14504,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 39
-  },
-  {
-    "name_en": "Kingdom of Serbia",
-    "name_ko": "세르비아 왕국",
-    "lon": 20.4625,
-    "lat": 44.810833333,
-    "start_year": 1882,
-    "end_year": 1918,
-    "lineage_id": "L0182",
-    "color": "hsl(249, 70%, 55%)",
-    "qid": "Q241748",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 63
   },
   {
     "name_en": "British North Borneo",
@@ -15012,20 +14758,6 @@
     "sitelinks": 18
   },
   {
-    "name_en": "First Brazilian Republic",
-    "name_ko": "브라질 제1공화국",
-    "lon": -53,
-    "lat": -14,
-    "start_year": 1889,
-    "end_year": 1930,
-    "lineage_id": null,
-    "color": "hsl(65, 70%, 55%)",
-    "qid": "Q2414171",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 22
-  },
-  {
     "name_en": "Franceville, New Hebrides",
     "name_ko": "프라느세비레 뉴 헤브리데스",
     "lon": 168.314,
@@ -15196,20 +14928,6 @@
     "sitelinks": 21
   },
   {
-    "name_en": "First Philippine Republic",
-    "name_ko": "필리핀 제1공화국",
-    "lon": 120.6,
-    "lat": 14.8,
-    "start_year": 1899,
-    "end_year": 1901,
-    "lineage_id": null,
-    "color": "hsl(127, 70%, 55%)",
-    "qid": "Q1361989",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 32
-  },
-  {
     "name_en": "Gordonia",
     "name_ko": "고르도니아",
     "lon": 20.267816,
@@ -15280,20 +14998,6 @@
     "sitelinks": 31
   },
   {
-    "name_en": "Republic of Cuba",
-    "name_ko": "쿠바 공화국",
-    "lon": -79.5,
-    "lat": 22,
-    "start_year": 1902,
-    "end_year": 1959,
-    "lineage_id": null,
-    "color": "hsl(114, 70%, 55%)",
-    "qid": "Q14905932",
-    "tier": 2,
-    "region": "north_america",
-    "sitelinks": 21
-  },
-  {
     "name_en": "Emirate of Asir",
     "name_ko": "아시르 이드리드 토후국",
     "lon": 42.616667,
@@ -15348,50 +15052,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 57
-  },
-  {
-    "name_en": "First Portuguese Republic",
-    "name_ko": "포르투갈 제1공화국",
-    "lon": -9.18333333,
-    "lat": 38.7,
-    "start_year": 1910,
-    "end_year": 1926,
-    "lineage_id": "L0116",
-    "color": "hsl(173, 70%, 55%)",
-    "qid": "Q167360",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 35
-  },
-  {
-    "name_en": "Union of South Africa",
-    "name_ko": "남아프리카 연방",
-    "lon": 24,
-    "lat": -29,
-    "start_year": 1910,
-    "end_year": 1961,
-    "lineage_id": "L0188",
-    "color": "hsl(76, 70%, 55%)",
-    "qid": "Q193619",
-    "tier": 1,
-    "region": "sub_saharan",
-    "sitelinks": 64,
-    "t1_start": 1910,
-    "t1_end": 1910
-  },
-  {
-    "name_en": "Kingdom of Montenegro",
-    "name_ko": "몬테네그로 왕국",
-    "lon": 19.5333,
-    "lat": 42.6333,
-    "start_year": 1910,
-    "end_year": 1918,
-    "lineage_id": "L0192",
-    "color": "hsl(249, 70%, 55%)",
-    "qid": "Q386496",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 59
   },
   {
     "name_en": "Bogd Khanate of Mongolia",
@@ -15492,20 +15152,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 35
-  },
-  {
-    "name_en": "Sultanate of Egypt",
-    "name_ko": "이집트 술탄국",
-    "lon": 31.2167,
-    "lat": 30.05,
-    "start_year": 1914,
-    "end_year": 1922,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q370173",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 39
   },
   {
     "name_en": "Empire of China",
@@ -15932,20 +15578,6 @@
     "sitelinks": 29
   },
   {
-    "name_en": "Kingdom of Iceland",
-    "name_ko": "아이슬란드 왕국",
-    "lon": -21.935,
-    "lat": 64.1475,
-    "start_year": 1918,
-    "end_year": 1944,
-    "lineage_id": null,
-    "color": "hsl(233, 70%, 55%)",
-    "qid": "Q62567",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 40
-  },
-  {
     "name_en": "Weimar Republic",
     "name_ko": "바이마르 공화국",
     "lon": 13.375,
@@ -16340,20 +15972,6 @@
     "sitelinks": 27
   },
   {
-    "name_en": "Kingdom of Iraq",
-    "name_ko": "이라크 왕국",
-    "lon": 44.383333,
-    "lat": 33.333333,
-    "start_year": 1921,
-    "end_year": 1958,
-    "lineage_id": "L0007",
-    "color": "hsl(104, 70%, 55%)",
-    "qid": "Q149805",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 46
-  },
-  {
     "name_en": "Republic of the Rif",
     "name_ko": "리프 공화국",
     "lon": -3.916666666,
@@ -16368,20 +15986,6 @@
     "sitelinks": 48
   },
   {
-    "name_en": "Kingdom of Egypt",
-    "name_ko": "이집트 왕국",
-    "lon": 31.216666666,
-    "lat": 30.05,
-    "start_year": 1922,
-    "end_year": 1953,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q124943",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 47
-  },
-  {
     "name_en": "Kingdom of Kurdistan",
     "name_ko": "쿠르디스탄 왕국",
     "lon": 45.416667,
@@ -16394,20 +15998,6 @@
     "tier": 2,
     "region": "central_asia",
     "sitelinks": 27
-  },
-  {
-    "name_en": "Irish Free State",
-    "name_ko": "아일랜드 자유국",
-    "lon": -6.259722222,
-    "lat": 53.347777777,
-    "start_year": 1922,
-    "end_year": 1937,
-    "lineage_id": null,
-    "color": "hsl(113, 70%, 55%)",
-    "qid": "Q31747",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 61
   },
   {
     "name_en": "Transcaucasian Socialist Federative Soviet Republic",
@@ -16466,20 +16056,6 @@
     "sitelinks": 42
   },
   {
-    "name_en": "Second Hellenic Republic",
-    "name_ko": "그리스 제2공화국",
-    "lon": 22,
-    "lat": 39,
-    "start_year": 1924,
-    "end_year": 1935,
-    "lineage_id": null,
-    "color": "hsl(100, 70%, 55%)",
-    "qid": "Q265824",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 32
-  },
-  {
     "name_en": "Uzbek Soviet Socialist Republic",
     "name_ko": "우즈베크 소비에트 사회주의 공화국",
     "lon": 66,
@@ -16534,20 +16110,6 @@
     "tier": 3,
     "region": "middle_east",
     "sitelinks": 3
-  },
-  {
-    "name_en": "Kingdom of Afghanistan",
-    "name_ko": "아프가니스탄 왕국",
-    "lon": 65,
-    "lat": 33,
-    "start_year": 1926,
-    "end_year": 1973,
-    "lineage_id": "L0086",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q1138904",
-    "tier": 2,
-    "region": "south_asia",
-    "sitelinks": 47
   },
   {
     "name_en": "Kingdom of Nejd and Hejaz",
@@ -16720,20 +16282,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 31
-  },
-  {
-    "name_en": "Commonwealth of the Philippines",
-    "name_ko": "필리핀 자치령",
-    "lon": 121,
-    "lat": 14.6,
-    "start_year": 1935,
-    "end_year": 1946,
-    "lineage_id": null,
-    "color": "hsl(127, 70%, 55%)",
-    "qid": "Q146328",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 35
   },
   {
     "name_en": "East Hebei Autonomous Government",
@@ -17016,20 +16564,6 @@
     "sitelinks": 1
   },
   {
-    "name_en": "Second Philippine Republic",
-    "name_ko": "필리핀 제2공화국",
-    "lon": 123,
-    "lat": 12,
-    "start_year": 1943,
-    "end_year": 1945,
-    "lineage_id": null,
-    "color": "hsl(78, 70%, 55%)",
-    "qid": "Q2027229",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 31
-  },
-  {
     "name_en": "State of Burma",
     "name_ko": "버마국",
     "lon": 96.169166666,
@@ -17074,20 +16608,6 @@
     "t1_end": 1970
   },
   {
-    "name_en": "Fourth Brazilian Republic",
-    "name_ko": "브라질 제4공화국",
-    "lon": -47.88,
-    "lat": -15.79,
-    "start_year": 1945,
-    "end_year": 1964,
-    "lineage_id": null,
-    "color": "hsl(110, 70%, 55%)",
-    "qid": "Q210542",
-    "tier": 2,
-    "region": "latin_america",
-    "sitelinks": 17
-  },
-  {
     "name_en": "United States Army Military Government in Korea",
     "name_ko": "재조선미육군사령부군정청",
     "lon": 127,
@@ -17100,20 +16620,6 @@
     "tier": 2,
     "region": "east_asia",
     "sitelinks": 24
-  },
-  {
-    "name_en": "Third Republic of the Philippines",
-    "name_ko": "필리핀의 역사",
-    "lon": 121,
-    "lat": 14.6,
-    "start_year": 1945,
-    "end_year": 1973,
-    "lineage_id": null,
-    "color": "hsl(127, 70%, 55%)",
-    "qid": "Q5870215",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 9
   },
   {
     "name_en": "Soviet Civil Administration",
@@ -17268,20 +16774,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 45
-  },
-  {
-    "name_en": "First Republic of South Korea",
-    "name_ko": "대한민국 제1공화국",
-    "lon": 126.976944444,
-    "lat": 37.586944444,
-    "start_year": 1948,
-    "end_year": 1960,
-    "lineage_id": "L0097",
-    "color": "hsl(212, 70%, 55%)",
-    "qid": "Q491559",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 23
   },
   {
     "name_en": "All-Palestine Government",
@@ -17470,20 +16962,6 @@
     "sitelinks": 23
   },
   {
-    "name_en": "Republic of Egypt",
-    "name_ko": "이집트 공화국",
-    "lon": 31.216666666,
-    "lat": 30.05,
-    "start_year": 1953,
-    "end_year": 1958,
-    "lineage_id": "L0008",
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q3087763",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 22
-  },
-  {
     "name_en": "Federation of Rhodesia and Nyasaland",
     "name_ko": "로디지아 니아살랜드 연방",
     "lon": 31.029722,
@@ -17570,20 +17048,6 @@
     "sitelinks": 18
   },
   {
-    "name_en": "Kingdom of Tunisia",
-    "name_ko": "튀니지 왕국",
-    "lon": 10.15,
-    "lat": 36.833333333,
-    "start_year": 1956,
-    "end_year": 1957,
-    "lineage_id": "L0029",
-    "color": "hsl(307, 70%, 55%)",
-    "qid": "Q6412669",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 20
-  },
-  {
     "name_en": "United Arab Republic",
     "name_ko": "아랍 연합 공화국",
     "lon": 31.216666666,
@@ -17626,20 +17090,6 @@
     "tier": 2,
     "region": "sub_saharan",
     "sitelinks": 36
-  },
-  {
-    "name_en": "First Republic of Iraq",
-    "name_ko": "이라크 공화국(1958~1968)",
-    "lon": 44,
-    "lat": 33,
-    "start_year": 1958,
-    "end_year": 1968,
-    "lineage_id": "L0007",
-    "color": "hsl(104, 70%, 55%)",
-    "qid": "Q3041595",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 21
   },
   {
     "name_en": "Malagasy Republic",
@@ -17710,20 +17160,6 @@
     "tier": 2,
     "region": "sub_saharan",
     "sitelinks": 42
-  },
-  {
-    "name_en": "Second Republic of South Korea",
-    "name_ko": "대한민국 제2공화국",
-    "lon": 127,
-    "lat": 37.58333333,
-    "start_year": 1960,
-    "end_year": 1961,
-    "lineage_id": "L0097",
-    "color": "hsl(212, 70%, 55%)",
-    "qid": "Q233263",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 19
   },
   {
     "name_en": "Republic of the Congo (Léopoldville)",
@@ -17822,20 +17258,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 35
-  },
-  {
-    "name_en": "Third Republic of South Korea",
-    "name_ko": "대한민국 제3공화국",
-    "lon": 127,
-    "lat": 37.5833,
-    "start_year": 1963,
-    "end_year": 1972,
-    "lineage_id": "L0097",
-    "color": "hsl(212, 70%, 55%)",
-    "qid": "Q487687",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 18
   },
   {
     "name_en": "Protectorate of South Arabia",
@@ -17996,20 +17418,6 @@
     "t1_end": 1990
   },
   {
-    "name_en": "Fourth Republic of South Korea",
-    "name_ko": "대한민국 제4공화국",
-    "lon": 128.004444444,
-    "lat": 35.998611111,
-    "start_year": 1972,
-    "end_year": 1981,
-    "lineage_id": "L0046",
-    "color": "hsl(258, 70%, 55%)",
-    "qid": "Q488521",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 17
-  },
-  {
     "name_en": "Federation of Arab Republics",
     "name_ko": "아랍 공화국 연방",
     "lon": 31.24,
@@ -18022,20 +17430,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 41
-  },
-  {
-    "name_en": "Republic of Afghanistan",
-    "name_ko": "아프가니스탄 공화국",
-    "lon": 65,
-    "lat": 33,
-    "start_year": 1973,
-    "end_year": 1978,
-    "lineage_id": "L0086",
-    "color": "hsl(34, 70%, 55%)",
-    "qid": "Q1415128",
-    "tier": 2,
-    "region": "south_asia",
-    "sitelinks": 36
   },
   {
     "name_en": "Autonomous Turkish Cypriot Administration",
@@ -18106,34 +17500,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 45
-  },
-  {
-    "name_en": "Democratic Republic of Afghanistan",
-    "name_ko": "아프가니스탄 민주공화국",
-    "lon": 69.13333333,
-    "lat": 34.51666667,
-    "start_year": 1978,
-    "end_year": 1992,
-    "lineage_id": "L0048",
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q476757",
-    "tier": 2,
-    "region": "south_asia",
-    "sitelinks": 56
-  },
-  {
-    "name_en": "Fifth Republic of South Korea",
-    "name_ko": "대한민국 제5공화국",
-    "lon": 128.004444444,
-    "lat": 35.998611111,
-    "start_year": 1981,
-    "end_year": 1988,
-    "lineage_id": "L0046",
-    "color": "hsl(258, 70%, 55%)",
-    "qid": "Q482705",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 17
   },
   {
     "name_en": "Senegambia Confederation",
@@ -18288,22 +17654,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 25
-  },
-  {
-    "name_en": "Islamic Republic of Afghanistan",
-    "name_ko": "아프가니스탄 이슬람 공화국",
-    "lon": 69.165833333,
-    "lat": 34.532777777,
-    "start_year": 2004,
-    "end_year": 2021,
-    "lineage_id": "L0048",
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q30747910",
-    "tier": 1,
-    "region": "south_asia",
-    "sitelinks": 48,
-    "t1_start": 2010,
-    "t1_end": 2020
   },
   {
     "name_en": "Maakhir",
@@ -21044,7 +20394,7 @@
     "name_ko": "세르비아",
     "lon": 20.4681,
     "lat": 44.8186,
-    "start_year": 1817,
+    "start_year": 1815,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(249, 70%, 55%)",
@@ -21418,7 +20768,7 @@
     "name_ko": "이집트",
     "lon": 31.25,
     "lat": 30.05,
-    "start_year": 1922,
+    "start_year": 1914,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(36, 70%, 55%)",
