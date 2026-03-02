@@ -189,15 +189,13 @@ function TimelineView() {
 
   // [cl] 리사이즈 핸들 — 카드/지도 영역 높이 조절
   const [cardHeight, setCardHeight] = useState(45); // vh
-  const [mapHeight, setMapHeight] = useState(35); // vh
   const [isDragging, setIsDragging] = useState(false);
   const dragStartRef = useRef<{
     y: number;
     cardH: number;
-    mapH: number;
   } | null>(null);
 
-  // [cl] 리사이즈 드래그 핸들러
+  // [cl] 리사이즈 드래그 핸들러 — cardHeight만 변경, 지도는 나머지 공간 자동
   const handleResizeStart = useCallback(
     (e: React.MouseEvent) => {
       e.preventDefault();
@@ -205,10 +203,9 @@ function TimelineView() {
       dragStartRef.current = {
         y: e.clientY,
         cardH: cardHeight,
-        mapH: mapHeight,
       };
     },
-    [cardHeight, mapHeight]
+    [cardHeight]
   );
 
   useEffect(() => {
@@ -218,16 +215,8 @@ function TimelineView() {
       const delta = e.clientY - dragStartRef.current.y;
       const vh = window.innerHeight / 100;
       const deltaVh = delta / vh;
-      const newCardH = Math.max(
-        15,
-        Math.min(70, dragStartRef.current.cardH + deltaVh)
-      );
-      const newMapH = Math.max(
-        15,
-        Math.min(70, dragStartRef.current.mapH - deltaVh)
-      );
+      const newCardH = Math.max(10, Math.min(75, dragStartRef.current.cardH + deltaVh));
       setCardHeight(newCardH);
-      setMapHeight(newMapH);
     };
     const handleMouseUp = () => {
       setIsDragging(false);
@@ -240,6 +229,7 @@ function TimelineView() {
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging]);
+
 
   // [cl] circles 데이터 로드
   useEffect(() => {
@@ -549,7 +539,7 @@ function TimelineView() {
   }
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column" as const, flex: 1, minHeight: 0, overflow: "hidden" }}>
       {/* ── 타임라인 슬라이더 ── */}
       <div
         style={{
@@ -558,6 +548,7 @@ function TimelineView() {
           padding: "16px 20px",
           marginBottom: 16,
           border: "1px solid #333",
+          flexShrink: 0,
         }}
       >
         <div
@@ -621,6 +612,7 @@ function TimelineView() {
           display: "flex",
           gap: 8,
           marginBottom: 12,
+          flexShrink: 0,
           flexWrap: "wrap",
           alignItems: "center",
         }}
@@ -783,6 +775,7 @@ function TimelineView() {
           overflow: "hidden",
           marginBottom: 16,
           background: "#222",
+          flexShrink: 0,
         }}
       >
         {Object.entries(regionStats)
@@ -800,13 +793,13 @@ function TimelineView() {
           ))}
       </div>
 
-      {/* ═══ 카드 그리드 (플랫, 스크롤) ═══ */}
+      {/* ═══ 카드 그리드 (스크롤) ═══ */}
       <div
         style={{
-          maxHeight: `${cardHeight}vh`,
+          height: `${cardHeight}vh`,
           overflowY: "auto",
-          marginBottom: 0,
           padding: "4px 0",
+          flexShrink: 0,
         }}
       >
         {filtered.length > 0 ? (
@@ -1209,6 +1202,7 @@ function TimelineView() {
         onMouseDown={handleResizeStart}
         style={{
           height: 10,
+          flexShrink: 0,
           background: isDragging ? "#06b6d4" : "#262626",
           cursor: "row-resize",
           display: "flex",
@@ -1231,8 +1225,8 @@ function TimelineView() {
         />
       </div>
 
-      {/* ═══ Leaflet 지도 ═══ */}
-      <div style={{ height: `${mapHeight}vh` }}>
+      {/* ═══ Leaflet 지도 (남은 공간 전부 채움) ═══ */}
+      <div style={{ flex: 1, minHeight: 0 }}>
         <TierReviewMap
           selectedEntities={mapEntities}
           ohmPolygons={ohmPolygons}
@@ -1971,11 +1965,14 @@ export default function TierReviewPage() {
   return (
     <div
       style={{
-        padding: "20px 30px",
+        padding: "20px 30px 0 30px",
         color: "#e0e0e0",
         background: "#111",
-        minHeight: "100vh",
+        height: "100vh",
+        overflow: "hidden",
         fontFamily: "'Pretendard', sans-serif",
+        display: "flex",
+        flexDirection: "column" as const,
       }}
     >
       <div
@@ -1984,6 +1981,7 @@ export default function TierReviewPage() {
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: 16,
+          flexShrink: 0,
         }}
       >
         <h1 style={{ margin: 0, fontSize: 24 }}>
@@ -1992,7 +1990,7 @@ export default function TierReviewPage() {
       </div>
 
       {/* ── 탭 전환 ── */}
-      <div style={{ display: "flex", gap: 4, marginBottom: 20 }}>
+      <div style={{ display: "flex", gap: 4, marginBottom: 20, flexShrink: 0 }}>
         <button
           onClick={() => setActiveTab("timeline")}
           style={{
@@ -2029,11 +2027,13 @@ export default function TierReviewPage() {
         </button>
       </div>
 
-      {/* ── 탭 컨텐츠 ── */}
-      {activeTab === "timeline" && <TimelineView />}
-      {activeTab === "list" && (
-        <ListView entities={entities} setEntities={setEntities} />
-      )}
+      {/* ── 탭 컨텐츠 (flex: 1로 남은 공간 전부 차지) ── */}
+      <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column" as const, overflow: "hidden" }}>
+        {activeTab === "timeline" && <TimelineView />}
+        {activeTab === "list" && (
+          <ListView entities={entities} setEntities={setEntities} />
+        )}
+      </div>
     </div>
   );
 }

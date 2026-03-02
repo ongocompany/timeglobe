@@ -21,6 +21,25 @@ const TIER_COLORS: Record<number, string> = {
   4: "#6b7280",
 };
 
+// [cl] 컨테이너 리사이즈 시 Leaflet invalidateSize 호출
+function ResizeHandler() {
+  const map = useMap();
+  const containerRef = useRef(map.getContainer());
+
+  useEffect(() => {
+    const container = containerRef.current?.parentElement;
+    if (!container) return;
+
+    const observer = new ResizeObserver(() => {
+      map.invalidateSize();
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [map]);
+
+  return null;
+}
+
 // [cl] 선택된 엔티티 변경 시 지도 범위 자동 조정
 function FitBounds({
   entities,
@@ -120,6 +139,7 @@ export default function TierReviewMapInner({
         ))}
 
         <FitBounds entities={selectedEntities} />
+        <ResizeHandler />
       </MapContainer>
 
       {/* [cl] 선택 카운트 오버레이 */}
