@@ -52,10 +52,11 @@ function getStats(category: string, data: any[]): any {
 
   for (const e of data) {
     if (e.name_ko) stats.hasKo++;
-    if (e.lat != null) stats.hasCoord++;
+    // [cl] 좌표 체크 — direct_coord 배열 형태도 지원 (places raw)
+    if (e.lat != null || (Array.isArray(e.direct_coord) && e.direct_coord.length >= 2)) stats.hasCoord++;
 
-    // kind 필드 (카테고리별로 다름)
-    const kind = e.event_kind || e.entity_kind || e.occupation || "unknown";
+    // [cl] kind 필드 (카테고리별로 다름, raw에는 _qid만 있을 수 있음)
+    const kind = e.event_kind || e.entity_kind || e.occupation || e.type || "unknown";
     stats.kinds[kind] = (stats.kinds[kind] || 0) + 1;
 
     // sitelinks 분포
@@ -113,10 +114,10 @@ export async function GET(request: NextRequest) {
   // [cl] 필터링
   let filtered = data;
 
-  // kind 필터
+  // [cl] kind 필터 — raw 데이터도 지원
   if (kind !== "all") {
     filtered = filtered.filter((e) => {
-      const k = e.event_kind || e.entity_kind || e.occupation || "unknown";
+      const k = e.event_kind || e.entity_kind || e.occupation || e.type || "unknown";
       return k === kind;
     });
   }

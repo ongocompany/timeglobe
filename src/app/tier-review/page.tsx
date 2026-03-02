@@ -1983,6 +1983,9 @@ interface DumpEntry {
   birth_place?: string;
   citizenship?: string;
   occupation?: string;
+  // places
+  inception?: number;
+  direct_coord?: number[];
   // common
   lat?: number;
   lon?: number;
@@ -2090,6 +2093,7 @@ function DumpBrowseView() {
   // [cl] 연도 표시
   const getYear = (e: DumpEntry): string => {
     if (e.point_in_time != null) return String(e.point_in_time);
+    if (e.inception != null) return String(e.inception);
     const s = e.start_year ?? e.birth_year ?? e.anchor_year;
     const ed = e.end_year ?? e.death_year;
     if (s == null) return "—";
@@ -2363,7 +2367,7 @@ function DumpBrowseView() {
               </th>
               <th style={{ padding: "8px 4px", width: 200, color: "#888" }}>설명</th>
               <th style={{ padding: "8px 4px", width: 120, color: "#888" }}>
-                {category === "persons" ? "직업" : category === "events" ? "위치" : "수도"}
+                {category === "persons" ? "출생지/직업" : category === "events" ? "위치" : category === "places" ? "국가" : "수도"}
               </th>
             </tr>
           </thead>
@@ -2418,10 +2422,12 @@ function DumpBrowseView() {
                   </td>
                   <td style={{ padding: "6px 4px", color: "#777", fontSize: 11 }}>
                     {category === "persons"
-                      ? e.occupation || "—"
+                      ? (e.birth_place || e.occupation || "—")
                       : category === "events"
                         ? (e.location || e.country || "—")
-                        : (e.capital || "—")
+                        : category === "places"
+                          ? (e.country || "—")
+                          : (e.capital || "—")
                     }
                   </td>
                 </tr>
