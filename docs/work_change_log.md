@@ -33,6 +33,35 @@
 
 ---
 
+## [2026-03-03] [cl] 덤프 브라우저 UI + 한국어 전량 파싱
+
+### 작업 내용
+
+#### 1. 덤프 데이터 브라우저 UI
+- tier-review 페이지에 "덤프 데이터" 탭 추가
+- 4개 카테고리(사건/역사엔티티/인물/장소) 서브탭
+- `/api/dump-browse` API: 서버사이드 페이지네이션, 필터링, 정렬
+- jinserver `/mnt/data2/wikidata/output/` 직접 읽기 (인메모리 캐시)
+
+#### 2. P31 누락 분석 및 수정
+- revolution 카테고리에 정당 16,953건 혼입 발견 (Q7278)
+- 주요 사건 전부 누락 (러시아혁명, WW1/2, 프랑스혁명, 동학농민혁명 등)
+- parseDump.py에 6개 P31 타입 추가: Q10931(혁명), Q124734(반란), Q900406(개혁), Q11514315(역사적 시대), Q103495(세계대전), Q13427116(농민봉기)
+
+#### 3. 한국어 전량 파싱 (parseKorean.py)
+- **전략 전환**: P31 카테고리별 파싱 → 한국어 label 있는 엔티티 전량 추출
+- Wikidata 한국어 표제어 ~74만건, 분류 없이 전부 JSONL 추출
+- 출력: `/mnt/data2/wikidata/output/korean_all.jsonl`
+- jinserver 백그라운드 실행 중 (예상 ~4시간)
+
+### 파일 변경
+- `src/app/api/dump-browse/route.ts` — 신규
+- `src/app/tier-review/page.tsx` — 수정 (DumpBrowseView 추가)
+- `scripts/wikidata/parseDump.py` — 수정 (P31 6개 추가)
+- `scripts/wikidata/parseKorean.py` — 신규
+
+---
+
 ## [2026-03-02] [cl] T2 대규모 정리 — 81개 감소 (816→735)
 
 ### 작업 내용

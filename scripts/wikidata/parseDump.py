@@ -137,6 +137,13 @@ Q_EVENTS = {
     "Q476300",    # armistice (정전)
     "Q47566",     # slave rebellion (노예 반란)
     "Q1318976",   # space mission (우주 임무)
+    # [cl] 누락 보완 — 주요 혁명/반란/전쟁이 빠져있었음 (2026-03-03)
+    "Q10931",     # revolution (혁명) — 러시아혁명, 프랑스혁명, 산업혁명 등
+    "Q124734",    # rebellion (반란) — 안사의 난, 동학농민혁명 등
+    "Q900406",    # reform (개혁) — 메이지 유신 등
+    "Q11514315",  # historical period (역사적 시대) — 산업혁명, 르네상스 등
+    "Q103495",    # world war (세계 대전) — WW1, WW2
+    "Q13427116",  # peasant revolt (농민 봉기) — 동학농민혁명 등
 }
 
 # Place 계열
@@ -515,6 +522,14 @@ def extract_event(entity, claims, p31_ids):
         "Q1318976": "space_mission",
         "Q7864918": "terrorist_attack",
         "Q107390": "discovery",
+        # [cl] 누락 보완 (2026-03-03)
+        "Q10931": "revolution",          # revolution (혁명)
+        "Q124734": "rebellion",          # rebellion (반란)
+        "Q13427116": "rebellion",        # peasant revolt (농민 봉기)
+        "Q47566": "rebellion",           # slave rebellion (기존 Q_EVENTS에 있었으나 kind_map 누락)
+        "Q900406": "reform",             # reform (개혁)
+        "Q11514315": "historical_period", # historical period (역사적 시대)
+        "Q103495": "war",                # world war (세계 대전)
     }
     for qid in p31_ids:
         if qid in kind_map:
