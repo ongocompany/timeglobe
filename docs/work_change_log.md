@@ -52,13 +52,29 @@
 - **전략 전환**: P31 카테고리별 파싱 → 한국어 label 있는 엔티티 전량 추출
 - Wikidata 한국어 표제어 ~74만건, 분류 없이 전부 JSONL 추출
 - 출력: `/mnt/data2/wikidata/output/korean_all.jsonl`
-- jinserver 백그라운드 실행 중 (예상 ~4시간)
+- jinserver 백그라운드 실행 중 (PID 15725, 예상 ~4시간, 속도 ~8,000건/초)
+
+#### 4. 덤프 브라우저 한국어 전체 탭 연동
+- dump-browse API에 JSONL 로더 추가 (korean_all.jsonl 직접 읽기)
+- "한국어 전체" 서브탭 추가 (보라색, 기본 탭으로 설정)
+- P31 QID → 한국어 라벨 매핑 (인물/도시/국가/전투/영화 등 30여개)
+- 5분 간격 캐시 갱신 — 파싱 완료 전에도 중간 결과 조회 가능
 
 ### 파일 변경
-- `src/app/api/dump-browse/route.ts` — 신규
-- `src/app/tier-review/page.tsx` — 수정 (DumpBrowseView 추가)
+- `src/app/api/dump-browse/route.ts` — 신규 (JSONL 로더 포함)
+- `src/app/tier-review/page.tsx` — 수정 (DumpBrowseView + 한국어전체 탭)
 - `scripts/wikidata/parseDump.py` — 수정 (P31 6개 추가)
 - `scripts/wikidata/parseKorean.py` — 신규
+
+### 커밋
+- `66b2d36` 덤프 데이터 브라우저 탭 추가
+- `a8bf1f7` raw JSONL 형식 호환성 개선
+- `5839479` 한국어 전량 파싱 스크립트 + parseDump P31 보완
+- `4a5b8ad` 덤프 브라우저에 한국어 전체 탭 추가
+
+### 진행 중
+- parseKorean.py 백그라운드 파싱 (PID 15725, ~4시간 소요 예상)
+- 파싱 완료 후: P31 기반 2차 분류 스크립트 필요
 
 ---
 
