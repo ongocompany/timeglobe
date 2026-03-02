@@ -5698,20 +5698,6 @@
     "sitelinks": 9
   },
   {
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "lon": 11,
-    "lat": 44,
-    "start_year": 961,
-    "end_year": 1014,
-    "lineage_id": "L0064",
-    "color": "hsl(49, 70%, 55%)",
-    "qid": "Q838931",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 39
-  },
-  {
     "name_en": "Ghaznavid Empire",
     "name_ko": "가즈나 왕조",
     "lon": 68.423333333,
@@ -5796,22 +5782,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 0
-  },
-  {
-    "name_en": "Kingdom of France",
-    "name_ko": "프랑스 왕국",
-    "lon": 2.35,
-    "lat": 48.86,
-    "start_year": 987,
-    "end_year": 1791,
-    "lineage_id": null,
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q70972",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 85,
-    "t1_start": 1300,
-    "t1_end": 1800
   },
   {
     "name_en": "Principality of Volhynia",
@@ -11198,34 +11168,6 @@
     "sitelinks": 24
   },
   {
-    "name_en": "Duchy of Prussia",
-    "name_ko": "프로이센 공국",
-    "lon": 20.483333333,
-    "lat": 55.733333333,
-    "start_year": 1525,
-    "end_year": 1618,
-    "lineage_id": null,
-    "color": "hsl(214, 70%, 55%)",
-    "qid": "Q153091",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 50
-  },
-  {
-    "name_en": "Prussia",
-    "name_ko": "프로이센",
-    "lon": 13.41,
-    "lat": 52.52,
-    "start_year": 1525,
-    "end_year": 1871,
-    "lineage_id": null,
-    "color": "hsl(45, 70%, 55%)",
-    "qid": "Q38872",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 134
-  },
-  {
     "name_en": "Mughal Empire",
     "name_ko": "무굴 제국",
     "lon": 78.02,
@@ -12582,20 +12524,6 @@
     "sitelinks": 3
   },
   {
-    "name_en": "Kingdom of Great Britain",
-    "name_ko": "그레이트브리튼 왕국",
-    "lon": -0.13333333,
-    "lat": 51.5,
-    "start_year": 1707,
-    "end_year": 1801,
-    "lineage_id": "L0060",
-    "color": "hsl(142, 70%, 55%)",
-    "qid": "Q161885",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 90
-  },
-  {
     "name_en": "Kingdom of Luang Phrabang",
     "name_ko": "루앙프라방 왕국",
     "lon": 102.138056,
@@ -13314,34 +13242,6 @@
     "sitelinks": 11
   },
   {
-    "name_en": "French constitutional monarchy",
-    "name_ko": "프랑스 입헌군주국",
-    "lon": 2.351388888,
-    "lat": 48.856944444,
-    "start_year": 1791,
-    "end_year": 1792,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q69323",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 40
-  },
-  {
-    "name_en": "French First Republic",
-    "name_ko": "프랑스 제1공화국",
-    "lon": 2.327222222,
-    "lat": 48.865277777,
-    "start_year": 1792,
-    "end_year": 1804,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q58296",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 71
-  },
-  {
     "name_en": "Anglo-Corsican Kingdom",
     "name_ko": "영국령 코르시카 왕국",
     "lon": 9.129884,
@@ -13664,20 +13564,6 @@
     "sitelinks": 8
   },
   {
-    "name_en": "United Kingdom of Great Britain and Ireland",
-    "name_ko": "그레이트브리튼 아일랜드 연합왕국",
-    "lon": -0.1275,
-    "lat": 51.507222222,
-    "start_year": 1801,
-    "end_year": 1927,
-    "lineage_id": "L0060",
-    "color": "hsl(142, 70%, 55%)",
-    "qid": "Q174193",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 80
-  },
-  {
     "name_en": "Kingdom of Etruria",
     "name_ko": "에트루리아 왕국",
     "lon": 11.838912,
@@ -13762,20 +13648,6 @@
     "sitelinks": 23
   },
   {
-    "name_en": "First French Empire",
-    "name_ko": "프랑스 제1제국",
-    "lon": 2.3325,
-    "lat": 48.862222222,
-    "start_year": 1804,
-    "end_year": 1815,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q71084",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 85
-  },
-  {
     "name_en": "Austrian Empire",
     "name_ko": "오스트리아 제국",
     "lon": 16.35,
@@ -13830,20 +13702,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 13
-  },
-  {
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "lon": 12.5,
-    "lat": 41.9,
-    "start_year": 1805,
-    "end_year": 1814,
-    "lineage_id": null,
-    "color": "hsl(39, 70%, 55%)",
-    "qid": "Q223936",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 51
   },
   {
     "name_en": "Kingdom of Saxony",
@@ -15050,20 +14908,6 @@
     "sitelinks": 5
   },
   {
-    "name_en": "French Second Republic",
-    "name_ko": "프랑스 제2공화국",
-    "lon": 2.483333333,
-    "lat": 48.816666666,
-    "start_year": 1848,
-    "end_year": 1852,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q58326",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 64
-  },
-  {
     "name_en": "Republic of San Marco",
     "name_ko": "산마르코 공화국",
     "lon": 12.31666667,
@@ -15160,20 +15004,6 @@
     "tier": 2,
     "region": "east_asia",
     "sitelinks": 25
-  },
-  {
-    "name_en": "Second French Empire",
-    "name_ko": "프랑스 제2제국",
-    "lon": 2.352222222,
-    "lat": 48.856388888,
-    "start_year": 1852,
-    "end_year": 1870,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q71092",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 73
   },
   {
     "name_en": "Principality of Montenegro",
@@ -15372,20 +15202,6 @@
     "sitelinks": 27
   },
   {
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "lon": 12.5,
-    "lat": 41.9,
-    "start_year": 1861,
-    "end_year": 1946,
-    "lineage_id": null,
-    "color": "hsl(39, 70%, 55%)",
-    "qid": "Q172579",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 95
-  },
-  {
     "name_en": "Union",
     "name_ko": "연방 (미국 남북 전쟁)",
     "lon": -77.04,
@@ -15554,20 +15370,6 @@
     "sitelinks": 29
   },
   {
-    "name_en": "French Third Republic",
-    "name_ko": "프랑스 제3공화국",
-    "lon": 2.316388888,
-    "lat": 48.870277777,
-    "start_year": 1870,
-    "end_year": 1940,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q70802",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 83
-  },
-  {
     "name_en": "German Empire",
     "name_ko": "독일 제국",
     "lon": 13.376111111,
@@ -15650,20 +15452,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 63
-  },
-  {
-    "name_en": "Italian Empire",
-    "name_ko": "이탈리아 제국",
-    "lon": 42.741111111,
-    "lat": 13.007777777,
-    "start_year": 1882,
-    "end_year": 1960,
-    "lineage_id": "L0172",
-    "color": "hsl(292, 70%, 55%)",
-    "qid": "Q926295",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 52
   },
   {
     "name_en": "British North Borneo",
@@ -16383,7 +16171,7 @@
   },
   {
     "name_en": "Republic of China",
-    "name_ko": "중화민국 대륙 시기",
+    "name_ko": "중화민국",
     "lon": 110,
     "lat": 40,
     "start_year": 1912,
@@ -16550,20 +16338,6 @@
     "sitelinks": 63
   },
   {
-    "name_en": "Russian Soviet Federative Socialist Republic",
-    "name_ko": "러시아 소비에트 연방 사회주의 공화국",
-    "lon": 100,
-    "lat": 62,
-    "start_year": 1917,
-    "end_year": 1991,
-    "lineage_id": null,
-    "color": "hsl(16, 70%, 55%)",
-    "qid": "Q2184",
-    "tier": 2,
-    "region": "unknown",
-    "sitelinks": 110
-  },
-  {
     "name_en": "Ukrainian People's Republic of Soviets",
     "name_ko": "우크라이나 인민소비에트공화국",
     "lon": 36.2167,
@@ -16618,20 +16392,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 46
-  },
-  {
-    "name_en": "Russian Socialist Federative Soviet Republic",
-    "name_ko": "러시아 사회주의 연방 소비에트 공화국",
-    "lon": 69,
-    "lat": 52,
-    "start_year": 1917,
-    "end_year": 1922,
-    "lineage_id": "L0195",
-    "color": "hsl(110, 70%, 55%)",
-    "qid": "Q2305208",
-    "tier": 2,
-    "region": "central_asia",
-    "sitelinks": 21
   },
   {
     "name_en": "Mountainous Republic of the Northern Caucasus",
@@ -16855,20 +16615,6 @@
     "qid": "Q605000",
     "tier": 2,
     "region": "europe",
-    "sitelinks": 21
-  },
-  {
-    "name_en": "Russian State",
-    "name_ko": "러시아국",
-    "lon": 73.37,
-    "lat": 55.04,
-    "start_year": 1918,
-    "end_year": 1920,
-    "lineage_id": null,
-    "color": "hsl(179, 70%, 55%)",
-    "qid": "Q4398229",
-    "tier": 2,
-    "region": "unknown",
     "sitelinks": 21
   },
   {
@@ -17642,20 +17388,6 @@
     "sitelinks": 39
   },
   {
-    "name_en": "National Government of the Republic of China",
-    "name_ko": "국민정부",
-    "lon": 118.8,
-    "lat": 32.06,
-    "start_year": 1925,
-    "end_year": 1948,
-    "lineage_id": null,
-    "color": "hsl(125, 70%, 55%)",
-    "qid": "Q2308761",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 21
-  },
-  {
     "name_en": "Lebanese Republic under French mandate",
     "name_ko": "프랑스 위임통치 레바논",
     "lon": 35.76667,
@@ -17811,7 +17543,7 @@
   },
   {
     "name_en": "Nazi Germany",
-    "name_ko": "독일국(나치)",
+    "name_ko": "나치 독일",
     "lon": 13.379722222,
     "lat": 52.511111111,
     "start_year": 1933,
@@ -17934,20 +17666,6 @@
     "tier": 3,
     "region": "middle_east",
     "sitelinks": 32
-  },
-  {
-    "name_en": "Vichy France",
-    "name_ko": "비시 프랑스",
-    "lon": 3.4,
-    "lat": 46.166667,
-    "start_year": 1938,
-    "end_year": 1944,
-    "lineage_id": null,
-    "color": "hsl(143, 70%, 55%)",
-    "qid": "Q69808",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 89
   },
   {
     "name_en": "Hatay State",
@@ -18174,20 +17892,6 @@
     "sitelinks": 23
   },
   {
-    "name_en": "Italian Social Republic",
-    "name_ko": "이탈리아 사회공화국",
-    "lon": 10.528278848,
-    "lat": 45.607114093,
-    "start_year": 1943,
-    "end_year": 1945,
-    "lineage_id": "L0066",
-    "color": "hsl(214, 70%, 55%)",
-    "qid": "Q153660",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 66
-  },
-  {
     "name_en": "Albanian Kingdom",
     "name_ko": "알바니아 왕국",
     "lon": 19.82,
@@ -18256,20 +17960,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 67
-  },
-  {
-    "name_en": "Provisional Government of the French Republic",
-    "name_ko": "프랑스 공화국 임시정부",
-    "lon": 2.33305556,
-    "lat": 48.86666667,
-    "start_year": 1944,
-    "end_year": 1946,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q783684",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 42
   },
   {
     "name_en": "Second East Turkestan Republic",
@@ -18368,20 +18058,6 @@
     "tier": 2,
     "region": "east_asia",
     "sitelinks": 24
-  },
-  {
-    "name_en": "French Fourth Republic",
-    "name_ko": "프랑스 제4공화국",
-    "lon": 2.333055555,
-    "lat": 48.866666666,
-    "start_year": 1946,
-    "end_year": 1958,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q69829",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 60
   },
   {
     "name_en": "People's Republic of Bulgaria",
@@ -19880,20 +19556,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 28
-  },
-  {
-    "name_en": "Russian Republic",
-    "name_ko": "러시아 공화국",
-    "lon": 30.32,
-    "lat": 59.93,
-    "start_year": 1917,
-    "end_year": 1917,
-    "lineage_id": null,
-    "color": "hsl(90, 70%, 55%)",
-    "qid": "Q139319",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 110
   },
   {
     "name_en": "Empire of Vietnam",
@@ -22442,7 +22104,7 @@
     "name_ko": "영국",
     "lon": -0.116667,
     "lat": 51.5,
-    "start_year": 1886,
+    "start_year": 1707,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(142, 70%, 55%)",
@@ -22498,7 +22160,7 @@
     "name_ko": "프랑스",
     "lon": 2.33333,
     "lat": 48.8667,
-    "start_year": 1886,
+    "start_year": 987,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(133, 70%, 55%)",
@@ -22578,11 +22240,11 @@
     "sitelinks": 0
   },
   {
-    "name_en": "Italy/Sardinia",
+    "name_en": "Italy",
     "name_ko": "이탈리아",
     "lon": 12.4833,
     "lat": 41.9,
-    "start_year": 1886,
+    "start_year": 1861,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(39, 70%, 55%)",
@@ -22676,12 +22338,12 @@
     "sitelinks": 0
   },
   {
-    "name_en": "USSR",
+    "name_en": "Soviet Union",
     "name_ko": "소련",
     "lon": 37.6156,
     "lat": 55.7522,
-    "start_year": 1886,
-    "end_year": 2025,
+    "start_year": 1922,
+    "end_year": 1991,
     "lineage_id": null,
     "color": "hsl(48, 70%, 55%)",
     "qid": "CSHAPES_USSR",
@@ -24646,20 +24308,6 @@
     "color": "hsl(123, 70%, 55%)",
     "qid": "CSHAPES_East_Aden_Protectorate",
     "tier": 3,
-    "region": "unknown",
-    "sitelinks": 0
-  },
-  {
-    "name_en": "East Germany",
-    "name_ko": "동독",
-    "lon": 13.4027,
-    "lat": 52.5178,
-    "start_year": 1945,
-    "end_year": 1990,
-    "lineage_id": null,
-    "color": "hsl(45, 70%, 55%)",
-    "qid": "CSHAPES_East_Germany",
-    "tier": 2,
     "region": "unknown",
     "sitelinks": 0
   },

@@ -4831,22 +4831,6 @@
     "tier_reason": "score_top25"
   },
   {
-    "qid": "Q3755547",
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "start": "476",
-    "end": "493",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 12,
-    "region": "unknown",
-    "score": 55.9,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q676184",
     "name_en": "Kingdom of Sussex",
     "name_ko": "서섹스 왕국",
@@ -6995,22 +6979,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q5343710",
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "start": "774",
-    "end": "961",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 14,
-    "region": "unknown",
-    "score": 61.6,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q325493",
     "name_en": "Kingdom of Abkhazia",
     "name_ko": "압하스 왕국",
@@ -8936,22 +8904,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q838931",
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "start": "961",
-    "end": "1014",
-    "lon": "11.0",
-    "lat": "44.0",
-    "type": "historical",
-    "lineage_id": "L0064",
-    "tier": 2,
-    "sitelinks": 39,
-    "region": "europe",
-    "score": 65.4,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q249578",
     "name_en": "Ghaznavid Empire",
     "name_ko": "가즈나 왕조",
@@ -9129,25 +9081,6 @@
     "region": "unknown",
     "score": 51.6,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q70972",
-    "name_en": "Kingdom of France",
-    "name_ko": "프랑스 왕국",
-    "start": "987",
-    "end": "1791",
-    "lon": "2.35",
-    "lat": "48.86",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 85,
-    "region": "europe",
-    "score": 98.6,
-    "tier_reason": "score_top8",
-    "t1_start": 1300,
-    "t1_end": 1800,
-    "t1_sources": 3
   },
   {
     "qid": "Q3653113",
@@ -18729,38 +18662,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q153091",
-    "name_en": "Duchy of Prussia",
-    "name_ko": "프로이센 공국",
-    "start": "1525",
-    "end": "1618",
-    "lon": "20.483333333",
-    "lat": "55.733333333",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 3,
-    "sitelinks": 50,
-    "region": "europe",
-    "score": 71.9,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q38872",
-    "name_en": "Prussia",
-    "name_ko": "프로이센",
-    "start": "1525",
-    "end": "1871",
-    "lon": "13.41",
-    "lat": "52.52",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 134,
-    "region": "europe",
-    "score": 95.4,
-    "tier_reason": "score_top8"
-  },
-  {
     "qid": "Q33296",
     "name_en": "Mughal Empire",
     "name_ko": "무굴 제국",
@@ -21339,22 +21240,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q161885",
-    "name_en": "Kingdom of Great Britain",
-    "name_ko": "그레이트브리튼 왕국",
-    "start": "1707",
-    "end": "1801",
-    "lon": "-0.13333333",
-    "lat": "51.5",
-    "type": "historical",
-    "lineage_id": "L0060",
-    "tier": 2,
-    "sitelinks": 90,
-    "region": "europe",
-    "score": 84.1,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q338248",
     "name_en": "Kingdom of Luang Phrabang",
     "name_ko": "루앙프라방 왕국",
@@ -22785,38 +22670,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q69323",
-    "name_en": "French constitutional monarchy",
-    "name_ko": "프랑스 입헌군주국",
-    "start": "1791",
-    "end": "1792",
-    "lon": "2.351388888",
-    "lat": "48.856944444",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 40,
-    "region": "europe",
-    "score": 61.6,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q58296",
-    "name_en": "French First Republic",
-    "name_ko": "프랑스 제1공화국",
-    "start": "1792",
-    "end": "1804",
-    "lon": "2.327222222",
-    "lat": "48.865277777",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 71,
-    "region": "europe",
-    "score": 77.7,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q684430",
     "name_en": "Rauracian Republic",
     "name_ko": "라우라시아은 공화국",
@@ -23329,22 +23182,6 @@
     "tier_reason": "score_top25"
   },
   {
-    "qid": "Q174193",
-    "name_en": "United Kingdom of Great Britain and Ireland",
-    "name_ko": "그레이트브리튼 아일랜드 연합왕국",
-    "start": "1801",
-    "end": "1927",
-    "lon": "-0.1275",
-    "lat": "51.507222222",
-    "type": "historical",
-    "lineage_id": "L0060",
-    "tier": 2,
-    "sitelinks": 80,
-    "region": "europe",
-    "score": 82.5,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q223793",
     "name_en": "Kingdom of Etruria",
     "name_ko": "에트루리아 왕국",
@@ -23521,22 +23358,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q71084",
-    "name_en": "First French Empire",
-    "name_ko": "프랑스 제1제국",
-    "start": "1804",
-    "end": "1815",
-    "lon": "2.3325",
-    "lat": "48.862222222",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 85,
-    "region": "europe",
-    "score": 81.3,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q131964",
     "name_en": "Austrian Empire",
     "name_ko": "오스트리아 제국",
@@ -23599,22 +23420,6 @@
     "region": "europe",
     "score": 35.5,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q223936",
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "start": "1805",
-    "end": "1814",
-    "lon": "12.5",
-    "lat": "41.9",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 51,
-    "region": "europe",
-    "score": 67.1,
-    "tier_reason": "score_top55"
   },
   {
     "qid": "Q153015",
@@ -25537,22 +25342,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q58326",
-    "name_en": "French Second Republic",
-    "name_ko": "프랑스 제2공화국",
-    "start": "1848",
-    "end": "1852",
-    "lon": "2.483333333",
-    "lat": "48.816666666",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 64,
-    "region": "europe",
-    "score": 74.9,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q2037576",
     "name_en": "Republic of San Marco",
     "name_ko": "산마르코 공화국",
@@ -25759,22 +25548,6 @@
     "region": "east_asia",
     "score": 49.4,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q71092",
-    "name_en": "Second French Empire",
-    "name_ko": "프랑스 제2제국",
-    "start": "1852",
-    "end": "1870",
-    "lon": "2.352222222",
-    "lat": "48.856388888",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 73,
-    "region": "europe",
-    "score": 78.5,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q779011",
@@ -26081,22 +25854,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q172579",
-    "name_en": "Kingdom of Italy",
-    "name_ko": "이탈리아 왕국",
-    "start": "1861",
-    "end": "1946",
-    "lon": "12.5",
-    "lat": "41.9",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 95,
-    "region": "europe",
-    "score": 84.9,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q214102",
     "name_en": "Union",
     "name_ko": "연방 (미국 남북 전쟁)",
@@ -26369,22 +26126,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q70802",
-    "name_en": "French Third Republic",
-    "name_ko": "프랑스 제3공화국",
-    "start": "1870",
-    "end": "1940",
-    "lon": "2.316388888",
-    "lat": "48.870277777",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 83,
-    "region": "europe",
-    "score": 82.1,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q21849591",
     "name_en": "Diggers Republic",
     "name_ko": "디게르스 공화국",
@@ -26559,22 +26300,6 @@
     "region": "europe",
     "score": 74.8,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q926295",
-    "name_en": "Italian Empire",
-    "name_ko": "이탈리아 제국",
-    "start": "1882",
-    "end": "1960",
-    "lon": "42.741111111",
-    "lat": "13.007777777",
-    "type": "historical",
-    "lineage_id": "L0172",
-    "tier": 2,
-    "sitelinks": 52,
-    "region": "middle_east",
-    "score": 77.8,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q30899490",
@@ -27558,7 +27283,7 @@
   {
     "qid": "Q13426199",
     "name_en": "Republic of China",
-    "name_ko": "중화민국 대륙 시기",
+    "name_ko": "중화민국",
     "start": "1912",
     "end": "1949",
     "lon": "110.0",
@@ -27844,22 +27569,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q2184",
-    "name_en": "Russian Soviet Federative Socialist Republic",
-    "name_ko": "러시아 소비에트 연방 사회주의 공화국",
-    "start": "1917",
-    "end": "1991",
-    "lon": "100.0",
-    "lat": "62.0",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 110,
-    "region": "unknown",
-    "score": 88,
-    "tier_reason": "score_top8"
-  },
-  {
     "qid": "Q2381337",
     "name_en": "Ukrainian People's Republic of Soviets",
     "name_ko": "우크라이나 인민소비에트공화국",
@@ -27954,22 +27663,6 @@
     "region": "unknown",
     "score": 52.9,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q2305208",
-    "name_en": "Russian Socialist Federative Soviet Republic",
-    "name_ko": "러시아 사회주의 연방 소비에트 공화국",
-    "start": "1917",
-    "end": "1922",
-    "lon": "69.0",
-    "lat": "52.0",
-    "type": "historical",
-    "lineage_id": "L0195",
-    "tier": 2,
-    "sitelinks": 21,
-    "region": "central_asia",
-    "score": 43.2,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q1639475",
@@ -28258,22 +27951,6 @@
     "region": "europe",
     "score": 41.1,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q4398229",
-    "name_en": "Russian State",
-    "name_ko": "러시아국",
-    "start": "1918",
-    "end": "1920",
-    "lon": "73.37",
-    "lat": "55.04",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 21,
-    "region": "unknown",
-    "score": 66,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q965346",
@@ -29444,22 +29121,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q2308761",
-    "name_en": "National Government of the Republic of China",
-    "name_ko": "국민정부",
-    "start": "1925",
-    "end": "1948",
-    "lon": "118.8",
-    "lat": "32.06",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 21,
-    "region": "east_asia",
-    "score": 49.6,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q17748736",
     "name_en": "Second Portuguese Republic",
     "name_ko": "세코은드 포르투갈 공화국",
@@ -29654,7 +29315,7 @@
   {
     "qid": "Q7318",
     "name_en": "Nazi Germany",
-    "name_ko": "독일국(나치)",
+    "name_ko": "나치 독일",
     "start": "1933",
     "end": "1945",
     "lon": "13.379722222",
@@ -29842,22 +29503,6 @@
     "region": "middle_east",
     "score": 60.9,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q69808",
-    "name_en": "Vichy France",
-    "name_ko": "비시 프랑스",
-    "start": "1938",
-    "end": "1944",
-    "lon": "3.4",
-    "lat": "46.166667",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 89,
-    "region": "europe",
-    "score": 81.1,
-    "tier_reason": "score_top25"
   },
   {
     "qid": "Q146761",
@@ -30132,22 +29777,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q153660",
-    "name_en": "Italian Social Republic",
-    "name_ko": "이탈리아 사회공화국",
-    "start": "1943",
-    "end": "1945",
-    "lon": "10.528278848",
-    "lat": "45.607114093",
-    "type": "historical",
-    "lineage_id": "L0066",
-    "tier": 2,
-    "sitelinks": 66,
-    "region": "europe",
-    "score": 75.1,
-    "tier_reason": "score_top25"
-  },
-  {
     "qid": "Q777147",
     "name_en": "Albanian Kingdom",
     "name_ko": "알바니아 왕국",
@@ -30226,22 +29855,6 @@
     "region": "europe",
     "score": 76.7,
     "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q783684",
-    "name_en": "Provisional Government of the French Republic",
-    "name_ko": "프랑스 공화국 임시정부",
-    "start": "1944",
-    "end": "1946",
-    "lon": "2.33305556",
-    "lat": "48.86666667",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 42,
-    "region": "europe",
-    "score": 60.1,
-    "tier_reason": "score_rest"
   },
   {
     "qid": "Q10988528",
@@ -30353,22 +29966,6 @@
     "sitelinks": 24,
     "region": "east_asia",
     "score": 52.6,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q69829",
-    "name_en": "French Fourth Republic",
-    "name_ko": "프랑스 제4공화국",
-    "start": "1946",
-    "end": "1958",
-    "lon": "2.333055555",
-    "lat": "48.866666666",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 60,
-    "region": "europe",
-    "score": 71.7,
     "tier_reason": "score_top55"
   },
   {
@@ -32641,22 +32238,6 @@
     "sitelinks": 28,
     "region": "europe",
     "score": 40.4,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q139319",
-    "name_en": "Russian Republic",
-    "name_ko": "러시아 공화국",
-    "start": "1917",
-    "end": "1917",
-    "lon": "30.32",
-    "lat": "59.93",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 110,
-    "region": "europe",
-    "score": 56.5,
     "tier_reason": "score_rest"
   },
   {
@@ -35454,7 +35035,7 @@
     "qid": "CSHAPES_United_Kingdom",
     "name_en": "United Kingdom",
     "name_ko": "영국",
-    "start": "1886",
+    "start": "1707",
     "end": "Present",
     "lat": "51.5",
     "lon": "-0.116667",
@@ -35502,7 +35083,7 @@
     "qid": "CSHAPES_France",
     "name_en": "France",
     "name_ko": "프랑스",
-    "start": "1886",
+    "start": "987",
     "end": "Present",
     "lat": "48.8667",
     "lon": "2.33333",
@@ -35572,9 +35153,9 @@
   },
   {
     "qid": "CSHAPES_Italy/Sardinia",
-    "name_en": "Italy/Sardinia",
+    "name_en": "Italy",
     "name_ko": "이탈리아",
-    "start": "1886",
+    "start": "1861",
     "end": "Present",
     "lat": "41.9",
     "lon": "12.4833",
@@ -35656,10 +35237,10 @@
   },
   {
     "qid": "CSHAPES_USSR",
-    "name_en": "USSR",
+    "name_en": "Soviet Union",
     "name_ko": "소련",
-    "start": "1886",
-    "end": "Present",
+    "start": "1922",
+    "end": "1991",
     "lat": "55.7522",
     "lon": "37.6156",
     "type": "historical",
@@ -37345,18 +36926,6 @@
     "type": "historical",
     "lineage_id": null,
     "tier": 3
-  },
-  {
-    "qid": "CSHAPES_East_Germany",
-    "name_en": "East Germany",
-    "name_ko": "동독",
-    "start": "1945",
-    "end": "1990",
-    "lat": "52.5178",
-    "lon": "13.4027",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2
   },
   {
     "qid": "CSHAPES_Korea_Democratic_People's_Repu",
