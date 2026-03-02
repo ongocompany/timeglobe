@@ -6423,7 +6423,7 @@
     "lineage_id": "L0075",
     "color": "hsl(216, 70%, 55%)",
     "qid": "Q1139762",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 31
   },
@@ -6891,7 +6891,7 @@
     "lineage_id": "L0100",
     "color": "hsl(194, 70%, 55%)",
     "qid": "Q171203",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 44
   },
@@ -9351,7 +9351,7 @@
     "lineage_id": null,
     "color": "hsl(110, 70%, 55%)",
     "qid": "Q796583",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 53
   },
@@ -9463,7 +9463,7 @@
     "lineage_id": null,
     "color": "hsl(194, 70%, 55%)",
     "qid": "Q849623",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 41
   },
@@ -11295,7 +11295,7 @@
     "lineage_id": "L0126",
     "color": "hsl(168, 70%, 55%)",
     "qid": "Q468814",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 60
   },
@@ -11759,7 +11759,7 @@
     "lineage_id": "L0164",
     "color": "hsl(143, 70%, 55%)",
     "qid": "Q722071",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 46
   },
@@ -13099,7 +13099,7 @@
     "lineage_id": "L0178",
     "color": "hsl(65, 70%, 55%)",
     "qid": "Q600524",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 40
   },
@@ -13547,7 +13547,7 @@
     "lineage_id": "L0185",
     "color": "hsl(344, 70%, 55%)",
     "qid": "Q729768",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 41
   },
@@ -21465,8 +21465,8 @@
     "lineage_id": null,
     "color": "hsl(342, 70%, 55%)",
     "qid": "Q115",
-    "tier": 2,
-    "region": "middle_east",
+    "tier": 1,
+    "region": "sub_saharan",
     "sitelinks": 340
   },
   {
@@ -21563,7 +21563,7 @@
     "lineage_id": null,
     "color": "hsl(199, 70%, 55%)",
     "qid": "Q1028",
-    "tier": 2,
+    "tier": 1,
     "region": "north_africa",
     "sitelinks": 328
   },
@@ -22109,7 +22109,7 @@
     "lineage_id": null,
     "color": "hsl(122, 70%, 55%)",
     "qid": "Q258",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 362
   },
@@ -22181,7 +22181,7 @@
     "lineage_id": null,
     "color": "hsl(256, 70%, 55%)",
     "qid": "Q1033",
-    "tier": 2,
+    "tier": 1,
     "region": "sub_saharan",
     "sitelinks": 343
   },

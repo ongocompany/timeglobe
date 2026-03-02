@@ -10269,11 +10269,11 @@
     "lat": "13.099",
     "type": "historical",
     "lineage_id": "L0075",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 31,
     "region": "sub_saharan",
     "score": 84.3,
-    "tier_reason": "score_top8"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q2450154",
@@ -10997,11 +10997,11 @@
     "lat": "6.31667",
     "type": "historical",
     "lineage_id": "L0100",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 44,
     "region": "sub_saharan",
     "score": 90.2,
-    "tier_reason": "score_top8"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q2183293",
@@ -15050,11 +15050,11 @@
     "lat": "-6.266667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 53,
     "region": "sub_saharan",
     "score": 87.1,
-    "tier_reason": "score_top8"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q264970",
@@ -15290,11 +15290,11 @@
     "lat": "7.85",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 41,
     "region": "sub_saharan",
     "score": 80.7,
-    "tier_reason": "score_top8"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q10841128",
@@ -18346,11 +18346,11 @@
     "lat": "7.185555555",
     "type": "historical",
     "lineage_id": "L0126",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 60,
     "region": "sub_saharan",
     "score": 85.2,
-    "tier_reason": "score_top8"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q786080",
@@ -19245,11 +19245,11 @@
     "lat": "5.45",
     "type": "historical",
     "lineage_id": "L0164",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 46,
     "region": "sub_saharan",
     "score": 78.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q83618",
@@ -21805,11 +21805,11 @@
     "lat": "13.067222222",
     "type": "historical",
     "lineage_id": "L0178",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 40,
     "region": "sub_saharan",
     "score": 70.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q16086793",
@@ -22429,11 +22429,11 @@
     "lat": "-28.2975",
     "type": "historical",
     "lineage_id": "L0185",
-    "tier": 2,
+    "tier": 1,
     "sitelinks": 41,
     "region": "sub_saharan",
     "score": 70.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "review_session7_africa_relative"
   },
   {
     "qid": "Q1117051",
@@ -35865,9 +35865,9 @@
     "lon": "38.7751",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 2,
-    "tier_reason": "migrated_from_cshapes",
-    "region": "middle_east",
+    "tier": 1,
+    "tier_reason": "review_session7_africa_relative",
+    "region": "sub_saharan",
     "score": 0,
     "sitelinks": 340
   },
@@ -35977,8 +35977,8 @@
     "lon": "-6.83",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 2,
-    "tier_reason": "migrated_from_cshapes",
+    "tier": 1,
+    "tier_reason": "review_session7_africa_relative",
     "region": "north_africa",
     "score": 0,
     "sitelinks": 328
@@ -36599,8 +36599,8 @@
     "lon": "28.2294",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 2,
-    "tier_reason": "migrated_from_cshapes",
+    "tier": 1,
+    "tier_reason": "review_session7_africa_relative",
     "region": "sub_saharan",
     "score": 0,
     "sitelinks": 362
@@ -36681,8 +36681,8 @@
     "lon": "7.53333",
     "type": "modern_state",
     "lineage_id": null,
-    "tier": 2,
-    "tier_reason": "migrated_from_cshapes",
+    "tier": 1,
+    "tier_reason": "review_session7_africa_relative",
     "region": "sub_saharan",
     "score": 0,
     "sitelinks": 343
