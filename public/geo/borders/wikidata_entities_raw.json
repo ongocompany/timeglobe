@@ -8633,11 +8633,11 @@
     "lat": "50.94",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 32,
     "region": "europe",
     "score": 62.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q5124786",
@@ -11543,11 +11543,11 @@
     "lat": "39.62",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 52,
     "region": "europe",
     "score": 77.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q332005",
@@ -14594,11 +14594,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "unknown",
     "score": 58.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q704300",
@@ -14772,11 +14772,11 @@
     "lat": "50.85",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 41,
     "region": "europe",
     "score": 67.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q7245103",
@@ -14935,11 +14935,11 @@
     "lat": "48.0",
     "type": "historical",
     "lineage_id": "L0052",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 24,
     "region": "europe",
     "score": 54.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q571775",
@@ -17087,11 +17087,11 @@
     "lat": "2.188888888",
     "type": "historical",
     "lineage_id": "L0146",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 17,
     "region": "southeast_asia",
     "score": 51.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q2627602",
@@ -17327,11 +17327,11 @@
     "lat": "50.92",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 24,
     "region": "europe",
     "score": 53.8,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q33296",
@@ -17458,11 +17458,11 @@
     "lat": "-12.04333333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "latin_america",
     "score": 51.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q1150344",
@@ -18615,11 +18615,11 @@
     "lat": "-8.063713",
     "type": "historical",
     "lineage_id": "L0156",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 31,
     "region": "latin_america",
     "score": 72.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q2634240",
@@ -18938,11 +18938,11 @@
     "lat": "54.083333333",
     "type": "historical",
     "lineage_id": "L0152",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 34,
     "region": "europe",
     "score": 62.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q892272",
@@ -20662,11 +20662,11 @@
     "lat": "22.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 31,
     "region": "south_asia",
     "score": 62.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q18450904",
@@ -21046,11 +21046,11 @@
     "lat": "42.172932",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 24,
     "region": "europe",
     "score": 49.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q370736",
@@ -21978,11 +21978,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 46,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q7416493",
@@ -22618,11 +22618,11 @@
     "lat": "16.87",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 33,
     "region": "southeast_asia",
     "score": 70.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q3780537",
@@ -24062,11 +24062,11 @@
     "lat": "-22.0",
     "type": "historical",
     "lineage_id": "L0189",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 51,
     "region": "sub_saharan",
     "score": 75.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q552157",
@@ -24110,11 +24110,11 @@
     "lat": "9.560555555",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 43,
     "region": "sub_saharan",
     "score": 72.2,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q668294",
@@ -24126,11 +24126,11 @@
     "lat": "4.0369",
     "type": "historical",
     "lineage_id": "L0190",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 44,
     "region": "sub_saharan",
     "score": 72,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q689837",
@@ -24142,11 +24142,11 @@
     "lat": "25.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 43,
     "region": "north_africa",
     "score": 77.3,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q2340665",
@@ -24190,11 +24190,11 @@
     "lat": "-2.413055555",
     "type": "historical",
     "lineage_id": "L0167",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 58,
     "region": "sub_saharan",
     "score": 78.5,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q747314",
@@ -24254,11 +24254,11 @@
     "lat": "21.033333333",
     "type": "historical",
     "lineage_id": "L0110",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 77,
     "region": "southeast_asia",
     "score": 82.9,
-    "tier_reason": "review_session7"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q2096935",
@@ -24318,11 +24318,11 @@
     "lat": "15.333333333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 29,
     "region": "middle_east",
     "score": 63.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q1320058",
@@ -24465,11 +24465,11 @@
     "lat": "35.51666667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 39,
     "region": "europe",
     "score": 59.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q3496573",
@@ -24641,11 +24641,11 @@
     "lat": "47.56",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 33,
     "region": "north_america",
     "score": 63.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q752431",
@@ -24819,11 +24819,11 @@
     "lat": "6.13",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 31,
     "region": "sub_saharan",
     "score": 56.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q797527",
@@ -24835,11 +24835,11 @@
     "lat": "6.39527778",
     "type": "historical",
     "lineage_id": "L0164",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 33,
     "region": "sub_saharan",
     "score": 59.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q138327013",
@@ -24915,11 +24915,11 @@
     "lat": "41.3",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 20,
     "region": "central_asia",
     "score": 39.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q4430531",
@@ -24979,11 +24979,11 @@
     "lat": "50.0",
     "type": "historical",
     "lineage_id": "L0195",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 35,
     "region": "central_asia",
     "score": 56.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q75903",
@@ -24995,11 +24995,11 @@
     "lat": "41.311111111",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 49,
     "region": "central_asia",
     "score": 68.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q303836",
@@ -25111,11 +25111,11 @@
     "lat": "44.05",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 21,
     "region": "europe",
     "score": 41.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q965346",
@@ -25143,11 +25143,11 @@
     "lat": "47.65",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 38,
     "region": "europe",
     "score": 56.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q9301958",
@@ -25191,11 +25191,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 1,
     "region": "unknown",
     "score": 11.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q690821",
@@ -25223,11 +25223,11 @@
     "lat": "43.32",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 22,
     "region": "central_asia",
     "score": 45.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q2308885",
@@ -25255,11 +25255,11 @@
     "lat": "49.9",
     "type": "historical",
     "lineage_id": "L0194",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 29,
     "region": "europe",
     "score": 49,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q41304",
@@ -25433,11 +25433,11 @@
     "lat": "4.166667",
     "type": "historical",
     "lineage_id": "L0190",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 31,
     "region": "sub_saharan",
     "score": 55.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q1028848",
@@ -25449,11 +25449,11 @@
     "lat": "3.866419",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 27,
     "region": "sub_saharan",
     "score": 52.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q1343485",
@@ -25481,11 +25481,11 @@
     "lat": "39.77",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 45,
     "region": "south_asia",
     "score": 68.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q131337",
@@ -25545,11 +25545,11 @@
     "lat": "41.55",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 45,
     "region": "central_asia",
     "score": 65.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q146872",
@@ -25593,11 +25593,11 @@
     "lat": "45.3531",
     "type": "historical",
     "lineage_id": "L0103",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 41,
     "region": "europe",
     "score": 59.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q25432445",
@@ -25705,11 +25705,11 @@
     "lat": "41.716667",
     "type": "historical",
     "lineage_id": "L0079",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 68,
     "region": "middle_east",
     "score": 79.2,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q590743",
@@ -25753,11 +25753,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 47.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q10872373",
@@ -25881,11 +25881,11 @@
     "lat": "25.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 43,
     "region": "east_asia",
     "score": 67.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q30623",
@@ -25949,11 +25949,11 @@
     "lat": "39.8",
     "type": "historical",
     "lineage_id": "L0162",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "east_asia",
     "score": 39.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q168811",
@@ -26125,11 +26125,11 @@
     "lat": "40.816666666",
     "type": "historical",
     "lineage_id": "L0197",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 35,
     "region": "east_asia",
     "score": 64.1,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q130280",
@@ -26319,11 +26319,11 @@
     "lat": "37.57",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 24,
     "region": "east_asia",
     "score": 53.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q15242873",
@@ -26335,11 +26335,11 @@
     "lat": "39.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 24,
     "region": "east_asia",
     "score": 52.6,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q2625496",
@@ -26367,11 +26367,11 @@
     "lat": "10.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 8,
     "region": "southeast_asia",
     "score": 28.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q60770428",
@@ -26431,11 +26431,11 @@
     "lat": "33.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 40,
     "region": "south_asia",
     "score": 65.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q705044",
@@ -26495,11 +26495,11 @@
     "lat": "6.934444444",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 28,
     "region": "south_asia",
     "score": 53.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q7233551",
@@ -26595,11 +26595,11 @@
     "lat": "-2.533333333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 31,
     "region": "oceania",
     "score": 56.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q1414395",
@@ -26675,11 +26675,11 @@
     "lat": "15.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 129,
     "region": "north_america",
     "score": 89.5,
-    "tier_reason": "review_session7"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q19901436",
@@ -26741,11 +26741,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 12,
     "region": "unknown",
     "score": 54.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q170468",
@@ -27161,11 +27161,11 @@
     "lat": "-18.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 12,
     "region": "oceania",
     "score": 31.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q6500954",
@@ -27211,11 +27211,11 @@
     "lat": "35.19",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 13,
     "region": "middle_east",
     "score": 37.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "demoted_non_sovereign"
   },
   {
     "qid": "Q2368688",
@@ -35452,8 +35452,8 @@
     "lat": "-33.87",
     "lon": "151.21",
     "type": "historical",
-    "tier": 2,
-    "tier_reason": "review_session7_australia",
+    "tier": 3,
+    "tier_reason": "demoted_non_sovereign",
     "region": "oceania",
     "sitelinks": 14
   },

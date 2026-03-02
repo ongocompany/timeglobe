@@ -5469,7 +5469,7 @@
     "lineage_id": null,
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q660393",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 32
   },
@@ -7065,7 +7065,7 @@
     "lineage_id": null,
     "color": "hsl(306, 70%, 55%)",
     "qid": "Q187684",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 52
   },
@@ -9011,7 +9011,7 @@
     "lineage_id": null,
     "color": "hsl(39, 70%, 55%)",
     "qid": "Q157109",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 41
   },
@@ -9081,7 +9081,7 @@
     "lineage_id": "L0052",
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q552033",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 24
   },
@@ -10313,7 +10313,7 @@
     "lineage_id": "L0146",
     "color": "hsl(116, 70%, 55%)",
     "qid": "Q2988343",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 17
   },
@@ -10453,7 +10453,7 @@
     "lineage_id": null,
     "color": "hsl(34, 70%, 55%)",
     "qid": "Q648046",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 24
   },
@@ -10537,7 +10537,7 @@
     "lineage_id": null,
     "color": "hsl(229, 70%, 55%)",
     "qid": "Q119695",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 15
   },
@@ -11181,7 +11181,7 @@
     "lineage_id": "L0156",
     "color": "hsl(234, 70%, 55%)",
     "qid": "Q221357",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 31
   },
@@ -11335,7 +11335,7 @@
     "lineage_id": "L0152",
     "color": "hsl(17, 70%, 55%)",
     "qid": "Q682318",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 34
   },
@@ -12161,7 +12161,7 @@
     "lineage_id": null,
     "color": "hsl(174, 70%, 55%)",
     "qid": "Q2001966",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 31
   },
@@ -12385,7 +12385,7 @@
     "lineage_id": null,
     "color": "hsl(49, 70%, 55%)",
     "qid": "Q83536",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 24
   },
@@ -13393,7 +13393,7 @@
     "lineage_id": null,
     "color": "hsl(255, 70%, 55%)",
     "qid": "Q2376315",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 33
   },
@@ -14261,7 +14261,7 @@
     "lineage_id": "L0189",
     "color": "hsl(42, 70%, 55%)",
     "qid": "Q153665",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 51
   },
@@ -14303,7 +14303,7 @@
     "lineage_id": null,
     "color": "hsl(163, 70%, 55%)",
     "qid": "Q662653",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 43
   },
@@ -14317,7 +14317,7 @@
     "lineage_id": "L0190",
     "color": "hsl(118, 70%, 55%)",
     "qid": "Q668294",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 44
   },
@@ -14331,7 +14331,7 @@
     "lineage_id": null,
     "color": "hsl(242, 70%, 55%)",
     "qid": "Q689837",
-    "tier": 2,
+    "tier": 3,
     "region": "north_africa",
     "sitelinks": 43
   },
@@ -14373,7 +14373,7 @@
     "lineage_id": "L0167",
     "color": "hsl(120, 70%, 55%)",
     "qid": "Q153963",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 58
   },
@@ -14429,7 +14429,7 @@
     "lineage_id": "L0110",
     "color": "hsl(285, 70%, 55%)",
     "qid": "Q185682",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 77
   },
@@ -14471,7 +14471,7 @@
     "lineage_id": null,
     "color": "hsl(143, 70%, 55%)",
     "qid": "Q1232988",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 29
   },
@@ -14583,7 +14583,7 @@
     "lineage_id": null,
     "color": "hsl(186, 70%, 55%)",
     "qid": "Q72785",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 39
   },
@@ -14695,7 +14695,7 @@
     "lineage_id": null,
     "color": "hsl(6, 70%, 55%)",
     "qid": "Q38610",
-    "tier": 2,
+    "tier": 3,
     "region": "north_america",
     "sitelinks": 33
   },
@@ -14835,7 +14835,7 @@
     "lineage_id": null,
     "color": "hsl(168, 70%, 55%)",
     "qid": "Q797214",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 31
   },
@@ -14849,7 +14849,7 @@
     "lineage_id": "L0164",
     "color": "hsl(168, 70%, 55%)",
     "qid": "Q797527",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 33
   },
@@ -14877,7 +14877,7 @@
     "lineage_id": null,
     "color": "hsl(48, 70%, 55%)",
     "qid": "Q2872689",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 20
   },
@@ -14905,7 +14905,7 @@
     "lineage_id": "L0195",
     "color": "hsl(200, 70%, 55%)",
     "qid": "Q1779823",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 35
   },
@@ -14919,7 +14919,7 @@
     "lineage_id": null,
     "color": "hsl(48, 70%, 55%)",
     "qid": "Q75903",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 49
   },
@@ -14989,7 +14989,7 @@
     "lineage_id": null,
     "color": "hsl(62, 70%, 55%)",
     "qid": "Q605000",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 21
   },
@@ -15017,7 +15017,7 @@
     "lineage_id": null,
     "color": "hsl(121, 70%, 55%)",
     "qid": "Q1436243",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 38
   },
@@ -15059,7 +15059,7 @@
     "lineage_id": null,
     "color": "hsl(298, 70%, 55%)",
     "qid": "Q2293827",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 22
   },
@@ -15087,7 +15087,7 @@
     "lineage_id": "L0194",
     "color": "hsl(65, 70%, 55%)",
     "qid": "Q61427",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 29
   },
@@ -15213,7 +15213,7 @@
     "lineage_id": "L0190",
     "color": "hsl(118, 70%, 55%)",
     "qid": "Q1028835",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 31
   },
@@ -15227,7 +15227,7 @@
     "lineage_id": null,
     "color": "hsl(118, 70%, 55%)",
     "qid": "Q1028848",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 27
   },
@@ -15255,7 +15255,7 @@
     "lineage_id": null,
     "color": "hsl(193, 70%, 55%)",
     "qid": "Q68682",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 45
   },
@@ -15311,7 +15311,7 @@
     "lineage_id": null,
     "color": "hsl(350, 70%, 55%)",
     "qid": "Q61291",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 45
   },
@@ -15353,7 +15353,7 @@
     "lineage_id": "L0103",
     "color": "hsl(92, 70%, 55%)",
     "qid": "Q548114",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 41
   },
@@ -15451,7 +15451,7 @@
     "lineage_id": "L0079",
     "color": "hsl(275, 70%, 55%)",
     "qid": "Q545205",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 68
   },
@@ -15577,7 +15577,7 @@
     "lineage_id": null,
     "color": "hsl(262, 70%, 55%)",
     "qid": "Q1135255",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 43
   },
@@ -15633,7 +15633,7 @@
     "lineage_id": "L0162",
     "color": "hsl(298, 70%, 55%)",
     "qid": "Q707917",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 15
   },
@@ -15773,7 +15773,7 @@
     "lineage_id": "L0197",
     "color": "hsl(298, 70%, 55%)",
     "qid": "Q697837",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 35
   },
@@ -15927,7 +15927,7 @@
     "lineage_id": null,
     "color": "hsl(212, 70%, 55%)",
     "qid": "Q484104",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 24
   },
@@ -15941,7 +15941,7 @@
     "lineage_id": null,
     "color": "hsl(20, 70%, 55%)",
     "qid": "Q15242873",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 24
   },
@@ -15969,7 +15969,7 @@
     "lineage_id": null,
     "color": "hsl(298, 70%, 55%)",
     "qid": "Q903061",
-    "tier": 2,
+    "tier": 3,
     "region": "southeast_asia",
     "sitelinks": 8
   },
@@ -16025,7 +16025,7 @@
     "lineage_id": null,
     "color": "hsl(110, 70%, 55%)",
     "qid": "Q2006542",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 40
   },
@@ -16067,7 +16067,7 @@
     "lineage_id": null,
     "color": "hsl(307, 70%, 55%)",
     "qid": "Q2670092",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 28
   },
@@ -16151,7 +16151,7 @@
     "lineage_id": null,
     "color": "hsl(278, 70%, 55%)",
     "qid": "Q941881",
-    "tier": 2,
+    "tier": 3,
     "region": "oceania",
     "sitelinks": 31
   },
@@ -16207,7 +16207,7 @@
     "lineage_id": null,
     "color": "hsl(10, 70%, 55%)",
     "qid": "Q25227",
-    "tier": 2,
+    "tier": 3,
     "region": "north_america",
     "sitelinks": 129
   },
@@ -16529,7 +16529,7 @@
     "lineage_id": null,
     "color": "hsl(67, 70%, 55%)",
     "qid": "Q5291089",
-    "tier": 2,
+    "tier": 3,
     "region": "oceania",
     "sitelinks": 12
   },
@@ -16571,7 +16571,7 @@
     "lineage_id": null,
     "color": "hsl(236, 70%, 55%)",
     "qid": "Q4250299",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 13
   },
@@ -24131,7 +24131,7 @@
     "lineage_id": null,
     "color": "hsl(308, 70%, 55%)",
     "qid": "Q18348382",
-    "tier": 2,
+    "tier": 3,
     "region": "oceania",
     "sitelinks": 14
   },
