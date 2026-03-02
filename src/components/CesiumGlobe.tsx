@@ -33,6 +33,7 @@ import {
   PolylineDashMaterialProperty,
   PolygonHierarchy,
   EllipseGraphics,
+  CallbackProperty,
 } from "cesium";
 import type { MockEvent } from "@/data/mockEvents";
 import { loadBorderIndex, findClosestSnapshot } from "@/lib/borderIndex";
@@ -1862,6 +1863,17 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const fillColor = Color.fromCssColorString(baseColor).withAlpha(0.35);
       const outlineColor = Color.fromCssColorString(baseColor).withAlpha(0.6);
 
+      // [mk] T1 경계선: 고도 반응형 width (10000km 이하=5px, 2000km마다 1px 감소, 최소 1px)
+      const entityTier = entity.tier ?? 3;
+      const t1BorderWidth = entityTier === 1
+        ? new CallbackProperty(() => {
+            if (!viewer || viewer.isDestroyed()) return 5;
+            const altKm = viewer.camera.positionCartographic.height / 1000;
+            if (altKm <= 10000) return 5;
+            return Math.max(1, 5 - Math.floor((altKm - 10000) / 2000));
+          }, false)
+        : null;
+
       for (const feature of geojson.features) {
         // [mk] 폴리곤 채우기 (showFill OFF 시 스킵)
         if (showFillRef.current) {
@@ -1897,10 +1909,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         // [mk] 외곽선 (showBorder ON 시에만 추가) — Tier별 스타일
         if (showBorderRef.current) {
           const outlineRings = extractRings(feature.geometry);
-          const tier = entity.tier ?? 3;
-          // [mk] T1=5px 실선, T2=3px 실선, T3=3px 점선(회색), T4=1px 실선
-          const borderWidth = tier === 1 ? 5 : tier === 2 ? 3 : tier === 3 ? 3 : 1;
-          const borderMaterial = tier === 3
+          // [mk] T1=고도 반응형(CallbackProperty), T2=3px, T3=3px 점선(회색), T4=1px
+          const borderWidth = entityTier === 1 ? t1BorderWidth! : entityTier === 2 ? 3 : entityTier === 3 ? 3 : 1;
+          const borderMaterial = entityTier === 3
             ? new PolylineDashMaterialProperty({
                 color: Color.fromCssColorString("rgba(180,180,180,0.65)"),
                 dashLength: 14,
