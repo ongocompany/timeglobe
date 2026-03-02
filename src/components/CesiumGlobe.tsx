@@ -33,7 +33,7 @@ import {
   PolylineDashMaterialProperty,
   PolygonHierarchy,
   EllipseGraphics,
-  CallbackProperty,
+  ConstantProperty,
 } from "cesium";
 import type { MockEvent } from "@/data/mockEvents";
 import { loadBorderIndex, findClosestSnapshot } from "@/lib/borderIndex";
@@ -1443,6 +1443,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] OHM 매칭된 QID set (원형 렌더링에서 제외용)
   const ohmQidsRef = useRef<Set<string>>(new Set());
   const ohmNamesRef = useRef<Set<string>>(new Set());
+  // [mk] T1 경계선 엔티티 목록 — 고도 변화 시 width만 업데이트
+  const t1BorderEntitiesRef = useRef<import("cesium").Entity[]>([]);
+  const lastT1WidthRef = useRef<number>(5);
   // [mk] 지도 표시 설정 refs (prop 변경 시 렌더 함수에서 즉시 반영)
   const visibleTiersRef = useRef<number[]>(visibleTiers ?? [1, 2, 3, 4]);
   const showFillRef = useRef<boolean>(showFill ?? true);
@@ -1788,6 +1791,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] 같은 연도면 재렌더 스킵
     if (currentOhmYearRef.current === targetYear && ohmDsRef.current) return;
 
+    // [mk] 재렌더 시 T1 엔티티 목록 초기화 (DataSource 새로 생성되므로)
+    t1BorderEntitiesRef.current = [];
+
     // [cl] 해당 연도에 활성화된 엔티티 + 최적 스냅샷 선택
     const activeEntities: { entity: OhmEntity; rid: number }[] = [];
     for (const entity of ohmIndexRef.current) {
@@ -1863,16 +1869,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const fillColor = Color.fromCssColorString(baseColor).withAlpha(0.35);
       const outlineColor = Color.fromCssColorString(baseColor).withAlpha(0.6);
 
-      // [mk] T1 경계선: 고도 반응형 width (10000km 이하=5px, 2000km마다 1px 감소, 최소 1px)
+      // [mk] T1 경계선: 현재 고도 기준 초기 width (이후 preRender 이벤트로 실시간 갱신)
       const entityTier = entity.tier ?? 3;
-      const t1BorderWidth = entityTier === 1
-        ? new CallbackProperty(() => {
-            if (!viewer || viewer.isDestroyed()) return 5;
-            const altKm = viewer.camera.positionCartographic.height / 1000;
-            if (altKm <= 10000) return 5;
-            return Math.max(1, 5 - Math.floor((altKm - 10000) / 2000));
-          }, false)
-        : null;
 
       for (const feature of geojson.features) {
         // [mk] 폴리곤 채우기 (showFill OFF 시 스킵)
@@ -1909,8 +1907,8 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         // [mk] 외곽선 (showBorder ON 시에만 추가) — Tier별 스타일
         if (showBorderRef.current) {
           const outlineRings = extractRings(feature.geometry);
-          // [mk] T1=고도 반응형(CallbackProperty), T2=3px, T3=3px 점선(회색), T4=1px
-          const borderWidth = entityTier === 1 ? t1BorderWidth! : entityTier === 2 ? 3 : entityTier === 3 ? 3 : 1;
+          // [mk] T1=고도 반응형(초기값, preRender로 갱신), T2=3px, T3=3px 점선(회색), T4=1px
+          const borderWidth = entityTier === 1 ? lastT1WidthRef.current : entityTier === 2 ? 3 : entityTier === 3 ? 3 : 1;
           const borderMaterial = entityTier === 3
             ? new PolylineDashMaterialProperty({
                 color: Color.fromCssColorString("rgba(180,180,180,0.65)"),
@@ -1919,13 +1917,15 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             : outlineColor;
           for (const positions of outlineRings) {
             if (positions.length < 2) continue;
-            ds.entities.add({
+            const ent = ds.entities.add({
               polyline: {
                 positions,
                 width: borderWidth,
                 material: borderMaterial,
               },
             });
+            // [mk] T1 엔티티만 ref에 수집 (preRender에서 width 갱신용)
+            if (entityTier === 1) t1BorderEntitiesRef.current.push(ent);
           }
         }
       }
@@ -1954,6 +1954,19 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // 나중에 CShapes 복원 시 이 블록 주석 해제.
     // loadBorderIndex().then(async (idx) => { ... }).catch(() => {});
 
+    // [mk] T1 경계선 고도 반응형 — preRender로 구간 변경 시에만 width 갱신 (매 프레임 경량 체크)
+    const onPreRender = () => {
+      if (viewer.isDestroyed()) return;
+      const altKm = viewer.camera.positionCartographic.height / 1000;
+      const newWidth = altKm <= 10000 ? 5 : Math.max(1, 5 - Math.floor((altKm - 10000) / 2000));
+      if (newWidth === lastT1WidthRef.current) return; // 구간 변화 없으면 스킵
+      lastT1WidthRef.current = newWidth;
+      for (const ent of t1BorderEntitiesRef.current) {
+        if (ent.polyline?.width) (ent.polyline.width as ConstantProperty).setValue(newWidth);
+      }
+    };
+    viewer.scene.preRender.addEventListener(onPreRender);
+
     // [cl] ★ OHM 인덱스 먼저 로드 → 원형 데이터 로드 (OHM QID 제외를 위해 순서 중요)
     loadOhmIndex().then(() => {
       if (cancelled || viewer.isDestroyed()) return;
@@ -1975,6 +1988,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] 클린업: StrictMode 첫 번째 실행의 비동기 취소 + 데이터소스 정리
     return () => {
       cancelled = true;
+      if (!viewer.isDestroyed()) viewer.scene.preRender.removeEventListener(onPreRender);
       if (borderDsRef.current && !viewer.isDestroyed()) {
         viewer.dataSources.remove(borderDsRef.current, true);
         borderDsRef.current = null;
