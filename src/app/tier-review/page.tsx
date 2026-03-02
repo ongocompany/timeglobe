@@ -825,12 +825,12 @@ function TimelineView() {
                   }}
                   style={{
                     background: "#1a1a1a",
-                    border: isSelected
-                      ? "2px solid #06b6d4"
-                      : `1px solid ${tierColor}30`,
+                    borderTop: isSelected ? "2px solid #06b6d4" : `1px solid ${tierColor}30`,
+                    borderRight: isSelected ? "2px solid #06b6d4" : `1px solid ${tierColor}30`,
+                    borderBottom: isSelected ? "2px solid #06b6d4" : `1px solid ${tierColor}30`,
+                    borderLeft: isSelected ? "2px solid #06b6d4" : `4px solid ${regionColor}`,
                     borderRadius: 8,
                     padding: "10px 12px",
-                    borderLeft: `4px solid ${regionColor}`,
                     cursor: "pointer",
                     transition: "all 0.15s",
                     boxShadow: isSelected
