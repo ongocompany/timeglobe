@@ -24,6 +24,8 @@ interface GlobeLoaderProps {
   warpPhase?: "idle" | "zoomout" | "hold" | "zoomin";
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear?: number; // [cl] 역사 국경선 표시용
+  visibleTiers?: number[];    // [mk] 표시할 티어 목록
+  showPolygonFill?: boolean;  // [mk] OHM 폴리곤 채우기 여부
 }
 
 export default function GlobeLoader({
@@ -37,6 +39,8 @@ export default function GlobeLoader({
   warpPhase = "idle",
   onSpinWarp,
   currentYear = 1875,
+  visibleTiers,
+  showPolygonFill,
 }: GlobeLoaderProps) {
   return (
     <CesiumGlobe
@@ -50,6 +54,8 @@ export default function GlobeLoader({
       warpPhase={warpPhase}
       onSpinWarp={onSpinWarp}
       currentYear={currentYear}
+      visibleTiers={visibleTiers}
+      showPolygonFill={showPolygonFill}
     />
   );
 }

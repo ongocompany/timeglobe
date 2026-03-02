@@ -228,10 +228,12 @@ interface SceneSetupProps {
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear: number; // [cl] 역사 국경선 표시용
+  visibleTiers?: number[];    // [mk] 표시할 티어 목록 (기본: [1,2,3,4])
+  showPolygonFill?: boolean;  // [mk] OHM 폴리곤 채우기 여부 (기본: true)
   // [cl] BlurStage 비활성화됨 — 향후 커스텀 셰이더 구현 시 재활용 가능
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear, visibleTiers, showPolygonFill }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -1439,6 +1441,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] OHM 매칭된 QID set (원형 렌더링에서 제외용)
   const ohmQidsRef = useRef<Set<string>>(new Set());
   const ohmNamesRef = useRef<Set<string>>(new Set());
+  // [mk] 지도 표시 설정 refs (prop 변경 시 렌더 함수에서 즉시 반영)
+  const visibleTiersRef = useRef<number[]>(visibleTiers ?? [1, 2, 3, 4]);
+  const showPolygonFillRef = useRef<boolean>(showPolygonFill ?? true);
 
   // [cl] ★ Tier별 라벨 스타일 — 고도(카메라 거리) 기반 노출 전략
   // T1: 대제국 (로마, 당, 오스만) — 항상 크게 보임
@@ -1715,6 +1720,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       if (suppressed.has(i)) continue;
       const entity = activeEntities[i];
 
+      // [mk] 티어 필터: 비활성 티어는 라벨 숨김 (기본: 전체 표시)
+      const entityTier = entity.tier ?? 3;
+      if (!visibleTiersRef.current.includes(entityTier)) continue;
+
       const position = Cartesian3.fromDegrees(entity.lon, entity.lat);
 
       // ── 라벨 텍스트: 한글명 우선, 없으면 영문 ──
@@ -1849,31 +1858,34 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const outlineColor = Color.fromCssColorString(baseColor).withAlpha(0.6);
 
       for (const feature of geojson.features) {
-        // [cl] filled polygon 시도 → 실패 시 polyline fallback
-        try {
-          const hierarchies = extractPolygonHierarchies(feature.geometry);
-          for (const hierarchy of hierarchies) {
-            ds.entities.add({
-              polygon: {
-                hierarchy,
-                material: fillColor,
-                outline: false,
-                classificationType: ClassificationType.BOTH,
-              },
-            });
-          }
-        } catch {
-          // [cl] polygon 크래시 시 polyline fallback
-          const rings = extractRings(feature.geometry);
-          for (const positions of rings) {
-            if (positions.length < 2) continue;
-            ds.entities.add({
-              polyline: {
-                positions,
-                width: 1.0,
-                material: outlineColor,
-              },
-            });
+        // [mk] 폴리곤 채우기 (경계만 보기 모드에서는 스킵)
+        if (showPolygonFillRef.current) {
+          // [cl] filled polygon 시도 → 실패 시 polyline fallback
+          try {
+            const hierarchies = extractPolygonHierarchies(feature.geometry);
+            for (const hierarchy of hierarchies) {
+              ds.entities.add({
+                polygon: {
+                  hierarchy,
+                  material: fillColor,
+                  outline: false,
+                  classificationType: ClassificationType.BOTH,
+                },
+              });
+            }
+          } catch {
+            // [cl] polygon 크래시 시 polyline fallback
+            const rings = extractRings(feature.geometry);
+            for (const positions of rings) {
+              if (positions.length < 2) continue;
+              ds.entities.add({
+                polyline: {
+                  positions,
+                  width: 1.0,
+                  material: outlineColor,
+                },
+              });
+            }
           }
         }
 
@@ -1972,6 +1984,26 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     renderOhmForYear(currentYear);
   }, [currentYear]);
 
+  // [mk] ★ visibleTiers 변경 시 라벨 재렌더링
+  useEffect(() => {
+    visibleTiersRef.current = visibleTiers ?? [1, 2, 3, 4];
+    if (!viewer || !wikidataCirclesRef.current) return;
+    renderCirclesForYear(currentYear);
+  }, [visibleTiers]);
+
+  // [mk] ★ showPolygonFill 변경 시 OHM 재렌더링 (캐시 무효화 후)
+  useEffect(() => {
+    showPolygonFillRef.current = showPolygonFill ?? true;
+    if (!viewer || !ohmIndexRef.current) return;
+    // 캐시 무효화 → 강제 재렌더
+    if (ohmDsRef.current && !viewer.isDestroyed()) {
+      viewer.dataSources.remove(ohmDsRef.current, true);
+      ohmDsRef.current = null;
+    }
+    currentOhmYearRef.current = null;
+    renderOhmForYear(currentYear);
+  }, [showPolygonFill]);
+
   return null;
 }
 
@@ -1987,6 +2019,8 @@ interface CesiumGlobeProps {
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear?: number; // [cl] 역사 국경선 표시용
+  visibleTiers?: number[];    // [mk] 표시할 티어 목록 (기본: [1,2,3,4])
+  showPolygonFill?: boolean;  // [mk] OHM 폴리곤 채우기 여부 (기본: true)
 }
 
 // [cl] ★ 모듈 레벨 상수: 렌더링마다 새 객체 생성 방지 → Viewer 재생성 차단
@@ -2003,6 +2037,8 @@ export default function CesiumGlobe({
   warpPhase = "idle",
   onSpinWarp,
   currentYear = 1875,
+  visibleTiers,
+  showPolygonFill,
 }: CesiumGlobeProps) {
   return (
     <Viewer
@@ -2032,6 +2068,8 @@ export default function CesiumGlobe({
         warpPhase={warpPhase}
         onSpinWarp={onSpinWarp}
         currentYear={currentYear}
+        visibleTiers={visibleTiers}
+        showPolygonFill={showPolygonFill}
       />
       {/* [cl] BlurStage 비활성화 — PostProcessStage는 화면 전체(지구본+라벨+배경)에
           적용되므로 개별 폴리곤 엣지 블러 불가. CesiumJS 기본 API 한계.
