@@ -3999,7 +3999,7 @@
     "lineage_id": null,
     "color": "hsl(53, 70%, 55%)",
     "qid": "Q2477776",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 22
   },
@@ -4335,7 +4335,7 @@
     "lineage_id": null,
     "color": "hsl(176, 70%, 55%)",
     "qid": "Q5782830",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 10
   },
@@ -11951,7 +11951,7 @@
     "lineage_id": null,
     "color": "hsl(280, 70%, 55%)",
     "qid": "Q2578028",
-    "tier": 2,
+    "tier": 3,
     "region": "south_asia",
     "sitelinks": 19
   },

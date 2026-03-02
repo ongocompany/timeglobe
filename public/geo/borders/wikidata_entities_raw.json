@@ -5703,11 +5703,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "unknown",
     "score": 47.4,
-    "tier_reason": "score_top55"
+    "tier_reason": "confederation_low_sl"
   },
   {
     "qid": "Q2607292",
@@ -6625,11 +6625,11 @@
     "lat": "50.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 22,
     "region": "central_asia",
     "score": 60.5,
-    "tier_reason": "score_top55"
+    "tier_reason": "confederation_low_sl"
   },
   {
     "qid": "Q831218",
@@ -7103,11 +7103,11 @@
     "lat": "4.7175",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "latin_america",
     "score": 53.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "confederation_low_sl"
   },
   {
     "qid": "Q1761381",
@@ -19197,11 +19197,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 14,
     "region": "unknown",
     "score": 62.4,
-    "tier_reason": "score_top25"
+    "tier_reason": "confederation_low_sl"
   },
   {
     "qid": "Q557842",
@@ -20262,11 +20262,11 @@
     "lat": "31.6",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 19,
     "region": "south_asia",
     "score": 48,
-    "tier_reason": "score_rest"
+    "tier_reason": "confederation_low_sl"
   },
   {
     "qid": "Q1636212",
@@ -23351,18 +23351,18 @@
   {
     "qid": "Q1395929",
     "name_en": "Fante Confederacy",
-    "name_ko": "파은트에 연맹",
+    "name_ko": "판테 연맹",
     "start": "1868",
     "end": "1874",
     "lon": "",
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 9,
     "region": "unknown",
     "score": 44.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "confederation_low_sl"
   },
   {
     "qid": "Q1865132",
