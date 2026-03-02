@@ -10576,5 +10576,39 @@
     "score": 51.7,
     "tier_reason": "score_rest",
     "minor_reason": "dynasty_of_iran"
+  },
+  {
+    "qid": "Q58202",
+    "name_en": "July Monarchy",
+    "name_ko": "7월 왕정",
+    "start": "1830",
+    "end": "1848",
+    "lon": "2.483333",
+    "lat": "48.816667",
+    "type": "historical",
+    "lineage_id": "L0176",
+    "tier": 2,
+    "sitelinks": 55,
+    "region": "europe",
+    "score": 69.8,
+    "tier_reason": "score_top55",
+    "minor_reason": "regime_of_france"
+  },
+  {
+    "qid": "Q11608382",
+    "name_en": "Oda regime",
+    "name_ko": "오다 정권",
+    "start": "1573",
+    "end": "1585",
+    "lon": "136.9",
+    "lat": "35.18",
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 2,
+    "sitelinks": 4,
+    "region": "east_asia",
+    "score": 19.6,
+    "tier_reason": "score_rest",
+    "minor_reason": "regime_of_japan"
   }
 ]

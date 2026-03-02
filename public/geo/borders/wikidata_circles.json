@@ -10668,20 +10668,6 @@
     "sitelinks": 9
   },
   {
-    "name_en": "Oda regime",
-    "name_ko": "오다 정권",
-    "lon": 136.9,
-    "lat": 35.18,
-    "start_year": 1573,
-    "end_year": 1585,
-    "lineage_id": null,
-    "color": "hsl(299, 70%, 55%)",
-    "qid": "Q11608382",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 4
-  },
-  {
     "name_en": "Duchy of Montferrat",
     "name_ko": "몬페라토 후국",
     "lon": 8.45,
@@ -12217,7 +12203,7 @@
     "lineage_id": "L0023",
     "color": "hsl(39, 70%, 55%)",
     "qid": "Q175881",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 38
   },
@@ -13034,20 +13020,6 @@
     "sitelinks": 9
   },
   {
-    "name_en": "July Monarchy",
-    "name_ko": "7월 왕정",
-    "lon": 2.483333,
-    "lat": 48.816667,
-    "start_year": 1830,
-    "end_year": 1848,
-    "lineage_id": "L0176",
-    "color": "hsl(133, 70%, 55%)",
-    "qid": "Q58202",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 55
-  },
-  {
     "name_en": "Wahidi Bir Ali",
     "name_ko": "와히디 비르 아리",
     "lon": 48.3419,
@@ -13183,7 +13155,7 @@
     "lineage_id": null,
     "color": "hsl(95, 70%, 55%)",
     "qid": "Q170588",
-    "tier": 2,
+    "tier": 3,
     "region": "north_america",
     "sitelinks": 67
   },
@@ -13351,7 +13323,7 @@
     "lineage_id": null,
     "color": "hsl(92, 70%, 55%)",
     "qid": "Q2037576",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 22
   },
@@ -13469,7 +13441,7 @@
   },
   {
     "name_en": "Republic of Maryland",
-    "name_ko": "마르이라은드 공화국",
+    "name_ko": "메릴랜드 공화국",
     "lon": -7.71666667,
     "lat": 4.36666667,
     "start_year": 1854,
@@ -13477,7 +13449,7 @@
     "lineage_id": null,
     "color": "hsl(166, 70%, 55%)",
     "qid": "Q544630",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 22
   },
@@ -13939,7 +13911,7 @@
     "lineage_id": null,
     "color": "hsl(89, 70%, 55%)",
     "qid": "Q2975232",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 15
   },
@@ -14023,7 +13995,7 @@
     "lineage_id": "L0177",
     "color": "hsl(180, 70%, 55%)",
     "qid": "Q1057542",
-    "tier": 2,
+    "tier": 3,
     "region": "north_america",
     "sitelinks": 31
   },
@@ -14051,7 +14023,7 @@
     "lineage_id": null,
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q2741089",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 15
   },
@@ -14107,7 +14079,7 @@
     "lineage_id": null,
     "color": "hsl(225, 70%, 55%)",
     "qid": "Q564809",
-    "tier": 2,
+    "tier": 3,
     "region": "latin_america",
     "sitelinks": 21
   },
@@ -14387,7 +14359,7 @@
     "lineage_id": null,
     "color": "hsl(298, 70%, 55%)",
     "qid": "Q1639475",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 39
   },
@@ -14457,7 +14429,7 @@
     "lineage_id": "L0074",
     "color": "hsl(309, 70%, 55%)",
     "qid": "Q2468597",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 21
   },
@@ -15031,7 +15003,7 @@
     "lineage_id": null,
     "color": "hsl(275, 70%, 55%)",
     "qid": "Q150061",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 34
   },
@@ -15843,7 +15815,7 @@
     "lineage_id": null,
     "color": "hsl(330, 70%, 55%)",
     "qid": "Q714533",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 15
   },
@@ -15857,7 +15829,7 @@
     "lineage_id": null,
     "color": "hsl(146, 70%, 55%)",
     "qid": "Q1094090",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 3
   },

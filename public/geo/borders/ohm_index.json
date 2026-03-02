@@ -8867,7 +8867,7 @@
     "qid": "Q175881",
     "name_en": "Roman Republic",
     "name_ko": "공화정 로마",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1798,
     "end_year": 1799,
     "snapshots": [
@@ -10425,7 +10425,7 @@
     "qid": "Q544630",
     "name_en": "Republic of Maryland",
     "name_ko": "마르이라은드 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1834,
     "end_year": 1857,
     "snapshots": [
@@ -10503,7 +10503,7 @@
     "qid": "Q170588",
     "name_en": "Republic of Texas",
     "name_ko": "텍사스 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1836,
     "end_year": 1845,
     "snapshots": [
@@ -10719,7 +10719,7 @@
     "qid": "Q2037576",
     "name_en": "Republic of San Marco",
     "name_ko": "산마르코 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1848,
     "end_year": 1849,
     "snapshots": [
@@ -11099,7 +11099,7 @@
     "qid": "Q1094090",
     "name_en": "Republic of Ezo",
     "name_ko": "에조 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1869,
     "end_year": 1869,
     "snapshots": [
@@ -11369,7 +11369,7 @@
     "qid": "Q2975232",
     "name_en": "Republic of Independent Guyana",
     "name_ko": "독립 가이아나 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1886,
     "end_year": 1891,
     "snapshots": [
@@ -11449,7 +11449,7 @@
     "qid": "Q1057542",
     "name_en": "Republic of Hawaii",
     "name_ko": "하와이 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1894,
     "end_year": 1898,
     "snapshots": [
@@ -11867,7 +11867,7 @@
     "qid": "Q1639475",
     "name_en": "Mountainous Republic of the Northern Caucasus",
     "name_ko": "북캅카스 산악공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1918,
     "end_year": 1919,
     "snapshots": [

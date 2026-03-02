@@ -17758,22 +17758,6 @@
     "tier_reason": "short_lived_or_rebellion"
   },
   {
-    "qid": "Q11608382",
-    "name_en": "Oda regime",
-    "name_ko": "오다 정권",
-    "start": "1573",
-    "end": "1585",
-    "lon": "136.9",
-    "lat": "35.18",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 4,
-    "region": "east_asia",
-    "score": 19.6,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q15604942",
     "name_en": "Duchy of Montferrat",
     "name_ko": "몬페라토 후국",
@@ -20822,11 +20806,11 @@
     "lat": "41.9",
     "type": "historical",
     "lineage_id": "L0023",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 38,
     "region": "europe",
     "score": 60.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q1540575",
@@ -22161,22 +22145,6 @@
     "tier_reason": "score_top8"
   },
   {
-    "qid": "Q58202",
-    "name_en": "July Monarchy",
-    "name_ko": "7월 왕정",
-    "start": "1830",
-    "end": "1848",
-    "lon": "2.483333",
-    "lat": "48.816667",
-    "type": "historical",
-    "lineage_id": "L0176",
-    "tier": 2,
-    "sitelinks": 55,
-    "region": "europe",
-    "score": 69.8,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q739722",
     "name_en": "Wahidi Bir Ali",
     "name_ko": "와히디 비르 아리",
@@ -22378,11 +22346,11 @@
     "lat": "30.27",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 67,
     "region": "north_america",
     "score": 80.8,
-    "tier_reason": "score_top25"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q536476",
@@ -22698,11 +22666,11 @@
     "lat": "45.43333333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 22,
     "region": "europe",
     "score": 44.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q18285930",
@@ -22867,18 +22835,18 @@
   {
     "qid": "Q544630",
     "name_en": "Republic of Maryland",
-    "name_ko": "마르이라은드 공화국",
+    "name_ko": "메릴랜드 공화국",
     "start": "1854",
     "end": "1857",
     "lon": "-7.71666667",
     "lat": "4.36666667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 22,
     "region": "sub_saharan",
     "score": 55.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q10935472",
@@ -23598,11 +23566,11 @@
     "lat": "2.8485",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "latin_america",
     "score": 43.7,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q185682",
@@ -23726,11 +23694,11 @@
     "lat": "21.311388888",
     "type": "historical",
     "lineage_id": "L0177",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 31,
     "region": "north_america",
     "score": 61.7,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q1106424",
@@ -23758,11 +23726,11 @@
     "lat": "13.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "latin_america",
     "score": 42.5,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q843394",
@@ -23841,11 +23809,11 @@
     "lat": "-9.96667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 21,
     "region": "latin_america",
     "score": 52.2,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q61355432",
@@ -24291,11 +24259,11 @@
     "lat": "42.81666667",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 39,
     "region": "central_asia",
     "score": 62.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q1779823",
@@ -24391,11 +24359,11 @@
     "lat": "39.208889",
     "type": "historical",
     "lineage_id": "L0074",
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 21,
     "region": "central_asia",
     "score": 41.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q2510537",
@@ -25161,11 +25129,11 @@
     "lat": "39.35",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 34,
     "region": "middle_east",
     "score": 62.3,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q108868568",
@@ -26267,11 +26235,11 @@
     "lat": "25.04",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 15,
     "region": "east_asia",
     "score": 33.3,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q1094090",
@@ -26283,11 +26251,11 @@
     "lat": "41.77",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 3,
     "region": "east_asia",
     "score": 16.6,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_republic"
   },
   {
     "qid": "Q41510",
