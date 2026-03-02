@@ -6,7 +6,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 // ─── 타입 ───────────────────────────────────────────────────────────────────
 
-type EntityType = 'hist_entity' | 'event' | 'place' | 'person';
+type EntityType = 'hist_entity' | 'event' | 'place' | 'person' | 'artwork' | 'invention';
 type Decision   = 'include' | 'exclude' | 'skip' | null;
 type StatusFilter = 'all' | 'pending' | 'include' | 'exclude' | 'skip';
 
@@ -34,6 +34,13 @@ interface ParsedItem {
   birth_year?: number;
   death_year?: number;
   occupation_qid?: string;
+  // artwork [mk]
+  artwork_kind?: string;
+  creator_qid?: string;
+  genre_qid?: string;
+  movement_qid?: string;
+  // invention [mk]
+  inventor_qid?: string;
   // injected by API
   _decision: Decision;
 }
@@ -48,9 +55,11 @@ interface TypeStats {
 
 interface StatsData {
   hist_entity: TypeStats;
-  event: TypeStats;
-  place: TypeStats;
-  person: TypeStats;
+  event:       TypeStats;
+  place:       TypeStats;
+  person:      TypeStats;
+  artwork:     TypeStats;
+  invention:   TypeStats;
 }
 
 interface Filters {
@@ -66,9 +75,11 @@ const TYPE_LABELS: Record<EntityType, string> = {
   event:       '⚔️ 사건/전쟁',
   place:       '📍 장소/도시',
   person:      '👤 인물',
+  artwork:     '🎨 문화/예술',
+  invention:   '⚙️ 발명/기술',
 };
 
-const TYPE_KEYS: EntityType[] = ['hist_entity', 'event', 'place', 'person'];
+const TYPE_KEYS: EntityType[] = ['hist_entity', 'event', 'place', 'person', 'artwork', 'invention'];
 
 const DECISION_META = {
   include: { label: '포함', color: 'bg-emerald-500 hover:bg-emerald-600', textColor: 'text-emerald-400', icon: '✅', key: 'KeyD' },
@@ -447,22 +458,25 @@ function ItemCard({
   const decBg = dec === 'include' ? 'border-l-emerald-500' : dec === 'exclude' ? 'border-l-red-500' : dec === 'skip' ? 'border-l-zinc-600' : 'border-l-transparent';
 
   const yearStr = (() => {
+    const fmtY = (y: number) => y < 0 ? `BC${Math.abs(y)}` : String(y);
     if (type === 'hist_entity') {
-      const s = item.start_year != null ? (item.start_year < 0 ? `BC${Math.abs(item.start_year)}` : String(item.start_year)) : '?';
-      const e = item.end_year   != null ? (item.end_year   < 0 ? `BC${Math.abs(item.end_year)}`   : String(item.end_year))   : '현재';
+      const s = item.start_year != null ? fmtY(item.start_year) : '?';
+      const e = item.end_year   != null ? fmtY(item.end_year)   : '현재';
       return `${s} ~ ${e}`;
     }
     if (type === 'event') {
       const a = item.anchor_year;
-      return a != null ? (a < 0 ? `BC${Math.abs(a)}` : String(a)) : '?';
+      return a != null ? fmtY(a) : '?';
     }
-    if (type === 'place')  return item.inception != null ? String(item.inception) : '-';
+    if (type === 'place')     return item.inception != null ? String(item.inception) : '-';
     if (type === 'person') {
       const b = item.birth_year; const d = item.death_year;
       if (b && d) return `${b} ~ ${d}`;
       if (b)      return `${b} ~`;
       return '-';
     }
+    if (type === 'artwork')   return item.inception != null ? fmtY(item.inception) : '-';
+    if (type === 'invention') return item.inception != null ? fmtY(item.inception) : '-';
     return '-';
   })();
 
@@ -490,8 +504,9 @@ function ItemCard({
                 ⭐{item.sitelinks}
               </span>
             )}
-            {item.entity_kind && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.entity_kind}</span>}
-            {item.event_kind  && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.event_kind}</span>}
+            {item.entity_kind  && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.entity_kind}</span>}
+            {item.event_kind   && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.event_kind}</span>}
+            {item.artwork_kind && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.artwork_kind}</span>}
             {!item.direct_coord && type !== 'person' && type !== 'event' && (
               <span className="text-xs text-orange-700">좌표없음</span>
             )}
@@ -560,6 +575,19 @@ function DetailPanel({ item, type, onDecide }: {
       ['출생', item.birth_year],
       ['사망', item.death_year ?? '생존'],
       ['직업QID', item.occupation_qid],
+    ] as Array<[string, string | number | null | undefined]> : []),
+    ...(type === 'artwork' ? [
+      ['종류', item.artwork_kind],
+      ['제작연도', item.inception],
+      ['제작자QID', item.creator_qid],
+      ['장르QID', item.genre_qid],
+      ['사조QID', item.movement_qid],
+      ['좌표', item.direct_coord ? `${item.direct_coord[0]}, ${item.direct_coord[1]}` : '없음'],
+    ] as Array<[string, string | number | null | undefined]> : []),
+    ...(type === 'invention' ? [
+      ['발명연도', item.inception],
+      ['발명가QID', item.inventor_qid],
+      ['좌표', item.direct_coord ? `${item.direct_coord[0]}, ${item.direct_coord[1]}` : '없음'],
     ] as Array<[string, string | number | null | undefined]> : []),
   ];
 

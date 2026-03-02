@@ -17,6 +17,8 @@ const FILE_MAP: Record<string, string> = {
   event:       'events_raw.jsonl',
   place:       'places_sample.jsonl',
   person:      'persons_sample.jsonl',
+  artwork:     'artworks_sample.jsonl',   // [mk]
+  invention:   'inventions_raw.jsonl',    // [mk]
 };
 
 type Decision = 'include' | 'exclude' | 'skip';
@@ -26,6 +28,8 @@ interface Decisions {
   event:       Record<string, Decision>;
   place:       Record<string, Decision>;
   person:      Record<string, Decision>;
+  artwork:     Record<string, Decision>;   // [mk]
+  invention:   Record<string, Decision>;   // [mk]
 }
 
 // --- helpers ---
@@ -34,7 +38,7 @@ function loadDecisions(): Decisions {
   try {
     return JSON.parse(fs.readFileSync(DECISIONS_FILE, 'utf-8'));
   } catch {
-    return { hist_entity: {}, event: {}, place: {}, person: {} };
+    return { hist_entity: {}, event: {}, place: {}, person: {}, artwork: {}, invention: {} };
   }
 }
 
