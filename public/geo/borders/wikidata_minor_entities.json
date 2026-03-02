@@ -4160,5 +4160,24 @@
     "score": 88.2,
     "tier_reason": "manual_promote_session7",
     "minor_reason": "naming_tier_session7"
+  },
+  {
+    "qid": "Q241524",
+    "name_en": "Kassite Babylonia",
+    "name_ko": "카시트 바빌로니아",
+    "start": "BC 1531",
+    "end": "BC 1155",
+    "lat": 32.5,
+    "lon": 44.4,
+    "type": "historical",
+    "lineage_id": null,
+    "tier": 1,
+    "tier_reason": "new_for_t1",
+    "region": "middle_east",
+    "score": 0,
+    "sitelinks": 16,
+    "t1_start": -1531,
+    "t1_end": -1155,
+    "t1_sources": 2
   }
 ]

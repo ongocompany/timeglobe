@@ -9,11 +9,9 @@
     "lineage_id": "L0001",
     "color": "hsl(236, 70%, 55%)",
     "qid": "Q191369",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 66,
-    "t1_start": -1450,
-    "t1_end": -1200
+    "sitelinks": 66
   },
   {
     "name_en": "Kerma kingdom",
@@ -25,11 +23,9 @@
     "lineage_id": null,
     "color": "hsl(272, 70%, 55%)",
     "qid": "Q1739282",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 22,
-    "t1_start": -2500,
-    "t1_end": -1500
+    "sitelinks": 22
   },
   {
     "name_en": "Namri",
@@ -41,11 +37,9 @@
     "lineage_id": "L0004",
     "color": "hsl(189, 70%, 55%)",
     "qid": "Q246690",
-    "tier": 1,
+    "tier": 3,
     "region": "central_asia",
-    "sitelinks": 5,
-    "t1_start": -2000,
-    "t1_end": -1650
+    "sitelinks": 5
   },
   {
     "name_en": "Dilmun",
@@ -73,11 +67,9 @@
     "lineage_id": "L0001",
     "color": "hsl(156, 70%, 55%)",
     "qid": "Q5743",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 55,
-    "t1_start": -2950,
-    "t1_end": -2250
+    "sitelinks": 55
   },
   {
     "name_en": "Old Kingdom of Egypt",
@@ -121,19 +113,17 @@
     "lineage_id": null,
     "color": "hsl(235, 70%, 55%)",
     "qid": "Q207330",
-    "tier": 1,
+    "tier": 2,
     "region": "central_asia",
-    "sitelinks": 60,
-    "t1_start": -2500,
-    "t1_end": -2000
+    "sitelinks": 60
   },
   {
     "name_en": "Meroë",
     "name_ko": "메로에",
     "lon": 33.75075,
     "lat": 16.935138888,
-    "start_year": -2500,
-    "end_year": -1500,
+    "start_year": -800,
+    "end_year": 350,
     "lineage_id": "L0009",
     "color": "hsl(8, 70%, 55%)",
     "qid": "Q5780",
@@ -169,11 +159,9 @@
     "lineage_id": null,
     "color": "hsl(5, 70%, 55%)",
     "qid": "Q21075369",
-    "tier": 1,
+    "tier": 3,
     "region": "middle_east",
-    "sitelinks": 9,
-    "t1_start": -2400,
-    "t1_end": -2000
+    "sitelinks": 9
   },
   {
     "name_en": "Land of Punt",
@@ -185,18 +173,16 @@
     "lineage_id": null,
     "color": "hsl(286, 70%, 55%)",
     "qid": "Q282350",
-    "tier": 1,
+    "tier": 2,
     "region": "sub_saharan",
-    "sitelinks": 51,
-    "t1_start": -2400,
-    "t1_end": -1100
+    "sitelinks": 51
   },
   {
     "name_en": "Tamna",
     "name_ko": "탐라",
     "lon": 126.5,
     "lat": 33.5,
-    "start_year": -2336,
+    "start_year": -200,
     "end_year": 1404,
     "lineage_id": null,
     "color": "hsl(258, 70%, 55%)",
@@ -265,11 +251,9 @@
     "lineage_id": null,
     "color": "hsl(235, 70%, 55%)",
     "qid": "Q723587",
-    "tier": 1,
+    "tier": 2,
     "region": "central_asia",
-    "sitelinks": 48,
-    "t1_start": -2100,
-    "t1_end": -2050
+    "sitelinks": 48
   },
   {
     "name_en": "Middle Kingdom of Egypt",
@@ -313,11 +297,9 @@
     "lineage_id": null,
     "color": "hsl(5, 70%, 55%)",
     "qid": "Q617218",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 30,
-    "t1_start": -2000,
-    "t1_end": -1600
+    "sitelinks": 30
   },
   {
     "name_en": "Shu",
@@ -343,11 +325,9 @@
     "lineage_id": "L0013",
     "color": "hsl(5, 70%, 55%)",
     "qid": "Q283680",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 44,
-    "t1_start": -1900,
-    "t1_end": -900
+    "sitelinks": 44
   },
   {
     "name_en": "Babylonia",
@@ -375,11 +355,9 @@
     "lineage_id": "L0016",
     "color": "hsl(62, 70%, 55%)",
     "qid": "Q183150",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 63,
-    "t1_start": -1700,
-    "t1_end": -200
+    "sitelinks": 63
   },
   {
     "name_en": "Kikata Kingdom",
@@ -391,11 +369,9 @@
     "lineage_id": null,
     "color": "hsl(166, 70%, 55%)",
     "qid": "Q6406219",
-    "tier": 1,
+    "tier": 3,
     "region": "south_asia",
-    "sitelinks": 6,
-    "t1_start": -1650,
-    "t1_end": -1650
+    "sitelinks": 6
   },
   {
     "name_en": "Mitanni",
@@ -423,11 +399,9 @@
     "lineage_id": "L0019",
     "color": "hsl(249, 70%, 55%)",
     "qid": "Q4496560",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 20,
-    "t1_start": -1550,
-    "t1_end": -1250
+    "sitelinks": 20
   },
   {
     "name_en": "Wilusa",
@@ -439,11 +413,9 @@
     "lineage_id": null,
     "color": "hsl(268, 70%, 55%)",
     "qid": "Q337767",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 19,
-    "t1_start": -1400,
-    "t1_end": -1400
+    "sitelinks": 19
   },
   {
     "name_en": "Seha River Land",
@@ -455,7 +427,7 @@
     "lineage_id": null,
     "color": "hsl(192, 70%, 55%)",
     "qid": "Q752265",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 10
   },
@@ -469,11 +441,9 @@
     "lineage_id": null,
     "color": "hsl(29, 70%, 55%)",
     "qid": "Q208475",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 58,
-    "t1_start": -1300,
-    "t1_end": -550
+    "sitelinks": 58
   },
   {
     "name_en": "Moab",
@@ -485,11 +455,9 @@
     "lineage_id": "L0010",
     "color": "hsl(29, 70%, 55%)",
     "qid": "Q326304",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 57,
-    "t1_start": -1300,
-    "t1_end": -400
+    "sitelinks": 57
   },
   {
     "name_en": "Tarḫuntašša",
@@ -559,11 +527,9 @@
     "lineage_id": "L0022",
     "color": "hsl(39, 70%, 55%)",
     "qid": "Q335070",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 42,
-    "t1_start": -1200,
-    "t1_end": -950
+    "sitelinks": 42
   },
   {
     "name_en": "Neo-Hittite states",
@@ -603,11 +569,9 @@
     "lineage_id": null,
     "color": "hsl(205, 70%, 55%)",
     "qid": "Q1068408",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 40,
-    "t1_start": -1200,
-    "t1_end": -1050
+    "sitelinks": 40
   },
   {
     "name_en": "Lydia",
@@ -649,11 +613,9 @@
     "lineage_id": null,
     "color": "hsl(345, 70%, 55%)",
     "qid": "Q940785",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 46,
-    "t1_start": -1150,
-    "t1_end": 250
+    "sitelinks": 46
   },
   {
     "name_en": "Gandhāra",
@@ -693,11 +655,9 @@
     "lineage_id": "L0020",
     "color": "hsl(236, 70%, 55%)",
     "qid": "Q767089",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 41,
-    "t1_start": -1100,
-    "t1_end": -350
+    "sitelinks": 41
   },
   {
     "name_en": "Song",
@@ -21732,22 +21692,6 @@
     "sitelinks": 5
   },
   {
-    "name_en": "Văn Lang",
-    "name_ko": "문랑",
-    "lon": 105.4,
-    "lat": 21.3,
-    "start_year": -2879,
-    "end_year": -258,
-    "lineage_id": null,
-    "color": "hsl(285, 70%, 55%)",
-    "qid": null,
-    "tier": 1,
-    "region": "southeast_asia",
-    "sitelinks": 0,
-    "t1_start": -2850,
-    "t1_end": -1700
-  },
-  {
     "name_en": "Âu Lạc",
     "name_ko": "아우락",
     "lon": 105.8,
@@ -21920,22 +21864,6 @@
     "sitelinks": 96,
     "t1_start": -1600,
     "t1_end": -1178
-  },
-  {
-    "name_en": "Kassite Babylonia",
-    "name_ko": "카시트 바빌로니아",
-    "lon": 44.4,
-    "lat": 32.5,
-    "start_year": -1531,
-    "end_year": -1155,
-    "lineage_id": null,
-    "color": "hsl(288, 70%, 55%)",
-    "qid": "Q241524",
-    "tier": 1,
-    "region": "middle_east",
-    "sitelinks": 16,
-    "t1_start": -1531,
-    "t1_end": -1155
   },
   {
     "name_en": "Ancient Greece",
