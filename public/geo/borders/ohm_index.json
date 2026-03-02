@@ -7407,7 +7407,7 @@
     "qid": "Q131429368",
     "name_en": "Alawi Sultanate",
     "name_ko": "아라위 술탄국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1666,
     "end_year": 1912,
     "snapshots": [
@@ -11675,7 +11675,7 @@
     "qid": "Q56282578",
     "name_en": "Uryankhay Republic",
     "name_ko": "우르야응크하이 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1911,
     "end_year": 1914,
     "snapshots": [
@@ -12365,7 +12365,7 @@
     "qid": "Q146761",
     "name_en": "Hatay State",
     "name_ko": "하타이 공화국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1938,
     "end_year": 1939,
     "snapshots": [
@@ -13589,7 +13589,7 @@
     "qid": "Q6392538",
     "name_en": "Kenya (1963–1964)",
     "name_ko": "케냐",
-    "tier": 2,
+    "tier": 3,
     "start_year": 1963,
     "end_year": 1964,
     "snapshots": [

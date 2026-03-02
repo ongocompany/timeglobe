@@ -8969,7 +8969,7 @@
     "lineage_id": null,
     "color": "hsl(261, 70%, 55%)",
     "qid": "Q1296908",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 21
   },
@@ -9487,7 +9487,7 @@
     "lineage_id": null,
     "color": "hsl(301, 70%, 55%)",
     "qid": "Q1885093",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 19
   },
@@ -10271,7 +10271,7 @@
     "lineage_id": "L0027",
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q6415938",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 13
   },
@@ -11531,7 +11531,7 @@
     "lineage_id": "L0165",
     "color": "hsl(187, 70%, 55%)",
     "qid": "Q2485209",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 12
   },
@@ -11895,7 +11895,7 @@
     "lineage_id": "L0165",
     "color": "hsl(187, 70%, 55%)",
     "qid": "Q404774",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 24
   },
@@ -12021,7 +12021,7 @@
     "lineage_id": "L0165",
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q2121839",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 12
   },
@@ -12637,7 +12637,7 @@
     "lineage_id": "L0027",
     "color": "hsl(187, 70%, 55%)",
     "qid": "Q1367119",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 15
   },
@@ -12651,7 +12651,7 @@
     "lineage_id": "L0165",
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q2121850",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 10
   },
@@ -12679,7 +12679,7 @@
     "lineage_id": "L0179",
     "color": "hsl(187, 70%, 55%)",
     "qid": "Q1641428",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 8
   },
@@ -13463,7 +13463,7 @@
     "lineage_id": "L0179",
     "color": "hsl(123, 70%, 55%)",
     "qid": "Q739722",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 8
   },
@@ -13477,7 +13477,7 @@
     "lineage_id": "L0179",
     "color": "hsl(123, 70%, 55%)",
     "qid": "Q1897800",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 13
   },
@@ -13491,7 +13491,7 @@
     "lineage_id": "L0179",
     "color": "hsl(187, 70%, 55%)",
     "qid": "Q13375062",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 6
   },
@@ -13953,7 +13953,7 @@
     "lineage_id": "L0179",
     "color": "hsl(123, 70%, 55%)",
     "qid": "Q202775",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 15
   },
@@ -14518,20 +14518,6 @@
     "sitelinks": 30
   },
   {
-    "name_en": "Federated Malay States",
-    "name_ko": "말레이 연방주",
-    "lon": 101.7,
-    "lat": 3.159722222,
-    "start_year": 1895,
-    "end_year": 1946,
-    "lineage_id": "L0147",
-    "color": "hsl(56, 70%, 55%)",
-    "qid": "Q1400154",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 26
-  },
-  {
     "name_en": "Greater Republic of Central America",
     "name_ko": "중앙아메리카 대공화국",
     "lon": -89.2,
@@ -14611,7 +14597,7 @@
     "lineage_id": null,
     "color": "hsl(186, 70%, 55%)",
     "qid": "Q61355432",
-    "tier": 2,
+    "tier": 3,
     "region": "sub_saharan",
     "sitelinks": 2
   },
@@ -14625,7 +14611,7 @@
     "lineage_id": "L0179",
     "color": "hsl(187, 70%, 55%)",
     "qid": "Q65050489",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 2
   },
@@ -14723,7 +14709,7 @@
     "lineage_id": "L0193",
     "color": "hsl(15, 70%, 55%)",
     "qid": "Q56282578",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 8
   },
@@ -14810,20 +14796,6 @@
     "tier": 2,
     "region": "east_asia",
     "sitelinks": 29
-  },
-  {
-    "name_en": "South-West Africa",
-    "name_ko": "남서아프리카",
-    "lon": 17,
-    "lat": -23,
-    "start_year": 1915,
-    "end_year": 1990,
-    "lineage_id": null,
-    "color": "hsl(42, 70%, 55%)",
-    "qid": "Q953068",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 47
   },
   {
     "name_en": "French Togoland",
@@ -14975,7 +14947,7 @@
     "lineage_id": null,
     "color": "hsl(326, 70%, 55%)",
     "qid": "Q2703679",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 18
   },
@@ -15031,7 +15003,7 @@
     "lineage_id": "L0131",
     "color": "hsl(126, 70%, 55%)",
     "qid": "Q38251605",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 11
   },
@@ -15185,7 +15157,7 @@
     "lineage_id": "L0018",
     "color": "hsl(321, 70%, 55%)",
     "qid": "Q2776615",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 8
   },
@@ -15199,7 +15171,7 @@
     "lineage_id": "L0120",
     "color": "hsl(180, 70%, 55%)",
     "qid": "Q541199",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 15
   },
@@ -15554,20 +15526,6 @@
     "sitelinks": 4
   },
   {
-    "name_en": "Second Spanish Republic",
-    "name_ko": "스페인 제2공화국",
-    "lon": -3.5,
-    "lat": 40.2,
-    "start_year": 1931,
-    "end_year": 1939,
-    "lineage_id": "L0069",
-    "color": "hsl(331, 70%, 55%)",
-    "qid": "Q178038",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 73
-  },
-  {
     "name_en": "Chinese Soviet Republic",
     "name_ko": "중화소비에트공화국",
     "lon": 115.7,
@@ -15610,20 +15568,6 @@
     "sitelinks": 174
   },
   {
-    "name_en": "Estado Novo",
-    "name_ko": "이스타두 노부",
-    "lon": -9.155277777,
-    "lat": 38.712777777,
-    "start_year": 1933,
-    "end_year": 1974,
-    "lineage_id": "L0116",
-    "color": "hsl(173, 70%, 55%)",
-    "qid": "Q824489",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 38
-  },
-  {
     "name_en": "East Hebei Autonomous Government",
     "name_ko": "기동방공자치정부",
     "lon": 116.8,
@@ -15652,20 +15596,6 @@
     "sitelinks": 84
   },
   {
-    "name_en": "Regional Defence Council of Aragon",
-    "name_ko": "아라곤 지역 방위 위원회",
-    "lon": -0.0333333,
-    "lat": 41.2333,
-    "start_year": 1936,
-    "end_year": 1937,
-    "lineage_id": null,
-    "color": "hsl(303, 70%, 55%)",
-    "qid": "Q2994258",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 16
-  },
-  {
     "name_en": "Colony of Aden",
     "name_ko": "아덴 식민지",
     "lon": 45.0333,
@@ -15689,7 +15619,7 @@
     "lineage_id": "L0003",
     "color": "hsl(5, 70%, 55%)",
     "qid": "Q146761",
-    "tier": 2,
+    "tier": 3,
     "region": "middle_east",
     "sitelinks": 34
   },
@@ -15703,7 +15633,7 @@
     "lineage_id": null,
     "color": "hsl(125, 70%, 55%)",
     "qid": "Q708865",
-    "tier": 2,
+    "tier": 3,
     "region": "east_asia",
     "sitelinks": 14
   },
@@ -15720,34 +15650,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 52
-  },
-  {
-    "name_en": "Slovak Republic",
-    "name_ko": "슬로바키아 공화국",
-    "lon": 17.1,
-    "lat": 48.13333333,
-    "start_year": 1939,
-    "end_year": 1945,
-    "lineage_id": "L0101",
-    "color": "hsl(98, 70%, 55%)",
-    "qid": "Q154401",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 55
-  },
-  {
-    "name_en": "Francoist Spain",
-    "name_ko": "프랑코 정권",
-    "lon": -3.775,
-    "lat": 40.521388888,
-    "start_year": 1939,
-    "end_year": 1975,
-    "lineage_id": null,
-    "color": "hsl(331, 70%, 55%)",
-    "qid": "Q13474305",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 54
   },
   {
     "name_en": "Italian protectorate of Albania",
@@ -15792,62 +15694,6 @@
     "sitelinks": 79
   },
   {
-    "name_en": "National Legionary State",
-    "name_ko": "국민군단국가",
-    "lon": 26.1,
-    "lat": 44.43,
-    "start_year": 1940,
-    "end_year": 1941,
-    "lineage_id": null,
-    "color": "hsl(58, 70%, 55%)",
-    "qid": "Q2507497",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 16
-  },
-  {
-    "name_en": "Wang Jingwei regime",
-    "name_ko": "왕징웨이 정권",
-    "lon": 118.766666666,
-    "lat": 32.05,
-    "start_year": 1940,
-    "end_year": 1945,
-    "lineage_id": null,
-    "color": "hsl(125, 70%, 55%)",
-    "qid": "Q696242",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 33
-  },
-  {
-    "name_en": "Independent State of Croatia",
-    "name_ko": "크로아티아 독립국",
-    "lon": 15.9667,
-    "lat": 44.8,
-    "start_year": 1941,
-    "end_year": 1945,
-    "lineage_id": "L0103",
-    "color": "hsl(38, 70%, 55%)",
-    "qid": "Q153128",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 58
-  },
-  {
-    "name_en": "Hellenic State",
-    "name_ko": "그리스국",
-    "lon": 23.73,
-    "lat": 37.98,
-    "start_year": 1941,
-    "end_year": 1944,
-    "lineage_id": null,
-    "color": "hsl(162, 70%, 55%)",
-    "qid": "Q3013827",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 29
-  },
-  {
     "name_en": "Lokot Autonomy",
     "name_ko": "로코트 공화국",
     "lon": 34.55,
@@ -15857,37 +15703,9 @@
     "lineage_id": null,
     "color": "hsl(185, 70%, 55%)",
     "qid": "Q30573",
-    "tier": 2,
+    "tier": 3,
     "region": "europe",
     "sitelinks": 19
-  },
-  {
-    "name_en": "Quisling regime",
-    "name_ko": "크비슬링 정권",
-    "lon": 10.75,
-    "lat": 59.91,
-    "start_year": 1942,
-    "end_year": 1945,
-    "lineage_id": null,
-    "color": "hsl(205, 70%, 55%)",
-    "qid": "Q2616953",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 23
-  },
-  {
-    "name_en": "State of Burma",
-    "name_ko": "버마국",
-    "lon": 96.169166666,
-    "lat": 16.846388888,
-    "start_year": 1943,
-    "end_year": 1945,
-    "lineage_id": "L0039",
-    "color": "hsl(255, 70%, 55%)",
-    "qid": "Q704358",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 27
   },
   {
     "name_en": "Second East Turkestan Republic",
@@ -16030,20 +15848,6 @@
     "sitelinks": 40
   },
   {
-    "name_en": "People's Committee of North Korea",
-    "name_ko": "북조선인민위원회",
-    "lon": 125.8,
-    "lat": 39,
-    "start_year": 1947,
-    "end_year": 1948,
-    "lineage_id": null,
-    "color": "hsl(20, 70%, 55%)",
-    "qid": "Q705044",
-    "tier": 2,
-    "region": "east_asia",
-    "sitelinks": 19
-  },
-  {
     "name_en": "All-Palestine Government",
     "name_ko": "팔레스타인 정부 (1948년)",
     "lon": 34.47,
@@ -16170,34 +15974,6 @@
     "sitelinks": 27
   },
   {
-    "name_en": "Federation of Ethiopia and Eritrea",
-    "name_ko": "에티오피아-에리트레아 연방",
-    "lon": 38.74,
-    "lat": 9.03,
-    "start_year": 1952,
-    "end_year": 1962,
-    "lineage_id": null,
-    "color": "hsl(342, 70%, 55%)",
-    "qid": "Q2603305",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 14
-  },
-  {
-    "name_en": "Federation of Rhodesia and Nyasaland",
-    "name_ko": "로디지아 니아살랜드 연방",
-    "lon": 31.029722,
-    "lat": -17.863889,
-    "start_year": 1953,
-    "end_year": 1963,
-    "lineage_id": null,
-    "color": "hsl(285, 70%, 55%)",
-    "qid": "Q654342",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 47
-  },
-  {
     "name_en": "Netherlands Antilles",
     "name_ko": "네덜란드령 안틸레스",
     "lon": -66,
@@ -16310,20 +16086,6 @@
     "sitelinks": 12
   },
   {
-    "name_en": "United Arab States",
-    "name_ko": "아랍 합중국",
-    "lon": 31.24,
-    "lat": 30.04,
-    "start_year": 1958,
-    "end_year": 1961,
-    "lineage_id": null,
-    "color": "hsl(36, 70%, 55%)",
-    "qid": "Q856843",
-    "tier": 2,
-    "region": "middle_east",
-    "sitelinks": 35
-  },
-  {
     "name_en": "United Suvadive Republic",
     "name_ko": "수바디브 공화국",
     "lon": 73,
@@ -16336,20 +16098,6 @@
     "tier": 2,
     "region": "unknown",
     "sitelinks": 20
-  },
-  {
-    "name_en": "Mali Federation",
-    "name_ko": "말리 연방",
-    "lon": -12.206694444,
-    "lat": 14.459888888,
-    "start_year": 1959,
-    "end_year": 1960,
-    "lineage_id": null,
-    "color": "hsl(332, 70%, 55%)",
-    "qid": "Q216632",
-    "tier": 2,
-    "region": "sub_saharan",
-    "sitelinks": 42
   },
   {
     "name_en": "Somali Republic",
@@ -16434,20 +16182,6 @@
     "tier": 2,
     "region": "sub_saharan",
     "sitelinks": 33
-  },
-  {
-    "name_en": "Provisional Revolutionary Government of the Republic of South Vietnam",
-    "name_ko": "남베트남 공화국",
-    "lon": 106.666666666,
-    "lat": 10.75,
-    "start_year": 1969,
-    "end_year": 1976,
-    "lineage_id": "L0198",
-    "color": "hsl(298, 70%, 55%)",
-    "qid": "Q1072362",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 30
   },
   {
     "name_en": "Dominion of Fiji",
@@ -16700,20 +16434,6 @@
     "tier": 2,
     "region": "north_america",
     "sitelinks": 5
-  },
-  {
-    "name_en": "Empire of Vietnam",
-    "name_ko": "베트남 제국",
-    "lon": 107.6,
-    "lat": 16.46,
-    "start_year": 1945,
-    "end_year": 1945,
-    "lineage_id": null,
-    "color": "hsl(131, 70%, 55%)",
-    "qid": "Q840261",
-    "tier": 2,
-    "region": "southeast_asia",
-    "sitelinks": 33
   },
   {
     "name_en": "Shun dynasty",
