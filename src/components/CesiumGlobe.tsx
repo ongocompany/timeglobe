@@ -1440,9 +1440,18 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const ohmGeojsonCacheRef = useRef<Map<number, unknown>>(new Map());
   // [cl] 현재 로드된 OHM 연도 (불필요한 재렌더 방지)
   const currentOhmYearRef = useRef<number | null>(null);
-  // [cl] OHM 매칭된 QID set (원형 렌더링에서 제외용)
+  // [cl] OHM 매칭된 QID set (원형 렌더링에서 제외용) — CShapes 매칭 QID도 포함
   const ohmQidsRef = useRef<Set<string>>(new Set());
   const ohmNamesRef = useRef<Set<string>>(new Set());
+
+  // [cl] CShapes 폴리곤 연동 — 1886+ 현대국가 중 OHM 없는 T1/T2에 폴리곤 제공 (라벨 없음!)
+  interface CshapesQidEntry {
+    qid: string; cshapes_name: string; tier: number;
+    start_year: number; end_year: number; cshapes_years: number[];
+  }
+  const cshapesQidIndexRef = useRef<CshapesQidEntry[] | null>(null);
+  // [cl] CShapes 연도별 GeoJSON 캐시: year → { features: [...] }
+  const cshapesGeojsonCacheRef = useRef<Map<number, unknown>>(new Map());
   // [mk] T1/T2 경계선 엔티티 목록 — 고도 변화 시 width/show 업데이트
   const t1BorderEntitiesRef = useRef<import("cesium").Entity[]>([]);
   const t2BorderEntitiesRef = useRef<import("cesium").Entity[]>([]); // [cl] T2: 1.5만km+ 에서만 표시
@@ -1783,6 +1792,37 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     return data;
   }
 
+  // [cl] ★ CShapes QID 인덱스 로드 (1회) — 1886+ 현대국가 폴리곤 매핑
+  async function loadCshapesQidIndex(): Promise<CshapesQidEntry[]> {
+    if (cshapesQidIndexRef.current) return cshapesQidIndexRef.current;
+    const res = await fetch("/geo/borders/cshapes_qid_index.json");
+    const data: CshapesQidEntry[] = await res.json();
+    cshapesQidIndexRef.current = data;
+    // [cl] CShapes 매칭 QID도 ohmQidsRef에 추가 → 원형 렌더링에서 제외 (폴리곤으로 대체)
+    for (const e of data) {
+      ohmQidsRef.current.add(e.qid);
+    }
+    return data;
+  }
+
+  // [cl] CShapes 연도별 GeoJSON에서 특정 국가 feature 추출 (폴리곤만, 라벨 절대 없음)
+  async function fetchCshapesFeature(year: number, cshapesName: string): Promise<unknown | null> {
+    // [cl] 캐시 확인
+    if (!cshapesGeojsonCacheRef.current.has(year)) {
+      try {
+        const res = await fetch(`/geo/borders/cshapes_${year}.geojson`);
+        if (!res.ok) return null;
+        const geojson = await res.json();
+        cshapesGeojsonCacheRef.current.set(year, geojson);
+      } catch { return null; }
+    }
+    const geojson = cshapesGeojsonCacheRef.current.get(year) as { features?: Array<{ properties?: { NAME?: string }; geometry: unknown }> } | undefined;
+    if (!geojson?.features) return null;
+    // [cl] NAME 매칭으로 해당 국가 feature 찾기
+    const feature = geojson.features.find(f => f.properties?.NAME === cshapesName);
+    return feature || null;
+  }
+
   // [cl] ★ OHM 폴리곤 렌더링 — 특정 연도에 존재하는 엔티티의 실제 국경선
   // 전략: 각 엔티티별 "가장 적합한 스냅샷" 1개 선택 → fetch → polyline 렌더링
   async function renderOhmForYear(targetYear: number) {
@@ -1935,6 +1975,96 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       // OHM은 폴리곤(국경선)만 담당, 라벨 이중 표시 방지 (2026-03-02)
     }
 
+    // [cl] ★ CShapes 폴리곤 렌더링 — 1886+ 현대국가 중 OHM 없는 T1/T2 (폴리곤만, 라벨 절대 없음!)
+    if (targetYear >= 1886 && cshapesQidIndexRef.current) {
+      // [cl] OHM에서 이미 렌더링된 QID 수집 (CShapes와 중복 방지)
+      const ohmRenderedQids = new Set(activeEntities.map(a => a.entity.qid));
+
+      // [cl] 해당 연도에 활성인 CShapes 매칭 엔티티 필터링
+      const csActive = cshapesQidIndexRef.current.filter(e => {
+        if (ohmRenderedQids.has(e.qid)) return false; // OHM이 이미 커버
+        if (e.start_year > targetYear || e.end_year < targetYear) return false;
+        if (!visibleTiersRef.current.includes(e.tier)) return false;
+        return true;
+      });
+
+      // [cl] 각 엔티티별 최적 CShapes 연도 선택 (targetYear 이하 중 가장 가까운 연도)
+      for (const csEntity of csActive) {
+        const availableYears = csEntity.cshapes_years.filter(y => y <= targetYear);
+        if (availableYears.length === 0) {
+          // [cl] targetYear 이전 연도 없으면 이후 가장 가까운 것
+          const futureYears = csEntity.cshapes_years.filter(y => y > targetYear);
+          if (futureYears.length === 0) continue;
+          availableYears.push(futureYears[0]);
+        }
+        const bestYear = availableYears[availableYears.length - 1]; // 가장 가까운 연도
+
+        const feature = await fetchCshapesFeature(bestYear, csEntity.cshapes_name);
+        if (!feature || !(feature as { geometry?: unknown }).geometry) continue;
+        if (viewer.isDestroyed()) return;
+
+        const feat = feature as { geometry: unknown; properties?: Record<string, unknown> };
+
+        // [cl] 색상: wikidata_circles의 공간해싱 색상 재사용
+        const circleEntry = wikidataCirclesRef.current?.find(c => c.qid === csEntity.qid);
+        const fallbackHue = (parseInt(csEntity.qid.replace("Q", ""), 10) || 0) * 137 % 360;
+        const baseColor = circleEntry
+          ? circleEntry.color
+          : `hsl(${fallbackHue}, 55%, 55%)`;
+
+        const fillColor = Color.fromCssColorString(baseColor).withAlpha(0.35);
+        const outlineColor = Color.fromCssColorString(baseColor).withAlpha(0.6);
+        const entityTier = csEntity.tier;
+
+        // [cl] CShapes 폴리곤 채우기 (OHM과 동일 방식)
+        if (showFillRef.current) {
+          try {
+            const hierarchies = extractPolygonHierarchies(feat.geometry);
+            for (const hierarchy of hierarchies) {
+              ds.entities.add({
+                polygon: {
+                  hierarchy,
+                  material: fillColor,
+                  outline: false,
+                  classificationType: ClassificationType.BOTH,
+                },
+              });
+            }
+          } catch {
+            const rings = extractRings(feat.geometry);
+            for (const positions of rings) {
+              if (positions.length < 2) continue;
+              ds.entities.add({
+                polyline: { positions, width: 1.0, material: outlineColor },
+              });
+            }
+          }
+        }
+
+        // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일 방식, 고도 반응형)
+        if (showBorderRef.current && entityTier <= 2) {
+          const outlineRings = extractRings(feat.geometry);
+          const initAltKm = viewer.camera.positionCartographic.height / 1000;
+          const t2InitShow = initAltKm >= 15000;
+          for (const positions of outlineRings) {
+            if (positions.length < 2) continue;
+            const ent = ds.entities.add({
+              polyline: {
+                positions,
+                width: lastT1WidthRef.current,
+                material: outlineColor,
+                show: entityTier === 1 ? true : t2InitShow,
+              },
+            });
+            if (entityTier === 1) t1BorderEntitiesRef.current.push(ent);
+            if (entityTier === 2) t2BorderEntitiesRef.current.push(ent);
+          }
+        }
+
+        // [cl] ★ CShapes 라벨 절대 없음! 라벨은 renderCirclesForYear() 전담
+      }
+    }
+
     if (!viewer.isDestroyed()) {
       viewer.dataSources.add(ds);
       ohmDsRef.current = ds;
@@ -1984,22 +2114,20 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     };
     viewer.scene.preRender.addEventListener(onPreRender);
 
-    // [cl] ★ OHM 인덱스 먼저 로드 → 원형 데이터 로드 (OHM QID 제외를 위해 순서 중요)
-    loadOhmIndex().then(() => {
+    // [cl] ★ OHM + CShapes 인덱스 먼저 로드 → 원형 데이터 로드 (QID 제외를 위해 순서 중요)
+    // CShapes 인덱스도 병렬 로드하여 ohmQidsRef에 CShapes 매칭 QID도 추가
+    Promise.all([
+      loadOhmIndex().catch(() => null),
+      loadCshapesQidIndex().catch(() => null),
+    ]).then(() => {
       if (cancelled || viewer.isDestroyed()) return;
-      // [cl] OHM 인덱스 로드 후 원형 데이터 로드 (ohmQidsRef 세팅 완료 후)
+      // [cl] OHM + CShapes 인덱스 로드 후 원형 데이터 로드 (ohmQidsRef 세팅 완료 후)
       loadWikidataCircles().then(() => {
         if (cancelled || viewer.isDestroyed()) return;
         renderCirclesForYear(currentYear);
       }).catch(() => {});
-      // [cl] OHM 폴리곤 첫 렌더링
+      // [cl] OHM + CShapes 폴리곤 첫 렌더링
       renderOhmForYear(currentYear).catch(() => {});
-    }).catch(() => {
-      // [cl] OHM 인덱스 로드 실패해도 원형은 정상 로드
-      loadWikidataCircles().then(() => {
-        if (cancelled || viewer.isDestroyed()) return;
-        renderCirclesForYear(currentYear);
-      }).catch(() => {});
     });
 
     // [cl] 클린업: StrictMode 첫 번째 실행의 비동기 취소 + 데이터소스 정리
