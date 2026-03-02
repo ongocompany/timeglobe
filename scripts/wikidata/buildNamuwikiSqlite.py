@@ -6,7 +6,6 @@
 - 실행: python3 scripts/wikidata/buildNamuwikiSqlite.py
 """
 
-import json
 import sqlite3
 import re
 import os
@@ -56,65 +55,71 @@ def build(batch_size=5000):
 
     t0 = time.time()
 
-    print("[mk] JSON 로딩 중...")
-    with open(INPUT_PATH, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    print(f"[mk] 총 {len(data):,}개 항목 로드 완료 ({time.time()-t0:.1f}s)")
+    import ijson
 
     conn = sqlite3.connect(OUTPUT_PATH)
     conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA synchronous=NORMAL")
-    conn.execute("PRAGMA cache_size=100000")
+    conn.execute("PRAGMA cache_size=50000")
     init_db(conn)
     c = conn.cursor()
 
-    total = len(data)
     art_rows = []
     cat_rows = []
     inserted = 0
     redirect_count = 0
     cat_count = 0
 
-    print("[mk] 데이터 처리 중...")
-    for i, item in enumerate(data):
-        title    = item.get("title", "").strip()
-        text     = item.get("text", "")
-        ns       = item.get("namespace", 0)
-        redirect = extract_redirect(text)
-        cats     = extract_categories(text)
+    print("[mk] 스트리밍 파싱 시작 (ijson)...")
+    with open(INPUT_PATH, "rb") as f:
+        for item in ijson.items(f, "item"):
+            title    = (item.get("title") or "").strip()
+            text     = item.get("text") or ""
+            ns       = item.get("namespace") or 0
+            redirect = extract_redirect(text)
+            cats     = extract_categories(text)
 
-        if redirect:
-            redirect_count += 1
+            if redirect:
+                redirect_count += 1
 
-        art_rows.append((title, text, redirect, ns))
-        # categories는 article_id 필요 → 배치 insert 후 처리
-        cat_rows.append(cats)
+            art_rows.append((title, text, redirect, ns))
+            cat_rows.append(cats)
 
-        if len(art_rows) >= batch_size or i == total - 1:
-            c.executemany(
-                "INSERT INTO articles(title, text, redirect, namespace) VALUES(?,?,?,?)",
-                art_rows
-            )
-            # 방금 insert된 id 범위
-            last_id = c.lastrowid
-            first_id = last_id - len(art_rows) + 1
+            if len(art_rows) >= batch_size:
+                c.executemany(
+                    "INSERT INTO articles(title, text, redirect, namespace) VALUES(?,?,?,?)",
+                    art_rows
+                )
+                last_id = c.lastrowid
+                first_id = last_id - len(art_rows) + 1
+                for j, cats in enumerate(cat_rows):
+                    art_id = first_id + j
+                    for cat in cats:
+                        cat_count += 1
+                        c.execute("INSERT INTO categories(article_id, category) VALUES(?,?)", (art_id, cat.strip()))
+                conn.commit()
+                inserted += len(art_rows)
+                art_rows = []
+                cat_rows = []
+                elapsed = time.time() - t0
+                speed = inserted / elapsed if elapsed > 0 else 0
+                print(f"  {inserted:,}건 처리 | 분류 {cat_count:,}개 | {speed:.0f}/s | {elapsed:.0f}s 경과", flush=True)
 
-            for j, cats in enumerate(cat_rows):
-                art_id = first_id + j
-                for cat in cats:
-                    cat_count += 1
-                    c.execute("INSERT INTO categories(article_id, category) VALUES(?,?)", (art_id, cat.strip()))
-
-            conn.commit()
-            inserted += len(art_rows)
-            art_rows = []
-            cat_rows = []
-
-            elapsed = time.time() - t0
-            pct = inserted / total * 100
-            speed = inserted / elapsed if elapsed > 0 else 0
-            eta = (total - inserted) / speed if speed > 0 else 0
-            print(f"  [{pct:5.1f}%] {inserted:,}/{total:,} | 분류 {cat_count:,}개 | {speed:.0f}/s | ETA {eta:.0f}s")
+    # 남은 배치
+    if art_rows:
+        c.executemany(
+            "INSERT INTO articles(title, text, redirect, namespace) VALUES(?,?,?,?)",
+            art_rows
+        )
+        last_id = c.lastrowid
+        first_id = last_id - len(art_rows) + 1
+        for j, cats in enumerate(cat_rows):
+            art_id = first_id + j
+            for cat in cats:
+                cat_count += 1
+                c.execute("INSERT INTO categories(article_id, category) VALUES(?,?)", (art_id, cat.strip()))
+        conn.commit()
+        inserted += len(art_rows)
 
     # FTS 인덱스 빌드
     print("[mk] FTS 인덱스 빌드 중...")
