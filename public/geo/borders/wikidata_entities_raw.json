@@ -8728,7 +8728,7 @@
   {
     "qid": "Q8890160",
     "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
+    "name_ko": "폴란드",
     "start": "966",
     "end": "1569",
     "lon": "19.933333",
@@ -13687,22 +13687,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q3446214",
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "start": "1320",
-    "end": "1386",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 3,
-    "region": "unknown",
-    "score": 26.8,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q123027565",
     "name_en": "Kashmir Sultanate",
     "name_ko": "카슈미르 술탄국",
@@ -14884,22 +14868,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q825902",
-    "name_en": "Polish–Lithuanian union",
-    "name_ko": "포리시리투아니아은 우니오은",
-    "start": "1385",
-    "end": "1569",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 31,
-    "region": "unknown",
-    "score": 74.7,
-    "tier_reason": "score_top8"
-  },
-  {
     "qid": "Q7245103",
     "name_en": "Principality of Gjirokastër",
     "name_ko": "그지로카스트에르 공국",
@@ -14914,22 +14882,6 @@
     "region": "unknown",
     "score": 30.8,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q1649871",
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "start": "1386",
-    "end": "1569",
-    "lon": "",
-    "lat": "",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 38,
-    "region": "unknown",
-    "score": 77.2,
-    "tier_reason": "score_top8"
   },
   {
     "qid": "Q12491044",
@@ -18312,25 +18264,6 @@
     "region": "unknown",
     "score": 33.9,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q170072",
-    "name_en": "Dutch Republic",
-    "name_ko": "네덜란드 공화국",
-    "start": "1581",
-    "end": "1795",
-    "lon": "4.3",
-    "lat": "52.08",
-    "type": "historical",
-    "lineage_id": "L0121",
-    "tier": 1,
-    "sitelinks": 82,
-    "region": "europe",
-    "score": 85.4,
-    "tier_reason": "score_top25",
-    "t1_start": 1581,
-    "t1_end": 1795,
-    "t1_sources": 3
   },
   {
     "qid": "Q1768252",
@@ -22338,22 +22271,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q774783",
-    "name_en": "Sovereign Principality of the United Netherlands",
-    "name_ko": "연합 네덜란드 주권공국",
-    "start": "1813",
-    "end": "1815",
-    "lon": "5.55",
-    "lat": "52.3167",
-    "type": "historical",
-    "lineage_id": "L0072",
-    "tier": 3,
-    "sitelinks": 19,
-    "region": "europe",
-    "score": 42.2,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q164079",
     "name_en": "Kingdom of Hanover",
     "name_ko": "하노버 왕국",
@@ -22495,22 +22412,6 @@
     "sitelinks": 39,
     "region": "europe",
     "score": 61.4,
-    "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q15864",
-    "name_en": "United Kingdom of the Netherlands",
-    "name_ko": "네덜란드 연합왕국",
-    "start": "1815",
-    "end": "1839",
-    "lon": "4.89",
-    "lat": "52.37",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 54,
-    "region": "europe",
-    "score": 69.1,
     "tier_reason": "score_top55"
   },
   {
@@ -23201,22 +23102,6 @@
     "sitelinks": 13,
     "region": "middle_east",
     "score": 43.7,
-    "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q11750128",
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "start": "1830",
-    "end": "1831",
-    "lon": "21.01",
-    "lat": "52.23",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 3,
-    "region": "europe",
-    "score": 17,
     "tier_reason": "score_rest"
   },
   {
@@ -25759,22 +25644,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q696908",
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "start": "1916",
-    "end": "1918",
-    "lon": "21.01",
-    "lat": "52.23",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 44,
-    "region": "europe",
-    "score": 61.8,
-    "tier_reason": "score_top55"
-  },
-  {
     "qid": "Q243610",
     "name_en": "Ukrainian People's Republic",
     "name_ko": "우크라이나 인민공화국",
@@ -25965,24 +25834,6 @@
     "region": "middle_east",
     "score": 74.2,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q207272",
-    "name_en": "Second Polish Republic",
-    "name_ko": "폴란드 제2공화국",
-    "start": "1918",
-    "end": "1939",
-    "lon": "21.011111111",
-    "lat": "52.23",
-    "type": "historical",
-    "lineage_id": "L0099",
-    "tier": 1,
-    "sitelinks": 66,
-    "region": "europe",
-    "score": 75.8,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1920,
-    "t1_end": 1920
   },
   {
     "qid": "Q245160",
@@ -27565,22 +27416,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q116080",
-    "name_en": "Polish Underground State",
-    "name_ko": "폴란드 지하국가",
-    "start": "1939",
-    "end": "1945",
-    "lon": "21.01",
-    "lat": "52.23",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 2,
-    "sitelinks": 32,
-    "region": "europe",
-    "score": 51.1,
-    "tier_reason": "score_rest"
-  },
-  {
     "qid": "Q152750",
     "name_en": "Protectorate of Bohemia and Moravia",
     "name_ko": "보헤미아-모라바 보호령",
@@ -27851,24 +27686,6 @@
     "region": "southeast_asia",
     "score": 55.7,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q211274",
-    "name_en": "Polish People's Republic",
-    "name_ko": "폴란드 인민공화국",
-    "start": "1944",
-    "end": "1989",
-    "lon": "21.03333333",
-    "lat": "52.21666667",
-    "type": "historical",
-    "lineage_id": "L0099",
-    "tier": 1,
-    "sitelinks": 67,
-    "region": "europe",
-    "score": 76.7,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1980,
-    "t1_end": 1980
   },
   {
     "qid": "Q10988528",
@@ -30135,7 +29952,7 @@
   {
     "qid": "Q34",
     "name_en": "Kingdom of Sweden",
-    "name_ko": "스웨덴 왕국",
+    "name_ko": "스웨덴",
     "start": "1523",
     "end": "Present",
     "lat": "59.3",
@@ -35815,7 +35632,7 @@
     "qid": "Q55",
     "name_en": "Netherlands",
     "name_ko": "네덜란드",
-    "start": "1886",
+    "start": "1581",
     "end": "Present",
     "lat": "52.35",
     "lon": "4.91667",

@@ -5689,7 +5689,7 @@
   },
   {
     "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
+    "name_ko": "폴란드",
     "lon": 19.933333,
     "lat": 50.05,
     "start_year": 966,
@@ -11264,22 +11264,6 @@
     "sitelinks": 28
   },
   {
-    "name_en": "Dutch Republic",
-    "name_ko": "네덜란드 공화국",
-    "lon": 4.3,
-    "lat": 52.08,
-    "start_year": 1581,
-    "end_year": 1795,
-    "lineage_id": "L0121",
-    "color": "hsl(217, 70%, 55%)",
-    "qid": "Q170072",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 82,
-    "t1_start": 1581,
-    "t1_end": 1795
-  },
-  {
     "name_en": "Kingdom of Baluba",
     "name_ko": "발루바 왕국",
     "lon": 25.6784,
@@ -13436,20 +13420,6 @@
     "sitelinks": 14
   },
   {
-    "name_en": "Sovereign Principality of the United Netherlands",
-    "name_ko": "연합 네덜란드 주권공국",
-    "lon": 5.55,
-    "lat": 52.3167,
-    "start_year": 1813,
-    "end_year": 1815,
-    "lineage_id": "L0072",
-    "color": "hsl(217, 70%, 55%)",
-    "qid": "Q774783",
-    "tier": 3,
-    "region": "europe",
-    "sitelinks": 19
-  },
-  {
     "name_en": "Kingdom of Hanover",
     "name_ko": "하노버 왕국",
     "lon": 9.74,
@@ -13574,20 +13544,6 @@
     "tier": 3,
     "region": "europe",
     "sitelinks": 39
-  },
-  {
-    "name_en": "United Kingdom of the Netherlands",
-    "name_ko": "네덜란드 연합왕국",
-    "lon": 4.89,
-    "lat": 52.37,
-    "start_year": 1815,
-    "end_year": 1839,
-    "lineage_id": null,
-    "color": "hsl(217, 70%, 55%)",
-    "qid": "Q15864",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 54
   },
   {
     "name_en": "Free City of Kraków",
@@ -14038,20 +13994,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 13
-  },
-  {
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "lon": 21.01,
-    "lat": 52.23,
-    "start_year": 1830,
-    "end_year": 1831,
-    "lineage_id": null,
-    "color": "hsl(253, 70%, 55%)",
-    "qid": "Q11750128",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 3
   },
   {
     "name_en": "Wahidi Azzan",
@@ -15716,20 +15658,6 @@
     "sitelinks": 47
   },
   {
-    "name_en": "Kingdom of Poland",
-    "name_ko": "폴란드 왕국",
-    "lon": 21.01,
-    "lat": 52.23,
-    "start_year": 1916,
-    "end_year": 1918,
-    "lineage_id": null,
-    "color": "hsl(253, 70%, 55%)",
-    "qid": "Q696908",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 44
-  },
-  {
     "name_en": "Ukrainian People's Republic",
     "name_ko": "우크라이나 인민공화국",
     "lon": 30.5,
@@ -15868,22 +15796,6 @@
     "tier": 2,
     "region": "middle_east",
     "sitelinks": 52
-  },
-  {
-    "name_en": "Second Polish Republic",
-    "name_ko": "폴란드 제2공화국",
-    "lon": 21.011111111,
-    "lat": 52.23,
-    "start_year": 1918,
-    "end_year": 1939,
-    "lineage_id": "L0099",
-    "color": "hsl(253, 70%, 55%)",
-    "qid": "Q207272",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 66,
-    "t1_start": 1920,
-    "t1_end": 1920
   },
   {
     "name_en": "Democratic Republic of Georgia",
@@ -17088,20 +17000,6 @@
     "sitelinks": 14
   },
   {
-    "name_en": "Polish Underground State",
-    "name_ko": "폴란드 지하국가",
-    "lon": 21.01,
-    "lat": 52.23,
-    "start_year": 1939,
-    "end_year": 1945,
-    "lineage_id": null,
-    "color": "hsl(253, 70%, 55%)",
-    "qid": "Q116080",
-    "tier": 2,
-    "region": "europe",
-    "sitelinks": 32
-  },
-  {
     "name_en": "Protectorate of Bohemia and Moravia",
     "name_ko": "보헤미아-모라바 보호령",
     "lon": 14.4667,
@@ -17324,22 +17222,6 @@
     "tier": 2,
     "region": "southeast_asia",
     "sitelinks": 27
-  },
-  {
-    "name_en": "Polish People's Republic",
-    "name_ko": "폴란드 인민공화국",
-    "lon": 21.03333333,
-    "lat": 52.21666667,
-    "start_year": 1944,
-    "end_year": 1989,
-    "lineage_id": "L0099",
-    "color": "hsl(253, 70%, 55%)",
-    "qid": "Q211274",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 67,
-    "t1_start": 1980,
-    "t1_end": 1980
   },
   {
     "name_en": "Second East Turkestan Republic",
@@ -19095,7 +18977,7 @@
   },
   {
     "name_en": "Kingdom of Sweden",
-    "name_ko": "스웨덴 왕국",
+    "name_ko": "스웨덴",
     "lon": 18.1,
     "lat": 59.3,
     "start_year": 1523,
@@ -21364,7 +21246,7 @@
     "name_ko": "네덜란드",
     "lon": 4.91667,
     "lat": 52.35,
-    "start_year": 1886,
+    "start_year": 1581,
     "end_year": 2025,
     "lineage_id": null,
     "color": "hsl(217, 70%, 55%)",
