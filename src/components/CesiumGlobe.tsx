@@ -1894,16 +1894,25 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           }
         }
 
-        // [mk] 외곽선 (showBorder ON 시에만 추가)
+        // [mk] 외곽선 (showBorder ON 시에만 추가) — Tier별 스타일
         if (showBorderRef.current) {
           const outlineRings = extractRings(feature.geometry);
+          const tier = entity.tier ?? 3;
+          // [mk] T1=5px 실선, T2=3px 실선, T3=3px 점선(회색), T4=1px 실선
+          const borderWidth = tier === 1 ? 5 : tier === 2 ? 3 : tier === 3 ? 3 : 1;
+          const borderMaterial = tier === 3
+            ? new PolylineDashMaterialProperty({
+                color: Color.fromCssColorString("rgba(180,180,180,0.65)"),
+                dashLength: 14,
+              })
+            : outlineColor;
           for (const positions of outlineRings) {
             if (positions.length < 2) continue;
             ds.entities.add({
               polyline: {
                 positions,
-                width: 1.2,
-                material: outlineColor,
+                width: borderWidth,
+                material: borderMaterial,
               },
             });
           }
