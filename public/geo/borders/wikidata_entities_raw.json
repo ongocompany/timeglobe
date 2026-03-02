@@ -57,13 +57,11 @@
     "lat": "26.23",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 43,
     "region": "middle_east",
     "score": 79.3,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -3000,
-    "t1_end": -950
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q5743",
@@ -1178,24 +1176,6 @@
     "tier_reason": "score_top8"
   },
   {
-    "qid": "Q200969",
-    "name_en": "Chaldea",
-    "name_ko": "칼데아",
-    "start": "BC 850",
-    "end": "BC 650",
-    "lon": "47.0",
-    "lat": "31.0",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 60,
-    "region": "central_asia",
-    "score": 86.3,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -850,
-    "t1_end": -650
-  },
-  {
     "qid": "Q727710",
     "name_en": "Tabal",
     "name_ko": "타발",
@@ -1340,24 +1320,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q216068",
-    "name_en": "Sheba",
-    "name_ko": "시바 왕국",
-    "start": "BC 999",
-    "end": "275",
-    "lon": "45.333333333",
-    "lat": "15.45",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 45,
-    "region": "middle_east",
-    "score": 82.1,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -950,
-    "t1_end": -300
-  },
-  {
     "qid": "Q230407",
     "name_en": "Kingdom of Israel",
     "name_ko": "이스라엘 왕국",
@@ -1392,25 +1354,6 @@
     "tier_reason": "sitelinks_top20_auto",
     "t1_start": -900,
     "t1_end": -600
-  },
-  {
-    "qid": "Q10914393",
-    "name_en": "Neo-Assyrian Empire",
-    "name_ko": "신아시리아 제국",
-    "start": "BC 910",
-    "end": "BC 608",
-    "lon": "43.2625",
-    "lat": "35.456666666",
-    "type": "historical",
-    "lineage_id": "L0015",
-    "tier": 1,
-    "sitelinks": 60,
-    "region": "middle_east",
-    "score": 75.7,
-    "tier_reason": "score_top55",
-    "t1_start": -911,
-    "t1_end": -609,
-    "t1_sources": 4
   },
   {
     "qid": "Q11909456",
@@ -1876,7 +1819,7 @@
   {
     "qid": "Q20437507",
     "name_en": "Median Kingdom",
-    "name_ko": "메디아은 왕국",
+    "name_ko": "메디아 왕국",
     "start": "BC 677",
     "end": "BC 549",
     "lon": 48.5,
@@ -2033,13 +1976,11 @@
     "lat": "27.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 52,
     "region": "south_asia",
     "score": 81.2,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -550,
-    "t1_end": -350
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q389688",
@@ -2380,13 +2321,11 @@
     "lat": "37.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 52,
     "region": "central_asia",
     "score": 88.6,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -300,
-    "t1_end": 200
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q373189",
@@ -2398,13 +2337,11 @@
     "lat": "40.5",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 67,
     "region": "middle_east",
     "score": 78.1,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -300,
-    "t1_end": -100
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q62943",
@@ -2489,13 +2426,11 @@
     "lat": "32.06",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 48,
     "region": "north_africa",
     "score": 96.7,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -300,
-    "t1_end": 450
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q713397",
@@ -2587,13 +2522,11 @@
     "lat": "9.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 43,
     "region": "south_asia",
     "score": 93.8,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 300,
-    "t1_end": 300
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q1651832",
@@ -2621,31 +2554,27 @@
     "lat": "41.44",
     "type": "historical",
     "lineage_id": "L0016",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 64,
     "region": "middle_east",
     "score": 92.2,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -250,
-    "t1_end": 550
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q16718949",
     "name_en": "Scythia Minor (Crimea)",
-    "name_ko": "스크이티아 (크리메아)",
+    "name_ko": "소스키타이",
     "start": "BC 279",
     "end": "200",
     "lon": 35,
     "lat": 47,
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 3,
     "region": "central_asia",
     "score": 45.7,
-    "tier_reason": "score_top55",
-    "t1_start": -700,
-    "t1_end": -200,
+    "tier_reason": "review_session7",
     "t1_sources": 3
   },
   {
@@ -2693,13 +2622,11 @@
     "lat": "16.52",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 46,
     "region": "south_asia",
     "score": 83.2,
-    "tier_reason": "score_top25",
-    "t1_start": -100,
-    "t1_end": 220,
+    "tier_reason": "review_session7",
     "t1_sources": 2
   },
   {
@@ -3005,13 +2932,11 @@
     "lat": "28.49",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 47,
     "region": "south_asia",
     "score": 88.4,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -150,
-    "t1_end": 400
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q10908451",
@@ -3183,13 +3108,11 @@
     "lat": "13.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 48,
     "region": "middle_east",
     "score": 78.5,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -100,
-    "t1_end": 450
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q129854572",
@@ -3281,13 +3204,11 @@
     "lat": "45.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 58,
     "region": "europe",
     "score": 74.7,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -50,
-    "t1_end": 100
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q28456",
@@ -3415,7 +3336,7 @@
   {
     "qid": "Q116795888",
     "name_en": "Teotihuacan civilization",
-    "name_ko": "테오티후아카은 문명",
+    "name_ko": "테오티우아칸 문명",
     "start": "1",
     "end": "700",
     "lon": -98.84,
@@ -4526,13 +4447,11 @@
     "lat": "42.8825",
     "type": "historical",
     "lineage_id": "L0056",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 49,
     "region": "europe",
     "score": 93.8,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 450,
-    "t1_end": 500
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q956451",
@@ -4965,13 +4884,11 @@
     "lat": "56.086135",
     "type": "historical",
     "lineage_id": "L0057",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 49,
     "region": "europe",
     "score": 79.7,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 500,
-    "t1_end": 500
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q87791",
@@ -22455,13 +22372,11 @@
     "lat": "27.7",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 38,
     "region": "south_asia",
     "score": 69.5,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2000
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q1115291",
@@ -26357,13 +26272,11 @@
     "lat": "44.416666666",
     "type": "historical",
     "lineage_id": "L0044",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 64,
     "region": "europe",
     "score": 76,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1900,
-    "t1_end": 1920
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q444912",
@@ -26407,13 +26320,11 @@
     "lat": "44.810833333",
     "type": "historical",
     "lineage_id": "L0182",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 63,
     "region": "europe",
     "score": 74.8,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1900,
-    "t1_end": 1910
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q30899490",
@@ -26633,13 +26544,11 @@
     "lat": "-5.854722222",
     "type": "historical",
     "lineage_id": "L0154",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 66,
     "region": "sub_saharan",
     "score": 80.9,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1900,
-    "t1_end": 1900
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q153963",
@@ -26747,13 +26656,11 @@
     "lat": "21.033333333",
     "type": "historical",
     "lineage_id": "L0110",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 77,
     "region": "southeast_asia",
     "score": 82.9,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1900,
-    "t1_end": 1950
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q2096935",
@@ -28412,13 +28319,11 @@
     "lat": "50.444444444",
     "type": "historical",
     "lineage_id": "L0094",
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 95,
     "region": "europe",
     "score": 83.4,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1920,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q2895",
@@ -28430,13 +28335,11 @@
     "lat": "54.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 84,
     "region": "europe",
     "score": 81.5,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1920,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q28278",
@@ -28656,13 +28559,11 @@
     "lat": "40.3",
     "type": "historical",
     "lineage_id": "L0047",
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 96,
     "region": "central_asia",
     "score": 84.8,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1920,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q132856",
@@ -28674,13 +28575,11 @@
     "lat": "40.1833",
     "type": "historical",
     "lineage_id": "L0074",
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 88,
     "region": "middle_east",
     "score": 84.9,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1920,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q146562",
@@ -28884,13 +28783,11 @@
     "lat": "41.7167",
     "type": "historical",
     "lineage_id": "L0079",
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 81,
     "region": "middle_east",
     "score": 83.5,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1930,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q146740",
@@ -29192,13 +29089,11 @@
     "lat": "40.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 76,
     "region": "south_asia",
     "score": 82.4,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1930,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q51547013",
@@ -29550,13 +29445,11 @@
     "lat": "48.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 84,
     "region": "central_asia",
     "score": 79.9,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1940,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q2994258",
@@ -29808,13 +29701,11 @@
     "lat": "59.435833333",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 3,
     "sitelinks": 79,
     "region": "europe",
     "score": 79.7,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1940,
-    "t1_end": 1990
+    "tier_reason": "review_session7_ssr"
   },
   {
     "qid": "Q2507497",
@@ -30543,8 +30434,8 @@
     "region": "europe",
     "score": 90.5,
     "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1950,
-    "t1_end": 1980
+    "t1_start": 1949,
+    "t1_end": 1990
   },
   {
     "qid": "Q523435",
@@ -30577,7 +30468,7 @@
     "region": "europe",
     "score": 86.3,
     "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1950,
+    "t1_start": 1949,
     "t1_end": 1990
   },
   {
@@ -30718,13 +30609,11 @@
     "lat": "15.0",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 129,
     "region": "north_america",
     "score": 89.5,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1960,
-    "t1_end": 2010
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q19901436",
@@ -31259,24 +31148,6 @@
     "tier_reason": "score_top55"
   },
   {
-    "qid": "Q131404661",
-    "name_en": "Ba'athist Syria",
-    "name_ko": "바트주의 시리아",
-    "start": "1963",
-    "end": "2024",
-    "lon": "36.29",
-    "lat": "33.51",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 35,
-    "region": "middle_east",
-    "score": 74.2,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2020
-  },
-  {
     "qid": "Q132690253",
     "name_en": "Second Iraqi Republic",
     "name_ko": "세코은드 이라크이 공화국",
@@ -31453,24 +31324,6 @@
     "region": "unknown",
     "score": 30.5,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q3108185",
-    "name_en": "Ba'athist Iraq",
-    "name_ko": "바트주의 이라크",
-    "start": "1968",
-    "end": "2003",
-    "lon": "44.433333",
-    "lat": "33.333333",
-    "type": "historical",
-    "lineage_id": "L0007",
-    "tier": 1,
-    "sitelinks": 28,
-    "region": "middle_east",
-    "score": 61.1,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2000
   },
   {
     "qid": "Q138028374",
@@ -31875,24 +31728,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q4843701",
-    "name_en": "Great Socialist People's Libyan Arab Jamahiriya",
-    "name_ko": "대리비아 아랍 사회주의 인민 자마히리야국",
-    "start": "1977",
-    "end": "2011",
-    "lon": "13.185833",
-    "lat": "32.902222",
-    "type": "historical",
-    "lineage_id": "L0104",
-    "tier": 1,
-    "sitelinks": 36,
-    "region": "north_africa",
-    "score": 74,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2010
-  },
-  {
     "qid": "Q117089833",
     "name_en": "Republic of Seychelles",
     "name_ko": "세이체레스 공화국",
@@ -31923,24 +31758,6 @@
     "region": "south_asia",
     "score": 75.7,
     "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q16674377",
-    "name_en": "Federal Islamic Republic of the Comoros",
-    "name_ko": "페데라르 이슬람 공화국 코모로스",
-    "start": "1978",
-    "end": "2001",
-    "lon": "44.233333",
-    "lat": "-12.183333",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 7,
-    "region": "sub_saharan",
-    "score": 55.4,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2000
   },
   {
     "qid": "Q3509510",
@@ -32080,13 +31897,11 @@
     "lat": "39.817222222",
     "type": "historical",
     "lineage_id": "L0047",
-    "tier": 1,
+    "tier": 2,
     "sitelinks": 129,
     "region": "central_asia",
     "score": 89.1,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2020
+    "tier_reason": "review_session7"
   },
   {
     "qid": "Q3456400",
@@ -32121,60 +31936,6 @@
     "tier_reason": "score_rest"
   },
   {
-    "qid": "Q1415585",
-    "name_en": "Islamic State of Afghanistan",
-    "name_ko": "아프가니스탄 이슬람국",
-    "start": "1992",
-    "end": "2002",
-    "lon": "70.579722222",
-    "lat": "37.1175",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 40,
-    "region": "south_asia",
-    "score": 64.4,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2000
-  },
-  {
-    "qid": "Q7784940",
-    "name_en": "Third Republic of Madagascar",
-    "name_ko": "티르드 공화국 마다가스카르",
-    "start": "1992",
-    "end": "2010",
-    "lon": "47.516666666",
-    "lat": "-18.933333333",
-    "type": "historical",
-    "lineage_id": "L0153",
-    "tier": 1,
-    "sitelinks": 5,
-    "region": "sub_saharan",
-    "score": 24.7,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2010
-  },
-  {
-    "qid": "Q838261",
-    "name_en": "Federal Republic of Yugoslavia",
-    "name_ko": "유고슬라비아 연방 공화국",
-    "start": "1992",
-    "end": "2003",
-    "lon": "20.4667",
-    "lat": "44.8167",
-    "type": "historical",
-    "lineage_id": "L0182",
-    "tier": 1,
-    "sitelinks": 46,
-    "region": "europe",
-    "score": 62.9,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2000
-  },
-  {
     "qid": "Q1274468",
     "name_en": "Republic of Bosnia and Herzegovina",
     "name_ko": "보스니아 헤르체고비나 공화국",
@@ -32189,24 +31950,6 @@
     "region": "europe",
     "score": 60.6,
     "tier_reason": "score_top55"
-  },
-  {
-    "qid": "Q427941",
-    "name_en": "Islamic Emirate of Afghanistan",
-    "name_ko": "아프가니스탄 이슬람 토후국",
-    "start": "1996",
-    "end": "2001",
-    "lon": "69.165833333",
-    "lat": "34.532777777",
-    "type": "historical",
-    "lineage_id": "L0048",
-    "tier": 1,
-    "sitelinks": 57,
-    "region": "south_asia",
-    "score": 78.8,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 2000,
-    "t1_end": 2000
   },
   {
     "qid": "Q1257607",
@@ -32734,24 +32477,6 @@
     "region": "central_asia",
     "score": 36.6,
     "tier_reason": "score_rest"
-  },
-  {
-    "qid": "Q170572",
-    "name_en": "Pahlavi dynasty",
-    "name_ko": "팔레비 왕조",
-    "start": "1925",
-    "end": "1979",
-    "lat": "35.7",
-    "lon": "51.4",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 88,
-    "region": "central_asia",
-    "score": 81.9,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 1930,
-    "t1_end": 1970
   },
   {
     "qid": "Q11768",
@@ -33563,24 +33288,6 @@
     "region": "east_asia",
     "score": 81.2,
     "tier_reason": "score_top25"
-  },
-  {
-    "qid": "Q188913",
-    "name_en": "Southern Qi",
-    "name_ko": "남제",
-    "start": "479",
-    "end": "502",
-    "lat": "32.1",
-    "lon": "118.8",
-    "type": "historical",
-    "lineage_id": null,
-    "tier": 1,
-    "sitelinks": 62,
-    "region": "east_asia",
-    "score": 77.3,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": 500,
-    "t1_end": 500
   },
   {
     "qid": "Q192702",
@@ -34688,13 +34395,11 @@
     "lon": "105.8",
     "type": "historical",
     "lineage_id": null,
-    "tier": 1,
+    "tier": 5,
     "sitelinks": 0,
     "region": "southeast_asia",
     "score": 1,
-    "tier_reason": "sitelinks_top20_auto",
-    "t1_start": -2850,
-    "t1_end": -1700
+    "tier_reason": "review_session7_legend"
   },
   {
     "qid": null,
@@ -40525,5 +40230,21 @@
     "sitelinks": 416,
     "t1_start": 1991,
     "t1_end": 2025
+  },
+  {
+    "qid": "Q184",
+    "name_en": "Belarus",
+    "name_ko": "벨라루스",
+    "start": "1991",
+    "end": "Present",
+    "lat": "53.9",
+    "lon": "27.57",
+    "type": "modern_state",
+    "lineage_id": null,
+    "tier": 2,
+    "tier_reason": "manual_cl_session7",
+    "region": "europe",
+    "score": 0,
+    "sitelinks": 354
   }
 ]

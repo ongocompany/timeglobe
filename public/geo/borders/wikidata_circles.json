@@ -51,11 +51,9 @@
     "lineage_id": null,
     "color": "hsl(59, 70%, 55%)",
     "qid": "Q748846",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 43,
-    "t1_start": -3000,
-    "t1_end": -950
+    "sitelinks": 43
   },
   {
     "name_en": "Ebla",
@@ -774,22 +772,6 @@
     "sitelinks": 19
   },
   {
-    "name_en": "Chaldea",
-    "name_ko": "칼데아",
-    "lon": 47,
-    "lat": 31,
-    "start_year": -850,
-    "end_year": -650,
-    "lineage_id": null,
-    "color": "hsl(235, 70%, 55%)",
-    "qid": "Q200969",
-    "tier": 1,
-    "region": "central_asia",
-    "sitelinks": 60,
-    "t1_start": -850,
-    "t1_end": -650
-  },
-  {
     "name_en": "Tabal",
     "name_ko": "타발",
     "lon": 36,
@@ -860,22 +842,6 @@
     "sitelinks": 13
   },
   {
-    "name_en": "Sheba",
-    "name_ko": "시바 왕국",
-    "lon": 45.333333333,
-    "lat": 15.45,
-    "start_year": -999,
-    "end_year": 275,
-    "lineage_id": null,
-    "color": "hsl(3, 70%, 55%)",
-    "qid": "Q216068",
-    "tier": 1,
-    "region": "middle_east",
-    "sitelinks": 45,
-    "t1_start": -950,
-    "t1_end": -300
-  },
-  {
     "name_en": "Kingdom of Israel",
     "name_ko": "이스라엘 왕국",
     "lon": 35.195,
@@ -906,22 +872,6 @@
     "sitelinks": 85,
     "t1_start": -900,
     "t1_end": -600
-  },
-  {
-    "name_en": "Neo-Assyrian Empire",
-    "name_ko": "신아시리아 제국",
-    "lon": 43.2625,
-    "lat": 35.456666666,
-    "start_year": -910,
-    "end_year": -608,
-    "lineage_id": "L0015",
-    "color": "hsl(104, 70%, 55%)",
-    "qid": "Q10914393",
-    "tier": 1,
-    "region": "middle_east",
-    "sitelinks": 60,
-    "t1_start": -911,
-    "t1_end": -609
   },
   {
     "name_en": "Bit Agusi",
@@ -1187,7 +1137,7 @@
   },
   {
     "name_en": "Median Kingdom",
-    "name_ko": "메디아은 왕국",
+    "name_ko": "메디아 왕국",
     "lon": 48.5,
     "lat": 34.8,
     "start_year": -677,
@@ -1283,11 +1233,9 @@
     "lineage_id": null,
     "color": "hsl(320, 70%, 55%)",
     "qid": "Q846025",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 52,
-    "t1_start": -550,
-    "t1_end": -350
+    "sitelinks": 52
   },
   {
     "name_en": "Achaemenid Empire",
@@ -1529,11 +1477,9 @@
     "lineage_id": null,
     "color": "hsl(191, 70%, 55%)",
     "qid": "Q260437",
-    "tier": 1,
+    "tier": 2,
     "region": "central_asia",
-    "sitelinks": 52,
-    "t1_start": -300,
-    "t1_end": 200
+    "sitelinks": 52
   },
   {
     "name_en": "Bithynia",
@@ -1545,11 +1491,9 @@
     "lineage_id": null,
     "color": "hsl(181, 70%, 55%)",
     "qid": "Q373189",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 67,
-    "t1_start": -300,
-    "t1_end": -100
+    "sitelinks": 67
   },
   {
     "name_en": "Maurya empire",
@@ -1623,11 +1567,9 @@
     "lineage_id": null,
     "color": "hsl(100, 70%, 55%)",
     "qid": "Q309272",
-    "tier": 1,
+    "tier": 2,
     "region": "north_africa",
-    "sitelinks": 48,
-    "t1_start": -300,
-    "t1_end": 450
+    "sitelinks": 48
   },
   {
     "name_en": "Dongye",
@@ -1695,11 +1637,9 @@
     "lineage_id": null,
     "color": "hsl(40, 70%, 55%)",
     "qid": "Q844910",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 43,
-    "t1_start": 300,
-    "t1_end": 300
+    "sitelinks": 43
   },
   {
     "name_en": "Thaton Kingdom",
@@ -1725,15 +1665,13 @@
     "lineage_id": "L0016",
     "color": "hsl(275, 70%, 55%)",
     "qid": "Q19083",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 64,
-    "t1_start": -250,
-    "t1_end": 550
+    "sitelinks": 64
   },
   {
     "name_en": "Scythia Minor (Crimea)",
-    "name_ko": "스크이티아 (크리메아)",
+    "name_ko": "소스키타이",
     "lon": 35,
     "lat": 47,
     "start_year": -279,
@@ -1741,11 +1679,9 @@
     "lineage_id": null,
     "color": "hsl(57, 70%, 55%)",
     "qid": "Q16718949",
-    "tier": 1,
+    "tier": 3,
     "region": "central_asia",
-    "sitelinks": 3,
-    "t1_start": -700,
-    "t1_end": -200
+    "sitelinks": 3
   },
   {
     "name_en": "Âu Lạc",
@@ -1787,11 +1723,9 @@
     "lineage_id": null,
     "color": "hsl(321, 70%, 55%)",
     "qid": "Q5257",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 46,
-    "t1_start": -100,
-    "t1_end": 220
+    "sitelinks": 46
   },
   {
     "name_en": "Nanyue",
@@ -1933,11 +1867,9 @@
     "lineage_id": null,
     "color": "hsl(238, 70%, 55%)",
     "qid": "Q240123",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 47,
-    "t1_start": -150,
-    "t1_end": 400
+    "sitelinks": 47
   },
   {
     "name_en": "Wiman Chosŏn",
@@ -2033,11 +1965,9 @@
     "lineage_id": null,
     "color": "hsl(292, 70%, 55%)",
     "qid": "Q289577",
-    "tier": 1,
+    "tier": 2,
     "region": "middle_east",
-    "sitelinks": 48,
-    "t1_start": -100,
-    "t1_end": 450
+    "sitelinks": 48
   },
   {
     "name_en": "Jushi Kingdom",
@@ -2105,11 +2035,9 @@
     "lineage_id": null,
     "color": "hsl(16, 70%, 55%)",
     "qid": "Q173082",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 58,
-    "t1_start": -50,
-    "t1_end": 100
+    "sitelinks": 58
   },
   {
     "name_en": "Silla",
@@ -2205,7 +2133,7 @@
   },
   {
     "name_en": "Teotihuacan civilization",
-    "name_ko": "테오티후아카은 문명",
+    "name_ko": "테오티우아칸 문명",
     "lon": -98.84,
     "lat": 19.69,
     "start_year": 1,
@@ -2909,11 +2837,9 @@
     "lineage_id": "L0056",
     "color": "hsl(282, 70%, 55%)",
     "qid": "Q303421",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 49,
-    "t1_start": 450,
-    "t1_end": 500
+    "sitelinks": 49
   },
   {
     "name_en": "Kingdom of Dyfed",
@@ -3209,11 +3135,9 @@
     "lineage_id": "L0057",
     "color": "hsl(209, 70%, 55%)",
     "qid": "Q111471",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 49,
-    "t1_start": 500,
-    "t1_end": 500
+    "sitelinks": 49
   },
   {
     "name_en": "Frisian Kingdom",
@@ -13167,11 +13091,9 @@
     "lineage_id": null,
     "color": "hsl(320, 70%, 55%)",
     "qid": "Q1078602",
-    "tier": 1,
+    "tier": 2,
     "region": "south_asia",
-    "sitelinks": 38,
-    "t1_start": 2000,
-    "t1_end": 2000
+    "sitelinks": 38
   },
   {
     "name_en": "Thonburi Kingdom",
@@ -15533,11 +15455,9 @@
     "lineage_id": "L0044",
     "color": "hsl(58, 70%, 55%)",
     "qid": "Q203493",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 64,
-    "t1_start": 1900,
-    "t1_end": 1920
+    "sitelinks": 64
   },
   {
     "name_en": "French protectorate of Tunisia",
@@ -15563,11 +15483,9 @@
     "lineage_id": "L0182",
     "color": "hsl(249, 70%, 55%)",
     "qid": "Q241748",
-    "tier": 1,
+    "tier": 2,
     "region": "europe",
-    "sitelinks": 63,
-    "t1_start": 1900,
-    "t1_end": 1910
+    "sitelinks": 63
   },
   {
     "name_en": "British North Borneo",
@@ -15733,11 +15651,9 @@
     "lineage_id": "L0154",
     "color": "hsl(141, 70%, 55%)",
     "qid": "Q76048",
-    "tier": 1,
+    "tier": 2,
     "region": "sub_saharan",
-    "sitelinks": 66,
-    "t1_start": 1900,
-    "t1_end": 1900
+    "sitelinks": 66
   },
   {
     "name_en": "German East Africa",
@@ -15833,11 +15749,9 @@
     "lineage_id": "L0110",
     "color": "hsl(285, 70%, 55%)",
     "qid": "Q185682",
-    "tier": 1,
+    "tier": 2,
     "region": "southeast_asia",
-    "sitelinks": 77,
-    "t1_start": 1900,
-    "t1_end": 1950
+    "sitelinks": 77
   },
   {
     "name_en": "Kingdom of Sedang",
@@ -16941,11 +16855,9 @@
     "lineage_id": "L0094",
     "color": "hsl(356, 70%, 55%)",
     "qid": "Q133356",
-    "tier": 1,
+    "tier": 3,
     "region": "europe",
-    "sitelinks": 95,
-    "t1_start": 1920,
-    "t1_end": 1990
+    "sitelinks": 95
   },
   {
     "name_en": "Byelorussian Soviet Socialist Republic",
@@ -16957,11 +16869,9 @@
     "lineage_id": null,
     "color": "hsl(80, 70%, 55%)",
     "qid": "Q2895",
-    "tier": 1,
+    "tier": 3,
     "region": "europe",
-    "sitelinks": 84,
-    "t1_start": 1920,
-    "t1_end": 1990
+    "sitelinks": 84
   },
   {
     "name_en": "Provisional Government of the Republic of Korea",
@@ -17113,11 +17023,9 @@
     "lineage_id": "L0047",
     "color": "hsl(309, 70%, 55%)",
     "qid": "Q131337",
-    "tier": 1,
+    "tier": 3,
     "region": "central_asia",
-    "sitelinks": 96,
-    "t1_start": 1920,
-    "t1_end": 1990
+    "sitelinks": 96
   },
   {
     "name_en": "Armenian Soviet Socialist Republic",
@@ -17129,11 +17037,9 @@
     "lineage_id": "L0074",
     "color": "hsl(275, 70%, 55%)",
     "qid": "Q132856",
-    "tier": 1,
+    "tier": 3,
     "region": "middle_east",
-    "sitelinks": 88,
-    "t1_start": 1920,
-    "t1_end": 1990
+    "sitelinks": 88
   },
   {
     "name_en": "State of Damascus",
@@ -17285,11 +17191,9 @@
     "lineage_id": "L0079",
     "color": "hsl(275, 70%, 55%)",
     "qid": "Q130229",
-    "tier": 1,
+    "tier": 3,
     "region": "middle_east",
-    "sitelinks": 81,
-    "t1_start": 1930,
-    "t1_end": 1990
+    "sitelinks": 81
   },
   {
     "name_en": "Jabal Druze",
@@ -17485,11 +17389,9 @@
     "lineage_id": null,
     "color": "hsl(335, 70%, 55%)",
     "qid": "Q484578",
-    "tier": 1,
+    "tier": 3,
     "region": "south_asia",
-    "sitelinks": 76,
-    "t1_start": 1930,
-    "t1_end": 1990
+    "sitelinks": 76
   },
   {
     "name_en": "State of Syria",
@@ -17771,11 +17673,9 @@
     "lineage_id": null,
     "color": "hsl(81, 70%, 55%)",
     "qid": "Q168811",
-    "tier": 1,
+    "tier": 3,
     "region": "central_asia",
-    "sitelinks": 84,
-    "t1_start": 1940,
-    "t1_end": 1990
+    "sitelinks": 84
   },
   {
     "name_en": "Regional Defence Council of Aragon",
@@ -17955,11 +17855,9 @@
     "lineage_id": null,
     "color": "hsl(257, 70%, 55%)",
     "qid": "Q130280",
-    "tier": 1,
+    "tier": 3,
     "region": "europe",
-    "sitelinks": 79,
-    "t1_start": 1940,
-    "t1_end": 1990
+    "sitelinks": 79
   },
   {
     "name_en": "National Legionary State",
@@ -18500,8 +18398,8 @@
     "tier": 1,
     "region": "europe",
     "sitelinks": 156,
-    "t1_start": 1950,
-    "t1_end": 1980
+    "t1_start": 1949,
+    "t1_end": 1990
   },
   {
     "name_en": "United States of Indonesia",
@@ -18530,7 +18428,7 @@
     "tier": 1,
     "region": "europe",
     "sitelinks": 118,
-    "t1_start": 1950,
+    "t1_start": 1949,
     "t1_end": 1990
   },
   {
@@ -18641,11 +18539,9 @@
     "lineage_id": null,
     "color": "hsl(10, 70%, 55%)",
     "qid": "Q25227",
-    "tier": 1,
+    "tier": 2,
     "region": "north_america",
-    "sitelinks": 129,
-    "t1_start": 1960,
-    "t1_end": 2010
+    "sitelinks": 129
   },
   {
     "name_en": "Suriname",
@@ -18988,22 +18884,6 @@
     "sitelinks": 18
   },
   {
-    "name_en": "Ba'athist Syria",
-    "name_ko": "바트주의 시리아",
-    "lon": 36.29,
-    "lat": 33.51,
-    "start_year": 1963,
-    "end_year": 2024,
-    "lineage_id": null,
-    "color": "hsl(156, 70%, 55%)",
-    "qid": "Q131404661",
-    "tier": 1,
-    "region": "middle_east",
-    "sitelinks": 35,
-    "t1_start": 2000,
-    "t1_end": 2020
-  },
-  {
     "name_en": "Protectorate of South Arabia",
     "name_ko": "남아라비아 보호령",
     "lon": 47,
@@ -19060,22 +18940,6 @@
     "sitelinks": 67,
     "t1_start": 1980,
     "t1_end": 1990
-  },
-  {
-    "name_en": "Ba'athist Iraq",
-    "name_ko": "바트주의 이라크",
-    "lon": 44.433333,
-    "lat": 33.333333,
-    "start_year": 1968,
-    "end_year": 2003,
-    "lineage_id": "L0007",
-    "color": "hsl(104, 70%, 55%)",
-    "qid": "Q3108185",
-    "tier": 1,
-    "region": "middle_east",
-    "sitelinks": 28,
-    "t1_start": 2000,
-    "t1_end": 2000
   },
   {
     "name_en": "Republic of Rose Island",
@@ -19374,22 +19238,6 @@
     "sitelinks": 45
   },
   {
-    "name_en": "Great Socialist People's Libyan Arab Jamahiriya",
-    "name_ko": "대리비아 아랍 사회주의 인민 자마히리야국",
-    "lon": 13.185833,
-    "lat": 32.902222,
-    "start_year": 1977,
-    "end_year": 2011,
-    "lineage_id": "L0104",
-    "color": "hsl(357, 70%, 55%)",
-    "qid": "Q4843701",
-    "tier": 1,
-    "region": "north_africa",
-    "sitelinks": 36,
-    "t1_start": 2000,
-    "t1_end": 2010
-  },
-  {
     "name_en": "Democratic Republic of Afghanistan",
     "name_ko": "아프가니스탄 민주공화국",
     "lon": 69.13333333,
@@ -19402,22 +19250,6 @@
     "tier": 2,
     "region": "south_asia",
     "sitelinks": 56
-  },
-  {
-    "name_en": "Federal Islamic Republic of the Comoros",
-    "name_ko": "페데라르 이슬람 공화국 코모로스",
-    "lon": 44.233333,
-    "lat": -12.183333,
-    "start_year": 1978,
-    "end_year": 2001,
-    "lineage_id": null,
-    "color": "hsl(207, 70%, 55%)",
-    "qid": "Q16674377",
-    "tier": 1,
-    "region": "sub_saharan",
-    "sitelinks": 7,
-    "t1_start": 2000,
-    "t1_end": 2000
   },
   {
     "name_en": "Fifth Republic of South Korea",
@@ -19513,11 +19345,9 @@
     "lineage_id": "L0047",
     "color": "hsl(309, 70%, 55%)",
     "qid": "Q244165",
-    "tier": 1,
+    "tier": 2,
     "region": "central_asia",
-    "sitelinks": 129,
-    "t1_start": 2000,
-    "t1_end": 2020
+    "sitelinks": 129
   },
   {
     "name_en": "SAO Eastern Slavonia, Baranja and Western Syrmia",
@@ -19534,54 +19364,6 @@
     "sitelinks": 22
   },
   {
-    "name_en": "Islamic State of Afghanistan",
-    "name_ko": "아프가니스탄 이슬람국",
-    "lon": 70.579722222,
-    "lat": 37.1175,
-    "start_year": 1992,
-    "end_year": 2002,
-    "lineage_id": null,
-    "color": "hsl(107, 70%, 55%)",
-    "qid": "Q1415585",
-    "tier": 1,
-    "region": "south_asia",
-    "sitelinks": 40,
-    "t1_start": 2000,
-    "t1_end": 2000
-  },
-  {
-    "name_en": "Third Republic of Madagascar",
-    "name_ko": "티르드 공화국 마다가스카르",
-    "lon": 47.516666666,
-    "lat": -18.933333333,
-    "start_year": 1992,
-    "end_year": 2010,
-    "lineage_id": "L0153",
-    "color": "hsl(206, 70%, 55%)",
-    "qid": "Q7784940",
-    "tier": 1,
-    "region": "sub_saharan",
-    "sitelinks": 5,
-    "t1_start": 2000,
-    "t1_end": 2010
-  },
-  {
-    "name_en": "Federal Republic of Yugoslavia",
-    "name_ko": "유고슬라비아 연방 공화국",
-    "lon": 20.4667,
-    "lat": 44.8167,
-    "start_year": 1992,
-    "end_year": 2003,
-    "lineage_id": "L0182",
-    "color": "hsl(249, 70%, 55%)",
-    "qid": "Q838261",
-    "tier": 1,
-    "region": "europe",
-    "sitelinks": 46,
-    "t1_start": 2000,
-    "t1_end": 2000
-  },
-  {
     "name_en": "Republic of Bosnia and Herzegovina",
     "name_ko": "보스니아 헤르체고비나 공화국",
     "lon": 18.416667,
@@ -19594,22 +19376,6 @@
     "tier": 2,
     "region": "europe",
     "sitelinks": 43
-  },
-  {
-    "name_en": "Islamic Emirate of Afghanistan",
-    "name_ko": "아프가니스탄 이슬람 토후국",
-    "lon": 69.165833333,
-    "lat": 34.532777777,
-    "start_year": 1996,
-    "end_year": 2001,
-    "lineage_id": "L0048",
-    "color": "hsl(189, 70%, 55%)",
-    "qid": "Q427941",
-    "tier": 1,
-    "region": "south_asia",
-    "sitelinks": 57,
-    "t1_start": 2000,
-    "t1_end": 2000
   },
   {
     "name_en": "United Nations Transitional Administration for Eastern Slavonia, Baranja and Western Sirmium",
@@ -20010,22 +19776,6 @@
     "tier": 2,
     "region": "central_asia",
     "sitelinks": 15
-  },
-  {
-    "name_en": "Pahlavi dynasty",
-    "name_ko": "팔레비 왕조",
-    "lon": 51.4,
-    "lat": 35.7,
-    "start_year": 1925,
-    "end_year": 1979,
-    "lineage_id": null,
-    "color": "hsl(209, 70%, 55%)",
-    "qid": "Q170572",
-    "tier": 1,
-    "region": "central_asia",
-    "sitelinks": 88,
-    "t1_start": 1930,
-    "t1_end": 1970
   },
   {
     "name_en": "Ancient Egypt",
@@ -20728,22 +20478,6 @@
     "tier": 2,
     "region": "east_asia",
     "sitelinks": 80
-  },
-  {
-    "name_en": "Southern Qi",
-    "name_ko": "남제",
-    "lon": 118.8,
-    "lat": 32.1,
-    "start_year": 479,
-    "end_year": 502,
-    "lineage_id": null,
-    "color": "hsl(125, 70%, 55%)",
-    "qid": "Q188913",
-    "tier": 1,
-    "region": "east_asia",
-    "sitelinks": 62,
-    "t1_start": 500,
-    "t1_end": 500
   },
   {
     "name_en": "Liang dynasty",
@@ -21690,22 +21424,6 @@
     "tier": 2,
     "region": "east_asia",
     "sitelinks": 5
-  },
-  {
-    "name_en": "Âu Lạc",
-    "name_ko": "아우락",
-    "lon": 105.8,
-    "lat": 21.1,
-    "start_year": -257,
-    "end_year": -206,
-    "lineage_id": null,
-    "color": "hsl(285, 70%, 55%)",
-    "qid": null,
-    "tier": 1,
-    "region": "southeast_asia",
-    "sitelinks": 0,
-    "t1_start": -2850,
-    "t1_end": -1700
   },
   {
     "name_en": "Đinh dynasty",
@@ -24144,5 +23862,19 @@
     "sitelinks": 416,
     "t1_start": 1991,
     "t1_end": 2025
+  },
+  {
+    "name_en": "Belarus",
+    "name_ko": "벨라루스",
+    "lon": 27.57,
+    "lat": 53.9,
+    "start_year": 1991,
+    "end_year": 2025,
+    "lineage_id": null,
+    "color": "hsl(73, 70%, 55%)",
+    "qid": "Q184",
+    "tier": 2,
+    "region": "europe",
+    "sitelinks": 354
   }
 ]
