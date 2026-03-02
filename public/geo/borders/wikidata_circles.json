@@ -14807,7 +14807,7 @@
     "lineage_id": null,
     "color": "hsl(298, 70%, 55%)",
     "qid": "Q1994382",
-    "tier": 2,
+    "tier": 3,
     "region": "central_asia",
     "sitelinks": 25
   },
@@ -15563,7 +15563,7 @@
     "lineage_id": null,
     "color": "hsl(269, 70%, 55%)",
     "qid": "Q370372",
-    "tier": 2,
+    "tier": 3,
     "region": "north_africa",
     "sitelinks": 22
   },

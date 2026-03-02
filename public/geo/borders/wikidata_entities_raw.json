@@ -22506,11 +22506,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 11,
     "region": "unknown",
     "score": 49.2,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived_emirate"
   },
   {
     "qid": "Q2618121",
@@ -23502,11 +23502,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 19,
     "region": "unknown",
     "score": 65,
-    "tier_reason": "score_top25"
+    "tier_reason": "short_lived_emirate"
   },
   {
     "qid": "Q31073145",
@@ -24435,11 +24435,11 @@
     "lat": "",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 10,
     "region": "unknown",
     "score": 50.8,
-    "tier_reason": "score_top55"
+    "tier_reason": "short_lived_emirate"
   },
   {
     "qid": "Q105633777",
@@ -24905,11 +24905,11 @@
     "lat": "43.3",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 25,
     "region": "central_asia",
     "score": 48.1,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_emirate"
   },
   {
     "qid": "Q2776615",
@@ -25887,11 +25887,11 @@
     "lat": "32.9",
     "type": "historical",
     "lineage_id": null,
-    "tier": 2,
+    "tier": 3,
     "sitelinks": 22,
     "region": "north_africa",
     "score": 56.4,
-    "tier_reason": "score_rest"
+    "tier_reason": "short_lived_emirate"
   },
   {
     "qid": "Q16957",
