@@ -27,13 +27,6 @@ const tools: {
       { href: "/namuwiki-viewer", name: "나무위키 뷰어", desc: "나무위키 2021-03 덤프 검색 + 본문 조회", tag: "mk", color: "#50c878" },
     ],
   },
-  {
-    category: "Ops / 파이프라인",
-    items: [
-      { href: "/ops", name: "Ops 대시보드", desc: "수집 파이프라인 모니터링 + 워커 상태", tag: "mk", color: "#50c878" },
-      { href: "/model-manager", name: "Model Manager", desc: "Meshy 3D 모델 생성 파이프라인 관리", tag: "cl", color: "#4a9eff" },
-    ],
-  },
 ];
 
 export default function DevLanding() {

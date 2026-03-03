@@ -77,3 +77,9 @@ public/geo/borders/ohm/
 
 # Cache files
 .cache/
+
+# Archived (deprecated) pages
+src/app/ops/
+src/app/api/ops/
+src/app/model-manager/
+src/app/api/models/

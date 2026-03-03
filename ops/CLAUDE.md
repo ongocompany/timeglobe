@@ -14,7 +14,7 @@
 | 데이터 수집 스크립트 | `scripts/wikidata/` |
 | Ops 설정 | `ops/` |
 | Supabase 스키마 | `supabase/migrations/` |
-| Ops API/페이지 | `src/app/api/ops/`, `src/app/ops/` |
+| ~~Ops API/페이지~~ | ~~`src/app/api/ops/`, `src/app/ops/`~~ (삭제됨, .gitignore 처리) |
 
 ## 금지 영역 (민철 담당 — 진형 확인 없이 절대 수정 금지)
 
