@@ -16,19 +16,27 @@
 4. **bare repo HEAD 수정** — `master` → `main` 브랜치로 정정
 5. **npm install** 완료 (466개 패키지)
 6. **.env.local** 복사 완료 (Cesium, Supabase, Gemini 키 포함)
-7. **dev 서버 테스트** — `http://100.115.194.12:3001` 정상 동작 (첫 컴파일 41초)
+7. **dev 서버 실행** — `--webpack` 플래그 필수!
+   - `--turbopack`은 CopyPlugin 미동작 → `public/cesium/` 미생성 → Cesium 런타임 에러
+   - 실행 명령: `nohup npx next dev --webpack -p 3001 > ~/timeglobe-dev.log 2>&1 &`
+   - 접속 주소: `http://100.115.194.12:3001` (Tailscale)
+   - 첫 컴파일 약 41초 / 이후 핫리로드는 빠름
+   - ⚠️ OHM GeoJSON 파일(`public/geo/borders/ohm/`) 없음 — jinserver 살아나면 rsync 필요
 8. **Wikidata 덤프 백그라운드 다운로드** 시작
    - 저장 위치: `/volume1/Share/dumps/wikidata/latest-all.json.gz`
-   - 크기: 141GB, 속도: ~4.6MB/s, 예상 완료: 8~9시간 후
-   - 재개 옵션: `wget -c` 적용
+   - 크기: 141GB, 속도: ~4.5MB/s, 예상 완료: 저녁 6~7시
+   - 진행 확인: `ssh jinadmin@100.115.194.12 "tail -3 /volume1/Share/dumps/wikidata/download.log"`
+   - 재개: `wget -c` 적용돼 있어서 끊겨도 이어받기 가능
 
-### git 백업 현황
-- `git push nas main` 성공 — 44커밋 NAS bare repo에 반영
-- NAS Gitea(`nas-gitea` remote)는 2월 26일 기준이라 별도 업데이트 필요
+### git 워크플로 (NAS 기준)
+- 코드 push: `git push nas main` (macOS → NAS bare repo)
+- NAS에서 최신화: `cd ~/timeglobe && git pull origin main`
+- NAS Gitea(`nas-gitea` remote)는 2월 26일 기준으로 오래됨 — 별도 업데이트 필요
 
 ### jinserver 점검 필요 사항 (저녁에)
-- `journalctl -b -1 | grep -iE "oom|killed|thermal"` 로 원인 파악
-- 파싱 스크립트 실행 시 `nice -n 19` + `systemd-run -p MemoryMax=20G` 적용 권장
+- `journalctl -b -1 | grep -iE "oom|killed|thermal"` — 다운 원인 파악
+- 파싱 스크립트 실행 시 반드시 적용: `nice -n 19` + `systemd-run -p MemoryMax=20G`
+- jinserver 살아나면 OHM 파일 NAS rsync: `rsync -avz public/geo/borders/ jinadmin@100.115.194.12:~/timeglobe/public/geo/borders/`
 
 ---
 
