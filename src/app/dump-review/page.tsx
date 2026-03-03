@@ -1,13 +1,17 @@
 'use client';
-// [mk] dump-review — Wikidata 덤프 파싱 데이터 큐레이션 관리 UI
-// 4개 타입(hist_entity / event / place / person) 검토 + include/exclude/skip 결정
+// [cl] dump-review — 큐레이션된 12개 카테고리 + unmatched 데이터 큐레이션 관리 UI
+// include / exclude / skip 결정 + SL순·연도순 정렬 + 지역 필터
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 // ─── 타입 ───────────────────────────────────────────────────────────────────
 
-type EntityType = 'hist_entity' | 'event' | 'place' | 'person' | 'artwork' | 'invention';
-type Decision   = 'include' | 'exclude' | 'skip' | null;
+type CategoryType =
+  | 'nation' | 'event' | 'person' | 'place' | 'building' | 'heritage'
+  | 'invention' | 'disaster' | 'exploration' | 'battle' | 'pandemic'
+  | 'artwork' | 'unmatched';
+
+type Decision     = 'include' | 'exclude' | 'skip' | null;
 type StatusFilter = 'all' | 'pending' | 'include' | 'exclude' | 'skip';
 
 interface ParsedItem {
@@ -17,32 +21,21 @@ interface ParsedItem {
   desc_ko?: string;
   desc_en?: string;
   sitelinks?: number;
-  // hist_entity
+  p31?: string[];
+  coord?: [number, number];
+  direct_coord?: [number, number];
+  lat?: number;
+  lon?: number;
   start_year?: number;
   end_year?: number;
-  entity_kind?: string;
-  direct_coord?: [number, number] | null;
-  capital_qid?: string;
-  // event
-  anchor_year?: number;
-  event_kind?: string;
-  location_qid?: string;
-  // place
-  inception?: number;
-  country_qid?: string;
-  // person
   birth_year?: number;
   death_year?: number;
-  occupation_qid?: string;
-  // artwork [mk]
-  artwork_kind?: string;
-  creator_qid?: string;
-  genre_qid?: string;
-  movement_qid?: string;
-  // invention [mk]
-  inventor_qid?: string;
-  // injected by API
+  anchor_year?: number;
+  inception?: number;
+  point_in_time?: number;
+  _category?: string;
   _decision: Decision;
+  [key: string]: any;
 }
 
 interface TypeStats {
@@ -53,14 +46,7 @@ interface TypeStats {
   pending: number;
 }
 
-interface StatsData {
-  hist_entity: TypeStats;
-  event:       TypeStats;
-  place:       TypeStats;
-  person:      TypeStats;
-  artwork:     TypeStats;
-  invention:   TypeStats;
-}
+type StatsData = Record<string, TypeStats>;
 
 interface Filters {
   search: string;
@@ -68,18 +54,34 @@ interface Filters {
   yearFrom: string;
   yearTo: string;
   status: StatusFilter;
+  sort: string;
+  order: string;
+  region: string;
 }
 
-const TYPE_LABELS: Record<EntityType, string> = {
-  hist_entity: '🏛️ 역사 국가/정권',
-  event:       '⚔️ 사건/전쟁',
-  place:       '📍 장소/도시',
+// ─── 상수 ───────────────────────────────────────────────────────────────────
+
+const TYPE_LABELS: Record<CategoryType, string> = {
+  nation:      '🏛️ 국가',
+  event:       '📜 사건',
   person:      '👤 인물',
-  artwork:     '🎨 문화/예술',
-  invention:   '⚙️ 발명/기술',
+  place:       '📍 장소',
+  building:    '🏗️ 건축',
+  heritage:    '🏺 유산',
+  invention:   '⚙️ 발명',
+  disaster:    '🌊 재해',
+  exploration: '🧭 탐험',
+  battle:      '⚔️ 전투',
+  pandemic:    '🦠 전염병',
+  artwork:     '🎨 예술',
+  unmatched:   '❓ 미분류',
 };
 
-const TYPE_KEYS: EntityType[] = ['hist_entity', 'event', 'place', 'person', 'artwork', 'invention'];
+const CATEGORY_KEYS: CategoryType[] = [
+  'nation', 'event', 'person', 'place', 'building', 'heritage',
+  'invention', 'disaster', 'exploration', 'battle', 'pandemic',
+  'artwork', 'unmatched',
+];
 
 const DECISION_META = {
   include: { label: '포함', color: 'bg-emerald-500 hover:bg-emerald-600', textColor: 'text-emerald-400', icon: '✅', key: 'KeyD' },
@@ -87,10 +89,58 @@ const DECISION_META = {
   skip:    { label: '건너뜀', color: 'bg-zinc-600 hover:bg-zinc-500', textColor: 'text-zinc-400',    icon: '⏭️', key: 'KeyS' },
 } as const;
 
+const SORT_OPTIONS = [
+  { value: 'sitelinks', label: '⭐ SL순' },
+  { value: 'year',      label: '📅 연도순' },
+  { value: 'name_ko',   label: '가 한국어순' },
+];
+
+const REGION_OPTIONS = [
+  { value: 'all',            label: '🌍 전체' },
+  { value: 'east_asia',     label: '🏯 동아시아' },
+  { value: 'southeast_asia', label: '🌴 동남아시아' },
+  { value: 'south_asia',    label: '🕌 남아시아' },
+  { value: 'central_asia',  label: '🐫 중앙아시아' },
+  { value: 'middle_east',   label: '☪️ 중동' },
+  { value: 'europe',        label: '🏰 유럽' },
+  { value: 'north_africa',  label: '🏜️ 북아프리카' },
+  { value: 'sub_saharan',   label: '🌍 사하라이남' },
+  { value: 'north_america', label: '🗽 북아메리카' },
+  { value: 'latin_america', label: '🌎 중남아메리카' },
+  { value: 'oceania',       label: '🏝️ 오세아니아' },
+  { value: 'unknown',       label: '❓ 좌표미상' },
+];
+
+// ─── 헬퍼 ───────────────────────────────────────────────────────────────────
+
+function getYearStr(item: ParsedItem): string {
+  const fmtY = (y: number) => y < 0 ? `BC${Math.abs(y)}` : String(y);
+  if (item.start_year != null) {
+    const s = fmtY(item.start_year);
+    const e = item.end_year != null ? fmtY(item.end_year) : '현재';
+    return `${s}~${e}`;
+  }
+  if (item.birth_year != null) {
+    const b = fmtY(item.birth_year);
+    const d = item.death_year != null ? fmtY(item.death_year) : '~';
+    return `${b}~${d}`;
+  }
+  if (item.anchor_year != null) return fmtY(item.anchor_year);
+  if (item.inception != null) return fmtY(item.inception);
+  if (item.point_in_time != null) return fmtY(item.point_in_time);
+  return '-';
+}
+
+function hasCoord(item: ParsedItem): boolean {
+  return (item.lat != null && item.lon != null) ||
+         (Array.isArray(item.coord) && item.coord.length >= 2) ||
+         (Array.isArray(item.direct_coord) && item.direct_coord.length >= 2);
+}
+
 // ─── 메인 컴포넌트 ─────────────────────────────────────────────────────────
 
 export default function DumpReviewPage() {
-  const [activeType,  setActiveType]  = useState<EntityType>('hist_entity');
+  const [activeType,  setActiveType]  = useState<CategoryType>('nation');
   const [items,       setItems]       = useState<ParsedItem[]>([]);
   const [total,       setTotal]       = useState(0);
   const [offset,      setOffset]      = useState(0);
@@ -100,17 +150,16 @@ export default function DumpReviewPage() {
   const [focusedIdx,  setFocusedIdx]  = useState<number>(0);
   const [filters, setFilters] = useState<Filters>({
     search: '', sitelinkMin: 0, yearFrom: '', yearTo: '', status: 'all',
+    sort: 'sitelinks', order: 'desc', region: 'all',
   });
+
   // 로컬 decisions 캐시 (즉시 UI 반영용)
-  const decCache = useRef<Record<EntityType, Record<string, Decision>>>({
-    hist_entity: {}, event: {}, place: {}, person: {}, artwork: {}, invention: {},
-  });
+  const decCache = useRef<Record<string, Record<string, Decision>>>({});
 
   const LIMIT = 50;
 
-  // ── 데이터 로드 ──
-  const fetchItems = useCallback(async (type: EntityType, off: number, f: Filters) => {
-    setLoading(true);
+  // [cl] 공통 URL 파라미터 빌더
+  const buildParams = useCallback((type: CategoryType, off: number, f: Filters) => {
     const params = new URLSearchParams({
       type,
       offset:       String(off),
@@ -118,14 +167,23 @@ export default function DumpReviewPage() {
       search:       f.search,
       sitelinks_min: String(f.sitelinkMin),
       status:       f.status,
+      sort:         f.sort,
+      order:        f.order,
+      region:       f.region,
     });
     if (f.yearFrom) params.set('year_from', f.yearFrom);
     if (f.yearTo)   params.set('year_to',   f.yearTo);
+    return params;
+  }, []);
 
+  // ── 데이터 로드 ──
+  const fetchItems = useCallback(async (type: CategoryType, off: number, f: Filters) => {
+    setLoading(true);
+    const params = buildParams(type, off, f);
     try {
       const res = await fetch(`/api/dump-curation?${params}`);
       const data = await res.json();
-      // 로컬 캐시 적용 (서버보다 최신)
+      if (!decCache.current[type]) decCache.current[type] = {};
       const merged = (data.items as ParsedItem[]).map((item: ParsedItem) => ({
         ...item,
         _decision: decCache.current[type][item.qid] ?? item._decision,
@@ -135,7 +193,7 @@ export default function DumpReviewPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [buildParams]);
 
   const fetchStats = useCallback(async () => {
     const res = await fetch('/api/dump-curation?stats=1');
@@ -144,7 +202,7 @@ export default function DumpReviewPage() {
 
   // ── 초기 + 탭/필터 변경 시 로드 ──
   useEffect(() => {
-    setItems([]);       // 탭 전환 시 이전 데이터 즉시 클리어
+    setItems([]);
     setTotal(0);
     setOffset(0);
     setFocusedIdx(0);
@@ -155,13 +213,11 @@ export default function DumpReviewPage() {
   useEffect(() => { fetchStats(); }, [fetchStats]);
 
   // ── 결정 저장 ──
-  const saveDecision = useCallback(async (qid: string, type: EntityType, decision: Decision) => {
+  const saveDecision = useCallback(async (qid: string, type: CategoryType, decision: Decision) => {
     if (!decision) return;
-    // 로컬 캐시 업데이트
+    if (!decCache.current[type]) decCache.current[type] = {};
     decCache.current[type][qid] = decision;
-    // UI 즉시 반영
     setItems(prev => prev.map(it => it.qid === qid ? { ...it, _decision: decision } : it));
-    // API POST
     await fetch('/api/dump-curation', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -173,12 +229,13 @@ export default function DumpReviewPage() {
   // ── 일괄 처리 ──
   const bulkExclude = async (reason: 'low_sitelinks' | 'no_coord') => {
     const targets = items.filter(it => {
-      if (it._decision === 'include') return false; // 이미 포함 결정은 건드리지 않음
+      if (it._decision === 'include') return false;
       if (reason === 'low_sitelinks') return (it.sitelinks ?? 0) < 10;
-      if (reason === 'no_coord')      return !it.direct_coord && !it.birth_year;
+      if (reason === 'no_coord') return !hasCoord(it);
       return false;
     });
     if (targets.length === 0) return;
+    if (!decCache.current[activeType]) decCache.current[activeType] = {};
     const payload = targets.map(it => ({ qid: it.qid, type: activeType, decision: 'exclude' as Decision }));
     for (const p of payload) decCache.current[activeType][p.qid] = 'exclude';
     setItems(prev => prev.map(it =>
@@ -195,7 +252,7 @@ export default function DumpReviewPage() {
   // ── 키보드 단축키 ──
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement) return;
       const focused = items[focusedIdx];
       if (!focused) return;
 
@@ -217,18 +274,10 @@ export default function DumpReviewPage() {
     if (loading || offset + LIMIT >= total) return;
     const newOffset = offset + LIMIT;
     setOffset(newOffset);
-    const params = new URLSearchParams({
-      type:         activeType,
-      offset:       String(newOffset),
-      limit:        String(LIMIT),
-      search:       filters.search,
-      sitelinks_min: String(filters.sitelinkMin),
-      status:       filters.status,
-    });
-    if (filters.yearFrom) params.set('year_from', filters.yearFrom);
-    if (filters.yearTo)   params.set('year_to',   filters.yearTo);
+    const params = buildParams(activeType, newOffset, filters);
     const res = await fetch(`/api/dump-curation?${params}`);
     const data = await res.json();
+    if (!decCache.current[activeType]) decCache.current[activeType] = {};
     const merged = (data.items as ParsedItem[]).map((item: ParsedItem) => ({
       ...item,
       _decision: decCache.current[activeType][item.qid] ?? item._decision,
@@ -236,7 +285,6 @@ export default function DumpReviewPage() {
     setItems(prev => [...prev, ...merged]);
   };
 
-  // ── 선택된 아이템 ──
   const selectedItem = items.find(it => it.qid === selectedQid) ?? null;
 
   // ─── 렌더 ────────────────────────────────────────────────────────────────
@@ -247,7 +295,7 @@ export default function DumpReviewPage() {
       {/* ── 헤더 ── */}
       <header className="border-b border-zinc-800 px-4 py-3 flex items-center gap-4 flex-shrink-0">
         <h1 className="text-lg font-bold text-white">📦 Wikidata 덤프 큐레이션</h1>
-        <span className="text-xs text-zinc-500">파싱 데이터 검토 · include / exclude / skip</span>
+        <span className="text-xs text-zinc-500">큐레이션된 12개 카테고리 · include / exclude / skip</span>
         <div className="ml-auto text-xs text-zinc-500">
           키보드: <kbd className="bg-zinc-800 px-1 rounded">D</kbd>포함&nbsp;
           <kbd className="bg-zinc-800 px-1 rounded">A</kbd>제외&nbsp;
@@ -257,15 +305,15 @@ export default function DumpReviewPage() {
       </header>
 
       {/* ── 탭 + 통계바 ── */}
-      <div className="border-b border-zinc-800 px-2 flex items-center gap-0 flex-shrink-0 overflow-x-auto scrollbar-none">
-        {TYPE_KEYS.map(type => {
+      <div className="border-b border-zinc-800 px-1 flex items-center gap-0 flex-shrink-0 overflow-x-auto scrollbar-none">
+        {CATEGORY_KEYS.map(type => {
           const s = stats?.[type];
           const pct = s && s.total > 0 ? Math.round(((s.include + s.exclude + s.skip) / s.total) * 100) : 0;
           return (
             <button
               key={type}
               onClick={() => setActiveType(type)}
-              className={`px-3 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`px-2 py-2.5 text-xs font-medium border-b-2 transition-colors whitespace-nowrap ${
                 activeType === type
                   ? 'border-blue-500 text-blue-400'
                   : 'border-transparent text-zinc-400 hover:text-zinc-200'
@@ -273,9 +321,9 @@ export default function DumpReviewPage() {
             >
               {TYPE_LABELS[type]}
               {s && (
-                <span className="ml-2 text-xs text-zinc-500">
-                  {s.total.toLocaleString()}건
-                  <span className="ml-1 text-zinc-600">({pct}%완료)</span>
+                <span className="ml-1 text-zinc-600">
+                  {s.total >= 1000 ? `${(s.total / 1000).toFixed(0)}k` : s.total}
+                  {pct > 0 && <span className="ml-0.5 text-zinc-700">({pct}%)</span>}
                 </span>
               )}
             </button>
@@ -283,11 +331,11 @@ export default function DumpReviewPage() {
         })}
 
         {/* 통계 요약 */}
-        {stats && (
-          <div className="ml-auto flex items-center gap-3 text-xs pl-4">
+        {stats && stats[activeType] && (
+          <div className="ml-auto flex items-center gap-3 text-xs pl-4 pr-2">
             {(['include','exclude','skip','pending'] as const).map(k => {
               const s = stats[activeType];
-              const v = s[k];
+              const v = s?.[k] ?? 0;
               const colors = { include:'text-emerald-400', exclude:'text-red-400', skip:'text-zinc-400', pending:'text-yellow-400' };
               const labels = { include:'포함', exclude:'제외', skip:'건너뜀', pending:'미결정' };
               return (
@@ -305,17 +353,57 @@ export default function DumpReviewPage() {
 
         {/* ── 좌측 필터 패널 ── */}
         <aside className="w-56 border-r border-zinc-800 p-3 flex flex-col gap-3 flex-shrink-0 overflow-y-auto">
+
+          {/* [cl] 정렬 */}
+          <div>
+            <label className="text-xs text-zinc-500 mb-1 block">📊 정렬</label>
+            <div className="flex gap-1">
+              <select
+                value={filters.sort}
+                onChange={e => setFilters(f => ({ ...f, sort: e.target.value }))}
+                className="flex-1 bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-sm text-zinc-100 focus:outline-none focus:border-blue-500"
+              >
+                {SORT_OPTIONS.map(o => (
+                  <option key={o.value} value={o.value}>{o.label}</option>
+                ))}
+              </select>
+              <button
+                onClick={() => setFilters(f => ({ ...f, order: f.order === 'desc' ? 'asc' : 'desc' }))}
+                className="bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-sm hover:bg-zinc-700 transition-colors"
+                title={filters.order === 'desc' ? '내림차순' : '오름차순'}
+              >
+                {filters.order === 'desc' ? '↓' : '↑'}
+              </button>
+            </div>
+          </div>
+
+          {/* [cl] 지역 필터 */}
+          <div>
+            <label className="text-xs text-zinc-500 mb-1 block">🌏 지역</label>
+            <select
+              value={filters.region}
+              onChange={e => setFilters(f => ({ ...f, region: e.target.value }))}
+              className="w-full bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-sm text-zinc-100 focus:outline-none focus:border-blue-500"
+            >
+              {REGION_OPTIONS.map(o => (
+                <option key={o.value} value={o.value}>{o.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* 검색 */}
           <div>
             <label className="text-xs text-zinc-500 mb-1 block">🔍 검색</label>
             <input
               type="text"
               value={filters.search}
               onChange={e => setFilters(f => ({ ...f, search: e.target.value }))}
-              placeholder="이름, QID..."
+              placeholder="이름, QID, 설명..."
               className="w-full bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-blue-500"
             />
           </div>
 
+          {/* sitelinks */}
           <div>
             <label className="text-xs text-zinc-500 mb-1 block">
               ⭐ sitelinks 최소: <strong className="text-zinc-300">{filters.sitelinkMin}</strong>
@@ -329,6 +417,7 @@ export default function DumpReviewPage() {
             <div className="flex justify-between text-xs text-zinc-600"><span>0</span><span>50</span><span>100</span></div>
           </div>
 
+          {/* 연도 범위 */}
           <div>
             <label className="text-xs text-zinc-500 mb-1 block">📅 연도 범위</label>
             <div className="flex gap-1">
@@ -349,6 +438,7 @@ export default function DumpReviewPage() {
             </div>
           </div>
 
+          {/* 결정 상태 */}
           <div>
             <label className="text-xs text-zinc-500 mb-1 block">🔘 결정 상태</label>
             <div className="flex flex-col gap-1">
@@ -368,6 +458,7 @@ export default function DumpReviewPage() {
             </div>
           </div>
 
+          {/* 일괄 처리 */}
           <div className="border-t border-zinc-800 pt-3">
             <p className="text-xs text-zinc-500 mb-2">⚡ 일괄 처리</p>
             <button
@@ -380,7 +471,7 @@ export default function DumpReviewPage() {
               onClick={() => bulkExclude('no_coord')}
               className="w-full text-xs bg-orange-900/40 hover:bg-orange-900/70 text-orange-300 border border-orange-800 rounded px-2 py-1.5 transition-colors"
             >
-              좌표/연도 없는 것 제외
+              좌표 없는 것 제외
             </button>
           </div>
 
@@ -410,7 +501,6 @@ export default function DumpReviewPage() {
                 <ItemCard
                   key={item.qid}
                   item={item}
-                  type={activeType}
                   isFocused={idx === focusedIdx}
                   isSelected={item.qid === selectedQid}
                   onClick={() => {
@@ -424,7 +514,7 @@ export default function DumpReviewPage() {
                 <div className="py-4 text-center text-zinc-500 text-sm">
                   {loading ? '불러오는 중...' : (
                     <button onClick={loadMore} className="hover:text-zinc-300 transition-colors">
-                      더 보기 ({total - items.length}건 남음)
+                      더 보기 ({(total - items.length).toLocaleString()}건 남음)
                     </button>
                   )}
                 </div>
@@ -435,7 +525,7 @@ export default function DumpReviewPage() {
 
         {/* ── 우측 상세 패널 ── */}
         {selectedItem && (
-          <aside className="w-72 border-l border-zinc-800 overflow-y-auto flex-shrink-0">
+          <aside className="w-80 border-l border-zinc-800 overflow-y-auto flex-shrink-0">
             <DetailPanel item={selectedItem} type={activeType} onDecide={(dec) => saveDecision(selectedItem.qid, activeType, dec)} />
           </aside>
         )}
@@ -447,10 +537,9 @@ export default function DumpReviewPage() {
 // ─── ItemCard ────────────────────────────────────────────────────────────────
 
 function ItemCard({
-  item, type, isFocused, isSelected, onClick, onDecide,
+  item, isFocused, isSelected, onClick, onDecide,
 }: {
   item: ParsedItem;
-  type: EntityType;
   isFocused: boolean;
   isSelected: boolean;
   onClick: () => void;
@@ -458,29 +547,8 @@ function ItemCard({
 }) {
   const dec = item._decision;
   const decBg = dec === 'include' ? 'border-l-emerald-500' : dec === 'exclude' ? 'border-l-red-500' : dec === 'skip' ? 'border-l-zinc-600' : 'border-l-transparent';
-
-  const yearStr = (() => {
-    const fmtY = (y: number) => y < 0 ? `BC${Math.abs(y)}` : String(y);
-    if (type === 'hist_entity') {
-      const s = item.start_year != null ? fmtY(item.start_year) : '?';
-      const e = item.end_year   != null ? fmtY(item.end_year)   : '현재';
-      return `${s} ~ ${e}`;
-    }
-    if (type === 'event') {
-      const a = item.anchor_year;
-      return a != null ? fmtY(a) : '?';
-    }
-    if (type === 'place')     return item.inception != null ? String(item.inception) : '-';
-    if (type === 'person') {
-      const b = item.birth_year; const d = item.death_year;
-      if (b && d) return `${b} ~ ${d}`;
-      if (b)      return `${b} ~`;
-      return '-';
-    }
-    if (type === 'artwork')   return item.inception != null ? fmtY(item.inception) : '-';
-    if (type === 'invention') return item.inception != null ? fmtY(item.inception) : '-';
-    return '-';
-  })();
+  const yearStr = getYearStr(item);
+  const coordOk = hasCoord(item);
 
   return (
     <div
@@ -506,11 +574,13 @@ function ItemCard({
                 ⭐{item.sitelinks}
               </span>
             )}
-            {item.entity_kind  && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.entity_kind}</span>}
-            {item.event_kind   && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.event_kind}</span>}
-            {item.artwork_kind && <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded">{item.artwork_kind}</span>}
-            {!item.direct_coord && type !== 'person' && type !== 'event' && (
+            {!coordOk && (
               <span className="text-xs text-orange-700">좌표없음</span>
+            )}
+            {item.p31 && item.p31.length > 0 && (
+              <span className="text-xs text-zinc-600 bg-zinc-800 px-1 rounded truncate max-w-[100px]">
+                {item.p31[0]}
+              </span>
             )}
           </div>
           {item.desc_ko && (
@@ -544,54 +614,45 @@ function ItemCard({
 
 function DetailPanel({ item, type, onDecide }: {
   item: ParsedItem;
-  type: EntityType;
+  type: CategoryType;
   onDecide: (d: Decision) => void;
 }) {
   const dec = item._decision;
   const wikiUrl = `https://www.wikidata.org/wiki/${item.qid}`;
   const koWikiUrl = item.name_ko ? `https://ko.wikipedia.org/wiki/${encodeURIComponent(item.name_ko)}` : null;
 
+  // [cl] 좌표 문자열
+  const coordStr = (() => {
+    if (item.lat != null && item.lon != null) return `${item.lat}, ${item.lon}`;
+    if (Array.isArray(item.coord) && item.coord.length >= 2) return `${item.coord[0]}, ${item.coord[1]}`;
+    if (Array.isArray(item.direct_coord) && item.direct_coord.length >= 2) return `${item.direct_coord[0]}, ${item.direct_coord[1]}`;
+    return '없음';
+  })();
+
   const fields: Array<[string, string | number | null | undefined]> = [
     ['QID', item.qid],
     ['한국어', item.name_ko],
     ['English', item.name_en],
-    ['설명', item.desc_ko ?? item.desc_en],
+    ['설명(ko)', item.desc_ko],
+    ['설명(en)', item.desc_en],
     ['sitelinks', item.sitelinks],
-    ...(type === 'hist_entity' ? [
-      ['종류', item.entity_kind],
-      ['시작', item.start_year],
-      ['종료', item.end_year ?? '현재'],
-      ['좌표', item.direct_coord ? `${item.direct_coord[0]}, ${item.direct_coord[1]}` : '없음'],
-    ] as Array<[string, string | number | null | undefined]> : []),
-    ...(type === 'event' ? [
-      ['종류', item.event_kind],
-      ['기준연도', item.anchor_year],
-      ['위치QID', item.location_qid],
-    ] as Array<[string, string | number | null | undefined]> : []),
-    ...(type === 'place' ? [
-      ['창설', item.inception],
-      ['나라QID', item.country_qid],
-      ['좌표', item.direct_coord ? `${item.direct_coord[0]}, ${item.direct_coord[1]}` : '없음'],
-    ] as Array<[string, string | number | null | undefined]> : []),
-    ...(type === 'person' ? [
-      ['출생', item.birth_year],
-      ['사망', item.death_year ?? '생존'],
-      ['직업QID', item.occupation_qid],
-    ] as Array<[string, string | number | null | undefined]> : []),
-    ...(type === 'artwork' ? [
-      ['종류', item.artwork_kind],
-      ['제작연도', item.inception],
-      ['제작자QID', item.creator_qid],
-      ['장르QID', item.genre_qid],
-      ['사조QID', item.movement_qid],
-      ['좌표', item.direct_coord ? `${item.direct_coord[0]}, ${item.direct_coord[1]}` : '없음'],
-    ] as Array<[string, string | number | null | undefined]> : []),
-    ...(type === 'invention' ? [
-      ['발명연도', item.inception],
-      ['발명가QID', item.inventor_qid],
-      ['좌표', item.direct_coord ? `${item.direct_coord[0]}, ${item.direct_coord[1]}` : '없음'],
-    ] as Array<[string, string | number | null | undefined]> : []),
+    ['좌표', coordStr],
+    ['카테고리', item._category],
   ];
+
+  // 연도 필드 (있는 것만)
+  if (item.start_year != null) fields.push(['시작연도', item.start_year]);
+  if (item.end_year != null) fields.push(['종료연도', item.end_year]);
+  if (item.birth_year != null) fields.push(['출생', item.birth_year]);
+  if (item.death_year != null) fields.push(['사망', item.death_year]);
+  if (item.anchor_year != null) fields.push(['기준연도', item.anchor_year]);
+  if (item.inception != null) fields.push(['설립', item.inception]);
+  if (item.point_in_time != null) fields.push(['시점', item.point_in_time]);
+
+  // P31 값
+  if (item.p31 && item.p31.length > 0) {
+    fields.push(['P31', item.p31.join(', ')]);
+  }
 
   return (
     <div className="p-4">
