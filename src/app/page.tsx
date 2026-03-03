@@ -24,7 +24,7 @@ const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
 }));
 
 // [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
-type ViewMode = "orbit" | "marker" | "map-display" | null;
+type ViewMode = "orbit" | "marker" | null;
 
 // [cl] 마커 카테고리 정의 (CesiumGlobe 색상/도형과 동일)
 type ShapeType = "circle" | "square" | "diamond" | "triangle" | "star" | "hexagon" | "cross" | "compass";
@@ -382,7 +382,8 @@ export default function Home() {
     setSelectedCategories((prev) =>
       prev.includes(name) ? prev.filter((c) => c !== name) : [...prev, name]
     );
-  // [mk] 지도 표시 설정
+  // [cl] 지도 표시 설정 (viewMode와 독립 — 설정 패널이므로 다른 모드와 공존 가능)
+  const [mapDisplayOpen, setMapDisplayOpen] = useState(false);
   const [visibleTiers, setVisibleTiers] = useState<number[]>([1, 2, 3, 4]);
   const toggleTier = (tier: number) =>
     setVisibleTiers((prev) =>
@@ -633,30 +634,30 @@ export default function Home() {
           </div>
         </div>
 
-        {/* [mk] Map Display — 지도 표시 설정 아코디언 */}
+        {/* [cl] Map Display — 지도 표시 설정 (viewMode와 독립, 다른 모드와 공존 가능) */}
         <div>
           <button
-            onClick={() => setViewMode((v) => (v === ("map-display" as ViewMode) ? null : ("map-display" as ViewMode)))}
+            onClick={() => setMapDisplayOpen((v) => !v)}
             className="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs uppercase tracking-wider transition-all duration-200 group w-full"
           >
             <svg
               width="7" height="8" viewBox="0 0 7 8" fill="currentColor"
-              className={`flex-shrink-0 transition-all duration-300 ease-in-out ${viewMode === "map-display" ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
-              style={{ transform: viewMode === "map-display" ? "rotate(90deg)" : "rotate(0deg)" }}
+              className={`flex-shrink-0 transition-all duration-300 ease-in-out ${mapDisplayOpen ? "text-white/90" : "text-white/30 group-hover:text-white/60"}`}
+              style={{ transform: mapDisplayOpen ? "rotate(90deg)" : "rotate(0deg)" }}
             >
               <path d="M1 1L6.5 4L1 7Z" />
             </svg>
-            <span className={`transition-colors duration-200 ${viewMode === "map-display" ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Map Display</span>
+            <span className={`transition-colors duration-200 ${mapDisplayOpen ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>Map Display</span>
           </button>
 
           <div
             className="overflow-hidden transition-all duration-300 ease-in-out"
-            style={{ maxHeight: viewMode === "map-display" ? "200px" : "0px", opacity: viewMode === "map-display" ? 1 : 0 }}
+            style={{ maxHeight: mapDisplayOpen ? "200px" : "0px", opacity: mapDisplayOpen ? 1 : 0 }}
           >
             <div className="pl-5 pt-2 pb-1 flex flex-col gap-3">
-              {/* 국명 티어 */}
+              {/* [cl] 국명 티어 — T1~T4 개별 토글 */}
               <div className="flex flex-col gap-1.5">
-                <span className="text-[10px] text-white/35 uppercase tracking-wider">국명 티어</span>
+                <span className="text-[10px] text-white/40 uppercase tracking-wider">국명 티어</span>
                 <div className="flex gap-1.5">
                   {([1, 2, 3, 4] as const).map((tier) => {
                     const active = visibleTiers.includes(tier);
@@ -665,7 +666,7 @@ export default function Home() {
                       <button
                         key={tier}
                         onClick={() => toggleTier(tier)}
-                        className={`w-7 h-6 rounded text-[10px] font-bold transition-all duration-200 border ${active ? "bg-white/15 border-white/30 " + tierColors[tier] : "bg-transparent border-white/15 text-white/25 hover:text-white/50 hover:border-white/25"}`}
+                        className={`w-7 h-6 rounded text-[10px] font-bold transition-all duration-200 border ${active ? "bg-white/15 border-white/30 " + tierColors[tier] : "bg-transparent border-white/10 text-white/20 hover:text-white/45 hover:border-white/20"}`}
                       >
                         T{tier}
                       </button>
@@ -673,19 +674,19 @@ export default function Home() {
                   })}
                 </div>
               </div>
-              {/* 국경 표시 */}
+              {/* [cl] 국경 표시 — 폴리곤(면)/경계(선) 독립 토글 */}
               <div className="flex flex-col gap-1.5">
-                <span className="text-[10px] text-white/35 uppercase tracking-wider">국경 표시</span>
+                <span className="text-[10px] text-white/40 uppercase tracking-wider">국경 표시</span>
                 <div className="flex gap-1.5">
                   <button
                     onClick={() => setShowFill((v) => !v)}
-                    className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all duration-200 border ${showFill ? "bg-white/15 border-white/30 text-white/90" : "bg-transparent border-white/15 text-white/25 hover:text-white/50 hover:border-white/25"}`}
+                    className={`px-2 py-0.5 rounded text-[10px] font-medium transition-all duration-200 border ${showFill ? "bg-white/15 border-white/30 text-white/85" : "bg-transparent border-white/10 text-white/20 hover:text-white/45 hover:border-white/20"}`}
                   >
                     폴리곤
                   </button>
                   <button
                     onClick={() => setShowBorder((v) => !v)}
-                    className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all duration-200 border ${showBorder ? "bg-white/15 border-white/30 text-white/90" : "bg-transparent border-white/15 text-white/25 hover:text-white/50 hover:border-white/25"}`}
+                    className={`px-2 py-0.5 rounded text-[10px] font-medium transition-all duration-200 border ${showBorder ? "bg-white/15 border-white/30 text-white/85" : "bg-transparent border-white/10 text-white/20 hover:text-white/45 hover:border-white/20"}`}
                   >
                     경계
                   </button>
