@@ -3,6 +3,48 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-04] [cl] dump-review 12카테고리 리빌드 + 지역필터 citizenship 폴백
+
+### 배경
+- 큐레이션 완료된 12개 카테고리 JSONL을 덤프 큐레이션 UI에서 확인·결정 필요
+- 기존 dump-review는 6개 타입(`data/dump_samples/` 로컬) → 12카테고리(jinserver JSONL) 전환
+- 진형 요청: 정렬(SL순/연도순), 지역 드롭다운 필터 추가
+
+### 작업 내용
+
+#### 1. `/api/dump-curation` API 리빌드
+- 데이터 소스: `data/dump_samples/` → `/mnt/data2/wikidata/output/categories/*.jsonl`
+- 13개 카테고리: nation~artwork 12개 + unmatched
+- 메모리 캐시 (5분 TTL) — 대용량 JSONL 반복 로드 방지
+- 파라미터 추가: `sort` (sitelinks/year/name_ko), `order` (asc/desc), `region` (11개 권역)
+- include/exclude/skip 결정 시스템 유지 (`curation_decisions.json`)
+
+#### 2. `/dump-review` 페이지 리빌드
+- 13개 카테고리 수평 탭 (스크롤)
+- 왼쪽 사이드바: 정렬 드롭다운 + 오름/내림 토글, 지역 드롭다운
+- 기존 기능 유지: 검색, SL 슬라이더, 연도범위, 결정상태, 일괄처리, 키보드 단축키
+- ParsedItem 인터페이스: 큐레이션 JSONL 스키마(p31배열, coord 등) 대응
+
+#### 3. 지역필터 citizenship_qid 폴백 (인물 문제 수정)
+- **문제**: 인물 30.8만건 중 좌표 있는 건 겨우 8건 → 지역필터 무용지물
+- **원인**: 인물 엔티티는 좌표 대신 `citizenship_qid`/`birth_place_qid` 참조만 보유
+- **해결**: 3단계 폴백 체인
+  1. 좌표 기반 (`lat/lon`, `coord`, `direct_coord`)
+  2. QID→지역 매핑 (`citizenship_qid`, `country_qid`, `location_qid`)
+  3. unknown
+- QID→지역 매핑: nation 카테고리 16K 엔티티 좌표로 자동 빌드 (lazy init) + 주요 35개국 수동 보완
+- 인물 93.2%가 citizenship_qid 보유 → 지역필터 정상 작동
+
+### 커밋
+- `5271c96` dump-review 12카테고리 큐레이션 리빌드 — 정렬·지역 필터
+- `84a8068` 인물 지역필터 — citizenship_qid 기반 QID→지역 매핑 추가
+
+### 참고
+- (이전 세션에서) tier-review의 DumpBrowseView도 수정됨 (`de3e541`) — 별도 뷰어
+- dump-browse API (`/api/dump-browse`)는 좌표 기반만 사용 (citizenship 폴백 없음)
+
+---
+
 ## [2026-03-04] [cl] OHM 국경선 대량 보강 — historical-basemaps 활용
 
 ### 배경
