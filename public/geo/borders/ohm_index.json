@@ -296,7 +296,9 @@
         "start_date": "-0897",
         "end_date": "-0221",
         "source": "historical-basemaps",
-        "source_year": "bc300"
+        "source_year": "bc300",
+        "start": -897,
+        "end": -221
       }
     ]
   },
@@ -597,7 +599,9 @@
         "start_date": "-0300",
         "end_date": "0100",
         "source": "historical-basemaps",
-        "source_year": "bc1"
+        "source_year": "bc1",
+        "start": -300,
+        "end": 100
       }
     ]
   },
@@ -746,28 +750,36 @@
         "start_date": "-0036",
         "end_date": "0100",
         "source": "historical-basemaps",
-        "source_year": "bc1"
+        "source_year": "bc1",
+        "start": -36,
+        "end": 100
       },
       {
         "rid": 9100202,
         "start_date": "0100",
         "end_date": "0300",
         "source": "historical-basemaps",
-        "source_year": "100"
+        "source_year": "100",
+        "start": 100,
+        "end": 300
       },
       {
         "rid": 9100203,
         "start_date": "0300",
         "end_date": "0500",
         "source": "historical-basemaps",
-        "source_year": "300"
+        "source_year": "300",
+        "start": 300,
+        "end": 500
       },
       {
         "rid": 9100204,
         "start_date": "0500",
         "end_date": "0668",
         "source": "historical-basemaps",
-        "source_year": "600"
+        "source_year": "600",
+        "start": 500,
+        "end": 668
       }
     ]
   },
@@ -972,14 +984,18 @@
         "start_date": "0250",
         "end_date": "0550",
         "source": "historical-basemaps",
-        "source_year": "500"
+        "source_year": "500",
+        "start": 250,
+        "end": 550
       },
       {
         "rid": 9100212,
         "start_date": "0550",
         "end_date": "0670",
         "source": "historical-basemaps",
-        "source_year": "600"
+        "source_year": "600",
+        "start": 550,
+        "end": 670
       }
     ]
   },
@@ -996,7 +1012,9 @@
         "start_date": "0317",
         "end_date": "0420",
         "source": "historical-basemaps",
-        "source_year": "400"
+        "source_year": "400",
+        "start": 317,
+        "end": 420
       }
     ]
   },
@@ -2202,14 +2220,18 @@
         "start_date": "0676",
         "end_date": "0900",
         "source": "historical-basemaps",
-        "source_year": "700"
+        "source_year": "700",
+        "start": 676,
+        "end": 900
       },
       {
         "rid": 9100222,
         "start_date": "0900",
         "end_date": "0935",
         "source": "historical-basemaps",
-        "source_year": "900"
+        "source_year": "900",
+        "start": 900,
+        "end": 935
       }
     ]
   },
@@ -2338,7 +2360,9 @@
         "start_date": "0698",
         "end_date": "0926",
         "source": "historical-basemaps",
-        "source_year": "900"
+        "source_year": "900",
+        "start": 698,
+        "end": 926
       }
     ]
   },
