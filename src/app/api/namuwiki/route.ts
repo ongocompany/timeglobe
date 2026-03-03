@@ -76,6 +76,12 @@ function markupToHtml(text: string): string {
   return html;
 }
 
+// [mk] FTS5 특수문자 이스케이프 — 검색어에 FTS 구문이 섞이면 에러남
+function sanitizeFtsQuery(q: string): string {
+  // FTS5 메타 문자 제거 (", *, ^, :, OR, AND, NOT, NEAR, 괄호 등)
+  return q.replace(/["""*^():]/g, " ").replace(/\b(OR|AND|NOT|NEAR)\b/gi, "").trim();
+}
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const mode     = searchParams.get("mode") || "search";
@@ -135,22 +141,45 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ total, page, limit, items: rows });
     }
 
-    // === 표제어 검색 (기본) ===
+    // === 표제어 검색 (기본) [mk] ===
     let rows: any[];
     let total: number;
 
     if (q) {
-      // FTS 검색
-      total = (db.prepare(
-        "SELECT COUNT(*) as cnt FROM articles_fts WHERE title MATCH ?"
-      ).get(q + "*") as any)?.cnt || 0;
-      rows = db.prepare(`
-        SELECT a.id, a.title, a.redirect
-        FROM articles_fts f JOIN articles a ON f.rowid = a.id
-        WHERE f.title MATCH ?
-        ORDER BY rank
-        LIMIT ? OFFSET ?
-      `).all(q + "*", limit, offset) as any[];
+      const cleaned = sanitizeFtsQuery(q);
+      let useFts = cleaned.length > 0;
+
+      if (useFts) {
+        try {
+          // FTS5 prefix 검색
+          const ftsQ = cleaned + "*";
+          total = (db.prepare(
+            "SELECT COUNT(*) as cnt FROM articles_fts WHERE title MATCH ?"
+          ).get(ftsQ) as any)?.cnt || 0;
+          rows = db.prepare(`
+            SELECT a.id, a.title, a.redirect
+            FROM articles_fts f JOIN articles a ON f.rowid = a.id
+            WHERE f.title MATCH ?
+            ORDER BY rank
+            LIMIT ? OFFSET ?
+          `).all(ftsQ, limit, offset) as any[];
+        } catch {
+          // FTS 실패 시 LIKE fallback
+          useFts = false;
+          total = 0;
+          rows = [];
+        }
+      }
+
+      // FTS 결과 없거나 실패 → LIKE fallback
+      if (!useFts || (total === 0 && rows.length === 0)) {
+        total = (db.prepare(
+          "SELECT COUNT(*) as cnt FROM articles WHERE title LIKE ?"
+        ).get(`%${q}%`) as any).cnt;
+        rows = db.prepare(
+          "SELECT id, title, redirect FROM articles WHERE title LIKE ? ORDER BY length(title) LIMIT ? OFFSET ?"
+        ).all(`%${q}%`, limit, offset) as any[];
+      }
     } else {
       total = (db.prepare("SELECT COUNT(*) as cnt FROM articles").get() as any).cnt;
       rows = db.prepare(
