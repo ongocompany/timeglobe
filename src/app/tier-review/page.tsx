@@ -1933,12 +1933,42 @@ function ListView({
 // [cl] 덤프 데이터 브라우저 — 1차 파싱 결과 조회
 // ═══════════════════════════════════════════════════
 
+// [mk] 큐레이션 카테고리 탭 — 12개 + unmatched + 레거시
 const DUMP_CATEGORIES = [
-  { id: "korean", label: "한국어 전체", color: "#a855f7" },
-  { id: "events", label: "사건", color: "#ef4444" },
-  { id: "hist", label: "역사 엔티티", color: "#f59e0b" },
-  { id: "persons", label: "인물", color: "#3b82f6" },
-  { id: "places", label: "장소", color: "#22c55e" },
+  // 큐레이션 12카테고리
+  { id: "nation", label: "국가", color: "#ef4444", count: "16K" },
+  { id: "person", label: "인물", color: "#3b82f6", count: "309K" },
+  { id: "artwork", label: "예술작품", color: "#a855f7", count: "89K" },
+  { id: "place", label: "장소", color: "#22c55e", count: "31K" },
+  { id: "heritage", label: "문화유산", color: "#f59e0b", count: "10K" },
+  { id: "building", label: "건축물", color: "#06b6d4", count: "10K" },
+  { id: "event", label: "사건", color: "#f43f5e", count: "1.8K" },
+  { id: "battle", label: "전투", color: "#dc2626", count: "1.4K" },
+  { id: "invention", label: "발명", color: "#84cc16", count: "1K" },
+  { id: "disaster", label: "재해", color: "#fb923c", count: "581" },
+  { id: "pandemic", label: "전염병", color: "#d946ef", count: "41" },
+  { id: "exploration", label: "탐험", color: "#14b8a6", count: "7" },
+  // 미분류
+  { id: "unmatched", label: "미분류", color: "#6b7280", count: "359K" },
+  // 전체
+  { id: "curated", label: "전체(curated)", color: "#8b5cf6", count: "828K" },
+] as const;
+
+// [mk] 지역 드롭다운 옵션
+const DUMP_REGIONS = [
+  { id: "all", label: "전체 지역" },
+  { id: "east_asia", label: "동아시아" },
+  { id: "southeast_asia", label: "동남아시아" },
+  { id: "south_asia", label: "남아시아" },
+  { id: "central_asia", label: "중앙아시아" },
+  { id: "middle_east", label: "중동" },
+  { id: "europe", label: "유럽" },
+  { id: "north_africa", label: "북아프리카" },
+  { id: "sub_saharan", label: "사하라이남" },
+  { id: "north_america", label: "북아메리카" },
+  { id: "latin_america", label: "중남아메리카" },
+  { id: "oceania", label: "오세아니아" },
+  { id: "unknown", label: "좌표없음/미분류" },
 ] as const;
 
 // [cl] 카테고리별 kind 한국어 매핑
@@ -2022,16 +2052,17 @@ interface DumpStats {
   hasCoord: number;
   kinds: Record<string, number>;
   slDistribution: Record<string, number>;
+  regions?: Record<string, number>; // [mk] 지역 분포
 }
 
 function DumpBrowseView() {
-  const [category, setCategory] = useState("korean");
+  const [category, setCategory] = useState("nation");
   const [data, setData] = useState<DumpEntry[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [stats, setStats] = useState<DumpStats | null>(null);
 
-  // [cl] 필터/페이지네이션 상태
+  // [mk] 필터/페이지네이션 상태
   const [page, setPage] = useState(1);
   const [limit] = useState(100);
   const [total, setTotal] = useState(0);
@@ -2043,8 +2074,9 @@ function DumpBrowseView() {
   const [kind, setKind] = useState("all");
   const [hasKo, setHasKo] = useState("all");
   const [minSl, setMinSl] = useState(0);
+  const [region, setRegion] = useState("all"); // [mk] 지역 필터
 
-  // [cl] 데이터 fetch
+  // [mk] 데이터 fetch
   const fetchData = useCallback(async () => {
     setLoading(true);
     setError("");
@@ -2059,6 +2091,7 @@ function DumpBrowseView() {
         kind,
         hasKo,
         minSl: String(minSl),
+        region,
       });
       const res = await fetch(`/api/dump-browse?${params}`);
       const json = await res.json();
@@ -2079,13 +2112,13 @@ function DumpBrowseView() {
     } finally {
       setLoading(false);
     }
-  }, [category, page, limit, sort, order, search, kind, hasKo, minSl]);
+  }, [category, page, limit, sort, order, search, kind, hasKo, minSl, region]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  // [cl] 카테고리 변경 시 필터 초기화
+  // [mk] 카테고리 변경 시 필터 초기화
   const changeCategory = useCallback((cat: string) => {
     setCategory(cat);
     setPage(1);
@@ -2093,6 +2126,7 @@ function DumpBrowseView() {
     setSearch("");
     setSearchInput("");
     setMinSl(0);
+    setRegion("all");
   }, []);
 
   // [cl] 검색 실행 (Enter 또는 버튼)
@@ -2152,409 +2186,333 @@ function DumpBrowseView() {
       .sort((a, b) => b[1] - a[1]);
   }, [stats]);
 
+  // [mk] 사이드바 접힘 상태
+  const activeCat = DUMP_CATEGORIES.find(c => c.id === category);
+
   return (
-    <div style={{ display: "flex", flexDirection: "column" as const, flex: 1, minHeight: 0, overflow: "hidden" }}>
-      {/* ── 카테고리 서브탭 ── */}
-      <div style={{ display: "flex", gap: 4, marginBottom: 12, flexShrink: 0 }}>
-        {DUMP_CATEGORIES.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => changeCategory(cat.id)}
+    <div style={{ display: "flex", flex: 1, minHeight: 0, overflow: "hidden", gap: 0 }}>
+      {/* ══ 좌측 사이드바 ══ */}
+      <div style={{
+        width: 200, flexShrink: 0, display: "flex", flexDirection: "column" as const,
+        background: "#0d0d0d", borderRight: "1px solid #222", overflow: "hidden",
+      }}>
+        {/* 카테고리 리스트 */}
+        <div style={{ flex: 1, overflowY: "auto", padding: "8px 0" }}>
+          <div style={{ padding: "4px 12px 8px", fontSize: 10, color: "#555", fontWeight: 700, letterSpacing: 1 }}>카테고리</div>
+          {DUMP_CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => changeCategory(cat.id)}
+              style={{
+                display: "flex", alignItems: "center", gap: 8,
+                width: "100%", padding: "7px 12px", border: "none",
+                background: category === cat.id ? "#1a1a2e" : "transparent",
+                color: category === cat.id ? "#fff" : "#888",
+                cursor: "pointer", fontSize: 12, textAlign: "left" as const,
+                borderLeft: category === cat.id ? `3px solid ${cat.color}` : "3px solid transparent",
+                transition: "all 0.1s",
+              }}
+            >
+              <span style={{
+                width: 8, height: 8, borderRadius: "50%",
+                background: cat.color, flexShrink: 0, opacity: category === cat.id ? 1 : 0.5,
+              }} />
+              <span style={{ flex: 1, fontWeight: category === cat.id ? 700 : 400 }}>{cat.label}</span>
+              <span style={{ fontSize: 10, color: "#555" }}>{cat.count}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* 구분선 */}
+        <div style={{ height: 1, background: "#222", margin: "0 8px" }} />
+
+        {/* 소팅 */}
+        <div style={{ padding: "10px 12px" }}>
+          <div style={{ fontSize: 10, color: "#555", fontWeight: 700, letterSpacing: 1, marginBottom: 6 }}>정렬</div>
+          {[
+            { id: "sitelinks", label: "SL순 (중요도)" },
+            { id: "year", label: "연도순" },
+            { id: "name_ko", label: "한국어명순" },
+            { id: "name_en", label: "영문명순" },
+          ].map((s) => (
+            <button
+              key={s.id}
+              onClick={() => { toggleSort(s.id); }}
+              style={{
+                display: "block", width: "100%", padding: "5px 8px",
+                background: sort === s.id ? "#1a2a1a" : "transparent",
+                color: sort === s.id ? "#22c55e" : "#666",
+                border: "none", cursor: "pointer", fontSize: 11, textAlign: "left" as const,
+                borderRadius: 3,
+              }}
+            >
+              {s.label} {sort === s.id ? (order === "desc" ? "▼" : "▲") : ""}
+            </button>
+          ))}
+        </div>
+
+        {/* 구분선 */}
+        <div style={{ height: 1, background: "#222", margin: "0 8px" }} />
+
+        {/* 지역 필터 */}
+        <div style={{ padding: "10px 12px" }}>
+          <div style={{ fontSize: 10, color: "#555", fontWeight: 700, letterSpacing: 1, marginBottom: 6 }}>지역</div>
+          <select
+            value={region}
+            onChange={(e) => { setRegion(e.target.value); setPage(1); }}
             style={{
-              padding: "8px 20px",
-              borderRadius: 6,
-              border: `2px solid ${cat.color}`,
-              background: category === cat.id ? cat.color : "transparent",
-              color: category === cat.id ? "#fff" : cat.color,
-              cursor: "pointer",
-              fontWeight: 700,
-              fontSize: 13,
-              opacity: category === cat.id ? 1 : 0.7,
-              transition: "all 0.15s",
+              width: "100%", padding: "5px 6px", background: "#1a1a1a", color: "#ccc",
+              border: "1px solid #333", borderRadius: 4, fontSize: 11,
             }}
           >
-            {cat.label}
-          </button>
-        ))}
-      </div>
+            {DUMP_REGIONS.map((r) => (
+              <option key={r.id} value={r.id}>
+                {r.label}
+                {stats?.regions?.[r.id] != null && r.id !== "all"
+                  ? ` (${stats.regions[r.id].toLocaleString()})`
+                  : ""}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      {/* ── 통계 바 ── */}
-      {stats && !loading && (
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            marginBottom: 12,
-            flexShrink: 0,
-            flexWrap: "wrap",
-            alignItems: "center",
-            padding: "10px 16px",
-            background: "#1a1a1a",
-            borderRadius: 8,
-            border: "1px solid #333",
-          }}
-        >
-          <span style={{ fontSize: 13, color: "#ccc" }}>
-            전체 <b style={{ color: "#fff" }}>{stats.total.toLocaleString()}</b>
-          </span>
-          <span style={{ fontSize: 13, color: "#22c55e" }}>
-            한국어 <b>{stats.hasKo.toLocaleString()}</b>
-            <span style={{ color: "#555", fontSize: 11 }}>
-              {" "}({((stats.hasKo / stats.total) * 100).toFixed(1)}%)
-            </span>
-          </span>
-          <span style={{ fontSize: 13, color: "#06b6d4" }}>
-            좌표 <b>{stats.hasCoord.toLocaleString()}</b>
-          </span>
+        {/* 구분선 */}
+        <div style={{ height: 1, background: "#222", margin: "0 8px" }} />
 
-          {/* SL 분포 미니바 */}
-          <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: "auto" }}>
-            <span style={{ fontSize: 10, color: "#666" }}>SL분포:</span>
-            {Object.entries(stats.slDistribution).map(([key, count]) => {
-              const labels: Record<string, string> = {
-                s0: "0", s1_5: "1-5", s6_20: "6-20",
-                s21_50: "21-50", s51_100: "51-100", s100plus: "100+",
-              };
-              const colors: Record<string, string> = {
-                s0: "#333", s1_5: "#555", s6_20: "#777",
-                s21_50: "#f59e0b", s51_100: "#ef4444", s100plus: "#22c55e",
-              };
-              const pct = (count / stats.total) * 100;
-              return (
-                <div
-                  key={key}
-                  title={`SL ${labels[key]}: ${count.toLocaleString()} (${pct.toFixed(1)}%)`}
-                  style={{
-                    height: 16,
-                    width: Math.max(4, pct * 1.5),
-                    background: colors[key],
-                    borderRadius: 2,
-                  }}
-                />
-              );
-            })}
+        {/* 필터 */}
+        <div style={{ padding: "10px 12px", display: "flex", flexDirection: "column" as const, gap: 6 }}>
+          <div style={{ fontSize: 10, color: "#555", fontWeight: 700, letterSpacing: 1, marginBottom: 2 }}>필터</div>
+          <select
+            value={hasKo}
+            onChange={(e) => { setHasKo(e.target.value); setPage(1); }}
+            style={{ width: "100%", padding: "5px 6px", background: "#1a1a1a", color: "#ccc", border: "1px solid #333", borderRadius: 4, fontSize: 11 }}
+          >
+            <option value="all">한국어 전체</option>
+            <option value="yes">한국어 있음</option>
+            <option value="no">한국어 없음</option>
+          </select>
+          <select
+            value={minSl}
+            onChange={(e) => { setMinSl(parseInt(e.target.value)); setPage(1); }}
+            style={{ width: "100%", padding: "5px 6px", background: "#1a1a1a", color: "#ccc", border: "1px solid #333", borderRadius: 4, fontSize: 11 }}
+          >
+            <option value="0">SL 전체</option>
+            <option value="1">SL 1+</option>
+            <option value="5">SL 5+</option>
+            <option value="10">SL 10+</option>
+            <option value="20">SL 20+</option>
+            <option value="50">SL 50+</option>
+            <option value="100">SL 100+</option>
+          </select>
+          <select
+            value={kind}
+            onChange={(e) => { setKind(e.target.value); setPage(1); }}
+            style={{ width: "100%", padding: "5px 6px", background: "#1a1a1a", color: "#ccc", border: "1px solid #333", borderRadius: 4, fontSize: 11 }}
+          >
+            <option value="all">모든 유형</option>
+            {sortedKinds.map(([k, cnt]) => (
+              <option key={k} value={k}>
+                {KIND_LABELS[k] || k} ({cnt.toLocaleString()})
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* 통계 요약 */}
+        {stats && !loading && (
+          <div style={{ padding: "8px 12px 12px", borderTop: "1px solid #222", marginTop: "auto" }}>
+            <div style={{ fontSize: 10, color: "#555", fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>통계</div>
+            <div style={{ fontSize: 11, color: "#ccc" }}>전체 <b>{stats.total.toLocaleString()}</b></div>
+            <div style={{ fontSize: 11, color: "#22c55e" }}>한국어 <b>{stats.hasKo.toLocaleString()}</b> <span style={{ color: "#555" }}>({((stats.hasKo / stats.total) * 100).toFixed(1)}%)</span></div>
+            <div style={{ fontSize: 11, color: "#06b6d4" }}>좌표 <b>{stats.hasCoord.toLocaleString()}</b></div>
           </div>
-        </div>
-      )}
-
-      {/* ── 필터 바 ── */}
-      <div
-        style={{
-          display: "flex",
-          gap: 8,
-          marginBottom: 12,
-          flexShrink: 0,
-          flexWrap: "wrap",
-          alignItems: "center",
-        }}
-      >
-        {/* 유형 필터 */}
-        <select
-          value={kind}
-          onChange={(e) => { setKind(e.target.value); setPage(1); }}
-          style={{
-            padding: "6px 10px",
-            background: "#222",
-            color: "#fff",
-            border: "1px solid #444",
-            borderRadius: 4,
-            fontSize: 12,
-          }}
-        >
-          <option value="all">모든 유형</option>
-          {sortedKinds.map(([k, cnt]) => (
-            <option key={k} value={k}>
-              {KIND_LABELS[k] || k} ({cnt.toLocaleString()})
-            </option>
-          ))}
-        </select>
-
-        {/* 한국어 필터 */}
-        <select
-          value={hasKo}
-          onChange={(e) => { setHasKo(e.target.value); setPage(1); }}
-          style={{
-            padding: "6px 10px",
-            background: "#222",
-            color: "#fff",
-            border: "1px solid #444",
-            borderRadius: 4,
-            fontSize: 12,
-          }}
-        >
-          <option value="all">한국어 전체</option>
-          <option value="yes">한국어 있음</option>
-          <option value="no">한국어 없음</option>
-        </select>
-
-        {/* SL 최소값 */}
-        <select
-          value={minSl}
-          onChange={(e) => { setMinSl(parseInt(e.target.value)); setPage(1); }}
-          style={{
-            padding: "6px 10px",
-            background: "#222",
-            color: "#fff",
-            border: "1px solid #444",
-            borderRadius: 4,
-            fontSize: 12,
-          }}
-        >
-          <option value="0">SL 전체</option>
-          <option value="1">SL 1+</option>
-          <option value="5">SL 5+</option>
-          <option value="10">SL 10+</option>
-          <option value="20">SL 20+</option>
-          <option value="50">SL 50+</option>
-          <option value="100">SL 100+</option>
-        </select>
-
-        <div style={{ width: 1, height: 24, background: "#333" }} />
-
-        {/* 검색 */}
-        <input
-          type="text"
-          placeholder="검색 (이름/QID/설명)..."
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-          onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
-          style={{
-            padding: "6px 12px",
-            background: "#222",
-            color: "#fff",
-            border: "1px solid #444",
-            borderRadius: 4,
-            fontSize: 12,
-            width: 200,
-          }}
-        />
-        <button
-          onClick={doSearch}
-          style={{
-            padding: "6px 12px",
-            background: "#333",
-            color: "#ccc",
-            border: "1px solid #555",
-            borderRadius: 4,
-            cursor: "pointer",
-            fontSize: 12,
-          }}
-        >
-          검색
-        </button>
-
-        {/* 결과 카운트 */}
-        <span style={{ fontSize: 12, color: "#888", marginLeft: "auto" }}>
-          {loading ? "로딩..." : `${total.toLocaleString()}건`}
-          {search && <span style={{ color: "#f59e0b" }}> (검색: &quot;{search}&quot;)</span>}
-        </span>
+        )}
       </div>
 
-      {/* ── 에러 메시지 ── */}
-      {error && (
+      {/* ══ 우측 메인 영역 ══ */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column" as const, minWidth: 0, overflow: "hidden" }}>
+        {/* 상단 바 — 검색 + 현재 카테고리 + 건수 */}
         <div style={{
-          padding: "16px 20px",
-          background: "#2a1a1a",
-          border: "1px solid #ef4444",
-          borderRadius: 8,
-          color: "#ef4444",
-          fontSize: 13,
-          marginBottom: 12,
-          flexShrink: 0,
+          display: "flex", gap: 8, padding: "8px 12px", flexShrink: 0,
+          alignItems: "center", borderBottom: "1px solid #222", background: "#0f0f0f",
         }}>
-          {error}
+          <span style={{
+            fontSize: 14, fontWeight: 700, color: activeCat?.color || "#fff",
+          }}>
+            {activeCat?.label || category}
+          </span>
+          <div style={{ width: 1, height: 20, background: "#333" }} />
+          <input
+            type="text"
+            placeholder="검색 (이름/QID/설명)..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
+            style={{
+              padding: "5px 10px", background: "#1a1a1a", color: "#fff",
+              border: "1px solid #333", borderRadius: 4, fontSize: 12, width: 220,
+            }}
+          />
+          <button
+            onClick={doSearch}
+            style={{
+              padding: "5px 10px", background: "#222", color: "#ccc",
+              border: "1px solid #444", borderRadius: 4, cursor: "pointer", fontSize: 12,
+            }}
+          >
+            검색
+          </button>
+          <span style={{ fontSize: 12, color: "#888", marginLeft: "auto" }}>
+            {loading ? "로딩..." : `${total.toLocaleString()}건`}
+            {search && <span style={{ color: "#f59e0b" }}> (검색: &quot;{search}&quot;)</span>}
+            {region !== "all" && <span style={{ color: "#06b6d4" }}> [{DUMP_REGIONS.find(r => r.id === region)?.label}]</span>}
+          </span>
         </div>
-      )}
 
-      {/* ── 테이블 ── */}
-      <div style={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
-          <thead>
-            <tr style={{ borderBottom: "2px solid #333", textAlign: "left", position: "sticky", top: 0, background: "#111", zIndex: 1 }}>
-              <th style={{ padding: "8px 4px", width: 35, color: "#888" }}>#</th>
-              <th
-                onClick={() => toggleSort("sitelinks")}
-                style={{ padding: "8px 4px", width: 45, cursor: "pointer", color: sort === "sitelinks" ? "#06b6d4" : "#ccc" }}
-              >
-                SL {sort === "sitelinks" ? (order === "desc" ? "▼" : "▲") : ""}
-              </th>
-              <th style={{ padding: "8px 4px", width: 90, color: "#888" }}>QID</th>
-              <th
-                onClick={() => toggleSort("name_ko")}
-                style={{ padding: "8px 4px", width: 160, cursor: "pointer", color: sort === "name_ko" ? "#06b6d4" : "#ccc" }}
-              >
-                한국어명 {sort === "name_ko" ? (order === "desc" ? "▼" : "▲") : ""}
-              </th>
-              <th
-                onClick={() => toggleSort("name_en")}
-                style={{ padding: "8px 4px", cursor: "pointer", color: sort === "name_en" ? "#06b6d4" : "#ccc" }}
-              >
-                영문명 {sort === "name_en" ? (order === "desc" ? "▼" : "▲") : ""}
-              </th>
-              <th style={{ padding: "8px 4px", width: 80, color: "#888" }}>유형</th>
-              <th
-                onClick={() => toggleSort("year")}
-                style={{ padding: "8px 4px", width: 100, cursor: "pointer", color: sort === "year" ? "#06b6d4" : "#ccc" }}
-              >
-                연도 {sort === "year" ? (order === "desc" ? "▼" : "▲") : ""}
-              </th>
-              <th style={{ padding: "8px 4px", width: 200, color: "#888" }}>설명</th>
-              <th style={{ padding: "8px 4px", width: 120, color: "#888" }}>
-                {category === "korean" ? "P31" : category === "persons" ? "출생지/직업" : category === "events" ? "위치" : category === "places" ? "국가" : "수도"}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((e, i) => {
-              const idx = (page - 1) * limit + i + 1;
-              const sl = e.sitelinks || 0;
-              const slColor = sl >= 100 ? "#22c55e" : sl >= 50 ? "#f59e0b" : sl >= 20 ? "#888" : "#555";
+        {/* ── 에러 메시지 ── */}
+        {error && (
+          <div style={{
+            padding: "12px 16px", margin: "8px 12px 0",
+            background: "#2a1a1a", border: "1px solid #ef4444",
+            borderRadius: 6, color: "#ef4444", fontSize: 12, flexShrink: 0,
+          }}>
+            {error}
+          </div>
+        )}
 
-              return (
-                <tr
-                  key={e.qid}
+        {/* ── 테이블 ── */}
+        <div style={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+            <thead>
+              <tr style={{ borderBottom: "2px solid #333", textAlign: "left", position: "sticky", top: 0, background: "#111", zIndex: 1 }}>
+                <th style={{ padding: "6px 4px", width: 35, color: "#888", fontSize: 11 }}>#</th>
+                <th
+                  onClick={() => toggleSort("sitelinks")}
+                  style={{ padding: "6px 4px", width: 45, cursor: "pointer", color: sort === "sitelinks" ? "#22c55e" : "#ccc", fontSize: 11 }}
+                >
+                  SL {sort === "sitelinks" ? (order === "desc" ? "▼" : "▲") : ""}
+                </th>
+                <th style={{ padding: "6px 4px", width: 85, color: "#888", fontSize: 11 }}>QID</th>
+                <th
+                  onClick={() => toggleSort("name_ko")}
+                  style={{ padding: "6px 4px", width: 150, cursor: "pointer", color: sort === "name_ko" ? "#22c55e" : "#ccc", fontSize: 11 }}
+                >
+                  한국어명 {sort === "name_ko" ? (order === "desc" ? "▼" : "▲") : ""}
+                </th>
+                <th
+                  onClick={() => toggleSort("name_en")}
+                  style={{ padding: "6px 4px", cursor: "pointer", color: sort === "name_en" ? "#22c55e" : "#ccc", fontSize: 11 }}
+                >
+                  영문명 {sort === "name_en" ? (order === "desc" ? "▼" : "▲") : ""}
+                </th>
+                <th
+                  onClick={() => toggleSort("year")}
+                  style={{ padding: "6px 4px", width: 90, cursor: "pointer", color: sort === "year" ? "#22c55e" : "#ccc", fontSize: 11 }}
+                >
+                  연도 {sort === "year" ? (order === "desc" ? "▼" : "▲") : ""}
+                </th>
+                <th style={{ padding: "6px 4px", width: 220, color: "#888", fontSize: 11 }}>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((e, i) => {
+                const idx = (page - 1) * limit + i + 1;
+                const sl = e.sitelinks || 0;
+                const slColor = sl >= 100 ? "#22c55e" : sl >= 50 ? "#f59e0b" : sl >= 20 ? "#888" : "#555";
+
+                return (
+                  <tr
+                    key={e.qid || i}
+                    style={{
+                      borderBottom: "1px solid #1a1a1a",
+                      background: i % 2 === 0 ? "#131313" : "#111",
+                    }}
+                  >
+                    <td style={{ padding: "5px 4px", color: "#555", fontSize: 10 }}>{idx}</td>
+                    <td style={{ padding: "5px 4px", color: slColor, fontWeight: sl >= 50 ? 700 : 400, fontFamily: "monospace", fontSize: 11 }}>
+                      {sl}
+                    </td>
+                    <td style={{ padding: "5px 4px", color: "#555", fontFamily: "monospace", fontSize: 10 }}>
+                      <a href={`https://www.wikidata.org/wiki/${e.qid}`} target="_blank" rel="noopener" style={{ color: "#555", textDecoration: "none" }}>
+                        {e.qid}
+                      </a>
+                    </td>
+                    <td style={{
+                      padding: "5px 4px", fontWeight: e.name_ko ? 600 : 400,
+                      color: e.name_ko ? "#fff" : "#444", fontSize: 12,
+                    }}>
+                      {e.name_ko || "—"}
+                    </td>
+                    <td style={{ padding: "5px 4px", color: "#aaa", fontSize: 11 }}>
+                      {e.name_en || "—"}
+                    </td>
+                    <td style={{ padding: "5px 4px", color: "#888", fontFamily: "monospace", fontSize: 11 }}>
+                      {getYear(e)}
+                    </td>
+                    <td style={{ padding: "5px 4px", color: "#666", fontSize: 11, maxWidth: 220, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {e.desc_ko || e.desc_en || "—"}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          {data.length === 0 && !loading && !error && (
+            <div style={{ padding: 40, textAlign: "center", color: "#555", fontSize: 13 }}>
+              해당 조건에 맞는 데이터가 없습니다.
+            </div>
+          )}
+
+          {loading && (
+            <div style={{ padding: 40, textAlign: "center", color: "#888", fontSize: 13 }}>
+              데이터 로딩 중...
+            </div>
+          )}
+        </div>
+
+        {/* ── 페이지네이션 ── */}
+        {totalPages > 1 && (
+          <div
+            style={{
+              display: "flex", gap: 4, justifyContent: "center", alignItems: "center",
+              padding: "8px 0", flexShrink: 0, borderTop: "1px solid #222",
+            }}
+          >
+            <button onClick={() => setPage(1)} disabled={page <= 1} style={paginationBtnStyle(page <= 1)}>≪</button>
+            <button onClick={() => setPage(page - 1)} disabled={page <= 1} style={paginationBtnStyle(page <= 1)}>◀</button>
+
+            {(() => {
+              const pages: number[] = [];
+              let start = Math.max(1, page - 4);
+              let end = Math.min(totalPages, start + 8);
+              if (end - start < 8) start = Math.max(1, end - 8);
+              for (let p = start; p <= end; p++) pages.push(p);
+              return pages.map((p) => (
+                <button
+                  key={p}
+                  onClick={() => setPage(p)}
                   style={{
-                    borderBottom: "1px solid #1a1a1a",
-                    background: i % 2 === 0 ? "#141414" : "#111",
+                    ...paginationBtnStyle(false),
+                    background: p === page ? "#22c55e" : "#222",
+                    color: p === page ? "#fff" : "#888",
+                    fontWeight: p === page ? 700 : 400,
                   }}
                 >
-                  <td style={{ padding: "6px 4px", color: "#555", fontSize: 11 }}>{idx}</td>
-                  <td style={{ padding: "6px 4px", color: slColor, fontWeight: sl >= 50 ? 700 : 400, fontFamily: "monospace" }}>
-                    {sl}
-                  </td>
-                  <td style={{ padding: "6px 4px", color: "#555", fontFamily: "monospace", fontSize: 10 }}>
-                    {e.qid}
-                  </td>
-                  <td style={{
-                    padding: "6px 4px",
-                    fontWeight: e.name_ko ? 600 : 400,
-                    color: e.name_ko ? "#fff" : "#444",
-                  }}>
-                    {e.name_ko || "—"}
-                  </td>
-                  <td style={{ padding: "6px 4px", color: "#aaa", fontSize: 11 }}>
-                    {e.name_en || "—"}
-                  </td>
-                  <td style={{ padding: "6px 4px" }}>
-                    <span style={{
-                      fontSize: 10,
-                      padding: "1px 6px",
-                      borderRadius: 3,
-                      background: "#222",
-                      border: "1px solid #333",
-                      color: "#aaa",
-                    }}>
-                      {getKind(e)}
-                    </span>
-                  </td>
-                  <td style={{ padding: "6px 4px", color: "#888", fontFamily: "monospace", fontSize: 11 }}>
-                    {getYear(e)}
-                  </td>
-                  <td style={{ padding: "6px 4px", color: "#666", fontSize: 11, maxWidth: 200, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                    {e.desc_ko || e.desc_en || "—"}
-                  </td>
-                  <td style={{ padding: "6px 4px", color: "#777", fontSize: 11 }}>
-                    {category === "korean"
-                      ? (e.p31 ? e.p31.map(p => KIND_LABELS[p] || p).join(", ") : "—")
-                      : category === "persons"
-                        ? (e.birth_place || e.occupation || "—")
-                        : category === "events"
-                          ? (e.location || e.country || "—")
-                          : category === "places"
-                            ? (e.country || "—")
-                            : (e.capital || "—")
-                    }
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                  {p}
+                </button>
+              ));
+            })()}
 
-        {data.length === 0 && !loading && !error && (
-          <div style={{ padding: 40, textAlign: "center", color: "#555" }}>
-            해당 조건에 맞는 데이터가 없습니다.
+            <button onClick={() => setPage(page + 1)} disabled={page >= totalPages} style={paginationBtnStyle(page >= totalPages)}>▶</button>
+            <button onClick={() => setPage(totalPages)} disabled={page >= totalPages} style={paginationBtnStyle(page >= totalPages)}>≫</button>
+
+            <span style={{ fontSize: 11, color: "#666", marginLeft: 12 }}>
+              {((page - 1) * limit + 1).toLocaleString()}~{Math.min(page * limit, total).toLocaleString()} / {total.toLocaleString()}
+            </span>
           </div>
         )}
-
-        {loading && (
-          <div style={{ padding: 40, textAlign: "center", color: "#888" }}>
-            데이터 로딩 중...
-          </div>
-        )}
-      </div>
-
-      {/* ── 페이지네이션 ── */}
-      {totalPages > 1 && (
-        <div
-          style={{
-            display: "flex",
-            gap: 4,
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "12px 0",
-            flexShrink: 0,
-            borderTop: "1px solid #222",
-          }}
-        >
-          <button
-            onClick={() => setPage(1)}
-            disabled={page <= 1}
-            style={paginationBtnStyle(page <= 1)}
-          >
-            ≪
-          </button>
-          <button
-            onClick={() => setPage(page - 1)}
-            disabled={page <= 1}
-            style={paginationBtnStyle(page <= 1)}
-          >
-            ◀
-          </button>
-
-          {/* 페이지 번호 버튼 (최대 9개) */}
-          {(() => {
-            const pages: number[] = [];
-            let start = Math.max(1, page - 4);
-            let end = Math.min(totalPages, start + 8);
-            if (end - start < 8) start = Math.max(1, end - 8);
-            for (let p = start; p <= end; p++) pages.push(p);
-            return pages.map((p) => (
-              <button
-                key={p}
-                onClick={() => setPage(p)}
-                style={{
-                  ...paginationBtnStyle(false),
-                  background: p === page ? "#06b6d4" : "#222",
-                  color: p === page ? "#fff" : "#888",
-                  fontWeight: p === page ? 700 : 400,
-                }}
-              >
-                {p}
-              </button>
-            ));
-          })()}
-
-          <button
-            onClick={() => setPage(page + 1)}
-            disabled={page >= totalPages}
-            style={paginationBtnStyle(page >= totalPages)}
-          >
-            ▶
-          </button>
-          <button
-            onClick={() => setPage(totalPages)}
-            disabled={page >= totalPages}
-            style={paginationBtnStyle(page >= totalPages)}
-          >
-            ≫
-          </button>
-
-          <span style={{ fontSize: 11, color: "#666", marginLeft: 12 }}>
-            {((page - 1) * limit + 1).toLocaleString()}~{Math.min(page * limit, total).toLocaleString()} / {total.toLocaleString()}
-          </span>
-        </div>
-      )}
+      </div>{/* 우측 메인 영역 끝 */}
     </div>
   );
 }

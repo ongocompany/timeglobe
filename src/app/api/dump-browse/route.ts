@@ -1,4 +1,4 @@
-// [cl] 덤프 데이터 브라우징 API — 1차 파싱 결과 조회
+// [mk] 덤프 데이터 브라우징 API — 큐레이션된 카테고리별 브라우징
 // jinserver의 /mnt/data2/wikidata/output/ 에서 직접 읽음
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
@@ -6,87 +6,92 @@ import path from "path";
 import readline from "readline";
 
 const DUMP_DIR = "/mnt/data2/wikidata/output";
+const CAT_DIR = "/mnt/data2/wikidata/output/categories";
 
-// [cl] 카테고리별 파일명 매핑
-const CATEGORY_FILES: Record<string, string> = {
-  events: "events_final.json",
-  hist: "hist_entities_final.json",
-  persons: "persons_browse.json",   // 사전필터링된 요약본
-  places: "places_browse.json",     // 사전필터링된 요약본
-  korean: "korean_all.jsonl",       // [cl] 한국어 전량 (JSONL)
+// [mk] 카테고리별 파일명 매핑 — curated 12개 + unmatched + 원본
+const CATEGORY_FILES: Record<string, { path: string; format: "json" | "jsonl" }> = {
+  // 큐레이션된 카테고리 (JSONL)
+  curated:     { path: `${DUMP_DIR}/korean_curated.jsonl`, format: "jsonl" },
+  nation:      { path: `${CAT_DIR}/01_nation.jsonl`, format: "jsonl" },
+  event:       { path: `${CAT_DIR}/02_event.jsonl`, format: "jsonl" },
+  person:      { path: `${CAT_DIR}/03_person.jsonl`, format: "jsonl" },
+  place:       { path: `${CAT_DIR}/04_place.jsonl`, format: "jsonl" },
+  building:    { path: `${CAT_DIR}/05_building.jsonl`, format: "jsonl" },
+  heritage:    { path: `${CAT_DIR}/06_heritage.jsonl`, format: "jsonl" },
+  invention:   { path: `${CAT_DIR}/07_invention.jsonl`, format: "jsonl" },
+  disaster:    { path: `${CAT_DIR}/08_disaster.jsonl`, format: "jsonl" },
+  exploration: { path: `${CAT_DIR}/09_exploration.jsonl`, format: "jsonl" },
+  battle:      { path: `${CAT_DIR}/10_battle.jsonl`, format: "jsonl" },
+  pandemic:    { path: `${CAT_DIR}/11_pandemic.jsonl`, format: "jsonl" },
+  artwork:     { path: `${CAT_DIR}/12_artwork.jsonl`, format: "jsonl" },
+  unmatched:   { path: `${CAT_DIR}/unmatched.jsonl`, format: "jsonl" },
+  // 레거시 (1차 파싱)
+  korean:      { path: `${DUMP_DIR}/korean_all.jsonl`, format: "jsonl" },
+  events:      { path: `${DUMP_DIR}/events_final.json`, format: "json" },
+  hist:        { path: `${DUMP_DIR}/hist_entities_final.json`, format: "json" },
+  persons:     { path: `${DUMP_DIR}/persons_browse.json`, format: "json" },
+  places:      { path: `${DUMP_DIR}/places_browse.json`, format: "json" },
 };
 
-// [cl] 메모리 캐시 — 프로세스 살아있는 동안 유지
+// [mk] 메모리 캐시 — 프로세스 살아있는 동안 유지
 const cache: Record<string, any[]> = {};
 const statsCache: Record<string, any> = {};
-let koreanLoadedAt = 0; // [cl] korean 캐시 타임스탬프 — 파싱 중 갱신용
+const cacheTimestamps: Record<string, number> = {};
 
 function loadCategory(category: string): any[] | null {
-  // [cl] korean은 JSONL 전용 로더 사용
-  if (category === "korean") return loadKorean();
+  const catInfo = CATEGORY_FILES[category];
+  if (!catInfo) return null;
 
-  if (cache[category]) return cache[category];
-
-  const filename = CATEGORY_FILES[category];
-  if (!filename) return null;
-
-  const filepath = path.join(DUMP_DIR, filename);
-  if (!fs.existsSync(filepath)) return null;
-
-  try {
-    const raw = fs.readFileSync(filepath, "utf-8");
-    const data = JSON.parse(raw);
-    cache[category] = data;
-    return data;
-  } catch (e) {
-    console.error(`[dump-browse] Failed to load ${filepath}:`, e);
-    return null;
-  }
-}
-
-// [cl] JSONL 로더 — 파싱 진행 중에도 현재까지 결과를 읽을 수 있음
-// 파일이 변경되면 캐시 무효화 (5분 간격 체크)
-function loadKorean(): any[] | null {
-  const filepath = path.join(DUMP_DIR, "korean_all.jsonl");
+  const { path: filepath, format } = catInfo;
   if (!fs.existsSync(filepath)) return null;
 
   const now = Date.now();
   const stat = fs.statSync(filepath);
   const fileModified = stat.mtimeMs;
 
-  // 캐시 있고, 파일 수정 후 5분 안 지났으면 캐시 반환
-  if (cache["korean"] && (now - koreanLoadedAt < 300_000) && koreanLoadedAt > fileModified) {
-    return cache["korean"];
+  // 캐시 유효: 있고, 파일 변경 후 5분 안 지남
+  if (cache[category] && cacheTimestamps[category] &&
+      (now - cacheTimestamps[category] < 300_000) &&
+      cacheTimestamps[category] > fileModified) {
+    return cache[category];
   }
 
   try {
-    console.log(`[dump-browse] Loading korean_all.jsonl (${(stat.size / 1e6).toFixed(0)}MB)...`);
-    const raw = fs.readFileSync(filepath, "utf-8");
-    const lines = raw.split("\n");
-    const data: any[] = [];
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed) continue;
-      try {
-        data.push(JSON.parse(trimmed));
-      } catch {
-        // 파싱 중일 때 마지막 줄이 불완전할 수 있음 — 스킵
+    const sizeMB = (stat.size / 1e6).toFixed(0);
+    console.log(`[dump-browse] Loading ${category} (${sizeMB}MB, ${format})...`);
+
+    if (format === "json") {
+      const raw = fs.readFileSync(filepath, "utf-8");
+      cache[category] = JSON.parse(raw);
+    } else {
+      // JSONL
+      const raw = fs.readFileSync(filepath, "utf-8");
+      const lines = raw.split("\n");
+      const data: any[] = [];
+      for (const line of lines) {
+        const trimmed = line.trim();
+        if (!trimmed) continue;
+        try { data.push(JSON.parse(trimmed)); } catch { /* incomplete line skip */ }
       }
+      cache[category] = data;
     }
-    cache["korean"] = data;
-    delete statsCache["korean"]; // 통계도 재생성
-    koreanLoadedAt = now;
-    console.log(`[dump-browse] korean_all.jsonl loaded: ${data.length.toLocaleString()} entries`);
-    return data;
+
+    delete statsCache[category];
+    cacheTimestamps[category] = now;
+    console.log(`[dump-browse] ${category} loaded: ${cache[category].length.toLocaleString()} entries`);
+    return cache[category];
   } catch (e) {
-    console.error(`[dump-browse] Failed to load korean_all.jsonl:`, e);
+    console.error(`[dump-browse] Failed to load ${filepath}:`, e);
     return null;
   }
 }
 
-// [cl] 카테고리별 통계 생성
+// [mk] 카테고리별 통계 생성 — 지역 분포 추가
 function getStats(category: string, data: any[]): any {
   if (statsCache[category]) return statsCache[category];
+
+  // [mk] JSONL 카테고리인지 판별 (큐레이션 데이터)
+  const isJsonl = CATEGORY_FILES[category]?.format === "jsonl";
 
   const stats: any = {
     total: data.length,
@@ -94,16 +99,17 @@ function getStats(category: string, data: any[]): any {
     hasCoord: 0,
     kinds: {} as Record<string, number>,
     slDistribution: { s0: 0, s1_5: 0, s6_20: 0, s21_50: 0, s51_100: 0, s100plus: 0 },
+    // [mk] 지역 분포 — coord 기반 11개 권역
+    regions: {} as Record<string, number>,
   };
 
   for (const e of data) {
     if (e.name_ko) stats.hasKo++;
-    // [cl] 좌표 체크 — direct_coord/coord 배열 형태도 지원
     if (e.lat != null || (Array.isArray(e.direct_coord) && e.direct_coord.length >= 2) || (Array.isArray(e.coord) && e.coord.length >= 2)) stats.hasCoord++;
 
-    // [cl] kind 필드 — korean은 p31 배열의 첫 번째 QID 사용
+    // kind 필드
     let kind: string;
-    if (category === "korean") {
+    if (isJsonl || category === "korean") {
       kind = (Array.isArray(e.p31) && e.p31.length > 0) ? e.p31[0] : "unknown";
     } else {
       kind = e.event_kind || e.entity_kind || e.occupation || e.type || "unknown";
@@ -118,10 +124,55 @@ function getStats(category: string, data: any[]): any {
     else if (sl <= 50) stats.slDistribution.s21_50++;
     else if (sl <= 100) stats.slDistribution.s51_100++;
     else stats.slDistribution.s100plus++;
+
+    // [mk] 지역 분류 (좌표 기반)
+    const region = classifyRegion(e);
+    stats.regions[region] = (stats.regions[region] || 0) + 1;
   }
 
   statsCache[category] = stats;
   return stats;
+}
+
+// [mk] 좌표 기반 지역 분류 — 11개 권역
+function classifyRegion(e: any): string {
+  let lat: number | null = null;
+  let lon: number | null = null;
+
+  if (e.lat != null && e.lon != null) {
+    lat = Number(e.lat); lon = Number(e.lon);
+  } else if (Array.isArray(e.coord) && e.coord.length >= 2) {
+    lat = e.coord[0]; lon = e.coord[1];
+  } else if (Array.isArray(e.direct_coord) && e.direct_coord.length >= 2) {
+    lat = e.direct_coord[0]; lon = e.direct_coord[1];
+  }
+
+  if (lat == null || lon == null || isNaN(lat) || isNaN(lon)) return "unknown";
+
+  // 유럽
+  if (lat >= 35 && lat <= 72 && lon >= -25 && lon <= 40) return "europe";
+  // 동아시아
+  if (lat >= 18 && lat <= 55 && lon >= 100 && lon <= 150) return "east_asia";
+  // 동남아시아
+  if (lat >= -12 && lat < 18 && lon >= 90 && lon <= 150) return "southeast_asia";
+  // 남아시아
+  if (lat >= 5 && lat <= 40 && lon >= 60 && lon < 100) return "south_asia";
+  // 중앙아시아
+  if (lat >= 30 && lat <= 55 && lon >= 40 && lon < 100) return "central_asia";
+  // 중동
+  if (lat >= 12 && lat < 40 && lon >= 25 && lon < 60) return "middle_east";
+  // 북아프리카
+  if (lat >= 15 && lat < 35 && lon >= -20 && lon < 40) return "north_africa";
+  // 사하라이남
+  if (lat < 15 && lon >= -20 && lon <= 55) return "sub_saharan";
+  // 북아메리카
+  if (lat >= 15 && lon >= -170 && lon <= -50) return "north_america";
+  // 중남아메리카
+  if (lat < 15 && lon >= -120 && lon <= -30) return "latin_america";
+  // 오세아니아
+  if (lat < -10 && lon >= 100) return "oceania";
+
+  return "unknown";
 }
 
 export async function GET(request: NextRequest) {
@@ -136,24 +187,25 @@ export async function GET(request: NextRequest) {
   const kind = searchParams.get("kind") || "all";
   const hasKo = searchParams.get("hasKo") || "all"; // all | yes | no
   const minSl = parseInt(searchParams.get("minSl") || "0");
+  const region = searchParams.get("region") || "all"; // [mk] 지역 필터
 
-  // [cl] 사용 가능한 카테고리 목록 반환
+  // [mk] 사용 가능한 카테고리 목록 반환
   if (category === "_categories") {
     const available: string[] = [];
-    for (const [cat, file] of Object.entries(CATEGORY_FILES)) {
-      const filepath = path.join(DUMP_DIR, file);
-      if (fs.existsSync(filepath)) available.push(cat);
+    for (const [cat, info] of Object.entries(CATEGORY_FILES)) {
+      if (fs.existsSync(info.path)) available.push(cat);
     }
     return NextResponse.json({ available, dumpDir: DUMP_DIR });
   }
 
-  // [cl] 데이터 로드
+  // [mk] 데이터 로드
   const data = loadCategory(category);
   if (!data) {
+    const catInfo = CATEGORY_FILES[category];
     return NextResponse.json(
       {
         error: `카테고리 '${category}' 데이터를 찾을 수 없습니다.`,
-        hint: `${DUMP_DIR}/${CATEGORY_FILES[category] || "?"} 파일이 필요합니다.`,
+        hint: catInfo ? `${catInfo.path} 파일이 필요합니다.` : "알 수 없는 카테고리",
         available: Object.keys(CATEGORY_FILES),
       },
       { status: 404 }
@@ -162,18 +214,25 @@ export async function GET(request: NextRequest) {
 
   const stats = getStats(category, data);
 
-  // [cl] 필터링
+  const isJsonl = CATEGORY_FILES[category]?.format === "jsonl";
+
+  // [mk] 필터링
   let filtered = data;
 
-  // [cl] kind 필터 — korean은 p31 배열에서 매칭
+  // kind 필터 — JSONL은 p31 배열에서 매칭
   if (kind !== "all") {
     filtered = filtered.filter((e) => {
-      if (category === "korean") {
+      if (isJsonl || category === "korean") {
         return Array.isArray(e.p31) && e.p31.includes(kind);
       }
       const k = e.event_kind || e.entity_kind || e.occupation || e.type || "unknown";
       return k === kind;
     });
+  }
+
+  // [mk] 지역 필터
+  if (region !== "all") {
+    filtered = filtered.filter((e) => classifyRegion(e) === region);
   }
 
   // 한국어 이름 필터
