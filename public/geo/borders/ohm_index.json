@@ -1039,9 +1039,27 @@
     "name_en": "Baekje",
     "name_ko": "백제",
     "tier": 1,
-    "start_year": 371,
+    "start_year": -18,
     "end_year": 660,
     "snapshots": [
+      {
+        "rid": 9100271,
+        "start": -18,
+        "end": 300,
+        "start_date": "-0018",
+        "end_date": "0300",
+        "source": "historical-basemaps",
+        "source_year": "100"
+      },
+      {
+        "rid": 9100272,
+        "start": 300,
+        "end": 371,
+        "start_date": "0300",
+        "end_date": "0371",
+        "source": "historical-basemaps",
+        "source_year": "300"
+      },
       {
         "rid": 2692875,
         "start": 371,
@@ -1370,9 +1388,27 @@
     "name_en": "Silla",
     "name_ko": "신라",
     "tier": 1,
-    "start_year": 400,
+    "start_year": -57,
     "end_year": 931,
     "snapshots": [
+      {
+        "rid": 9100281,
+        "start": -57,
+        "end": 300,
+        "start_date": "-0057",
+        "end_date": "0300",
+        "source": "historical-basemaps",
+        "source_year": "bc1"
+      },
+      {
+        "rid": 9100282,
+        "start": 300,
+        "end": 400,
+        "start_date": "0300",
+        "end_date": "0400",
+        "source": "historical-basemaps",
+        "source_year": "300"
+      },
       {
         "rid": 2694614,
         "start": 400,
