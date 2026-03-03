@@ -17298,5 +17298,462 @@
         "match_type": "external"
       }
     ]
+  },
+  {
+    "qid": "Q186419",
+    "name_en": "Northern Wei",
+    "name_ko": "북위",
+    "tier": 1,
+    "start_year": 386,
+    "end_year": 534,
+    "snapshots": [
+      {
+        "rid": 9100331,
+        "start": 386,
+        "end": 534,
+        "start_date": "0386",
+        "end_date": "0534",
+        "source": "historical-basemaps",
+        "source_year": 500
+      }
+    ]
+  },
+  {
+    "qid": "Q205935",
+    "name_en": "Western Xia",
+    "name_ko": "서하",
+    "tier": 2,
+    "start_year": 1038,
+    "end_year": 1227,
+    "snapshots": [
+      {
+        "rid": 9100341,
+        "start": 1038,
+        "end": 1100,
+        "start_date": "1038",
+        "end_date": "1100",
+        "source": "historical-basemaps",
+        "source_year": 1000
+      },
+      {
+        "rid": 9100342,
+        "start": 1100,
+        "end": 1200,
+        "start_date": "1100",
+        "end_date": "1200",
+        "source": "historical-basemaps",
+        "source_year": 1100
+      },
+      {
+        "rid": 9100343,
+        "start": 1200,
+        "end": 1227,
+        "start_date": "1200",
+        "end_date": "1227",
+        "source": "historical-basemaps",
+        "source_year": 1200
+      }
+    ]
+  },
+  {
+    "qid": "Q80026",
+    "name_en": "Maurya Empire",
+    "name_ko": "마우리아 제국",
+    "tier": 1,
+    "start_year": -321,
+    "end_year": -184,
+    "snapshots": [
+      {
+        "rid": 9100351,
+        "start": -321,
+        "end": -250,
+        "start_date": "-0321",
+        "end_date": "-0250",
+        "source": "historical-basemaps",
+        "source_year": -300
+      },
+      {
+        "rid": 9100352,
+        "start": -250,
+        "end": -184,
+        "start_date": "-0250",
+        "end_date": "-0184",
+        "source": "historical-basemaps",
+        "source_year": -200
+      }
+    ]
+  },
+  {
+    "qid": "Q83462",
+    "name_en": "Gupta Empire",
+    "name_ko": "굽타 제국",
+    "tier": 1,
+    "start_year": 320,
+    "end_year": 550,
+    "snapshots": [
+      {
+        "rid": 9100361,
+        "start": 320,
+        "end": 450,
+        "start_date": "0320",
+        "end_date": "0450",
+        "source": "historical-basemaps",
+        "source_year": 400
+      },
+      {
+        "rid": 9100362,
+        "start": 450,
+        "end": 550,
+        "start_date": "0450",
+        "end_date": "0550",
+        "source": "historical-basemaps",
+        "source_year": 500
+      }
+    ]
+  },
+  {
+    "qid": "Q164992",
+    "name_en": "Kushan Empire",
+    "name_ko": "쿠샨 제국",
+    "tier": 2,
+    "start_year": 30,
+    "end_year": 375,
+    "snapshots": [
+      {
+        "rid": 9100371,
+        "start": 30,
+        "end": 375,
+        "start_date": "0030",
+        "end_date": "0375",
+        "source": "historical-basemaps",
+        "source_year": 100
+      }
+    ]
+  },
+  {
+    "qid": "Q372866",
+    "name_en": "Satavahana dynasty",
+    "name_ko": "사타바하나 왕조",
+    "tier": 3,
+    "start_year": -100,
+    "end_year": 220,
+    "snapshots": [
+      {
+        "rid": 9100381,
+        "start": -100,
+        "end": 100,
+        "start_date": "-0100",
+        "end_date": "0100",
+        "source": "historical-basemaps",
+        "source_year": -1
+      },
+      {
+        "rid": 9100382,
+        "start": 100,
+        "end": 220,
+        "start_date": "0100",
+        "end_date": "0220",
+        "source": "historical-basemaps",
+        "source_year": 200
+      }
+    ]
+  },
+  {
+    "qid": "Q131476",
+    "name_en": "Greco-Bactrian Kingdom",
+    "name_ko": "박트리아",
+    "tier": 2,
+    "start_year": -256,
+    "end_year": -120,
+    "snapshots": [
+      {
+        "rid": 9100391,
+        "start": -256,
+        "end": -120,
+        "start_date": "-0256",
+        "end_date": "-0120",
+        "source": "historical-basemaps",
+        "source_year": -200
+      }
+    ]
+  },
+  {
+    "qid": "Q1149316",
+    "name_en": "Indo-Scythians",
+    "name_ko": "사카",
+    "tier": 3,
+    "start_year": -200,
+    "end_year": 400,
+    "snapshots": [
+      {
+        "rid": 9100401,
+        "start": -200,
+        "end": 400,
+        "start_date": "-0200",
+        "end_date": "0400",
+        "source": "historical-basemaps",
+        "source_year": -1
+      }
+    ]
+  },
+  {
+    "qid": "Q160419",
+    "name_en": "Delhi Sultanate",
+    "name_ko": "델리 술탄국",
+    "tier": 1,
+    "start_year": 1206,
+    "end_year": 1526,
+    "snapshots": [
+      {
+        "rid": 9100411,
+        "start": 1206,
+        "end": 1300,
+        "start_date": "1206",
+        "end_date": "1300",
+        "source": "historical-basemaps",
+        "source_year": 1200
+      },
+      {
+        "rid": 9100412,
+        "start": 1300,
+        "end": 1400,
+        "start_date": "1300",
+        "end_date": "1400",
+        "source": "historical-basemaps",
+        "source_year": 1300
+      },
+      {
+        "rid": 9100413,
+        "start": 1400,
+        "end": 1500,
+        "start_date": "1400",
+        "end_date": "1500",
+        "source": "historical-basemaps",
+        "source_year": 1400
+      },
+      {
+        "rid": 9100414,
+        "start": 1500,
+        "end": 1526,
+        "start_date": "1500",
+        "end_date": "1526",
+        "source": "historical-basemaps",
+        "source_year": 1500
+      }
+    ]
+  },
+  {
+    "qid": "Q80702",
+    "name_en": "Sasanian Empire",
+    "name_ko": "사산 왕조",
+    "tier": 1,
+    "start_year": 224,
+    "end_year": 651,
+    "snapshots": [
+      {
+        "rid": 9100421,
+        "start": 224,
+        "end": 450,
+        "start_date": "0224",
+        "end_date": "0450",
+        "source": "historical-basemaps",
+        "source_year": 400
+      },
+      {
+        "rid": 9100422,
+        "start": 450,
+        "end": 651,
+        "start_date": "0450",
+        "end_date": "0651",
+        "source": "historical-basemaps",
+        "source_year": 500
+      }
+    ]
+  },
+  {
+    "qid": "Q162024",
+    "name_en": "Khmer Empire",
+    "name_ko": "크메르 제국",
+    "tier": 1,
+    "start_year": 802,
+    "end_year": 1431,
+    "snapshots": [
+      {
+        "rid": 9100431,
+        "start": 802,
+        "end": 1100,
+        "start_date": "0802",
+        "end_date": "1100",
+        "source": "historical-basemaps",
+        "source_year": 1000
+      },
+      {
+        "rid": 9100432,
+        "start": 1100,
+        "end": 1200,
+        "start_date": "1100",
+        "end_date": "1200",
+        "source": "historical-basemaps",
+        "source_year": 1100
+      },
+      {
+        "rid": 9100433,
+        "start": 1200,
+        "end": 1400,
+        "start_date": "1200",
+        "end_date": "1400",
+        "source": "historical-basemaps",
+        "source_year": 1300
+      },
+      {
+        "rid": 9100434,
+        "start": 1400,
+        "end": 1431,
+        "start_date": "1400",
+        "end_date": "1431",
+        "source": "historical-basemaps",
+        "source_year": 1400
+      }
+    ]
+  },
+  {
+    "qid": "Q193287",
+    "name_en": "Champa",
+    "name_ko": "참파",
+    "tier": 2,
+    "start_year": 192,
+    "end_year": 1832,
+    "snapshots": [
+      {
+        "rid": 9100441,
+        "start": 192,
+        "end": 800,
+        "start_date": "0192",
+        "end_date": "0800",
+        "source": "historical-basemaps",
+        "source_year": 600
+      },
+      {
+        "rid": 9100442,
+        "start": 800,
+        "end": 1200,
+        "start_date": "0800",
+        "end_date": "1200",
+        "source": "historical-basemaps",
+        "source_year": 1000
+      },
+      {
+        "rid": 9100443,
+        "start": 1200,
+        "end": 1500,
+        "start_date": "1200",
+        "end_date": "1500",
+        "source": "historical-basemaps",
+        "source_year": 1300
+      },
+      {
+        "rid": 9100444,
+        "start": 1500,
+        "end": 1832,
+        "start_date": "1500",
+        "end_date": "1832",
+        "source": "historical-basemaps",
+        "source_year": 1500
+      }
+    ]
+  },
+  {
+    "qid": "Q193292",
+    "name_en": "Funan",
+    "name_ko": "부남",
+    "tier": 3,
+    "start_year": 68,
+    "end_year": 550,
+    "snapshots": [
+      {
+        "rid": 9100451,
+        "start": 68,
+        "end": 550,
+        "start_date": "0068",
+        "end_date": "0550",
+        "source": "historical-basemaps",
+        "source_year": 500
+      }
+    ]
+  },
+  {
+    "qid": "Q155863",
+    "name_en": "Srivijaya",
+    "name_ko": "스리비자야",
+    "tier": 1,
+    "start_year": 650,
+    "end_year": 1377,
+    "snapshots": [
+      {
+        "rid": 9100461,
+        "start": 650,
+        "end": 1000,
+        "start_date": "0650",
+        "end_date": "1000",
+        "source": "historical-basemaps",
+        "source_year": 800
+      },
+      {
+        "rid": 9100462,
+        "start": 1000,
+        "end": 1200,
+        "start_date": "1000",
+        "end_date": "1200",
+        "source": "historical-basemaps",
+        "source_year": 1000
+      },
+      {
+        "rid": 9100463,
+        "start": 1200,
+        "end": 1377,
+        "start_date": "1200",
+        "end_date": "1377",
+        "source": "historical-basemaps",
+        "source_year": 1300
+      }
+    ]
+  },
+  {
+    "qid": "Q215530",
+    "name_en": "Tibetan Empire",
+    "name_ko": "토번",
+    "tier": 2,
+    "start_year": 618,
+    "end_year": 842,
+    "snapshots": [
+      {
+        "rid": 9100471,
+        "start": 618,
+        "end": 842,
+        "start_date": "0618",
+        "end_date": "0842",
+        "source": "historical-basemaps",
+        "source_year": 800
+      }
+    ]
+  },
+  {
+    "qid": "Q487598",
+    "name_en": "Chagatai Khanate",
+    "name_ko": "차가타이 칸국",
+    "tier": 1,
+    "start_year": 1227,
+    "end_year": 1370,
+    "snapshots": [
+      {
+        "rid": 9100481,
+        "start": 1227,
+        "end": 1370,
+        "start_date": "1227",
+        "end_date": "1370",
+        "source": "historical-basemaps",
+        "source_year": 1300
+      }
+    ]
   }
 ]
