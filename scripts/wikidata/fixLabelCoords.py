@@ -230,8 +230,10 @@ def main():
         if raw_qid not in ohm_map:
             ohm_map[raw_qid] = []
         for snap in entry.get('snapshots', []):
+            # [cl] file 필드 없으면 rid로 생성
+            fname = snap.get('file') or f"ohm_{snap['rid']}.geojson"
             ohm_map[raw_qid].append({
-                'file': snap['file'],
+                'file': fname,
                 'start': snap.get('start', entry.get('start_year', 0)),
                 'end': snap.get('end', entry.get('end_year', 9999)),
             })
