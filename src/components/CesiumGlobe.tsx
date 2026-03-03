@@ -1981,7 +1981,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             ds.entities.add({
               polyline: {
                 positions,
-                width: entityTier === 1 ? 1.5 : 1.0,
+                width: 1.0,
                 material: entityTier === 1
                   ? borderGray
                   : new PolylineDashMaterialProperty({ color: borderGray, dashLength: 8 }),
@@ -2074,7 +2074,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
             ds.entities.add({
               polyline: {
                 positions,
-                width: entityTier === 1 ? 1.5 : 1.0,
+                width: 1.0,
                 material: entityTier === 1
                   ? borderGray
                   : new PolylineDashMaterialProperty({ color: borderGray, dashLength: 8 }),
