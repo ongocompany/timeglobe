@@ -1383,6 +1383,27 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     return rings;
   }
 
+  // [cl] 외곽 링만 추출 (국경선용 — 내부 hole 링 제외)
+  // Polygon: coordinates[0]만, MultiPolygon: 각 polygon의 [0]만
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function extractOuterRings(geometry: any): Cartesian3[][] {
+    const rings: Cartesian3[][] = [];
+    if (!geometry) return rings;
+
+    if (geometry.type === "Polygon") {
+      if (geometry.coordinates.length > 0) {
+        rings.push(geometry.coordinates[0].map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+      }
+    } else if (geometry.type === "MultiPolygon") {
+      for (const polygon of geometry.coordinates) {
+        if (polygon.length > 0) {
+          rings.push(polygon[0].map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+        }
+      }
+    }
+    return rings;
+  }
+
   // [cl] 폴리곤 외곽 링의 무게중심(centroid) 계산 (라벨 위치용)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function calcCentroid(geometry: any): [number, number] | null {
@@ -1918,7 +1939,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       for (const feature of geojson.features) {
         // [mk] 폴리곤 채우기 (showFill OFF 시 스킵)
         if (showFillRef.current) {
-          // [cl] filled polygon 시도 → 실패 시 polyline fallback
+          // [cl] filled polygon 시도 → 실패 시 polyline fallback (단, border가 켜져 있으면 스킵)
           try {
             const hierarchies = extractPolygonHierarchies(feature.geometry);
             for (const hierarchy of hierarchies) {
@@ -1932,27 +1953,30 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
               });
             }
           } catch {
-            // [cl] polygon 크래시 시 polyline fallback
-            const rings = extractRings(feature.geometry);
-            for (const positions of rings) {
-              if (positions.length < 2) continue;
-              ds.entities.add({
-                polyline: {
-                  positions,
-                  width: 1.0,
-                  material: outlineColor,
-                },
-              });
+            // [cl] polygon 크래시 시 polyline fallback — border가 이미 외곽선 그리면 이중 그리기 방지
+            if (!showBorderRef.current || entityTier > 2) {
+              const rings = extractRings(feature.geometry);
+              for (const positions of rings) {
+                if (positions.length < 2) continue;
+                ds.entities.add({
+                  polyline: {
+                    positions,
+                    width: 1.0,
+                    material: outlineColor,
+                  },
+                });
+              }
             }
           }
         }
 
         // [cl] 외곽선 — T1/T2만 표시, T3/T4는 국경선 없음
         // T1: 1.5px 실선 80% 회색 | T2: 1px 점선 80% 회색
+        // extractOuterRings: 내부 hole 링 제외, 국경(외곽)만 그림
         if (showBorderRef.current && entityTier <= 2) {
-          const outlineRings = extractRings(feature.geometry);
+          const outerRings = extractOuterRings(feature.geometry);
           const borderGray = Color.WHITE.withAlpha(0.8);
-          for (const positions of outlineRings) {
+          for (const positions of outerRings) {
             if (positions.length < 2) continue;
             ds.entities.add({
               polyline: {
@@ -2027,21 +2051,25 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
               });
             }
           } catch {
-            const rings = extractRings(feat.geometry);
-            for (const positions of rings) {
-              if (positions.length < 2) continue;
-              ds.entities.add({
-                polyline: { positions, width: 1.0, material: outlineColor },
-              });
+            // [cl] polygon 크래시 시 fallback — border가 외곽선 그리면 이중 그리기 방지
+            if (!showBorderRef.current || entityTier > 2) {
+              const rings = extractRings(feat.geometry);
+              for (const positions of rings) {
+                if (positions.length < 2) continue;
+                ds.entities.add({
+                  polyline: { positions, width: 1.0, material: outlineColor },
+                });
+              }
             }
           }
         }
 
         // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일: T1=1.5px 실선, T2=1px 점선)
+        // extractOuterRings: 내부 hole 링 제외
         if (showBorderRef.current && entityTier <= 2) {
-          const outlineRings = extractRings(feat.geometry);
+          const outerRings = extractOuterRings(feat.geometry);
           const borderGray = Color.WHITE.withAlpha(0.8);
-          for (const positions of outlineRings) {
+          for (const positions of outerRings) {
             if (positions.length < 2) continue;
             ds.entities.add({
               polyline: {
