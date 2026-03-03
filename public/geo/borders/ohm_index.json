@@ -379,10 +379,13 @@
     "end_year": -256,
     "snapshots": [
       {
-        "rid": 9000017,
+        "rid": 9100291,
         "start": -770,
         "end": -256,
-        "file": "ohm_9000017.geojson"
+        "start_date": "-0770",
+        "end_date": "-0256",
+        "source": "historical-basemaps",
+        "source_year": "bc300"
       }
     ]
   },
@@ -662,10 +665,13 @@
     "end_year": -110,
     "snapshots": [
       {
-        "rid": 9000028,
+        "rid": 9100292,
         "start": -206,
         "end": -110,
-        "file": "ohm_9000028.geojson"
+        "start_date": "-0206",
+        "end_date": "-0110",
+        "source": "historical-basemaps",
+        "source_year": "bc200"
       }
     ]
   },
@@ -685,7 +691,7 @@
         "match_type": "external",
         "start_date": "-0205",
         "end_date": "0220",
-        "source_year": "bc200"
+        "source_year": "bc1"
       }
     ]
   },
