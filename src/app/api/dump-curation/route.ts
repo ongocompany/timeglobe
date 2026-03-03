@@ -69,8 +69,8 @@ function loadCategory(category: string): any[] | null {
   }
 }
 
-// [cl] 좌표 기반 지역 분류 — 11개 권역 (dump-browse와 동일)
-function classifyRegion(e: any): string {
+// [cl] 좌표 기반 지역 분류 — 11개 권역
+function classifyRegionByCoord(e: any): string {
   let lat: number | null = null;
   let lon: number | null = null;
   if (e.lat != null && e.lon != null) { lat = Number(e.lat); lon = Number(e.lon); }
@@ -90,6 +90,85 @@ function classifyRegion(e: any): string {
   if (lat < 15 && lon >= -120 && lon <= -30) return "latin_america";
   if (lat < -10 && lon >= 100) return "oceania";
   return "unknown";
+}
+
+// [cl] QID → 지역 매핑 (nation 좌표 기반 자동 빌드, lazy init)
+let qidRegionMap: Record<string, string> | null = null;
+
+function getQidRegionMap(): Record<string, string> {
+  if (qidRegionMap) return qidRegionMap;
+  qidRegionMap = {};
+  const nationData = loadCategory('nation');
+  if (nationData) {
+    for (const e of nationData) {
+      const region = classifyRegionByCoord(e);
+      if (region !== 'unknown' && e.qid) {
+        qidRegionMap[e.qid] = region;
+      }
+    }
+  }
+  // [cl] nation 좌표에 없는 주요 국가 수동 보완
+  const manualOverrides: Record<string, string> = {
+    'Q884': 'east_asia',     // 대한민국
+    'Q423': 'east_asia',     // 북한
+    'Q17': 'east_asia',      // 일본
+    'Q148': 'east_asia',     // 중국
+    'Q865': 'east_asia',     // 대만
+    'Q13526': 'east_asia',   // 몽골
+    'Q30': 'north_america',  // 미국
+    'Q16': 'north_america',  // 캐나다
+    'Q96': 'north_america',  // 멕시코
+    'Q408': 'oceania',       // 호주
+    'Q664': 'oceania',       // 뉴질랜드
+    'Q142': 'europe',        // 프랑스
+    'Q145': 'europe',        // 영국
+    'Q183': 'europe',        // 독일
+    'Q38': 'europe',         // 이탈리아
+    'Q29': 'europe',         // 스페인
+    'Q34': 'europe',         // 스웨덴
+    'Q20': 'europe',         // 노르웨이
+    'Q29999': 'europe',      // 네덜란드
+    'Q36': 'europe',         // 폴란드
+    'Q159': 'europe',        // 러시아
+    'Q155': 'latin_america', // 브라질
+    'Q414': 'latin_america', // 아르헨티나
+    'Q668': 'south_asia',    // 인도
+    'Q843': 'south_asia',    // 파키스탄
+    'Q794': 'middle_east',   // 이란
+    'Q796': 'middle_east',   // 이라크
+    'Q801': 'middle_east',   // 이스라엘
+    'Q869': 'southeast_asia',// 태국
+    'Q252': 'southeast_asia',// 인도네시아
+    'Q928': 'southeast_asia',// 필리핀
+    'Q881': 'southeast_asia',// 베트남
+    'Q262': 'north_africa',  // 알제리
+    'Q79': 'north_africa',   // 이집트
+    'Q1028': 'north_africa', // 모로코
+    'Q115': 'sub_saharan',   // 에티오피아
+    'Q1033': 'sub_saharan',  // 나이지리아
+    'Q258': 'sub_saharan',   // 남아프리카공화국
+  };
+  for (const [qid, region] of Object.entries(manualOverrides)) {
+    if (!qidRegionMap[qid]) qidRegionMap[qid] = region;
+  }
+  console.log(`[dump-curation] QID→region map: ${Object.keys(qidRegionMap).length} entries`);
+  return qidRegionMap;
+}
+
+// [cl] 아이템 지역 분류 — 좌표 → 국적QID → 국가QID → unknown 순
+function classifyRegion(e: any): string {
+  // 1) 좌표 기반
+  const coordRegion = classifyRegionByCoord(e);
+  if (coordRegion !== 'unknown') return coordRegion;
+
+  // 2) 국적/국가 QID 기반 (인물→citizenship, 기타→country 등)
+  const regionMap = getQidRegionMap();
+  const fallbackQids = [e.citizenship_qid, e.country_qid, e.location_qid];
+  for (const qid of fallbackQids) {
+    if (qid && regionMap[qid]) return regionMap[qid];
+  }
+
+  return 'unknown';
 }
 
 function getAnchorYear(item: any): number | null {
