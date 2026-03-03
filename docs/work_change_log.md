@@ -3,6 +3,42 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-03] [cl] CSHAPES 중복 정리 + 국경선 갭 분석
+
+### 작업 내용
+
+#### 1. 국경선 렌더링 수정
+- `extractOuterRings()` 추가: hole 링 제외, 외곽 경계만 렌더링
+- polygon fill fallback 이중 그리기 방지
+- T1 경계선 너비 1.5px → 1.0px 축소
+
+#### 2. T1/T2 국경선 갭 분석
+- T1 249개: 완전커버=122, 부분커버=51, 완전누락=76
+- T2 1,114개: 완전커버=180, 부분커버=69, 완전누락=865
+- 분석 문서: `docs/develop/11_[cl]border_gap_analysis.md`
+
+#### 3. CSHAPES prefix 중복 엔티티 정리
+- `CSHAPES_*` prefix 엔티티 160개 삭제 (QID 엔티티와 중복)
+- entities_raw: 2,148 → 1,988
+- 73개 CSHAPES_ 유지 (식민지/영토, QID 미매칭)
+
+#### 4. cshapes_qid_index 보완
+- 삭제된 CSHAPES_ 엔티티의 폴리곤 연결을 QID 엔티티로 이관
+- 76개 QID 추가 (94 → 170), cshapes_years 전체 스캔 채움
+
+#### 5. circles 재생성
+- 1,551 → 1,425 (CSHAPES 제외 + 삭제분 반영)
+
+### 커밋
+- `a005b7f` 경계선 이중 그리기 방지 + 외곽 링만 렌더링
+- `51c1782` 경계선 T1 너비 1.5px → 1.0px 축소
+- `4d2ab00` CSHAPES 중복 정리 + cshapes_qid_index 76개 추가
+
+### 데이터 수정 상세
+→ `docs/develop/12_[cl]data_change_history.md` 참조
+
+---
+
 ## [2026-03-03] [cl] NAS 개발/백업 환경 구축
 
 ### 배경
