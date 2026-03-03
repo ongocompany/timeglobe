@@ -3,6 +3,35 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-03] [cl] NAS 개발/백업 환경 구축
+
+### 배경
+- jinserver(집 리눅스) 파싱 스크립트 실행 중 2회 연속 다운 → 원인 파악 필요 (OOM 또는 과열 의심)
+- 긴급 대비용 NAS 개발 환경 + 코드 백업 구축
+
+### NAS(Synology DS423+, 100.115.194.12) 구축 내용
+1. **SSH 키 등록** — macOS → NAS SSH 접속 설정 완료
+2. **nvm + Node.js v22.22.0** — ~/.profile에 nvm 설정 추가
+3. **프로젝트 클론** — `/volume1/git/timeglobe.git` bare repo 기준 클론 → `~/timeglobe`
+4. **bare repo HEAD 수정** — `master` → `main` 브랜치로 정정
+5. **npm install** 완료 (466개 패키지)
+6. **.env.local** 복사 완료 (Cesium, Supabase, Gemini 키 포함)
+7. **dev 서버 테스트** — `http://100.115.194.12:3001` 정상 동작 (첫 컴파일 41초)
+8. **Wikidata 덤프 백그라운드 다운로드** 시작
+   - 저장 위치: `/volume1/Share/dumps/wikidata/latest-all.json.gz`
+   - 크기: 141GB, 속도: ~4.6MB/s, 예상 완료: 8~9시간 후
+   - 재개 옵션: `wget -c` 적용
+
+### git 백업 현황
+- `git push nas main` 성공 — 44커밋 NAS bare repo에 반영
+- NAS Gitea(`nas-gitea` remote)는 2월 26일 기준이라 별도 업데이트 필요
+
+### jinserver 점검 필요 사항 (저녁에)
+- `journalctl -b -1 | grep -iE "oom|killed|thermal"` 로 원인 파악
+- 파싱 스크립트 실행 시 `nice -n 19` + `systemd-run -p MemoryMax=20G` 적용 권장
+
+---
+
 ## [2026-03-03] [mk] 나무위키 덤프 수집 + 뷰어 구축
 
 ### 작업 내용
