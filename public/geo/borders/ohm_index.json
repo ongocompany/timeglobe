@@ -2511,10 +2511,13 @@
     "end_year": 840,
     "snapshots": [
       {
-        "rid": 9000024,
+        "rid": 9100321,
         "start": 744,
         "end": 840,
-        "file": "ohm_9000024.geojson"
+        "start_date": "0744",
+        "end_date": "0840",
+        "source": "historical-basemaps",
+        "source_year": "800"
       }
     ]
   },
@@ -5113,10 +5116,22 @@
     "end_year": 1502,
     "snapshots": [
       {
-        "rid": 9000094,
+        "rid": 9100301,
         "start": 1243,
+        "end": 1400,
+        "start_date": "1243",
+        "end_date": "1400",
+        "source": "historical-basemaps",
+        "source_year": "1300"
+      },
+      {
+        "rid": 9100302,
+        "start": 1400,
         "end": 1502,
-        "file": "ohm_9000094.geojson"
+        "start_date": "1400",
+        "end_date": "1502",
+        "source": "historical-basemaps",
+        "source_year": "1492"
       }
     ]
   },
@@ -6694,10 +6709,31 @@
     "end_year": 1857,
     "snapshots": [
       {
-        "rid": 9000040,
+        "rid": 9100311,
         "start": 1526,
+        "end": 1650,
+        "start_date": "1526",
+        "end_date": "1650",
+        "source": "historical-basemaps",
+        "source_year": "1600"
+      },
+      {
+        "rid": 9100312,
+        "start": 1650,
+        "end": 1750,
+        "start_date": "1650",
+        "end_date": "1750",
+        "source": "historical-basemaps",
+        "source_year": "1700"
+      },
+      {
+        "rid": 9100313,
+        "start": 1750,
         "end": 1857,
-        "file": "ohm_9000040.geojson"
+        "start_date": "1750",
+        "end_date": "1857",
+        "source": "historical-basemaps",
+        "source_year": "1715"
       }
     ]
   },
