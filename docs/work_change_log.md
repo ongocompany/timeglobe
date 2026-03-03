@@ -3,6 +3,85 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-04] [mk] 큐레이션 6~7차 (kowiki 리다이렉트 + 스텁 제거)
+
+### 작업 내용
+
+#### 1. kowiki 리다이렉트 제거 (6차)
+- kowiki SQL 덤프(`page.sql.gz`, `page_props.sql.gz`)에서 리다이렉트 page_id 추출
+- namespace=0 중 리다이렉트: 873,575개 (54.3%)
+- Wikidata QID 매핑된 리다이렉트: 6,778개 → curated 내 **6,379건** 제거
+- 도구: `find_redirects.py` → `redirect_qids.json`
+
+#### 2. kowiki page_len 500B 미만 스텁 제거 (7차)
+- `qid_pagelen.json` (731,230 QID) 인덱스 활용
+- 500B 미만 스텁: **61,733건** 제거
+- 위키백과 본문 샘플 확인 후 결정 (상공학교 478B = 서울대 전신이라 아까웠지만 일괄 처리)
+
+#### 3. 최종 결과
+- 원본: 1,978,952건
+- **curated: 828,344건** (P31 49종 + 리다이렉트 + 스텁 제거)
+- 매칭(12카테고리): 469,747건 (56.7%)
+- 미매칭: 358,597건
+
+#### 카테고리별 현황
+| # | 카테고리 | 건수 |
+|---|----------|------|
+| 03 | person | 308,628 |
+| 12 | artwork | 89,487 |
+| 04 | place | 30,660 |
+| 01 | nation | 15,982 |
+| 06 | heritage | 10,168 |
+| 05 | building | 9,969 |
+| 02 | event | 1,846 |
+| 10 | battle | 1,383 |
+| 07 | invention | 995 |
+| 08 | disaster | 581 |
+| 11 | pandemic | 41 |
+| 09 | exploration | 7 |
+| — | unmatched | 358,597 |
+
+### 커밋
+- (이 세션 커밋 참조)
+
+### 다음 작업
+- unmatched 358K 추가 분류 또는 Tier 스코어링
+- person 308K 내 세분화 (sitelinks, page_len 활용)
+
+---
+
+## [2026-03-03] [mk] 한국어 위키데이터 큐레이션 + 12개 카테고리 분류
+
+### 작업 내용
+
+#### 1. P31 기반 큐레이션 (`curateKorean.py`)
+- `korean_all.jsonl` (1,978,952건)에서 위키미디어 메타데이터 16종 P31 타입 제거
+- 제거 대상: Wikimedia category, calendar day, redirect, template, disambiguation 등
+- 결과: **953,574건** 유지 (48.2%) → `korean_curated.jsonl`
+- 제거분 보관: `korean_removed.jsonl` (복구용)
+
+#### 2. 12개 카테고리 분류 (`classifyKorean.py`)
+- 큐레이션된 953,574건을 P31 매핑으로 12개 카테고리 분류
+- 매칭: **472,254건** (49.5%) | 미매칭: 481,320건
+- 카테고리: 국가/사건/인물/장소/건축물/문화유산/발명/재해/탐험/전투/전염병/예술작품
+- 출력: `/mnt/data2/wikidata/output/categories/{카테고리}.jsonl`
+
+#### 주요 결정사항
+- 학교: P31로 제거 안 함 (역사적 학교 보존, sitelinks 커트오프로 후처리)
+- 허구인물(춘향 등): 유지 (카드게임 콘텐츠 활용)
+- Q18663566(폐지 지자체): TV에피소드로 오인 → 확인 후 유지 결정
+- 전략 전환: "제거할 것 찾기" → "필요한 것 먼저 분류" (역발상)
+
+### 커밋
+- `4043783` 큐레이션 + 분류 스크립트 2개 추가
+
+### 데이터 위치 (jinserver)
+- `/mnt/data2/wikidata/output/korean_all.jsonl` (원본)
+- `/mnt/data2/wikidata/output/korean_curated.jsonl` (큐레이션 후)
+- `/mnt/data2/wikidata/output/categories/` (12개 카테고리 + unmatched)
+
+---
+
 ## [2026-03-03] [cl] CSHAPES 중복 정리 + 국경선 갭 분석
 
 ### 작업 내용
