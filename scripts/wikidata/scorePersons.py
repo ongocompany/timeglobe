@@ -434,11 +434,33 @@ def run_matching():
                 continue
     print(f"  AI 인물: {len(ai_persons):,}명")
 
-    # 3) 매칭
+    # 이름 정규화 함수
+    def normalize_en(name):
+        """영어 이름 정규화: 괄호 제거, 소문자"""
+        name = re.sub(r'\s*\([^)]*\)', '', name)  # (Emperor Taizong) 제거
+        name = re.sub(r'\s*(the|of|von|van|de|di|al-)\s+\w+$', '', name, flags=re.I)  # 접미 제거
+        return name.strip().lower()
+
+    def get_en_variants(name):
+        """영어 이름 변형 생성"""
+        variants = {name.lower()}
+        # 괄호 제거
+        no_paren = re.sub(r'\s*\([^)]*\)', '', name).strip()
+        if no_paren != name:
+            variants.add(no_paren.lower())
+        # 괄호 안 이름도 시도
+        paren = re.findall(r'\(([^)]+)\)', name)
+        for p in paren:
+            if not p.startswith(("active", "활동")):
+                variants.add(p.lower())
+        return variants
+
+    # 3) 매칭 (2단계: 정확매칭 → 퍼지매칭)
     print("  매칭 중...")
     matched = 0
     unmatched = 0
     multi_match = 0
+    fuzzy_matched = 0
 
     with open(AI_MATCHED_OUTPUT, "w", encoding="utf-8") as out_f:
         for ap in ai_persons:
@@ -447,7 +469,9 @@ def run_matching():
             birth_year = ap.get("birth_year")
 
             candidates = []
+            match_method = "exact"
 
+            # ── 1단계: 정확 매칭 ──
             # 한국어 이름 매칭 (우선)
             if name_ko and name_ko in wd_by_name_ko:
                 candidates.extend(wd_by_name_ko[name_ko])
@@ -458,18 +482,35 @@ def run_matching():
                     if c not in candidates:
                         candidates.append(c)
 
+            # ── 2단계: 퍼지 매칭 (1단계 실패 시) ──
+            if not candidates:
+                match_method = "fuzzy"
+
+                # 영어 이름 변형으로 시도
+                if name_en:
+                    for variant in get_en_variants(name_en):
+                        if variant in wd_by_name_en:
+                            candidates.extend(wd_by_name_en[variant])
+
+                # 한국어 이름에서 공백/괄호 제거 후 시도
+                if not candidates and name_ko:
+                    clean_ko = re.sub(r'\s*\([^)]*\)', '', name_ko).strip()
+                    if clean_ko != name_ko and clean_ko in wd_by_name_ko:
+                        candidates.extend(wd_by_name_ko[clean_ko])
+
             if not candidates:
                 unmatched += 1
                 result = {**ap, "_match": "none", "_qid": None}
                 out_f.write(json.dumps(result, ensure_ascii=False) + "\n")
                 continue
 
-            # 생년 매칭으로 후보 좁히기
+            # 생년 매칭으로 후보 좁히기 (퍼지: ±5, 정확: ±2)
+            year_tolerance = 5 if match_method == "fuzzy" else 2
             if birth_year and len(candidates) > 1:
                 year_matched = []
                 for c in candidates:
                     wd_birth = c.get("birth_year")
-                    if wd_birth and abs(wd_birth - birth_year) <= 2:
+                    if wd_birth and abs(wd_birth - birth_year) <= year_tolerance:
                         year_matched.append(c)
                 if year_matched:
                     candidates = year_matched
@@ -477,9 +518,11 @@ def run_matching():
             if len(candidates) == 1:
                 best = candidates[0]
                 matched += 1
+                if match_method == "fuzzy":
+                    fuzzy_matched += 1
                 result = {
                     **ap,
-                    "_match": "exact",
+                    "_match": match_method,
                     "_qid": best.get("qid"),
                     "_sitelinks": best.get("sitelinks", 0),
                     "_wd_name_ko": best.get("name_ko"),
@@ -492,9 +535,11 @@ def run_matching():
                 best = max(candidates, key=lambda x: x.get("sitelinks", 0))
                 multi_match += 1
                 matched += 1
+                if match_method == "fuzzy":
+                    fuzzy_matched += 1
                 result = {
                     **ap,
-                    "_match": "multi",
+                    "_match": f"multi_{match_method}",
                     "_candidates": len(candidates),
                     "_qid": best.get("qid"),
                     "_sitelinks": best.get("sitelinks", 0),
@@ -510,7 +555,8 @@ def run_matching():
     print(f"매칭 완료")
     print(f"  총 AI 인물: {len(ai_persons):,}")
     print(f"  매칭 성공: {matched:,} ({matched/len(ai_persons)*100:.1f}%)")
-    print(f"    - 단일 매칭: {matched - multi_match:,}")
+    print(f"    - 정확 매칭: {matched - multi_match - fuzzy_matched:,}")
+    print(f"    - 퍼지 매칭: {fuzzy_matched:,}")
     print(f"    - 복수 후보: {multi_match:,}")
     print(f"  매칭 실패: {unmatched:,} ({unmatched/len(ai_persons)*100:.1f}%)")
     print(f"  출력: {AI_MATCHED_OUTPUT}")
