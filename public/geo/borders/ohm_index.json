@@ -1569,7 +1569,7 @@
     "qid": "Q956451",
     "name_en": "Kingdom of Dyfed",
     "name_ko": "더베드 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 410,
     "end_year": 920,
     "snapshots": [
@@ -1699,7 +1699,7 @@
     "qid": "Q769782",
     "name_en": "Kingdom of Powys",
     "name_ko": "포이스 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 430,
     "end_year": 1160,
     "snapshots": [
@@ -1731,7 +1731,7 @@
     "qid": "Q225890",
     "name_en": "Kingdom of Strathclyde",
     "name_ko": "어스트라드클리드",
-    "tier": 2,
+    "tier": 3,
     "start_year": 450,
     "end_year": 1030,
     "snapshots": [
@@ -1835,7 +1835,7 @@
     "qid": "Q676184",
     "name_en": "Kingdom of Sussex",
     "name_ko": "서섹스 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 477,
     "end_year": 860,
     "snapshots": [
@@ -2011,7 +2011,7 @@
     "qid": "Q110888",
     "name_en": "Kingdom of Essex",
     "name_ko": "에식스 왕국",
-    "tier": 2,
+    "tier": 3,
     "start_year": 527,
     "end_year": 825,
     "snapshots": [
@@ -4563,8 +4563,20 @@
       {
         "rid": 9100528,
         "start": 1141,
-        "end": 1234,
+        "end": 1215,
         "file": "ohm_9100528.geojson"
+      },
+      {
+        "rid": 9100538,
+        "start": 1215,
+        "end": 1223,
+        "file": "ohm_9100538.geojson"
+      },
+      {
+        "rid": 9100539,
+        "start": 1223,
+        "end": 1234,
+        "file": "ohm_9100539.geojson"
       }
     ]
   },
@@ -18040,56 +18052,7 @@
       }
     ]
   },
-  {
-    "qid": "Q162024",
-    "name_en": "Khmer Empire",
-    "name_ko": "크메르 제국",
-    "tier": 1,
-    "start_year": 802,
-    "end_year": 1431,
-    "snapshots": [
-      {
-        "rid": 9100431,
-        "start": 802,
-        "end": 1100,
-        "start_date": "0802",
-        "end_date": "1100",
-        "source": "historical-basemaps",
-        "source_year": 1000,
-        "file": "ohm_9100431.geojson"
-      },
-      {
-        "rid": 9100432,
-        "start": 1100,
-        "end": 1200,
-        "start_date": "1100",
-        "end_date": "1200",
-        "source": "historical-basemaps",
-        "source_year": 1100,
-        "file": "ohm_9100432.geojson"
-      },
-      {
-        "rid": 9100433,
-        "start": 1200,
-        "end": 1400,
-        "start_date": "1200",
-        "end_date": "1400",
-        "source": "historical-basemaps",
-        "source_year": 1300,
-        "file": "ohm_9100433.geojson"
-      },
-      {
-        "rid": 9100434,
-        "start": 1400,
-        "end": 1431,
-        "start_date": "1400",
-        "end_date": "1431",
-        "source": "historical-basemaps",
-        "source_year": 1400,
-        "file": "ohm_9100434.geojson"
-      }
-    ]
-  },
+
   {
     "qid": "Q193287",
     "name_en": "Champa",
