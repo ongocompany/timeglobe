@@ -442,17 +442,60 @@ def run_matching():
         return name.strip().lower()
 
     def get_en_variants(name):
-        """영어 이름 변형 생성"""
+        """영어 이름 변형 생성 (다양한 표기 커버)"""
         variants = {name.lower()}
         # 괄호 제거
         no_paren = re.sub(r'\s*\([^)]*\)', '', name).strip()
         if no_paren != name:
             variants.add(no_paren.lower())
         # 괄호 안 이름도 시도
-        paren = re.findall(r'\(([^)]+)\)', name)
-        for p in paren:
+        for p in re.findall(r'\(([^)]+)\)', name):
             if not p.startswith(("active", "활동")):
                 variants.add(p.lower())
+        # 칭호 제거: Sir, Lord, King, Emperor, Pope, Saint, Marquis de, ...
+        stripped = re.sub(r'^(Sir|Lord|King|Queen|Emperor|Empress|Pope|Saint|St\.|Marquis de|Count|Duke|Prince|Princess)\s+',
+                          '', no_paren, flags=re.I).strip()
+        if stripped != no_paren:
+            variants.add(stripped.lower())
+        # 로마숫자/서수 제거: XIV, III, "the Great", "the Elder"
+        no_suffix = re.sub(r'\s+(X{0,3}(?:IX|IV|V?I{0,3}))$', '', stripped)  # Roman
+        no_suffix = re.sub(r'\s+(?:the\s+)?(Great|Elder|Younger|Bold|Fair|Wise|Pious|Good|Bad|Terrible|Confessor|Conqueror)$',
+                           '', no_suffix, flags=re.I)
+        if no_suffix != stripped:
+            variants.add(no_suffix.lower())
+        # 악센트/특수문자 정규화: Beyoncé → beyonce
+        import unicodedata
+        nfkd = unicodedata.normalize('NFKD', no_paren)
+        ascii_name = ''.join(c for c in nfkd if not unicodedata.combining(c))
+        if ascii_name.lower() != no_paren.lower():
+            variants.add(ascii_name.lower())
+        # 하이픈 분리: Knowles-Carter → Knowles, Carter
+        if '-' in no_paren:
+            for part in no_paren.split('-'):
+                part = part.strip()
+                if len(part) > 2:
+                    variants.add(part.lower())
+        # 첫 단어만 (Rembrandt van Rijn → Rembrandt)
+        words = no_paren.split()
+        if len(words) >= 2:
+            variants.add(words[0].lower())
+        return variants
+
+    def get_ko_variants(name):
+        """한국어 이름 변형 생성"""
+        variants = {name}
+        # 괄호 제거
+        no_paren = re.sub(r'\s*\([^)]*\)', '', name).strip()
+        if no_paren != name:
+            variants.add(no_paren)
+        # 숫자/서수 제거: "클레오파트라 7세 필로파토르" → "클레오파트라"
+        no_num = re.sub(r'\s+\d+세.*$', '', no_paren).strip()
+        if no_num != no_paren and len(no_num) >= 2:
+            variants.add(no_num)
+        # 공백 앞 첫 단어만 (2글자 이상)
+        first = no_paren.split()[0] if no_paren.split() else ""
+        if len(first) >= 2 and first != no_paren:
+            variants.add(first)
         return variants
 
     # 3) 매칭 (2단계: 정확매칭 → 퍼지매칭)
@@ -492,11 +535,11 @@ def run_matching():
                         if variant in wd_by_name_en:
                             candidates.extend(wd_by_name_en[variant])
 
-                # 한국어 이름에서 공백/괄호 제거 후 시도
+                # 한국어 이름 변형으로 시도
                 if not candidates and name_ko:
-                    clean_ko = re.sub(r'\s*\([^)]*\)', '', name_ko).strip()
-                    if clean_ko != name_ko and clean_ko in wd_by_name_ko:
-                        candidates.extend(wd_by_name_ko[clean_ko])
+                    for ko_var in get_ko_variants(name_ko):
+                        if ko_var != name_ko and ko_var in wd_by_name_ko:
+                            candidates.extend(wd_by_name_ko[ko_var])
 
             if not candidates:
                 unmatched += 1
