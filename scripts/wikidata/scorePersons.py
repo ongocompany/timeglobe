@@ -2,14 +2,14 @@
 """
 [cl] AI 기반 역사 인물 선정 스크립트
 
-Gemini 2.5 Flash API를 사용하여 시대별 주요 역사 인물 리스트를 생성하고,
+Gemini API를 사용하여 시대별 주요 역사 인물 리스트를 생성하고,
 Wikidata 309k 인물 데이터와 QID 매칭.
 
-적응형 청크 전략:
-  - 고대 (-1000~500):  50년 청크, 10~20명
-  - 중세 (500~1500):   10년 청크, 10~15명
-  - 근세 (1500~1800):  5년 청크,  15~20명
-  - 근현대 (1800~2015): 1년 청크,  20~30명
+하이브리드 모델 전략:
+  - 고대 (-1000~500):  50년 청크, 20명, Gemini 2.5 Pro (정밀 선정)
+  - 중세 (500~1500):   10년 청크, 20명, Gemini 2.5 Flash
+  - 근세 (1500~1800):  5년 청크,  25명, Gemini 2.5 Flash
+  - 근현대 (1800~2015): 1년 청크,  25명, Gemini 2.5 Flash
 
 사용법:
   python3 scorePersons.py                    # 전체 실행
@@ -60,27 +60,26 @@ def load_dotenv():
 load_dotenv()
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
-API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
+API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 # ── 적응형 청크 정의 ──────────────────────────────────
-# (시작년, 끝년, 청크크기, 인물수)
-# [cl] 인물수 조정: thinking 모드 응답시간 고려하여 축소
+# (시작년, 끝년, 청크크기, 인물수, 모델)
+# [cl] 하이브리드: 고대=Pro(정밀), 나머지=Flash(속도)
 CHUNKS_CONFIG = [
-    (-1000,  500, 50, 10),   # 고대: 50년씩, 10명 (데이터 적음)
-    (  500, 1500, 10, 10),   # 중세: 10년씩, 10명
-    ( 1500, 1800,  5, 12),   # 근세: 5년씩, 12명
-    ( 1800, 2015,  1, 15),   # 근현대: 1년씩, 15명
+    (-1000,  500, 50, 20, "gemini-2.5-pro"),     # 고대: Pro로 정밀 선정
+    (  500, 1500, 10, 20, "gemini-2.5-flash"),   # 중세: Flash
+    ( 1500, 1800,  5, 25, "gemini-2.5-flash"),   # 근세: Flash
+    ( 1800, 2015,  1, 25, "gemini-2.5-flash"),   # 근현대: Flash
 ]
 
 def generate_chunks():
-    """적응형 청크 리스트 생성"""
+    """적응형 청크 리스트 생성 (모델 정보 포함)"""
     chunks = []
-    for start, end, step, count in CHUNKS_CONFIG:
+    for start, end, step, count, model in CHUNKS_CONFIG:
         y = start
         while y < end:
             chunk_end = min(y + step, end)
-            chunks.append((y, chunk_end, count))
+            chunks.append((y, chunk_end, count, model))
             y += step
     return chunks
 
@@ -135,12 +134,12 @@ def build_prompt(year_from, year_to, count):
 중요: 반드시 JSON 배열만 출력하세요. 설명이나 마크다운 없이 순수 JSON만."""
 
 # ── API 호출 ──────────────────────────────────────────
-def call_gemini(prompt, max_retries=3):
-    """Gemini 2.5 Flash API 호출 (Google Generative AI REST)"""
+def call_gemini(prompt, model="gemini-2.5-flash", max_retries=3):
+    """Gemini API 호출 (모델 동적 선택)"""
     import urllib.request
     import urllib.error
 
-    url = f"{API_URL}?key={API_KEY}"
+    url = f"{API_BASE}/{model}:generateContent?key={API_KEY}"
     headers = {
         "Content-Type": "application/json",
     }
@@ -249,19 +248,24 @@ def run_scoring(resume=False, test_mode=False):
     AI_PERSONS_DIR.mkdir(parents=True, exist_ok=True)
 
     chunks = generate_chunks()
-    print(f"[cl] AI 인물 선정 시작")
-    print(f"  모델: {MODEL}")
+    models_used = set(c[3] for c in chunks)
+    print(f"[cl] AI 인물 선정 시작 (하이브리드)")
+    print(f"  모델: {', '.join(models_used)}")
     print(f"  총 청크: {len(chunks)}개")
     print(f"  예상 인물: ~{sum(c[2] for c in chunks):,}명")
 
     if test_mode:
-        # 테스트: 1900~1903만 (3개 청크, 5명씩)
-        chunks = [(y, y + 1, 5) for y in range(1900, 1903)]
-        print(f"  [TEST MODE] {len(chunks)}개 청크만 실행 (5명씩)")
+        # 테스트: 고대 1청크(Pro) + 근현대 2청크(Flash)
+        chunks = [
+            (-500, -450, 10, "gemini-2.5-pro"),
+            (1900, 1901, 10, "gemini-2.5-flash"),
+            (1901, 1902, 10, "gemini-2.5-flash"),
+        ]
+        print(f"  [TEST MODE] {len(chunks)}개 청크 (Pro 1 + Flash 2)")
 
     # 진행 상황
     progress = load_progress() if resume else {"completed_chunks": [], "total_persons": 0}
-    completed_set = set(tuple(c) for c in progress.get("completed_chunks", []))
+    completed_set = set(tuple(c[:3]) for c in progress.get("completed_chunks", []))
 
     mode = "a" if resume and AI_RAW_OUTPUT.exists() else "w"
     t0 = time.time()
@@ -269,7 +273,7 @@ def run_scoring(resume=False, test_mode=False):
     errors = 0
 
     with open(AI_RAW_OUTPUT, mode, encoding="utf-8") as out_f:
-        for i, (year_from, year_to, count) in enumerate(chunks):
+        for i, (year_from, year_to, count, model) in enumerate(chunks):
             chunk_key = (year_from, year_to, count)
 
             # 이미 완료된 청크 건너뛰기
@@ -277,17 +281,17 @@ def run_scoring(resume=False, test_mode=False):
                 continue
 
             # 진행률 표시
-            pct = (i + 1) / len(chunks) * 100
+            model_tag = "P" if "pro" in model else "F"
             if year_from < 0:
                 label = f"BC{abs(year_from)}~{'BC' + str(abs(year_to)) if year_to < 0 else str(year_to)}"
             else:
                 label = f"{year_from}~{year_to}"
-            print(f"  [{i+1}/{len(chunks)}] {label} ({count}명) ... ", end="", flush=True)
+            print(f"  [{i+1}/{len(chunks)}] {label} ({count}명)[{model_tag}] ... ", end="", flush=True)
 
             # API 호출
             prompt = build_prompt(year_from, year_to, count)
             try:
-                raw_response = call_gemini(prompt)
+                raw_response = call_gemini(prompt, model=model)
                 persons = parse_json_response(raw_response)
             except Exception as e:
                 print(f"FAIL ({e})")
@@ -301,6 +305,7 @@ def run_scoring(resume=False, test_mode=False):
             for p in persons:
                 p["_chunk"] = f"{year_from}~{year_to}"
                 p["_requested_count"] = count
+                p["_model"] = model_tag
                 out_f.write(json.dumps(p, ensure_ascii=False) + "\n")
 
             session_persons += len(persons)
@@ -314,8 +319,9 @@ def run_scoring(resume=False, test_mode=False):
             if (i + 1) % 10 == 0:
                 save_progress(progress)
 
-            # Rate limit 방지 (Gemini Flash free tier: 15 RPM → 4초 딜레이)
-            time.sleep(4)
+            # Rate limit 방지 (Pro: 2 RPM=30s, Flash: 15 RPM=4s)
+            delay = 30 if "pro" in model else 4
+            time.sleep(delay)
 
     save_progress(progress)
 
