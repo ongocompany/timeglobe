@@ -27,6 +27,7 @@ import os
 import sys
 import time
 import re
+import unicodedata
 from pathlib import Path
 
 # ── 설정 ──────────────────────────────────────────────
@@ -401,7 +402,14 @@ def run_matching():
     print("  Wikidata 인물 로딩...")
     wd_by_name_ko = {}   # name_ko → [items]
     wd_by_name_en = {}   # name_en.lower() → [items]
+    wd_by_name_en_norm = {}  # 악센트 정규화된 영어 이름 → [items]
+    wd_by_last_en = {}   # 성(last word) → [items] (심층 퍼지용)
     wd_count = 0
+
+    def _accent_normalize(s):
+        """악센트/특수문자 제거: Étienne → Etienne"""
+        nfkd = unicodedata.normalize('NFKD', s)
+        return ''.join(c for c in nfkd if not unicodedata.combining(c))
 
     with open(PERSON_JSONL) as f:
         for line in f:
@@ -416,12 +424,21 @@ def run_matching():
             if nk:
                 wd_by_name_ko.setdefault(nk, []).append(item)
             if ne:
-                wd_by_name_en.setdefault(ne.lower(), []).append(item)
+                ne_lower = ne.lower()
+                wd_by_name_en.setdefault(ne_lower, []).append(item)
+                # 악센트 정규화 인덱스
+                ne_norm = _accent_normalize(ne_lower)
+                if ne_norm != ne_lower:
+                    wd_by_name_en_norm.setdefault(ne_norm, []).append(item)
+                # 성(last word) 인덱스 (4자 이상만)
+                words = ne_lower.split()
+                if len(words) >= 2 and len(words[-1]) >= 4:
+                    wd_by_last_en.setdefault(words[-1], []).append(item)
 
             if wd_count % 100_000 == 0:
                 print(f"    ... {wd_count:,}")
 
-    print(f"  Wikidata: {wd_count:,}명 로드 (ko={len(wd_by_name_ko):,}, en={len(wd_by_name_en):,})")
+    print(f"  Wikidata: {wd_count:,}명 로드 (ko={len(wd_by_name_ko):,}, en={len(wd_by_name_en):,}, norm={len(wd_by_name_en_norm):,}, last={len(wd_by_last_en):,})")
 
     # 2) AI 인물 로드
     print("  AI 인물 로딩...")
@@ -452,23 +469,38 @@ def run_matching():
         for p in re.findall(r'\(([^)]+)\)', name):
             if not p.startswith(("active", "활동")):
                 variants.add(p.lower())
-        # 칭호 제거: Sir, Lord, King, Emperor, Pope, Saint, Marquis de, ...
-        stripped = re.sub(r'^(Sir|Lord|King|Queen|Emperor|Empress|Pope|Saint|St\.|Marquis de|Count|Duke|Prince|Princess)\s+',
+        # 이니셜 제거: "J. Robert Oppenheimer" → "Robert Oppenheimer"
+        no_init = re.sub(r'\b[A-Z]\.\s*', '', no_paren).strip()
+        if no_init != no_paren and len(no_init) >= 3:
+            variants.add(no_init.lower())
+        # père/fils/junior/senior 제거
+        no_gen = re.sub(r'\s+(père|p[eè]re|fils|junior|jr\.?|senior|sr\.?)$', '', no_paren, flags=re.I).strip()
+        if no_gen != no_paren:
+            variants.add(no_gen.lower())
+        # 칭호 제거: Sir, Lord, King, Emperor, Pope, Saint, Sultan, Chhatrapati, ...
+        stripped = re.sub(r'^(Sir|Lord|King|Queen|Emperor|Empress|Pope|Saint|St\.|'
+                          r'Marquis de|Count|Duke|Prince|Princess|Sultan|'
+                          r'Chhatrapati|Maharaja|Sheikh|Imam|Caliph)\s+',
                           '', no_paren, flags=re.I).strip()
         if stripped != no_paren:
             variants.add(stripped.lower())
+            # 이니셜 제거 + 칭호 제거 조합
+            stripped_no_init = re.sub(r'\b[A-Z]\.\s*', '', stripped).strip()
+            if stripped_no_init != stripped:
+                variants.add(stripped_no_init.lower())
         # 로마숫자/서수 제거: XIV, III, "the Great", "the Elder"
         no_suffix = re.sub(r'\s+(X{0,3}(?:IX|IV|V?I{0,3}))$', '', stripped)  # Roman
         no_suffix = re.sub(r'\s+(?:the\s+)?(Great|Elder|Younger|Bold|Fair|Wise|Pious|Good|Bad|Terrible|Confessor|Conqueror)$',
                            '', no_suffix, flags=re.I)
         if no_suffix != stripped:
             variants.add(no_suffix.lower())
-        # 악센트/특수문자 정규화: Beyoncé → beyonce
-        import unicodedata
-        nfkd = unicodedata.normalize('NFKD', no_paren)
-        ascii_name = ''.join(c for c in nfkd if not unicodedata.combining(c))
+        # 악센트/특수문자 정규화: Beyoncé → beyonce, Étienne → etienne
+        ascii_name = _accent_normalize(no_paren)
         if ascii_name.lower() != no_paren.lower():
             variants.add(ascii_name.lower())
+            # 이니셜 제거된 버전의 악센트 정규화도
+            if no_init != no_paren:
+                variants.add(_accent_normalize(no_init).lower())
         # 하이픈 분리: Knowles-Carter → Knowles, Carter
         if '-' in no_paren:
             for part in no_paren.split('-'):
@@ -479,6 +511,15 @@ def run_matching():
         words = no_paren.split()
         if len(words) >= 2:
             variants.add(words[0].lower())
+        # 중간이름 건너뛰기: "Frederick I Barbarossa" → "Frederick Barbarossa"
+        if len(words) >= 3:
+            skip_mid = (words[0] + " " + words[-1]).lower()
+            variants.add(skip_mid)
+        # 중간이름 없는 2단어도: 칭호 제거 버전
+        stripped_words = stripped.split()
+        if len(stripped_words) >= 3:
+            skip_mid2 = (stripped_words[0] + " " + stripped_words[-1]).lower()
+            variants.add(skip_mid2)
         return variants
 
     def get_ko_variants(name):
@@ -488,6 +529,10 @@ def run_matching():
         no_paren = re.sub(r'\s*\([^)]*\)', '', name).strip()
         if no_paren != name:
             variants.add(no_paren)
+        # 괄호 안 내용도 시도 (주몽 (동명성왕) → 동명성왕)
+        for p in re.findall(r'\(([^)]+)\)', name):
+            if len(p) >= 2:
+                variants.add(p)
         # 숫자/서수 제거: "클레오파트라 7세 필로파토르" → "클레오파트라"
         no_num = re.sub(r'\s+\d+세.*$', '', no_paren).strip()
         if no_num != no_paren and len(no_num) >= 2:
@@ -496,6 +541,9 @@ def run_matching():
         first = no_paren.split()[0] if no_paren.split() else ""
         if len(first) >= 2 and first != no_paren:
             variants.add(first)
+        # 대/소 접두사: "피터르 브뤼헐" → "대 피터르 브뤼헐", "소 피터르 브뤼헐"
+        for prefix in ["대 ", "소 "]:
+            variants.add(prefix + no_paren)
         return variants
 
     # 3) 매칭 (2단계: 정확매칭 → 퍼지매칭)
@@ -504,6 +552,7 @@ def run_matching():
     unmatched = 0
     multi_match = 0
     fuzzy_matched = 0
+    deep_fuzzy_matched = 0
 
     with open(AI_MATCHED_OUTPUT, "w", encoding="utf-8") as out_f:
         for ap in ai_persons:
@@ -531,9 +580,18 @@ def run_matching():
 
                 # 영어 이름 변형으로 시도
                 if name_en:
-                    for variant in get_en_variants(name_en):
+                    en_vars = get_en_variants(name_en)
+                    for variant in en_vars:
                         if variant in wd_by_name_en:
                             candidates.extend(wd_by_name_en[variant])
+                    # 악센트 정규화 인덱스에서도 시도
+                    if not candidates:
+                        for variant in en_vars:
+                            norm_v = _accent_normalize(variant)
+                            if norm_v in wd_by_name_en:
+                                candidates.extend(wd_by_name_en[norm_v])
+                            elif norm_v in wd_by_name_en_norm:
+                                candidates.extend(wd_by_name_en_norm[norm_v])
 
                 # 한국어 이름 변형으로 시도
                 if not candidates and name_ko:
@@ -541,14 +599,41 @@ def run_matching():
                         if ko_var != name_ko and ko_var in wd_by_name_ko:
                             candidates.extend(wd_by_name_ko[ko_var])
 
+            # ── 3단계: 심층 퍼지 (2단계도 실패 시) ──
+            if not candidates and name_en and birth_year:
+                match_method = "deep_fuzzy"
+                # 성(last word) + 이름 첫글자 + 생년 ±3 조합
+                clean_name = re.sub(r'\s*\([^)]*\)', '', name_en).strip()
+                clean_name = re.sub(r'\s+(père|fils|jr\.?|sr\.?)$', '', clean_name, flags=re.I).strip()
+                clean_name = re.sub(r'^(Sir|Lord|King|Queen|Emperor|Empress|Pope|Saint|St\.|'
+                                    r'Sultan|Chhatrapati|Maharaja)\s+', '', clean_name, flags=re.I).strip()
+                cwords = clean_name.split()
+                if len(cwords) >= 2:
+                    last_w = cwords[-1].lower()
+                    first_w = cwords[0].lower()
+                    first_3 = first_w[:3] if len(first_w) >= 3 else first_w
+                    # 성이 4자 이상이고 last 인덱스에 있을 때만
+                    if len(last_w) >= 4 and last_w in wd_by_last_en:
+                        for item in wd_by_last_en[last_w]:
+                            wb = item.get("birth_year")
+                            if not wb or abs(wb - birth_year) > 5:
+                                continue
+                            # 이름 첫 3글자도 일치해야 오매칭 방지
+                            wd_en_name = (item.get("name_en") or "").lower()
+                            wd_first = wd_en_name.split()[0] if wd_en_name.split() else ""
+                            wd_first_norm = _accent_normalize(wd_first)
+                            first_3_norm = _accent_normalize(first_3)
+                            if wd_first_norm.startswith(first_3_norm) or first_3_norm.startswith(wd_first_norm[:3]):
+                                candidates.append(item)
+
             if not candidates:
                 unmatched += 1
                 result = {**ap, "_match": "none", "_qid": None}
                 out_f.write(json.dumps(result, ensure_ascii=False) + "\n")
                 continue
 
-            # 생년 매칭으로 후보 좁히기 (퍼지: ±5, 정확: ±2)
-            year_tolerance = 5 if match_method == "fuzzy" else 2
+            # 생년 매칭으로 후보 좁히기
+            year_tolerance = 5 if match_method in ("fuzzy", "deep_fuzzy") else 2
             if birth_year and len(candidates) > 1:
                 year_matched = []
                 for c in candidates:
@@ -558,11 +643,25 @@ def run_matching():
                 if year_matched:
                     candidates = year_matched
 
+            # 중복 제거 (qid 기준)
+            seen_qids = set()
+            deduped = []
+            for c in candidates:
+                qid = c.get("qid", "")
+                if qid and qid not in seen_qids:
+                    seen_qids.add(qid)
+                    deduped.append(c)
+                elif not qid:
+                    deduped.append(c)
+            candidates = deduped if deduped else candidates
+
             if len(candidates) == 1:
                 best = candidates[0]
                 matched += 1
                 if match_method == "fuzzy":
                     fuzzy_matched += 1
+                elif match_method == "deep_fuzzy":
+                    deep_fuzzy_matched += 1
                 result = {
                     **ap,
                     "_match": match_method,
@@ -580,6 +679,8 @@ def run_matching():
                 matched += 1
                 if match_method == "fuzzy":
                     fuzzy_matched += 1
+                elif match_method == "deep_fuzzy":
+                    deep_fuzzy_matched += 1
                 result = {
                     **ap,
                     "_match": f"multi_{match_method}",
@@ -598,8 +699,9 @@ def run_matching():
     print(f"매칭 완료")
     print(f"  총 AI 인물: {len(ai_persons):,}")
     print(f"  매칭 성공: {matched:,} ({matched/len(ai_persons)*100:.1f}%)")
-    print(f"    - 정확 매칭: {matched - multi_match - fuzzy_matched:,}")
+    print(f"    - 정확 매칭: {matched - multi_match - fuzzy_matched - deep_fuzzy_matched:,}")
     print(f"    - 퍼지 매칭: {fuzzy_matched:,}")
+    print(f"    - 심층 퍼지: {deep_fuzzy_matched:,}")
     print(f"    - 복수 후보: {multi_match:,}")
     print(f"  매칭 실패: {unmatched:,} ({unmatched/len(ai_persons)*100:.1f}%)")
     print(f"  출력: {AI_MATCHED_OUTPUT}")
