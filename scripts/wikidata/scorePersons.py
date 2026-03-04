@@ -35,6 +35,7 @@ SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent.parent
 OUTPUT_DIR = Path("/mnt/data2/wikidata/output")
 PERSON_JSONL = OUTPUT_DIR / "categories" / "03_person.jsonl"
+NAMUWIKI_DB = Path("/mnt/data2/namuwiki/namuwiki.db")
 
 # 출력 파일
 AI_PERSONS_DIR = OUTPUT_DIR / "ai_persons"
@@ -440,7 +441,74 @@ def run_matching():
 
     print(f"  Wikidata: {wd_count:,}명 로드 (ko={len(wd_by_name_ko):,}, en={len(wd_by_name_en):,}, norm={len(wd_by_name_en_norm):,}, last={len(wd_by_last_en):,})")
 
-    # 2) AI 인물 로드
+    # 2) 나무위키 브릿지 준비
+    namu_conn = None
+    namu_titles = {}
+    if NAMUWIKI_DB.exists():
+        import sqlite3
+        print("  나무위키 인덱스 로딩...")
+        namu_conn = sqlite3.connect(str(NAMUWIKI_DB))
+        namu_cur = namu_conn.cursor()
+        namu_cur.execute("SELECT id, title FROM articles WHERE namespace = 0")
+        for row in namu_cur.fetchall():
+            namu_titles[row[1]] = row[0]
+        print(f"  나무위키: {len(namu_titles):,}개 제목")
+    else:
+        print("  나무위키 DB 없음 — 브릿지 매칭 스킵")
+
+    def namu_bridge_names(name_ko):
+        """나무위키에서 이름 변형 추출 (ko_title만, 신뢰도 높음)"""
+        if not namu_conn:
+            return set()
+
+        names = set()
+        # 한국어 제목 매칭만 (en_body는 오매칭 많아 제외)
+        ko_variants = [name_ko]
+        no_paren = re.sub(r"\s*\([^)]*\)", "", name_ko).strip()
+        ko_variants.append(no_paren)
+        for p in re.findall(r"\(([^)]+)\)", name_ko):
+            if len(p) >= 2:
+                ko_variants.append(p)
+        no_num = re.sub(r"\s+\d+세.*$", "", no_paren).strip()
+        if len(no_num) >= 2:
+            ko_variants.append(no_num)
+        ko_variants.extend(["대 " + no_paren, "소 " + no_paren])
+
+        article_id = None
+        for v in ko_variants:
+            if v and v in namu_titles:
+                article_id = namu_titles[v]
+                break
+
+        if not article_id:
+            return set()
+
+        # 리다이렉트 (이 문서를 가리키는 문서 제목 = 이름 변형)
+        namu_cur.execute(
+            "SELECT title FROM articles WHERE redirect = ? AND namespace = 0",
+            (v,)
+        )
+        for row in namu_cur.fetchall():
+            t = row[0].strip()
+            if len(t) >= 2:
+                names.add(t)
+
+        # 문서 본문 첫 300자에서 '''볼드''' 텍스트 추출
+        namu_cur.execute("SELECT text FROM articles WHERE id = ?", (article_id,))
+        row = namu_cur.fetchone()
+        if row and row[0]:
+            text = row[0][:400]
+            for m in re.findall(r"'''([^']{2,30})'''", text):
+                m = m.strip()
+                # 한국어 또는 영어 이름만 (마크업 제외)
+                if re.search(r"[\uac00-\ud7a3]", m) and not m.startswith(("{", "틀", "[")):
+                    names.add(m)
+                elif re.search(r"[a-zA-Z]{3,}", m) and not m.startswith(("{", "틀", "[")):
+                    names.add(m)
+
+        return names
+
+    # 3) AI 인물 로드
     print("  AI 인물 로딩...")
     ai_persons = []
     with open(AI_RAW_OUTPUT) as f:
@@ -546,13 +614,14 @@ def run_matching():
             variants.add(prefix + no_paren)
         return variants
 
-    # 3) 매칭 (2단계: 정확매칭 → 퍼지매칭)
+    # 3) 매칭 (4단계: 정확→퍼지→심층퍼지→나무위키 브릿지)
     print("  매칭 중...")
     matched = 0
     unmatched = 0
     multi_match = 0
     fuzzy_matched = 0
     deep_fuzzy_matched = 0
+    namu_bridged = 0
 
     with open(AI_MATCHED_OUTPUT, "w", encoding="utf-8") as out_f:
         for ap in ai_persons:
@@ -626,6 +695,25 @@ def run_matching():
                             if wd_first_norm.startswith(first_3_norm) or first_3_norm.startswith(wd_first_norm[:3]):
                                 candidates.append(item)
 
+            # ── 4단계: 나무위키 브릿지 (3단계도 실패 시) ──
+            if not candidates and name_ko and namu_conn:
+                match_method = "namu_bridge"
+                namu_names = namu_bridge_names(name_ko)
+                if namu_names:
+                    for nn in namu_names:
+                        # 한국어 이름이면 wd_ko, 영어면 wd_en에서 검색
+                        if re.search(r"[\uac00-\ud7a3]", nn):
+                            if nn in wd_by_name_ko:
+                                candidates.extend(wd_by_name_ko[nn])
+                        elif re.search(r"[a-zA-Z]{3,}", nn):
+                            nl = nn.lower()
+                            if nl in wd_by_name_en:
+                                candidates.extend(wd_by_name_en[nl])
+                    # 생년 ±10 필수 필터 (오매칭 방지)
+                    if candidates and birth_year:
+                        candidates = [c for c in candidates
+                                     if c.get("birth_year") and abs(c["birth_year"] - birth_year) <= 10]
+
             if not candidates:
                 unmatched += 1
                 result = {**ap, "_match": "none", "_qid": None}
@@ -662,6 +750,8 @@ def run_matching():
                     fuzzy_matched += 1
                 elif match_method == "deep_fuzzy":
                     deep_fuzzy_matched += 1
+                elif match_method == "namu_bridge":
+                    namu_bridged += 1
                 result = {
                     **ap,
                     "_match": match_method,
@@ -681,6 +771,8 @@ def run_matching():
                     fuzzy_matched += 1
                 elif match_method == "deep_fuzzy":
                     deep_fuzzy_matched += 1
+                elif match_method == "namu_bridge":
+                    namu_bridged += 1
                 result = {
                     **ap,
                     "_match": f"multi_{match_method}",
@@ -695,13 +787,19 @@ def run_matching():
 
             out_f.write(json.dumps(result, ensure_ascii=False) + "\n")
 
+    # 나무위키 DB 닫기
+    if namu_conn:
+        namu_conn.close()
+
     print(f"\n{'='*55}")
     print(f"매칭 완료")
     print(f"  총 AI 인물: {len(ai_persons):,}")
     print(f"  매칭 성공: {matched:,} ({matched/len(ai_persons)*100:.1f}%)")
-    print(f"    - 정확 매칭: {matched - multi_match - fuzzy_matched - deep_fuzzy_matched:,}")
+    exact = matched - multi_match - fuzzy_matched - deep_fuzzy_matched - namu_bridged
+    print(f"    - 정확 매칭: {exact:,}")
     print(f"    - 퍼지 매칭: {fuzzy_matched:,}")
     print(f"    - 심층 퍼지: {deep_fuzzy_matched:,}")
+    print(f"    - 나무위키 브릿지: {namu_bridged:,}")
     print(f"    - 복수 후보: {multi_match:,}")
     print(f"  매칭 실패: {unmatched:,} ({unmatched/len(ai_persons)*100:.1f}%)")
     print(f"  출력: {AI_MATCHED_OUTPUT}")
