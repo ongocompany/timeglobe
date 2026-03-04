@@ -117,11 +117,12 @@ function countPoints(geometry) {
 }
 
 function findFeature(geojson, searchName) {
-  // 부분 매칭 (대소문자 무시)
+  // 부분 매칭 (대소문자 무시) — 빈 이름 제외!
   const lower = searchName.toLowerCase();
   return geojson.features.find(f => {
     const name = (f.properties.NAME || f.properties.name || '').toLowerCase();
-    return name.includes(lower) || lower.includes(name);
+    if (!name || name.length < 2) return false; // 빈 이름/짧은 이름 제외
+    return name.includes(lower) || (lower.includes(name) && name.length >= 3);
   });
 }
 
