@@ -8,10 +8,34 @@
     "end_year": -30,
     "snapshots": [
       {
-        "rid": 9000053,
+        "rid": 9100502,
         "start": -3100,
+        "end": -2000,
+        "file": "ohm_9100502.geojson"
+      },
+      {
+        "rid": 9100503,
+        "start": -2000,
+        "end": -1500,
+        "file": "ohm_9100503.geojson"
+      },
+      {
+        "rid": 9100504,
+        "start": -1500,
+        "end": -1000,
+        "file": "ohm_9100504.geojson"
+      },
+      {
+        "rid": 9100505,
+        "start": -1000,
+        "end": -700,
+        "file": "ohm_9100505.geojson"
+      },
+      {
+        "rid": 9100506,
+        "start": -700,
         "end": -30,
-        "file": "ohm_9000053.geojson"
+        "file": "ohm_9100506.geojson"
       }
     ]
   },
@@ -56,10 +80,10 @@
     "end_year": -107,
     "snapshots": [
       {
-        "rid": 9000008,
+        "rid": 9100501,
         "start": -2332,
         "end": -107,
-        "file": "ohm_9000008.geojson"
+        "file": "ohm_9100501.geojson"
       }
     ]
   },
@@ -72,10 +96,10 @@
     "end_year": -1600,
     "snapshots": [
       {
-        "rid": 9000001,
+        "rid": 9100539,
         "start": -2070,
         "end": -1600,
-        "file": "ohm_9000001.geojson"
+        "file": "ohm_9100539.geojson"
       }
     ]
   },
@@ -88,10 +112,22 @@
     "end_year": -910,
     "snapshots": [
       {
-        "rid": 9000066,
-        "start": -2024,
-        "end": -910,
-        "file": "ohm_9000066.geojson"
+        "rid": 9100523,
+        "start": -2500,
+        "end": -1000,
+        "file": "ohm_9100523.geojson"
+      },
+      {
+        "rid": 9100524,
+        "start": -1000,
+        "end": -700,
+        "file": "ohm_9100524.geojson"
+      },
+      {
+        "rid": 9100525,
+        "start": -700,
+        "end": -609,
+        "file": "ohm_9100525.geojson"
       }
     ]
   },
@@ -168,10 +204,16 @@
     "end_year": -400,
     "snapshots": [
       {
-        "rid": 9000104,
+        "rid": 9100511,
         "start": -1500,
+        "end": -1000,
+        "file": "ohm_9100511.geojson"
+      },
+      {
+        "rid": 9100512,
+        "start": -1000,
         "end": -400,
-        "file": "ohm_9000104.geojson"
+        "file": "ohm_9100512.geojson"
       }
     ]
   },
@@ -200,10 +242,10 @@
     "end_year": -315,
     "snapshots": [
       {
-        "rid": 9000029,
-        "start": -1200,
-        "end": -315,
-        "file": "ohm_9000029.geojson"
+        "rid": 9100538,
+        "start": -316,
+        "end": -280,
+        "file": "ohm_9100538.geojson"
       }
     ]
   },
@@ -260,10 +302,10 @@
     "end_year": -222,
     "snapshots": [
       {
-        "rid": 9000019,
-        "start": -1044,
+        "rid": 9100532,
+        "start": -1030,
         "end": -222,
-        "file": "ohm_9000019.geojson"
+        "file": "ohm_9100532.geojson"
       }
     ]
   },
@@ -276,10 +318,10 @@
     "end_year": -220,
     "snapshots": [
       {
-        "rid": 9000020,
-        "start": -1044,
-        "end": -220,
-        "file": "ohm_9000020.geojson"
+        "rid": 9100535,
+        "start": -1046,
+        "end": -221,
+        "file": "ohm_9100535.geojson"
       }
     ]
   },
@@ -363,10 +405,16 @@
     "end_year": -166,
     "snapshots": [
       {
-        "rid": 9000067,
-        "start": -807,
-        "end": -166,
-        "file": "ohm_9000067.geojson"
+        "rid": 9100507,
+        "start": -808,
+        "end": -310,
+        "file": "ohm_9100507.geojson"
+      },
+      {
+        "rid": 9100508,
+        "start": -310,
+        "end": -168,
+        "file": "ohm_9100508.geojson"
       }
     ]
   },
@@ -420,10 +468,10 @@
     "end_year": -222,
     "snapshots": [
       {
-        "rid": 9000018,
-        "start": -721,
-        "end": -222,
-        "file": "ohm_9000018.geojson"
+        "rid": 9100536,
+        "start": -1030,
+        "end": -223,
+        "file": "ohm_9100536.geojson"
       }
     ]
   },
@@ -458,10 +506,16 @@
     "end_year": -329,
     "snapshots": [
       {
-        "rid": 9000055,
-        "start": -549,
-        "end": -329,
-        "file": "ohm_9000055.geojson"
+        "rid": 9100513,
+        "start": -550,
+        "end": -400,
+        "file": "ohm_9100513.geojson"
+      },
+      {
+        "rid": 9100514,
+        "start": -400,
+        "end": -330,
+        "file": "ohm_9100514.geojson"
       }
     ]
   },
@@ -633,10 +687,10 @@
     "end_year": -206,
     "snapshots": [
       {
-        "rid": 9000002,
+        "rid": 9100528,
         "start": -221,
         "end": -206,
-        "file": "ohm_9000002.geojson"
+        "file": "ohm_9100528.geojson"
       }
     ]
   },
@@ -649,10 +703,10 @@
     "end_year": 235,
     "snapshots": [
       {
-        "rid": 9000014,
-        "start": -209,
-        "end": 235,
-        "file": "ohm_9000014.geojson"
+        "rid": 9100533,
+        "start": 93,
+        "end": 234,
+        "file": "ohm_9100533.geojson"
       }
     ]
   },
@@ -720,10 +774,10 @@
     "end_year": 494,
     "snapshots": [
       {
-        "rid": 9000031,
+        "rid": 9100534,
         "start": -200,
         "end": 494,
-        "file": "ohm_9000031.geojson"
+        "file": "ohm_9100534.geojson"
       }
     ]
   },
@@ -736,10 +790,10 @@
     "end_year": -107,
     "snapshots": [
       {
-        "rid": 9000030,
-        "start": -193,
+        "rid": 9100540,
+        "start": -194,
         "end": -107,
-        "file": "ohm_9000030.geojson"
+        "file": "ohm_9100540.geojson"
       }
     ]
   },
@@ -922,10 +976,10 @@
     "end_year": 23,
     "snapshots": [
       {
-        "rid": 9000033,
+        "rid": 9100522,
         "start": 9,
         "end": 23,
-        "file": "ohm_9000033.geojson"
+        "file": "ohm_9100522.geojson"
       }
     ]
   },
@@ -1033,10 +1087,16 @@
     "end_year": 555,
     "snapshots": [
       {
-        "rid": 9000025,
+        "rid": 9100526,
         "start": 330,
+        "end": 450,
+        "file": "ohm_9100526.geojson"
+      },
+      {
+        "rid": 9100527,
+        "start": 450,
         "end": 555,
-        "file": "ohm_9000025.geojson"
+        "file": "ohm_9100527.geojson"
       }
     ]
   },
@@ -1946,10 +2006,16 @@
     "end_year": 927,
     "snapshots": [
       {
-        "rid": 9000072,
+        "rid": 9100520,
         "start": 519,
+        "end": 800,
+        "file": "ohm_9100520.geojson"
+      },
+      {
+        "rid": 9100521,
+        "start": 800,
         "end": 927,
-        "file": "ohm_9000072.geojson"
+        "file": "ohm_9100521.geojson"
       }
     ]
   },
@@ -1984,10 +2050,16 @@
     "end_year": 744,
     "snapshots": [
       {
-        "rid": 9000023,
+        "rid": 9100518,
         "start": 552,
-        "end": 744,
-        "file": "ohm_9000023.geojson"
+        "end": 650,
+        "file": "ohm_9100518.geojson"
+      },
+      {
+        "rid": 9100519,
+        "start": 650,
+        "end": 745,
+        "file": "ohm_9100519.geojson"
       }
     ]
   },
@@ -3120,10 +3192,10 @@
     "end_year": 962,
     "snapshots": [
       {
-        "rid": 9000083,
+        "rid": 9100509,
         "start": 843,
         "end": 962,
-        "file": "ohm_9000083.geojson"
+        "file": "ohm_9100509.geojson"
       }
     ]
   },
@@ -3838,10 +3910,10 @@
     "end_year": 1253,
     "snapshots": [
       {
-        "rid": 9000027,
+        "rid": 9100537,
         "start": 937,
         "end": 1253,
-        "file": "ohm_9000027.geojson"
+        "file": "ohm_9100537.geojson"
       }
     ]
   },
@@ -4474,10 +4546,16 @@
     "end_year": 1234,
     "snapshots": [
       {
-        "rid": 9000006,
+        "rid": 9100530,
         "start": 1115,
+        "end": 1141,
+        "file": "ohm_9100530.geojson"
+      },
+      {
+        "rid": 9100531,
+        "start": 1141,
         "end": 1234,
-        "file": "ohm_9000006.geojson"
+        "file": "ohm_9100531.geojson"
       }
     ]
   },
@@ -4490,10 +4568,10 @@
     "end_year": 1532,
     "snapshots": [
       {
-        "rid": 9000089,
+        "rid": 9100510,
         "start": 1115,
         "end": 1532,
-        "file": "ohm_9000089.geojson"
+        "file": "ohm_9100510.geojson"
       }
     ]
   },
@@ -7700,10 +7778,10 @@
     "end_year": 1683,
     "snapshots": [
       {
-        "rid": 9000034,
+        "rid": 9100529,
         "start": 1661,
         "end": 1683,
-        "file": "ohm_9000034.geojson"
+        "file": "ohm_9100529.geojson"
       }
     ]
   },
@@ -11694,10 +11772,16 @@
     "end_year": 1954,
     "snapshots": [
       {
-        "rid": 9000050,
+        "rid": 9100515,
         "start": 1887,
+        "end": 1914,
+        "file": "ohm_9100515.geojson"
+      },
+      {
+        "rid": 9100516,
+        "start": 1914,
         "end": 1954,
-        "file": "ohm_9000050.geojson"
+        "file": "ohm_9100516.geojson"
       }
     ]
   },
@@ -17753,6 +17837,22 @@
         "end_date": "1370",
         "source": "historical-basemaps",
         "source_year": 1300
+      }
+    ]
+  },
+  {
+    "qid": "Q75613",
+    "name_en": "Almoravid dynasty",
+    "name_ko": "무라비트 왕조",
+    "tier": 1,
+    "start_year": 1040,
+    "end_year": 1147,
+    "snapshots": [
+      {
+        "rid": 9100517,
+        "start": 1040,
+        "end": 1147,
+        "file": "ohm_9100517.geojson"
       }
     ]
   }
