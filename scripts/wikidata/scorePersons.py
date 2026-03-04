@@ -161,9 +161,16 @@ def call_gemini(prompt, model="gemini-2.5-flash", max_retries=3):
     for attempt in range(max_retries):
         try:
             req = urllib.request.Request(url, data=body, headers=headers, method="POST")
-            with urllib.request.urlopen(req, timeout=120) as resp:
+            timeout = 180 if "pro" in model else 120
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
                 result = json.loads(resp.read().decode("utf-8"))
-                content = result["candidates"][0]["content"]["parts"][0]["text"]
+                # Gemini 2.5 Pro: thinking이 parts[0], 응답이 parts[1]
+                # 마지막 non-thought 파트에서 텍스트 추출
+                parts = result["candidates"][0]["content"]["parts"]
+                content = ""
+                for part in parts:
+                    if not part.get("thought", False) and "text" in part:
+                        content = part["text"]
                 return content
         except urllib.error.HTTPError as e:
             error_body = e.read().decode("utf-8") if e.fp else ""
