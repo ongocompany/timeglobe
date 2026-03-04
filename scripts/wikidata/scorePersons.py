@@ -143,6 +143,15 @@ def call_gemini(prompt, model="gemini-2.5-flash", max_retries=3):
     headers = {
         "Content-Type": "application/json",
     }
+    is_pro = "pro" in model
+    gen_config = {
+        "temperature": 0.7,
+        "maxOutputTokens": 65536 if is_pro else 16384,
+    }
+    # Flash: thinking 비활성화 (토큰을 JSON 응답에 집중)
+    if not is_pro:
+        gen_config["thinkingConfig"] = {"thinkingBudget": 0}
+
     body = json.dumps({
         "contents": [
             {
@@ -152,10 +161,7 @@ def call_gemini(prompt, model="gemini-2.5-flash", max_retries=3):
                 ]
             }
         ],
-        "generationConfig": {
-            "temperature": 0.7,
-            "maxOutputTokens": 8192,
-        },
+        "generationConfig": gen_config,
     }).encode("utf-8")
 
     for attempt in range(max_retries):
