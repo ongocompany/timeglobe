@@ -1401,14 +1401,7 @@
         "end": 1204,
         "file": "ohm_2849154.geojson"
       },
-      {
-        "rid": 9100061,
-        "start": 1204,
-        "end": 1261,
-        "source": "historical-basemaps",
-        "match_type": "external",
-        "file": "ohm_9100061.geojson"
-      },
+
       {
         "rid": 2849184,
         "start": 1261,
