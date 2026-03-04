@@ -164,13 +164,33 @@ def call_gemini(prompt, model="gemini-2.5-flash", max_retries=3):
             timeout = 180 if "pro" in model else 120
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 result = json.loads(resp.read().decode("utf-8"))
+
+                # 응답 구조 검증
+                candidates = result.get("candidates", [])
+                if not candidates:
+                    print(f"  [Empty candidates] attempt {attempt+1}")
+                    time.sleep(5)
+                    continue
+
+                parts = candidates[0].get("content", {}).get("parts", [])
+                if not parts:
+                    print(f"  [No parts] attempt {attempt+1}")
+                    time.sleep(5)
+                    continue
+
                 # Gemini 2.5 Pro: thinking이 parts[0], 응답이 parts[1]
                 # 마지막 non-thought 파트에서 텍스트 추출
-                parts = result["candidates"][0]["content"]["parts"]
                 content = ""
                 for part in parts:
                     if not part.get("thought", False) and "text" in part:
                         content = part["text"]
+
+                # content가 비어있으면 (thinking-only 응답) 재시도
+                if not content or not content.strip():
+                    print(f"  [Empty content] thinking-only? attempt {attempt+1}")
+                    time.sleep(10)
+                    continue
+
                 return content
         except urllib.error.HTTPError as e:
             error_body = e.read().decode("utf-8") if e.fp else ""
@@ -180,13 +200,13 @@ def call_gemini(prompt, model="gemini-2.5-flash", max_retries=3):
                 print(f"  Rate limited, waiting {wait}s...")
                 time.sleep(wait)
             elif e.code >= 500:
-                time.sleep(5)
+                time.sleep(10)
             else:
                 raise
         except Exception as e:
             print(f"  [Error] {e}")
             if attempt < max_retries - 1:
-                time.sleep(3)
+                time.sleep(5)
             else:
                 raise
 
@@ -295,17 +315,34 @@ def run_scoring(resume=False, test_mode=False):
                 label = f"{year_from}~{year_to}"
             print(f"  [{i+1}/{len(chunks)}] {label} ({count}명)[{model_tag}] ... ", end="", flush=True)
 
-            # API 호출
+            # API 호출 (0명이면 최대 2회 재시도)
             prompt = build_prompt(year_from, year_to, count)
-            try:
-                raw_response = call_gemini(prompt, model=model)
-                persons = parse_json_response(raw_response)
-            except Exception as e:
-                print(f"FAIL ({e})")
-                errors += 1
-                if errors > 30:
-                    print("\n[ABORT] 에러 30회 초과 — --resume로 재시작 가능")
+            persons = []
+            for retry in range(3):
+                try:
+                    raw_response = call_gemini(prompt, model=model)
+                    persons = parse_json_response(raw_response)
+                except Exception as e:
+                    print(f"FAIL ({e})")
+                    errors += 1
+                    if errors > 30:
+                        print("\n[ABORT] 에러 30회 초과 — --resume로 재시작 가능")
+                        break
                     break
+
+                if len(persons) > 0:
+                    break
+                # 0명 → 재시도
+                if retry < 2:
+                    print(f"0명(재시도 {retry+1}/2) ", end="", flush=True)
+                    time.sleep(15 if "pro" in model else 5)
+
+            if errors > 30:
+                break
+
+            if len(persons) == 0:
+                print(f"SKIP (3회 시도 후 0명)")
+                errors += 1
                 continue
 
             # 결과 저장
