@@ -509,6 +509,8 @@ def show_stats():
 # ── CLI ───────────────────────────────────────────────
 
 def main():
+    global GEMINI_DELAY
+
     parser = argparse.ArgumentParser(description="카드 콘텐츠 생성 (Wikipedia → Gemini)")
     parser.add_argument("--category", choices=CATEGORIES + ["all"], default="persons",
                         help="처리할 카테고리 (default: persons)")
@@ -527,7 +529,6 @@ def main():
         print("✗ API 키 없음: GEMINI_CARD_KEY 또는 GEMINI_API_KEY 환경변수 설정 필요")
         return
 
-    global GEMINI_DELAY
     GEMINI_DELAY = args.delay
 
     print(f"API 키: ...{API_KEY[-8:]}")
