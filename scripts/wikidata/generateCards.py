@@ -209,7 +209,8 @@ def build_card_prompt(category, item, wiki_text):
 
 대상 유형: {cfg["subject"]}
 
-중요: description_ko는 반드시 300자 이상, 400자 미만으로 작성하세요.
+★ 절대 규칙: description_ko는 300자 이상 400자 미만 (이 범위를 벗어나면 실패입니다!)
+★ 400자를 절대 넘기지 마세요. 넘기면 잘립니다.
 {cfg["desc_guide"]}
 
 출력 형식:
