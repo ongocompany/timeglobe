@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-generateCards.py — QID 매칭 항목 → Wikipedia fetch → Gemini 3 Flash 카드 생성
+generateCards.py — QID 매칭 항목 → Wikipedia fetch → AI 카드 생성
 모든 카테고리(persons, events, artworks, inventions, items) 처리
+Gemini 3 Flash 또는 Qwen 3.5-Plus 선택 가능
 
 Usage:
-  python3 generateCards.py --category persons
-  python3 generateCards.py --category persons --resume
+  python3 generateCards.py --category persons --model qwen
+  python3 generateCards.py --category persons --model gemini --resume
   python3 generateCards.py --category persons --test 10
-  python3 generateCards.py --category all
+  python3 generateCards.py --category all --model qwen
   python3 generateCards.py --stats
 """
 import json, os, time, argparse, urllib.request, urllib.error, urllib.parse
@@ -27,10 +28,19 @@ if env_path.exists():
             k, v = line.split("=", 1)
             os.environ.setdefault(k.strip(), v.strip())
 
-# scoreEvents와 다른 API 키 사용 (TPM 격리)
-API_KEY = os.environ.get("GEMINI_CARD_KEY", os.environ.get("GEMINI_API_KEY", ""))
-API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
-MODEL = "gemini-3-flash-preview"
+# API 설정 (모델별로 main()에서 세팅)
+GEMINI_KEY = os.environ.get("GEMINI_CARD_KEY", os.environ.get("GEMINI_API_KEY", ""))
+GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+GEMINI_MODEL = "gemini-3-flash-preview"
+
+QWEN_KEY = os.environ.get("QWEN_API_KEY", "")
+QWEN_BASE = os.environ.get("QWEN_API_URL", "https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
+QWEN_MODEL = os.environ.get("QWEN_MODEL", "qwen3.5-plus")
+
+# 런타임에 설정됨
+API_KEY = ""
+MODEL = ""
+MODEL_PROVIDER = "gemini"  # "gemini" or "qwen"
 
 OUTPUT_DIR = Path("/mnt/data2/wikidata/output")
 CARD_DIR = OUTPUT_DIR / "cards"
@@ -215,17 +225,19 @@ Wikipedia 본문:
 
 # ── Gemini API ────────────────────────────────────────
 
-def call_gemini(prompt):
-    """Gemini API 호출 (재시도 포함)"""
-    url = f"{API_BASE}/{MODEL}:generateContent?key={API_KEY}"
-    headers = {"Content-Type": "application/json"}
+def call_llm(prompt):
+    """LLM API 호출 — Gemini / Qwen 자동 분기 (재시도 포함)"""
+    if MODEL_PROVIDER == "qwen":
+        return _call_qwen(prompt)
+    return _call_gemini(prompt)
 
+
+def _call_gemini(prompt):
+    url = f"{GEMINI_BASE}/{MODEL}:generateContent?key={API_KEY}"
+    headers = {"Content-Type": "application/json"}
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature": 0.3,
-            "maxOutputTokens": 4096,
-        }
+        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096},
     })
 
     for attempt in range(MAX_RETRIES):
@@ -239,6 +251,48 @@ def call_gemini(prompt):
             err_body = e.read().decode()
             if e.code == 429:
                 wait = (attempt + 1) * 15
+                print(f"  ⏳ Rate limit, {wait}s 대기... (시도 {attempt+1}/{MAX_RETRIES})")
+                time.sleep(wait)
+                continue
+            print(f"  ✗ API error {e.code}: {err_body[:200]}")
+            return None
+        except Exception as e:
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(5)
+                continue
+            print(f"  ✗ Error: {e}")
+            return None
+    return None
+
+
+def _call_qwen(prompt):
+    url = f"{QWEN_BASE}/chat/completions"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {API_KEY}",
+    }
+    body = json.dumps({
+        "model": MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.3,
+        "max_tokens": 4096,
+    })
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            req = urllib.request.Request(url, data=body.encode(), headers=headers)
+            resp = urllib.request.urlopen(req, timeout=120)
+            data = json.loads(resp.read())
+            text = data["choices"][0]["message"]["content"]
+            # Qwen thinking 태그 제거
+            if "<think>" in text:
+                parts = text.split("</think>")
+                text = parts[-1].strip() if len(parts) > 1 else text
+            return text
+        except urllib.error.HTTPError as e:
+            err_body = e.read().decode()
+            if e.code == 429:
+                wait = (attempt + 1) * 10
                 print(f"  ⏳ Rate limit, {wait}s 대기... (시도 {attempt+1}/{MAX_RETRIES})")
                 time.sleep(wait)
                 continue
@@ -425,7 +479,7 @@ def process_category(category, test_limit=0, resume=False):
             # 3) Gemini 카드 생성
             prompt = build_card_prompt(category, item, wiki_text)
             t0 = time.time()
-            raw_response = call_gemini(prompt)
+            raw_response = call_llm(prompt)
             elapsed = time.time() - t0
 
             card = parse_json_response(raw_response)
@@ -509,30 +563,41 @@ def show_stats():
 # ── CLI ───────────────────────────────────────────────
 
 def main():
-    global GEMINI_DELAY
+    global GEMINI_DELAY, API_KEY, MODEL, MODEL_PROVIDER
 
-    parser = argparse.ArgumentParser(description="카드 콘텐츠 생성 (Wikipedia → Gemini)")
+    parser = argparse.ArgumentParser(description="카드 콘텐츠 생성 (Wikipedia → AI)")
     parser.add_argument("--category", choices=CATEGORIES + ["all"], default="persons",
                         help="처리할 카테고리 (default: persons)")
+    parser.add_argument("--model", choices=["gemini", "qwen"], default="gemini",
+                        help="사용할 모델 (default: gemini)")
     parser.add_argument("--resume", action="store_true", help="이전 진행 이어서")
     parser.add_argument("--test", type=int, default=0, help="테스트 모드 (N건만 처리)")
     parser.add_argument("--stats", action="store_true", help="전체 통계 출력")
-    parser.add_argument("--delay", type=float, default=GEMINI_DELAY,
-                        help=f"Gemini 호출 간 대기 (default: {GEMINI_DELAY}s)")
+    parser.add_argument("--delay", type=float, default=-1,
+                        help="AI 호출 간 대기 (default: gemini=2, qwen=1)")
     args = parser.parse_args()
 
     if args.stats:
         show_stats()
         return
 
+    # 모델 설정
+    MODEL_PROVIDER = args.model
+    if MODEL_PROVIDER == "qwen":
+        API_KEY = QWEN_KEY
+        MODEL = QWEN_MODEL
+        GEMINI_DELAY = args.delay if args.delay >= 0 else 1
+    else:
+        API_KEY = GEMINI_KEY
+        MODEL = GEMINI_MODEL
+        GEMINI_DELAY = args.delay if args.delay >= 0 else 2
+
     if not API_KEY:
-        print("✗ API 키 없음: GEMINI_CARD_KEY 또는 GEMINI_API_KEY 환경변수 설정 필요")
+        print(f"✗ API 키 없음: {'QWEN_API_KEY' if MODEL_PROVIDER == 'qwen' else 'GEMINI_CARD_KEY'} 설정 필요")
         return
 
-    GEMINI_DELAY = args.delay
-
     print(f"API 키: ...{API_KEY[-8:]}")
-    print(f"모델: {MODEL}")
+    print(f"모델: {MODEL} ({MODEL_PROVIDER})")
     print(f"딜레이: {GEMINI_DELAY}s")
 
     if args.category == "all":
