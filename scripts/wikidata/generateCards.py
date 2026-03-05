@@ -31,7 +31,7 @@ if env_path.exists():
 # API 설정 (모델별로 main()에서 세팅)
 GEMINI_KEY = os.environ.get("GEMINI_CARD_KEY", os.environ.get("GEMINI_API_KEY", ""))
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
-GEMINI_MODEL = "gemini-3-flash-preview"
+GEMINI_MODEL = "gemini-2.5-flash"
 
 QWEN_KEY = os.environ.get("QWEN_API_KEY", "")
 QWEN_BASE = os.environ.get("QWEN_API_URL", "https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
