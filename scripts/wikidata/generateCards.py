@@ -485,6 +485,16 @@ def process_category(category, test_limit=0, resume=False):
 
             card = parse_json_response(raw_response)
             if card:
+                # description_ko 400자 후처리 (LLM이 정확히 못 지킴)
+                desc = card.get("description_ko", "")
+                if len(desc) > 420:
+                    # 400자 이내 마지막 마침표에서 자르기
+                    cut = desc[:400].rfind(".")
+                    if cut > 250:
+                        card["description_ko"] = desc[:cut+1]
+                    else:
+                        card["description_ko"] = desc[:400]
+
                 # 메타데이터 병합
                 meta = build_card_meta(category, item, thumbnail, wiki_url, wiki_lang)
                 card.update(meta)
