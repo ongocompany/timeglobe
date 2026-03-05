@@ -40,10 +40,10 @@ OUTPUT_DIR = Path("/mnt/data2/wikidata/output")
 
 # 매칭 소스 JSONL 파일들
 SOURCE_JSONLS = {
-    "unmatched": OUTPUT_DIR / "categories" / "99_unmatched.jsonl",
-    "building":  OUTPUT_DIR / "categories" / "09_building.jsonl",
-    "place":     OUTPUT_DIR / "categories" / "08_place.jsonl",
-    "heritage":  OUTPUT_DIR / "categories" / "10_heritage.jsonl",
+    "unmatched": OUTPUT_DIR / "categories" / "unmatched.jsonl",
+    "building":  OUTPUT_DIR / "categories" / "05_building.jsonl",
+    "place":     OUTPUT_DIR / "categories" / "04_place.jsonl",
+    "heritage":  OUTPUT_DIR / "categories" / "06_heritage.jsonl",
     "invention": OUTPUT_DIR / "categories" / "07_invention.jsonl",
 }
 
