@@ -29,7 +29,7 @@ if env_path.exists():
             os.environ.setdefault(k.strip(), v.strip())
 
 # API 설정 (모델별로 main()에서 세팅)
-GEMINI_KEY = os.environ.get("GEMINI_CARD_KEY", os.environ.get("GEMINI_API_KEY", ""))
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 GEMINI_MODEL = "gemini-2.5-flash"
 
@@ -52,7 +52,7 @@ INPUT_FILES = {
     for cat in CATEGORIES
 }
 
-GEMINI_DELAY = 2  # seconds between Gemini calls (free tier: 15 RPM → 4s, 여유 두고 2s)
+GEMINI_DELAY = 1  # seconds between Gemini calls (paid: 1000 RPM)
 MAX_RETRIES = 3
 
 
@@ -601,10 +601,10 @@ def main():
     else:
         API_KEY = GEMINI_KEY
         MODEL = GEMINI_MODEL
-        GEMINI_DELAY = args.delay if args.delay >= 0 else 2
+        GEMINI_DELAY = args.delay if args.delay >= 0 else 1
 
     if not API_KEY:
-        print(f"✗ API 키 없음: {'QWEN_API_KEY' if MODEL_PROVIDER == 'qwen' else 'GEMINI_CARD_KEY'} 설정 필요")
+        print(f"✗ API 키 없음: {'QWEN_API_KEY' if MODEL_PROVIDER == 'qwen' else 'GEMINI_API_KEY'} 설정 필요")
         return
 
     print(f"API 키: ...{API_KEY[-8:]}")
