@@ -68,11 +68,13 @@ API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # ── 적응형 청크 정의 ──────────────────────────────────
 # (시작년, 끝년, 청크크기, 이벤트수, 모델)
 CHUNKS_CONFIG = [
-    (-3000, -500, 200, 10, "gemini-2.5-pro"),    # 고대: Pro (정밀)
-    ( -500,  500, 100, 15, "gemini-2.5-pro"),    # 고전기: Pro
-    (  500, 1500,  25, 15, "gemini-2.5-flash"),  # 중세: Flash
-    ( 1500, 1800,  10, 20, "gemini-2.5-flash"),  # 근세: Flash
-    ( 1800, 2025,   5, 25, "gemini-2.5-flash"),  # 근현대: Flash
+    (-3000, -500, 200, 20, "gemini-2.5-pro"),    # 고대: 250개
+    ( -500,  500, 100, 25, "gemini-2.5-pro"),    # 고전기: 250개
+    (  500, 1500,  25, 30, "gemini-2.5-flash"),  # 중세: 1,200개
+    ( 1500, 1800,  10, 40, "gemini-2.5-flash"),  # 근세: 1,200개
+    ( 1800, 1900,   2, 50, "gemini-2.5-flash"),  # 19세기: 2,500개
+    ( 1900, 2000,   1, 60, "gemini-2.5-flash"),  # 20세기: 6,000개
+    ( 2000, 2025,   1, 40, "gemini-2.5-flash"),  # 21세기: 1,000개
 ]
 
 def generate_chunks():
@@ -145,7 +147,7 @@ def call_gemini(prompt, model="gemini-2.5-flash", max_retries=3):
     is_pro = "pro" in model
     gen_config = {
         "temperature": 0.7,
-        "maxOutputTokens": 65536 if is_pro else 16384,
+        "maxOutputTokens": 65536 if is_pro else 32768,
     }
     if not is_pro:
         gen_config["thinkingConfig"] = {"thinkingBudget": 0}
