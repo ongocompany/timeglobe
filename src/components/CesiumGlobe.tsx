@@ -29,6 +29,8 @@ import {
   DirectionalLight,
   CameraEventType,
   CustomDataSource,
+  PolylineDashMaterialProperty,
+  CallbackProperty,
   EllipseGraphics,
   ConstantProperty,
 } from "cesium";
@@ -1478,6 +1480,24 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const visibleTiersRef = useRef<number[]>(visibleTiers ?? [1, 2, 3, 4]);
   const showBorderRef = useRef<boolean>(showBorder ?? true);
 
+  // [cl] 고도 기반 경계선 페이드: 5000km 이하 = 1.0, 10000km 이상 = 0.0, 사이 = 선형 보간
+  const borderAlphaRef = useRef(1.0);
+
+  // [cl] 대시 머티리얼 헬퍼 — CallbackProperty로 altitude 연동 알파
+  function makeDashMaterial(baseColor: Color, baseAlpha: number, dashLen: number) {
+    let lastAlpha = -1;
+    let cached = baseColor.withAlpha(baseAlpha);
+    return new PolylineDashMaterialProperty({
+      color: new CallbackProperty(() => {
+        const a = borderAlphaRef.current;
+        const target = baseAlpha * a;
+        if (target !== lastAlpha) { lastAlpha = target; cached = baseColor.withAlpha(target); }
+        return cached;
+      }, false),
+      dashLength: dashLen,
+    });
+  }
+
   // [cl] ★ Tier별 라벨 스타일 — 고도(카메라 거리) 기반 노출 전략
   // T1: 대제국 (로마, 당, 오스만) — 항상 크게 보임
   // T2: 주요국 (고려, 비잔틴) — 중간 거리부터
@@ -1589,22 +1609,22 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         ? Color.fromCssColorString(meta.fill_color).withAlpha(0.45)
         : defaultBorderColor;
 
-      // ── [cl] BP 값에 따른 렌더링 분기 (멀티레이어: 바깥 아우라 + 코어) ──
+      // ── [cl] BP 값에 따른 렌더링 분기 — 대시 + 고도 페이드 ──
       const rings = extractRings(feature.geometry);
       for (const positions of rings) {
         if (positions.length < 2) continue;
         if (bp <= 1) {
-          // [cl] BP=1 (근사치): "시간의 안개" — 바깥+중간만, 코어 없음
-          ds.entities.add({ polyline: { positions, width: 10, material: lineColor.withAlpha(0.1) } });
-          ds.entities.add({ polyline: { positions, width: 5, material: lineColor.withAlpha(0.3) } });
+          // [cl] BP=1 (근사치): 넓은 대시, 긴 간격 — "시간의 안개"
+          ds.entities.add({ polyline: { positions, width: 10, material: makeDashMaterial(lineColor, 0.1, 24) } });
+          ds.entities.add({ polyline: { positions, width: 5, material: makeDashMaterial(lineColor, 0.3, 24) } });
         } else if (bp === 2) {
-          // [cl] BP=2 (중간): 바깥+중간만, 코어 없음
-          ds.entities.add({ polyline: { positions, width: 8, material: lineColor.withAlpha(0.1) } });
-          ds.entities.add({ polyline: { positions, width: 4, material: lineColor.withAlpha(0.3) } });
+          // [cl] BP=2 (중간): 중간 대시
+          ds.entities.add({ polyline: { positions, width: 8, material: makeDashMaterial(lineColor, 0.1, 16) } });
+          ds.entities.add({ polyline: { positions, width: 4, material: makeDashMaterial(lineColor, 0.3, 16) } });
         } else {
-          // [cl] BP=3 (확정 국경): 바깥+중간만, 코어 없음
-          ds.entities.add({ polyline: { positions, width: 6, material: lineColor.withAlpha(0.1) } });
-          ds.entities.add({ polyline: { positions, width: 3, material: lineColor.withAlpha(0.3) } });
+          // [cl] BP=3 (확정 국경): 짧은 대시, 선명
+          ds.entities.add({ polyline: { positions, width: 6, material: makeDashMaterial(lineColor, 0.1, 12) } });
+          ds.entities.add({ polyline: { positions, width: 3, material: makeDashMaterial(lineColor, 0.3, 12) } });
         }
       }
 
@@ -1855,7 +1875,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const entityTier = entity.tier ?? 3;
 
       for (const feature of geojson.features) {
-        // [cl] 외곽선 — T1/T2만 (멀티레이어: 바깥 아우라 + 코어)
+        // [cl] 외곽선 — T1/T2만 (대시 + 고도 페이드)
         // extractOuterRings: 내부 hole 링 제외, 국경(외곽)만 그림
         if (showBorderRef.current && entityTier <= 2) {
           const outerRings = extractOuterRings(feature.geometry);
@@ -1863,13 +1883,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             if (entityTier === 1) {
-              // [cl] T1: 바깥+중간만, 코어 없음
-              ds.entities.add({ polyline: { positions, width: 8, material: bc.withAlpha(0.1) } });
-              ds.entities.add({ polyline: { positions, width: 4, material: bc.withAlpha(0.3) } });
+              ds.entities.add({ polyline: { positions, width: 8, material: makeDashMaterial(bc, 0.1, 16) } });
+              ds.entities.add({ polyline: { positions, width: 4, material: makeDashMaterial(bc, 0.3, 16) } });
             } else {
-              // [cl] T2: 바깥+중간만, 코어 없음
-              ds.entities.add({ polyline: { positions, width: 6, material: bc.withAlpha(0.1) } });
-              ds.entities.add({ polyline: { positions, width: 3, material: bc.withAlpha(0.3) } });
+              ds.entities.add({ polyline: { positions, width: 6, material: makeDashMaterial(bc, 0.1, 16) } });
+              ds.entities.add({ polyline: { positions, width: 3, material: makeDashMaterial(bc, 0.3, 16) } });
             }
           }
         }
@@ -1918,7 +1936,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
         const entityTier = csEntity.tier;
 
-        // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일 멀티레이어)
+        // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일 대시 + 고도 페이드)
         // extractOuterRings: 내부 hole 링 제외
         if (showBorderRef.current && entityTier <= 2) {
           const outerRings = extractOuterRings(feat.geometry);
@@ -1926,11 +1944,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             if (entityTier === 1) {
-              ds.entities.add({ polyline: { positions, width: 8, material: bc.withAlpha(0.1) } });
-              ds.entities.add({ polyline: { positions, width: 4, material: bc.withAlpha(0.3) } });
+              ds.entities.add({ polyline: { positions, width: 8, material: makeDashMaterial(bc, 0.1, 16) } });
+              ds.entities.add({ polyline: { positions, width: 4, material: makeDashMaterial(bc, 0.3, 16) } });
             } else {
-              ds.entities.add({ polyline: { positions, width: 6, material: bc.withAlpha(0.1) } });
-              ds.entities.add({ polyline: { positions, width: 3, material: bc.withAlpha(0.3) } });
+              ds.entities.add({ polyline: { positions, width: 6, material: makeDashMaterial(bc, 0.1, 16) } });
+              ds.entities.add({ polyline: { positions, width: 3, material: makeDashMaterial(bc, 0.3, 16) } });
             }
           }
         }
@@ -2059,6 +2077,18 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       renderOhmForYear(currentYear);
     }
   }, [visibleTiers]);
+
+  // [cl] ★ 고도 기반 경계선 페이드 — preRender에서 borderAlphaRef 갱신
+  useEffect(() => {
+    if (!viewer || viewer.isDestroyed()) return;
+    const onPreRender = () => {
+      if (viewer.isDestroyed()) return;
+      const altKm = viewer.camera.positionCartographic.height / 1000;
+      borderAlphaRef.current = altKm >= 10000 ? 0 : altKm <= 5000 ? 1 : 1 - (altKm - 5000) / 5000;
+    };
+    viewer.scene.preRender.addEventListener(onPreRender);
+    return () => { if (!viewer.isDestroyed()) viewer.scene.preRender.removeEventListener(onPreRender); };
+  }, [viewer]);
 
   // [mk] ★ showBorder 변경 시 OHM 재렌더링 (캐시 무효화 후)
   useEffect(() => {
