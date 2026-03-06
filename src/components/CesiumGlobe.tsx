@@ -1592,24 +1592,40 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       // ── [cl] BP 값에 따른 렌더링 분기 ──
       if (bp <= 1) {
-        // [cl] BP=1 (근사치): 글로우 페이드아웃 — "시간의 안개" 국경 불확실 표현
-        // 선 중심은 불투명, 바깥으로 갈수록 투명해짐
+        // [cl] BP=1 (근사치): 넓은 글로우 — "시간의 안개" 국경 불확실 표현
+        // glowPower 1.0 = 선 전체가 그라데이션 (중심 밝음 → 가장자리 투명)
         const rings = extractRings(feature.geometry);
         for (const positions of rings) {
           if (positions.length < 2) continue;
           ds.entities.add({
             polyline: {
               positions,
-              width: 6,
+              width: 12,
               material: new PolylineGlowMaterialProperty({
-                glowPower: 0.7,
-                color: lineColor.withAlpha(0.3),
+                glowPower: 1.0,
+                color: lineColor.withAlpha(0.4),
               }),
             },
           });
         }
       } else if (bp === 2) {
-        // [cl] BP=2 (중간): 글로우 + 살짝 선명 — 경계 존재하나 불확실
+        // [cl] BP=2 (중간): 중간 글로우 — 경계 존재하나 불확실
+        const rings = extractRings(feature.geometry);
+        for (const positions of rings) {
+          if (positions.length < 2) continue;
+          ds.entities.add({
+            polyline: {
+              positions,
+              width: 8,
+              material: new PolylineGlowMaterialProperty({
+                glowPower: 0.8,
+                color: lineColor.withAlpha(0.5),
+              }),
+            },
+          });
+        }
+      } else {
+        // [cl] BP=3 (확정 국경): 약한 글로우로 부드러운 실선
         const rings = extractRings(feature.geometry);
         for (const positions of rings) {
           if (positions.length < 2) continue;
@@ -1618,22 +1634,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
               positions,
               width: 4,
               material: new PolylineGlowMaterialProperty({
-                glowPower: 0.4,
-                color: lineColor.withAlpha(0.5),
+                glowPower: 0.3,
+                color: lineColor.withAlpha(0.7),
               }),
-            },
-          });
-        }
-      } else {
-        // [cl] BP=3 (확정 국경): 기존 solid polyline 유지
-        const rings = extractRings(feature.geometry);
-        for (const positions of rings) {
-          if (positions.length < 2) continue;
-          ds.entities.add({
-            polyline: {
-              positions,
-              width: meta ? 1.5 : 1.2,
-              material: lineColor,
             },
           });
         }
@@ -1887,20 +1890,19 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       for (const feature of geojson.features) {
         // [cl] 외곽선 — T1/T2만 표시, T3/T4는 국경선 없음
-        // T1: 글로우 선명 (0.3) | T2: 글로우 연한 페이드 (0.5)
+        // T1: width 6, 선명 글로우 | T2: width 5, 연한 글로우
         // extractOuterRings: 내부 hole 링 제외, 국경(외곽)만 그림
         if (showBorderRef.current && entityTier <= 2) {
           const outerRings = extractOuterRings(feature.geometry);
-          const borderColor = Color.WHITE.withAlpha(entityTier === 1 ? 0.7 : 0.4);
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             ds.entities.add({
               polyline: {
                 positions,
-                width: entityTier === 1 ? 4 : 3,
+                width: entityTier === 1 ? 6 : 5,
                 material: new PolylineGlowMaterialProperty({
-                  glowPower: entityTier === 1 ? 0.3 : 0.5,
-                  color: borderColor,
+                  glowPower: entityTier === 1 ? 0.5 : 0.7,
+                  color: Color.WHITE.withAlpha(entityTier === 1 ? 0.6 : 0.35),
                 }),
               },
             });
@@ -1955,16 +1957,15 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         // extractOuterRings: 내부 hole 링 제외
         if (showBorderRef.current && entityTier <= 2) {
           const outerRings = extractOuterRings(feat.geometry);
-          const borderColor = Color.WHITE.withAlpha(entityTier === 1 ? 0.7 : 0.4);
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             ds.entities.add({
               polyline: {
                 positions,
-                width: entityTier === 1 ? 4 : 3,
+                width: entityTier === 1 ? 6 : 5,
                 material: new PolylineGlowMaterialProperty({
-                  glowPower: entityTier === 1 ? 0.3 : 0.5,
-                  color: borderColor,
+                  glowPower: entityTier === 1 ? 0.5 : 0.7,
+                  color: Color.WHITE.withAlpha(entityTier === 1 ? 0.6 : 0.35),
                 }),
               },
             });
