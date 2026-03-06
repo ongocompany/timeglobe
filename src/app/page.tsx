@@ -73,12 +73,10 @@ function StackCarousel({
   events,
   position,
   onClose,
-  pinned = false,
 }: {
   events: MockEvent[];
   position: { x: number; y: number };
   onClose: () => void;
-  pinned?: boolean;
 }) {
   const isSingle = events.length === 1;
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -86,8 +84,6 @@ function StackCarousel({
   const [scattering, setScattering] = useState(false);
   // [cl] 단독 마커: 슬라이드 상태 (mount → "in", 닫기 → "out" → onClose)
   const [slidePhase, setSlidePhase] = useState<"in" | "out">("in");
-  // [cl] 마우스 떠남 유예 타이머 (깜박임 방지)
-  const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   // [cl] 확장 카드 크기: 화면에 맞게 계산
   const CARD_W = typeof window !== "undefined" ? Math.min(500, Math.round(window.innerWidth * 0.88)) : 460;
   const MAX_H = typeof window !== "undefined" ? window.innerHeight - 80 : 600;
@@ -147,21 +143,12 @@ function StackCarousel({
             animation: slidePhase === "in" && !isActive ? "slideUpIn 0.45s cubic-bezier(0.34,1.56,0.64,1) both" : undefined,
           }}
         >
-          {/* [cl] 호버 영역: 카드 주변 24px 여유 패딩 (마우스 이탈 민감도 완화) */}
+          {/* [cl] 호버 영역: 카드 주변 24px 여유 패딩 */}
           <div
             style={{
               padding: isActive ? 0 : 24,
               pointerEvents: isActive ? "none" : "auto",
             }}
-            onMouseEnter={() => {
-              // [cl] 마우스 재진입 → 유예 타이머 취소 (깜박임 방지)
-              if (leaveTimerRef.current) { clearTimeout(leaveTimerRef.current); leaveTimerRef.current = null; }
-            }}
-            onMouseLeave={!isActive && !pinned ? () => {
-              // [cl] 호버 모드만: 300ms 유예 후 dismiss (pinned면 바깥 클릭으로만 닫힘)
-              if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
-              leaveTimerRef.current = setTimeout(() => { leaveTimerRef.current = null; dismiss(); }, 300);
-            } : undefined}
           >
           <div
             style={{
@@ -371,7 +358,7 @@ export default function Home() {
   }, []);
 
   const [viewMode, setViewMode] = useState<ViewMode>(null);
-  const [stackState, setStackState] = useState<{ events: MockEvent[]; pos: { x: number; y: number }; pinned?: boolean } | null>(null);
+  const [stackState, setStackState] = useState<{ events: MockEvent[]; pos: { x: number; y: number } } | null>(null);
   // [cl] Orbit 캐러셀 전용 자전 제어: rotate(기본) / stop
   const [orbitMotion, setOrbitMotion] = useState<"rotate" | "stop">("rotate");
   // [cl] 글로벌 자전 제어 (컨트롤 바)
@@ -548,7 +535,7 @@ export default function Home() {
           globeDirection={globeDirection}
           markerMode={viewMode === "marker"}
           events={MOCK_EVENTS}
-          onStackClick={(evs, pos, pinned) => setStackState({ events: evs, pos, pinned })}
+          onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
           warpPhase={warpPhase}
           // onSpinWarp={handleSpinWarp} // [cl] 랜덤 타임머신 임시 비활성화 (리뷰 중 오작동 방지)
           currentYear={currentYear}
@@ -730,7 +717,6 @@ export default function Home() {
         <StackCarousel
           events={stackState.events}
           position={stackState.pos}
-          pinned={stackState.pinned}
           onClose={() => setStackState(null)}
         />
       )}

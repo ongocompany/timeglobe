@@ -20,7 +20,7 @@ interface GlobeLoaderProps {
   globeDirection?: "left" | "right";
   markerMode?: boolean;
   events?: MockEvent[];
-  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }, pinned?: boolean) => void;
+  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
   warpPhase?: "idle" | "zoomout" | "hold" | "zoomin";
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear?: number; // [cl] 역사 국경선 표시용
