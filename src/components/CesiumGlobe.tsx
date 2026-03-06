@@ -1594,19 +1594,17 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       for (const positions of rings) {
         if (positions.length < 2) continue;
         if (bp <= 1) {
-          // [cl] BP=1 (근사치): "시간의 안개" — 코어 없이 아우라만
-          ds.entities.add({ polyline: { positions, width: 10, material: lineColor.withAlpha(0.06) } });
-          ds.entities.add({ polyline: { positions, width: 5, material: lineColor.withAlpha(0.12) } });
+          // [cl] BP=1 (근사치): "시간의 안개" — 바깥+중간만, 코어 없음
+          ds.entities.add({ polyline: { positions, width: 10, material: lineColor.withAlpha(0.1) } });
+          ds.entities.add({ polyline: { positions, width: 5, material: lineColor.withAlpha(0.3) } });
         } else if (bp === 2) {
-          // [cl] BP=2 (중간): 얇은 코어 + 중간 아우라
-          ds.entities.add({ polyline: { positions, width: 8, material: lineColor.withAlpha(0.06) } });
-          ds.entities.add({ polyline: { positions, width: 4, material: lineColor.withAlpha(0.12) } });
-          ds.entities.add({ polyline: { positions, width: 1.5, material: lineColor.withAlpha(0.4) } });
+          // [cl] BP=2 (중간): 바깥+중간만, 코어 없음
+          ds.entities.add({ polyline: { positions, width: 8, material: lineColor.withAlpha(0.1) } });
+          ds.entities.add({ polyline: { positions, width: 4, material: lineColor.withAlpha(0.3) } });
         } else {
-          // [cl] BP=3 (확정 국경): 선명 코어 + 살짝 아우라
-          ds.entities.add({ polyline: { positions, width: 6, material: lineColor.withAlpha(0.05) } });
-          ds.entities.add({ polyline: { positions, width: 3, material: lineColor.withAlpha(0.1) } });
-          ds.entities.add({ polyline: { positions, width: 1.2, material: lineColor.withAlpha(0.55) } });
+          // [cl] BP=3 (확정 국경): 바깥+중간만, 코어 없음
+          ds.entities.add({ polyline: { positions, width: 6, material: lineColor.withAlpha(0.1) } });
+          ds.entities.add({ polyline: { positions, width: 3, material: lineColor.withAlpha(0.3) } });
         }
       }
 
@@ -1865,15 +1863,13 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             if (entityTier === 1) {
-              // [cl] T1: 선명 코어 + 아우라
-              ds.entities.add({ polyline: { positions, width: 8, material: bc.withAlpha(0.05) } });
-              ds.entities.add({ polyline: { positions, width: 4, material: bc.withAlpha(0.12) } });
-              ds.entities.add({ polyline: { positions, width: 1.5, material: bc.withAlpha(0.5) } });
+              // [cl] T1: 바깥+중간만, 코어 없음
+              ds.entities.add({ polyline: { positions, width: 8, material: bc.withAlpha(0.1) } });
+              ds.entities.add({ polyline: { positions, width: 4, material: bc.withAlpha(0.3) } });
             } else {
-              // [cl] T2: 연한 코어 + 아우라
-              ds.entities.add({ polyline: { positions, width: 6, material: bc.withAlpha(0.04) } });
-              ds.entities.add({ polyline: { positions, width: 3, material: bc.withAlpha(0.08) } });
-              ds.entities.add({ polyline: { positions, width: 1, material: bc.withAlpha(0.3) } });
+              // [cl] T2: 바깥+중간만, 코어 없음
+              ds.entities.add({ polyline: { positions, width: 6, material: bc.withAlpha(0.1) } });
+              ds.entities.add({ polyline: { positions, width: 3, material: bc.withAlpha(0.3) } });
             }
           }
         }
@@ -1930,13 +1926,11 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             if (entityTier === 1) {
-              ds.entities.add({ polyline: { positions, width: 8, material: bc.withAlpha(0.05) } });
-              ds.entities.add({ polyline: { positions, width: 4, material: bc.withAlpha(0.12) } });
-              ds.entities.add({ polyline: { positions, width: 1.5, material: bc.withAlpha(0.5) } });
+              ds.entities.add({ polyline: { positions, width: 8, material: bc.withAlpha(0.1) } });
+              ds.entities.add({ polyline: { positions, width: 4, material: bc.withAlpha(0.3) } });
             } else {
-              ds.entities.add({ polyline: { positions, width: 6, material: bc.withAlpha(0.04) } });
-              ds.entities.add({ polyline: { positions, width: 3, material: bc.withAlpha(0.08) } });
-              ds.entities.add({ polyline: { positions, width: 1, material: bc.withAlpha(0.3) } });
+              ds.entities.add({ polyline: { positions, width: 6, material: bc.withAlpha(0.1) } });
+              ds.entities.add({ polyline: { positions, width: 3, material: bc.withAlpha(0.3) } });
             }
           }
         }
