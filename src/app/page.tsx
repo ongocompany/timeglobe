@@ -13,15 +13,7 @@ import ControlBar from "@/components/ui/ControlBar";
 import HelpCard from "@/components/ui/HelpCard";
 import LightSpeed from "@/components/ui/LightSpeed";
 import YearReveal from "@/components/ui/YearReveal";
-import { MOCK_EVENTS } from "@/data/mockEvents";
 import type { MockEvent } from "@/data/mockEvents";
-
-// [cl] MOCK_EVENTS → CarouselCard 변환 (오빗 카드용)
-const EVENT_CARDS: CarouselCard[] = MOCK_EVENTS.map((ev) => ({
-  title: ev.title.ko,
-  desc: ev.summary.ko,
-  image: ev.image_url,
-}));
 
 // [cl] 뷰 모드: orbit=캐러셀, marker=마커 탐색, null=기본
 type ViewMode = "orbit" | "marker" | null;
@@ -204,7 +196,7 @@ function StackCarousel({
                 <EventDetailContent
                   event={ev}
                   theme="light"
-                  relatedEvents={MOCK_EVENTS.filter((e) => e.id !== ev.id).slice(0, 4)}
+                  relatedEvents={events.filter((e) => e.id !== ev.id).slice(0, 4)}
                 />
               </div>
             )}
@@ -327,7 +319,7 @@ function StackCarousel({
                   <EventDetailContent
                     event={ev}
                     theme="light"
-                    relatedEvents={MOCK_EVENTS.filter((e) => e.id !== ev.id).slice(0, 4)}
+                    relatedEvents={events.filter((e) => e.id !== ev.id).slice(0, 4)}
                   />
                 </div>
               )}
@@ -389,6 +381,14 @@ export default function Home() {
       prev.includes(tier) ? prev.filter((t) => t !== tier) : [...prev, tier].sort()
     );
   const [showBorder, setShowBorder] = useState(true);
+  // [cl] 카드 데이터 동적 로드 (persons_cards.json)
+  const [allEvents, setAllEvents] = useState<MockEvent[]>([]);
+  useEffect(() => {
+    fetch("/data/persons_cards.json")
+      .then((r) => r.json())
+      .then((data: MockEvent[]) => setAllEvents(data))
+      .catch(() => console.warn("카드 데이터 로드 실패"));
+  }, []);
   const carouselOpen = viewMode === "orbit";
 
   // [cl] 시네마틱 워프 시퀀스 (~5.2초):
@@ -509,7 +509,7 @@ export default function Home() {
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black">
       <Header />
-      <Dashboard events={MOCK_EVENTS} />
+      <Dashboard events={allEvents} />
       <DateDisplay />
       <TimeDial defaultYear={currentYear} warping={warpPhase !== "idle"} warpDirection={warpDirection} />
 
@@ -533,7 +533,7 @@ export default function Home() {
           globePaused={globePaused}
           globeDirection={globeDirection}
           markerMode={viewMode === "marker"}
-          events={MOCK_EVENTS}
+          events={allEvents}
           onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
           warpPhase={warpPhase}
           // onSpinWarp={handleSpinWarp} // [cl] 랜덤 타임머신 임시 비활성화 (리뷰 중 오작동 방지)
@@ -714,16 +714,16 @@ export default function Home() {
 
       {/* [cl] 오빗 캐러셀 + 카드 클릭 시 인라인 상세 콘텐츠 */}
       <Carousel3D
-        items={EVENT_CARDS}
+        items={allEvents.map((ev) => ({ title: ev.title.ko, desc: ev.summary.ko, image: ev.image_url }))}
         isOpen={carouselOpen}
         onClose={() => setViewMode(null)}
         renderDetail={(originalIndex) => {
-          const ev = MOCK_EVENTS[originalIndex];
+          const ev = allEvents[originalIndex];
           return (
             <EventDetailContent
               event={ev}
               theme="light"
-              relatedEvents={MOCK_EVENTS.filter((e) => e.id !== ev.id).slice(0, 4)}
+              relatedEvents={allEvents.filter((e) => e.id !== ev.id).slice(0, 4)}
             />
           );
         }}
