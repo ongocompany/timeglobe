@@ -225,7 +225,7 @@ interface SceneSetupProps {
   globeDirection: "left" | "right";
   markerMode: boolean;
   events: MockEvent[];
-  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
+  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }, pinned?: boolean) => void;
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear: number; // [cl] 역사 국경선 표시용
@@ -826,19 +826,19 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       const clickPos = { x: cx, y: cy };
 
-      // [cl] 스택(2개 이상): 툴팁 숨기고 캐러셀 팝업 (flyTo 없음)
+      // [cl] 스택(2개 이상): 툴팁 숨기고 캐러셀 팝업 (클릭=고정)
       if (nearbyEvents.length > 1) {
         forceHideTooltipRef.current = true;
-        onStackClickRef.current?.(nearbyEvents, clickPos);
+        onStackClickRef.current?.(nearbyEvents, clickPos, true);
         return;
       }
 
-      // [cl] 단독 마커: 지구본 움직임 없이 카드만 팝업
+      // [cl] 단독 마커 클릭: 카드 팝업 고정 (바깥 클릭으로만 닫힘)
       const ev = nearbyEvents[0] ?? eventsRef.current.find((e) => e.id === picked.id.id);
       if (!ev) return;
 
       forceHideTooltipRef.current = true;
-      onStackClickRef.current?.([ev], clickPos);
+      onStackClickRef.current?.([ev], clickPos, true);
     }, ScreenSpaceEventType.LEFT_CLICK);
 
     return () => {
@@ -904,6 +904,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     // [cl] 저고도 단독 마커: 호버 시 onStackClick 트리거용 타이머
     let hoverTriggeredId: string | null = null;
     let hoverTimer: ReturnType<typeof setTimeout> | null = null;
+    let hoverResetTimer: ReturnType<typeof setTimeout> | null = null; // [cl] 마커 이탈 유예
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = viewer.canvas.getBoundingClientRect();
@@ -930,18 +931,24 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           if (hoverTriggeredId !== ev.id) {
             // 이전 타이머 정리
             if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+            if (hoverResetTimer) { clearTimeout(hoverResetTimer); hoverResetTimer = null; }
             hoverTriggeredId = ev.id;
             // [cl] 커서 위치 기준 + 20px 아래에서 캐러셀 등장 (마커 위치 대신)
             const cursorX = e.clientX, cursorY = e.clientY + 20;
             hoverTimer = setTimeout(() => {
               forceHideTooltipRef.current = true;
-              onStackClickRef.current?.([ev], { x: cursorX, y: cursorY });
+              onStackClickRef.current?.([ev], { x: cursorX, y: cursorY }, false);
               hoverTimer = null;
             }, SHOW_DELAY);
           }
+          // [cl] 이미 트리거된 마커 위에서 마우스 움직여도 재호출 안 함
+          if (hoverResetTimer) { clearTimeout(hoverResetTimer); hoverResetTimer = null; }
           markerHoverRef.current = true;
           return; // 텍스트 툴팁 로직 완전 스킵
         }
+
+        // [cl] 스택 마커가 아닌 곳으로 이동해야만 hoverTriggeredId 리셋
+        // (같은 마커 위에서 마우스 미세 이동 시 재트리거 방지)
 
         // [cl] 호버 트리거 영역 벗어남 → 타이머 정리
         if (hoverTriggeredId) {
@@ -980,10 +987,15 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         }
         markerHoverRef.current = true;
       } else {
-        // [cl] 호버 트리거 타이머 정리
-        if (hoverTriggeredId) {
+        // [cl] 호버 트리거: 마커 이탈 시 500ms 유예 후 리셋 (깜박임 방지)
+        if (hoverTriggeredId && !hoverResetTimer) {
           if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
-          hoverTriggeredId = null;
+          hoverResetTimer = setTimeout(() => {
+            hoverTriggeredId = null;
+            hoverResetTimer = null;
+            // [cl] 마커에서 완전히 벗어나면 forceHide 해제 (팝업 닫힌 후 툴팁 복원)
+            forceHideTooltipRef.current = false;
+          }, 500);
         }
         if (currentHtml !== "") { currentHtml = ""; contentChangedTime = now; }
         if (inRadius) { inRadius = false; exitTime = now; enterTime = 0; }
@@ -997,11 +1009,14 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       if (viewer.isDestroyed()) return;
       const now = performance.now();
 
-      // [cl] 스택 클릭 시 툴팁 즉시 강제 숨김
+      // [cl] 캐러셀 팝업 활성 중 → 텍스트 툴팁 숨김 유지
       if (forceHideTooltipRef.current) {
-        forceHideTooltipRef.current = false;
-        visible = false; shownHtml = ""; inRadius = false; enterTime = 0;
-        tooltipEl.style.opacity = "0";
+        if (visible) {
+          visible = false; shownHtml = ""; inRadius = false; enterTime = 0;
+          tooltipEl.style.opacity = "0";
+        }
+        rafId = requestAnimationFrame(tick);
+        return; // [cl] 팝업이 닫힐 때까지 툴팁 로직 전부 스킵
       }
 
       // [cl] 표시: 딜레이 없이 즉시 (CSS 슬라이드인 애니메이션이 각 row에 적용됨)
@@ -1042,6 +1057,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
       cancelAnimationFrame(rafId);
       if (hoverTimer) clearTimeout(hoverTimer);
+      if (hoverResetTimer) clearTimeout(hoverResetTimer);
       tooltipEl.remove();
       markerHoverRef.current = false;
     };
@@ -2242,7 +2258,7 @@ interface CesiumGlobeProps {
   globeDirection?: "left" | "right";
   markerMode?: boolean;
   events?: MockEvent[];
-  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }) => void;
+  onStackClick?: (events: MockEvent[], pos: { x: number; y: number }, pinned?: boolean) => void;
   warpPhase?: WarpPhase;
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear?: number; // [cl] 역사 국경선 표시용
