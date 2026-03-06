@@ -31,7 +31,7 @@ if env_path.exists():
 # API 설정 (모델별로 main()에서 세팅)
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3-flash-preview"
 
 QWEN_KEY = os.environ.get("QWEN_API_KEY", "")
 QWEN_BASE = os.environ.get("QWEN_API_URL", "https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
@@ -131,18 +131,18 @@ def fetch_wikipedia_meta(qid, wiki_lang="ko"):
 # ── 카테고리별 프롬프트 ──────────────────────────────
 
 CARD_SCHEMA = '''{
-  "description_ko": "한국어 상세 설명 (300자 이상, 400자 미만)",
-  "description_en": "English description (under 500 chars)",
-  "key_achievements": ["핵심 포인트1", "포인트2", "포인트3"],
-  "related_events": ["관련 역사 이벤트1", "이벤트2"],
-  "era_context": "시대적 맥락 한 줄 설명",
-  "fun_fact": "흥미로운 사실 하나"
+  "description_ko": "한국어 설명 (사실 기반, 100~400자. 짧아도 된다)",
+  "description_en": "English description (2~3 sentences max)",
+  "key_achievements": ["업적 1~3개, 각 20자 이내"],
+  "related_events": ["관련 사건 1~3개, 각 15자 이내"],
+  "era_context": "시대 맥락 한 줄 50자 이내 (모르면 빈 문자열)",
+  "fun_fact": "흥미로운 사실 한 줄 50자 이내 (없으면 빈 문자열)"
 }'''
 
 CATEGORY_INSTRUCTIONS = {
     "persons": {
         "subject": "역사 인물",
-        "desc_guide": "이 인물의 생애, 주요 업적, 역사적 맥락과 의의를 교과서 서술처럼 풍부하게 설명합니다.",
+        "desc_guide": "이 인물의 생애, 주요 업적, 역사적 의의를 간결하게 서술하라.",
         "info_builder": lambda d: (
             f"- 이름: {d.get('name_ko', '')} ({d.get('name_en', '')})\n"
             f"- 생몰년: {d.get('birth_year', '?')} ~ {d.get('death_year', '?')}\n"
@@ -153,7 +153,7 @@ CATEGORY_INSTRUCTIONS = {
     },
     "events": {
         "subject": "역사적 사건",
-        "desc_guide": "이 사건의 배경, 전개 과정, 결과, 그리고 역사적 영향과 의의를 교과서 서술처럼 풍부하게 설명합니다.",
+        "desc_guide": "이 사건의 배경, 전개 과정, 결과, 역사적 영향을 간결하게 서술하라.",
         "info_builder": lambda d: (
             f"- 사건명: {d.get('name_ko', '')} ({d.get('name_en', '')})\n"
             f"- 시기: {d.get('start_year', '?')} ~ {d.get('end_year', '?')}\n"
@@ -165,7 +165,7 @@ CATEGORY_INSTRUCTIONS = {
     },
     "artworks": {
         "subject": "예술 작품 / 문화유산",
-        "desc_guide": "이 작품의 창작 배경, 예술적 특징, 문화사적 의의를 교과서 서술처럼 풍부하게 설명합니다.",
+        "desc_guide": "이 작품의 창작 배경, 예술적 특징, 문화사적 의의를 간결하게 서술하라.",
         "info_builder": lambda d: (
             f"- 작품명: {d.get('name_ko', '')} ({d.get('name_en', '')})\n"
             f"- 연도: {d.get('year', '?')}\n"
@@ -176,7 +176,7 @@ CATEGORY_INSTRUCTIONS = {
     },
     "inventions": {
         "subject": "발명 / 기술 혁신",
-        "desc_guide": "이 발명의 배경, 작동 원리 또는 핵심 개념, 사회적·기술적 영향을 교과서 서술처럼 풍부하게 설명합니다.",
+        "desc_guide": "이 발명의 배경, 핵심 개념, 사회적·기술적 영향을 간결하게 서술하라.",
         "info_builder": lambda d: (
             f"- 발명명: {d.get('name_ko', '')} ({d.get('name_en', '')})\n"
             f"- 연도: {d.get('year', '?')}\n"
@@ -187,7 +187,7 @@ CATEGORY_INSTRUCTIONS = {
     },
     "items": {
         "subject": "역사적 유물 / 아이템",
-        "desc_guide": "이 유물의 기원, 특징, 발견 경위, 역사적·문화적 의의를 교과서 서술처럼 풍부하게 설명합니다.",
+        "desc_guide": "이 유물의 기원, 특징, 발견 경위, 역사적·문화적 의의를 간결하게 서술하라.",
         "info_builder": lambda d: (
             f"- 유물명: {d.get('name_ko', '')} ({d.get('name_en', '')})\n"
             f"- 연도: {d.get('year', '?')}\n"
@@ -203,23 +203,23 @@ def build_card_prompt(category, item, wiki_text):
     cfg = CATEGORY_INSTRUCTIONS[category]
     info_text = cfg["info_builder"](item)
 
-    return f"""당신은 역사 교육 카드 콘텐츠 전문가입니다.
+    return f"""너는 세계사 백과사전 편집자이다.
+아래 Wikipedia 본문을 읽고 카드 콘텐츠를 작성하라. 유효한 JSON만 출력하라.
 
-아래 Wikipedia 본문을 읽고, 다음 JSON 형식으로 카드 데이터를 만들어주세요.
-반드시 유효한 JSON만 출력하세요. 마크다운 코드블록이나 설명 없이 순수 JSON만.
+## 절대 규칙
+1. 확실히 아는 사실만 써라. 추측, 상상, 과장 절대 금지.
+2. description_ko는 평서문으로 써라. ("~이다", "~했다", "~되었다") 경어체 절대 금지.
+3. description_ko는 100~400자. 짧아도 된다. 400자 넘기면 잘린다.
+4. 모르는 필드는 빈 문자열("")이나 빈 배열([])로 남겨라.
 
 대상 유형: {cfg["subject"]}
-
-★ 절대 규칙: description_ko는 300자 이상 400자 미만 (이 범위를 벗어나면 실패입니다!)
-★ 400자를 절대 넘기지 마세요. 넘기면 잘립니다.
-★ description_ko는 반드시 평서문으로 써라. ("~이다", "~했다", "~되었다") 경어체("~합니다", "~했습니다") 절대 금지.
-{cfg["desc_guide"]}
-
-출력 형식:
-{CARD_SCHEMA}
+서술 방향: {cfg["desc_guide"]}
 
 {cfg["subject"]} 정보:
 {info_text}
+
+출력 형식:
+{CARD_SCHEMA}
 
 Wikipedia 본문:
 {wiki_text}
@@ -240,7 +240,8 @@ def _call_gemini(prompt):
     headers = {"Content-Type": "application/json"}
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096},
+        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096,
+                              "thinkingConfig": {"thinkingBudget": 0}},
     })
 
     for attempt in range(MAX_RETRIES):
