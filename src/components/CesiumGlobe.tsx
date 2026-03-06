@@ -232,10 +232,11 @@ interface SceneSetupProps {
   visibleTiers?: number[];   // [mk] 표시할 티어 목록 (기본: [1,2,3,4])
   showFill?: boolean;        // [mk] OHM 폴리곤 채우기 여부 (기본: true)
   showBorder?: boolean;      // [mk] OHM 국경선 표시 여부 (기본: true)
+  popupOpen?: boolean;       // [cl] 캐러셀/팝업 열림 상태 → 툴팁 숨김용
   // [cl] BlurStage 비활성화됨 — 향후 커스텀 셰이더 구현 시 재활용 가능
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear, visibleTiers, showFill, showBorder }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear, visibleTiers, showFill, showBorder, popupOpen = false }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -263,8 +264,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] onStackClick ref (단독+스택 공통 콜백)
   const onStackClickRef = useRef(onStackClick);
   useEffect(() => { onStackClickRef.current = onStackClick; }, [onStackClick]);
-  // [cl] 툴팁 강제 숨김 ref: 스택 클릭 시 툴팁 즉시 제거
-  // [cl] forceHideTooltipRef 제거됨 — 캐러셀 오버레이(z-84)가 툴팁(z-50)을 자연스럽게 가림
+  // [cl] 캐러셀/팝업 열림 상태 ref (tick에서 툴팁 숨김 판단용)
+  const popupOpenRef = useRef(popupOpen);
+  useEffect(() => { popupOpenRef.current = popupOpen; }, [popupOpen]);
   // [cl] events ref
   const eventsRef = useRef(events);
   useEffect(() => { eventsRef.current = events; }, [events]);
@@ -889,13 +891,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     tooltipEl.style.cssText = TEXT_STYLES;
     viewer.container.appendChild(tooltipEl);
 
-    // [cl] DEBUG: 화면 좌상단 디버그 표시 (문제 해결 후 제거)
-    const debugEl = document.createElement("div");
-    debugEl.style.cssText = "position:fixed;top:8px;left:200px;z-index:9999;background:rgba(0,0,0,0.85);color:#0f0;font:12px monospace;padding:6px 12px;border-radius:6px;pointer-events:none;";
-    debugEl.textContent = "tooltip: waiting...";
-    document.body.appendChild(debugEl);
-    let debugCounter = 0;
-
     let inRadius = false;
     let visible = false;
     let enterTime = 0;
@@ -912,7 +907,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       const my = e.clientY - rect.top;
       const now = performance.now();
 
-      debugCounter++;
       const nearby: { ev: MockEvent; dist: number; sx: number; sy: number }[] = [];
       for (const ev of eventsRef.current) {
         const pos3d = Cartesian3.fromDegrees(ev.location_lng, ev.location_lat);
@@ -922,9 +916,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         if (dist < HOVER_RADIUS) nearby.push({ ev, dist, sx: sp.x, sy: sp.y });
       }
       nearby.sort((a, b) => a.dist - b.dist);
-
-      // [cl] DEBUG — 화면 좌상단에 상태 표시 (문제 해결 후 제거)
-      debugEl.textContent = `#${debugCounter} near:${nearby.length} inR:${inRadius} vis:${visible} eT:${enterTime > 0 ? "Y" : "N"} op:${tooltipEl.style.opacity}`;
 
       if (nearby.length > 0) {
         const shown = nearby.slice(0, MAX_DISPLAY);
@@ -970,6 +961,16 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       if (viewer.isDestroyed()) return;
       const now = performance.now();
 
+      // [cl] 캐러셀 열려있으면 툴팁 강제 숨김
+      if (popupOpenRef.current) {
+        if (visible) {
+          visible = false; shownHtml = ""; exitTime = 0;
+          tooltipEl.style.opacity = "0";
+        }
+        rafId = requestAnimationFrame(tick);
+        return;
+      }
+
       // [cl] 표시: 딜레이 없이 즉시 (CSS 슬라이드인 애니메이션이 각 row에 적용됨)
       if (inRadius && !visible && enterTime > 0 && (now - enterTime) >= SHOW_DELAY) {
         if (currentHtml) {
@@ -1008,7 +1009,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
       }
       cancelAnimationFrame(rafId);
       tooltipEl.remove();
-      debugEl.remove(); // [cl] DEBUG 제거
       markerHoverRef.current = false;
     };
   }, [viewer, markerMode]);
@@ -2215,6 +2215,7 @@ interface CesiumGlobeProps {
   visibleTiers?: number[];    // [mk] 표시할 티어 목록 (기본: [1,2,3,4])
   showFill?: boolean;         // [mk] OHM 폴리곤 채우기 여부 (기본: true)
   showBorder?: boolean;       // [mk] OHM 국경선 표시 여부 (기본: true)
+  popupOpen?: boolean;        // [cl] 캐러셀/팝업 열림 상태 → 툴팁 숨김용
 }
 
 // [cl] ★ 모듈 레벨 상수: 렌더링마다 새 객체 생성 방지 → Viewer 재생성 차단
@@ -2234,6 +2235,7 @@ export default function CesiumGlobe({
   visibleTiers,
   showFill,
   showBorder,
+  popupOpen = false,
 }: CesiumGlobeProps) {
   return (
     <Viewer
@@ -2266,6 +2268,7 @@ export default function CesiumGlobe({
         visibleTiers={visibleTiers}
         showFill={showFill}
         showBorder={showBorder}
+        popupOpen={popupOpen}
       />
       {/* [cl] BlurStage 비활성화 — PostProcessStage는 화면 전체(지구본+라벨+배경)에
           적용되므로 개별 폴리곤 엣지 블러 불가. CesiumJS 기본 API 한계.

@@ -542,6 +542,7 @@ export default function Home() {
           visibleTiers={visibleTiers}
           showFill={showFill}
           showBorder={showBorder}
+          popupOpen={!!stackState}
         />
       </div>
 
