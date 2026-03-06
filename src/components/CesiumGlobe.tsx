@@ -1326,7 +1326,37 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const currentBorderFileRef = useRef<string | null>(null);
   const borderLoadingRef = useRef(false);
 
-  // [cl] GeoJSON Feature에서 폴리곤 링 좌표 추출 → Cartesian3 배열
+  // [cl] Douglas-Peucker 폴리라인 단순화 — 데이터 소스별 복잡도 차이 균일화
+  // tolerance: 도(degree) 단위 허용 오차 (0.05° ≈ 5.5km)
+  const SIMPLIFY_TOLERANCE = 0.05;
+  function simplifyRing(coords: [number, number][]): [number, number][] {
+    if (coords.length <= 3) return coords;
+    // [cl] Douglas-Peucker: 시작/끝 잇는 직선에서 가장 먼 점이 tolerance 이내면 중간 점 제거
+    function perpendicularDist(p: [number, number], a: [number, number], b: [number, number]): number {
+      const dx = b[0] - a[0], dy = b[1] - a[1];
+      const lenSq = dx * dx + dy * dy;
+      if (lenSq === 0) return Math.sqrt((p[0] - a[0]) ** 2 + (p[1] - a[1]) ** 2);
+      const t = Math.max(0, Math.min(1, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / lenSq));
+      return Math.sqrt((p[0] - (a[0] + t * dx)) ** 2 + (p[1] - (a[1] + t * dy)) ** 2);
+    }
+    function dp(pts: [number, number][], tol: number): [number, number][] {
+      if (pts.length <= 2) return pts;
+      let maxDist = 0, maxIdx = 0;
+      for (let i = 1; i < pts.length - 1; i++) {
+        const d = perpendicularDist(pts[i], pts[0], pts[pts.length - 1]);
+        if (d > maxDist) { maxDist = d; maxIdx = i; }
+      }
+      if (maxDist > tol) {
+        const left = dp(pts.slice(0, maxIdx + 1), tol);
+        const right = dp(pts.slice(maxIdx), tol);
+        return left.slice(0, -1).concat(right);
+      }
+      return [pts[0], pts[pts.length - 1]];
+    }
+    return dp(coords, SIMPLIFY_TOLERANCE);
+  }
+
+  // [cl] GeoJSON Feature에서 폴리곤 링 좌표 추출 → 단순화 → Cartesian3 배열
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function extractRings(geometry: any): Cartesian3[][] {
     const rings: Cartesian3[][] = [];
@@ -1334,19 +1364,21 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     if (geometry.type === "Polygon") {
       for (const ring of geometry.coordinates) {
-        rings.push(ring.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+        const simplified = simplifyRing(ring);
+        rings.push(simplified.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
       }
     } else if (geometry.type === "MultiPolygon") {
       for (const polygon of geometry.coordinates) {
         for (const ring of polygon) {
-          rings.push(ring.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+          const simplified = simplifyRing(ring);
+          rings.push(simplified.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
         }
       }
     }
     return rings;
   }
 
-  // [cl] 외곽 링만 추출 (국경선용 — 내부 hole 링 제외)
+  // [cl] 외곽 링만 추출 (국경선용 — 내부 hole 링 제외) + 단순화
   // Polygon: coordinates[0]만, MultiPolygon: 각 polygon의 [0]만
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function extractOuterRings(geometry: any): Cartesian3[][] {
@@ -1355,12 +1387,14 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
     if (geometry.type === "Polygon") {
       if (geometry.coordinates.length > 0) {
-        rings.push(geometry.coordinates[0].map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+        const simplified = simplifyRing(geometry.coordinates[0]);
+        rings.push(simplified.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
       }
     } else if (geometry.type === "MultiPolygon") {
       for (const polygon of geometry.coordinates) {
         if (polygon.length > 0) {
-          rings.push(polygon[0].map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
+          const simplified = simplifyRing(polygon[0]);
+          rings.push(simplified.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat)));
         }
       }
     }
