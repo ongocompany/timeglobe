@@ -31,6 +31,7 @@ import {
   CustomDataSource,
   PolylineDashMaterialProperty,
   CallbackProperty,
+  ColorMaterialProperty,
   EllipseGraphics,
   ConstantProperty,
 } from "cesium";
@@ -1483,15 +1484,28 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   // [cl] 고도 기반 경계선 페이드: 5000km 이하 = 1.0, 10000km 이상 = 0.0, 사이 = 선형 보간
   const borderAlphaRef = useRef(1.0);
 
-  // [cl] 대시 머티리얼 헬퍼 — CallbackProperty로 altitude 연동 알파
-  function makeDashMaterial(baseColor: Color, baseAlpha: number, dashLen: number) {
+  // [cl] 경계선 색상 — 50% 그레이, 고도 연동 알파
+  const BORDER_GRAY = Color.fromCssColorString("#808080");
+
+  function makeSolidBorder() {
     let lastAlpha = -1;
-    let cached = baseColor.withAlpha(baseAlpha);
+    let cached = BORDER_GRAY.withAlpha(1);
+    return new ColorMaterialProperty(
+      new CallbackProperty(() => {
+        const a = borderAlphaRef.current;
+        if (a !== lastAlpha) { lastAlpha = a; cached = BORDER_GRAY.withAlpha(a); }
+        return cached;
+      }, false)
+    );
+  }
+
+  function makeDashBorder(dashLen: number) {
+    let lastAlpha = -1;
+    let cached = BORDER_GRAY.withAlpha(1);
     return new PolylineDashMaterialProperty({
       color: new CallbackProperty(() => {
         const a = borderAlphaRef.current;
-        const target = baseAlpha * a;
-        if (target !== lastAlpha) { lastAlpha = target; cached = baseColor.withAlpha(target); }
+        if (a !== lastAlpha) { lastAlpha = a; cached = BORDER_GRAY.withAlpha(a); }
         return cached;
       }, false),
       dashLength: dashLen,
@@ -1609,22 +1623,16 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         ? Color.fromCssColorString(meta.fill_color).withAlpha(0.45)
         : defaultBorderColor;
 
-      // ── [cl] BP 값에 따른 렌더링 분기 — 대시 + 고도 페이드 ──
+      // ── [cl] BP 기반 렌더링 — T1=실선, T2=점선, 전부 1px 50% 그레이 ──
       const rings = extractRings(feature.geometry);
       for (const positions of rings) {
         if (positions.length < 2) continue;
-        if (bp <= 1) {
-          // [cl] BP=1 (근사치): 넓은 대시, 긴 간격 — "시간의 안개"
-          ds.entities.add({ polyline: { positions, width: 10, material: makeDashMaterial(lineColor, 0.1, 24) } });
-          ds.entities.add({ polyline: { positions, width: 5, material: makeDashMaterial(lineColor, 0.3, 24) } });
-        } else if (bp === 2) {
-          // [cl] BP=2 (중간): 중간 대시
-          ds.entities.add({ polyline: { positions, width: 8, material: makeDashMaterial(lineColor, 0.1, 16) } });
-          ds.entities.add({ polyline: { positions, width: 4, material: makeDashMaterial(lineColor, 0.3, 16) } });
+        if (bp >= 3) {
+          // [cl] BP=3 (확정 국경, T1급): 실선
+          ds.entities.add({ polyline: { positions, width: 1, material: makeSolidBorder() } });
         } else {
-          // [cl] BP=3 (확정 국경): 짧은 대시, 선명
-          ds.entities.add({ polyline: { positions, width: 6, material: makeDashMaterial(lineColor, 0.1, 12) } });
-          ds.entities.add({ polyline: { positions, width: 3, material: makeDashMaterial(lineColor, 0.3, 12) } });
+          // [cl] BP=1~2 (근사치, T2급): 점선
+          ds.entities.add({ polyline: { positions, width: 1, material: makeDashBorder(12) } });
         }
       }
 
@@ -1883,11 +1891,9 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             if (entityTier === 1) {
-              ds.entities.add({ polyline: { positions, width: 8, material: makeDashMaterial(bc, 0.1, 16) } });
-              ds.entities.add({ polyline: { positions, width: 4, material: makeDashMaterial(bc, 0.3, 16) } });
+              ds.entities.add({ polyline: { positions, width: 1, material: makeSolidBorder() } });
             } else {
-              ds.entities.add({ polyline: { positions, width: 6, material: makeDashMaterial(bc, 0.1, 16) } });
-              ds.entities.add({ polyline: { positions, width: 3, material: makeDashMaterial(bc, 0.3, 16) } });
+              ds.entities.add({ polyline: { positions, width: 1, material: makeDashBorder(12) } });
             }
           }
         }
@@ -1936,19 +1942,15 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
         const entityTier = csEntity.tier;
 
-        // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일 대시 + 고도 페이드)
-        // extractOuterRings: 내부 hole 링 제외
+        // [cl] CShapes 외곽선 — T1=실선, T2=점선, 1px 50% 그레이
         if (showBorderRef.current && entityTier <= 2) {
           const outerRings = extractOuterRings(feat.geometry);
-          const bc = Color.WHITE;
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             if (entityTier === 1) {
-              ds.entities.add({ polyline: { positions, width: 8, material: makeDashMaterial(bc, 0.1, 16) } });
-              ds.entities.add({ polyline: { positions, width: 4, material: makeDashMaterial(bc, 0.3, 16) } });
+              ds.entities.add({ polyline: { positions, width: 1, material: makeSolidBorder() } });
             } else {
-              ds.entities.add({ polyline: { positions, width: 6, material: makeDashMaterial(bc, 0.1, 16) } });
-              ds.entities.add({ polyline: { positions, width: 3, material: makeDashMaterial(bc, 0.3, 16) } });
+              ds.entities.add({ polyline: { positions, width: 1, material: makeDashBorder(12) } });
             }
           }
         }
@@ -2084,7 +2086,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     const onPreRender = () => {
       if (viewer.isDestroyed()) return;
       const altKm = viewer.camera.positionCartographic.height / 1000;
-      borderAlphaRef.current = altKm >= 10000 ? 0 : altKm <= 5000 ? 1 : 1 - (altKm - 5000) / 5000;
+      borderAlphaRef.current = altKm >= 3000 ? 0 : 1;
     };
     viewer.scene.preRender.addEventListener(onPreRender);
     return () => { if (!viewer.isDestroyed()) viewer.scene.preRender.removeEventListener(onPreRender); };
