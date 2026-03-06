@@ -29,7 +29,7 @@ import {
   DirectionalLight,
   CameraEventType,
   CustomDataSource,
-  PolylineDashMaterialProperty,
+  PolylineGlowMaterialProperty,
   EllipseGraphics,
   ConstantProperty,
 } from "cesium";
@@ -1592,33 +1592,34 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       // ── [cl] BP 값에 따른 렌더링 분기 ──
       if (bp <= 1) {
-        // [cl] BP=1 (근사치): 매우 얇은 점선 — "시간의 안개" 국경 불확실 표현
+        // [cl] BP=1 (근사치): 글로우 페이드아웃 — "시간의 안개" 국경 불확실 표현
+        // 선 중심은 불투명, 바깥으로 갈수록 투명해짐
         const rings = extractRings(feature.geometry);
         for (const positions of rings) {
           if (positions.length < 2) continue;
           ds.entities.add({
             polyline: {
               positions,
-              width: 0.8,
-              material: new PolylineDashMaterialProperty({
-                color: lineColor.withAlpha(0.25),
-                dashLength: 16,
+              width: 6,
+              material: new PolylineGlowMaterialProperty({
+                glowPower: 0.7,
+                color: lineColor.withAlpha(0.3),
               }),
             },
           });
         }
       } else if (bp === 2) {
-        // [cl] BP=2 (중간): 점선 polyline — 경계 존재하나 불확실
+        // [cl] BP=2 (중간): 글로우 + 살짝 선명 — 경계 존재하나 불확실
         const rings = extractRings(feature.geometry);
         for (const positions of rings) {
           if (positions.length < 2) continue;
           ds.entities.add({
             polyline: {
               positions,
-              width: 1.2,
-              material: new PolylineDashMaterialProperty({
-                color: lineColor,
-                dashLength: 12,
+              width: 4,
+              material: new PolylineGlowMaterialProperty({
+                glowPower: 0.4,
+                color: lineColor.withAlpha(0.5),
               }),
             },
           });
@@ -1886,20 +1887,21 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       for (const feature of geojson.features) {
         // [cl] 외곽선 — T1/T2만 표시, T3/T4는 국경선 없음
-        // T1: 1.5px 실선 80% 회색 | T2: 1px 점선 80% 회색
+        // T1: 글로우 선명 (0.3) | T2: 글로우 연한 페이드 (0.5)
         // extractOuterRings: 내부 hole 링 제외, 국경(외곽)만 그림
         if (showBorderRef.current && entityTier <= 2) {
           const outerRings = extractOuterRings(feature.geometry);
-          const borderGray = Color.WHITE.withAlpha(0.8);
+          const borderColor = Color.WHITE.withAlpha(entityTier === 1 ? 0.7 : 0.4);
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             ds.entities.add({
               polyline: {
                 positions,
-                width: 1.0,
-                material: entityTier === 1
-                  ? borderGray
-                  : new PolylineDashMaterialProperty({ color: borderGray, dashLength: 8 }),
+                width: entityTier === 1 ? 4 : 3,
+                material: new PolylineGlowMaterialProperty({
+                  glowPower: entityTier === 1 ? 0.3 : 0.5,
+                  color: borderColor,
+                }),
               },
             });
           }
@@ -1949,20 +1951,21 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
         const entityTier = csEntity.tier;
 
-        // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일: T1=1.5px 실선, T2=1px 점선)
+        // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일 글로우 스타일)
         // extractOuterRings: 내부 hole 링 제외
         if (showBorderRef.current && entityTier <= 2) {
           const outerRings = extractOuterRings(feat.geometry);
-          const borderGray = Color.WHITE.withAlpha(0.8);
+          const borderColor = Color.WHITE.withAlpha(entityTier === 1 ? 0.7 : 0.4);
           for (const positions of outerRings) {
             if (positions.length < 2) continue;
             ds.entities.add({
               polyline: {
                 positions,
-                width: 1.0,
-                material: entityTier === 1
-                  ? borderGray
-                  : new PolylineDashMaterialProperty({ color: borderGray, dashLength: 8 }),
+                width: entityTier === 1 ? 4 : 3,
+                material: new PolylineGlowMaterialProperty({
+                  glowPower: entityTier === 1 ? 0.3 : 0.5,
+                  color: borderColor,
+                }),
               },
             });
           }
