@@ -46,9 +46,10 @@ OUTPUT_DIR = Path("/mnt/data2/wikidata/output")
 CARD_DIR = OUTPUT_DIR / "cards"
 CATEGORIES = ["persons", "events", "artworks", "inventions", "items"]
 
-# 카테고리별 입력 파일
+# 카테고리별 입력 파일 (final/ 최종 리스트)
+FINAL_DIR = OUTPUT_DIR / "final"
 INPUT_FILES = {
-    cat: OUTPUT_DIR / f"ai_{cat}" / f"ai_{cat}_matched.jsonl"
+    cat: FINAL_DIR / f"{cat}.jsonl"
     for cat in CATEGORIES
 }
 
@@ -333,7 +334,7 @@ def parse_json_response(text):
 def build_card_meta(category, item, thumbnail, wiki_url, wiki_lang):
     """카테고리별 메타데이터 추가"""
     meta = {
-        "_qid": item.get("_qid", ""),
+        "_qid": item.get("qid", ""),
         "_name_ko": item.get("name_ko", ""),
         "_name_en": item.get("name_en", ""),
         "_region": item.get("region", ""),
@@ -409,7 +410,7 @@ def process_category(category, test_limit=0, resume=False):
                 d = json.loads(line.strip())
             except Exception:
                 continue
-            qid = d.get("_qid")
+            qid = d.get("qid")
             if qid and qid.startswith("Q"):
                 items.append(d)
 
@@ -434,10 +435,10 @@ def process_category(category, test_limit=0, resume=False):
 
     # 테스트 모드
     if test_limit > 0:
-        remaining = [it for it in items if it["_qid"] not in processed_set]
+        remaining = [it for it in items if it["qid"] not in processed_set]
         items_to_process = remaining[:test_limit]
     else:
-        items_to_process = [it for it in items if it["_qid"] not in processed_set]
+        items_to_process = [it for it in items if it["qid"] not in processed_set]
 
     total = len(items_to_process)
     if total == 0:
@@ -452,7 +453,7 @@ def process_category(category, test_limit=0, resume=False):
 
     with open(output_path, mode) as outf:
         for i, item in enumerate(items_to_process):
-            qid = item["_qid"]
+            qid = item["qid"]
             name = item.get("name_ko", item.get("name_en", "?"))
             print(f"[{i+1}/{total}] {name} ({qid})")
 
