@@ -29,9 +29,7 @@ import {
   DirectionalLight,
   CameraEventType,
   CustomDataSource,
-  ClassificationType,
   PolylineDashMaterialProperty,
-  PolygonHierarchy,
   EllipseGraphics,
   ConstantProperty,
 } from "cesium";
@@ -230,13 +228,12 @@ interface SceneSetupProps {
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear: number; // [cl] 역사 국경선 표시용
   visibleTiers?: number[];   // [mk] 표시할 티어 목록 (기본: [1,2,3,4])
-  showFill?: boolean;        // [mk] OHM 폴리곤 채우기 여부 (기본: true)
   showBorder?: boolean;      // [mk] OHM 국경선 표시 여부 (기본: true)
   popupOpen?: boolean;       // [cl] 캐러셀/팝업 열림 상태 → 툴팁 숨김용
   // [cl] BlurStage 비활성화됨 — 향후 커스텀 셰이더 구현 시 재활용 가능
 }
 
-function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear, visibleTiers, showFill, showBorder, popupOpen = false }: SceneSetupProps) {
+function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, markerMode, events, onStackClick, warpPhase = "idle", onSpinWarp, currentYear, visibleTiers, showBorder, popupOpen = false }: SceneSetupProps) {
   const { viewer, scene } = useCesium();
   const lastInteraction = useRef(Date.now());
   const isInteracting = useRef(false);
@@ -1446,7 +1443,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
   const lastT2VisibleRef = useRef<boolean>(true); // [cl] T2 초기 가시 상태
   // [mk] 지도 표시 설정 refs (prop 변경 시 렌더 함수에서 즉시 반영)
   const visibleTiersRef = useRef<number[]>(visibleTiers ?? [1, 2, 3, 4]);
-  const showFillRef = useRef<boolean>(showFill ?? true);
   const showBorderRef = useRef<boolean>(showBorder ?? true);
 
   // [cl] ★ Tier별 라벨 스타일 — 고도(카메라 거리) 기반 노출 전략
@@ -1525,35 +1521,6 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     return null;
   }
 
-  // [cl] GeoJSON Feature에서 PolygonHierarchy 추출 (BP=1 filled polygon용)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function extractPolygonHierarchies(geometry: any): PolygonHierarchy[] {
-    const hierarchies: PolygonHierarchy[] = [];
-    if (!geometry) return hierarchies;
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const toCartesians = (ring: any[]) => ring.map(([lng, lat]: [number, number]) => Cartesian3.fromDegrees(lng, lat));
-
-    if (geometry.type === "Polygon") {
-      const outer = toCartesians(geometry.coordinates[0]);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const holes = geometry.coordinates.slice(1).map((ring: any[]) =>
-        new PolygonHierarchy(toCartesians(ring))
-      );
-      hierarchies.push(new PolygonHierarchy(outer, holes));
-    } else if (geometry.type === "MultiPolygon") {
-      for (const polygon of geometry.coordinates) {
-        const outer = toCartesians(polygon[0]);
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const holes = polygon.slice(1).map((ring: any[]) =>
-          new PolygonHierarchy(toCartesians(ring))
-        );
-        hierarchies.push(new PolygonHierarchy(outer, holes));
-      }
-    }
-    return hierarchies;
-  }
-
   // [cl] GeoJSON fetch → CustomDataSource (BP 기반 분기 렌더링 + 메타데이터 라벨)
   // BORDERPRECISION: 1=근사치(블러), 2=중간(점선), 3=확정(실선)
   async function loadBordersAsPolylines(url: string, snapYear: number): Promise<{ ds: InstanceType<typeof CustomDataSource>; bp1Ratio: number }> {
@@ -1591,36 +1558,20 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
 
       // ── [cl] BP 값에 따른 렌더링 분기 ──
       if (bp <= 1) {
-        // [cl] BP=1 (근사치): 경계선 제거, 반투명 filled polygon으로 영역 표시
-        // "시간의 안개" — 국경 개념 없는 시대의 대략적 세력 범위
-        const fillColor = meta
-          ? Color.fromCssColorString(meta.fill_color).withAlpha(0.45)
-          : Color.WHITE.withAlpha(0.30);
-        try {
-          const hierarchies = extractPolygonHierarchies(feature.geometry);
-          for (const hierarchy of hierarchies) {
-            ds.entities.add({
-              polygon: {
-                hierarchy,
-                material: fillColor,
-                outline: false,
-                classificationType: ClassificationType.BOTH,
-              },
-            });
-          }
-        } catch {
-          // [cl] PolygonGraphics 크래시 시 polyline fallback (매우 얇고 투명)
-          const rings = extractRings(feature.geometry);
-          for (const positions of rings) {
-            if (positions.length < 2) continue;
-            ds.entities.add({
-              polyline: {
-                positions,
-                width: 0.5,
-                material: fillColor.withAlpha(0.15),
-              },
-            });
-          }
+        // [cl] BP=1 (근사치): 매우 얇은 점선 — "시간의 안개" 국경 불확실 표현
+        const rings = extractRings(feature.geometry);
+        for (const positions of rings) {
+          if (positions.length < 2) continue;
+          ds.entities.add({
+            polyline: {
+              positions,
+              width: 0.8,
+              material: new PolylineDashMaterialProperty({
+                color: lineColor.withAlpha(0.25),
+                dashLength: 16,
+              }),
+            },
+          });
         }
       } else if (bp === 2) {
         // [cl] BP=2 (중간): 점선 polyline — 경계 존재하나 불확실
@@ -1896,46 +1847,10 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
         ? circleEntry.color
         : `hsl(${fallbackHue}, 55%, 55%)`;
 
-      const fillColor = Color.fromCssColorString(baseColor).withAlpha(0.35);
-      const outlineColor = Color.fromCssColorString(baseColor).withAlpha(0.6);
-
       // [mk] T1 경계선: 현재 고도 기준 초기 width (이후 preRender 이벤트로 실시간 갱신)
       const entityTier = entity.tier ?? 3;
 
       for (const feature of geojson.features) {
-        // [mk] 폴리곤 채우기 (showFill OFF 시 스킵)
-        if (showFillRef.current) {
-          // [cl] filled polygon 시도 → 실패 시 polyline fallback (단, border가 켜져 있으면 스킵)
-          try {
-            const hierarchies = extractPolygonHierarchies(feature.geometry);
-            for (const hierarchy of hierarchies) {
-              ds.entities.add({
-                polygon: {
-                  hierarchy,
-                  material: fillColor,
-                  outline: false,
-                  classificationType: ClassificationType.BOTH,
-                },
-              });
-            }
-          } catch {
-            // [cl] polygon 크래시 시 polyline fallback — border가 이미 외곽선 그리면 이중 그리기 방지
-            if (!showBorderRef.current || entityTier > 2) {
-              const rings = extractRings(feature.geometry);
-              for (const positions of rings) {
-                if (positions.length < 2) continue;
-                ds.entities.add({
-                  polyline: {
-                    positions,
-                    width: 1.0,
-                    material: outlineColor,
-                  },
-                });
-              }
-            }
-          }
-        }
-
         // [cl] 외곽선 — T1/T2만 표시, T3/T4는 국경선 없음
         // T1: 1.5px 실선 80% 회색 | T2: 1px 점선 80% 회색
         // extractOuterRings: 내부 hole 링 제외, 국경(외곽)만 그림
@@ -1998,37 +1913,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
           ? circleEntry.color
           : `hsl(${fallbackHue}, 55%, 55%)`;
 
-        const fillColor = Color.fromCssColorString(baseColor).withAlpha(0.35);
-        const outlineColor = Color.fromCssColorString(baseColor).withAlpha(0.6);
         const entityTier = csEntity.tier;
-
-        // [cl] CShapes 폴리곤 채우기 (OHM과 동일 방식)
-        if (showFillRef.current) {
-          try {
-            const hierarchies = extractPolygonHierarchies(feat.geometry);
-            for (const hierarchy of hierarchies) {
-              ds.entities.add({
-                polygon: {
-                  hierarchy,
-                  material: fillColor,
-                  outline: false,
-                  classificationType: ClassificationType.BOTH,
-                },
-              });
-            }
-          } catch {
-            // [cl] polygon 크래시 시 fallback — border가 외곽선 그리면 이중 그리기 방지
-            if (!showBorderRef.current || entityTier > 2) {
-              const rings = extractRings(feat.geometry);
-              for (const positions of rings) {
-                if (positions.length < 2) continue;
-                ds.entities.add({
-                  polyline: { positions, width: 1.0, material: outlineColor },
-                });
-              }
-            }
-          }
-        }
 
         // [cl] CShapes 외곽선 — T1/T2만 (OHM과 동일: T1=1.5px 실선, T2=1px 점선)
         // extractOuterRings: 내부 hole 링 제외
@@ -2174,18 +2059,7 @@ function SceneSetup({ orbitActive, orbitPaused, globePaused, globeDirection, mar
     }
   }, [visibleTiers]);
 
-  // [mk] ★ showFill / showBorder 변경 시 OHM 재렌더링 (캐시 무효화 후)
-  useEffect(() => {
-    showFillRef.current = showFill ?? true;
-    if (!viewer || !ohmIndexRef.current) return;
-    if (ohmDsRef.current && !viewer.isDestroyed()) {
-      viewer.dataSources.remove(ohmDsRef.current, true);
-      ohmDsRef.current = null;
-    }
-    currentOhmYearRef.current = null;
-    renderOhmForYear(currentYear);
-  }, [showFill]);
-
+  // [mk] ★ showBorder 변경 시 OHM 재렌더링 (캐시 무효화 후)
   useEffect(() => {
     showBorderRef.current = showBorder ?? true;
     if (!viewer || !ohmIndexRef.current) return;
@@ -2213,7 +2087,6 @@ interface CesiumGlobeProps {
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear?: number; // [cl] 역사 국경선 표시용
   visibleTiers?: number[];    // [mk] 표시할 티어 목록 (기본: [1,2,3,4])
-  showFill?: boolean;         // [mk] OHM 폴리곤 채우기 여부 (기본: true)
   showBorder?: boolean;       // [mk] OHM 국경선 표시 여부 (기본: true)
   popupOpen?: boolean;        // [cl] 캐러셀/팝업 열림 상태 → 툴팁 숨김용
 }
@@ -2233,7 +2106,6 @@ export default function CesiumGlobe({
   onSpinWarp,
   currentYear = 1875,
   visibleTiers,
-  showFill,
   showBorder,
   popupOpen = false,
 }: CesiumGlobeProps) {
@@ -2266,7 +2138,6 @@ export default function CesiumGlobe({
         onSpinWarp={onSpinWarp}
         currentYear={currentYear}
         visibleTiers={visibleTiers}
-        showFill={showFill}
         showBorder={showBorder}
         popupOpen={popupOpen}
       />

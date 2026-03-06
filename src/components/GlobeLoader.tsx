@@ -25,7 +25,6 @@ interface GlobeLoaderProps {
   onSpinWarp?: (direction: "past" | "future") => void;
   currentYear?: number; // [cl] 역사 국경선 표시용
   visibleTiers?: number[];   // [mk] 표시할 티어 목록
-  showFill?: boolean;        // [mk] OHM 폴리곤 채우기 여부
   showBorder?: boolean;      // [mk] OHM 국경선 표시 여부
   popupOpen?: boolean;       // [cl] 캐러셀 열림 → 툴팁 숨김
 }
@@ -42,7 +41,6 @@ export default function GlobeLoader({
   onSpinWarp,
   currentYear = 1875,
   visibleTiers,
-  showFill,
   showBorder,
   popupOpen,
 }: GlobeLoaderProps) {
@@ -59,7 +57,6 @@ export default function GlobeLoader({
       onSpinWarp={onSpinWarp}
       currentYear={currentYear}
       visibleTiers={visibleTiers}
-      showFill={showFill}
       showBorder={showBorder}
       popupOpen={popupOpen}
     />

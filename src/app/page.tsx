@@ -388,7 +388,6 @@ export default function Home() {
     setVisibleTiers((prev) =>
       prev.includes(tier) ? prev.filter((t) => t !== tier) : [...prev, tier].sort()
     );
-  const [showFill, setShowFill] = useState(true);
   const [showBorder, setShowBorder] = useState(true);
   const carouselOpen = viewMode === "orbit";
 
@@ -540,7 +539,6 @@ export default function Home() {
           // onSpinWarp={handleSpinWarp} // [cl] 랜덤 타임머신 임시 비활성화 (리뷰 중 오작동 방지)
           currentYear={currentYear}
           visibleTiers={visibleTiers}
-          showFill={showFill}
           showBorder={showBorder}
           popupOpen={!!stackState}
         />
@@ -674,23 +672,15 @@ export default function Home() {
                   })}
                 </div>
               </div>
-              {/* [cl] 국경 표시 — 폴리곤(면)/경계(선) 독립 토글 */}
+              {/* [cl] 국경선 토글 */}
               <div className="flex flex-col gap-1.5">
-                <span className="text-[10px] text-white/40 uppercase tracking-wider">국경 표시</span>
-                <div className="flex gap-1.5">
-                  <button
-                    onClick={() => setShowFill((v) => !v)}
-                    className={`px-2 py-0.5 rounded text-[10px] font-medium transition-all duration-200 border ${showFill ? "bg-white/15 border-white/30 text-white/85" : "bg-transparent border-white/10 text-white/20 hover:text-white/45 hover:border-white/20"}`}
-                  >
-                    폴리곤
-                  </button>
-                  <button
-                    onClick={() => setShowBorder((v) => !v)}
-                    className={`px-2 py-0.5 rounded text-[10px] font-medium transition-all duration-200 border ${showBorder ? "bg-white/15 border-white/30 text-white/85" : "bg-transparent border-white/10 text-white/20 hover:text-white/45 hover:border-white/20"}`}
-                  >
-                    경계
-                  </button>
-                </div>
+                <span className="text-[10px] text-white/40 uppercase tracking-wider">국경선</span>
+                <button
+                  onClick={() => setShowBorder((v) => !v)}
+                  className={`px-2 py-0.5 rounded text-[10px] font-medium transition-all duration-200 border ${showBorder ? "bg-white/15 border-white/30 text-white/85" : "bg-transparent border-white/10 text-white/20 hover:text-white/45 hover:border-white/20"}`}
+                >
+                  {showBorder ? "ON" : "OFF"}
+                </button>
               </div>
             </div>
           </div>
