@@ -533,7 +533,7 @@ export default function Home() {
           globePaused={globePaused}
           globeDirection={globeDirection}
           markerMode={viewMode === "marker"}
-          events={allEvents}
+          events={allEvents.filter((ev) => ev.start_year <= currentYear && (ev.end_year == null || ev.end_year >= currentYear))}
           onStackClick={(evs, pos) => setStackState({ events: evs, pos })}
           warpPhase={warpPhase}
           // onSpinWarp={handleSpinWarp} // [cl] 랜덤 타임머신 임시 비활성화 (리뷰 중 오작동 방지)
