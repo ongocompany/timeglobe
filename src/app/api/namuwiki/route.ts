@@ -2,8 +2,6 @@
  * [mk] 나무위키 SQLite API
  * GET /api/namuwiki?q=검색어&page=0&limit=50         → 표제어 검색
  * GET /api/namuwiki?title=정확한제목&mode=article    → 본문 조회
- * GET /api/namuwiki?mode=categories                  → 분류 목록 + 항목 수
- * GET /api/namuwiki?category=분류명&page=0           → 특정 분류 항목 목록
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -68,7 +66,7 @@ function markupToHtml(text: string): string {
   html = html.replace(/\{\{\{[+\-]\d\s*(.+?)\}\}\}/g, "$1");
 
   // {{{ 텍스트 }}} (코드/노포맷)
-  html = html.replace(/\{\{\{(.+?)\}\}\}/gs, "<code>$1</code>");
+  html = html.replace(/\{\{\{([\s\S]+?)\}\}\}/g, "<code>$1</code>");
 
   // 줄바꿈 → <br>
   html = html.replace(/\n/g, "<br>");
@@ -87,7 +85,6 @@ export async function GET(req: NextRequest) {
   const mode     = searchParams.get("mode") || "search";
   const q        = searchParams.get("q") || "";
   const title    = searchParams.get("title") || "";
-  const category = searchParams.get("category") || "";
   const page     = parseInt(searchParams.get("page") || "0");
   const limit    = Math.min(parseInt(searchParams.get("limit") || "50"), 200);
   const offset   = page * limit;
@@ -120,30 +117,9 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ ...row, html: markupToHtml(row.text), categories: cats });
     }
 
-    // === 분류 목록 ===
-    if (mode === "categories") {
-      const rows = db.prepare(
-        "SELECT category, COUNT(*) as cnt FROM categories GROUP BY category ORDER BY cnt DESC LIMIT ?"
-      ).all(limit) as any[];
-      return NextResponse.json({ categories: rows });
-    }
-
-    // === 특정 분류 항목 목록 ===
-    if (mode === "category" && category) {
-      const total = (db.prepare("SELECT COUNT(*) as cnt FROM categories WHERE category = ?").get(category) as any).cnt;
-      const rows = db.prepare(`
-        SELECT a.id, a.title, a.redirect
-        FROM categories c JOIN articles a ON c.article_id = a.id
-        WHERE c.category = ?
-        ORDER BY a.title
-        LIMIT ? OFFSET ?
-      `).all(category, limit, offset) as any[];
-      return NextResponse.json({ total, page, limit, items: rows });
-    }
-
     // === 표제어 검색 (기본) [mk] ===
-    let rows: any[];
-    let total: number;
+    let rows: any[] = [];
+    let total = 0;
 
     if (q) {
       const cleaned = sanitizeFtsQuery(q);
