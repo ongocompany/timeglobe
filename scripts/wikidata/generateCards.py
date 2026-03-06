@@ -212,6 +212,7 @@ def build_card_prompt(category, item, wiki_text):
 
 ★ 절대 규칙: description_ko는 300자 이상 400자 미만 (이 범위를 벗어나면 실패입니다!)
 ★ 400자를 절대 넘기지 마세요. 넘기면 잘립니다.
+★ description_ko는 반드시 평서문으로 써라. ("~이다", "~했다", "~되었다") 경어체("~합니다", "~했습니다") 절대 금지.
 {cfg["desc_guide"]}
 
 출력 형식:
