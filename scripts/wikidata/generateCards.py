@@ -2,13 +2,14 @@
 """
 generateCards.py — QID 매칭 항목 → Wikipedia fetch → AI 카드 생성
 모든 카테고리(persons, events, artworks, inventions, items) 처리
-Gemini 3 Flash 또는 Qwen 3.5-Plus 선택 가능
+Gemini 2.5 Flash / Flash-Lite / Qwen 선택 가능
 
 Usage:
-  python3 generateCards.py --category persons --model qwen
+  python3 generateCards.py --category persons --model gemini-lite --resume
   python3 generateCards.py --category persons --model gemini --resume
+  python3 generateCards.py --category persons --model qwen
   python3 generateCards.py --category persons --test 10
-  python3 generateCards.py --category all --model qwen
+  python3 generateCards.py --category all --model gemini-lite
   python3 generateCards.py --stats
 """
 import json, os, time, argparse, urllib.request, urllib.error, urllib.parse
@@ -30,8 +31,10 @@ if env_path.exists():
 
 # API 설정 (모델별로 main()에서 세팅)
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
+GEMINI_CARD_KEY = os.environ.get("GEMINI_CARD_KEY", "")  # 유료 티어 키
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
-GEMINI_MODEL = "gemini-3-flash-preview"
+GEMINI_MODEL = "gemini-2.5-flash-preview-04-17"
+GEMINI_LITE_MODEL = "gemini-2.5-flash-lite"
 
 QWEN_KEY = os.environ.get("QWEN_API_KEY", "")
 QWEN_BASE = os.environ.get("QWEN_API_URL", "https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
@@ -55,6 +58,7 @@ INPUT_FILES = {
 
 GEMINI_DELAY = 1  # seconds between Gemini calls (paid: 1000 RPM)
 MAX_RETRIES = 3
+MAX_DESC_CHARS = 800  # description_ko 최대 길이 (2페이지)
 
 
 # ── Wikipedia 가져오기 ────────────────────────────────
@@ -131,7 +135,7 @@ def fetch_wikipedia_meta(qid, wiki_lang="ko"):
 # ── 카테고리별 프롬프트 ──────────────────────────────
 
 CARD_SCHEMA = '''{
-  "description_ko": "한국어 설명 (사실 기반, 100~400자. 짧아도 된다)",
+  "description_ko": "한국어 설명 (사실 기반, 200~800자. 위키 본문을 최대한 살려라)",
   "description_en": "English description (2~3 sentences max)",
   "key_achievements": ["업적 1~3개, 각 20자 이내"],
   "related_events": ["관련 사건 1~3개, 각 15자 이내"],
@@ -209,7 +213,7 @@ def build_card_prompt(category, item, wiki_text):
 ## 절대 규칙
 1. 확실히 아는 사실만 써라. 추측, 상상, 과장 절대 금지.
 2. description_ko는 평서문으로 써라. ("~이다", "~했다", "~되었다") 경어체 절대 금지.
-3. description_ko는 100~400자. 짧아도 된다. 400자 넘기면 잘린다.
+3. description_ko는 200~800자. 위키 본문의 핵심 내용을 최대한 살려라. 800자 넘기면 잘린다.
 4. 모르는 필드는 빈 문자열("")이나 빈 배열([])로 남겨라.
 
 대상 유형: {cfg["subject"]}
@@ -238,10 +242,13 @@ def call_llm(prompt):
 def _call_gemini(prompt):
     url = f"{GEMINI_BASE}/{MODEL}:generateContent?key={API_KEY}"
     headers = {"Content-Type": "application/json"}
+    gen_config = {"temperature": 0.3, "maxOutputTokens": 4096}
+    # Flash-Lite는 thinkingConfig 불필요
+    if "lite" not in MODEL:
+        gen_config["thinkingConfig"] = {"thinkingBudget": 0}
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096,
-                              "thinkingConfig": {"thinkingBudget": 0}},
+        "generationConfig": gen_config,
     })
 
     for attempt in range(MAX_RETRIES):
@@ -480,23 +487,39 @@ def process_category(category, test_limit=0, resume=False):
             # 2) 썸네일/URL 가져오기
             thumbnail, wiki_url = fetch_wikipedia_meta(qid, wiki_lang)
 
-            # 3) Gemini 카드 생성
-            prompt = build_card_prompt(category, item, wiki_text)
+            # 3) 카드 생성 — 짧은 위키는 AI 스킵
             t0 = time.time()
-            raw_response = call_llm(prompt)
-            elapsed = time.time() - t0
+            used_ai = False
+            wiki_body_clean = wiki_text.strip()
+            body_len = len(wiki_body_clean.replace("\n", "").replace(" ", ""))
 
-            card = parse_json_response(raw_response)
+            if body_len <= MAX_DESC_CHARS and wiki_lang == "ko":
+                # AI 스킵 — 위키 본문 직접 사용
+                card = {
+                    "description_ko": wiki_body_clean[:MAX_DESC_CHARS],
+                    "description_en": "",
+                    "key_achievements": [],
+                    "related_events": [],
+                    "era_context": "",
+                    "fun_fact": "",
+                }
+                elapsed = time.time() - t0
+                print(f"  ⚡ 위키 직접 사용 (AI 스킵, {body_len}자)")
+            else:
+                used_ai = True
+                prompt = build_card_prompt(category, item, wiki_text)
+                raw_response = call_llm(prompt)
+                elapsed = time.time() - t0
+                card = parse_json_response(raw_response)
             if card:
-                # description_ko 400자 후처리 (LLM이 정확히 못 지킴)
+                # description_ko 800자 후처리 (LLM이 정확히 못 지킴)
                 desc = card.get("description_ko", "")
-                if len(desc) > 420:
-                    # 400자 이내 마지막 마침표에서 자르기
-                    cut = desc[:400].rfind(".")
-                    if cut > 250:
+                if len(desc) > MAX_DESC_CHARS + 20:
+                    cut = desc[:MAX_DESC_CHARS].rfind(".")
+                    if cut > MAX_DESC_CHARS // 2:
                         card["description_ko"] = desc[:cut+1]
                     else:
-                        card["description_ko"] = desc[:400]
+                        card["description_ko"] = desc[:MAX_DESC_CHARS]
 
                 # 메타데이터 병합
                 meta = build_card_meta(category, item, thumbnail, wiki_url, wiki_lang)
@@ -528,8 +551,9 @@ def process_category(category, test_limit=0, resume=False):
                       f"AI실패: {progress['fail_ai']} | "
                       f"남은시간: ~{remaining_est:.0f}분 ---")
 
-            # rate limit 대기
-            time.sleep(GEMINI_DELAY)
+            # rate limit 대기 (AI 안 거친 건 스킵)
+            if used_ai:
+                time.sleep(GEMINI_DELAY)
 
     # 최종 저장
     save_progress(category, progress)
@@ -582,8 +606,8 @@ def main():
     parser = argparse.ArgumentParser(description="카드 콘텐츠 생성 (Wikipedia → AI)")
     parser.add_argument("--category", choices=CATEGORIES + ["all"], default="persons",
                         help="처리할 카테고리 (default: persons)")
-    parser.add_argument("--model", choices=["gemini", "qwen"], default="gemini",
-                        help="사용할 모델 (default: gemini)")
+    parser.add_argument("--model", choices=["gemini", "gemini-lite", "qwen"], default="gemini-lite",
+                        help="사용할 모델 (default: gemini-lite)")
     parser.add_argument("--resume", action="store_true", help="이전 진행 이어서")
     parser.add_argument("--test", type=int, default=0, help="테스트 모드 (N건만 처리)")
     parser.add_argument("--stats", action="store_true", help="전체 통계 출력")
@@ -596,18 +620,25 @@ def main():
         return
 
     # 모델 설정
-    MODEL_PROVIDER = args.model
-    if MODEL_PROVIDER == "qwen":
+    if args.model == "qwen":
+        MODEL_PROVIDER = "qwen"
         API_KEY = QWEN_KEY
         MODEL = QWEN_MODEL
         GEMINI_DELAY = args.delay if args.delay >= 0 else 1
-    else:
-        API_KEY = GEMINI_KEY
+    elif args.model == "gemini-lite":
+        MODEL_PROVIDER = "gemini"
+        API_KEY = GEMINI_CARD_KEY or GEMINI_KEY  # 유료 키 우선
+        MODEL = GEMINI_LITE_MODEL
+        GEMINI_DELAY = args.delay if args.delay >= 0 else 0.5  # lite는 더 빠름
+    else:  # gemini (full)
+        MODEL_PROVIDER = "gemini"
+        API_KEY = GEMINI_CARD_KEY or GEMINI_KEY
         MODEL = GEMINI_MODEL
         GEMINI_DELAY = args.delay if args.delay >= 0 else 1
 
     if not API_KEY:
-        print(f"✗ API 키 없음: {'QWEN_API_KEY' if MODEL_PROVIDER == 'qwen' else 'GEMINI_API_KEY'} 설정 필요")
+        key_name = "QWEN_API_KEY" if args.model == "qwen" else "GEMINI_CARD_KEY or GEMINI_API_KEY"
+        print(f"✗ API 키 없음: {key_name} 설정 필요")
         return
 
     print(f"API 키: ...{API_KEY[-8:]}")
