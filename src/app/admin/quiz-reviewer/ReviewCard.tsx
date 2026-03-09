@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export default function ReviewCard({ item }: { item: any }) {
+export default function ReviewCard({ item, imageUrl }: { item: any, imageUrl?: string | null }) {
     const [status, setStatus] = useState(item.status || "pending");
     const [comment, setComment] = useState(item.comment || "");
     const [isSaving, setIsSaving] = useState(false);
@@ -35,18 +35,37 @@ export default function ReviewCard({ item }: { item: any }) {
 
     return (
         <div className={`bg-zinc-900 rounded-xl p-8 flex flex-col lg:flex-row gap-10 border transition-all duration-300 ${getStatusBorder()}`}>
-            {/* Left Column: Target Controls */}
-            <div className="lg:w-1/3 flex flex-col justify-between">
-                <div>
-                    <div className="mb-2">
-                        <span className="px-3 py-1 bg-zinc-800 border border-zinc-700 rounded-full text-[10px] font-bold uppercase tracking-widest text-emerald-400">
-                            {item.category}
-                        </span>
+            {/* Left Column: Target Controls & Image */}
+            <div className="lg:w-2/5 flex flex-col">
+                <div className="flex justify-between items-start">
+                    <div>
+                        <div className="mb-2">
+                            <span className="px-3 py-1 bg-zinc-800 border border-zinc-700 rounded-full text-[10px] font-bold uppercase tracking-widest text-emerald-400">
+                                {item.category}
+                            </span>
+                        </div>
+                        <h2 className="text-3xl font-bold text-zinc-100 mt-3">{item.entity_name}</h2>
                     </div>
-                    <h2 className="text-3xl font-bold text-zinc-100 mt-3">{item.entity_name}</h2>
                 </div>
 
-                <div className="mt-8 space-y-5">
+                {/* Pilot Image Display */}
+                {imageUrl && (
+                    <div className="mt-6 group relative">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-sky-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <div className="relative bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800">
+                            <img
+                                src={imageUrl}
+                                alt={item.entity_name}
+                                className="w-full aspect-square object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                                <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Pilot Image Sample</p>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                <div className="mt-auto pt-8 space-y-5">
                     <div className="flex flex-col gap-2">
                         <label className="text-xs uppercase tracking-wider text-zinc-500 font-bold">리뷰 상태 (Status)</label>
                         <select
@@ -81,19 +100,21 @@ export default function ReviewCard({ item }: { item: any }) {
             </div>
 
             {/* Right Column: AI Clue Outputs */}
-            <div className="lg:w-2/3 flex flex-col gap-4 pl-0 lg:pl-10 lg:border-l border-zinc-800">
-                <div className="bg-zinc-950/50 p-5 rounded-lg border border-zinc-800/80">
-                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest block mb-3 font-bold border-b border-zinc-800/80 pb-2">Clue 1 (Text)</span>
-                    <p className="text-zinc-300 leading-relaxed text-[15px]">{item.clue_1_text}</p>
-                </div>
+            <div className="lg:w-3/5 flex flex-col gap-4 pl-0 lg:pl-10 lg:border-l border-zinc-800">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-zinc-950/50 p-5 rounded-lg border border-zinc-800/80">
+                        <span className="text-[10px] text-zinc-500 uppercase tracking-widest block mb-3 font-bold border-b border-zinc-800/80 pb-2">Clue 1 (Text)</span>
+                        <p className="text-zinc-300 leading-relaxed text-[15px]">{item.clue_1_text}</p>
+                    </div>
 
-                <div className="bg-zinc-950/50 p-5 rounded-lg border border-zinc-800/80">
-                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest block mb-3 font-bold border-b border-zinc-800/80 pb-2">Clue 2 (Text)</span>
-                    <p className="text-zinc-300 leading-relaxed text-[15px]">{item.clue_2_text}</p>
+                    <div className="bg-zinc-950/50 p-5 rounded-lg border border-zinc-800/80">
+                        <span className="text-[10px] text-zinc-500 uppercase tracking-widest block mb-3 font-bold border-b border-zinc-800/80 pb-2">Clue 2 (Text)</span>
+                        <p className="text-zinc-300 leading-relaxed text-[15px]">{item.clue_2_text}</p>
+                    </div>
                 </div>
 
                 {item.clue_3_image_concept_ko && (
-                    <div className="bg-sky-950/20 p-5 rounded-lg border border-sky-900/30 mb-4">
+                    <div className="bg-sky-950/20 p-5 rounded-lg border border-sky-900/30">
                         <span className="text-[10px] text-sky-400 uppercase tracking-widest block mb-3 font-bold border-b border-sky-900/40 pb-2">Image Concept (KR)</span>
                         <p className="text-sky-200/90 font-medium leading-relaxed tracking-wide">{item.clue_3_image_concept_ko}</p>
                     </div>
@@ -103,8 +124,10 @@ export default function ReviewCard({ item }: { item: any }) {
                     <span className="text-[10px] text-indigo-400 uppercase tracking-widest block mb-3 font-bold border-b border-zinc-800/80 pb-2">Raw Image Prompt (EN)</span>
                     <p className="text-indigo-200/80 font-mono text-[13px] leading-relaxed mb-4 p-3 bg-zinc-950 rounded border border-zinc-900">{item.clue_3_image_prompt}</p>
 
-                    <span className="text-[10px] text-rose-500 uppercase tracking-widest block mb-2 font-bold">Negative Prompt</span>
-                    <p className="text-rose-400/80 font-mono text-xs">{item.clue_3_image_negative}</p>
+                    <div className="flex flex-col gap-1">
+                        <span className="text-[10px] text-rose-500 uppercase tracking-widest block mb-1 font-bold">Negative Prompt</span>
+                        <p className="text-rose-400/80 font-mono text-xs">{item.clue_3_image_negative}</p>
+                    </div>
                 </div>
 
                 <div className="bg-amber-950/20 p-5 rounded-lg border border-amber-900/30">
