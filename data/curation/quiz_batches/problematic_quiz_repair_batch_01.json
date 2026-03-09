@@ -1,0 +1,37 @@
+[
+  {
+    "canonical_answer": "세종대왕",
+    "entity_type": "person",
+    "anchor_year": 1443,
+    "present_day_region": "서울, 대한민국",
+    "short_context": "조선 군주, 훈민정음 창제, 집현전, 백성 문해, 천문과 계측 기구 후원"
+  },
+  {
+    "canonical_answer": "이순신",
+    "entity_type": "person",
+    "anchor_year": 1597,
+    "present_day_region": "전라남도 해역, 대한민국",
+    "short_context": "조선 수군 지휘관, 명량, 해협 조류, 전쟁 일지, 왜군 상대 해전"
+  },
+  {
+    "canonical_answer": "마리 퀴리",
+    "entity_type": "person",
+    "anchor_year": 1898,
+    "present_day_region": "파리, 프랑스",
+    "short_context": "여성 과학자, 피치블렌드 정제, 라듐과 폴로늄, early 20th century Paris research, 연구의 육체적 대가"
+  },
+  {
+    "canonical_answer": "히로히토 천황",
+    "entity_type": "person",
+    "anchor_year": 1945,
+    "present_day_region": "도쿄, 일본",
+    "short_context": "쇼와 일본 천황, 전쟁기 황실 상징, 패전과 항복 방송, 생물학 연구 취미, 20세기 일본 제국"
+  },
+  {
+    "canonical_answer": "덴지 천황",
+    "entity_type": "person",
+    "anchor_year": 668,
+    "present_day_region": "아스카-오쓰 권역, 일본",
+    "short_context": "아스카 시대 일본 군주, 다이카 개신 이후 중앙집권, 백촌강 전후 동아시아 질서, 7th century Asuka court"
+  }
+]

@@ -396,17 +396,18 @@ def load_progress(category):
     return {"processed_qids": [], "success": 0, "fail_wiki": 0, "fail_ai": 0}
 
 
-def save_progress(category, progress):
-    path = get_progress_path(category)
+def save_progress(category, progress, path=None):
+    if path is None:
+        path = get_progress_path(category)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(progress, ensure_ascii=False))
 
 
 # ── 메인 처리 ────────────────────────────────────────
 
-def process_category(category, test_limit=0, resume=False):
+def process_category(category, test_limit=0, resume=False, custom_input=None, output_suffix=""):
     """카테고리별 카드 생성"""
-    input_file = INPUT_FILES[category]
+    input_file = custom_input if custom_input else INPUT_FILES[category]
     if not input_file.exists():
         print(f"✗ 입력 파일 없음: {input_file}")
         return
@@ -428,17 +429,19 @@ def process_category(category, test_limit=0, resume=False):
     print(f"모델: {MODEL}")
     print(f"{'='*60}")
 
-    # 진행 상황
-    progress = load_progress(category) if resume else {
-        "processed_qids": [], "success": 0, "fail_wiki": 0, "fail_ai": 0
-    }
+    # 진행 상황 (suffix 반영)
+    progress_path = CARD_DIR / category / f"progress{output_suffix}.json"
+    if resume and progress_path.exists():
+        progress = json.loads(progress_path.read_text())
+    else:
+        progress = {"processed_qids": [], "success": 0, "fail_wiki": 0, "fail_ai": 0}
     processed_set = set(progress["processed_qids"])
 
     if resume and processed_set:
         print(f"이어하기: {len(processed_set)}건 완료, {len(items) - len(processed_set)}건 남음")
 
-    # 출력 준비
-    output_path = get_output_path(category)
+    # 출력 준비 (suffix 반영)
+    output_path = CARD_DIR / category / f"cards_{category}{output_suffix}.jsonl"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     mode = "a" if resume and output_path.exists() else "w"
 
@@ -479,7 +482,7 @@ def process_category(category, test_limit=0, resume=False):
                 progress["fail_wiki"] += 1
                 progress["processed_qids"].append(qid)
                 if (i + 1) % 50 == 0:
-                    save_progress(category, progress)
+                    save_progress(category, progress, progress_path)
                 continue
 
             print(f"  → Wikipedia ({wiki_lang}): {len(wiki_text)} chars")
@@ -487,30 +490,13 @@ def process_category(category, test_limit=0, resume=False):
             # 2) 썸네일/URL 가져오기
             thumbnail, wiki_url = fetch_wikipedia_meta(qid, wiki_lang)
 
-            # 3) 카드 생성 — 짧은 위키는 AI 스킵
+            # 3) 카드 생성 — 전부 AI 처리
             t0 = time.time()
-            used_ai = False
-            wiki_body_clean = wiki_text.strip()
-            body_len = len(wiki_body_clean.replace("\n", "").replace(" ", ""))
-
-            if body_len <= MAX_DESC_CHARS and wiki_lang == "ko":
-                # AI 스킵 — 위키 본문 직접 사용
-                card = {
-                    "description_ko": wiki_body_clean[:MAX_DESC_CHARS],
-                    "description_en": "",
-                    "key_achievements": [],
-                    "related_events": [],
-                    "era_context": "",
-                    "fun_fact": "",
-                }
-                elapsed = time.time() - t0
-                print(f"  ⚡ 위키 직접 사용 (AI 스킵, {body_len}자)")
-            else:
-                used_ai = True
-                prompt = build_card_prompt(category, item, wiki_text)
-                raw_response = call_llm(prompt)
-                elapsed = time.time() - t0
-                card = parse_json_response(raw_response)
+            used_ai = True
+            prompt = build_card_prompt(category, item, wiki_text)
+            raw_response = call_llm(prompt)
+            elapsed = time.time() - t0
+            card = parse_json_response(raw_response)
             if card:
                 # description_ko 800자 후처리 (LLM이 정확히 못 지킴)
                 desc = card.get("description_ko", "")
@@ -541,7 +527,7 @@ def process_category(category, test_limit=0, resume=False):
 
             # 진행 상황 저장 (50건마다 + 마지막)
             if (i + 1) % 50 == 0 or (i + 1) == total:
-                save_progress(category, progress)
+                save_progress(category, progress, progress_path)
                 elapsed_total = time.time() - start_time
                 rate = (i + 1) / elapsed_total if elapsed_total > 0 else 0
                 remaining_est = (total - i - 1) / rate / 60 if rate > 0 else 0
@@ -556,7 +542,7 @@ def process_category(category, test_limit=0, resume=False):
                 time.sleep(GEMINI_DELAY)
 
     # 최종 저장
-    save_progress(category, progress)
+    save_progress(category, progress, progress_path)
 
     print(f"\n{'='*60}")
     print(f"=== {category} 완료 ===")
@@ -608,6 +594,10 @@ def main():
                         help="처리할 카테고리 (default: persons)")
     parser.add_argument("--model", choices=["gemini", "gemini-lite", "qwen"], default="gemini-lite",
                         help="사용할 모델 (default: gemini-lite)")
+    parser.add_argument("--input", type=str, default="",
+                        help="커스텀 입력 파일 (default: final/{category}.jsonl)")
+    parser.add_argument("--output-suffix", type=str, default="",
+                        help="출력 파일 접미사 (e.g. '_v2' → cards_persons_v2.jsonl)")
     parser.add_argument("--resume", action="store_true", help="이전 진행 이어서")
     parser.add_argument("--test", type=int, default=0, help="테스트 모드 (N건만 처리)")
     parser.add_argument("--stats", action="store_true", help="전체 통계 출력")
@@ -645,11 +635,20 @@ def main():
     print(f"모델: {MODEL} ({MODEL_PROVIDER})")
     print(f"딜레이: {GEMINI_DELAY}s")
 
+    # 커스텀 입력/출력 설정
+    if args.input:
+        custom_input = Path(args.input)
+    else:
+        custom_input = None
+    output_suffix = args.output_suffix
+
     if args.category == "all":
         for cat in CATEGORIES:
-            process_category(cat, test_limit=args.test, resume=args.resume)
+            process_category(cat, test_limit=args.test, resume=args.resume,
+                             custom_input=custom_input, output_suffix=output_suffix)
     else:
-        process_category(args.category, test_limit=args.test, resume=args.resume)
+        process_category(args.category, test_limit=args.test, resume=args.resume,
+                         custom_input=custom_input, output_suffix=output_suffix)
 
 
 if __name__ == "__main__":

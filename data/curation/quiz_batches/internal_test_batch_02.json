@@ -1,0 +1,37 @@
+[
+  {
+    "canonical_answer": "이순신",
+    "entity_type": "person",
+    "anchor_year": 1597,
+    "present_day_region": "전라남도 해역, 대한민국",
+    "short_context": "조선 수군 지휘관, 해협 전술, 물살, 전투 일지, 소수 함대"
+  },
+  {
+    "canonical_answer": "이븐 알하이삼",
+    "entity_type": "person",
+    "anchor_year": 1020,
+    "present_day_region": "카이로권, 이집트",
+    "short_context": "광학 연구, 카메라 옵스큐라, 빛과 시각, 관찰 중심 학문"
+  },
+  {
+    "canonical_answer": "마리 퀴리",
+    "entity_type": "person",
+    "anchor_year": 1898,
+    "present_day_region": "파리, 프랑스",
+    "short_context": "여성 과학자, 방사성 연구, 광석 정제, 발광, 연구의 육체적 대가"
+  },
+  {
+    "canonical_answer": "명량 해전",
+    "entity_type": "event",
+    "anchor_year": 1597,
+    "present_day_region": "전라남도 해역, 대한민국",
+    "short_context": "해협, 급한 물살, 소수 함대, 조선-왜군, 병목 전투"
+  },
+  {
+    "canonical_answer": "알렉산드리아",
+    "entity_type": "place",
+    "anchor_year": -250,
+    "present_day_region": "알렉산드리아, 이집트",
+    "short_context": "고대 항구 도시, 도서관, 헬레니즘, 학문과 교역의 결절점"
+  }
+]

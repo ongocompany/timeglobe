@@ -1,0 +1,22 @@
+[Unit]
+Description=TimeGlobe person candidate collector
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/timeglobe
+EnvironmentFile=/etc/timeglobe/person-candidates.env
+Environment=COLLECTOR_WORKER_ROLE=person_candidates
+Environment=WDQS_TIMEOUT_MS=90000
+Environment=WDQS_MAX_RETRIES=3
+Environment=WDQS_BASE_DELAY_MS=2000
+Environment=WDQS_REQUEST_DELAY_MS=1200
+ExecStart=/usr/bin/npm run collect:person-candidates-batch -- --resume --batch-count 12 --adaptive --safe-limit 5 --normal-limit 10 --burst-limit 20 --min-sitelinks 100 --max-sitelinks 1000 --source-lang ko --sleep-ms 1000 --max-batch-attempts 3 --batch-retry-delay-ms 15000 --probe-pause-ms 60000 --max-pause-cycles 6 --probe-log-file .cache/wdqs-probe-history.jsonl --state-file .cache/person-candidates-ko-low-state.json --report-dir .cache/person-candidate-batches/ko-low
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

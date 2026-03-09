@@ -1,0 +1,34 @@
+{
+  "session_dir": ".cache/quiz-bundle-batches/internal-test-50-rerun/20260308-210631",
+  "model": "gemini-3.1-flash-image-preview",
+  "clue_index": 0,
+  "contexts": {
+    "세종대왕": "15th century Joseon Korea, royal scientific instruments for an agrarian kingdom, East Asian materials and forms, Korean court setting",
+    "만사 무사": "14th century Sahel and Mali Empire world, West African desert trade setting, medieval trans-Saharan atmosphere",
+    "요하네스 구텐베르크": "mid-15th century Mainz in the German lands, early print workshop, European metal casting and press craft setting",
+    "이순신": "late 16th century Joseon Korea naval setting, Korean wooden warship cabin, East Asian materials and forms, not a European sailing ship interior",
+    "이븐 알하이삼": "11th century medieval Islamic world, Near Eastern scholarly environment, pre-modern optics setting",
+    "마리 퀴리": "late 19th to early 20th century European scientific labor setting, industrial chemistry atmosphere, not medieval alchemy",
+    "알렉산드리아": "Hellenistic to Roman Mediterranean intellectual port city, ancient Egyptian and Greek world, classical library atmosphere",
+    "징기스칸": "early 13th century Mongol steppe world, Inner Asian nomadic materials and forms, no medieval European heraldry"
+  },
+  "negative_overrides": {
+    "이순신": "European ship interior, pirate ship aesthetic, western admiral cabin, baroque naval decor",
+    "세종대왕": "Chinese imperial dragon throne room, modern observatory, Japanese castle interior",
+    "마리 퀴리": "male scientist silhouette, fantasy alchemy lab, medieval wizard workshop",
+    "징기스칸": "European knight banner, castle courtyard, Viking aesthetic"
+  },
+  "prompt_overrides": {
+    "마리 퀴리": "광석 정제 작업대. 검은 피치블렌드 광석 조각, 하얀 침전물이 남은 유리 비커, 산에 그을린 금속 집게, 닳은 장갑과 열린 연구 노트가 놓인 early 20th century European scientific workbench, no visible person, no male workers, no factory crowd, no alchemy imagery. stylized historical clue card illustration, premium adult strategy game tone, semi-realistic digital painting, square composition, single clear focal subject, readable at small card size, restrained cinematic lighting, no readable text, no letters, no watermark, no UI elements. Avoid crowd scene, complex battle panorama, readable text, hero poster composition, nuclear power plant, modern computer, male scientist silhouette, male workers, fantasy alchemy lab, medieval wizard workshop."
+  },
+  "answers": [
+    "세종대왕",
+    "만사 무사",
+    "요하네스 구텐베르크",
+    "이순신",
+    "이븐 알하이삼",
+    "마리 퀴리",
+    "알렉산드리아",
+    "징기스칸"
+  ]
+}

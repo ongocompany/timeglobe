@@ -1,0 +1,37 @@
+[
+  {
+    "canonical_answer": "징기스칸",
+    "entity_type": "person",
+    "anchor_year": 1206,
+    "present_day_region": "몽골 고원, 몽골",
+    "short_context": "초원 유목군주, 기마 전술, 부족 통합, 술데, 역참"
+  },
+  {
+    "canonical_answer": "장영실",
+    "entity_type": "person",
+    "anchor_year": 1438,
+    "present_day_region": "서울, 대한민국",
+    "short_context": "조선 궁정 기술자, 물시계, 천문 기구, 제작자 정체성"
+  },
+  {
+    "canonical_answer": "넬슨 만델라",
+    "entity_type": "person",
+    "anchor_year": 1994,
+    "present_day_region": "프리토리아-요하네스버그권, 남아프리카공화국",
+    "short_context": "장기 수감, 민주 전환, 화해, 인종차별 철폐 이후 정치"
+  },
+  {
+    "canonical_answer": "오스만 제국",
+    "entity_type": "event",
+    "anchor_year": 1453,
+    "present_day_region": "이스탄불, 튀르키예",
+    "short_context": "장기 지속 제국, 성채, 해협, 군사-행정 융합, 대도시 지배"
+  },
+  {
+    "canonical_answer": "테르모필레 전투",
+    "entity_type": "event",
+    "anchor_year": -480,
+    "present_day_region": "테르모필레, 그리스",
+    "short_context": "좁은 길목, 병목 지형, 고대 전투, 소수 저항, 해안 산맥"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "session_dir": ".cache/quiz-bundle-batches/internal-test-curated-50/20260309-070123",
+  "out_root": "public/quiz-image-pilot/curated50-no-overrides-tail",
+  "model": "gemini-2.5-flash-image",
+  "clue_index": 0,
+  "answers": [
+    "방콕",
+    "암만",
+    "트빌리시",
+    "명량 해전",
+    "스탈린그라드 전투",
+    "테르모필레 전투",
+    "헤이스팅스 전투",
+    "2004년 인도양 지진해일"
+  ]
+}

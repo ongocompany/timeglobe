@@ -1,0 +1,37 @@
+[
+  {
+    "canonical_answer": "세종대왕",
+    "entity_type": "person",
+    "anchor_year": 1443,
+    "present_day_region": "서울, 대한민국",
+    "short_context": "조선 군주, 문자 창제 후원, 천문과 계측 기구, 백성 중심 통치"
+  },
+  {
+    "canonical_answer": "만사 무사",
+    "entity_type": "person",
+    "anchor_year": 1324,
+    "present_day_region": "말리 제국 권역, 말리",
+    "short_context": "서아프리카 군주, 황금, 사하라 교역, 메카 순례, 팀북투"
+  },
+  {
+    "canonical_answer": "요하네스 구텐베르크",
+    "entity_type": "person",
+    "anchor_year": 1454,
+    "present_day_region": "마인츠, 독일",
+    "short_context": "금속 활자 인쇄, 금세공 배경, 압착 공방, 지식 복제"
+  },
+  {
+    "canonical_answer": "로마 제국",
+    "entity_type": "event",
+    "anchor_year": -27,
+    "present_day_region": "로마, 이탈리아",
+    "short_context": "지중해 제국, 군단, 도로망, 원형경기장, 장기 지속 통치"
+  },
+  {
+    "canonical_answer": "아테네",
+    "entity_type": "place",
+    "anchor_year": -430,
+    "present_day_region": "아테네, 그리스",
+    "short_context": "고대 도시, 민주정, 비극, 철학, 공공 광장 문화"
+  }
+]

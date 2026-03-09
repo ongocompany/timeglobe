@@ -1,0 +1,284 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1772966729945,
+  "projectRoot": "/Users/jin/Documents/development/TimeGlobe",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "16.1.6",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "19.2.3",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.3",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "next dev --webpack",
+      "build": "next build --webpack",
+      "start": "next start",
+      "lint": "eslint",
+      "collect:bootstrap": "node scripts/wikidata/run.mjs --mode bootstrap",
+      "collect:incremental": "node scripts/wikidata/run.mjs --mode incremental",
+      "collect:backfill": "node scripts/wikidata/run.mjs --mode backfill",
+      "collect:probe": "node scripts/wikidata/run.mjs --mode probe --dry-run",
+      "collect:wdqs-probe": "node scripts/wikidata/wdqsProbe.mjs",
+      "collect:person-candidates": "node scripts/wikidata/collectPersonCandidates.mjs",
+      "collect:person-candidates-batch": "node scripts/wikidata/runPersonCandidateBatches.mjs",
+      "collect:person-candidates-adaptive-once": "node scripts/wikidata/runAdaptivePersonCandidatesOnce.mjs",
+      "collect:enrich-existing": "node scripts/wikidata/enrichExistingFromSources.mjs",
+      "collect:classify-gaps": "node scripts/wikidata/classifyGapsForCuration.mjs",
+      "collect:archive-missing-summary": "node scripts/wikidata/archiveMissingSummaryEvents.mjs",
+      "supabase:apply-migration": "node scripts/supabase/applyMigration.mjs",
+      "geo:download-borders": "node scripts/geo/downloadBorders.mjs",
+      "quiz:candidates:500": "node scripts/curation/buildInternalTest500Candidates.mjs",
+      "quiz:bundle:batch": "node scripts/curation/runQuizBundleBatches.mjs",
+      "quiz:bundle-dryrun": "node scripts/curation/quizBundleModelDryRun.mjs",
+      "quiz:bundle:test1": "node scripts/curation/quizBundleModelDryRun.mjs --run --targets-file data/curation/quiz_batches/internal_test_batch_01.json",
+      "quiz:bundle:test2": "node scripts/curation/quizBundleModelDryRun.mjs --run --targets-file data/curation/quiz_batches/internal_test_batch_02.json",
+      "quiz:bundle:test3": "node scripts/curation/quizBundleModelDryRun.mjs --run --targets-file data/curation/quiz_batches/internal_test_batch_03.json",
+      "quiz:bundle:export-md": "node scripts/curation/exportQuizBatchMarkdown.mjs"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "public",
+      "scripts",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 1,
+      "lastAccessed": 1772966729930,
+      "keyFiles": [
+        "curation_decisions.json"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 12,
+      "lastAccessed": 1772966729930,
+      "keyFiles": [
+        "00_PM_Dashboard.md",
+        "01_Agent_Instructions.md",
+        "02_Project_Structure.md",
+        "PROJECT_REFERENCE.md",
+        "handoff_20260308_persons_pipeline.md"
+      ]
+    },
+    "ops": {
+      "path": "ops",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1772966729932,
+      "keyFiles": [
+        "CLAUDE.md"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 6,
+      "lastAccessed": 1772966729932,
+      "keyFiles": [
+        "file.svg",
+        "globe.svg",
+        "next.svg",
+        "vercel.svg",
+        "window.svg"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 4,
+      "lastAccessed": 1772966729933,
+      "keyFiles": [
+        "extractBasemapsPolygons.js",
+        "improveManualPolygons.js",
+        "rebuildPolygons.js"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1772966729933,
+      "keyFiles": []
+    },
+    "supabase": {
+      "path": "supabase",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1772966729933,
+      "keyFiles": []
+    },
+    "타임글로브개발": {
+      "path": "타임글로브개발",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1772966729933,
+      "keyFiles": [
+        "개발계획서 (초안).md",
+        "환영합니다!.md"
+      ]
+    },
+    "public/data": {
+      "path": "public/data",
+      "purpose": "Data files",
+      "fileCount": 1,
+      "lastAccessed": 1772966729933,
+      "keyFiles": [
+        "persons_cards.json"
+      ]
+    },
+    "public/models": {
+      "path": "public/models",
+      "purpose": "Data models",
+      "fileCount": 2,
+      "lastAccessed": 1772966729934,
+      "keyFiles": []
+    },
+    "src/app": {
+      "path": "src/app",
+      "purpose": "Application code",
+      "fileCount": 4,
+      "lastAccessed": 1772966729934,
+      "keyFiles": [
+        "favicon.ico",
+        "globals.css",
+        "layout.tsx"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 2,
+      "lastAccessed": 1772966729934,
+      "keyFiles": [
+        "CesiumGlobe.tsx",
+        "GlobeLoader.tsx"
+      ]
+    },
+    "src/data": {
+      "path": "src/data",
+      "purpose": "Data files",
+      "fileCount": 2,
+      "lastAccessed": 1772966729934,
+      "keyFiles": [
+        "mockEvents.ts",
+        "modelRegistry.json"
+      ]
+    },
+    "src/lib": {
+      "path": "src/lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1772966729934,
+      "keyFiles": [
+        "borderIndex.ts"
+      ]
+    },
+    "supabase/migrations": {
+      "path": "supabase/migrations",
+      "purpose": "Database migrations",
+      "fileCount": 9,
+      "lastAccessed": 1772966729934,
+      "keyFiles": [
+        "20260224174800_initial_schema.sql",
+        "20260225174800_event_sources_and_events_read_policy.sql",
+        "20260225181500_event_curation_fields.sql"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "scripts/wikidata/generateCards.py",
+      "accessCount": 14,
+      "lastAccessed": 1772971112341,
+      "type": "file"
+    },
+    {
+      "path": "docs/work_change_log.md",
+      "accessCount": 3,
+      "lastAccessed": 1772967564906,
+      "type": "file"
+    },
+    {
+      "path": "docs/handoff_20260308_persons_pipeline.md",
+      "accessCount": 2,
+      "lastAccessed": 1772967565645,
+      "type": "file"
+    },
+    {
+      "path": "scripts/wikidata/filterPersons.py",
+      "accessCount": 2,
+      "lastAccessed": 1772967608816,
+      "type": "file"
+    },
+    {
+      "path": "scripts/wikidata/curatePersons.py",
+      "accessCount": 1,
+      "lastAccessed": 1772967378157,
+      "type": "file"
+    },
+    {
+      "path": "scripts/wikidata/personCandidateQuery.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1772967609599,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

@@ -19,7 +19,15 @@
     "collect:classify-gaps": "node scripts/wikidata/classifyGapsForCuration.mjs",
     "collect:archive-missing-summary": "node scripts/wikidata/archiveMissingSummaryEvents.mjs",
     "supabase:apply-migration": "node scripts/supabase/applyMigration.mjs",
-    "geo:download-borders": "node scripts/geo/downloadBorders.mjs"
+    "geo:download-borders": "node scripts/geo/downloadBorders.mjs",
+    "quiz:candidates:500": "node scripts/curation/buildInternalTest500Candidates.mjs",
+    "quiz:bundle:batch": "node scripts/curation/runQuizBundleBatches.mjs",
+    "quiz:bundle-dryrun": "node scripts/curation/quizBundleModelDryRun.mjs",
+    "quiz:bundle:test1": "node scripts/curation/quizBundleModelDryRun.mjs --run --targets-file data/curation/quiz_batches/internal_test_batch_01.json",
+    "quiz:bundle:test2": "node scripts/curation/quizBundleModelDryRun.mjs --run --targets-file data/curation/quiz_batches/internal_test_batch_02.json",
+    "quiz:bundle:test3": "node scripts/curation/quizBundleModelDryRun.mjs --run --targets-file data/curation/quiz_batches/internal_test_batch_03.json",
+    "quiz:bundle:export-md": "node scripts/curation/exportQuizBatchMarkdown.mjs",
+    "quiz:image-pilot": "node scripts/curation/runQuizImagePilot.mjs --manifest data/curation/image_pilots/rerun_first15_batch01.json"
   },
   "dependencies": {
     "@gltf-transform/core": "^4.3.0",

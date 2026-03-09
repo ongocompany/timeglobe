@@ -6,7 +6,7 @@ Wikipedia 참조 없이 Gemini 2.5 Flash가 직접 작성.
 import json, os, sys, time, urllib.request, urllib.error
 
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3-flash-preview"
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_KEY}"
 DELAY = 1  # seconds between calls
 
@@ -96,24 +96,29 @@ def build_direct_prompt(category, item):
 ## 출력 형식 (JSON)
 {{
   "description_ko": "한국어 설명 (사실 기반, 100~400자. 짧아도 된다)",
-  "description_en": "English description (fact-based, concise)",
-  "key_achievements": ["핵심 업적/특징 1~3개. 확실한 것만"],
-  "related_events": ["관련 사건/인물 1~3개. 확실한 것만"],
-  "era_context": "같은 시대 세계사적 맥락 한 줄 (모르면 빈 문자열)",
-  "fun_fact": "흥미로운 사실 하나 (확실한 것만. 없으면 빈 문자열)"
+  "description_en": "English description (2~3 sentences max)",
+  "key_achievements": ["업적 1~3개, 각 20자 이내"],
+  "related_events": ["관련 사건 1~3개, 각 15자 이내"],
+  "era_context": "시대 맥락 한 줄 50자 이내 (모르면 빈 문자열)",
+  "fun_fact": "흥미로운 사실 한 줄 50자 이내 (없으면 빈 문자열)"
 }}"""
 
 
 def call_gemini(prompt):
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 1024},
+        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096,
+                          "thinkingConfig": {"thinkingBudget": 0}},
     }).encode()
     req = urllib.request.Request(GEMINI_URL, data=body,
                                 headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
             data = json.loads(resp.read())
+            usage = data.get("usageMetadata", {})
+            call_gemini.total_tokens += usage.get("totalTokenCount", 0)
+            call_gemini.total_thinking += usage.get("thoughtsTokenCount", 0)
+            call_gemini.calls += 1
             return data["candidates"][0]["content"]["parts"][0]["text"]
     except urllib.error.HTTPError as e:
         print(f"  ✗ HTTP {e.code}: {e.read().decode()[:200]}")
@@ -121,6 +126,10 @@ def call_gemini(prompt):
     except Exception as e:
         print(f"  ✗ Error: {e}")
         return None
+
+call_gemini.total_tokens = 0
+call_gemini.total_thinking = 0
+call_gemini.calls = 0
 
 
 def parse_json(text):
@@ -207,7 +216,9 @@ def main():
     out_path = f"/tmp/direct_cards_test_{category}.json"
     with open(out_path, "w") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
+    avg_tokens = call_gemini.total_tokens // max(call_gemini.calls, 1)
     print(f"\n=== 완료: {len(results)}/{len(items)} 성공 → {out_path} ===")
+    print(f"토큰: 총 {call_gemini.total_tokens:,} / thinking {call_gemini.total_thinking:,} / 건당 평균 {avg_tokens}")
 
 
 if __name__ == "__main__":

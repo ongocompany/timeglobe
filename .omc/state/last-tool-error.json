@@ -1,0 +1,7 @@
+{
+  "tool_name": "Read",
+  "tool_input_preview": "{\"file_path\":\"/Users/jin/Documents/development/TimeGlobe/docs/work_change_log.md\"}",
+  "error": "File content (40820 tokens) exceeds maximum allowed tokens (25000). Use offset and limit parameters to read specific portions of the file, or search for specific content instead of reading the whole file.",
+  "timestamp": "2026-03-08T10:59:10.360Z",
+  "retry_count": 1
+}

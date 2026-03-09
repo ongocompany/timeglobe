@@ -2,7 +2,6 @@
 /**
  * [mk] 나무위키 뷰어 페이지
  * - 표제어 검색 + 목록
- * - 분류 브라우저
  * - 본문 뷰어 (마크업 → HTML 렌더링)
  * URL: /namuwiki-viewer
  */
@@ -12,7 +11,7 @@ import { useState, useEffect, useCallback } from "react";
 type Article = { id: number; title: string; redirect?: string };
 type ArticleDetail = Article & { text: string; html: string; namespace: number; categories: string[] };
 
-type Tab = "search" | "categories" | "article";
+type Tab = "search" | "article";
 
 export default function NamuwikiViewer() {
   const [tab, setTab]               = useState<Tab>("search");
@@ -22,11 +21,6 @@ export default function NamuwikiViewer() {
   const [page, setPage]             = useState(0);
   const [loading, setLoading]       = useState(false);
   const [article, setArticle]       = useState<ArticleDetail | null>(null);
-  const [categories, setCategories] = useState<{ category: string; cnt: number }[]>([]);
-  const [catItems, setCatItems]     = useState<Article[]>([]);
-  const [selCat, setSelCat]         = useState("");
-  const [catPage, setCatPage]       = useState(0);
-  const [catTotal, setCatTotal]     = useState(0);
   const [dbReady, setDbReady]       = useState(true);
   const [error, setError]           = useState("");
 
@@ -64,35 +58,7 @@ export default function NamuwikiViewer() {
     } finally { setLoading(false); }
   }, []);
 
-  // 분류 목록
-  const loadCategories = useCallback(async () => {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/namuwiki?mode=categories&limit=200");
-      const data = await res.json();
-      setCategories(data.categories || []);
-    } finally { setLoading(false); }
-  }, []);
-
-  // 분류 항목
-  const loadCatItems = useCallback(async (cat: string, p: number) => {
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/namuwiki?mode=category&category=${encodeURIComponent(cat)}&page=${p}&limit=${LIMIT}`);
-      const data = await res.json();
-      setCatItems(data.items || []);
-      setCatTotal(data.total || 0);
-      setCatPage(p);
-    } finally { setLoading(false); }
-  }, []);
-
   useEffect(() => { search("", 0); }, [search]);
-
-  const handleTabChange = (t: Tab) => {
-    setTab(t);
-    if (t === "categories" && categories.length === 0) loadCategories();
-    if (t === "search") search(query, 0);
-  };
 
   return (
     <div style={{ fontFamily: "sans-serif", maxWidth: 1100, margin: "0 auto", padding: 20, background: "#0f0f0f", minHeight: "100vh", color: "#e0e0e0" }}>
@@ -109,12 +75,10 @@ export default function NamuwikiViewer() {
 
       {/* 탭 */}
       <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
-        {(["search", "categories"] as Tab[]).map(t => (
-          <button key={t} onClick={() => handleTabChange(t)}
-            style={{ padding: "8px 18px", background: tab === t ? "#f5c542" : "#2a2a2a", color: tab === t ? "#000" : "#ccc", border: "none", borderRadius: 6, cursor: "pointer", fontWeight: tab === t ? "bold" : "normal" }}>
-            {t === "search" ? "🔍 표제어 검색" : "📂 분류 브라우저"}
-          </button>
-        ))}
+        <button onClick={() => { setTab("search"); search(query, 0); }}
+          style={{ padding: "8px 18px", background: tab === "search" ? "#f5c542" : "#2a2a2a", color: tab === "search" ? "#000" : "#ccc", border: "none", borderRadius: 6, cursor: "pointer", fontWeight: tab === "search" ? "bold" : "normal" }}>
+          🔍 표제어 검색
+        </button>
         {article && (
           <button onClick={() => setTab("article")}
             style={{ padding: "8px 18px", background: tab === "article" ? "#f5c542" : "#2a2a2a", color: tab === "article" ? "#000" : "#ccc", border: "none", borderRadius: 6, cursor: "pointer" }}>
@@ -180,54 +144,6 @@ export default function NamuwikiViewer() {
         </div>
       )}
 
-      {/* === 분류 탭 === */}
-      {tab === "categories" && (
-        <div style={{ display: "flex", gap: 16 }}>
-          {/* 분류 목록 */}
-          <div style={{ width: 300, flexShrink: 0 }}>
-            <div style={{ color: "#888", fontSize: 12, marginBottom: 8 }}>분류 ({categories.length}개)</div>
-            <div style={{ background: "#1a1a1a", borderRadius: 8, overflow: "auto", maxHeight: "70vh" }}>
-              {categories.map((cat, i) => (
-                <div key={cat.category} onClick={() => { setSelCat(cat.category); loadCatItems(cat.category, 0); }}
-                  style={{ padding: "8px 14px", borderBottom: "1px solid #2a2a2a", cursor: "pointer", display: "flex", justifyContent: "space-between",
-                    background: selCat === cat.category ? "#2a3a1a" : i % 2 === 0 ? "#1a1a1a" : "#1e1e1e" }}
-                  onMouseEnter={e => (e.currentTarget.style.background = selCat === cat.category ? "#2a3a1a" : "#2a2a2a")}
-                  onMouseLeave={e => (e.currentTarget.style.background = selCat === cat.category ? "#2a3a1a" : i % 2 === 0 ? "#1a1a1a" : "#1e1e1e")}>
-                  <span style={{ color: "#e0e0e0", fontSize: 13 }}>{cat.category}</span>
-                  <span style={{ color: "#888", fontSize: 11 }}>{cat.cnt.toLocaleString()}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* 분류 항목 */}
-          {selCat && (
-            <div style={{ flex: 1 }}>
-              <div style={{ color: "#f5c542", fontWeight: "bold", marginBottom: 8 }}>
-                📂 {selCat} <span style={{ color: "#888", fontWeight: "normal", fontSize: 13 }}>({catTotal.toLocaleString()}개)</span>
-              </div>
-              <div style={{ background: "#1a1a1a", borderRadius: 8, overflow: "hidden" }}>
-                {catItems.map((r, i) => (
-                  <div key={r.id} onClick={() => openArticle(r.title)}
-                    style={{ padding: "8px 14px", borderBottom: "1px solid #2a2a2a", cursor: "pointer", background: i % 2 === 0 ? "#1a1a1a" : "#1e1e1e" }}
-                    onMouseEnter={e => (e.currentTarget.style.background = "#2a2a2a")}
-                    onMouseLeave={e => (e.currentTarget.style.background = i % 2 === 0 ? "#1a1a1a" : "#1e1e1e")}>
-                    <span>{r.title}</span>
-                  </div>
-                ))}
-              </div>
-              <div style={{ display: "flex", gap: 8, marginTop: 12, justifyContent: "center" }}>
-                <button onClick={() => loadCatItems(selCat, catPage - 1)} disabled={catPage === 0}
-                  style={{ padding: "6px 12px", background: "#2a2a2a", color: catPage === 0 ? "#555" : "#e0e0e0", border: "none", borderRadius: 4, cursor: catPage === 0 ? "default" : "pointer" }}>◀</button>
-                <span style={{ padding: "6px 12px", color: "#888", fontSize: 13 }}>{catPage + 1} / {Math.ceil(catTotal / LIMIT)}</span>
-                <button onClick={() => loadCatItems(selCat, catPage + 1)} disabled={(catPage + 1) * LIMIT >= catTotal}
-                  style={{ padding: "6px 12px", background: "#2a2a2a", color: (catPage + 1) * LIMIT >= catTotal ? "#555" : "#e0e0e0", border: "none", borderRadius: 4, cursor: (catPage + 1) * LIMIT >= catTotal ? "default" : "pointer" }}>▶</button>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
       {/* === 본문 탭 === */}
       {tab === "article" && article && (
         <div>
@@ -239,14 +155,14 @@ export default function NamuwikiViewer() {
             <h2 style={{ margin: 0, color: "#f5c542" }}>{article.title}</h2>
           </div>
 
-          {/* 분류 태그 */}
+          {/* 분류 태그 (정적 표시) */}
           {article.categories.length > 0 && (
             <div style={{ marginBottom: 16, display: "flex", flexWrap: "wrap", gap: 6 }}>
               {article.categories.map(cat => (
-                <button key={cat} onClick={() => { setSelCat(cat); loadCatItems(cat, 0); setTab("categories"); }}
-                  style={{ padding: "3px 10px", background: "#1e3a1e", color: "#90d090", border: "1px solid #2a5a2a", borderRadius: 12, cursor: "pointer", fontSize: 12 }}>
-                  📂 {cat}
-                </button>
+                <span key={cat}
+                  style={{ padding: "3px 10px", background: "#1e3a1e", color: "#90d090", border: "1px solid #2a5a2a", borderRadius: 12, fontSize: 12 }}>
+                  {cat}
+                </span>
               ))}
             </div>
           )}
