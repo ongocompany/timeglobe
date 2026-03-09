@@ -5,9 +5,11 @@ import ReviewCard from './ReviewCard';
 
 export const dynamic = 'force-dynamic';
 
-const PILOT_IMAGE_ROOT = '/quiz-image-pilot-new/2026-03-09T10-42-20-655Z';
+const PILOT_IMAGE_V1_ROOT = '/quiz-image-pilot-new/2026-03-09T10-42-20-655Z';
+const PILOT_IMAGE_V2_ROOT = '/quiz-image-pilot-v2/2026-03-09T11-26-08-462Z';
 const MODEL_FOR_TEXT = "Gemini 3.1 Pro";
-const MODEL_FOR_IMAGE = "Gemini 2.5 Flash Image";
+const MODEL_V1_FOR_IMAGE = "Gemini 2.5 Flash Image";
+const MODEL_V2_FOR_IMAGE = "Gemini 3.1 Flash Image";
 
 export default async function QuizReviewer() {
     let data = [];
@@ -20,20 +22,22 @@ export default async function QuizReviewer() {
         console.error(err);
     }
 
-    // Pilot targets indices (0-indexed) based on run_validation_images.mjs targets
-    const pilotIndices = new Set([0, 1, 10, 11, 22, 23, 34, 35, 6, 47]);
+    const pilotIndicesV1 = new Set([0, 1, 10, 11, 22, 23, 34, 35, 6, 47]);
+    const pilotIndicesV2 = new Set([2, 3, 4, 5, 7, 8, 9, 12, 13, 14]);
 
     return (
         <div className="min-h-screen bg-zinc-950 text-zinc-300 p-8 font-sans">
             <header className="max-w-7xl mx-auto mb-10 border-b border-zinc-800 pb-6 flex items-end justify-between">
                 <div>
                     <h1 className="text-3xl font-bold text-zinc-100 tracking-tight">AI Curation Review</h1>
-                    <p className="text-zinc-500 mt-2 text-sm tracking-wide flex gap-4">
+                    <p className="text-zinc-500 mt-2 text-sm tracking-wide flex flex-wrap gap-x-6 gap-y-2">
                         <span>50 Target Validation Phase</span>
                         <span className="text-zinc-700">|</span>
                         <span>Text: <b className="text-zinc-400">{MODEL_FOR_TEXT}</b></span>
                         <span className="text-zinc-700">|</span>
-                        <span>Image: <b className="text-zinc-400">{MODEL_FOR_IMAGE}</b></span>
+                        <span>Image V1: <b className="text-zinc-400">{MODEL_V1_FOR_IMAGE}</b></span>
+                        <span className="text-zinc-700">|</span>
+                        <span>Image V2: <b className="text-zinc-400">{MODEL_V2_FOR_IMAGE}</b></span>
                     </p>
                 </div>
                 <div className="text-right">
@@ -49,16 +53,22 @@ export default async function QuizReviewer() {
                     </div>
                 ) : (
                     data.map((item: any, idx: number) => {
-                        // Check if this item had a pilot image generated
                         let imageUrl = null;
-                        if (pilotIndices.has(idx)) {
-                            // Find the position in the target array to get the item_XX number
+                        let modelLabel = "";
+
+                        if (pilotIndicesV1.has(idx)) {
                             const targetIdx = [0, 1, 10, 11, 22, 23, 34, 35, 6, 47].indexOf(idx);
                             const baseName = `item_${String(targetIdx + 1).padStart(2, "0")}_500.png`;
-                            imageUrl = `${PILOT_IMAGE_ROOT}/${baseName}`;
+                            imageUrl = `${PILOT_IMAGE_V1_ROOT}/${baseName}`;
+                            modelLabel = "V1 (2.5 Flash)";
+                        } else if (pilotIndicesV2.has(idx)) {
+                            const targetIdx = [2, 3, 4, 5, 7, 8, 9, 12, 13, 14].indexOf(idx);
+                            const baseName = `item_${String(targetIdx + 1).padStart(2, "0")}_500.png`;
+                            imageUrl = `${PILOT_IMAGE_V2_ROOT}/${baseName}`;
+                            modelLabel = "V2 (3.1 Flash)";
                         }
 
-                        return <ReviewCard key={item.id || idx} item={item} imageUrl={imageUrl} />;
+                        return <ReviewCard key={item.id || idx} item={item} imageUrl={imageUrl} imageLabel={modelLabel} />;
                     })
                 )}
             </div>

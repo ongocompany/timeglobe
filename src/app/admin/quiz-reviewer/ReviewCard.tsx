@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export default function ReviewCard({ item, imageUrl }: { item: any, imageUrl?: string | null }) {
+export default function ReviewCard({ item, imageUrl, imageLabel }: { item: any, imageUrl?: string | null, imageLabel?: string }) {
     const [status, setStatus] = useState(item.status || "pending");
     const [comment, setComment] = useState(item.comment || "");
     const [isSaving, setIsSaving] = useState(false);
@@ -51,15 +51,20 @@ export default function ReviewCard({ item, imageUrl }: { item: any, imageUrl?: s
                 {/* Pilot Image Display */}
                 {imageUrl && (
                     <div className="mt-6 group relative">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-sky-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <div className={`absolute -inset-1 bg-gradient-to-r ${imageLabel?.includes('V2') ? 'from-amber-600 to-rose-600' : 'from-emerald-600 to-sky-600'} rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200`}></div>
                         <div className="relative bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800">
                             <img
                                 src={imageUrl}
                                 alt={item.entity_name}
                                 className="w-full aspect-square object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                             />
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex justify-between items-end">
                                 <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Pilot Image Sample</p>
+                                {imageLabel && (
+                                    <span className={`text-[9px] px-2 py-0.5 rounded-sm font-bold uppercase ${imageLabel.includes('V2') ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'}`}>
+                                        {imageLabel}
+                                    </span>
+                                )}
                             </div>
                         </div>
                     </div>
