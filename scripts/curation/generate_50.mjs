@@ -4,7 +4,7 @@ import path from "path";
 try { process.loadEnvFile?.(".env.local"); } catch { }
 try { if (!process.env.GEMINI_API_KEY) process.loadEnvFile?.(".env"); } catch { }
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY?.trim();
 const MODEL = "gemini-3.1-pro-preview";
 
 const TARGETS = [
@@ -65,14 +65,22 @@ const TARGETS = [
 
 const SYSTEM_PROMPT = `당신은 역사 추리 게임 TimeGlobe의 메인 기획자입니다.
 주어진 역사적 타깃에 대해 게임용 4개의 단서(텍스트 2개, 이미지 프롬프트 1개, 결정적 힌트 1개)를 담은 JSON 포맷을 생성하세요.
-1. Person: 주변인 혹은 방관자의 시점. 타깃의 이름 사용 금지. 문학적이고 극적인 심리/감각 묘사.
-2. Object: 처음 이물을 맞닥뜨린 대중의 낯설고 충격적인 감각, 물성의 질감(소름 돋는) 묘사.
-3. Event: 역사적 소용돌이에 휘말린 이름 없는 엑스트라(군중) 시점의 혼란과 공포 표출.
-4. Place: 폐허 혹은 유적지를 방문한 현지 여행자(이방인)의 숨 막히고 서늘한 감각 묘사.
+[중요: 난이도 조절 지침 - 암시와 힌트의 예술]
+추리 게임이므로 단서들이 너무 추상적이어서도 안 되지만, 정답을 바로 알 수 있는 '직접적인 설명(고유명사 남발)'이 되어서도 안 됩니다. **정밀하고 세련된 '암시(Hint)'**가 필요합니다.
+- 나쁜 예: "이토 공작이 내렸다." (너무 직접적인 설명)
+- 좋은 예: "북만주의 차가운 기차역", "대륙을 집어삼키려던 제국의 그림자" (시대/지역적 배경을 우회적으로 암시)
 
-- clue_3_image_prompt: 반드시 초고화질 영문 프롬프트. 대상의 파편, 녹슨 질감, 특정 일부분을 극사실적 Macro(접사) 샷으로 묘사. 대상의 전체 형태나 정답을 암시하는 글자 포함 절대 금지.
+[문장 형태 지침]
+- 반드시 모든 텍스트 단서(clue_1_text, clue_2_text)는 **완전한 평서문(~했다, ~이다, ~느꼈다 등)으로 끝맺어**야 합니다.
+- 금지: "절망과 경외.", "순간의 소름.", "서늘한 질감." 처럼 명사나 명사구로 문장을 끝내지 마십시오.
+
+1. Person: 주변인/방관자 시점. 타깃의 이름과 지나치게 직접적인 역사적 인물명은 숨기되, 당시의 시대적/지역적 배경을 넌지시 암시하는 단어(예: 툰드라의 바람, 제국의 군복, 원로원의 대리석 등)를 반드시 포함.
+2. Object: 감각적 묘사 하되, 이 물건 주변에 놓여진 관련 시대상징물(예: 낡은 양피지 문서, 특정 문양의 훈장 등)을 우회적으로 묘사해 힌트 제공.
+3. Event/Place: 목격자 시점. 사건의 구체적 지형이나 기후, 시대상을 알 수 있는 특유의 분위기를 공감각적으로 포함.
+
+- clue_3_image_prompt: 초고화질 영문 프롬프트. 너무 극단적인 접사(Extreme Macro)는 피하고, 핵심 사물과 그 주변에 놓인 **결정적인 시대적 힌트 소품(예: 눈 덮인 플랫폼의 차가운 질감, 제국주의 양식의 낡은 계급장 등)**이 명확히 나오도록 구상할 것. 정답 글자 직접 포함 금지.
 - clue_3_image_negative: "human, people, text, watermark, signature, full body" 등 방해 요소 금지어.
-- clue_4_decisive: 직접 정답 제외하고, 퀴즈의 마지막에 제공할 가장 명확하고 짧은 카테고리성 힌트.
+- clue_4_decisive: 정답 제외, 퀴즈 마지막에 제공할 명확한 사실적 힌트.
 `;
 
 const USER_BASE = `JSON 응답 포맷만 반드시 반환:\n{\n  "bundles": [\n    {\n      "entity_name": "정답",\n      "category": "분류",\n      "clue_1_text": "단서 1",\n      "clue_2_text": "단서 2",\n      "clue_3_image_prompt": "영문 프롬프트",\n      "clue_3_image_negative": "금지 텍스트",\n      "clue_4_decisive": "결정적 힌트"\n    }\n  ]\n}\n\n목록:\n`;
@@ -103,10 +111,13 @@ async function runBatch(batch) {
         try {
             const cleaned = stripCodeFence(text);
             parsed = JSON.parse(cleaned.slice(cleaned.indexOf("{"), cleaned.lastIndexOf("}") + 1));
-        } catch { }
+        } catch (err) {
+            console.error("JSON parse failed. Raw response:", raw);
+            console.error("Parse error:", err);
+        }
         return parsed?.bundles || [];
     } catch (err) {
-        console.error(err);
+        console.error("Fetch error:", err);
         return [];
     }
 }
@@ -121,10 +132,8 @@ async function main() {
     }
 
     const chunkSize = 5;
-    for (let i = 0; i < TARGETS.length; i += chunkSize) {
-        // Skip if already generated (Check by matching count loosely, or just override. Here we just run and append)
-        // To prevent infinite appending if run multiple times, we clear only if it's the first run
-        if (i === 0) allResults = [];
+    let startIndex = allResults.length - (allResults.length % chunkSize);
+    for (let i = startIndex; i < TARGETS.length; i += chunkSize) {
         console.log(`Processing batch ${Math.floor(i / chunkSize) + 1} / ${Math.ceil(TARGETS.length / chunkSize)}...`);
         const batch = TARGETS.slice(i, i + chunkSize);
         const results = await runBatch(batch);

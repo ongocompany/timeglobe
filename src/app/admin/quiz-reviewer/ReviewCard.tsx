@@ -92,8 +92,15 @@ export default function ReviewCard({ item }: { item: any }) {
                     <p className="text-zinc-300 leading-relaxed text-[15px]">{item.clue_2_text}</p>
                 </div>
 
+                {item.clue_3_image_concept_ko && (
+                    <div className="bg-sky-950/20 p-5 rounded-lg border border-sky-900/30 mb-4">
+                        <span className="text-[10px] text-sky-400 uppercase tracking-widest block mb-3 font-bold border-b border-sky-900/40 pb-2">Image Concept (KR)</span>
+                        <p className="text-sky-200/90 font-medium leading-relaxed tracking-wide">{item.clue_3_image_concept_ko}</p>
+                    </div>
+                )}
+
                 <div className="bg-zinc-950/50 p-5 rounded-lg border border-zinc-800/80 relative">
-                    <span className="text-[10px] text-indigo-400 uppercase tracking-widest block mb-3 font-bold border-b border-zinc-800/80 pb-2">Generated Image Prompt (Macro)</span>
+                    <span className="text-[10px] text-indigo-400 uppercase tracking-widest block mb-3 font-bold border-b border-zinc-800/80 pb-2">Raw Image Prompt (EN)</span>
                     <p className="text-indigo-200/80 font-mono text-[13px] leading-relaxed mb-4 p-3 bg-zinc-950 rounded border border-zinc-900">{item.clue_3_image_prompt}</p>
 
                     <span className="text-[10px] text-rose-500 uppercase tracking-widest block mb-2 font-bold">Negative Prompt</span>
