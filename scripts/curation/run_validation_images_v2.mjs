@@ -10,7 +10,7 @@ if (!API_KEY) {
 
 // Model requested by user for comparison
 const MODEL = "gemini-3.1-flash-image-preview";
-const EDGE = 500;
+const EDGE = 512;
 const DATA_PATH = path.join(process.cwd(), "data", "validation_temp.json");
 const OUTPUT_ROOT = path.join(process.cwd(), "public", "quiz-image-pilot-v2");
 
@@ -47,21 +47,15 @@ function ensureDir(dirPath) {
 async function main() {
     const data = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
 
-    // Pick 10 NEW items (indices that were not in the first pilot)
-    // 2 (Caesar), 3 (Van Gogh), 4 (Sado), 5 (An Jung-geun), 7 (Socrates), 
-    // 8 (Cleopatra), 9 (Lincoln), 12 (Yi Sun-sin), 13 (Galileo), 14 (Heo Jun)
-    const targets = [
-        data[2],  // 율리우스 카이사르
-        data[3],  // 빈센트 반 고흐
-        data[4],  // 사도세자
-        data[5],  // 안중근
-        data[7],  // 소크라테스
-        data[8],  // 클레오파트라
-        data[9],  // 에이브러햄 링컨
-        data[12], // 이순신
-        data[13], // 갈릴레오 갈릴레이
-        data[14]  // 허준
-    ].filter(Boolean);
+    // Already done: 0, 1, 6, 10, 11, 23, 24, 25, 26, 27 (V1)
+    // Already done: 2, 3, 4, 5, 7, 8, 9, 12, 13, 14 (V2)
+    const alreadyIndices = [0, 1, 6, 10, 11, 23, 24, 25, 26, 27, 2, 3, 4, 5, 7, 8, 9, 12, 13, 14];
+
+    const targets = data
+        .map((item, index) => ({ item, index }))
+        .filter(obj => !alreadyIndices.includes(obj.index));
+
+    console.error(`Starting generation for ${targets.length} items using paid GEMINI_API_KEY at 512px...`);
 
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
     const outputDir = path.join(OUTPUT_ROOT, timestamp);
@@ -70,41 +64,54 @@ async function main() {
     const indexItems = [];
     const failures = [];
 
-    for (let i = 0; i < targets.length; i++) {
-        const item = targets[i];
-        console.error(`[${i + 1}/${targets.length}] generating image for ${item.entity_name} using ${MODEL}...`);
+    // Parallel processing in chunks of 5 to avoid crashing or hitting extreme RPM too fast
+    const CHUNK_SIZE = 5;
+    for (let i = 0; i < targets.length; i += CHUNK_SIZE) {
+        const chunk = targets.slice(i, i + CHUNK_SIZE);
+        console.error(`Processing chunk ${Math.floor(i / CHUNK_SIZE) + 1}...`);
 
-        const prompt = `${item.clue_3_image_prompt}. ${COMMON_STYLE_TAIL}. Avoid ${item.clue_3_image_negative || "human, text"}.`;
+        const results = await Promise.all(chunk.map(async ({ item, index }) => {
+            const prompt = `${item.clue_3_image_prompt}. ${COMMON_STYLE_TAIL}. Avoid ${item.clue_3_image_negative || "human, text"}.`;
+            const baseName = `item_${String(index).padStart(2, "0")}`;
+            const rawJsonPath = path.join(outputDir, `${baseName}.json`);
+            const scaledPath = path.join(outputDir, `${baseName}_${EDGE}.png`);
 
-        const baseName = `item_${String(i + 1).padStart(2, "0")}`;
-        const rawJsonPath = path.join(outputDir, `${baseName}.json`);
-        const scaledPath = path.join(outputDir, `${baseName}_${EDGE}.png`);
+            try {
+                const { json, base64 } = await generateImage(prompt);
+                fs.writeFileSync(rawJsonPath, JSON.stringify(json, null, 2));
+                fs.writeFileSync(scaledPath, Buffer.from(base64, "base64"));
+                console.error(`  - [Idx ${index}] saved ${path.basename(scaledPath)}`);
 
-        try {
-            const { json, base64 } = await generateImage(prompt);
-            fs.writeFileSync(rawJsonPath, JSON.stringify(json, null, 2));
-            fs.writeFileSync(scaledPath, Buffer.from(base64, "base64"));
+                return {
+                    index,
+                    answer: item.entity_name,
+                    prompt: prompt,
+                    ko_concept: item.clue_3_image_concept_ko,
+                    scaledFilename: path.basename(scaledPath)
+                };
+            } catch (e) {
+                console.error(`  - [Idx ${index}] failed: ${e.message}`);
+                return { index, failure: true, error: e.message, answer: item.entity_name };
+            }
+        }));
 
-            console.error(`[${i + 1}/${targets.length}] saved ${path.basename(scaledPath)}`);
-
-            indexItems.push({
-                answer: item.entity_name,
-                prompt: prompt,
-                ko_concept: item.clue_3_image_concept_ko,
-                scaledFilename: path.basename(scaledPath)
-            });
-        } catch (e) {
-            failures.push({ answer: item.entity_name, error: e.message });
-            console.error(`[${i + 1}/${targets.length}] failed: ${e.message}`);
+        for (const res of results) {
+            if (res.failure) {
+                failures.push(res);
+            } else {
+                indexItems.push(res);
+            }
         }
 
-        if (i < targets.length - 1) await new Promise(r => setTimeout(r, 4000));
+        // Small break between chunks
+        if (i + CHUNK_SIZE < targets.length) await new Promise(r => setTimeout(r, 2000));
     }
 
     const indexPath = path.join(outputDir, "index.md");
-    let content = `# Quiz Image Validation V2 (Gemini 3.1 Flash Image)\n\n`;
+    let content = `# Quiz Image Validation V2 (Gemini 3.1 Flash Image - 512px)\n\n`;
+    content += `Generated ${indexItems.length} items, ${failures.length} failures.\n\n`;
     for (const item of indexItems) {
-        content += `## ${item.answer}\n\n`;
+        content += `## ${item.answer} (Global Index: ${item.index})\n\n`;
         content += `- **Korean Concept**: ${item.ko_concept}\n`;
         content += `- **English Prompt**: \n\`\`\`text\n${item.prompt}\n\`\`\`\n\n`;
         content += `![${item.answer}](${item.scaledFilename})\n\n`;
