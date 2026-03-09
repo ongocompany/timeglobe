@@ -83,3 +83,4 @@ src/app/ops/
 src/app/api/ops/
 src/app/model-manager/
 src/app/api/models/
+\n# Pilot images\npublic/quiz-image-pilot*\n
