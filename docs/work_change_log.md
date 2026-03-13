@@ -3,6 +3,51 @@
 *이 문서는 프로젝트의 주요 변경 사항과 AI 어시스턴트(Claude, Gemini 등)의 작업 내역을 추적하기 위해 사용됩니다.*
 *작업자는 대량 데이터 수정 시, 진형의 지시 시, 또는 업무 종료 시에 이 문서에 변경 내역을 기록해야 합니다.*
 
+## [2026-03-13] [cl] 세션 2: 6개 카테고리 21,539개 데이터 카드 완성
+
+### 작업 내용
+
+#### 1. events 확장 (1,237 → 2,357)
+- events_raw.jsonl 79,270개에서 키워드(battle, war, revolution 등) + sl≥10 → 4,092 후보
+- Gemini 2.5 Flash AI 필터 → **983개** 세계사적 이벤트 채택 (23.6%)
+- 추가: no-keyword sl≥15 AI 필터 → **137개** 비전쟁 이벤트 (재해, 탐험, 외교)
+- 기존 1,237 + 983 + 137 = **2,357개** events_cards.json (5.1MB)
+
+#### 2. inventions 생성 (199개 신규)
+- inventions_raw.jsonl은 정부기관/조직으로 오염 → raw 사용 포기
+- Gemini 직접 생성: 10개 시대/분야 카테고리별 발명/발견 요청
+- **199개** inventions_cards.json (바퀴, 인쇄술, 증기기관, DNA 등)
+
+#### 3. nations 생성 (174개 신규)
+- hist_entities_raw.jsonl 69,498개에서 sl≥20 → 1,955 후보
+- Gemini AI 필터 → **174개** 국가/제국/문명 채택 (8.5%)
+- nations_cards.json: 우르, 로마제국, 조선, 오스만 등
+
+#### 4. 최종 데이터 현황
+| 카테고리 | 건수 | 파일 |
+|---------|------|------|
+| persons | 15,200 | persons_cards.json (31MB) |
+| events | 2,357 | events_cards.json (5.1MB) |
+| places | 1,217 | places_cards.json (1.8MB) |
+| artworks | 2,392 | artworks_cards.json (2.9MB) |
+| inventions | 199 | inventions_cards.json (281KB) |
+| nations | 174 | nations_cards.json (267KB) |
+| **합계** | **21,539** | **~41.3MB** |
+
+#### 5. Git
+- GitHub(origin) push 완료: `46bea97`
+- dev(jinserver) push 불가 → GitHub으로 완전 이전 확인
+
+### jinserver 스크립트 위치
+- `/mnt/data2/wikidata/output/filter_events_raw.py` — events 키워드 필터
+- `/mnt/data2/wikidata/output/filter_events_nokw.py` — events 비키워드 필터
+- `/mnt/data2/wikidata/output/filter_hist_entities.py` — 나라/제국 필터
+- `/mnt/data2/wikidata/output/generate_inventions.py` — 발명 직접 생성
+- `/mnt/data2/wikidata/output/merge_events.py` — events 합병
+- `/mnt/data2/wikidata/output/merge_all_new.py` — 3개 신규 데이터 합병
+
+---
+
 ## [2026-03-13] [cl] 좌표 매핑 대수정 + active_year 배치 + places AI 필터링
 
 ### 배경
