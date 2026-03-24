@@ -101,17 +101,11 @@ export default function DataReviewPage() {
     } catch {}
   }, [flagged]);
 
-  const flagItem = useCallback((reason: string) => {
-    if (!selected) return;
-    const already = flagged.some((f) => f.id === selected.id && f.dataset === datasetKey);
+  const flagItem = useCallback((id: string, title: string, reason: string) => {
+    const already = flagged.some((f) => f.id === id && f.dataset === datasetKey);
     if (already) return;
-    setFlagged((prev) => [...prev, {
-      dataset: datasetKey,
-      id: selected.id,
-      title: titleText(selected.title),
-      reason,
-    }]);
-  }, [selected, datasetKey, flagged]);
+    setFlagged((prev) => [...prev, { dataset: datasetKey, id, title, reason }]);
+  }, [datasetKey, flagged]);
 
   const unflagItem = useCallback((id: string, dataset: string) => {
     setFlagged((prev) => prev.filter((f) => !(f.id === id && f.dataset === dataset)));
@@ -537,7 +531,7 @@ export default function DataReviewPage() {
                     {["분류오류","설명부실","삭제필요","제목수정","기타"].map((reason) => (
                       <button
                         key={reason}
-                        onClick={() => flagItem(reason)}
+                        onClick={() => flagItem(selected.id, titleText(selected.title), reason)}
                         disabled={flagged.some((f) => f.id === selected.id && f.dataset === datasetKey)}
                         className="rounded border border-red-400/30 px-1.5 py-0.5 text-[9px] text-red-300/80 hover:bg-red-500/20 disabled:opacity-30 transition"
                       >
