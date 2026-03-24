@@ -24,12 +24,8 @@ type CardItem = {
 const CATEGORIES = [
   "persons",
   "events",
-  "artworks",
-  "places",
-  "films",
-  "inventions",
+  "architecture",
   "nations",
-  "items",
 ] as const;
 
 const REGIONS = [
