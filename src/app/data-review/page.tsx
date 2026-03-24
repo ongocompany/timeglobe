@@ -83,6 +83,55 @@ export default function DataReviewPage() {
   const [sortKey, setSortKey] = useState<SortKey>("year_asc");
   const [page, setPage] = useState(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [flagged, setFlagged] = useState<Array<{ dataset: string; id: string; title: string; reason: string }>>([]);
+  const [showFlagged, setShowFlagged] = useState(false);
+
+  // 신고 목록 localStorage 로드
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("tg_flagged");
+      if (saved) setFlagged(JSON.parse(saved));
+    } catch {}
+  }, []);
+
+  // 신고 목록 localStorage 저장
+  useEffect(() => {
+    try {
+      localStorage.setItem("tg_flagged", JSON.stringify(flagged));
+    } catch {}
+  }, [flagged]);
+
+  const flagItem = useCallback((reason: string) => {
+    if (!selected) return;
+    const already = flagged.some((f) => f.id === selected.id && f.dataset === datasetKey);
+    if (already) return;
+    setFlagged((prev) => [...prev, {
+      dataset: datasetKey,
+      id: selected.id,
+      title: titleText(selected.title),
+      reason,
+    }]);
+  }, [selected, datasetKey, flagged]);
+
+  const unflagItem = useCallback((id: string, dataset: string) => {
+    setFlagged((prev) => prev.filter((f) => !(f.id === id && f.dataset === dataset)));
+  }, []);
+
+  const exportFlagged = useCallback(() => {
+    const text = flagged.map((f) => `[${f.dataset}] ${f.title} (ID: ${f.id}) — ${f.reason}`).join("\n");
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+  }, [flagged]);
 
   const loadDataset = useCallback(async (key: string) => {
     setLoading(true);
@@ -203,7 +252,62 @@ export default function DataReviewPage() {
           >
             홈
           </Link>
+          <button
+            onClick={() => setShowFlagged((v) => !v)}
+            className={`rounded border px-3 py-1 text-xs transition ${
+              flagged.length > 0
+                ? "border-red-400/50 text-red-300 hover:bg-red-500/10"
+                : "border-white/30 text-white/50 hover:bg-white/10"
+            }`}
+          >
+            신고 목록 ({flagged.length})
+          </button>
+          {flagged.length > 0 && (
+            <button
+              onClick={exportFlagged}
+              className="rounded border border-amber-400/50 px-3 py-1 text-xs text-amber-300 hover:bg-amber-500/10 transition"
+            >
+              전체 복사
+            </button>
+          )}
         </div>
+
+        {/* 신고 목록 패널 */}
+        {showFlagged && (
+          <div className="mt-3 rounded border border-red-400/20 bg-red-500/5 p-3 max-h-[40vh] overflow-y-auto">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-bold text-red-300">신고 목록 ({flagged.length}건)</span>
+              {flagged.length > 0 && (
+                <button
+                  onClick={() => { if (confirm("전체 삭제?")) setFlagged([]); }}
+                  className="text-[10px] text-red-400/60 hover:text-red-300"
+                >
+                  전체 삭제
+                </button>
+              )}
+            </div>
+            {flagged.length === 0 ? (
+              <p className="text-xs text-white/40">신고된 항목이 없습니다.</p>
+            ) : (
+              <div className="space-y-1">
+                {flagged.map((f, i) => (
+                  <div key={`${f.id}_${i}`} className="flex items-center gap-2 text-xs">
+                    <span className="text-white/40 w-16 shrink-0">[{f.dataset}]</span>
+                    <span className="text-white/80 truncate flex-1">{f.title}</span>
+                    <span className="text-red-300/60 shrink-0">{f.reason}</span>
+                    <span className="text-white/30 font-mono text-[9px] shrink-0">{f.id}</span>
+                    <button
+                      onClick={() => unflagItem(f.id, f.dataset)}
+                      className="text-white/30 hover:text-red-300 text-[10px] shrink-0"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* 카테고리 선택 탭 */}
         <div className="mt-3 flex gap-1 flex-wrap">
@@ -427,6 +531,19 @@ export default function DataReviewPage() {
                     >
                       복사
                     </button>
+                  </div>
+                  {/* 신고 버튼 */}
+                  <div className="flex gap-1 mt-1 flex-wrap">
+                    {["분류오류","설명부실","삭제필요","제목수정","기타"].map((reason) => (
+                      <button
+                        key={reason}
+                        onClick={() => flagItem(reason)}
+                        disabled={flagged.some((f) => f.id === selected.id && f.dataset === datasetKey)}
+                        className="rounded border border-red-400/30 px-1.5 py-0.5 text-[9px] text-red-300/80 hover:bg-red-500/20 disabled:opacity-30 transition"
+                      >
+                        {flagged.some((f) => f.id === selected.id && f.dataset === datasetKey) ? "신고됨" : reason}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
