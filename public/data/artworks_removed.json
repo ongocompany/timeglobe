@@ -23934,5 +23934,37 @@
       "en": "Saidi Dance Music emerged around 1800 as a musical genre that built upon earlier traditions while pioneering new modes of expression. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. It represents centuries of accumulated cultural achievement in the Middle East. The work provides essential clues for understanding the cultural identity of its civilization."
     },
     "external_link": ""
+  },
+  {
+    "id": "Q1359571",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "높으신 분이 말하기를",
+      "en": "Hávamál"
+    },
+    "start_year": -800,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 64.1466,
+    "location_lng": -21.9426,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전에 해당하며, 북유럽 신화와 바이킹 시대의 지혜를 담고 있어 문명사적 영향력이 있다.",
+      "en": "A religious/philosophical text, it contains Norse mythology and Viking-era wisdom, holding significant civilizational influence."
+    },
+    "description": {
+      "ko": "《높으신 분이 말하기를》은 기원전 9세기 유럽 문학의 대표적 성과물 가운데 하나이다. 기원전 800년경에 세상에 나온 이 작품은 당시 문학적 담론의 지형을 바꾸는 데 일조했다. 유럽의 문화적 토양에서 자라난 이 텍스트는 보편적 주제와 지역적 특수성을 동시에 담아냈다. 문학 연구자들 사이에서 꾸준히 분석 대상이 되고 있는 작품이다.",
+      "en": "\"Hávamál\" (800 BCE) is a European literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
+    },
+    "external_link": ""
   }
 ]
