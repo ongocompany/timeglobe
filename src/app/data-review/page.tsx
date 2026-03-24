@@ -374,7 +374,7 @@ export default function DataReviewPage() {
           </div>
 
           {/* 상세 패널 */}
-          <div className="rounded border border-white/15 bg-black/30 p-3 max-h-[80vh] overflow-y-auto">
+          <div className="rounded border border-white/15 bg-black/30 p-3 max-h-[80vh] overflow-y-auto sticky top-4">
             {!selected ? (
               <p className="text-sm text-white/50">테이블에서 항목을 클릭하면 상세 정보가 표시됩니다.</p>
             ) : (
