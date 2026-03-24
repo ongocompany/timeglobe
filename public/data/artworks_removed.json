@@ -11550,5 +11550,69 @@
       "en": "Día de los Muertos, dating to approximately 1500, represents a cultural heritage that crystallizes the creative capacity of its society. It represents a unique fusion of indigenous aesthetics and broader cultural influences. This cultural creation occupies a unique position that blurs the boundary between art and everyday life. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
     },
     "external_link": ""
+  },
+  {
+    "id": "Q14522493",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "헤라클레스",
+      "en": "Hercules"
+    },
+    "start_year": -1200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.98,
+    "location_lng": 23.73,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "그리스 신화의 가장 위대한 영웅으로, 서양 문화 전반에 걸쳐 영웅주의와 신화적 서사의 상징으로 자리 잡았으며, 수많은 예술 작품과 문학에 영감을 주었다. 그의 이야기는 고대 그리스 사회의 가치와 이상을 반영한다.",
+      "en": "The greatest hero of Greek mythology, Hercules symbolizes heroism and mythical narrative in Western culture, inspiring countless artworks and literature."
+    },
+    "description": {
+      "ko": "그리스 신화의 가장 위대한 영웅으로, 서양 문화 전반에 걸쳐 영웅주의와 신화적 서사의 상징으로 자리 잡았으며, 수많은 예술 작품과 문학에 영감을 주었다. 그의 이야기는 고대 그리스 사회의 가치와 이상을 반영한다.",
+      "en": "The greatest hero of Greek mythology, Hercules symbolizes heroism and mythical narrative in Western culture, inspiring countless artworks and literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1217213",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "수태고지",
+      "en": "Annunciation"
+    },
+    "start_year": -6,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32.7,
+    "location_lng": 35.3,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "그리스도교의 핵심적인 종교적 사건을 다루며, 수많은 예술 작품의 모티브가 되고 종교 축일로 기념되는 등 문명사적 영향력이 큽니다.",
+      "en": "A pivotal event in Christianity, the Annunciation has inspired countless artworks and is celebrated as a religious holiday, holding immense civilizational impact."
+    },
+    "description": {
+      "ko": "'수태고지'은(는) 기원전 6년에 중동에서 발표되어 고전기의 문학 지형을 바꾼 작품이다. 기존 문학 관습에 도전하는 혁신적 접근으로 당대 비평가들의 주목을 받았다. 이 작품이 제기한 문제의식과 미학적 실험은 후대 문학에 지속적인 영감을 주었다. 중동 문학사에서 독보적인 위치를 차지하고 있다.",
+      "en": "Dating to 6 BCE, 'Annunciation' represents one of the Middle East's most important literary contributions from the Classical period. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
   }
 ]
