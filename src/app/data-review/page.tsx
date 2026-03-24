@@ -318,7 +318,7 @@ export default function DataReviewPage() {
                 <tbody>
                   {paged.map((item, i) => (
                     <tr
-                      key={item.id}
+                      key={`${item.id}_${page * PAGE_SIZE + i}`}
                       onClick={() => setSelectedId(item.id)}
                       className={`border-b border-white/5 cursor-pointer transition hover:bg-white/5 ${
                         selectedId === item.id ? "bg-cyan-500/10" : ""
