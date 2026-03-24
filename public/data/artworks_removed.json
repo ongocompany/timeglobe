@@ -12670,5 +12670,1797 @@
       "en": "Song of Songs is a literary work composed around 400 BCE, capturing universal aspects of human experience through the unique voice of its cultural tradition. It represents centuries of accumulated cultural achievement in the Middle East. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
     },
     "external_link": ""
+  },
+  {
+    "id": "Q191753",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "신데렐라",
+      "en": "Cinderella"
+    },
+    "start_year": 1697,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 48.8566,
+    "location_lng": 2.3522,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "유럽 전역에 걸쳐 구전되어 온 민담으로, 샤를 페로와 그림 형제에 의해 문학 작품으로 정착되었다. 계모와 의붓자매에게 구박받던 소녀가 왕자와 결혼하여 행복을 찾는 이야기로, 전 세계 문화에 지대한 영향을 미쳤다.",
+      "en": "A widely known European folktale, popularized by Charles Perrault and the Brothers Grimm. It tells of a mistreated girl finding happiness with a prince, profoundly influencing global culture."
+    },
+    "description": {
+      "ko": "유럽 전역에 걸쳐 구전되어 온 민담으로, 샤를 페로와 그림 형제에 의해 문학 작품으로 정착되었다. 계모와 의붓자매에게 구박받던 소녀가 왕자와 결혼하여 행복을 찾는 이야기로, 전 세계 문화에 지대한 영향을 미쳤다.",
+      "en": "A widely known European folktale, popularized by Charles Perrault and the Brothers Grimm. It tells of a mistreated girl finding happiness with a prince, profoundly influencing global culture."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q19090",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "로빈 후드",
+      "en": "Robin Hood"
+    },
+    "start_year": 1200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 53,
+    "location_lng": -1.1333,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "로빈 후드 이야기는 잉글랜드 민담에서 불의한 권력에 맞서 가난한 이를 돕는 의적이라는 주제를 통해 사회 정의에 대한 오랜 열망을 반영하며, 여러 시대에 걸쳐 다양한 형태로 재해석되었다.",
+      "en": "The Robin Hood tales, originating in English folklore, reflect a long-standing desire for social justice by portraying an outlaw who aids the poor against unjust power, reinterpreted across various eras."
+    },
+    "description": {
+      "ko": "로빈 후드 이야기는 잉글랜드 민담에서 불의한 권력에 맞서 가난한 이를 돕는 의적이라는 주제를 통해 사회 정의에 대한 오랜 열망을 반영하며, 여러 시대에 걸쳐 다양한 형태로 재해석되었다.",
+      "en": "The Robin Hood tales, originating in English folklore, reflect a long-standing desire for social justice by portraying an outlaw who aids the poor against unjust power, reinterpreted across various eras."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q537407",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "뮬란",
+      "en": "Mulan"
+    },
+    "start_year": 400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 34.7667,
+    "location_lng": 113.6667,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "뮬란 설화는 중국 역사와 문화에 깊이 뿌리내리고 있으며, 여성의 용기와 희생이라는 보편적인 주제를 다루며 전 세계적으로 큰 영향을 미쳤다.",
+      "en": "The Mulan legend is deeply rooted in Chinese history and culture, addressing universal themes of female courage and sacrifice, and has had a significant global impact."
+    },
+    "description": {
+      "ko": "뮬란은(는) 400년 동아시아에서 발표된 문학 작품이다. 뮬란 설화는 중국 역사와 문화에 깊이 뿌리내리고 있으며, 여성의 용기와 희생이라는 보편적인 주제를 다루며 전 세계적으로 큰 영향을 미쳤다.  깊이 있는 주제 의식과 독창적인 문체로 당대 문학계에 큰 반향을 일으켰다. 이후 많은 작가와 사상가에게 영향을 미치며 세계 문학사에서 중요한 위치를 차지하게 되었다.",
+      "en": "Mulan is a literary work published in East Asia in 400. Its profound thematic exploration and innovative style made it a cornerstone of world literature, influencing writers and thinkers for generations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q156498",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "신들의 계보",
+      "en": "Theogony"
+    },
+    "start_year": -700,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 38,
+    "location_lng": 23.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 그리스 문명의 종교적, 철학적 세계관을 형성하는 데 지대한 영향을 미친 종교/철학 경전으로 분류될 수 있다. 그리스 신화의 기원과 신들의 계보를 체계적으로 정리하여 서양 사상에 깊은 뿌리를 내렸다.",
+      "en": "Theogony, a foundational religious/philosophical text, profoundly shaped ancient Greek civilization's worldview, systematically organizing the origins and lineage of Greek gods, deeply influencing Western thought."
+    },
+    "description": {
+      "ko": "고대 그리스 문명의 종교적, 철학적 세계관을 형성하는 데 지대한 영향을 미친 종교/철학 경전으로 분류될 수 있다. 그리스 신화의 기원과 신들의 계보를 체계적으로 정리하여 서양 사상에 깊은 뿌리를 내렸다.",
+      "en": "Theogony, a foundational religious/philosophical text, profoundly shaped ancient Greek civilization's worldview, systematically organizing the origins and lineage of Greek gods, deeply influencing Western thought."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q865902",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "이솝 우화",
+      "en": "Aesop's Fables"
+    },
+    "start_year": -600,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.9838,
+    "location_lng": 23.7275,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이솝 우화는 의인화된 동물들이 등장하는 단편 우화 모음집으로, 전 세계적으로 어린이 도덕성 교육에 큰 영향을 미쳤으며, 문명사적으로 중요한 교훈을 전달하는 고전이다. 시대를 초월하여 사랑받는 이야기들이다.",
+      "en": "Aesop's Fables, a collection of short tales with anthropomorphic animals, profoundly influenced children's moral education worldwide, delivering timeless lessons and becoming a beloved classic."
+    },
+    "description": {
+      "ko": "이솝 우화는 의인화된 동물들이 등장하는 단편 우화 모음집으로, 전 세계적으로 어린이 도덕성 교육에 큰 영향을 미쳤으며, 문명사적으로 중요한 교훈을 전달하는 고전이다. 시대를 초월하여 사랑받는 이야기들이다.",
+      "en": "Aesop's Fables, a collection of short tales with anthropomorphic animals, profoundly influenced children's moral education worldwide, delivering timeless lessons and becoming a beloved classic."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q233780",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "판차탄트라",
+      "en": "Panchatantra"
+    },
+    "start_year": -200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 23.1667,
+    "location_lng": 79.9333,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 인도의 설화집으로, 동물 우화를 통해 도덕적 교훈과 정치적 지혜를 전달한다. 전 세계 여러 문화권에 영향을 미쳤으며, 문명사적 영향력이 있는 중요한 문학 작품이다.",
+      "en": "An ancient Indian collection of animal fables, it imparts moral lessons and political wisdom, influencing cultures worldwide and holding significant literary impact."
+    },
+    "description": {
+      "ko": "판차탄트라은(는) 기원전 200년 남아시아에서 발표된 문학 작품이다. 고대 인도의 설화집으로, 동물 우화를 통해 도덕적 교훈과 정치적 지혜를 전달한다. 전 세계 여러 문화권에 영향을 미쳤으며, 문명사적 영향력이 있는 중요한 문학 작품이다.  깊이 있는 주제 의식과 독창적인 문체로 당대 문학계에 큰 반향을 일으켰다. 이후 많은 작가와 사상가에게 영향을 미치며 세계 문학사에서 중요한 위치를 차지하게 되었다.",
+      "en": "Panchatantra is a literary work published in South Asia in 200 BCE. Its profound thematic exploration and innovative style made it a cornerstone of world literature, influencing writers and thinkers for generations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q205874",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "고 에다",
+      "en": "Poetic Edda"
+    },
+    "start_year": -1000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 64.1265,
+    "location_lng": -21.8174,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 노르드 신화와 게르만 영웅 전설의 가장 중요한 문헌으로서, 19세기 초 스칸디나비아 문학에 지대한 영향을 미쳤으며, J.R.R. 톨킨 등 현대 판타지 작가들에게도 영감을 주었다. 북유럽 신화 연구의 핵심 자료이다.",
+      "en": "A crucial collection of Old Norse myths and Germanic heroic legends, it profoundly influenced 19th-century Scandinavian literature and modern fantasy writers."
+    },
+    "description": {
+      "ko": "고대 노르드 신화와 게르만 영웅 전설의 가장 중요한 문헌으로서, 19세기 초 스칸디나비아 문학에 지대한 영향을 미쳤으며, J.R.R. 톨킨 등 현대 판타지 작가들에게도 영감을 주었다. 북유럽 신화 연구의 핵심 자료이다.",
+      "en": "A crucial collection of Old Norse myths and Germanic heroic legends, it profoundly influenced 19th-century Scandinavian literature and modern fantasy writers."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q223559",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "로빈 후드",
+      "en": "Robin Hood"
+    },
+    "start_year": 1200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 53,
+    "location_lng": -1,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "로빈 후드는 불의한 권력에 맞서 가난한 이를 돕는 의적이라는 설정으로, 사회 정의와 저항의 상징으로 오랜 기간 대중문화에 영향을 미쳤으며, 다양한 형태로 재해석되어 왔다.",
+      "en": "Robin Hood, a symbol of social justice and resistance, has long influenced popular culture as an outlaw fighting injustice and aiding the poor."
+    },
+    "description": {
+      "ko": "로빈 후드은(는) 1200년 유럽에서 발표된 문학 작품이다. 로빈 후드는 불의한 권력에 맞서 가난한 이를 돕는 의적이라는 설정으로, 사회 정의와 저항의 상징으로 오랜 기간 대중문화에 영향을 미쳤으며, 다양한 형태로 재해석되어 왔다.  깊이 있는 주제 의식과 독창적인 문체로 당대 문학계에 큰 반향을 일으켰다. 이후 많은 작가와 사상가에게 영향을 미치며 세계 문학사에서 중요한 위치를 차지하게 되었다.",
+      "en": "Robin Hood is a literary work published in Europe in 1200. Its profound thematic exploration and innovative style made it a cornerstone of world literature, influencing writers and thinkers for generations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q205882",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "신 에다",
+      "en": "Prose Edda"
+    },
+    "start_year": 1220,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 64.1265,
+    "location_lng": -21.8174,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "북유럽 신화와 게르만 신화 복원에 필수적인 1차 자료로서 문명사적 영향력이 있는 종교/철학 경전에 해당한다. 스노리 스투를루손이 아이슬란드에서 집필한 이 작품은 고대 스칸디나비아의 신화, 시, 전설을 체계적으로 정리하여 후대에 전승하는 데 결정적인 역할을 했다.",
+      "en": "A primary source for reconstructing Norse and Germanic mythology, this Icelandic work by Snorri Sturluson systematically compiled ancient Scandinavian myths, poetry, and legends, crucially preserving them for posterity."
+    },
+    "description": {
+      "ko": "북유럽 신화와 게르만 신화 복원에 필수적인 1차 자료로서 문명사적 영향력이 있는 종교/철학 경전에 해당한다. 스노리 스투를루손이 아이슬란드에서 집필한 이 작품은 고대 스칸디나비아의 신화, 시, 전설을 체계적으로 정리하여 후대에 전승하는 데 결정적인 역할을 했다.",
+      "en": "A primary source for reconstructing Norse and Germanic mythology, this Icelandic work by Snorri Sturluson systematically compiled ancient Scandinavian myths, poetry, and legends, crucially preserving them for posterity."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q15046091",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "신데렐라",
+      "en": "Cinderella"
+    },
+    "start_year": 1697,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 48.8566,
+    "location_lng": 2.3522,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신데렐라 이야기는 유럽 전역과 전 세계에 걸쳐 수많은 변형이 존재하며, '신데렐라 콤플렉스'와 같은 사회적 용어를 파생시키는 등 문화적, 사회적 영향력이 매우 큽니다.",
+      "en": "The Cinderella story has countless variations across Europe and globally, spawning social terms like 'Cinderella complex,' demonstrating immense cultural and social impact."
+    },
+    "description": {
+      "ko": "신데렐라은(는) 1697년 유럽에서 집필된 작품이다. 신데렐라 이야기는 유럽 전역과 전 세계에 걸쳐 수많은 변형이 존재하며, '신데렐라 콤플렉스'와 같은 사회적 용어를 파생시키는 등 문화적, 사회적 영향력이 매우 큽니다.  당시 문학적 흐름에 새로운 방향을 제시하며 독자와 비평가 모두에게 깊은 인상을 남겼다. 이 작품의 문학적 유산은 오늘날까지 이어지고 있다.",
+      "en": "Cinderella (1697) emerged from Europe as a transformative literary achievement. Its exploration of universal themes continues to resonate with readers and scholars across cultures."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q220264",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "포폴 부흐",
+      "en": "Popol Vuh"
+    },
+    "start_year": -1550,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 15.24,
+    "location_lng": -90.78,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "키체 왕국의 신화-역사적 서사를 다룬 작품으로, 메소아메리카 신화 연구에 중요한 자료이며 왕권신수설과 관련된 역사적 내용을 담고 있다.",
+      "en": "A mytho-historical narrative of the K'iche' kingdom, it's a crucial source for Mesoamerican mythology, containing historical content related to the divine right of kings."
+    },
+    "description": {
+      "ko": "포폴 부흐은(는) 기원전 1550년 북미에서 집필된 작품이다. 키체 왕국의 신화-역사적 서사를 다룬 작품으로, 메소아메리카 신화 연구에 중요한 자료이며 왕권신수설과 관련된 역사적 내용을 담고 있다.  당시 문학적 흐름에 새로운 방향을 제시하며 독자와 비평가 모두에게 깊은 인상을 남겼다. 이 작품의 문학적 유산은 오늘날까지 이어지고 있다.",
+      "en": "Popol Vuh (1550 BCE) emerged from North America as a transformative literary achievement. Its exploration of universal themes continues to resonate with readers and scholars across cultures."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q108652",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "에다",
+      "en": "Poetic Edda"
+    },
+    "start_year": -1200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 64.13,
+    "location_lng": -21.89,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "노르드 신화와 스칼드 전통을 연구하는 데 중요한 문헌으로, 고대 북유럽 문명과 종교에 대한 이해를 돕는 경전적 가치를 지닙니다. 북유럽 문화의 근간을 이루는 서사시이다.",
+      "en": "A crucial text for Norse mythology and Skaldic tradition, it offers invaluable insight into ancient North European civilization and religion, holding scriptural value."
+    },
+    "description": {
+      "ko": "에다은(는) 기원전 1200년 유럽에서 집필된 작품이다. 노르드 신화와 스칼드 전통을 연구하는 데 중요한 문헌으로, 고대 북유럽 문명과 종교에 대한 이해를 돕는 경전적 가치를 지닙니다. 북유럽 문화의 근간을 이루는 서사시이다.  당시 문학적 흐름에 새로운 방향을 제시하며 독자와 비평가 모두에게 깊은 인상을 남겼다. 이 작품의 문학적 유산은 오늘날까지 이어지고 있다.",
+      "en": "Poetic Edda (1200 BCE) emerged from Europe as a transformative literary achievement. Its exploration of universal themes continues to resonate with readers and scholars across cultures."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q645882",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "피라미드 텍스트",
+      "en": "Pyramid Texts"
+    },
+    "start_year": -2400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 29.9792,
+    "location_lng": 31.1342,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 이집트 왕국 시대의 피라미드 내부에 새겨진 종교 문헌으로, 파라오의 사후 세계 여행과 부활을 위한 주문과 의례를 담고 있다. 세계에서 가장 오래된 종교 텍스트 중 하나로, 고대 이집트 종교와 사상을 이해하는 데 필수적이다.",
+      "en": "Ancient Egyptian religious texts inscribed inside pyramids, containing spells and rituals for the pharaoh's journey to the afterlife and resurrection. One of the oldest religious texts, crucial for understanding ancient Egyptian beliefs."
+    },
+    "description": {
+      "ko": "고대 이집트 왕국 시대의 피라미드 내부에 새겨진 종교 문헌으로, 파라오의 사후 세계 여행과 부활을 위한 주문과 의례를 담고 있다. 세계에서 가장 오래된 종교 텍스트 중 하나로, 고대 이집트 종교와 사상을 이해하는 데 필수적이다.",
+      "en": "Ancient Egyptian religious texts inscribed inside pyramids, containing spells and rituals for the pharaoh's journey to the afterlife and resurrection. One of the oldest religious texts, crucial for understanding ancient Egyptian beliefs."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q329342",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "호메로스 찬가",
+      "en": "Homeric Hymns"
+    },
+    "start_year": -700,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.9838,
+    "location_lng": 23.7275,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 그리스의 신들에게 바쳐진 33편의 서정시 모음집으로, 호메로스의 서사시와 유사한 운율과 언어를 사용한다. 고대 그리스 종교, 신화, 문학을 이해하는 데 중요한 자료이며, 서양 문학의 기원에 영향을 미쳤다.",
+      "en": "A collection of 33 ancient Greek lyrical poems dedicated to the gods, using meter and language similar to Homer's epics. It's crucial for understanding ancient Greek religion, mythology, and literature, influencing Western literature's origins."
+    },
+    "description": {
+      "ko": "고대 그리스의 신들에게 바쳐진 33편의 서정시 모음집으로, 호메로스의 서사시와 유사한 운율과 언어를 사용한다. 고대 그리스 종교, 신화, 문학을 이해하는 데 중요한 자료이며, 서양 문학의 기원에 영향을 미쳤다.",
+      "en": "A collection of 33 ancient Greek lyrical poems dedicated to the gods, using meter and language similar to Homer's epics. It's crucial for understanding ancient Greek religion, mythology, and literature, influencing Western literature's origins."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q270860",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "수메르 왕명록",
+      "en": "Sumerian King List"
+    },
+    "start_year": -2100,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32.54,
+    "location_lng": 45.63,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 수메르의 정치적 정당성을 확립하기 위해 제작된 역사적 문서로, 초기 문명사의 중요한 기록물이다. 메소포타미아 문명의 왕조와 통치 기간을 기록하여 고대 근동 역사를 이해하는 데 필수적인 자료이다.",
+      "en": "An ancient historical document from Sumer, crucial for establishing political legitimacy and understanding early Mesopotamian civilization's history."
+    },
+    "description": {
+      "ko": "고대 수메르의 정치적 정당성을 확립하기 위해 제작된 역사적 문서로, 초기 문명사의 중요한 기록물이다. 메소포타미아 문명의 왕조와 통치 기간을 기록하여 고대 근동 역사를 이해하는 데 필수적인 자료이다.",
+      "en": "An ancient historical document from Sumer, crucial for establishing political legitimacy and understanding early Mesopotamian civilization's history."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q408623",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "카피톨리나 늑대상",
+      "en": "Capitoline Wolf"
+    },
+    "start_year": -500,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 41.8902,
+    "location_lng": 12.4922,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "로마 건국 신화에 등장하는 로물루스와 레무스를 젖 먹이는 암늑대를 묘사한 청동상이다. 로마의 역사적 정체성과 불가분하며 고대 로마 문화의 중요한 유물로, 로마 시의 상징 중 하나로 널리 알려져 있다.",
+      "en": "A bronze sculpture depicting the she-wolf nursing Romulus and Remus, central to Rome's founding myth. It's an inseparable symbol of Roman identity and a crucial artifact of ancient Roman culture."
+    },
+    "description": {
+      "ko": "로마 건국 신화에 등장하는 로물루스와 레무스를 젖 먹이는 암늑대를 묘사한 청동상이다. 로마의 역사적 정체성과 불가분하며 고대 로마 문화의 중요한 유물로, 로마 시의 상징 중 하나로 널리 알려져 있다.",
+      "en": "A bronze sculpture depicting the she-wolf nursing Romulus and Remus, central to Rome's founding myth. It's an inseparable symbol of Roman identity and a crucial artifact of ancient Roman culture."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q817383",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "비블리오테케",
+      "en": "Bibliotheca"
+    },
+    "start_year": -100,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.9838,
+    "location_lng": 23.7275,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 그리스 신화와 영웅 전설을 포괄적으로 요약한 고전 문헌으로, 문명사적 영향력이 있는 종교/철학 경전에 해당한다. 후대 서양 문학과 예술에 지대한 영향을 미쳤으며, 그리스 신화 연구의 중요한 자료이다.",
+      "en": "A classical compendium of ancient Greek myths and heroic legends, it profoundly influenced Western literature and art, serving as a key resource for mythology."
+    },
+    "description": {
+      "ko": "고대 그리스 신화와 영웅 전설을 포괄적으로 요약한 고전 문헌으로, 문명사적 영향력이 있는 종교/철학 경전에 해당한다. 후대 서양 문학과 예술에 지대한 영향을 미쳤으며, 그리스 신화 연구의 중요한 자료이다.",
+      "en": "A classical compendium of ancient Greek myths and heroic legends, it profoundly influenced Western literature and art, serving as a key resource for mythology."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1211051",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "개미와 베짱이",
+      "en": "The Ants and the Grasshopper"
+    },
+    "start_year": -600,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.9838,
+    "location_lng": 23.7275,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이솝 우화는 고대 그리스의 지혜를 담고 있으며, 시대를 초월하여 도덕적 교훈을 전달하는 문명사적 가치를 지닙니다.",
+      "en": "Aesop's Fables embody ancient Greek wisdom, possessing civilizational value by imparting moral lessons that transcend time."
+    },
+    "description": {
+      "ko": "기원전 600년경에 등장한 《개미와 베짱이》은 유럽 문학이 새로운 국면을 맞이하던 시기에 탄생했다. 이 작품은 기원전 7세기의 지적·예술적 흐름과 밀접하게 연관되어 있으며, 문학적 완성도가 높은 것으로 평가된다. 유럽 지역 문학의 풍요로운 전통을 계승하면서도 독창적인 서사를 구현한 작품이다.",
+      "en": "\"The Ants and the Grasshopper\" (600 BCE) is a European literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q815523",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "마비노기온",
+      "en": "Mabinogion"
+    },
+    "start_year": 1200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 51.4816,
+    "location_lng": -3.1791,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중세 웨일스의 11가지 산문 이야기 모음집으로, 기독교 유입 이전의 켈트 신화와 중세 초기의 역사적 설화를 다루고 있어 역사적 사건 및 문명사적 가치가 높다. 아서왕 전설과 관련된 초기 형태의 이야기들을 포함하며, 웨일스 문학의 중요한 유산으로 평가받다.",
+      "en": "This collection of medieval Welsh prose tales, 'Mabinogion,' covers pre-Christian Celtic myths and early medieval historical legends, holding significant civilizational value."
+    },
+    "description": {
+      "ko": "중세 웨일스의 11가지 산문 이야기 모음집으로, 기독교 유입 이전의 켈트 신화와 중세 초기의 역사적 설화를 다루고 있어 역사적 사건 및 문명사적 가치가 높다. 아서왕 전설과 관련된 초기 형태의 이야기들을 포함하며, 웨일스 문학의 중요한 유산으로 평가받다.",
+      "en": "This collection of medieval Welsh prose tales, 'Mabinogion,' covers pre-Christian Celtic myths and early medieval historical legends, holding significant civilizational value."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1328292",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "비슈누 푸라나",
+      "en": "Vishnu Purana"
+    },
+    "start_year": -300,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 25.3176,
+    "location_lng": 82.9739,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "힌두교의 주요 경전 중 하나로, 창조 신화, 신들의 전쟁, 비슈누의 화신 등 문명사적 영향력이 큰 종교/철학 경전이다. 고대 인도의 종교적, 철학적 사상을 집대성하여 힌두교 신앙의 핵심을 이루며, 인도 문화와 예술에도 깊은 영향을 미쳤다.",
+      "en": "One of the main Hindu scriptures, it compiles creation myths, divine wars, and Vishnu's avatars, profoundly influencing civilization and Hindu faith."
+    },
+    "description": {
+      "ko": "힌두교의 주요 경전 중 하나로, 창조 신화, 신들의 전쟁, 비슈누의 화신 등 문명사적 영향력이 큰 종교/철학 경전이다. 고대 인도의 종교적, 철학적 사상을 집대성하여 힌두교 신앙의 핵심을 이루며, 인도 문화와 예술에도 깊은 영향을 미쳤다.",
+      "en": "One of the main Hindu scriptures, it compiles creation myths, divine wars, and Vishnu's avatars, profoundly influencing civilization and Hindu faith."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q72309",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "슬리피 할로우의 전설",
+      "en": "The Legend of Sleepy Hollow"
+    },
+    "start_year": 1820,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 40.7128,
+    "location_lng": -74.006,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "미국 문학의 초기 고딕 호러 장르를 정립하고 대중화하는 데 기여했으며, 미국 문화의 상징적인 이야기 중 하나로 자리 잡았다. 미국적 배경과 민담 요소를 결합하여 독특한 분위기를 창조했다.",
+      "en": "This work helped establish and popularize early American Gothic horror, becoming an iconic story in American culture, creating a unique atmosphere by combining American settings with folklore elements."
+    },
+    "description": {
+      "ko": "미국 문학의 초기 고딕 호러 장르를 정립하고 대중화하는 데 기여했으며, 미국 문화의 상징적인 이야기 중 하나로 자리 잡았다. 미국적 배경과 민담 요소를 결합하여 독특한 분위기를 창조했다.",
+      "en": "This work helped establish and popularize early American Gothic horror, becoming an iconic story in American culture, creating a unique atmosphere by combining American settings with folklore elements."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1989744",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "모세",
+      "en": "Moses"
+    },
+    "start_year": -1300,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 30.0444,
+    "location_lng": 31.2357,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "모세는 유대교와 기독교의 핵심 인물이며, 출애굽기는 이스라엘 민족의 정체성과 종교적 신념 형성에 지대한 영향을 미친 종교/철학 경전으로 볼 수 있다.",
+      "en": "Moses is a central figure in Judaism and Christianity. The Book of Exodus profoundly shaped Israelite identity and religious beliefs, a key religious/philosophical text."
+    },
+    "description": {
+      "ko": "《모세》은 기원전 14세기 중동 문학의 대표적 성과물 가운데 하나이다. 기원전 1300년경에 세상에 나온 이 작품은 당시 문학적 담론의 지형을 바꾸는 데 일조했다. 중동의 문화적 토양에서 자라난 이 텍스트는 보편적 주제와 지역적 특수성을 동시에 담아냈다. 문학 연구자들 사이에서 꾸준히 분석 대상이 되고 있는 작품이다.",
+      "en": "\"Moses\" (1300 BCE) is a Middle Eastern literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q108329738",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "프레이",
+      "en": "Prey"
+    },
+    "start_year": -500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 59.3293,
+    "location_lng": 18.0686,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "프레이는 북유럽 신화의 중요한 신으로, 왕권, 풍요, 번영을 상징하며 고대 북유럽 종교 및 문화와 불가분의 관계에 있다.",
+      "en": "Freyr is a significant god in Norse mythology, symbolizing kingship, fertility, and prosperity, inextricably linked to ancient Norse religion and culture."
+    },
+    "description": {
+      "ko": "기원전 500년경에 발표된 《프레이》(Prey)은 유럽 문학계의 주요 작품이었다. 이 작품은 기원전 6세기의 시대 정신을 문학적 언어로 포착하며 당대 독자층의 공감을 얻었다. 유럽 문학 전통 속에서 독자적인 위상을 확보했으며, 후대 작가들에게 중요한 참조점이 되었다. 작품에 담긴 주제 의식은 시대를 초월하여 오늘날에도 유효하다.",
+      "en": "\"Prey\" (500 BCE) is a European literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q844278",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "산해경",
+      "en": "Shan Hai Jing"
+    },
+    "start_year": -400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 34.7465,
+    "location_lng": 113.6652,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 중국의 신화, 지리, 민속을 담은 문헌으로, 중국 문명과 문화에 지대한 영향을 미쳤다. 상상력과 지리적 지식이 결합된 독특한 고전이다.",
+      "en": "An ancient Chinese text on mythology, geography, and folklore, it profoundly influenced Chinese civilization and culture, a unique classic blending imagination and knowledge."
+    },
+    "description": {
+      "ko": "고대 중국의 신화, 지리, 민속을 담은 문헌으로, 중국 문명과 문화에 지대한 영향을 미쳤다. 상상력과 지리적 지식이 결합된 독특한 고전이다.",
+      "en": "Emerging from East Asia around 400 BCE, 'Shan Hai Jing' stands as a landmark achievement of the Classical period. This literary work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1195043",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "카타사리트사가라",
+      "en": "Kathasaritsagara"
+    },
+    "start_year": 1070,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 25.317,
+    "location_lng": 83.012,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 인도의 산스크리트 설화집으로, 동서 비교 문학상 중요한 작품이며 문명사적 영향력을 가진 종교/철학 경전으로 볼 수 있다. 소마데바가 편찬했다.",
+      "en": "An ancient Indian Sanskrit collection of tales, significant in comparative literature and a culturally influential work."
+    },
+    "description": {
+      "ko": "남아시아에서 1070년에 나온 '카타사리트사가라'은(는) 중세를 대표하는 문학 작품 중 하나이다. 당시 사회·문화적 환경 속에서 탄생한 이 작품은 인간 조건에 대한 깊은 성찰을 담고 있었다. 문학적 완성도와 주제의 보편성 덕분에 여러 언어로 번역되어 국제적 명성을 얻었다.",
+      "en": "'Kathasaritsagara' is a significant literary work from South Asia, dating to approximately 1070. Created during the medieval era, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80650",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "아리랑 (민요)",
+      "en": "Arirang (Korean Folk Song)"
+    },
+    "start_year": 1860,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 37.57,
+    "location_lng": 126.98,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "한국을 대표하는 민요로, 다양한 지역 변형이 존재한다. 2012년 유네스코 인류무형문화유산에 등재된 민족의 노래이다.",
+      "en": "Korea's representative folk song with regional variations. UNESCO Intangible Heritage since 2012."
+    },
+    "description": {
+      "ko": "'아리랑 아리랑 아라리요'로 시작하는 한국의 대표 민요이다. 경기, 진도, 정선, 밀양 아리랑 등 수십 종의 변형이 존재한다. 이별, 그리움, 삶의 애환을 담은 민족 정서의 상징이다.",
+      "en": "Korea's representative folk song. Dozens of variations exist. A symbol of national sentiment expressing parting, longing, and life's sorrows."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900006",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "초한지",
+      "en": "Records of Chu-Han Contention"
+    },
+    "start_year": -100,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 34.26,
+    "location_lng": 108.94,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "항우와 유방의 천하쟁패를 다룬 역사 이야기. 사기를 바탕으로 후대에 소설화되었다.",
+      "en": "Historical narrative of the rivalry between Xiang Yu and Liu Bang, novelized from Records of the Grand Historian."
+    },
+    "description": {
+      "ko": "'초한지'은(는) 기원전 100년에 발표된 동아시아 문학의 주요 작품이다. 고전기의 문화적·사회적 맥락을 반영하며, 당대의 문학적 흐름에 중요한 전환점을 제시했다. 이 작품은 문학사적으로 독창적인 서사 구조와 주제 의식을 통해 후대 작가들에게 깊은 영향을 끼쳤다. 오늘날에도 동아시아 문학을 이해하는 데 필수적인 텍스트로 평가받고 있다.",
+      "en": "Dating to 100 BCE, 'Records of Chu-Han Contention' represents one of East Asia's most important literary contributions from the Classical period. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900135",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "마나스 서사시",
+      "en": "Epic of Manas"
+    },
+    "start_year": 1000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 42.87,
+    "location_lng": 74.59,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "카자흐스탄",
+      "en": "Kazakhstan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "키르기스의 구전 서사시. 50만 행 이상의 세계 최장 서사시로 키르기스 민족의 정체성을 담고 있다.",
+      "en": "Kyrgyz oral epic of over 500,000 lines, the world's longest epic poem embodying Kyrgyz national identity."
+    },
+    "description": {
+      "ko": "키르기스의 구전 서사시. 50만 행 이상의 세계 최장 서사시로 키르기스 민족의 정체성을 담고 있다.",
+      "en": "Dating to 1000, 'Epic of Manas' represents one of Central Asia's most important literary contributions from the early medieval period. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900151",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "카자흐 자르구 음유시인",
+      "en": "Kazakh Zhyrau Oral Poetry"
+    },
+    "start_year": 1500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 50.3,
+    "location_lng": 57.2,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "카자흐 유목민의 구전 시인(즈러우) 전통. 역사·영웅담·교훈을 노래로 전승한 스텝의 문학이다.",
+      "en": "Kazakh zhyrau oral poetry tradition transmitting history, heroic tales, and wisdom through song on the steppe."
+    },
+    "description": {
+      "ko": "'카자흐 자르구 음유시인'(Kazakh Zhyrau Oral Poetry)은(는) 1500년경에 탄생한 중앙아시아의 문학 작품이다. 중세 후기에서 르네상스 시기 당시의 지적·예술적 분위기를 배경으로, 독자적인 문체와 서사로 문학계에 새로운 가능성을 열었다. 이 작품이 지닌 문학적 깊이와 역사적 의의는 시대를 초월하여 꾸준히 재조명되고 있다. 중앙아시아 문학의 정전으로서 그 가치가 확고하다.",
+      "en": "'Kazakh Zhyrau Oral Poetry' (1500) is a defining literary work from Central Asia that encapsulates the spirit of the late medieval and Renaissance period. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900153",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "타지크 팔라우 문화",
+      "en": "Tajik Falak Music"
+    },
+    "start_year": 1800,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 38.56,
+    "location_lng": 68.77,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "우즈베키스탄",
+      "en": "Uzbekistan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "타지키스탄의 전통 팔라크 음악. 산악지대 민중의 삶과 감정을 노래하는 구전 음악 전통이다.",
+      "en": "Traditional Tajik falak music, an oral tradition singing the life and emotions of mountain communities."
+    },
+    "description": {
+      "ko": "중앙아시아의 '타지크 팔라우 문화'은(는) 1800년에 세상에 나와 18세기 음악을 대표하는 작품이 되었다. 창작자의 예술적 비전이 음악적 형식을 통해 완벽하게 구현되었으며, 당시 음악 문화에 새로운 방향을 제시했다. 이 작품이 끼친 영향은 음악사 전반에 걸쳐 감지된다. 세대를 넘어 꾸준히 재해석되고 있다.",
+      "en": "Dating to 1800, 'Tajik Falak Music' represents one of Central Asia's most important musical contributions from the 18th century. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_012",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "팔리 삼장 (티피타카)",
+      "en": "Pali Canon (Tipitaka)"
+    },
+    "start_year": -300,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 24.6955,
+    "location_lng": 84.991,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "상좌부 불교의 경전 전체를 담은 팔리어 문헌으로, 율장·경장·논장의 세 바구니로 구성된다. 현존하는 가장 완전한 초기 불교 경전 모음이다.",
+      "en": "The complete scripture of Theravada Buddhism in Pali, organized into three baskets: Vinaya, Sutta, and Abhidhamma. It is the most complete surviving collection of early Buddhist texts."
+    },
+    "description": {
+      "ko": "기원전 3세기경부터 구전되어 기원전 1세기 스리랑카에서 문자로 기록된 팔리어 경전이다. 부처의 직접적 가르침에 가장 가까운 기록으로 간주된다. 스리랑카·미얀마·태국 등 상좌부 불교권의 종교·문화·법률의 근간을 이룹니다.",
+      "en": "Pali scriptures transmitted orally from the 3rd century BCE and first written down in Sri Lanka in the 1st century BCE. They are considered the closest record of the Buddha's direct teachings. They form the religious, cultural, and legal foundation of Theravada Buddhist countries including Sri Lanka, Myanmar, and Thailand."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_021",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "자타카 이야기",
+      "en": "Jataka Tales"
+    },
+    "start_year": -300,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 24.6955,
+    "location_lng": 84.991,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "부처의 전생 이야기를 담은 547편의 팔리어 설화집이다. 동물 우화와 도덕 교훈을 통해 보살행을 가르치며, 이솝 우화에도 영향을 준 것으로 추정된다.",
+      "en": "A collection of 547 Pali stories about the Buddha's previous lives. They teach bodhisattva conduct through animal fables and moral lessons, believed to have influenced Aesop's Fables."
+    },
+    "description": {
+      "ko": "기원전 3세기경부터 편찬된 불교 설화집으로, 부처가 깨달음을 얻기 전 수많은 전생에서 보살로서 쌓은 공덕을 이야기한다. 아잔타 벽화·산치 대탑 부조의 주요 소재이며 인도 서사 문학의 원형이다. 실크로드를 따라 동서양에 전파되어 세계 설화 문학에 영향을 미쳤다.",
+      "en": "A Buddhist story collection compiled from the 3rd century BCE, narrating the Buddha's merits accumulated as a bodhisattva across countless past lives. They are the primary subject of Ajanta murals and Sanchi reliefs, forming a prototype of Indian narrative literature. Transmitted along the Silk Road, they influenced folklore traditions worldwide."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_055",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "타블라",
+      "en": "Tabla"
+    },
+    "start_year": 1700,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 28.6139,
+    "location_lng": 77.209,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도 북부의 대표적 타악기로, 작은 북(다얀)과 큰 북(바얀) 한 쌍으로 구성된다. 손가락 기법으로 만들어내는 복잡한 리듬 패턴이 인도 음악의 핵심이다.",
+      "en": "The representative North Indian percussion instrument, a pair of small (dayan) and large (bayan) drums. Complex rhythmic patterns created through finger technique are central to Indian music."
+    },
+    "description": {
+      "ko": "18세기경 현재 형태로 정립된 것으로 추정되며, 각 리듬 패턴에 음절(볼)이 대응하는 독특한 구전 체계를 가집니다. 독주 악기로도 기능하며 자크리 후세인이 세계적 명성을 얻었다. 볼리우드 음악에서부터 재즈·일렉트로닉까지 폭넓게 활용된다.",
+      "en": "Believed to have reached its current form around the 18th century, it has a unique oral system where syllables (bols) correspond to each rhythmic pattern. It also functions as a solo instrument, with Zakir Hussain achieving world fame. It is used broadly from Bollywood music to jazz and electronic music."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA001",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "이집트 사자의 서",
+      "en": "Egyptian Book of the Dead"
+    },
+    "start_year": -1550,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 25.7406,
+    "location_lng": 32.6015,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 이집트 장례 문서로, 사후 세계를 안내하는 주문과 삽화가 담긴 파피루스 두루마리이다. 이집트인의 사후관과 종교 세계관을 보여주는 핵심 유산이다.",
+      "en": "Ancient Egyptian funerary text containing spells and illustrations guiding the deceased through the afterlife. A key artifact revealing Egyptian beliefs about death and the cosmos."
+    },
+    "description": {
+      "ko": "'이집트 사자의 서'(Egyptian Book of the Dead)은(는) 기원전 1550년경에 탄생한 아프리카의 문학 작품이다. 고대 당시의 지적·예술적 분위기를 배경으로, 독자적인 문체와 서사로 문학계에 새로운 가능성을 열었다. 이 작품이 지닌 문학적 깊이와 역사적 의의는 시대를 초월하여 꾸준히 재조명되고 있다. 아프리카 문학의 정전으로서 그 가치가 확고하다.",
+      "en": "'Egyptian Book of the Dead' is a significant literary work from Africa, dating to approximately 1550 BCE. Created during antiquity, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA008",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "이집트 파피루스 문학",
+      "en": "Egyptian Papyrus Literature"
+    },
+    "start_year": -2000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 30.0444,
+    "location_lng": 31.2357,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "시누헤 이야기, 웅변적인 농부 등 고대 이집트 문학 작품들이다. 세계 최초의 서사 문학 전통 중 하나로, 인간 조건을 탐구한다.",
+      "en": "Ancient Egyptian literary works including the Tale of Sinuhe and the Eloquent Peasant. Among the world's earliest narrative literary traditions exploring the human condition."
+    },
+    "description": {
+      "ko": "'이집트 파피루스 문학'은(는) 기원전 2000년에 발표된 아프리카 문학의 주요 작품이다. 고대의 문화적·사회적 맥락을 반영하며, 당대의 문학적 흐름에 중요한 전환점을 제시했다. 이 작품은 문학사적으로 독창적인 서사 구조와 주제 의식을 통해 후대 작가들에게 깊은 영향을 끼쳤다. 오늘날에도 아프리카 문학을 이해하는 데 필수적인 텍스트로 평가받고 있다.",
+      "en": "Emerging from Africa around 2000 BCE, 'Egyptian Papyrus Literature' stands as a landmark achievement of antiquity. This literary work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA039",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "에티오피아 재즈 (물라투 아스타트케)",
+      "en": "Ethiopian Jazz (Mulatu Astatke)"
+    },
+    "start_year": 1968,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 9.025,
+    "location_lng": 38.7469,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "에티오피안 재즈(에티오-재즈)의 창시자 물라투 아스타트케의 음악이다. 에티오피아 전통 선법과 재즈·라틴을 융합한 독창적 장르이다.",
+      "en": "Music of Mulatu Astatke, founder of Ethio-jazz. A unique genre blending Ethiopian traditional modes with jazz and Latin influences."
+    },
+    "description": {
+      "ko": "에티오피아 재즈 (물라투 아스타트케)은 1968년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 이 음악 전통은 구전을 통해 전승되면서도 높은 수준의 복잡성과 세련미를 유지했다. 아프리카 고유의 예술적 감수성이 깊이 반영된 결과물이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Ethiopian Jazz (Mulatu Astatke) emerged around 1968 as a musical genre that built upon earlier traditions while pioneering new modes of expression. It stands as a testament to the rich artistic heritage of the African continent. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. Later artists and scholars drew inspiration from this work, continuing new creative endeavors and research."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA048",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "마그레브 라이 음악",
+      "en": "Maghreb Raï Music"
+    },
+    "start_year": 1960,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.6987,
+    "location_lng": -0.6349,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "알제리 오랑에서 발전한 라이 음악으로, 전통 베두인 음악에 현대적 요소를 결합했다. 칼레드, 셰브 마미 등이 세계적으로 알려졌다.",
+      "en": "Raï music from Oran, Algeria blending Bedouin traditions with modern elements. Artists like Khaled and Cheb Mami gained international recognition."
+    },
+    "description": {
+      "ko": "마그레브 라이 음악은 1960년경의 음악적 성취를 대표하며, 연주 기법과 악곡 구성에서 혁신적 면모를 보였다. 이 음악 전통은 구전을 통해 전승되면서도 높은 수준의 복잡성과 세련미를 유지했다. 아프리카 고유의 예술적 감수성이 깊이 반영된 결과물이다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Maghreb Raï Music is a musical tradition that emerged around 1960, establishing a distinctive sonic world through its unique melodic systems and rhythmic structures. The acoustic space created by the interaction of rhythm and melody is remarkably original. The work reflects the deep cultural traditions that have flourished across Africa for centuries. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA051",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "소말리 시가 전통",
+      "en": "Somali Poetry Tradition"
+    },
+    "start_year": 1960,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 2.0469,
+    "location_lng": 45.3182,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "소말리아의 구전 시가 전통으로, 정치·사랑·전쟁을 주제로 한 즉흥시가 특징이다. '시인의 나라'로 불리는 소말리 문화의 핵심이다.",
+      "en": "Somalia's oral poetry tradition featuring improvised verses on politics, love, and war. Central to the culture of a nation known as 'the land of poets.'"
+    },
+    "description": {
+      "ko": "소말리 시가 전통은 1960년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 문학적 실험과 전통의 계승이라는 이중 과제를 성공적으로 수행한 작품으로 평가된다. 아프리카 대륙의 풍부한 문화적 전통 속에서 탄생한 작품이다. 이 작품이 속한 전통은 수세기에 걸쳐 발전하며 독자적 미학 체계를 완성했다.",
+      "en": "Somali Poetry Tradition is a literary work composed around 1960, capturing universal aspects of human experience through the unique voice of its cultural tradition. Insights into social contradictions and the human condition are effectively expressed within its literary form. The work reflects the deep cultural traditions that have flourished across Africa for centuries. Later artists and scholars drew inspiration from this work, continuing new creative endeavors and research."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA059",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "치마만다 응고지 아디치에",
+      "en": "Chimamanda Ngozi Adichie"
+    },
+    "start_year": 2003,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 6.4427,
+    "location_lng": 7.496,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "나이지리아 작가로, <반쪽의 노란 태양>, <아메리카나> 등으로 세계적 명성을 얻었다. TED 강연 '단일 이야기의 위험'으로도 유명한다.",
+      "en": "Nigerian author of Half of a Yellow Sun and Americanah. Also renowned for her TED talk 'The Danger of a Single Story.'"
+    },
+    "description": {
+      "ko": "치마만다 응고지 아디치에는 2003년경 창작된 문학적 성취로, 당대의 사회상과 정신세계를 문자로 형상화한 작품이다. 아프리카 문명의 창조성과 다양성을 대표하는 사례이다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Chimamanda Ngozi Adichie is a literary work composed around 2003, capturing universal aspects of human experience through the unique voice of its cultural tradition. It exemplifies the creative ingenuity found throughout African civilizations. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. Today, its value continues to be re-evaluated as a subject of both scholarly research and public interest."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200023",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "쿤디만",
+      "en": "Kundiman"
+    },
+    "start_year": 1880,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 14.5995,
+    "location_lng": 120.9842,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "필리핀의 전통 사랑 노래 장르로, 스페인 식민 시대에 발전하여 독립운동의 저항가로도 활용되었다.",
+      "en": "Filipino traditional love song genre that developed during Spanish colonial era and served as resistance songs."
+    },
+    "description": {
+      "ko": "쿤디만은 1880년경 형성된 음악 양식으로, 고유한 선율 체계와 리듬 구조를 통해 독자적 음악 세계를 구축했다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 이 음악 전통은 구전을 통해 전승되면서도 높은 수준의 복잡성과 세련미를 유지했다. 교역과 문화 교류의 산물로서, 복수의 문명이 교차하는 지점에서 탄생했다.",
+      "en": "Kundiman is a musical tradition that emerged around 1880, establishing a distinctive sonic world through its unique melodic systems and rhythmic structures. It represents the multilayered cultural exchanges characteristic of Southeast Asia. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. The influence of this work spread widely beyond its original cultural boundaries."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200031",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "프란시스코 발라가스",
+      "en": "Francisco Balagtas"
+    },
+    "start_year": 1838,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 14.75,
+    "location_lng": 120.96,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "필리핀의 국민 시인 발라가스의 서사시 '플로란테와 라우라'는 식민 시대 사회비판을 우화적으로 담아낸 걸작이다.",
+      "en": "Filipino national poet Balagtas's epic 'Florante at Laura' allegorically critiques colonial society."
+    },
+    "description": {
+      "ko": "프란시스코 발라가스는 1838년경에 쓰인 작품으로, 문학적 서사와 사상적 깊이가 결합된 대표적 텍스트이다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Francisco Balagtas is a literary work composed around 1838, capturing universal aspects of human experience through the unique voice of its cultural tradition. The work showcases the distinctive artistic traditions of the Southeast Asian region. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200070",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "소르 후아나 이네스 데 라 크루스",
+      "en": "Sor Juana Inés de la Cruz"
+    },
+    "start_year": 1680,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 19.436,
+    "location_lng": -99.1332,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "17세기 멕시코 수녀이자 시인·학자로, 여성의 지적 권리를 옹호한 라틴아메리카 최초의 페미니스트 작가이다.",
+      "en": "17th-century Mexican nun, poet and scholar, Latin America's first feminist writer advocating women's intellectual rights."
+    },
+    "description": {
+      "ko": "소르 후아나 이네스 데 라 크루스는 1680년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Sor Juana Inés de la Cruz, written around 1680, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. The work reflects the dynamic cultural traditions of Central and South America. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200095",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "빌라-로보스",
+      "en": "Heitor Villa-Lobos"
+    },
+    "start_year": 1930,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -22.9068,
+    "location_lng": -43.1729,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "브라질의 국민 작곡가로, '바히아나스 브라질레이라스' 등 브라질 민속음악과 클래식을 결합한 걸작을 남겼다.",
+      "en": "Brazil's national composer who left masterpieces fusing Brazilian folk music with classical, including 'Bachianas Brasileiras'."
+    },
+    "description": {
+      "ko": "빌라-로보스는 1930년경 형성된 음악 양식으로, 고유한 선율 체계와 리듬 구조를 통해 독자적 음악 세계를 구축했다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 이 음악 전통은 구전을 통해 전승되면서도 높은 수준의 복잡성과 세련미를 유지했다. 교역과 문화 교류의 산물로서, 복수의 문명이 교차하는 지점에서 탄생했다.",
+      "en": "Heitor Villa-Lobos emerged around 1930 as a musical genre that built upon earlier traditions while pioneering new modes of expression. It embodies the distinctive worldview of Latin American civilizations. The acoustic space created by the interaction of rhythm and melody is remarkably original. Today, its value continues to be re-evaluated as a subject of both scholarly research and public interest."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200096",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "쿠바 손 음악",
+      "en": "Cuban Son"
+    },
+    "start_year": 1920,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 23.1136,
+    "location_lng": -82.3666,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "쿠바의 아프리카계·스페인계 음악이 결합된 장르로, 살사·룸바 등 라틴 음악의 기초가 되었다.",
+      "en": "Cuban genre fusing African and Spanish musical traditions, forming the foundation of salsa, rumba and Latin music."
+    },
+    "description": {
+      "ko": "쿠바 손 음악은 1920년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 이 음악 전통은 구전을 통해 전승되면서도 높은 수준의 복잡성과 세련미를 유지했다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Cuban Son, originating around 1920, represents a musical heritage where cultural emotion and aesthetics are realized through sound. It represents a unique fusion of indigenous aesthetics and broader cultural influences. This music established a unique performance tradition in which improvisation and structural rigor coexist. Later artists and scholars drew inspiration from this work, continuing new creative endeavors and research."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200099",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "레게톤",
+      "en": "Reggaeton"
+    },
+    "start_year": 1995,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 18.4655,
+    "location_lng": -66.1057,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "푸에르토리코에서 탄생한 라틴 도시 음악 장르로, 레게·힙합·라틴 리듬을 결합하여 세계적 트렌드가 되었다.",
+      "en": "Latin urban music genre born in Puerto Rico, combining reggae, hip-hop and Latin rhythms into a global trend."
+    },
+    "description": {
+      "ko": "레게톤은 1995년경 탄생한 음악적 전통으로, 해당 문화의 정서와 미학이 소리를 통해 구현된 결과물이다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 이 음악 전통은 구전을 통해 전승되면서도 높은 수준의 복잡성과 세련미를 유지했다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Reggaeton emerged around 1995 as a musical genre that built upon earlier traditions while pioneering new modes of expression. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. It embodies the distinctive worldview of Latin American civilizations. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200115",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "루벤 다리오",
+      "en": "Rubén Darío"
+    },
+    "start_year": 1888,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 12.1364,
+    "location_lng": -86.2514,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "니카라과 시인으로, 모더니즘 문학 운동의 창시자로서 스페인어 문학을 혁신했다.",
+      "en": "Nicaraguan poet who revolutionized Spanish-language literature as the founder of the Modernismo literary movement."
+    },
+    "description": {
+      "ko": "루벤 다리오는 1888년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 이 작품은 해당 문화권의 정체성을 이해하는 데 핵심적인 단서를 제공한다.",
+      "en": "Rubén Darío is a literary work composed around 1888, capturing universal aspects of human experience through the unique voice of its cultural tradition. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. The work reflects the dynamic cultural traditions of Central and South America. The influence of this work spread widely beyond its original cultural boundaries."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200137",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "패트릭 화이트",
+      "en": "Patrick White"
+    },
+    "start_year": 1957,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -33.8688,
+    "location_lng": 151.2093,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "호주 소설가로, 1973년 호주 최초로 노벨 문학상을 수상, '보스의 탐험'으로 호주 대륙의 정신을 탐구했다.",
+      "en": "Australian novelist, first Australian Nobel laureate in 1973, exploring the spirit of the Australian continent in 'Voss'."
+    },
+    "description": {
+      "ko": "패트릭 화이트는 1957년경 창작된 문학적 성취로, 당대의 사회상과 정신세계를 문자로 형상화한 작품이다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 태평양 도서 문화의 독특한 세계관을 반영하는 작품이다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Patrick White, written around 1957, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. It demonstrates the deep connection between art and the natural environment in the Pacific region. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200140",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "뉴질랜드 문학 르네상스",
+      "en": "NZ Literary Renaissance"
+    },
+    "start_year": 1930,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -41.2865,
+    "location_lng": 174.7762,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "프랭크 사전트, 앨런 컨들 등이 이끈 1930년대 뉴질랜드 문학 운동으로, 독자적 국가 문학의 기반을 닦았다.",
+      "en": "1930s New Zealand literary movement led by Frank Sargeson and others, establishing the foundation of national literature."
+    },
+    "description": {
+      "ko": "뉴질랜드 문학 르네상스는 1930년경에 쓰인 작품으로, 문학적 서사와 사상적 깊이가 결합된 대표적 텍스트이다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 태평양 도서 문화의 독특한 세계관을 반영하는 작품이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "NZ Literary Renaissance is a literary work composed around 1930, capturing universal aspects of human experience through the unique voice of its cultural tradition. Insights into social contradictions and the human condition are effectively expressed within its literary form. It demonstrates the deep connection between art and the natural environment in the Pacific region. The tradition to which this work belongs developed over centuries, completing a distinctive aesthetic system."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200208",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "싱가포르 현대 문학",
+      "en": "Singapore Literature"
+    },
+    "start_year": 2000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 1.3521,
+    "location_lng": 103.8198,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "다민족·다언어 사회인 싱가포르의 영어 문학으로, 국가 정체성과 도시 경험을 탐구한다.",
+      "en": "English-language literature of multiethnic Singapore exploring national identity and urban experience."
+    },
+    "description": {
+      "ko": "싱가포르 현대 문학은 2000년경에 쓰인 작품으로, 문학적 서사와 사상적 깊이가 결합된 대표적 텍스트이다. 동남아시아 지역의 독자적 예술 전통을 잘 보여주는 사례이다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Singapore Literature dates to approximately 2000 and represents a landmark in literary achievement, combining narrative depth with philosophical insight. Insights into social contradictions and the human condition are effectively expressed within its literary form. The work showcases the distinctive artistic traditions of the Southeast Asian region. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200213",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "위니세 지 모라에스",
+      "en": "Vinicius de Moraes"
+    },
+    "start_year": 1958,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -22.9068,
+    "location_lng": -43.1729,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "브라질 시인·작사가로, 보사노바의 가사를 담당하며 '이파네마의 소녀' 등 명곡을 남겼다.",
+      "en": "Brazilian poet and lyricist who wrote bossa nova classics including 'The Girl from Ipanema'."
+    },
+    "description": {
+      "ko": "위니세 지 모라에스는 1958년경에 쓰인 작품으로, 문학적 서사와 사상적 깊이가 결합된 대표적 텍스트이다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Vinicius de Moraes dates to approximately 1958 and represents a landmark in literary achievement, combining narrative depth with philosophical insight. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. The work reflects the dynamic cultural traditions of Central and South America. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200091_dup_3254",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "사자의 서",
+      "en": "Book of the Dead"
+    },
+    "start_year": -1550,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 25.74,
+    "location_lng": 32.6,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이집트",
+      "en": "Egypt"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 이집트의 장례 문서로, 사후 세계를 여행하는 죽은 자를 위한 주문과 그림이 담긴 파피루스 두루마리이다.",
+      "en": "Ancient Egyptian funerary text with spells and illustrations guiding the deceased through the afterlife."
+    },
+    "description": {
+      "ko": "사자의 서는 기원전 1550년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 중동 문명의 깊은 역사적 뿌리에서 탄생한 작품이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Book of the Dead is a literary work composed around 1550 BCE, capturing universal aspects of human experience through the unique voice of its cultural tradition. It represents centuries of accumulated cultural achievement in the Middle East. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200092_dup_3255",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "페니키아 알파벳",
+      "en": "Phoenician Alphabet"
+    },
+    "start_year": -1050,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 33.89,
+    "location_lng": 35.51,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "레바논",
+      "en": "Lebanon"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "페니키아에서 발명된 22자 자음 문자 체계로, 그리스·라틴·아랍 문자의 원조이자 세계 문자 역사의 출발점이다.",
+      "en": "The 22-letter consonantal script from Phoenicia, ancestor of Greek, Latin, and Arabic alphabets."
+    },
+    "description": {
+      "ko": "페니키아 알파벳은 기원전 1050년경에 등장한 문화적 산물로, 기존 장르 분류를 넘어서는 독특한 예술적 가치를 지닌다. 이슬람 문화권의 정교한 미적 전통이 반영된 결과물이다. 전통적 장르 구분으로는 포착할 수 없는 복합적 예술성이 이 작품의 핵심적 가치이다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Phoenician Alphabet appeared around 1050 BCE as an original form of cultural expression, fusing elements from diverse artistic domains. The work reflects the sophisticated aesthetic traditions of the Islamic cultural sphere. This heritage reveals the holistic character of its society at the intersection of material and spiritual culture. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200093_dup_3256",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "아베스타",
+      "en": "Avesta"
+    },
+    "start_year": -1000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32.65,
+    "location_lng": 51.68,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이란",
+      "en": "Iran"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "조로아스터교의 경전으로, 선과 악의 이원론적 세계관을 담아 유대교·기독교·이슬람에도 영향을 미쳤다.",
+      "en": "The Zoroastrian scriptures whose dualistic worldview of good and evil influenced Judaism, Christianity, and Islam."
+    },
+    "description": {
+      "ko": "아베스타는 기원전 1000년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 이슬람 문화권의 정교한 미적 전통이 반영된 결과물이다. 이 텍스트는 구전 전통과 기록 문학의 교차점에서 탄생하여 양쪽의 장점을 모두 살렸다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Avesta, written around 1000 BCE, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. It represents centuries of accumulated cultural achievement in the Middle East. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. It was the result of combining skilled craftsmanship with a shared communal aesthetic vision."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200100_dup_3262",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "에누마 엘리시",
+      "en": "Enuma Elish"
+    },
+    "start_year": -1100,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32.54,
+    "location_lng": 44.42,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이라크",
+      "en": "Iraq"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "바빌로니아의 창세 서사시로, 마르두크 신이 티아마트를 물리치고 세계를 창조하는 메소포타미아 신화의 핵심이다.",
+      "en": "Babylonian creation epic about Marduk's victory over Tiamat and the creation of the world."
+    },
+    "description": {
+      "ko": "에누마 엘리시는 기원전 1100년경에 쓰인 작품으로, 문학적 서사와 사상적 깊이가 결합된 대표적 텍스트이다. 서사 구조의 치밀함과 인물 묘사의 깊이가 결합되어 시대를 초월한 보편성을 획득했다. 중동 지역의 오랜 문화적 축적이 응축된 사례이다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Enuma Elish, written around 1100 BCE, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. The work reflects the sophisticated aesthetic traditions of the Islamic cultural sphere. The work maximizes the artistic potential of language and has established itself as a canonical text in its literary tradition. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200101_dup_3263",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "우가리트 서판",
+      "en": "Ugaritic Tablets"
+    },
+    "start_year": -1300,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 35.6,
+    "location_lng": 35.78,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "시리아",
+      "en": "Syria"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 우가리트에서 발견된 점토판으로, 바알 신화 등 가나안 문학과 세계 최초의 알파벳 문자를 담고 있다.",
+      "en": "Clay tablets from ancient Ugarit containing Baal myths and one of the world's earliest alphabetic scripts."
+    },
+    "description": {
+      "ko": "우가리트 서판은 기원전 1300년경 창작된 문학적 성취로, 당대의 사회상과 정신세계를 문자로 형상화한 작품이다. 서사 구조의 치밀함과 인물 묘사의 깊이가 결합되어 시대를 초월한 보편성을 획득했다. 중동 문명의 깊은 역사적 뿌리에서 탄생한 작품이다. 교역과 문화 교류의 산물로서, 복수의 문명이 교차하는 지점에서 탄생했다.",
+      "en": "Ugaritic Tablets, written around 1300 BCE, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. The work reflects the sophisticated aesthetic traditions of the Islamic cultural sphere. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q201025",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "브레멘 음악대",
+      "en": "Town Musicians of Bremen"
+    },
+    "start_year": 1819,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 53.08,
+    "location_lng": 8.81,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "독일",
+      "en": "Germany"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "그림 형제의 동화로, 늙은 동물 네 마리가 힘을 합쳐 강도를 물리치는 이야기이다.",
+      "en": "A Brothers Grimm fairy tale about four aging animals who band together to defeat robbers."
+    },
+    "description": {
+      "ko": "브레멘 음악대는 1819년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 유럽 문화사의 흐름 속에서 중요한 위치를 차지하는 작품이다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Town Musicians of Bremen, written around 1819, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. It occupies a significant place in the trajectory of European cultural history. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
+    },
+    "external_link": ""
   }
 ]
