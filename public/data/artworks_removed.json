@@ -11582,5 +11582,1093 @@
       "en": "The greatest hero of Greek mythology, Hercules symbolizes heroism and mythical narrative in Western culture, inspiring countless artworks and literature."
     },
     "external_link": ""
+  },
+  {
+    "id": "Q18813",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "신약성경",
+      "en": "New Testament"
+    },
+    "start_year": 50,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "기독교의 경전으로, 예수 그리스도의 생애, 가르침, 죽음, 부활 및 초기 기독교 공동체의 역사를 담고 있다. 서양 문명과 문화, 윤리, 예술에 지대한 영향을 미쳤으며, 전 세계 수십억 명의 신앙과 삶의 근간을 이룹니다.",
+      "en": "The Christian scripture detailing the life of Jesus and early Christianity. It profoundly influenced Western civilization, culture, ethics, and art, forming the basis of faith for billions."
+    },
+    "description": {
+      "ko": "기독교의 경전으로, 예수 그리스도의 생애, 가르침, 죽음, 부활 및 초기 기독교 공동체의 역사를 담고 있다. 서양 문명과 문화, 윤리, 예술에 지대한 영향을 미쳤으며, 전 세계 수십억 명의 신앙과 삶의 근간을 이룹니다.",
+      "en": "The Christian scripture detailing the life of Jesus and early Christianity. It profoundly influenced Western civilization, culture, ethics, and art, forming the basis of faith for billions."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q19786",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "구약성경",
+      "en": "Old Testament"
+    },
+    "start_year": -1200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "유대교, 기독교, 이슬람교의 근간을 이루는 종교 경전으로, 창조부터 이스라엘 민족의 역사, 율법, 예언 등을 담고 있다. 서양 문명과 문화, 윤리, 법률에 지대한 영향을 미쳤으며, 전 세계 수많은 사람들의 신앙과 삶의 지침이 된다.",
+      "en": "The foundational scripture for Judaism, Christianity, and Islam, covering creation to Israel's history. It profoundly influenced Western civilization, culture, ethics, and law."
+    },
+    "description": {
+      "ko": "유대교, 기독교, 이슬람교의 근간을 이루는 종교 경전으로, 창조부터 이스라엘 민족의 역사, 율법, 예언 등을 담고 있다. 서양 문명과 문화, 윤리, 법률에 지대한 영향을 미쳤으며, 전 세계 수많은 사람들의 신앙과 삶의 지침이 된다.",
+      "en": "The foundational scripture for Judaism, Christianity, and Islam, covering creation to Israel's history. It profoundly influenced Western civilization, culture, ethics, and law."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q9190",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "출애굽기",
+      "en": "Exodus"
+    },
+    "start_year": -1400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 30.0444,
+    "location_lng": 31.2357,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "구약성경의 두 번째 책으로, 이스라엘 민족이 이집트 노예 생활에서 해방되어 시나이 산에서 십계명을 받는 과정을 다룹니다. 유대교와 기독교의 핵심적인 서사이며, 자유와 구원에 대한 인류의 보편적인 열망을 상징한다.",
+      "en": "The second book of the Old Testament, detailing Israel's liberation from Egyptian slavery and receiving the Ten Commandments. A core narrative for Judaism and Christianity, symbolizing freedom."
+    },
+    "description": {
+      "ko": "구약성경의 두 번째 책으로, 이스라엘 민족이 이집트 노예 생활에서 해방되어 시나이 산에서 십계명을 받는 과정을 다룹니다. 유대교와 기독교의 핵심적인 서사이며, 자유와 구원에 대한 인류의 보편적인 열망을 상징한다.",
+      "en": "The second book of the Old Testament, detailing Israel's liberation from Egyptian slavery and receiving the Ten Commandments. A core narrative for Judaism and Christianity, symbolizing freedom."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q42040",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "요한 묵시록",
+      "en": "Book of Revelation"
+    },
+    "start_year": 95,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.7833,
+    "location_lng": 27.25,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 마지막 책으로 기독교 종말론에서 중심적인 위치를 차지하며, 문명사적 영향력이 있는 종교 경전으로 분류될 수 있다. 상징적인 언어와 환상적인 이미지를 통해 세상의 종말과 새 하늘과 새 땅의 도래를 예언하며, 서구 문화와 예술, 문학에 지대한 영향을 미쳤다.",
+      "en": "The final book of the New Testament, central to Christian eschatology and a profoundly influential religious text. Its symbolic language and visions shaped Western culture and art."
+    },
+    "description": {
+      "ko": "신약성경의 마지막 책으로 기독교 종말론에서 중심적인 위치를 차지하며, 문명사적 영향력이 있는 종교 경전으로 분류될 수 있다. 상징적인 언어와 환상적인 이미지를 통해 세상의 종말과 새 하늘과 새 땅의 도래를 예언하며, 서구 문화와 예술, 문학에 지대한 영향을 미쳤다.",
+      "en": "The final book of the New Testament, central to Christian eschatology and a profoundly influential religious text. Its symbolic language and visions shaped Western culture and art."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q40309",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "사도행전",
+      "en": "Acts of the Apostles"
+    },
+    "start_year": 80,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "사도행전은 신약성경의 다섯 번째 책으로, 초기 기독교의 확산과 교회의 설립 과정을 기록하여 종교 및 문명사적으로 지대한 영향을 미친 경전이다. 사도들의 선교 활동과 성령의 역사를 생생하게 묘사하며 기독교 신앙의 근간을 이루는 중요한 문서로 평가받고 있다.",
+      "en": "The fifth book of the New Testament, Acts records the spread of early Christianity and the church's founding. It profoundly influenced religious and civilizational history, detailing apostolic missions."
+    },
+    "description": {
+      "ko": "사도행전은 신약성경의 다섯 번째 책으로, 초기 기독교의 확산과 교회의 설립 과정을 기록하여 종교 및 문명사적으로 지대한 영향을 미친 경전이다. 사도들의 선교 활동과 성령의 역사를 생생하게 묘사하며 기독교 신앙의 근간을 이루는 중요한 문서로 평가받고 있다.",
+      "en": "The fifth book of the New Testament, Acts records the spread of early Christianity and the church's founding. It profoundly influenced religious and civilizational history, detailing apostolic missions."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q81240",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "판관기",
+      "en": "Book of Judges"
+    },
+    "start_year": -1000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 이스라엘의 역사를 담은 히브리 성경의 일부로, 이스라엘 민족이 가나안 땅에 정착하는 과정과 판관들의 활약을 기록한다. 유대교와 기독교의 중요한 경전으로, 서구 문명과 문화에 지대한 영향을 미쳤다.",
+      "en": "Part of the Hebrew Bible, it chronicles the history of ancient Israel and the exploits of its judges. A foundational text for Judaism and Christianity, it profoundly influenced Western civilization."
+    },
+    "description": {
+      "ko": "고대 이스라엘의 역사를 담은 히브리 성경의 일부로, 이스라엘 민족이 가나안 땅에 정착하는 과정과 판관들의 활약을 기록한다. 유대교와 기독교의 중요한 경전으로, 서구 문명과 문화에 지대한 영향을 미쳤다.",
+      "en": "Part of the Hebrew Bible, it chronicles the history of ancient Israel and the exploits of its judges. A foundational text for Judaism and Christianity, it profoundly influenced Western civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80038",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "룻기",
+      "en": "Book of Ruth"
+    },
+    "start_year": -500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "히브리 성경의 일부로, 모압 여인 룻이 이스라엘 사회에 통합되는 과정을 통해 충성, 사랑, 구원의 메시지를 전한다. 유대교와 기독교 전통에서 중요한 위치를 차지하며, 문학적 가치도 높이 평가된다.",
+      "en": "Part of the Hebrew Bible, it tells the story of Ruth, conveying messages of loyalty, love, and redemption. It holds significant religious and literary value."
+    },
+    "description": {
+      "ko": "히브리 성경의 일부로, 모압 여인 룻이 이스라엘 사회에 통합되는 과정을 통해 충성, 사랑, 구원의 메시지를 전한다. 유대교와 기독교 전통에서 중요한 위치를 차지하며, 문학적 가치도 높이 평가된다.",
+      "en": "Part of the Hebrew Bible, it tells the story of Ruth, conveying messages of loyalty, love, and redemption. It holds significant religious and literary value."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q4579",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "잠언",
+      "en": "Book of Proverbs"
+    },
+    "start_year": -700,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "히브리 성경의 지혜 문학 중 하나로, 삶의 지혜와 도덕적 교훈을 담은 격언과 잠언들을 모아놓은 책이다. 유대교와 기독교의 윤리적 가르침의 중요한 원천이며, 보편적인 지혜를 제공한다.",
+      "en": "Part of the Hebrew Bible's wisdom literature, it collects proverbs and maxims offering life wisdom and moral lessons. A key source of Judeo-Christian ethics."
+    },
+    "description": {
+      "ko": "히브리 성경의 지혜 문학 중 하나로, 삶의 지혜와 도덕적 교훈을 담은 격언과 잠언들을 모아놓은 책이다. 유대교와 기독교의 윤리적 가르침의 중요한 원천이며, 보편적인 지혜를 제공한다.",
+      "en": "Part of the Hebrew Bible's wisdom literature, it collects proverbs and maxims offering life wisdom and moral lessons. A key source of Judeo-Christian ethics."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q4577",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "욥기",
+      "en": "Book of Job"
+    },
+    "start_year": -500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "구약성경의 지혜 문학 중 하나로, 의로운 욥이 겪는 고난과 그 의미를 탐구하는 내용을 담고 있다. 인간의 고통과 신의 정의에 대한 깊은 질문을 던지며, 유대교와 기독교 사상에 지대한 영향을 미쳤다.",
+      "en": "A wisdom book in the Old Testament, exploring the suffering of righteous Job and its meaning. It poses profound questions about human pain and divine justice, influencing Abrahamic religions."
+    },
+    "description": {
+      "ko": "구약성경의 지혜 문학 중 하나로, 의로운 욥이 겪는 고난과 그 의미를 탐구하는 내용을 담고 있다. 인간의 고통과 신의 정의에 대한 깊은 질문을 던지며, 유대교와 기독교 사상에 지대한 영향을 미쳤다.",
+      "en": "A wisdom book in the Old Testament, exploring the suffering of righteous Job and its meaning. It poses profound questions about human pain and divine justice, influencing Abrahamic religions."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q131068",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "에스텔",
+      "en": "Book of Esther"
+    },
+    "start_year": -400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32.5357,
+    "location_lng": 51.6793,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "구약성경의 역사서 중 하나로, 페르시아 제국 시대에 유대 민족이 하만의 음모로부터 구원받는 이야기를 담고 있다. 유대인의 부림절 축제의 기원이 되는 중요한 경전으로, 유대 민족의 정체성 형성에 큰 영향을 미쳤다.",
+      "en": "An Old Testament historical book, narrating the Jewish people's salvation from Haman's plot in the Persian Empire. It's the origin of Purim, significantly shaping Jewish identity."
+    },
+    "description": {
+      "ko": "구약성경의 역사서 중 하나로, 페르시아 제국 시대에 유대 민족이 하만의 음모로부터 구원받는 이야기를 담고 있다. 유대인의 부림절 축제의 기원이 되는 중요한 경전으로, 유대 민족의 정체성 형성에 큰 영향을 미쳤다.",
+      "en": "An Old Testament historical book, narrating the Jewish people's salvation from Haman's plot in the Persian Empire. It's the origin of Purim, significantly shaping Jewish identity."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q29334",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "70인역",
+      "en": "Septuagint"
+    },
+    "start_year": -250,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.2,
+    "location_lng": 29.91,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "구약성경의 가장 오래된 그리스어 번역본으로, 헬레니즘 시대 유대교와 초기 기독교 형성에 결정적인 역할을 했다. 문명사적 영향력이 크며, 성경 연구에 중요한 자료이다.",
+      "en": "The oldest Greek translation of the Old Testament, crucial for Hellenistic Judaism and early Christianity. It holds significant civilizational influence and is vital for biblical studies."
+    },
+    "description": {
+      "ko": "70인역은(는) 기원전 250년 중동에서 탄생한 문학적 성과물이다. 구약성경의 가장 오래된 그리스어 번역본으로, 헬레니즘 시대 유대교와 초기 기독교 형성에 결정적인 역할을 했다. 문명사적 영향력이 크며, 성경 연구에 중요한 자료이다.  인간 본성과 사회에 대한 통찰력 있는 탐구로 시대를 초월한 가치를 인정받았다. 문학적 전통의 형성과 발전에 핵심적인 역할을 한 작품으로 평가받고 있다.",
+      "en": "Written in 250 BCE in the Middle East, Septuagint stands as a milestone in literary history. The work's enduring relevance and artistic merit have secured its place among the most important texts of its era."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q286868",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "노아",
+      "en": "Noah"
+    },
+    "start_year": -2500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32,
+    "location_lng": 35,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "성경 구약 창세기의 홍수 이야기에 나오는 인물로, 종교 및 문명사적으로 큰 영향을 미친 경전의 일부를 다루고 있다.",
+      "en": "A figure from the Genesis flood narrative in the Old Testament, Noah is part of a scripture that has profoundly influenced religious and civilizational history."
+    },
+    "description": {
+      "ko": "노아은(는) 기원전 2500년 중동에서 발표된 문학 작품이다. 성경 구약 창세기의 홍수 이야기에 나오는 인물로, 종교 및 문명사적으로 큰 영향을 미친 경전의 일부를 다루고 있다.  깊이 있는 주제 의식과 독창적인 문체로 당대 문학계에 큰 반향을 일으켰다. 이후 많은 작가와 사상가에게 영향을 미치며 세계 문학사에서 중요한 위치를 차지하게 되었다.",
+      "en": "Noah is a literary work published in the Middle East in 2500 BCE. Its profound thematic exploration and innovative style made it a cornerstone of world literature, influencing writers and thinkers for generations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200306",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "그레이 해부학",
+      "en": "Gray's Anatomy"
+    },
+    "start_year": 1858,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 51.5074,
+    "location_lng": -0.1278,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인체 해부학 분야의 고전 교과서로서 의학 역사에 지대한 영향을 미쳤으며, 1858년 초판 발행 이후 현재까지 계속 개정판이 출간되는 등 시대를 초월한 영향력을 보여준다.",
+      "en": "A classic textbook in human anatomy, profoundly influencing medical history. Continuously revised since its 1858 first edition, showing timeless impact."
+    },
+    "description": {
+      "ko": "그레이 해부학은(는) 1858년 유럽에서 탄생한 문화적 산물이다. 인체 해부학 분야의 고전 교과서로서 의학 역사에 지대한 영향을 미쳤으며, 1858년 초판 발행 이후 현재까지 계속 개정판이 출간되는 등 시대를 초월한 영향력을 보여준다.  당시 사회와 문화에 깊은 영향을 미치며 새로운 트렌드를 형성했다. 이후 다양한 분야로 그 영향력이 확산되며 시대를 대표하는 아이콘으로 자리매김했다.",
+      "en": "Gray's Anatomy is a cultural creation that originated in Europe in 1858. Its innovative nature had a profound impact on society and culture, establishing new trends that continue to resonate today."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q732870",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "히브리어 성경",
+      "en": "Hebrew Bible"
+    },
+    "start_year": -400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "히브리어 성경은 유대교와 기독교 문명의 근간을 이루는 종교/철학 경전으로, 문명사적 영향력이 매우 큽니다.",
+      "en": "The Hebrew Bible is a foundational religious and philosophical text for Judaism and Christianity, with immense civilizational impact."
+    },
+    "description": {
+      "ko": "히브리어 성경은(는) 기원전 400년 중동에서 탄생한 문학적 성과물이다. 히브리어 성경은 유대교와 기독교 문명의 근간을 이루는 종교/철학 경전으로, 문명사적 영향력이 매우 큽니다.  인간 본성과 사회에 대한 통찰력 있는 탐구로 시대를 초월한 가치를 인정받았다. 문학적 전통의 형성과 발전에 핵심적인 역할을 한 작품으로 평가받고 있다.",
+      "en": "Written in 400 BCE in the Middle East, Hebrew Bible stands as a milestone in literary history. The work's enduring relevance and artistic merit have secured its place among the most important texts of its era."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q29270",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "자연의 체계",
+      "en": "Systema Naturae"
+    },
+    "start_year": 1735,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 59.8586,
+    "location_lng": 17.6389,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "생물 분류 체계인 이명법을 확립하고 동물 명명법의 시발점이 된 과학 서적으로, 문명사적 영향력이 큽니다.",
+      "en": "A scientific work that established the binomial nomenclature system for biological classification and initiated zoological nomenclature, holding significant civilizational influence."
+    },
+    "description": {
+      "ko": "자연의 체계은(는) 1735년 유럽에서 만들어진 독창적인 창작물이다. 생물 분류 체계인 이명법을 확립하고 동물 명명법의 시발점이 된 과학 서적으로, 문명사적 영향력이 큽니다.  대중문화와 산업에 미친 영향이 매우 크며, 시대를 초월한 가치를 지닌 것으로 인정받고 있다.",
+      "en": "Systema Naturae (1735) is a groundbreaking cultural product from Europe. It transformed its field and left an enduring legacy that continues to shape popular culture and creative industries."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q245248",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "소예언서",
+      "en": "Twelve Minor Prophets"
+    },
+    "start_year": -750,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 이스라엘의 예언자들의 메시지를 담은 성경의 일부로, 유대교와 기독교 신앙의 중요한 토대를 이룹니다. 정의, 심판, 구원에 대한 예언을 통해 고대 근동 사회의 윤리적, 종교적 가치관을 반영하며, 후대 종교 및 문학에 지대한 영향을 미쳤다.",
+      "en": "Part of the Hebrew Bible, containing messages from ancient Israelite prophets. It forms a cornerstone of Jewish and Christian faith, reflecting ethical and religious values."
+    },
+    "description": {
+      "ko": "고대 이스라엘의 예언자들의 메시지를 담은 성경의 일부로, 유대교와 기독교 신앙의 중요한 토대를 이룹니다. 정의, 심판, 구원에 대한 예언을 통해 고대 근동 사회의 윤리적, 종교적 가치관을 반영하며, 후대 종교 및 문학에 지대한 영향을 미쳤다.",
+      "en": "Part of the Hebrew Bible, containing messages from ancient Israelite prophets. It forms a cornerstone of Jewish and Christian faith, reflecting ethical and religious values."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q866358",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "엘도라도",
+      "en": "The Road to El Dorado"
+    },
+    "start_year": 2000,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 34.0522,
+    "location_lng": -118.2437,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "엘도라도 전설은 대항해 시대를 대표하는 탐험과 발견의 상징이며, 수많은 정복자들이 이를 찾아 나섰던 역사적 사건과 직접적으로 관련이 있다. 애니메이션으로 재해석되었다.",
+      "en": "The legend of El Dorado symbolizes the Age of Discovery and is directly linked to historical quests by conquistadors, reinterpreted in this animated film."
+    },
+    "description": {
+      "ko": "엘도라도은(는) 2000년 북미에서 탄생한 영화 작품이다. 엘도라도 전설은 대항해 시대를 대표하는 탐험과 발견의 상징이며, 수많은 정복자들이 이를 찾아 나섰던 역사적 사건과 직접적으로 관련이 있다. 애니메이션으로 재해석되었다.  시각적 완성도와 깊이 있는 스토리텔링으로 비평가와 관객 모두에게 높은 평가를 받았다. 이 작품은 영화 예술의 새로운 가능성을 제시한 것으로 인정받고 있다.",
+      "en": "Released in 2000, The Road to El Dorado is a notable cinematic achievement from North America. The film's artistic vision and storytelling depth earned it critical acclaim and a lasting place in cinema history."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q272260",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "비히모스",
+      "en": "Behemoth"
+    },
+    "start_year": -600,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "구약성서에 등장하는 거대한 괴수로, 종교 및 신화적 상징으로서 문명사적 영향력을 지니고 있다. 욥기에 묘사된 이 존재는 신의 창조물로서 인간의 이해를 초월하는 자연의 힘과 신비를 상징한다.",
+      "en": "Behemoth, a colossal beast in the Old Testament, holds significant religious and mythological influence. Described in the Book of Job, it symbolizes divine creation and the mysteries of nature."
+    },
+    "description": {
+      "ko": "구약성서에 등장하는 거대한 괴수로, 종교 및 신화적 상징으로서 문명사적 영향력을 지니고 있다. 욥기에 묘사된 이 존재는 신의 창조물로서 인간의 이해를 초월하는 자연의 힘과 신비를 상징한다.",
+      "en": "Behemoth, a colossal beast in the Old Testament, holds significant religious and mythological influence. Described in the Book of Job, it symbolizes divine creation and the mysteries of nature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q281988",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "희생",
+      "en": "The Sacrifice"
+    },
+    "start_year": -2000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 30.0444,
+    "location_lng": 31.2357,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 문명과 종교에서 보편적으로 나타나는 종교적 관습인 '희생'을 다룹니다. '희생양'이라는 용어의 어원이 되는 등 역사적, 언어적 영향력이 크며, 인류의 종교적, 사회적 진화를 이해하는 데 중요한 개념이다.",
+      "en": "Addresses 'sacrifice,' a universal religious practice in ancient civilizations. Its historical and linguistic impact is significant, as seen in 'scapegoat.'"
+    },
+    "description": {
+      "ko": "고대 문명과 종교에서 보편적으로 나타나는 종교적 관습인 '희생'을 다룹니다. '희생양'이라는 용어의 어원이 되는 등 역사적, 언어적 영향력이 크며, 인류의 종교적, 사회적 진화를 이해하는 데 중요한 개념이다.",
+      "en": "Addresses 'sacrifice,' a universal religious practice in ancient civilizations. Its historical and linguistic impact is significant, as seen in 'scapegoat.'"
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q949879",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "엘프",
+      "en": "Elf"
+    },
+    "start_year": 1937,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 51.75,
+    "location_lng": -1.26,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "톨킨의 '반지의 제왕'을 통해 현대 판타지 장르에서 엘프라는 종족의 정형을 확립하고 대중화하는 데 결정적인 역할을 했다.",
+      "en": "Through Tolkien's 'The Lord of the Rings,' elves became a definitive and popularized race in modern fantasy literature."
+    },
+    "description": {
+      "ko": "엘프은(는) 1937년 유럽에서 집필된 작품이다. 톨킨의 '반지의 제왕'을 통해 현대 판타지 장르에서 엘프라는 종족의 정형을 확립하고 대중화하는 데 결정적인 역할을 했다.  당시 문학적 흐름에 새로운 방향을 제시하며 독자와 비평가 모두에게 깊은 인상을 남겼다. 이 작품의 문학적 유산은 오늘날까지 이어지고 있다.",
+      "en": "Elf (1937) emerged from Europe as a transformative literary achievement. Its exploration of universal themes continues to resonate with readers and scholars across cultures."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q309061",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "교황 연대표",
+      "en": "Liber Pontificalis"
+    },
+    "start_year": 500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "기독교 역사상 베드로 사도부터 15세기까지 재위한 교황들의 일대기를 기록한 책으로, 종교 및 문명사적 영향력이 큰 경전으로 볼 수 있다. 교황권의 발전과 로마 교회의 역사를 이해하는 데 필수적이다.",
+      "en": "A chronicle of popes from St. Peter to the 15th century, it's a religious text with significant civilizational impact. Essential for understanding the papacy's development and Roman Church history."
+    },
+    "description": {
+      "ko": "기독교 역사상 베드로 사도부터 15세기까지 재위한 교황들의 일대기를 기록한 책으로, 종교 및 문명사적 영향력이 큰 경전으로 볼 수 있다. 교황권의 발전과 로마 교회의 역사를 이해하는 데 필수적이다.",
+      "en": "A chronicle of popes from St. Peter to the 15th century, it's a religious text with significant civilizational impact. Essential for understanding the papacy's development and Roman Church history."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q51803319",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "가버나움",
+      "en": "Capernaum"
+    },
+    "start_year": 30,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32.88,
+    "location_lng": 35.56,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "가버나움은 신약성경에서 예수의 고향이자 제자들이 부름받은 장소로 언급되어 종교/철학 경전의 역사적 배경과 불가분한 작품이다. 예수의 많은 기적과 가르침이 행해진 곳으로, 초기 기독교 역사와 신앙에 있어 매우 중요한 유적지이다. 갈릴리 호수 북쪽 해안에 위치한다.",
+      "en": "Capernaum, mentioned in the New Testament as Jesus' home and where disciples were called, is inseparable from the historical background of religious texts."
+    },
+    "description": {
+      "ko": "가버나움은 신약성경에서 예수의 고향이자 제자들이 부름받은 장소로 언급되어 종교/철학 경전의 역사적 배경과 불가분한 작품이다. 예수의 많은 기적과 가르침이 행해진 곳으로, 초기 기독교 역사와 신앙에 있어 매우 중요한 유적지이다. 갈릴리 호수 북쪽 해안에 위치한다.",
+      "en": "Capernaum, mentioned in the New Testament as Jesus' home and where disciples were called, is inseparable from the historical background of religious texts."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q156523",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "소돔",
+      "en": "Sodom"
+    },
+    "start_year": -1800,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31,
+    "location_lng": 35.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "구약성서 창세기에 등장하는 지명으로, 종교 및 문명사적 영향력이 있는 경전의 일부를 다루고 있다. 죄악과 신의 심판을 상징하며 서구 문화와 도덕관에 깊은 영향을 미쳤다.",
+      "en": "A place name in the Old Testament's Genesis, it's part of a scripture with religious and civilizational impact, symbolizing sin and divine judgment, deeply influencing Western culture."
+    },
+    "description": {
+      "ko": "기원전 1800년경에 발표된 《소돔》(Sodom)은 중동 문학계의 주요 작품이었다. 이 작품은 기원전 19세기의 시대 정신을 문학적 언어로 포착하며 당대 독자층의 공감을 얻었다. 중동 문학 전통 속에서 독자적인 위상을 확보했으며, 후대 작가들에게 중요한 참조점이 되었다. 작품에 담긴 주제 의식은 시대를 초월하여 오늘날에도 유효하다.",
+      "en": "\"Sodom\" (1800 BCE) is a Middle Eastern literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1337449",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "므나쎄의 기도",
+      "en": "Prayer of Manasseh"
+    },
+    "start_year": -200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.77,
+    "location_lng": 35.23,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전으로 분류될 수 있으며, 여러 종교와 시대에 걸쳐 광범위하게 수용되고 번역되어 문명사적 영향력을 가집니다. 구약 외경 중 하나로, 회개와 용서의 메시지를 담고 있어 영적 성찰에 깊은 영향을 주었다.",
+      "en": "A religious/philosophical text widely adopted and translated across various religions and eras, holding significant civilizational influence as an Old Testament apocrypha."
+    },
+    "description": {
+      "ko": "종교/철학 경전으로 분류될 수 있으며, 여러 종교와 시대에 걸쳐 광범위하게 수용되고 번역되어 문명사적 영향력을 가집니다. 구약 외경 중 하나로, 회개와 용서의 메시지를 담고 있어 영적 성찰에 깊은 영향을 주었다.",
+      "en": "A religious/philosophical text widely adopted and translated across various religions and eras, holding significant civilizational influence as an Old Testament apocrypha."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q723407",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "살로메",
+      "en": "Salome"
+    },
+    "start_year": 29,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성서에 등장하는 인물로, 종교적, 역사적 맥락에서 중요하게 다루어지기 때문이다.",
+      "en": "A figure from the New Testament, Salome is significant in religious and historical contexts."
+    },
+    "description": {
+      "ko": "《살로메》은 29년에 출간된 중동 문학 작품이다. 1세기 중동의 사회·문화적 환경 속에서 쓰인 이 작품은 독자들에게 깊은 인상을 남겼다. 문학사적으로 중동 문학의 발전 과정을 이해하는 데 중요한 텍스트로 간주된다. 출간 이후 다양한 언어로 번역되거나 다른 예술 형식으로 재해석되는 등 광범위한 영향력을 발휘했다.",
+      "en": "\"Salome\" (29) is a Middle Eastern literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1167120",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "마태복음",
+      "en": "The Gospel According to St. Matthew"
+    },
+    "start_year": 60,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "기독교 신약성경의 첫 번째 복음서로, 예수 그리스도의 생애와 가르침을 기록하여 기독교 신앙의 핵심을 이루는 종교/철학 경전이다. 서구 문명과 세계사에 지대한 영향력을 미쳤다.",
+      "en": "The first Gospel in the New Testament, it records the life and teachings of Jesus Christ, forming a core religious text with immense civilizational impact."
+    },
+    "description": {
+      "ko": "60년에 등장한 《마태복음》은 중동 문학이 새로운 국면을 맞이하던 시기에 탄생했다. 이 작품은 1세기의 지적·예술적 흐름과 밀접하게 연관되어 있으며, 문학적 완성도가 높은 것으로 평가된다. 중동 지역 문학의 풍요로운 전통을 계승하면서도 독창적인 서사를 구현한 작품이다.",
+      "en": "\"The Gospel According to St. Matthew\" is a literary work published in 60 from the Middle East. It emerged from the rich intellectual and cultural milieu of its time, offering readers a profound exploration of its themes. The work occupies an important position in the literary tradition of the region and has inspired numerous adaptations and scholarly analyses."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q946849",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "황금시대",
+      "en": "L’Age d’Or"
+    },
+    "start_year": -800,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.9838,
+    "location_lng": 23.7275,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "작품의 제목이자 핵심 개념인 '황금시대'는 고대 그리스 신화와 철학에서 유래하여 문명사적으로 깊은 영향을 미친 개념이다. 헤시오도스의 '노동과 나날' 등에서 언급되며, 인류가 평화롭고 풍요롭게 살았던 이상적인 시대를 의미하며 서구 사상에 큰 영향을 주었다.",
+      "en": "The concept of the 'Golden Age,' originating from ancient Greek mythology and philosophy, profoundly influenced civilization. It represents an ideal era of peace and prosperity."
+    },
+    "description": {
+      "ko": "작품의 제목이자 핵심 개념인 '황금시대'는 고대 그리스 신화와 철학에서 유래하여 문명사적으로 깊은 영향을 미친 개념이다. 헤시오도스의 '노동과 나날' 등에서 언급되며, 인류가 평화롭고 풍요롭게 살았던 이상적인 시대를 의미하며 서구 사상에 큰 영향을 주었다.",
+      "en": "The concept of the 'Golden Age,' originating from ancient Greek mythology and philosophy, profoundly influenced civilization. It represents an ideal era of peace and prosperity."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q783880",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "슈퍼히어로",
+      "en": "Superman"
+    },
+    "start_year": 1938,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 40.7128,
+    "location_lng": -74.006,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "슈퍼히어로라는 장르/매체를 정립하고 대중화시킨 작품으로, 1938년 슈퍼맨의 등장 이후 만화책 등 다양한 매체를 통해 확산되었으며, 현대 대중문화의 아이콘이 되었다.",
+      "en": "The first major superhero, Superman's debut in 1938 established and popularized the superhero genre, becoming a global pop culture icon."
+    },
+    "description": {
+      "ko": "《슈퍼히어로》은 1930년대 미국 문화의 한 단면을 보여주는 작품이다. 1938년에 만들어진 이 작품은 당시의 창작 환경과 수용자들의 기대를 모두 반영했다. 북미 지역의 문화적 맥락에서 이 작품이 갖는 의의는 상당한 것으로 인정된다. 시간이 흘러도 그 문화적 가치가 재평가되고 있다.",
+      "en": "\"Superman\" (1938) represents a meaningful contribution to North America's cultural landscape. Born from the creative and social milieu of its time, the work achieved recognition for its artistic merit and cultural relevance. It continues to be studied and appreciated in its field."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q657057",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "구장산술",
+      "en": "The Nine Chapters on the Mathematical Art"
+    },
+    "start_year": -100,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 34.74,
+    "location_lng": 113.66,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 중국의 수학 발전에 지대한 영향을 미쳤으며, 동아시아 수학사에서 중요한 위치를 차지하는 경전이다. 실용적인 문제 해결에 중점을 둔 다양한 수학적 기법을 담고 있어 고대 과학 기술의 정수를 보여준다.",
+      "en": "An ancient Chinese mathematical classic that significantly influenced East Asian mathematics, showcasing practical problem-solving techniques."
+    },
+    "description": {
+      "ko": "고대 중국의 수학 발전에 지대한 영향을 미쳤으며, 동아시아 수학사에서 중요한 위치를 차지하는 경전이다. 실용적인 문제 해결에 중점을 둔 다양한 수학적 기법을 담고 있어 고대 과학 기술의 정수를 보여준다.",
+      "en": "An ancient Chinese mathematical classic that significantly influenced East Asian mathematics, showcasing practical problem-solving techniques."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q728170",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "엑소더스",
+      "en": "Exodus"
+    },
+    "start_year": -1400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 30.0444,
+    "location_lng": 31.2357,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "출애굽기는 유대교와 기독교의 핵심 경전으로, 히브리 민족의 이집트 탈출과 광야 생활을 기록한다. 서양 문명과 종교에 지대한 영향을 미쳤으며, 자유와 해방의 상징으로 인류 역사에 깊은 흔적을 남겼다.",
+      "en": "Exodus, a core scripture in Judaism and Christianity, recounts the Israelites' escape from Egypt. It profoundly influenced Western civilization and religion, symbolizing freedom."
+    },
+    "description": {
+      "ko": "출애굽기는 유대교와 기독교의 핵심 경전으로, 히브리 민족의 이집트 탈출과 광야 생활을 기록한다. 서양 문명과 종교에 지대한 영향을 미쳤으며, 자유와 해방의 상징으로 인류 역사에 깊은 흔적을 남겼다.",
+      "en": "Exodus, a core scripture in Judaism and Christianity, recounts the Israelites' escape from Egypt. It profoundly influenced Western civilization and religion, symbolizing freedom."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1052253",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "시편 151장",
+      "en": "Psalm 151"
+    },
+    "start_year": -200,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "시편 151장은 구약 성경 외경에 속하는 시편으로, 다윗이 골리앗을 물리친 이야기를 다룹니다. 종교/철학 경전으로서 문명사적 영향력이 있으며, 다윗의 용기와 신앙을 기리는 중요한 시로 평가받다.",
+      "en": "Psalm 151, an apocryphal psalm, recounts David's victory over Goliath. It holds significant religious and philosophical influence, celebrating David's courage and faith."
+    },
+    "description": {
+      "ko": "시편 151장은 구약 성경 외경에 속하는 시편으로, 다윗이 골리앗을 물리친 이야기를 다룹니다. 종교/철학 경전으로서 문명사적 영향력이 있으며, 다윗의 용기와 신앙을 기리는 중요한 시로 평가받다.",
+      "en": "Psalm 151, an apocryphal psalm, recounts David's victory over Goliath. It holds significant religious and philosophical influence, celebrating David's courage and faith."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200094_dup_3257",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "사해 문서",
+      "en": "Dead Sea Scrolls"
+    },
+    "start_year": -250,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.74,
+    "location_lng": 35.46,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이스라엘",
+      "en": "Israel"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "사해 인근 쿰란 동굴에서 발견된 고대 유대 문서로, 구약성경의 가장 오래된 필사본을 포함한다.",
+      "en": "Ancient Jewish texts found near the Dead Sea, containing the oldest known manuscripts of the Hebrew Bible."
+    },
+    "description": {
+      "ko": "사해 문서는 기원전 250년경 창작된 문학적 성취로, 당대의 사회상과 정신세계를 문자로 형상화한 작품이다. 중동 지역의 오랜 문화적 축적이 응축된 사례이다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Dead Sea Scrolls, written around 250 BCE, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. The work reflects the sophisticated aesthetic traditions of the Islamic cultural sphere. Insights into social contradictions and the human condition are effectively expressed within its literary form. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200095_dup_3258",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "시편",
+      "en": "Psalms"
+    },
+    "start_year": -500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.77,
+    "location_lng": 35.23,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이스라엘",
+      "en": "Israel"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "히브리 성경의 시가집으로, 찬양·탄원·감사의 150편 시가 유대교와 기독교 예배의 핵심이다.",
+      "en": "A collection of 150 hymns of praise, lament, and thanksgiving, central to Jewish and Christian worship."
+    },
+    "description": {
+      "ko": "시편은 기원전 500년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 당대 사회의 모순과 인간 조건에 대한 통찰이 문학적 형식 안에서 효과적으로 표현되었다. 이슬람 문화권의 정교한 미적 전통이 반영된 결과물이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Psalms is a literary work composed around 500 BCE, capturing universal aspects of human experience through the unique voice of its cultural tradition. The work reflects the sophisticated aesthetic traditions of the Islamic cultural sphere. Insights into social contradictions and the human condition are effectively expressed within its literary form. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200096_dup_3259",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "솔로몬의 아가",
+      "en": "Song of Songs"
+    },
+    "start_year": -400,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.77,
+    "location_lng": 35.23,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이스라엘",
+      "en": "Israel"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "히브리 성경의 사랑 시로, 연인의 관능적 사랑을 노래하며 신비주의적으로도 해석되는 고대 서정시의 걸작이다.",
+      "en": "A Hebrew Bible love poem celebrating sensual love between lovers, also interpreted mystically."
+    },
+    "description": {
+      "ko": "솔로몬의 아가는 기원전 400년경에 쓰인 작품으로, 문학적 서사와 사상적 깊이가 결합된 대표적 텍스트이다. 서사 구조의 치밀함과 인물 묘사의 깊이가 결합되어 시대를 초월한 보편성을 획득했다. 중동 지역의 오랜 문화적 축적이 응축된 사례이다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Song of Songs is a literary work composed around 400 BCE, capturing universal aspects of human experience through the unique voice of its cultural tradition. It represents centuries of accumulated cultural achievement in the Middle East. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
   }
 ]
