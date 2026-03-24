@@ -14462,5 +14462,837 @@
       "en": "Town Musicians of Bremen, written around 1819, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. It occupies a significant place in the trajectory of European cultural history. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
     },
     "external_link": ""
+  },
+  {
+    "id": "Q206461",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "엑스칼리버",
+      "en": "Excalibur"
+    },
+    "start_year": 500,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 51.5074,
+    "location_lng": -0.1278,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "아서왕 전설의 핵심 요소인 성검 엑스칼리버는 중세 영웅 전설의 대표적인 존재로서 문명사적 영향력을 지니며, 수많은 판타지 작품의 모티브가 되었다.",
+      "en": "The legendary sword Excalibur, a core element of the Arthurian legend, is a representative symbol of medieval heroic tales with significant cultural influence."
+    },
+    "description": {
+      "ko": "《엑스칼리버》은 500년에 출간된 유럽 문학 작품이다. 5세기 유럽의 사회·문화적 환경 속에서 쓰인 이 작품은 독자들에게 깊은 인상을 남겼다. 문학사적으로 유럽 문학의 발전 과정을 이해하는 데 중요한 텍스트로 간주된다. 출간 이후 다양한 언어로 번역되거나 다른 예술 형식으로 재해석되는 등 광범위한 영향력을 발휘했다.",
+      "en": "\"Excalibur\" is a literary work published in 500 from Europe. It emerged from the rich intellectual and cultural milieu of its time, offering readers a profound exploration of its themes. The work occupies an important position in the literary tradition of the region and has inspired numerous adaptations and scholarly analyses."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q645904",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "시누헤 이야기",
+      "en": "Story of Sinuhe"
+    },
+    "start_year": -1850,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 29.9792,
+    "location_lng": 31.1342,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 이집트 문학의 대표작으로, 당시 사회상과 문화를 엿볼 수 있으며 10세기까지 반복 필사될 정도로 큰 영향을 미친 작품이다. 고대 이집트인의 삶과 가치관을 보여준다.",
+      "en": "A masterpiece of ancient Egyptian literature, offering insights into society and culture, highly influential and copied until the 10th century."
+    },
+    "description": {
+      "ko": "《시누헤 이야기》은 기원전 19세기 중동 문학의 대표적 성과물 가운데 하나이다. 기원전 1850년경에 세상에 나온 이 작품은 당시 문학적 담론의 지형을 바꾸는 데 일조했다. 중동의 문화적 토양에서 자라난 이 텍스트는 보편적 주제와 지역적 특수성을 동시에 담아냈다. 문학 연구자들 사이에서 꾸준히 분석 대상이 되고 있는 작품이다.",
+      "en": "\"Story of Sinuhe\" (1850 BCE) is a Middle Eastern literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900095",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "테레사 텅",
+      "en": "Teresa Teng"
+    },
+    "start_year": 1975,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 25.03,
+    "location_lng": 121.57,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "대만",
+      "en": "Taiwan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "대만 출신 가수 등려군(테레사 텅). '월량대표아적심' 등으로 중화권 전역에서 사랑받은 전설적 가수이다.",
+      "en": "Legendary Taiwanese singer Teresa Teng, beloved across the Chinese-speaking world with 'The Moon Represents My Heart.'"
+    },
+    "description": {
+      "ko": "'테레사 텅'은(는) 1975년에 동아시아에서 발표된 음악 작품으로, 20세기 중후반의 음악 예술을 깊이 있게 보여준다. 전통과 혁신 사이에서 독자적인 음악 세계를 구축하며 당대 청중의 마음을 사로잡았다. 음악적 완성도와 문화적 의미 모두에서 뛰어난 평가를 받고 있다.",
+      "en": "'Teresa Teng' is a significant musical work from East Asia, dating to approximately 1975. Created during the mid-to-late 20th century, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900143",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "모하메드 레자 샤자리안",
+      "en": "Mohammad-Reza Shajarian"
+    },
+    "start_year": 1970,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 36.3,
+    "location_lng": 59.6,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "이란",
+      "en": "Iran"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이란의 전설적 전통음악 가수 샤자리안. 페르시아 클래식 음악의 최고 대가로 평가받는다.",
+      "en": "Legendary Iranian traditional singer Shajarian, considered the supreme master of Persian classical music."
+    },
+    "description": {
+      "ko": "1970년에 등장한 '모하메드 레자 샤자리안'은(는) 중앙아시아 음악사의 중요한 이정표이다. 20세기 중후반의 문화적 배경 속에서 탄생한 이 작품은 음악적 혁신과 전통의 조화를 보여주었다. 독특한 사운드와 구성은 음악 장르의 발전에 기여했으며, 오늘날에도 높이 평가받고 있다.",
+      "en": "'Mohammad-Reza Shajarian' is a significant musical work from Central Asia, dating to approximately 1970. Created during the mid-to-late 20th century, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900149",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "카자흐 바이테렉",
+      "en": "Bayterek Tower"
+    },
+    "start_year": 2002,
+    "end_year": null,
+    "category": "건축",
+    "location_lat": 51.13,
+    "location_lng": 71.43,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "카자흐스탄",
+      "en": "Kazakhstan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "카자흐스탄 아스타나의 바이테렉 타워. 생명의 나무 전설을 형상화한 중앙아시아 현대건축의 상징이다.",
+      "en": "Bayterek Tower in Astana, Kazakhstan, symbolizing the Tree of Life legend in modern Central Asian architecture."
+    },
+    "description": {
+      "ko": "'카자흐 바이테렉'은(는) 2002년에 건립된 중앙아시아의 건축물로, 21세기 건축 예술의 정수를 보여준다. 구조적 혁신과 미적 완성도가 조화를 이루며, 당대 건축 기술의 최고 수준을 증명한다. 이 건축물은 주변 환경과의 관계에서도 탁월한 설계 감각을 드러낸다. 중앙아시아 건축 유산의 핵심으로 평가받고 있다.",
+      "en": "Emerging from Central Asia around 2002, 'Bayterek Tower' stands as a landmark achievement of the 21st century. This architectural work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900214",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "궈모뤄 문학",
+      "en": "Literature of Guo Moruo"
+    },
+    "start_year": 1921,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 29.55,
+    "location_lng": 106.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 근대 문학가 궈모뤄의 시집 '여신'. 낭만주의적 열정으로 중국 신시(新詩)의 개척자이다.",
+      "en": "Poetry of Guo Moruo, pioneer of modern Chinese poetry with romantic passion in 'The Goddesses.'"
+    },
+    "description": {
+      "ko": "중국 근대 문학가 궈모뤄의 시집 '여신'. 낭만주의적 열정으로 중국 신시(新詩)의 개척자이다.",
+      "en": "'Literature of Guo Moruo' is a significant literary work from East Asia, dating to approximately 1921. Created during the interwar and World War II era, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900221",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "비욘드 밴드",
+      "en": "Beyond (Band)"
+    },
+    "start_year": 1988,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 22.28,
+    "location_lng": 114.17,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "홍콩",
+      "en": "Hong Kong"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "홍콩 록밴드 비욘드. '해활천공' 등의 히트곡으로 홍콩 록의 전설이 되었다.",
+      "en": "Hong Kong rock band Beyond, legendary for hits like 'Boundless Oceans, Vast Skies.'"
+    },
+    "description": {
+      "ko": "동아시아의 '비욘드 밴드'은(는) 1988년에 세상에 나와 20세기 말 음악을 대표하는 작품이 되었다. 창작자의 예술적 비전이 음악적 형식을 통해 완벽하게 구현되었으며, 당시 음악 문화에 새로운 방향을 제시했다. 이 작품이 끼친 영향은 음악사 전반에 걸쳐 감지된다. 세대를 넘어 꾸준히 재해석되고 있다.",
+      "en": "Emerging from East Asia around 1988, 'Beyond (Band)' stands as a landmark achievement of the late 20th century. This musical work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_039",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "아미르 후스로 시",
+      "en": "Poetry of Amir Khusrau"
+    },
+    "start_year": 1280,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 28.6139,
+    "location_lng": 77.209,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "13세기 델리의 수피 시인으로, 페르시아어와 힌디어를 융합한 시와 음악의 대가이다. 카왈리·시타르의 원형을 만든 것으로 전해지며 '인도의 앵무새'로 불립니다.",
+      "en": "A 13th-century Sufi poet of Delhi who mastered poetry and music fusing Persian and Hindi. Credited with originating qawwali and sitar prototypes, he is called the 'Parrot of India.'"
+    },
+    "description": {
+      "ko": "투르크계 이민 가정 출신으로 델리 술탄국 시대에 활동하며 힌두-이슬람 문화 융합의 선구자가 되었다. 수피 성자 니잠웃딘 아울리야의 제자로서 영적 시와 세속적 시를 모두 남겼다. 우르두어 문학의 아버지로 여겨지며 인도 음악 전통의 혁신자이다.",
+      "en": "From a Turkic immigrant family active during the Delhi Sultanate, he pioneered Hindu-Islamic cultural synthesis. A disciple of Sufi saint Nizamuddin Auliya, he left both spiritual and secular poetry. Considered the father of Urdu literature, he was also an innovator of Indian musical tradition."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_047",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "타고르 회화",
+      "en": "Tagore's Paintings"
+    },
+    "start_year": 1928,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 22.5726,
+    "location_lng": 88.3639,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "노벨 문학상 수상자 타고르가 67세부터 시작한 회화로, 독학으로 독자적 시각 언어를 창조했다. 원시적이면서 현대적인 표현주의적 작품 2,500여 점을 남겼다.",
+      "en": "Paintings Tagore began at age 67, self-taught and creating a unique visual language. He left about 2,500 works in a style both primitive and modern expressionist."
+    },
+    "description": {
+      "ko": "시인으로 세계적 명성을 얻은 뒤 만년에 그림을 시작한 타고르는 동서양 미술 전통에 속하지 않는 독자적 양식을 만들었다. 괴물·가면·풍경 등을 거친 붓질과 어두운 색조로 표현하며, 표현주의·초현실주의와 공명한다. 인도 현대 미술의 선구적 업적으로 재평가되고 있다.",
+      "en": "After achieving global fame as a poet, Tagore began painting in his later years, creating a style belonging to neither Eastern nor Western tradition. His rough brushwork and dark tones depicting monsters, masks, and landscapes resonate with expressionism and surrealism. His work is being reassessed as a pioneering achievement in modern Indian art."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_068",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "M.F. 후세인 회화",
+      "en": "M.F. Husain Paintings"
+    },
+    "start_year": 1948,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 19.076,
+    "location_lng": 72.8777,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "'인도의 피카소'로 불린 M.F. 후세인의 대담한 현대 회화이다. 힌두 신화·말·여성을 강렬한 색채와 역동적 선으로 그려 인도 현대 미술을 이끌었다.",
+      "en": "Bold modern paintings by M.F. Husain, called the 'Picasso of India.' He led modern Indian art with vibrant depictions of Hindu mythology, horses, and women in dynamic lines and intense colors."
+    },
+    "description": {
+      "ko": "1948년 봄베이 프로그레시브 아티스트 그룹에 참여하며 인도 현대 미술의 선두에 섰다. 힌두 여신 누드화 논란으로 힌두 극우의 위협을 받아 말년에 카타르로 망명했다. 작품은 크리스티·소더비에서 수백만 달러에 낙찰되며 인도 미술 시장을 국제 수준으로 끌어올렸다.",
+      "en": "He rose to the forefront of modern Indian art by joining the Bombay Progressive Artists' Group in 1948. Controversies over nude paintings of Hindu goddesses led to threats from Hindu extremists, and he spent his final years in exile in Qatar. His works sell for millions at Christie's and Sotheby's, elevating the Indian art market to international status."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_075",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "자키르 후세인 (타블라)",
+      "en": "Zakir Hussain (Tabla)"
+    },
+    "start_year": 1970,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 19.076,
+    "location_lng": 72.8777,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "타블라의 전설적 거장으로, 아버지 알라 라카에 이어 인도 리듬 음악의 최고봉에 선 연주자이다. 존 맥러플린·벨라 플렉 등과의 협연으로 세계 음악을 혁신했다.",
+      "en": "A legendary tabla maestro who stands at the pinnacle of Indian rhythm music, following his father Alla Rakha. He revolutionized world music through collaborations with John McLaughlin and Béla Fleck."
+    },
+    "description": {
+      "ko": "12세에 라비 샹카르와 미국 투어를 다닌 신동으로, 이후 재즈·록·세계음악과의 크로스오버를 선도했다. 샤크티(존 맥러플린)·플래닛 드럼(미키 하트) 등의 프로젝트로 그래미상을 수상했다. 타블라를 독주 악기로 격상시키고 인도 리듬의 세계적 보편성을 입증한 음악가이다.",
+      "en": "A child prodigy who toured the US with Ravi Shankar at age 12, he later pioneered crossovers with jazz, rock, and world music. He won Grammys through projects like Shakti (with John McLaughlin) and Planet Drum (with Mickey Hart). He elevated the tabla to a solo instrument and proved the universal appeal of Indian rhythm."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_087",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "무함마드 유누스 & 방글라데시 바울 음악",
+      "en": "Baul Music of Bangladesh"
+    },
+    "start_year": 1800,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 23.8103,
+    "location_lng": 90.4125,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "벵골의 방랑 음유시인 바울의 신비주의 음악 전통으로, 힌두-이슬람 경계를 초월한다. 유네스코 무형문화유산으로 지정된 방글라데시의 대표적 민속 음악이다.",
+      "en": "The mystical music tradition of Bengal's wandering Baul minstrels, transcending Hindu-Islamic boundaries. A UNESCO Intangible Cultural Heritage and the representative folk music of Bangladesh."
+    },
+    "description": {
+      "ko": "바울(바람)이라는 이름처럼 자유로운 영혼의 방랑자들이 에크타라(단현금)를 켜며 노래하는 신비주의 전통이다. 수피즘과 바이슈나비즘이 융합된 독특한 영성을 표현하며 타고르에게도 깊은 영감을 주었다. 2005년 유네스코 인류무형문화유산 대표목록에 등재되었다.",
+      "en": "A mystical tradition of free-spirited wanderers singing with the ektara (one-stringed instrument), as their name 'Baul' (wind) suggests. Expressing unique spirituality fusing Sufism and Vaishnavism, it deeply inspired Tagore. It was inscribed on the UNESCO Representative List of Intangible Cultural Heritage in 2005."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_088",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "M.S. 수불락슈미 (카르나틱 성악)",
+      "en": "M.S. Subbulakshmi (Carnatic Vocal)"
+    },
+    "start_year": 1940,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 9.9252,
+    "location_lng": 78.1198,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "카르나틱 음악의 전설적 성악가로, UN 총회에서 공연한 최초의 인도 음악가이다. '인도의 나이팅게일'로 불리며 바라트 라트나(인도 최고 훈장)를 수상했다.",
+      "en": "A legendary Carnatic vocalist and first Indian musician to perform at the UN General Assembly. Called 'India's Nightingale,' she received the Bharat Ratna, India's highest civilian honor."
+    },
+    "description": {
+      "ko": "마두라이에서 태어나 카르나틱 음악과 힌두스타니 음악을 모두 마스터한 드문 성악가이다. 1966년 UN 총회 공연으로 인도 음악의 위상을 높였으며, 간디·네루도 그녀의 팬이었다. 티야가라자·메라 바잔 등의 녹음은 인도 음악의 가장 소중한 유산으로 보존된다.",
+      "en": "Born in Madurai, she was a rare vocalist who mastered both Carnatic and Hindustani music. Her 1966 UN General Assembly performance elevated Indian music's prestige, and both Gandhi and Nehru were her fans. Her recordings of Tyagaraja and Meera bhajans are preserved as Indian music's most treasured heritage."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA032",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "월레 소잉카 (노벨문학상)",
+      "en": "Wole Soyinka (Nobel Laureate)"
+    },
+    "start_year": 1986,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 7.25,
+    "location_lng": 5.195,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "나이지리아 극작가·시인으로, 아프리카 최초의 노벨문학상 수상자(1986)이다. 요루바 신화와 서양 연극을 융합한 독창적 작품 세계를 구축했다.",
+      "en": "Nigerian playwright and poet, the first African Nobel Literature laureate (1986). He created a unique body of work fusing Yoruba mythology with Western theatrical forms."
+    },
+    "description": {
+      "ko": "월레 소잉카 (노벨문학상)은 1986년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 아프리카 고유의 예술적 감수성이 깊이 반영된 결과물이다. 서사 구조의 치밀함과 인물 묘사의 깊이가 결합되어 시대를 초월한 보편성을 획득했다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Wole Soyinka (Nobel Laureate) is a literary work composed around 1986, capturing universal aspects of human experience through the unique voice of its cultural tradition. It exemplifies the creative ingenuity found throughout African civilizations. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. Later artists and scholars drew inspiration from this work, continuing new creative endeavors and research."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA068",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "아프로퓨처리즘 문학",
+      "en": "Afrofuturism Literature"
+    },
+    "start_year": 2010,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 6.4541,
+    "location_lng": 3.3947,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "응네디 오코라포르 등이 이끄는 아프로퓨처리즘 문학이다. 아프리카 신화와 SF를 결합해 새로운 문학 장르를 개척하고 있다.",
+      "en": "Afrofuturist literature led by Nnedi Okorafor and others, combining African mythology with science fiction to pioneer a new literary genre."
+    },
+    "description": {
+      "ko": "아프로퓨처리즘 문학은 2010년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 아프리카 고유의 예술적 감수성이 깊이 반영된 결과물이다. 서사 구조의 치밀함과 인물 묘사의 깊이가 결합되어 시대를 초월한 보편성을 획득했다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Afrofuturism Literature, written around 2010, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. The work maximizes the artistic potential of language and has established itself as a canonical text in its literary tradition. The work reflects the deep cultural traditions that have flourished across Africa for centuries. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200014",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "필리핀 불룰 목조각",
+      "en": "Bulul Wood Carvings"
+    },
+    "start_year": 1000,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 16.9167,
+    "location_lng": 121.15,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "필리핀 이푸가오 족의 쌀의 신을 형상화한 전통 목조각으로, 풍요와 수확을 기원하는 의식에 사용된다.",
+      "en": "Traditional Ifugao rice deity wood carvings from the Philippines, used in rituals for bountiful harvests."
+    },
+    "description": {
+      "ko": "필리핀 불룰 목조각은 1000년경의 미술적 성취를 대표하는 작품으로, 재료와 기법 모두에서 높은 수준을 보인다. 작품에 담긴 문화적 상징과 기술적 숙련도는 당대 예술의 높은 수준을 입증한다. 동남아시아 특유의 다층적 문화 교류가 녹아든 작품이다. 이 작품은 해당 문화권의 정체성을 이해하는 데 핵심적인 단서를 제공한다.",
+      "en": "Bulul Wood Carvings is a visual artwork created around 1000, showcasing the development of artistic techniques and visual language of the period. The work showcases the distinctive artistic traditions of the Southeast Asian region. Its technique of exploiting the physical properties of materials to their fullest expanded the possibilities of the visual arts. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200034",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "탈링 파디",
+      "en": "Tari Pendet"
+    },
+    "start_year": 1950,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -8.3405,
+    "location_lng": 115.092,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "발리의 전통 환영 무용으로, 원래 사원 의식에서 신을 맞이하기 위해 추던 춤이 공연 예술로 발전했다.",
+      "en": "Balinese welcome dance originally performed in temples to greet deities, later developed into performing art."
+    },
+    "description": {
+      "ko": "탈링 파디는 1950년경 형성된 문화 유산으로, 해당 사회의 창조적 역량이 응축된 결과물이다. 동남아시아 특유의 다층적 문화 교류가 녹아든 작품이다. 공동체적 참여와 개인적 창조성이 결합된 독특한 문화 표현 양식이다. 교역과 문화 교류의 산물로서, 복수의 문명이 교차하는 지점에서 탄생했다.",
+      "en": "Tari Pendet, dating to approximately 1950, represents a cultural heritage that crystallizes the creative capacity of its society. It represents the multilayered cultural exchanges characteristic of Southeast Asia. This heritage reveals the holistic character of its society at the intersection of material and spiritual culture. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200036",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "아미타브 고쉬의 동남아 문학 영향",
+      "en": "Amitav Ghosh"
+    },
+    "start_year": 2000,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 1.3521,
+    "location_lng": 103.8198,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도 출신으로 동남아 역사를 다룬 작가 아미타브 고쉬의 '양귀비 전쟁' 등은 동남아 식민사를 조명한다.",
+      "en": "Amitav Ghosh's novels like 'Sea of Poppies' illuminate Southeast Asian colonial history."
+    },
+    "description": {
+      "ko": "아미타브 고쉬의 동남아 문학 영향은 2000년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 동남아시아 지역의 독자적 예술 전통을 잘 보여주는 사례이다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Amitav Ghosh is a literary work composed around 2000, capturing universal aspects of human experience through the unique voice of its cultural tradition. It represents the multilayered cultural exchanges characteristic of Southeast Asia. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200037",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "베트남 까이르엉",
+      "en": "Cai Luong"
+    },
+    "start_year": 1920,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 10.8231,
+    "location_lng": 106.6297,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "20세기 초 남부 베트남에서 탄생한 현대 민속 오페라로, 전통 음악에 서양 악기를 결합한 혁신적 공연 예술이다.",
+      "en": "Modern Vietnamese folk opera born in southern Vietnam in the early 20th century, blending traditional and Western music."
+    },
+    "description": {
+      "ko": "베트남 까이르엉은 1920년경에 만들어진 독창적 문화 표현으로, 다양한 예술 영역의 요소가 융합되어 있다. 이 유산은 물질문화와 정신문화의 교차점에서 해당 사회의 총체적 면모를 드러낸다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Cai Luong, dating to approximately 1920, represents a cultural heritage that crystallizes the creative capacity of its society. The work showcases the distinctive artistic traditions of the Southeast Asian region. It represents a distinctive form of cultural expression combining communal participation with individual creativity. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200113",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "밥 말리",
+      "en": "Bob Marley"
+    },
+    "start_year": 1973,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 18.1096,
+    "location_lng": -77.2975,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "자메이카 레게 음악의 전설로, 음악을 통해 평화·사랑·사회 정의를 전파하며 제3세계의 목소리가 되었다.",
+      "en": "Legendary Jamaican reggae artist who spread peace, love and social justice through music, becoming the voice of the Third World."
+    },
+    "description": {
+      "ko": "밥 말리는 1973년경 형성된 음악 양식으로, 고유한 선율 체계와 리듬 구조를 통해 독자적 음악 세계를 구축했다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Bob Marley is a musical tradition that emerged around 1973, establishing a distinctive sonic world through its unique melodic systems and rhythmic structures. The acoustic space created by the interaction of rhythm and melody is remarkably original. It embodies the distinctive worldview of Latin American civilizations. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200120",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "마오리 타모코",
+      "en": "Tā Moko"
+    },
+    "start_year": 1200,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": -38.1368,
+    "location_lng": 176.2497,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "마오리족의 전통 얼굴 문신으로, 개인의 계보·지위·업적을 표현하는 신성한 신체 예술이다.",
+      "en": "Traditional Māori facial tattoo expressing personal genealogy, status and achievements as sacred body art."
+    },
+    "description": {
+      "ko": "마오리 타모코는 1200년경 등장한 예술 양식으로, 시각적 표현의 새로운 가능성을 제시했다. 이 작품은 조형적 완성도와 상징적 깊이를 겸비하여, 해당 미술 전통의 정수로 인정받고 있다. 태평양 도서 문화의 독특한 세계관을 반영하는 작품이다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Tā Moko, produced around 1200, represents a significant achievement in the visual arts that captures the aesthetic sensibilities of its time. It reflects the unique cosmology of Pacific Island cultures. Its technique of exploiting the physical properties of materials to their fullest expanded the possibilities of the visual arts. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200202",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "인도네시아 레옹 드라마",
+      "en": "Lenong Theater"
+    },
+    "start_year": 1920,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -6.2088,
+    "location_lng": 106.8456,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "자카르타 베타위족의 전통 연극으로, 사회 풍자와 유머를 결합한 대중 공연 예술이다.",
+      "en": "Traditional Betawi theater of Jakarta combining social satire and humor in popular performing arts."
+    },
+    "description": {
+      "ko": "인도네시아 레옹 드라마는 1920년경에 만들어진 독창적 문화 표현으로, 다양한 예술 영역의 요소가 융합되어 있다. 이 문화적 산물은 예술과 일상의 경계를 허무는 독특한 위치를 점하고 있다. 동남아시아 특유의 다층적 문화 교류가 녹아든 작품이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Lenong Theater emerged around 1920 as a cultural creation possessing unique artistic value that transcends conventional genre classifications. The work showcases the distinctive artistic traditions of the Southeast Asian region. This cultural creation occupies a unique position that blurs the boundary between art and everyday life. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200204",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "필리핀 산토니뇨 축제",
+      "en": "Sinulog Festival"
+    },
+    "start_year": 1980,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 10.3157,
+    "location_lng": 123.8854,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "필리핀 세부의 산토니뇨 축제로, 가톨릭과 원주민 전통이 결합된 화려한 거리 퍼레이드이다.",
+      "en": "Sinulog Festival in Cebu combining Catholic and indigenous traditions in a vibrant street parade."
+    },
+    "description": {
+      "ko": "필리핀 산토니뇨 축제는 1980년경 형성된 문화 유산으로, 해당 사회의 창조적 역량이 응축된 결과물이다. 동남아시아 지역의 독자적 예술 전통을 잘 보여주는 사례이다. 공동체적 참여와 개인적 창조성이 결합된 독특한 문화 표현 양식이다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Sinulog Festival emerged around 1980 as a cultural creation possessing unique artistic value that transcends conventional genre classifications. This cultural creation occupies a unique position that blurs the boundary between art and everyday life. It demonstrates how Southeast Asian cultures synthesized diverse influences into unique artistic expressions. Later artists and scholars drew inspiration from this work, continuing new creative endeavors and research."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200210",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "카를로스 가르델",
+      "en": "Carlos Gardel"
+    },
+    "start_year": 1925,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -34.6037,
+    "location_lng": -58.3816,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "탱고의 전설적 가수로, '내 슬픈 밤에' 등으로 탱고를 세계적 음악 장르로 격상시킨 아르헨티나의 국민 영웅이다.",
+      "en": "Legendary tango singer who elevated tango to a global music genre, Argentina's national hero."
+    },
+    "description": {
+      "ko": "카를로스 가르델은 1925년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Carlos Gardel is a musical tradition that emerged around 1925, establishing a distinctive sonic world through its unique melodic systems and rhythmic structures. The work reflects the dynamic cultural traditions of Central and South America. The originality of its instrumentation and tonal system grants it a distinctive position in world music history. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200218",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "멕시코 레슬링 루차 리브레",
+      "en": "Lucha Libre"
+    },
+    "start_year": 1933,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 19.436,
+    "location_lng": -99.1332,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "멕시코의 프로레슬링으로, 화려한 가면과 공중 기술이 특징적인 대중 공연 예술이자 문화 현상이다.",
+      "en": "Mexican professional wrestling featuring colorful masks and aerial techniques, a popular performance art and cultural phenomenon."
+    },
+    "description": {
+      "ko": "멕시코 레슬링 루차 리브레는 1933년경에 만들어진 독창적 문화 표현으로, 다양한 예술 영역의 요소가 융합되어 있다. 시대와 지역을 초월한 보편적 호소력을 지니면서도 뚜렷한 지역적 정체성을 간직하고 있다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 제작 당시의 사회적 맥락을 고려하면 이 작품의 혁신성이 더욱 명확해진다.",
+      "en": "Lucha Libre appeared around 1933 as an original form of cultural expression, fusing elements from diverse artistic domains. It represents a distinctive form of cultural expression combining communal participation with individual creativity. The work reflects the dynamic cultural traditions of Central and South America. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200110_dup_3272",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "무알라카트",
+      "en": "Mu'allaqat"
+    },
+    "start_year": 550,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 21.42,
+    "location_lng": 39.83,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "사우디아라비아",
+      "en": "Saudi Arabia"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이슬람 이전 아라비아의 7대 현시로, 카바 신전에 걸렸다는 전설의 아랍 시문학 최고 걸작이다.",
+      "en": "The Seven Hanging Odes of pre-Islamic Arabia, legendary masterpieces said to have hung on the Kaaba."
+    },
+    "description": {
+      "ko": "무알라카트는 550년경 창작된 문학적 성취로, 당대의 사회상과 정신세계를 문자로 형상화한 작품이다. 중동 문명의 깊은 역사적 뿌리에서 탄생한 작품이다. 문학적 실험과 전통의 계승이라는 이중 과제를 성공적으로 수행한 작품으로 평가된다. 이 작품이 속한 전통은 수세기에 걸쳐 발전하며 독자적 미학 체계를 완성했다.",
+      "en": "Mu'allaqat, written around 550, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. It represents centuries of accumulated cultural achievement in the Middle East. The work maximizes the artistic potential of language and has established itself as a canonical text in its literary tradition. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
   }
 ]
