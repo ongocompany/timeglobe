@@ -20254,5 +20254,3685 @@
       "en": "Abdel Halim Hafez, originating around 1952, represents a musical heritage where cultural emotion and aesthetics are realized through sound. The originality of its instrumentation and tonal system grants it a distinctive position in world music history. It emerges from the deep historical roots of Middle Eastern civilization. The political and religious environment of the period served as a direct backdrop to the formation of the work."
     },
     "external_link": ""
+  },
+  {
+    "id": "Q392937",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "개신교 윤리와 자본주의 정신",
+      "en": "The Protestant Ethic and the Spirit of Capitalism"
+    },
+    "start_year": 1905,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 49.01,
+    "location_lng": 8.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "막스 베버의 사회학 저서로, 개신교 윤리가 자본주의 발전에 미친 영향을 분석한다. 사회학 및 경제학 분야에서 자본주의의 기원에 대한 중요한 이론을 제시했다.",
+      "en": "Max Weber's sociological work analyzing the influence of Protestant ethics on the development of capitalism. It presented a crucial theory on the origins of capitalism in sociology and economics."
+    },
+    "description": {
+      "ko": "《개신교 윤리와 자본주의 정신》은 1900년대 유럽 문학의 대표적 성과물 가운데 하나이다. 1905년에 세상에 나온 이 작품은 당시 문학적 담론의 지형을 바꾸는 데 일조했다. 유럽의 문화적 토양에서 자라난 이 텍스트는 보편적 주제와 지역적 특수성을 동시에 담아냈다. 문학 연구자들 사이에서 꾸준히 분석 대상이 되고 있는 작품이다.",
+      "en": "Published in 1905, \"The Protestant Ethic and the Spirit of Capitalism\" is a significant literary achievement from Europe. The work captured the complexities of its era through compelling narrative craft. It has been recognized as a key text in understanding the literary and cultural history of the region, and its themes continue to resonate with contemporary readers."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q1247929",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "실존주의는 휴머니즘이다",
+      "en": "Existentialism and Humanism"
+    },
+    "start_year": 1946,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 48.85,
+    "location_lng": 2.35,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전 기준에 따라 문명사적 영향력이 있는 철학서로 판단된다.",
+      "en": "Judged as a philosophical work with civilizational impact, according to religious/philosophical scripture standards."
+    },
+    "description": {
+      "ko": "'실존주의는 휴머니즘이다'은(는) 1946년에 발표된 유럽 문학의 주요 작품이다. 전후 시기의 문화적·사회적 맥락을 반영하며, 당대의 문학적 흐름에 중요한 전환점을 제시했다. 이 작품은 문학사적으로 독창적인 서사 구조와 주제 의식을 통해 후대 작가들에게 깊은 영향을 끼쳤다. 오늘날에도 유럽 문학을 이해하는 데 필수적인 텍스트로 평가받고 있다.",
+      "en": "'Existentialism and Humanism' is a significant literary work from Europe, dating to approximately 1946. Created during the postwar period, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80629",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "산조",
+      "en": "Sanjo (Scattered Melodies)"
+    },
+    "start_year": 1890,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.82,
+    "location_lng": 127.15,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "한 사람의 기악 독주와 장구 반주로 이루어지는 한국 전통 음악이다. 느린 장단에서 빠른 장단으로 점진적으로 변하는 구성이 특징이다.",
+      "en": "Korean traditional solo instrumental music with janggu. Characterized by gradual progression from slow to fast rhythms."
+    },
+    "description": {
+      "ko": "19세기 말 김창조에 의해 가야금 산조가 처음 만들어졌다. 진양조-중모리-중중모리-자진모리-휘모리로 장단이 빨라지며 감정이 고조된다. 가야금, 거문고, 대금 등 다양한 악기의 산조가 한국 음악의 예술성을 대표한다.",
+      "en": "Gayageum sanjo was first created by Kim Changjo in the late 19th century. Rhythms accelerate building emotional intensity. Various instruments' sanjo represent the artistry of Korean music."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80630",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "가곡",
+      "en": "Gagok (Korean Art Song)"
+    },
+    "start_year": 1600,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 37.57,
+    "location_lng": 126.98,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "시조시를 관현악 반주에 맞춰 부르는 한국 전통 성악곡이다. 2010년 유네스코 인류무형문화유산에 등재되었다.",
+      "en": "Traditional Korean vocal genre singing sijo poems with orchestral accompaniment. UNESCO Intangible Heritage since 2010."
+    },
+    "description": {
+      "ko": "시조의 가사를 관현악 반주에 맞춰 부르는 정악 성악곡이다. 남창과 여창으로 나뉘며, 우조와 계면조의 선법을 사용한다. 2010년 유네스코 무형유산에 등재되었다.",
+      "en": "A classical vocal genre singing sijo with orchestral accompaniment. Divided into male and female singing. Inscribed as UNESCO Intangible Heritage in 2010."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80638",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "최승희의 무용",
+      "en": "Choi Seung-hee's Dance"
+    },
+    "start_year": 1930,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 37.57,
+    "location_lng": 126.98,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "한국 근대 무용의 선구자 최승희의 창작 무용이다. 한국 전통춤을 현대적으로 재해석하여 세계적 명성을 얻었다.",
+      "en": "Creative dance by Choi Seung-hee, pioneer of Korean modern dance who gained worldwide fame."
+    },
+    "description": {
+      "ko": "1930-40년대 세계적으로 활동한 한국 무용가이다. 에이사도라 던컨과 비교될 만큼 세계 무대에서 주목받았다. 한국 전통춤을 현대 무용과 결합하여 한국 무용의 세계화를 이끈 선구자이다.",
+      "en": "A Korean dancer active worldwide in the 1930s-40s. Drew global attention comparable to Isadora Duncan. A pioneer of Korean dance globalization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80665",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "이우환 모노하",
+      "en": "Lee Ufan and Mono-ha"
+    },
+    "start_year": 1968,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 37.57,
+    "location_lng": 126.98,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "한국 출신 작가 이우환이 주도한 일본 모노하 운동이다. 자연과 산업 재료의 만남을 통해 존재의 본질을 탐구한다.",
+      "en": "The Japanese Mono-ha movement led by Korean artist Lee Ufan exploring existence through material encounters."
+    },
+    "description": {
+      "ko": "이우환(1936-)이 1960년대 후반 일본에서 주도한 미술 운동이다. 돌과 철판 등을 배치하여 물질과 공간의 관계를 탐구한다. 부산과 일본 나오시마에 전용 미술관이 있다.",
+      "en": "An art movement led by Lee Ufan in late 1960s Japan. Explores material-space relationships through unprocessed stones and steel plates. Dedicated museums in Busan and Naoshima."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80670",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "한강의 문학 (노벨문학상)",
+      "en": "Han Kang's Literature (Nobel Prize)"
+    },
+    "start_year": 2024,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 37.57,
+    "location_lng": 126.98,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "한강은 2024년 한국인 최초로 노벨문학상을 수상한 작가이다. '역사적 트라우마에 맞서는 강렬한 시적 산문'이 수상 이유이다.",
+      "en": "Han Kang, the first Korean Nobel Literature laureate in 2024. Awarded for 'intense poetic prose confronting historical traumas.'"
+    },
+    "description": {
+      "ko": "한강(1970-)은 2024년 노벨문학상을 수상한 최초의 한국인 작가이다. 《소년이 온다》, 《채식주의자》, 《작별하지 않는다》 등이 대표작이다. 역사의 폭력과 인간의 고통을 시적 문체로 다루며 한국 문학의 세계적 위상을 확립했다.",
+      "en": "The first Korean to win the Nobel Prize in Literature in 2024. Major works include Human Acts and The Vegetarian. Established Korean literature's global status through poetic prose on violence and suffering."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80682",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "판소리 (유네스코 무형유산)",
+      "en": "Pansori (UNESCO Heritage)"
+    },
+    "start_year": 1700,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.82,
+    "location_lng": 127.15,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "소리꾼과 고수가 이끄는 한국 전통 음악극이다. 2003년 유네스코 인류무형문화유산에 등재되었다.",
+      "en": "Korean traditional musical narrative by a singer and drummer. UNESCO Intangible Heritage since 2003."
+    },
+    "description": {
+      "ko": "소리꾼이 고수의 북 장단에 맞추어 이야기를 풀어가는 한국 고유의 음악극이다. 5바탕(춘향가, 심청가, 흥보가, 수궁가, 적벽가)이 전해집니다. 2003년 유네스코 인류무형문화유산에 등재되었다.",
+      "en": "A uniquely Korean musical drama. Five repertoires survive. Inscribed as UNESCO Intangible Cultural Heritage in 2003."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q80693",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "K-pop 문화 현상",
+      "en": "K-pop Cultural Phenomenon"
+    },
+    "start_year": 1990,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 37.57,
+    "location_lng": 126.98,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "대한민국",
+      "en": "South Korea"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "한국 대중음악의 전 세계적 문화 현상이다. 서태지부터 BTS, 블랙핑크에 이르는 한류 음악의 흐름이다.",
+      "en": "The worldwide cultural phenomenon of Korean popular music from Seo Taiji to BTS and BLACKPINK."
+    },
+    "description": {
+      "ko": "1990년대 서태지와 아이들에서 시작된 글로벌 현상이다. 체계적 트레이닝, 시각적 퍼포먼스, 소셜 미디어 전략이 핵심이다. 세계 음악 시장에서 하나의 장르로 자리잡았다.",
+      "en": "A global phenomenon from Seo Taiji in the 1990s. Core competencies: systematic training, visual performance, social media. Established as a genre in the global music market."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900000",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "초사",
+      "en": "Chu Ci"
+    },
+    "start_year": -300,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 30.57,
+    "location_lng": 114.27,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "굴원을 비롯한 초나라 시인들의 시가 모음집. 낭만적이고 환상적인 문체로 중국 문학의 양대 원류 중 하나를 형성했다.",
+      "en": "Anthology of poetry from the Chu state, featuring Qu Yuan. Its romantic, fantastical style forms one of the two great traditions of Chinese poetry."
+    },
+    "description": {
+      "ko": "동아시아에서 기원전 300년에 나온 '초사'은(는) 고전기를 대표하는 문학 작품 중 하나이다. 당시 사회·문화적 환경 속에서 탄생한 이 작품은 인간 조건에 대한 깊은 성찰을 담고 있었다. 문학적 완성도와 주제의 보편성 덕분에 여러 언어로 번역되어 국제적 명성을 얻었다.",
+      "en": "'Chu Ci' is a significant literary work from East Asia, dating to approximately 300 BCE. Created during the Classical period, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900022",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "고시십구수",
+      "en": "Nineteen Old Poems"
+    },
+    "start_year": 170,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 34.26,
+    "location_lng": 108.94,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "후한 말기 무명 시인들의 오언시 19수. 이별·인생무상 등을 읊은 중국 서정시의 고전이다.",
+      "en": "19 anonymous five-character poems from late Eastern Han, classics of Chinese lyric poetry on parting and impermanence."
+    },
+    "description": {
+      "ko": "'고시십구수'은(는) 170년에 발표된 동아시아 문학의 주요 작품이다. 후기 고전 시대의 문화적·사회적 맥락을 반영하며, 당대의 문학적 흐름에 중요한 전환점을 제시했다. 이 작품은 문학사적으로 독창적인 서사 구조와 주제 의식을 통해 후대 작가들에게 깊은 영향을 끼쳤다. 오늘날에도 동아시아 문학을 이해하는 데 필수적인 텍스트로 평가받고 있다.",
+      "en": "'Nineteen Old Poems' (170) is a defining literary work from East Asia that encapsulates the spirit of Late Antiquity. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900046",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "고개지 회화",
+      "en": "Paintings of Gu Kaizhi"
+    },
+    "start_year": 380,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 31.57,
+    "location_lng": 120.3,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "동진 화가 고개지의 인물화. '여사잠도' 등으로 중국 인물화의 시조로 평가받는다.",
+      "en": "Figure paintings by Gu Kaizhi of Eastern Jin, considered the founder of Chinese figure painting with 'Admonitions Scroll.'"
+    },
+    "description": {
+      "ko": "'고개지 회화'은(는) 380년경 동아시아에서 창작된 미술 작품으로, 후기 고전 시대의 시각 예술을 이해하는 데 중요한 열쇠이다. 이 작품에 담긴 조형미와 상징성은 당대 사회의 미적 이상을 반영한다. 후대 예술가들에게 지속적인 영향을 미쳤으며, 오늘날까지 미술사적 가치를 인정받고 있다. 세계 미술 유산의 중요한 일부이다.",
+      "en": "Dating to 380, 'Paintings of Gu Kaizhi' represents one of East Asia's most important visual art contributions from Late Antiquity. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900050",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "경극",
+      "en": "Peking Opera"
+    },
+    "start_year": 1790,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 39.9,
+    "location_lng": 116.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "청대에 성립된 중국의 대표 전통극. 노래·대사·동작·무술이 결합된 종합 공연예술이다.",
+      "en": "China's representative traditional opera combining singing, dialogue, acrobatics, and martial arts, established in Qing dynasty."
+    },
+    "description": {
+      "ko": "'경극'(Peking Opera)은(는) 동아시아에서 1790년에 탄생한 음악 작품이다. 18세기의 음악적 감수성을 반영하면서 새로운 청각적 경험을 제시했다. 이 작품의 음악적 구조와 감정적 깊이는 장르를 초월하여 광범위한 청중에게 사랑받았다.",
+      "en": "'Peking Opera' is a significant musical work from East Asia, dating to approximately 1790. Created during the 18th century, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900054",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "석도 회화",
+      "en": "Paintings of Shitao"
+    },
+    "start_year": 1680,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 33,
+    "location_lng": 117,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "청초의 혁신적 화가 석도의 산수화. '일획론'을 주장하며 전통 화법의 틀을 깼다.",
+      "en": "Innovative landscape paintings by Shitao advocating 'single-stroke' theory, breaking conventions of traditional painting."
+    },
+    "description": {
+      "ko": "동아시아의 '석도 회화'은(는) 1680년에 제작되어 17세기의 미술을 대표하는 작품이다. 시대적 배경과 문화적 맥락이 작품 전반에 깊이 스며들어 있으며, 예술적 표현의 새로운 가능성을 제시했다. 미술 애호가와 연구자 모두에게 높은 평가를 받는 작품이다.",
+      "en": "'Paintings of Shitao' (1680) is a defining visual art work from East Asia that encapsulates the spirit of the 17th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900064",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "동기창 서화론",
+      "en": "Dong Qichang's Art Theory"
+    },
+    "start_year": 1600,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 31.23,
+    "location_lng": 121.47,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "명말 동기창의 남북종론. 문인화와 직업화가를 남·북으로 분류한 중국 미술사의 핵심 이론이다.",
+      "en": "Dong Qichang's Southern-Northern School theory, a pivotal framework in Chinese art history."
+    },
+    "description": {
+      "ko": "'동기창 서화론'은(는) 1600년경에 제작된 동아시아의 대표적인 미술 작품이다. 르네상스 시기의 미학적 가치관과 기술적 성취를 집약적으로 보여주며, 당대 예술적 흐름의 정수를 담고 있다. 이 작품의 조형적 완성도와 예술적 독창성은 미술사 연구에서 중요한 참조점이 되고 있다. 동아시아 미술의 발전 과정을 이해하는 데 핵심적인 작품이다.",
+      "en": "Emerging from East Asia around 1600, 'Dong Qichang's Art Theory' stands as a landmark achievement of the Renaissance. This visual art work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900066",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "채원배의 미육주의 교육",
+      "en": "Cai Yuanpei's Aesthetic Education"
+    },
+    "start_year": 1912,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 31.23,
+    "location_lng": 121.47,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "근대 교육자 채원배가 제창한 미육(美育) 사상. '이미육대종교'설로 예술교육의 중요성을 역설했다.",
+      "en": "Cai Yuanpei's aesthetic education philosophy advocating art education as a substitute for religion."
+    },
+    "description": {
+      "ko": "'채원배의 미육주의 교육'은(는) 1912년에 발표된 동아시아 문학의 주요 작품이다. 20세기 초의 문화적·사회적 맥락을 반영하며, 당대의 문학적 흐름에 중요한 전환점을 제시했다. 이 작품은 문학사적으로 독창적인 서사 구조와 주제 의식을 통해 후대 작가들에게 깊은 영향을 끼쳤다. 오늘날에도 동아시아 문학을 이해하는 데 필수적인 텍스트로 평가받고 있다.",
+      "en": "'Cai Yuanpei's Aesthetic Education' (1912) is a defining literary work from East Asia that encapsulates the spirit of the early 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900067",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "서위 회화",
+      "en": "Paintings of Xu Wei"
+    },
+    "start_year": 1570,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 30.26,
+    "location_lng": 120.15,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "명대 화가 서위의 대사의 화조화. 광기어린 필치로 감정을 폭발시킨 표현주의적 수묵화이다.",
+      "en": "Freehand flower-and-bird paintings by Xu Wei, expressionistic ink works bursting with wild emotional energy."
+    },
+    "description": {
+      "ko": "'서위 회화'은(는) 1570년경에 제작된 동아시아의 대표적인 미술 작품이다. 르네상스 시기의 미학적 가치관과 기술적 성취를 집약적으로 보여주며, 당대 예술적 흐름의 정수를 담고 있다. 이 작품의 조형적 완성도와 예술적 독창성은 미술사 연구에서 중요한 참조점이 되고 있다. 동아시아 미술의 발전 과정을 이해하는 데 핵심적인 작품이다.",
+      "en": "Dating to 1570, 'Paintings of Xu Wei' represents one of East Asia's most important visual art contributions from the Renaissance. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900074",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "목판화 운동",
+      "en": "Chinese Woodcut Movement"
+    },
+    "start_year": 1931,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 31.23,
+    "location_lng": 121.47,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "루쉰이 주도한 근대 중국 목판화 운동. 사회 비판과 혁명 의식을 판화로 표현했다.",
+      "en": "Modern Chinese woodcut movement led by Lu Xun, expressing social criticism and revolutionary consciousness through prints."
+    },
+    "description": {
+      "ko": "'목판화 운동'은(는) 1931년경 동아시아에서 창작된 미술 작품으로, 양차 세계대전 시기의 시각 예술을 이해하는 데 중요한 열쇠이다. 이 작품에 담긴 조형미와 상징성은 당대 사회의 미적 이상을 반영한다. 후대 예술가들에게 지속적인 영향을 미쳤으며, 오늘날까지 미술사적 가치를 인정받고 있다. 세계 미술 유산의 중요한 일부이다.",
+      "en": "Emerging from East Asia around 1931, 'Chinese Woodcut Movement' stands as a landmark achievement of the interwar and World War II era. This visual art work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900075",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "제백석 회화",
+      "en": "Paintings of Qi Baishi"
+    },
+    "start_year": 1920,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 28.23,
+    "location_lng": 112.94,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "근현대 중국 화가 제백석의 화조·수묵화. 새우·게 등 소박한 소재를 생동감 있게 그렸다.",
+      "en": "Paintings by Qi Baishi depicting humble subjects like shrimp and crabs with vivid simplicity."
+    },
+    "description": {
+      "ko": "동아시아의 '제백석 회화'은(는) 1920년에 제작되어 20세기 초의 미술을 대표하는 작품이다. 시대적 배경과 문화적 맥락이 작품 전반에 깊이 스며들어 있으며, 예술적 표현의 새로운 가능성을 제시했다. 미술 애호가와 연구자 모두에게 높은 평가를 받는 작품이다.",
+      "en": "Dating to 1920, 'Paintings of Qi Baishi' represents one of East Asia's most important visual art contributions from the early 20th century. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900076",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "장대천 회화",
+      "en": "Paintings of Zhang Daqian"
+    },
+    "start_year": 1940,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 30.57,
+    "location_lng": 104.07,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "20세기 중국의 대표 화가 장대천의 산수·발묵화. 돈황 벽화 모사 후 독자적 화풍을 확립했다.",
+      "en": "Paintings by Zhang Daqian who established his distinctive style after copying Dunhuang murals, a 20th-century Chinese master."
+    },
+    "description": {
+      "ko": "'장대천 회화'은(는) 1940년경 동아시아에서 창작된 미술 작품으로, 양차 세계대전 시기의 시각 예술을 이해하는 데 중요한 열쇠이다. 이 작품에 담긴 조형미와 상징성은 당대 사회의 미적 이상을 반영한다. 후대 예술가들에게 지속적인 영향을 미쳤으며, 오늘날까지 미술사적 가치를 인정받고 있다. 세계 미술 유산의 중요한 일부이다.",
+      "en": "Emerging from East Asia around 1940, 'Paintings of Zhang Daqian' stands as a landmark achievement of the interwar and World War II era. This visual art work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900083",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "매란방의 경극",
+      "en": "Mei Lanfang's Peking Opera"
+    },
+    "start_year": 1920,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 39.9,
+    "location_lng": 116.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "경극 단역(여성역) 명배우 매란방의 공연 예술. 경극을 세계에 알린 20세기 최고의 경극 예술가이다.",
+      "en": "Performance art of Mei Lanfang, greatest 20th-century Peking Opera artist who brought jingju to the world."
+    },
+    "description": {
+      "ko": "1920년에 등장한 '매란방의 경극'은(는) 동아시아 음악사의 중요한 이정표이다. 20세기 초의 문화적 배경 속에서 탄생한 이 작품은 음악적 혁신과 전통의 조화를 보여주었다. 독특한 사운드와 구성은 음악 장르의 발전에 기여했으며, 오늘날에도 높이 평가받고 있다.",
+      "en": "Emerging from East Asia around 1920, 'Mei Lanfang's Peking Opera' stands as a landmark achievement of the early 20th century. This musical work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900102",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "중국 록음악",
+      "en": "Chinese Rock Music"
+    },
+    "start_year": 1986,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 39.9,
+    "location_lng": 116.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "최건(추이젠)이 개척한 중국 록음악. '일무소유'로 상징되는 1980년대 중국 청년문화의 목소리이다.",
+      "en": "Chinese rock pioneered by Cui Jian, voice of 1980s youth culture symbolized by 'Nothing to My Name.'"
+    },
+    "description": {
+      "ko": "'중국 록음악'은(는) 1986년에 발표된 동아시아의 음악 작품으로, 20세기 말의 음악적 흐름을 이해하는 데 중요한 작품이다. 독창적인 음악 어법과 표현력으로 당대 음악계에 강한 인상을 남겼다. 이 작품이 보여준 예술적 성취는 후대 음악가들에게 영감의 원천이 되었다. 동아시아 음악 전통에서 핵심적인 위치를 차지하고 있다.",
+      "en": "Dating to 1986, 'Chinese Rock Music' represents one of East Asia's most important musical contributions from the late 20th century. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900106",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "선훙페이 건축",
+      "en": "Architecture of Wang Shu"
+    },
+    "start_year": 2012,
+    "end_year": null,
+    "category": "건축",
+    "location_lat": 30.26,
+    "location_lng": 120.15,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 건축가 왕수의 건축. 프리츠커상 수상자로 전통 재료와 현대 건축을 융합했다.",
+      "en": "Architecture of Wang Shu, Pritzker Prize winner fusing traditional materials with contemporary design."
+    },
+    "description": {
+      "ko": "2012년에 완성된 '선훙페이 건축'은(는) 동아시아 건축사의 중요한 이정표이다. 21세기의 건축적 이상과 기술적 역량을 집약한 이 건축물은 공간과 형태의 혁신적 해석으로 주목받았다. 건축 미학과 기능성의 균형이 돋보이며, 후대 건축가들에게 깊은 영감을 주었다.",
+      "en": "'Architecture of Wang Shu' is a significant architectural work from East Asia, dating to approximately 2012. Created during the 21st century, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900147",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "자하 하디드 건축",
+      "en": "Architecture of Zaha Hadid"
+    },
+    "start_year": 1993,
+    "end_year": null,
+    "category": "건축",
+    "location_lat": 33.31,
+    "location_lng": 44.37,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "이라크",
+      "en": "Iraq"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이라크 출신 건축가 자하 하디드의 건축. 유선형 곡선의 해체주의 건축으로 프리츠커상을 수상했다.",
+      "en": "Architecture of Iraq-born Zaha Hadid, Pritzker Prize winner known for fluid, deconstructivist curved forms."
+    },
+    "description": {
+      "ko": "'자하 하디드 건축'(Architecture of Zaha Hadid)은(는) 중앙아시아에서 1993년경에 세워진 건축물이다. 20세기 말의 건축 양식과 도시 계획 사상을 반영하며, 독창적인 설계 철학을 보여준다. 이 건축물의 공간 구성과 재료 사용은 건축사 연구에서 중요한 사례로 다뤄진다. 시간이 흘러도 그 건축적 가치는 변함없이 인정받고 있다.",
+      "en": "'Architecture of Zaha Hadid' (1993) is a defining architectural work from Central Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900212",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "당인 회화",
+      "en": "Paintings of Tang Yin"
+    },
+    "start_year": 1510,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 31.3,
+    "location_lng": 120.6,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "명대 화가 당인(당백호)의 인물·산수화. 시서화에 모두 능한 강남 문인의 대표적 예술가이다.",
+      "en": "Paintings by Tang Yin, representative Jiangnan literati artist skilled in poetry, calligraphy, and painting."
+    },
+    "description": {
+      "ko": "'당인 회화'은(는) 1510년경에 제작된 동아시아의 대표적인 미술 작품이다. 르네상스 시기의 미학적 가치관과 기술적 성취를 집약적으로 보여주며, 당대 예술적 흐름의 정수를 담고 있다. 이 작품의 조형적 완성도와 예술적 독창성은 미술사 연구에서 중요한 참조점이 되고 있다. 동아시아 미술의 발전 과정을 이해하는 데 핵심적인 작품이다.",
+      "en": "'Paintings of Tang Yin' is a significant visual art work from East Asia, dating to approximately 1510. Created during the Renaissance, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900216",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "셴충원 문학",
+      "en": "Literature of Shen Congwen"
+    },
+    "start_year": 1934,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 27.73,
+    "location_lng": 109.72,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 향토작가 셴충원의 '변성'. 상서 지방의 순수한 삶과 사랑을 서정적으로 그렸다.",
+      "en": "Lyrical novel 'Border Town' by Shen Congwen depicting pure life and love in western Hunan."
+    },
+    "description": {
+      "ko": "동아시아에서 1934년에 나온 '셴충원 문학'은(는) 양차 세계대전 시기를 대표하는 문학 작품 중 하나이다. 당시 사회·문화적 환경 속에서 탄생한 이 작품은 인간 조건에 대한 깊은 성찰을 담고 있었다. 문학적 완성도와 주제의 보편성 덕분에 여러 언어로 번역되어 국제적 명성을 얻었다.",
+      "en": "Dating to 1934, 'Literature of Shen Congwen' represents one of East Asia's most important literary contributions from the interwar and World War II era. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900217",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "딩링 문학",
+      "en": "Literature of Ding Ling"
+    },
+    "start_year": 1928,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 28.23,
+    "location_lng": 112.94,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 여성 작가 딩링의 '소피 여사의 일기'. 근대 여성의 자아와 욕망을 대담하게 표현했다.",
+      "en": "Ding Ling's 'Miss Sophie's Diary' boldly expressing modern female selfhood and desire."
+    },
+    "description": {
+      "ko": "'딩링 문학'(Literature of Ding Ling)은(는) 1928년경에 탄생한 동아시아의 문학 작품이다. 양차 세계대전 시기 당시의 지적·예술적 분위기를 배경으로, 독자적인 문체와 서사로 문학계에 새로운 가능성을 열었다. 이 작품이 지닌 문학적 깊이와 역사적 의의는 시대를 초월하여 꾸준히 재조명되고 있다. 동아시아 문학의 정전으로서 그 가치가 확고하다.",
+      "en": "'Literature of Ding Ling' (1928) is a defining literary work from East Asia that encapsulates the spirit of the interwar and World War II era. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900218",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "판허 조각",
+      "en": "Sculpture of Pan He"
+    },
+    "start_year": 1960,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 23.13,
+    "location_lng": 113.26,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 현대 조각가 판허의 도시 조각. '오양군상' 등 도시 풍경을 표현한 대형 조각이다.",
+      "en": "Urban sculpture by Pan He including 'Five Rams' statues representing cityscapes."
+    },
+    "description": {
+      "ko": "'판허 조각'(Sculpture of Pan He)은(는) 동아시아에서 1960년경에 탄생한 미술 작품이다. 전후 시기 특유의 미적 이상을 구현하면서도 독자적인 예술 세계를 구축했다. 재료의 사용과 표현 기법에서 당대 최고 수준의 장인 정신이 드러난다. 이 작품은 동아시아 미술 전통의 핵심을 보여주는 걸작으로 인정받고 있다.",
+      "en": "'Sculpture of Pan He' is a significant visual art work from East Asia, dating to approximately 1960. Created during the postwar period, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900241",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "아미르 호스로우 시",
+      "en": "Poetry of Amir Khusrau"
+    },
+    "start_year": 1300,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 28.61,
+    "location_lng": 77.21,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "인도",
+      "en": "India"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도-페르시아 시인 아미르 호스로우의 문학. 힌두스탄 음악과 페르시아 시를 결합한 예술가이다.",
+      "en": "Literature of Amir Khusrau combining Hindustani music with Persian poetry."
+    },
+    "description": {
+      "ko": "1300년에 등장한 '아미르 호스로우 시'은(는) 중앙아시아 문학 전통에서 빼놓을 수 없는 작품이다. 중세의 시대 정신을 문학적으로 형상화하여 독자들에게 새로운 시각을 제공했다. 작품에 담긴 주제와 표현 방식은 이후 문학 발전의 중요한 토대가 되었다.",
+      "en": "'Poetry of Amir Khusrau' (1300) is a defining literary work from Central Asia that encapsulates the spirit of the medieval era. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900242",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "자미의 문학",
+      "en": "Literature of Jami"
+    },
+    "start_year": 1480,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 36.71,
+    "location_lng": 66.9,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "아프가니스탄",
+      "en": "Afghanistan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "페르시아 시인 압두르라흐만 자미의 저작. 티무르 시대 마지막 위대한 페르시아 고전 시인이다.",
+      "en": "Works of Jami, the last great classical Persian poet of the Timurid era."
+    },
+    "description": {
+      "ko": "페르시아 시인 압두르라흐만 자미의 저작. 티무르 시대 마지막 위대한 페르시아 고전 시인이다.",
+      "en": "Dating to 1480, 'Literature of Jami' represents one of Central Asia's most important literary contributions from the late medieval and Renaissance period. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART017",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "노(能)",
+      "en": "Noh Theatre"
+    },
+    "start_year": 1375,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.01,
+    "location_lng": 135.77,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "제아미가 완성한 일본 전통 가면극으로, 노래·춤·연기가 결합된 종합 무대 예술이다. 유네스코 무형문화유산으로 등재되어 있다.",
+      "en": "Traditional masked theatre perfected by Zeami, combining song, dance, and drama. A UNESCO Intangible Cultural Heritage."
+    },
+    "description": {
+      "ko": "1375년에 일본에서 만들어진 '노(能)'은(는) 중세 후기에서 르네상스 시기의 문화적 흐름을 반영하는 주목할 만한 작품이다. 기존의 틀을 넘어서는 혁신적 발상으로 해당 분야의 발전에 크게 기여했다. 이 작품의 영향력은 시간이 지나도 줄어들지 않고 있으며, 여전히 많은 이들에게 영감을 주고 있다.",
+      "en": "'Noh Theatre' (1375) is a defining cultural work from Japan that encapsulates the spirit of the late medieval and Renaissance period. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Japan."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART018",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "교겐",
+      "en": "Kyōgen"
+    },
+    "start_year": 1400,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.01,
+    "location_lng": 135.77,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "노와 함께 발전한 일본 전통 희극으로, 서민의 일상과 해학을 주제로 한다. 노의 막간에 공연되며 대사 중심의 코미디이다.",
+      "en": "Traditional Japanese comic theatre performed between Noh acts, depicting everyday life with humor. A dialogue-based comedic art form."
+    },
+    "description": {
+      "ko": "일본의 '교겐'은(는) 1400년에 등장하여 중세 후기에서 르네상스 시기의 문화 지형을 풍요롭게 했다. 참신한 아이디어와 뛰어난 실행력이 결합된 이 작품은 해당 분야의 역사에서 전환점을 마련했다. 시대를 넘어 보편적 가치를 지니며, 일본 문화의 다양성과 깊이를 증명한다.",
+      "en": "Emerging from Japan around 1400, 'Kyōgen' stands as a landmark achievement of the late medieval and Renaissance period. This cultural work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART023",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "다도(와비차)",
+      "en": "Chanoyu (Tea Ceremony)"
+    },
+    "start_year": 1500,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.01,
+    "location_lng": 135.77,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "센노리큐가 완성한 일본 다도로, 와비사비 정신을 구현한 종합 예술이다. 건축, 도예, 서예, 꽃꽂이 등 다양한 예술을 통합한다.",
+      "en": "Japanese tea ceremony perfected by Sen no Rikyū, embodying wabi-sabi. Integrates architecture, ceramics, calligraphy, and ikebana."
+    },
+    "description": {
+      "ko": "일본의 '다도(와비차)'은(는) 1500년에 등장하여 중세 후기에서 르네상스 시기의 문화 지형을 풍요롭게 했다. 참신한 아이디어와 뛰어난 실행력이 결합된 이 작품은 해당 분야의 역사에서 전환점을 마련했다. 시대를 넘어 보편적 가치를 지니며, 일본 문화의 다양성과 깊이를 증명한다.",
+      "en": "'Chanoyu (Tea Ceremony)' is a significant cultural work from Japan, dating to approximately 1500. Created during the late medieval and Renaissance period, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART035",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "분라쿠(인형극)",
+      "en": "Bunraku (Puppet Theatre)"
+    },
+    "start_year": 1684,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 34.69,
+    "location_lng": 135.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "오사카에서 발전한 일본 전통 인형극으로, 3인이 하나의 인형을 조종한다. 유네스코 무형문화유산으로 등재된 세계적 인형극이다.",
+      "en": "Traditional Japanese puppet theatre from Osaka, with three puppeteers per puppet. A UNESCO Intangible Cultural Heritage."
+    },
+    "description": {
+      "ko": "일본의 '분라쿠(인형극)'은(는) 1684년에 등장하여 17세기의 문화 지형을 풍요롭게 했다. 참신한 아이디어와 뛰어난 실행력이 결합된 이 작품은 해당 분야의 역사에서 전환점을 마련했다. 시대를 넘어 보편적 가치를 지니며, 일본 문화의 다양성과 깊이를 증명한다.",
+      "en": "Dating to 1684, 'Bunraku (Puppet Theatre)' represents one of Japan's most important cultural contributions from the 17th century. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART036",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "가부키",
+      "en": "Kabuki Theatre"
+    },
+    "start_year": 1603,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.68,
+    "location_lng": 139.69,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "화려한 분장과 과장된 연기가 특징인 일본 전통 무대 예술이다. 에도 시대 대중문화의 꽃으로, 유네스코 무형문화유산이다.",
+      "en": "Traditional Japanese theatre known for elaborate makeup and stylized acting. The flower of Edo popular culture, UNESCO heritage."
+    },
+    "description": {
+      "ko": "'가부키'은(는) 1603년에 일본에서 등장한 문화적 산물로, 17세기의 창조적 성취를 보여주는 중요한 사례이다. 독창적인 접근 방식과 높은 완성도로 해당 분야에서 새로운 기준을 세웠다. 이 작품이 지닌 문화적·역사적 의의는 탄생 이후 꾸준히 재평가되고 있다. 일본 문화사에서 빼놓을 수 없는 중요한 존재이다.",
+      "en": "Emerging from Japan around 1603, 'Kabuki Theatre' stands as a landmark achievement of the 17th century. This cultural work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART045",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "우키요에",
+      "en": "Ukiyo-e"
+    },
+    "start_year": 1670,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 35.68,
+    "location_lng": 139.69,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "에도 시대 서민 문화를 반영한 목판화 장르로, 미인·배우·풍경을 주제로 했다. 서양 인상파에 '자포니즘' 열풍을 일으켰다.",
+      "en": "Edo-period woodblock print genre depicting beauties, actors, and landscapes. Sparked the 'Japonisme' movement in Western art."
+    },
+    "description": {
+      "ko": "'우키요에'(Ukiyo-e)은(는) 일본에서 1670년경에 탄생한 미술 작품이다. 17세기 특유의 미적 이상을 구현하면서도 독자적인 예술 세계를 구축했다. 재료의 사용과 표현 기법에서 당대 최고 수준의 장인 정신이 드러난다. 이 작품은 일본 미술 전통의 핵심을 보여주는 걸작으로 인정받고 있다.",
+      "en": "'Ukiyo-e' is a significant visual art work from Japan, dating to approximately 1670. Created during the 17th century, it reflects the artistic and intellectual currents of its time while establishing new creative standards. The work has exerted lasting influence on subsequent generations of artists and continues to be recognized for its cultural and historical importance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART068",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "쓰키지 소극장",
+      "en": "Tsukiji Little Theatre"
+    },
+    "start_year": 1924,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.67,
+    "location_lng": 139.77,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "일본 최초의 현대 연극 전용 극장으로, 신극(새로운 연극) 운동의 중심지였다. 일본 현대 연극의 출발점이 되었다.",
+      "en": "Japan's first modern theatre, center of the shingeki (new theatre) movement. Birthplace of modern Japanese theatre."
+    },
+    "description": {
+      "ko": "일본 최초의 현대 연극 전용 극장으로, 신극(새로운 연극) 운동의 중심지였다. 일본 현대 연극의 출발점이 되었다.",
+      "en": "Dating to 1924, 'Tsukiji Little Theatre' represents one of Japan's most important cultural contributions from the interwar and World War II era. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART081",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "이세이 미야케",
+      "en": "Issey Miyake"
+    },
+    "start_year": 1970,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 35.68,
+    "location_lng": 139.69,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "일본을 대표하는 패션 디자이너로, 천의 주름(플리츠 플리즈) 기법으로 혁신을 이끌었다. 기술과 예술을 융합한 디자인 철학을 확립했다.",
+      "en": "Iconic Japanese fashion designer who revolutionized with Pleats Please. Established a philosophy fusing technology and art."
+    },
+    "description": {
+      "ko": "1970년에 만들어진 '이세이 미야케'은(는) 일본 미술사의 중요한 이정표이다. 20세기 중후반의 예술적 감수성과 기법을 반영하며, 독특한 시각적 언어로 관람자에게 깊은 인상을 남긴다. 이 작품은 창작된 이후 수많은 예술가에게 영감의 원천이 되었다.",
+      "en": "'Issey Miyake' (1970) is a defining visual art work from Japan that encapsulates the spirit of the mid-to-late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Japan."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART088",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "J-pop",
+      "en": "J-pop"
+    },
+    "start_year": 1988,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 35.68,
+    "location_lng": 139.69,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "일본 대중음악 장르로, 1990년대 전성기를 맞이했다. 우타다 히카루, 미스터 칠드런 등이 대표 아티스트이다.",
+      "en": "Japanese pop music genre that peaked in the 1990s. Representative artists include Utada Hikaru and Mr. Children."
+    },
+    "description": {
+      "ko": "1988년에 등장한 'J-pop'은(는) 일본 음악사의 중요한 이정표이다. 20세기 말의 문화적 배경 속에서 탄생한 이 작품은 음악적 혁신과 전통의 조화를 보여주었다. 독특한 사운드와 구성은 음악 장르의 발전에 기여했으며, 오늘날에도 높이 평가받고 있다.",
+      "en": "Emerging from Japan around 1988, 'J-pop' stands as a landmark achievement of the late 20th century. This musical work broke new ground in its field, offering innovative perspectives that resonated with contemporary audiences. Its enduring legacy is evident in its continued study and appreciation across the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_011",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "나타야샤스트라",
+      "en": "Natya Shastra"
+    },
+    "start_year": -200,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 25.3176,
+    "location_lng": 82.9739,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "바라타 무니가 저술한 세계 최초의 공연예술 이론서이다. 연극, 무용, 음악, 감정 표현(라사)의 체계를 정립하여 인도 예술 전통의 근간이 되었다.",
+      "en": "The world's first treatise on performing arts by Bharata Muni. It systematized theater, dance, music, and emotional expression (rasa), forming the foundation of Indian artistic tradition."
+    },
+    "description": {
+      "ko": "기원전 2세기경 저술된 것으로 추정되는 36장의 산스크리트 문헌이다. 8가지 라사(감정의 맛)와 무대연출·의상·분장까지 체계적으로 기술한다. 바라타나티암, 카타칼리 등 인도 전통 무용과 동남아시아 공연 예술의 이론적 기초가 된다.",
+      "en": "A 36-chapter Sanskrit text believed written around the 2nd century BCE. It systematically describes eight rasas (emotional flavors), staging, costumes, and makeup. It provides the theoretical foundation for Indian classical dances like Bharatanatyam and Kathakali, as well as Southeast Asian performing arts."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_030",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "카비르 시",
+      "en": "Poetry of Kabir"
+    },
+    "start_year": 1440,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 25.3176,
+    "location_lng": 82.9739,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "15세기 직조공 출신 성자 시인 카비르의 시로, 힌두교와 이슬람의 형식주의를 넘어선 보편적 영성을 노래한다. 시크교 경전에도 수록된 인도 박티 운동의 핵심 문학이다.",
+      "en": "Poetry of 15th-century saint-poet Kabir, a weaver who sang of universal spirituality beyond Hindu and Islamic formalism. Included in the Sikh scripture, it is central to India's bhakti movement."
+    },
+    "description": {
+      "ko": "바라나시의 무슬림 직조공 가정에서 태어난 카비르는 카스트·종교의 경계를 초월한 시를 남겼다. '비자크'와 구루 그란트 사히브에 수록된 그의 쿠플렛(도하)은 직설적이고 역설적이다. 힌디어 문학의 선구자이자 인도 종교 화합의 상징으로 오늘날에도 널리 암송된다.",
+      "en": "Born to a Muslim weaver family in Varanasi, Kabir composed poetry transcending caste and religious boundaries. His couplets (dohas) in the Bijak and Guru Granth Sahib are direct and paradoxical. A pioneer of Hindi literature and symbol of Indian religious harmony, his verses are still widely recited today."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_050",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "라비 샹카르 (시타르)",
+      "en": "Ravi Shankar (Sitar)"
+    },
+    "start_year": 1956,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 25.3176,
+    "location_lng": 82.9739,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도 고전음악을 세계에 알린 시타르의 거장으로, 비틀즈 조지 해리슨과의 교류로 유명한다. 동서양 음악의 가교 역할을 한 20세기 최고의 인도 음악가이다.",
+      "en": "A sitar maestro who brought Indian classical music to the world, famous for his collaboration with George Harrison of the Beatles. The greatest Indian musician of the 20th century, bridging Eastern and Western music."
+    },
+    "description": {
+      "ko": "1956년 미국 첫 순회공연 이후 서구에 인도 음악 붐을 일으켰다. 1967년 몬터레이 팝 페스티벌과 1969년 우드스톡에 출연하여 락 세대에 라가를 소개했다. 그래미상 3회 수상, 유디 메뉴힌·필립 글래스 등과의 협연으로 세계 음악사에 족적을 남겼다.",
+      "en": "After his first US tour in 1956, he sparked an Indian music boom in the West. He appeared at the 1967 Monterey Pop Festival and 1969 Woodstock, introducing ragas to the rock generation. He won three Grammys and left his mark on world music history through collaborations with Yehudi Menuhin and Philip Glass."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_053",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "힌두스타니 라가 음악",
+      "en": "Hindustani Raga Music"
+    },
+    "start_year": 1200,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 28.6139,
+    "location_lng": 77.209,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "북인도의 고전음악 체계로, 라가(선율 틀)와 탈라(리듬 주기)에 기반한 즉흥 연주가 핵심이다. 수피·힌두 전통이 융합된 세계에서 가장 정교한 선율 체계 중 하나이다.",
+      "en": "The classical music system of North India, centered on improvisation within raga (melodic framework) and tala (rhythmic cycle). It is one of the world's most sophisticated melodic systems, fusing Sufi and Hindu traditions."
+    },
+    "description": {
+      "ko": "13세기 이후 페르시아·이슬람 음악의 영향을 받아 남인도 카르나틱 음악과 분화한 전통이다. 알라프(서주)→조르(전개)→가트(주선율)→티하이(종결)의 구조를 가집니다. 20세기 라비 샹카르·알리 아크바르 칸 등이 세계에 알렸으며, 최소주의 음악에도 영향을 미쳤다.",
+      "en": "A tradition that diverged from South Indian Carnatic music after the 13th century under Persian-Islamic influence. It follows a structure of alap (introduction) → jor (development) → gat (main melody) → tihai (conclusion). In the 20th century, Ravi Shankar and Ali Akbar Khan introduced it to the world, influencing minimalist music."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_056",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "카르나틱 음악",
+      "en": "Carnatic Music"
+    },
+    "start_year": 1600,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 13.0827,
+    "location_lng": 80.2707,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "남인도의 고전음악 체계로, 72가지 멜라카르타 라가를 기반으로 한다. 힌두스타니 음악보다 작곡 중심적이며 종교적 헌신가의 전통이 강한다.",
+      "en": "The classical music system of South India, based on 72 melakarta ragas. More composition-centered than Hindustani music, it has a strong tradition of devotional songs."
+    },
+    "description": {
+      "ko": "17세기 '음악 삼위일체'인 티야가라자·무투스와미 딕시타르·샤마 샤스트리에 의해 체계화되었다. 비나·므리단감·바이올린 등의 악기로 연주되며 마드라스(첸나이) 음악 시즌이 세계 최대의 고전음악 축제이다. 수학적 정밀성과 영적 깊이를 겸비한 음악 체계이다.",
+      "en": "Systematized by the 17th-century 'Musical Trinity'—Tyagaraja, Muthuswami Dikshitar, and Shyama Shastri. Performed on veena, mridangam, and violin, the Madras (Chennai) Music Season is the world's largest classical music festival. It is a musical system combining mathematical precision with spiritual depth."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_062",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "A.R. 라만",
+      "en": "A.R. Rahman"
+    },
+    "start_year": 1992,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 13.0827,
+    "location_lng": 80.2707,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도 영화음악의 혁명가로, 《슬럼독 밀리어네어》로 아카데미 음악상을 수상했다. 인도 고전음악·전자음악·서양 오케스트라를 융합하는 '모차르트 오브 마드라스'이다.",
+      "en": "A revolutionary Indian film composer who won the Academy Award for Slumdog Millionaire. Called the 'Mozart of Madras,' he fuses Indian classical, electronic, and Western orchestral music."
+    },
+    "description": {
+      "ko": "인도 영화음악의 혁명가로, 《슬럼독 밀리어네어》로 아카데미 음악상을 수상했다. 인도 고전음악·전자음악·서양 오케스트라를 융합하는 '모차르트 오브 마드라스'이다.",
+      "en": "A revolutionary Indian film composer who won the Academy Award for Slumdog Millionaire. Called the 'Mozart of Madras,' he fuses Indian classical, electronic, and Western orchestral music."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_065",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "누스랏 파테 알리 칸 (카왈리)",
+      "en": "Nusrat Fateh Ali Khan (Qawwali)"
+    },
+    "start_year": 1965,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 31.5497,
+    "location_lng": 74.3436,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "파키스탄의 카왈리(수피 헌신가) 거장으로, '카왈리의 황제'로 불립니다. 강렬한 목소리와 즉흥 연주로 수피 음악을 세계 음악의 반열에 올렸다.",
+      "en": "A Pakistani qawwali (Sufi devotional music) maestro known as the 'Emperor of Qawwali.' His powerful voice and improvisation elevated Sufi music to world music status."
+    },
+    "description": {
+      "ko": "600년 카왈리 가문의 전통을 이어받아 라호르에서 활동했으며, 피터 가브리엘의 리얼 월드 레이블을 통해 세계에 알려졌다. 영화 《데드 맨 워킹》·《라스트 템테이션 오브 크라이스트》 등의 음악에 참여했다. 제프 버클리·에디 베더 등 서양 뮤지션에게 깊은 영감을 주었다.",
+      "en": "Carrying on a 600-year qawwali family tradition from Lahore, he reached the world through Peter Gabriel's Real World Records. He contributed to film soundtracks including Dead Man Walking and The Last Temptation of Christ. He deeply inspired Western musicians like Jeff Buckley and Eddie Vedder."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_069",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "아니시 카푸어 조각",
+      "en": "Anish Kapoor Sculptures"
+    },
+    "start_year": 1980,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 19.076,
+    "location_lng": 72.8777,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도 출신 영국 조각가로, 시카고 '클라우드 게이트'(빈) 등 거대 공공 조각으로 유명한다. 터너상 수상, 공허와 물질의 경계를 탐구하는 현대 미술의 거장이다.",
+      "en": "An Indian-born British sculptor famous for monumental public works like Chicago's Cloud Gate (The Bean). A Turner Prize winner and master of contemporary art exploring the boundary between void and matter."
+    },
+    "description": {
+      "ko": "뭄바이 출생으로 런던에서 활동하며 인도적 영성과 서양 미니멀리즘을 결합한다. 초기 작품에서는 안료 분말로 인도 사원의 색을 연상시키고, 후기에는 거울 스테인리스·공기주입 조각으로 건축적 스케일에 도달한다. 세계에서 가장 영향력 있는 인도 출신 현대 미술가이다.",
+      "en": "Born in Mumbai and active in London, he combines Indian spirituality with Western minimalism. His early works evoke Indian temple colors through pigment powder; later works reach architectural scale with mirrored stainless steel and pneumatic sculpture. He is the most influential Indian-born contemporary artist in the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_079",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "알리 아크바르 칸 (사로드)",
+      "en": "Ali Akbar Khan (Sarod)"
+    },
+    "start_year": 1955,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 23.25,
+    "location_lng": 89,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "사로드의 대가로, 라비 샹카르와 함께 인도 고전음악을 세계에 알린 거장이다. 미국에 알리 아크바르 칸 음악대학을 설립하여 인도 음악 교육의 글로벌화에 기여했다.",
+      "en": "A sarod maestro who, alongside Ravi Shankar, brought Indian classical music to the world. He established the Ali Akbar Khan College of Music in the US, globalizing Indian music education."
+    },
+    "description": {
+      "ko": "아버지 알라우딘 칸에게 사로드를 배워 20세기 최고의 연주자로 성장했다. 1955년 미국 첫 공연 이후 서양 청중에게 힌두스타니 음악의 깊이를 전했다. 라비 샹카르와의 듀엣 앨범은 인도 고전음악의 가장 위대한 녹음 중 하나로 평가된다.",
+      "en": "Trained in sarod by his father Allauddin Khan, he became the greatest performer of the 20th century. After his first US performance in 1955, he conveyed the depth of Hindustani music to Western audiences. His duet albums with Ravi Shankar are considered among the greatest recordings of Indian classical music."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_085",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "딜리트 문학",
+      "en": "Dalit Literature"
+    },
+    "start_year": 1960,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 18.52,
+    "location_lng": 73.86,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도 불가촉천민(딜리트) 출신 작가들의 문학 운동으로, 카스트 억압과 차별의 경험을 증언한다. 마라티어·힌디어·타밀어 등 다양한 언어로 인도 문학의 지형을 바꿨다.",
+      "en": "A literary movement by Dalit (formerly untouchable) writers testifying to caste oppression and discrimination. Written in Marathi, Hindi, Tamil and more, it transformed the landscape of Indian literature."
+    },
+    "description": {
+      "ko": "1960년대 마하라슈트라에서 마라티 딜리트 시인들을 중심으로 시작되어 전 인도로 확산되었다. 암베드카르의 사상에 영감을 받아 자서전·시·소설 형태로 카스트 체험을 기록한다. 옴프라카시 발미키의 《주탄》 등은 세계 문학에서 주변부 목소리의 중요성을 일깨웠다.",
+      "en": "Starting in the 1960s with Marathi Dalit poets in Maharashtra, it spread across India. Inspired by Ambedkar's thought, it records caste experience through autobiography, poetry, and fiction. Works like Omprakash Valmiki's Joothan awakened the world to the importance of marginalized voices in literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "SA_ART_086",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "수브라마니안 바르티 시",
+      "en": "Poetry of Subramania Bharati"
+    },
+    "start_year": 1904,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 9.9252,
+    "location_lng": 78.1198,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "타밀 문학을 근대화한 혁명적 시인으로, 민족 독립과 여성 해방을 노래했다. 타밀 민족주의의 문학적 기둥이자 현대 타밀 시의 아버지이다.",
+      "en": "A revolutionary poet who modernized Tamil literature, singing of national independence and women's liberation. He is the literary pillar of Tamil nationalism and the father of modern Tamil poetry."
+    },
+    "description": {
+      "ko": "1882~1921년의 짧은 생이었지만 타밀 문학사에 혁명을 일으켰다. 전통적 문어체를 버리고 구어에 가까운 현대 타밀어로 시를 써 대중에게 다가갔다. 독립운동·카스트 폐지·여성 교육을 주장한 그의 시는 지금도 타밀나두에서 널리 암송된다.",
+      "en": "Despite a short life (1882–1921), he revolutionized Tamil literary history. He abandoned traditional literary language to write in modern Tamil close to spoken language, reaching the masses. His poems advocating independence, caste abolition, and women's education are still widely recited in Tamil Nadu."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA033",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "응구기 와 시옹오",
+      "en": "Ngũgĩ wa Thiong'o"
+    },
+    "start_year": 1964,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -1.1609,
+    "location_lng": 36.8043,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "케냐 작가로, 영어 대신 기쿠유어·스와힐리어로 창작하며 아프리카어 문학 운동을 이끌었다. 탈식민주의 문학의 핵심 인물이다.",
+      "en": "Kenyan writer who championed writing in African languages (Gikuyu and Swahili) over English. A leading figure in postcolonial and decolonial literary thought."
+    },
+    "description": {
+      "ko": "케냐 작가로, 영어 대신 기쿠유어·스와힐리어로 창작하며 아프리카어 문학 운동을 이끌었다. 탈식민주의 문학의 핵심 인물이다.",
+      "en": "Kenyan writer who championed writing in African languages (Gikuyu and Swahili) over English. A leading figure in postcolonial and decolonial literary thought."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA035",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "페라 쿠티 (아프로비트)",
+      "en": "Fela Kuti (Afrobeat)"
+    },
+    "start_year": 1969,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 6.4541,
+    "location_lng": 3.3947,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "나이지리아 음악가로 아프로비트 장르를 창시했다. 재즈·펑크·서아프리카 리듬을 융합하고, 음악으로 군사독재에 저항한 아프리카 음악의 아이콘이다.",
+      "en": "Nigerian musician who created the Afrobeat genre, fusing jazz, funk, and West African rhythms. An icon of musical resistance against military dictatorship in Africa."
+    },
+    "description": {
+      "ko": "나이지리아 음악가로 아프로비트 장르를 창시했다. 재즈·펑크·서아프리카 리듬을 융합하고, 음악으로 군사독재에 저항한 아프리카 음악의 아이콘이다.",
+      "en": "Nigerian musician who created the Afrobeat genre, fusing jazz, funk, and West African rhythms. An icon of musical resistance against military dictatorship in Africa."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA040",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "알리 파르카 투레",
+      "en": "Ali Farka Touré"
+    },
+    "start_year": 1968,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 16.7735,
+    "location_lng": -3.0074,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "말리 출신 기타리스트로, '아프리카의 블루스맨'으로 불립니다. 말리 전통음악과 블루스의 연결고리를 보여주며 그래미상을 2회 수상했다.",
+      "en": "Malian guitarist known as 'the African bluesman.' He demonstrated the connection between Malian traditional music and the blues, winning two Grammy Awards."
+    },
+    "description": {
+      "ko": "알리 파르카 투레는 1968년경 탄생한 음악적 전통으로, 해당 문화의 정서와 미학이 소리를 통해 구현된 결과물이다. 이 음악은 즉흥성과 구조적 엄밀함이 공존하는 독특한 연주 전통을 형성했다. 아프리카 대륙의 풍부한 문화적 전통 속에서 탄생한 작품이다. 제작 당시의 사회적 맥락을 고려하면 이 작품의 혁신성이 더욱 명확해진다.",
+      "en": "Ali Farka Touré, originating around 1968, represents a musical heritage where cultural emotion and aesthetics are realized through sound. The work reflects the deep cultural traditions that have flourished across Africa for centuries. The acoustic space created by the interaction of rhythm and melody is remarkably original. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA043",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "레오폴 세다르 상고르",
+      "en": "Léopold Sédar Senghor"
+    },
+    "start_year": 1945,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 14.7167,
+    "location_lng": -17.4677,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "세네갈 시인이자 초대 대통령으로, 네그리튀드 운동의 창시자이다. 아프리카 문화 정체성과 흑인 문명의 가치를 시로써 선언했다.",
+      "en": "Senegalese poet and first president, co-founder of the Négritude movement. He proclaimed the value of African cultural identity and Black civilization through poetry."
+    },
+    "description": {
+      "ko": "레오폴 세다르 상고르는 1945년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 당대 사회의 모순과 인간 조건에 대한 통찰이 문학적 형식 안에서 효과적으로 표현되었다. 아프리카 고유의 예술적 감수성이 깊이 반영된 결과물이다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Léopold Sédar Senghor is a literary work composed around 1945, capturing universal aspects of human experience through the unique voice of its cultural tradition. It successfully navigates the dual challenge of literary experimentation and the continuation of tradition. It exemplifies the creative ingenuity found throughout African civilizations. Later artists and scholars drew inspiration from this work, continuing new creative endeavors and research."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA044",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "에메 세제르와 네그리튀드 문학",
+      "en": "Aimé Césaire & Négritude Literature"
+    },
+    "start_year": 1939,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 14.616,
+    "location_lng": -61.0588,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "마르티니크 출신 시인 에메 세제르가 주도한 네그리튀드 문학 운동이다. 프랑스어권 아프리카·카리브 지식인의 탈식민 의식을 각성시켰다.",
+      "en": "The Négritude literary movement led by Martinican poet Aimé Césaire. It awakened decolonial consciousness among Francophone African and Caribbean intellectuals."
+    },
+    "description": {
+      "ko": "에메 세제르와 네그리튀드 문학은 1939년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 아프리카 고유의 예술적 감수성이 깊이 반영된 결과물이다. 당대 사회의 모순과 인간 조건에 대한 통찰이 문학적 형식 안에서 효과적으로 표현되었다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Aimé Césaire & Négritude Literature dates to approximately 1939 and represents a landmark in literary achievement, combining narrative depth with philosophical insight. Insights into social contradictions and the human condition are effectively expressed within its literary form. The work reflects the deep cultural traditions that have flourished across Africa for centuries. It was the result of combining skilled craftsmanship with a shared communal aesthetic vision."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA052",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "오쇼그보 예술운동",
+      "en": "Oshogbo Art Movement"
+    },
+    "start_year": 1962,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 7.7827,
+    "location_lng": 4.5418,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "나이지리아 오쇼그보에서 시작된 현대미술 운동으로, 요루바 전통과 현대 표현을 결합했다. 트윈스 세븐세븐 등 주요 작가를 배출했다.",
+      "en": "Modern art movement from Oshogbo, Nigeria combining Yoruba traditions with contemporary expression. It produced major artists like Twins Seven-Seven."
+    },
+    "description": {
+      "ko": "오쇼그보 예술운동은 1962년경 등장한 예술 양식으로, 시각적 표현의 새로운 가능성을 제시했다. 이 작품은 조형적 완성도와 상징적 깊이를 겸비하여, 해당 미술 전통의 정수로 인정받고 있다. 아프리카 고유의 예술적 감수성이 깊이 반영된 결과물이다. 교역과 문화 교류의 산물로서, 복수의 문명이 교차하는 지점에서 탄생했다.",
+      "en": "Oshogbo Art Movement is a visual artwork created around 1962, showcasing the development of artistic techniques and visual language of the period. Its technique of exploiting the physical properties of materials to their fullest expanded the possibilities of the visual arts. The work reflects the deep cultural traditions that have flourished across Africa for centuries. Today, its value continues to be re-evaluated as a subject of both scholarly research and public interest."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA060",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "압둘라작 구르나 (노벨문학상)",
+      "en": "Abdulrazak Gurnah (Nobel Laureate)"
+    },
+    "start_year": 2021,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -6.1622,
+    "location_lng": 39.1921,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "잔지바르 출신 작가로 2021년 노벨문학상을 수상했다. 난민의 경험과 식민주의가 개인에 미친 영향을 섬세하게 탐구한다.",
+      "en": "Zanzibar-born writer who won the 2021 Nobel Prize in Literature. He delicately explores the refugee experience and colonialism's impact on individuals."
+    },
+    "description": {
+      "ko": "잔지바르 출신 작가로 2021년 노벨문학상을 수상했다. 난민의 경험과 식민주의가 개인에 미친 영향을 섬세하게 탐구한다.",
+      "en": "Zanzibar-born writer who won the 2021 Nobel Prize in Literature. He delicately explores the refugee experience and colonialism's impact on individuals."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA061",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "엘 아나추이",
+      "en": "El Anatsui"
+    },
+    "start_year": 1990,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 6.13,
+    "location_lng": 1.22,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "가나 출신 조각가로, 폐병뚜껑과 알루미늄을 엮어 거대한 벽면 조각을 만듭니다. 베니스 비엔날레 등에서 활약하는 아프리카 현대미술의 거장이다.",
+      "en": "Ghanaian sculptor who creates monumental wall sculptures from recycled bottle caps and aluminum. A master of African contemporary art shown at the Venice Biennale."
+    },
+    "description": {
+      "ko": "엘 아나추이는 1990년경에 창작된 조형 예술로, 당시 사회의 미적 감각과 세계관이 녹아 있다. 재료의 물성을 극한까지 활용한 기법이 돋보이며, 조형 예술의 가능성을 확장했다. 아프리카 문명의 창조성과 다양성을 대표하는 사례이다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "El Anatsui dates to approximately 1990 and demonstrates mastery of both materials and technique in the fine arts tradition. The cultural symbolism and technical mastery embodied in the work attest to the high level of artistic achievement of the period. It exemplifies the creative ingenuity found throughout African civilizations. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA066",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "줄리 메레투",
+      "en": "Julie Mehretu"
+    },
+    "start_year": 2000,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 9.025,
+    "location_lng": 38.7469,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "에티오피아 출신 미국 거주 화가로, 도시 지도와 건축 도면을 겹쳐 추상화를 그립니다. 현대 미술 시장에서 가장 영향력 있는 아프리카계 작가 중 하나이다.",
+      "en": "Ethiopian-born, US-based painter creating abstract works layering urban maps and architectural drawings. One of the most influential artists of African descent today."
+    },
+    "description": {
+      "ko": "에티오피아 출신 미국 거주 화가로, 도시 지도와 건축 도면을 겹쳐 추상화를 그립니다. 현대 미술 시장에서 가장 영향력 있는 아프리카계 작가 중 하나이다.",
+      "en": "Ethiopian-born, US-based painter creating abstract works layering urban maps and architectural drawings. One of the most influential artists of African descent today."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA072",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "로마레 비어든",
+      "en": "Romare Bearden"
+    },
+    "start_year": 1964,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 40.817,
+    "location_lng": -73.9509,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "아프리카계 미국인 콜라주 작가로, 아프리카 디아스포라의 경험을 콜라주로 표현했다. 할렘 르네상스의 유산을 현대미술로 이어간다.",
+      "en": "African-American collage artist who depicted the African diaspora experience. His work carries the legacy of the Harlem Renaissance into contemporary art."
+    },
+    "description": {
+      "ko": "아프리카계 미국인 콜라주 작가로, 아프리카 디아스포라의 경험을 콜라주로 표현했다. 할렘 르네상스의 유산을 현대미술로 이어간다.",
+      "en": "African-American collage artist who depicted the African diaspora experience. His work carries the legacy of the Harlem Renaissance into contemporary art."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "AFA080",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "아프리카 디지털 아트 운동",
+      "en": "African Digital Art Movement"
+    },
+    "start_year": 2018,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 6.4541,
+    "location_lng": 3.3947,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "나이지리아·남아공 등에서 부상한 디지털 아트 운동으로, NFT와 소셜미디어를 통해 아프리카 디지털 아티스트들이 세계 무대에 진출하고 있다.",
+      "en": "Emerging digital art movement from Nigeria, South Africa, and beyond. African digital artists reach global audiences through NFTs and social media platforms."
+    },
+    "description": {
+      "ko": "아프리카 디지털 아트 운동은 2018년경의 미술적 성취를 대표하는 작품으로, 재료와 기법 모두에서 높은 수준을 보인다. 아프리카 대륙의 풍부한 문화적 전통 속에서 탄생한 작품이다. 이 작품은 조형적 완성도와 상징적 깊이를 겸비하여, 해당 미술 전통의 정수로 인정받고 있다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "African Digital Art Movement, produced around 2018, represents a significant achievement in the visual arts that captures the aesthetic sensibilities of its time. It exemplifies the creative ingenuity found throughout African civilizations. The work is recognized as the epitome of its artistic tradition, combining formal completeness with symbolic depth. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200005",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "와양 쿨릿",
+      "en": "Wayang Kulit"
+    },
+    "start_year": 900,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -7.7956,
+    "location_lng": 110.3695,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도네시아 자바와 발리의 전통 그림자 인형극으로, 가죽 인형을 이용해 라마야나와 마하바라타 서사시를 공연한다.",
+      "en": "Traditional Javanese shadow puppet theater using leather puppets to perform Ramayana and Mahabharata epics."
+    },
+    "description": {
+      "ko": "와양 쿨릿은 900년경 형성된 문화 유산으로, 해당 사회의 창조적 역량이 응축된 결과물이다. 이 문화적 산물은 예술과 일상의 경계를 허무는 독특한 위치를 점하고 있다. 동남아시아 특유의 다층적 문화 교류가 녹아든 작품이다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Wayang Kulit appeared around 900 as an original form of cultural expression, fusing elements from diverse artistic domains. It demonstrates how Southeast Asian cultures synthesized diverse influences into unique artistic expressions. This heritage reveals the holistic character of its society at the intersection of material and spiritual culture. The tradition to which this work belongs developed over centuries, completing a distinctive aesthetic system."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200011",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "미얀마 전통 칠기",
+      "en": "Myanmar Lacquerware"
+    },
+    "start_year": 1200,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 21.1717,
+    "location_lng": 94.8585,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "바간을 중심으로 발전한 미얀마 전통 칠기 공예로, 대나무와 말총 위에 옻칠을 여러 겹 입혀 정교한 문양을 새깁니다.",
+      "en": "Traditional Myanmar lacquerware centered in Bagan, crafted by layering lacquer over bamboo and horsehair with intricate designs."
+    },
+    "description": {
+      "ko": "미얀마 전통 칠기는 1200년경의 미술적 성취를 대표하는 작품으로, 재료와 기법 모두에서 높은 수준을 보인다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 재료의 물성을 극한까지 활용한 기법이 돋보이며, 조형 예술의 가능성을 확장했다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Myanmar Lacquerware dates to approximately 1200 and demonstrates mastery of both materials and technique in the fine arts tradition. It demonstrates how Southeast Asian cultures synthesized diverse influences into unique artistic expressions. Its technique of exploiting the physical properties of materials to their fullest expanded the possibilities of the visual arts. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200013",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "태국 전통 사원 벽화",
+      "en": "Thai Temple Murals"
+    },
+    "start_year": 1400,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 13.7563,
+    "location_lng": 100.4918,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "태국 사원에 그려진 전통 벽화로, 불교 자타카 이야기와 라마키안(태국판 라마야나)을 색채적으로 묘사한다.",
+      "en": "Traditional Thai temple murals vividly depicting Buddhist Jataka tales and the Ramakien (Thai Ramayana)."
+    },
+    "description": {
+      "ko": "태국 전통 사원 벽화는 1400년경 제작된 미술 작품으로, 당대의 시각 언어와 표현 기법의 발전상을 보여준다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 이 작품은 조형적 완성도와 상징적 깊이를 겸비하여, 해당 미술 전통의 정수로 인정받고 있다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Thai Temple Murals, produced around 1400, represents a significant achievement in the visual arts that captures the aesthetic sensibilities of its time. Its innovative treatment of color and composition had a considerable impact on subsequent developments in art history. It demonstrates how Southeast Asian cultures synthesized diverse influences into unique artistic expressions. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200020",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "가믈란",
+      "en": "Gamelan"
+    },
+    "start_year": 1800,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -7.7956,
+    "location_lng": 110.3695,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도네시아의 전통 합주 음악으로, 청동 타악기를 중심으로 한 독특한 음계와 폴리리듬이 드뷔시 등 서양 작곡가에도 영향을 주었다.",
+      "en": "Traditional Indonesian ensemble music featuring bronze percussion instruments, influencing Western composers like Debussy."
+    },
+    "description": {
+      "ko": "가믈란은 1800년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 동남아시아 특유의 다층적 문화 교류가 녹아든 작품이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Gamelan, originating around 1800, represents a musical heritage where cultural emotion and aesthetics are realized through sound. The originality of its instrumentation and tonal system grants it a distinctive position in world music history. The work showcases the distinctive artistic traditions of the Southeast Asian region. The influence of this work spread widely beyond its original cultural boundaries."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200024",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "베트남 수상 인형극",
+      "en": "Vietnamese Water Puppetry"
+    },
+    "start_year": 1000,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 21.0285,
+    "location_lng": 105.8542,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "11세기 홍강 삼각주에서 시작된 베트남 전통 수상 인형극으로, 물 위에서 인형을 조종하는 독특한 공연 예술이다.",
+      "en": "Traditional Vietnamese water puppet theater originating from the Red River Delta, performing on water surfaces."
+    },
+    "description": {
+      "ko": "베트남 수상 인형극은 1000년경에 만들어진 독창적 문화 표현으로, 다양한 예술 영역의 요소가 융합되어 있다. 이 문화적 산물은 예술과 일상의 경계를 허무는 독특한 위치를 점하고 있다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Vietnamese Water Puppetry emerged around 1000 as a cultural creation possessing unique artistic value that transcends conventional genre classifications. It demonstrates how Southeast Asian cultures synthesized diverse influences into unique artistic expressions. This cultural creation occupies a unique position that blurs the boundary between art and everyday life. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200030",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "응우옌 주",
+      "en": "Nguyen Du"
+    },
+    "start_year": 1820,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 18.67,
+    "location_lng": 105.69,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "베트남 최고의 시인 응우옌 주의 서사시 '키에우의 이야기'는 베트남 문학의 최고 걸작으로, 민족 정체성의 상징이다.",
+      "en": "Nguyen Du's epic poem 'The Tale of Kieu' is Vietnam's greatest literary masterpiece and a symbol of national identity."
+    },
+    "description": {
+      "ko": "베트남 최고의 시인 응우옌 주의 서사시 '키에우의 이야기'는 베트남 문학의 최고 걸작으로, 민족 정체성의 상징이다.",
+      "en": "Nguyen Du's epic poem 'The Tale of Kieu' is Vietnam's greatest literary masterpiece and a symbol of national identity."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200032",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "크론총",
+      "en": "Kroncong"
+    },
+    "start_year": 1880,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -6.2088,
+    "location_lng": 106.8456,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "포르투갈 선원 음악에서 유래하여 인도네시아에서 독자적으로 발전한 대중음악 장르로, 우쿨렐레와 바이올린이 특징이다.",
+      "en": "Indonesian popular music genre derived from Portuguese sailor songs, featuring ukulele and violin."
+    },
+    "description": {
+      "ko": "크론총은 1880년경 형성된 음악 양식으로, 고유한 선율 체계와 리듬 구조를 통해 독자적 음악 세계를 구축했다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 제작 당시의 사회적 맥락을 고려하면 이 작품의 혁신성이 더욱 명확해진다.",
+      "en": "Kroncong, originating around 1880, represents a musical heritage where cultural emotion and aesthetics are realized through sound. This music established a unique performance tradition in which improvisation and structural rigor coexist. The work showcases the distinctive artistic traditions of the Southeast Asian region. It was the result of combining skilled craftsmanship with a shared communal aesthetic vision."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200033",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "룩퉁",
+      "en": "Luk Thung"
+    },
+    "start_year": 1940,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 14,
+    "location_lng": 100.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "태국의 대중음악 장르로, 농촌 생활과 사랑을 노래하며 태국 서민 문화를 대표한다.",
+      "en": "Thai popular music genre singing about rural life and love, representing Thai folk culture."
+    },
+    "description": {
+      "ko": "룩퉁은 1940년경 탄생한 음악적 전통으로, 해당 문화의 정서와 미학이 소리를 통해 구현된 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 동남아시아 지역의 독자적 예술 전통을 잘 보여주는 사례이다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Luk Thung is a musical tradition that emerged around 1940, establishing a distinctive sonic world through its unique melodic systems and rhythmic structures. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. It represents the multilayered cultural exchanges characteristic of Southeast Asia. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200038",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "인도네시아 당둣",
+      "en": "Dangdut"
+    },
+    "start_year": 1970,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -6.2088,
+    "location_lng": 106.8456,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도, 아랍, 말레이 음악이 융합된 인도네시아 대중음악 장르로, 로마 이라마가 개척하여 국민 음악이 되었다.",
+      "en": "Indonesian popular music genre fusing Indian, Arabic and Malay influences, pioneered by Rhoma Irama."
+    },
+    "description": {
+      "ko": "인도네시아 당둣은 1970년경의 음악적 성취를 대표하며, 연주 기법과 악곡 구성에서 혁신적 면모를 보였다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Dangdut emerged around 1970 as a musical genre that built upon earlier traditions while pioneering new modes of expression. The work showcases the distinctive artistic traditions of the Southeast Asian region. This music established a unique performance tradition in which improvisation and structural rigor coexist. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200051",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "베트남 현대 영화",
+      "en": "Vietnamese New Wave Cinema"
+    },
+    "start_year": 2010,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 10.8231,
+    "location_lng": 106.6297,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "쩐 아인 훙 등 베트남 뉴웨이브 감독들이 전쟁 이후의 베트남 사회를 서정적으로 그려내고 있다.",
+      "en": "Vietnamese New Wave directors like Tran Anh Hung poetically portraying post-war Vietnamese society."
+    },
+    "description": {
+      "ko": "베트남 현대 영화는 2010년경 만들어진 영화 작품으로, 해당 지역 영화 산업의 역량을 세계에 알린 사례이다. 카메라 워크와 편집 기법에서 보여준 혁신이 이후 영화 제작에 광범위한 영향을 끼쳤다. 동남아시아 특유의 다층적 문화 교류가 녹아든 작품이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Vietnamese New Wave Cinema, released around 2010, captured the social and cultural context of its era through the language of cinema. It is an accomplished work that sharply captures social reality without sacrificing artistic form. It demonstrates how Southeast Asian cultures synthesized diverse influences into unique artistic expressions. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200053",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "인도네시아 현대 영화",
+      "en": "Indonesian Cinema Renaissance"
+    },
+    "start_year": 2008,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": -6.2088,
+    "location_lng": 106.8456,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "조코 안와르 등 인도네시아 감독들이 호러·스릴러 장르에서 독자적 스타일을 구축하며 국제적 주목을 받고 있다.",
+      "en": "Indonesian directors like Joko Anwar building distinctive styles in horror-thriller genres, gaining international attention."
+    },
+    "description": {
+      "ko": "인도네시아 현대 영화는 2008년경 공개된 영화 작품으로, 시대의 사회적·문화적 맥락을 영상 언어로 포착했다. 사회적 현실을 예리하게 포착하면서도 예술적 형식미를 잃지 않은 수작이다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Indonesian Cinema Renaissance dates to approximately 2008 and achieved notable accomplishments in both narrative structure and visual aesthetics. It is an accomplished work that sharply captures social reality without sacrificing artistic form. It represents the multilayered cultural exchanges characteristic of Southeast Asia. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200071",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "과라니 바로크 음악",
+      "en": "Guaraní Baroque Music"
+    },
+    "start_year": 1700,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -27.12,
+    "location_lng": -55.58,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "예수회 선교사들이 과라니 원주민에게 전한 바로크 음악이 독자적으로 발전한 남미 음악 유산이다.",
+      "en": "Baroque music uniquely developed by Guaraní indigenous people through Jesuit missions in South America."
+    },
+    "description": {
+      "ko": "과라니 바로크 음악은 1700년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 이 음악은 즉흥성과 구조적 엄밀함이 공존하는 독특한 연주 전통을 형성했다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 이 작품이 속한 전통은 수세기에 걸쳐 발전하며 독자적 미학 체계를 완성했다.",
+      "en": "Guaraní Baroque Music emerged around 1700 as a musical genre that built upon earlier traditions while pioneering new modes of expression. The acoustic space created by the interaction of rhythm and melody is remarkably original. It embodies the distinctive worldview of Latin American civilizations. Today, its value continues to be re-evaluated as a subject of both scholarly research and public interest."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200076",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "잉카 가르실라소 데 라 베가",
+      "en": "Inca Garcilaso de la Vega"
+    },
+    "start_year": 1609,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -13.5319,
+    "location_lng": -71.9675,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "스페인인과 잉카 왕족 혼혈 작가로, '잉카 왕실 평론'을 통해 잉카 문명을 유럽에 알린 최초의 메스티소 문학가이다.",
+      "en": "Mestizo writer who introduced Inca civilization to Europe through 'Royal Commentaries of the Incas'."
+    },
+    "description": {
+      "ko": "스페인인과 잉카 왕족 혼혈 작가로, '잉카 왕실 평론'을 통해 잉카 문명을 유럽에 알린 최초의 메스티소 문학가이다.",
+      "en": "Mestizo writer who introduced Inca civilization to Europe through 'Royal Commentaries of the Incas'."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200077",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "과테말라 직물 전통",
+      "en": "Guatemalan Textile Tradition"
+    },
+    "start_year": 1500,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 14.6349,
+    "location_lng": -90.5069,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "마야 후예인 과테말라 원주민의 전통 직물 예술로, 지역마다 고유한 문양과 색채가 정체성을 나타냅니다.",
+      "en": "Traditional textile art of Guatemala's Maya-descended peoples, with region-specific patterns expressing identity."
+    },
+    "description": {
+      "ko": "과테말라 직물 전통은 1500년경 등장한 예술 양식으로, 시각적 표현의 새로운 가능성을 제시했다. 작품에 담긴 문화적 상징과 기술적 숙련도는 당대 예술의 높은 수준을 입증한다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Guatemalan Textile Tradition, produced around 1500, represents a significant achievement in the visual arts that captures the aesthetic sensibilities of its time. The work is recognized as the epitome of its artistic tradition, combining formal completeness with symbolic depth. The work reflects the dynamic cultural traditions of Central and South America. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200081",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "프리다 칼로",
+      "en": "Frida Kahlo"
+    },
+    "start_year": 1937,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 19.3556,
+    "location_lng": -99.1627,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "멕시코의 초현실주의 화가로, 고통과 정체성을 강렬한 자화상으로 표현하여 세계적 페미니즘 아이콘이 되었다.",
+      "en": "Mexican surrealist painter who became a global feminist icon through intense self-portraits of pain and identity."
+    },
+    "description": {
+      "ko": "프리다 칼로는 1937년경에 창작된 조형 예술로, 당시 사회의 미적 감각과 세계관이 녹아 있다. 재료의 물성을 극한까지 활용한 기법이 돋보이며, 조형 예술의 가능성을 확장했다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Frida Kahlo, produced around 1937, represents a significant achievement in the visual arts that captures the aesthetic sensibilities of its time. Its innovative treatment of color and composition had a considerable impact on subsequent developments in art history. The work reflects the dynamic cultural traditions of Central and South America. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200084",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "탱고",
+      "en": "Tango"
+    },
+    "start_year": 1880,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -34.6037,
+    "location_lng": -58.3816,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "아르헨티나 부에노스아이레스에서 탄생한 관능적 춤과 음악으로, 아스토르 피아졸라에 의해 예술 장르로 격상되었다.",
+      "en": "Sensual dance and music born in Buenos Aires, elevated to art form by Astor Piazzolla."
+    },
+    "description": {
+      "ko": "탱고는 1880년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 리듬과 선율의 상호작용이 만들어내는 음향적 공간이 매우 독창적이다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Tango, originating around 1880, represents a musical heritage where cultural emotion and aesthetics are realized through sound. The originality of its instrumentation and tonal system grants it a distinctive position in world music history. The work reflects the dynamic cultural traditions of Central and South America. Considering the social context of its creation, the innovative nature of this work becomes even more apparent."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200085",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "삼바",
+      "en": "Samba"
+    },
+    "start_year": 1916,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -22.9068,
+    "location_lng": -43.1729,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "브라질 리우데자네이루의 아프리카계 주민들이 발전시킨 음악과 춤으로, 카니발의 상징이자 브라질 문화의 정수이다.",
+      "en": "Music and dance developed by Afro-Brazilian communities in Rio, the symbol of Carnival and essence of Brazilian culture."
+    },
+    "description": {
+      "ko": "삼바는 1916년경 형성된 음악 양식으로, 고유한 선율 체계와 리듬 구조를 통해 독자적 음악 세계를 구축했다. 리듬과 선율의 상호작용이 만들어내는 음향적 공간이 매우 독창적이다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Samba emerged around 1916 as a musical genre that built upon earlier traditions while pioneering new modes of expression. The work reflects the dynamic cultural traditions of Central and South America. The acoustic space created by the interaction of rhythm and melody is remarkably original. Today, its value continues to be re-evaluated as a subject of both scholarly research and public interest."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200086",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "보사노바",
+      "en": "Bossa Nova"
+    },
+    "start_year": 1958,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -22.9068,
+    "location_lng": -43.1729,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "조앙 질베르투와 안토니우 카를로스 조빔이 창시한 브라질 음악 장르로, 삼바와 재즈의 세련된 결합이다.",
+      "en": "Brazilian music genre created by João Gilberto and Tom Jobim, a refined fusion of samba and jazz."
+    },
+    "description": {
+      "ko": "보사노바는 1958년경의 음악적 성취를 대표하며, 연주 기법과 악곡 구성에서 혁신적 면모를 보였다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 이 음악은 즉흥성과 구조적 엄밀함이 공존하는 독특한 연주 전통을 형성했다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Bossa Nova is a musical tradition that emerged around 1958, establishing a distinctive sonic world through its unique melodic systems and rhythmic structures. It represents a unique fusion of indigenous aesthetics and broader cultural influences. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. It was the result of combining skilled craftsmanship with a shared communal aesthetic vision."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200087",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "마리아치",
+      "en": "Mariachi"
+    },
+    "start_year": 1900,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 20.6597,
+    "location_lng": -103.3496,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "멕시코 할리스코 주에서 발전한 전통 합주 음악으로, 트럼펫·바이올린·기타로 멕시코 정체성을 노래한다.",
+      "en": "Traditional Mexican ensemble music from Jalisco featuring trumpets, violins and guitars, singing Mexican identity."
+    },
+    "description": {
+      "ko": "마리아치는 1900년경 형성된 음악 양식으로, 고유한 선율 체계와 리듬 구조를 통해 독자적 음악 세계를 구축했다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Mariachi emerged around 1900 as a musical genre that built upon earlier traditions while pioneering new modes of expression. The originality of its instrumentation and tonal system grants it a distinctive position in world music history. It represents a unique fusion of indigenous aesthetics and broader cultural influences. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200088",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "가브리엘라 미스트랄",
+      "en": "Gabriela Mistral"
+    },
+    "start_year": 1945,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -30.0268,
+    "location_lng": -71.3444,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "칠레의 시인으로 1945년 라틴아메리카 최초로 노벨 문학상을 수상했으며, 모성과 사랑을 노래했다.",
+      "en": "Chilean poet who won the first Nobel Prize in Literature for Latin America in 1945, singing of motherhood and love."
+    },
+    "description": {
+      "ko": "칠레의 시인으로 1945년 라틴아메리카 최초로 노벨 문학상을 수상했으며, 모성과 사랑을 노래했다.",
+      "en": "Chilean poet who won the first Nobel Prize in Literature for Latin America in 1945, singing of motherhood and love."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200089",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "파블로 네루다",
+      "en": "Pablo Neruda"
+    },
+    "start_year": 1950,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -33.0153,
+    "location_lng": -71.55,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "칠레의 국민 시인으로 1971년 노벨 문학상을 수상, '스무 편의 사랑의 시' 등으로 세계 문학에 큰 영향을 미쳤다.",
+      "en": "Chile's national poet, 1971 Nobel laureate, profoundly influencing world literature with 'Twenty Love Poems' and more."
+    },
+    "description": {
+      "ko": "파블로 네루다는 1950년경에 쓰인 작품으로, 문학적 서사와 사상적 깊이가 결합된 대표적 텍스트이다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 제작 당시의 사회적 맥락을 고려하면 이 작품의 혁신성이 더욱 명확해진다.",
+      "en": "Pablo Neruda is a literary work composed around 1950, capturing universal aspects of human experience through the unique voice of its cultural tradition. It represents a unique fusion of indigenous aesthetics and broader cultural influences. Insights into social contradictions and the human condition are effectively expressed within its literary form. It was the result of combining skilled craftsmanship with a shared communal aesthetic vision."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200090",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "호르헤 루이스 보르헤스",
+      "en": "Jorge Luis Borges"
+    },
+    "start_year": 1944,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -34.6037,
+    "location_lng": -58.3816,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "아르헨티나 작가로, '픽션들' 등 미로적 단편으로 포스트모더니즘 문학의 선구자가 되었다.",
+      "en": "Argentine writer who pioneered postmodern literature with labyrinthine short stories in 'Ficciones'."
+    },
+    "description": {
+      "ko": "아르헨티나 작가로, '픽션들' 등 미로적 단편으로 포스트모더니즘 문학의 선구자가 되었다.",
+      "en": "Argentine writer who pioneered postmodern literature with labyrinthine short stories in 'Ficciones'."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200091",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "가브리엘 가르시아 마르케스",
+      "en": "Gabriel García Márquez"
+    },
+    "start_year": 1967,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 10.391,
+    "location_lng": -75.5144,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "콜롬비아 작가로, '백년의 고독'으로 마술적 리얼리즘을 확립하고 1982년 노벨 문학상을 수상했다.",
+      "en": "Colombian author who established magical realism with 'One Hundred Years of Solitude,' winning the 1982 Nobel Prize."
+    },
+    "description": {
+      "ko": "가브리엘 가르시아 마르케스는 1967년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 전통적 기법과 당대의 혁신이 조화를 이루며 독특한 양식을 형성했다.",
+      "en": "Gabriel García Márquez dates to approximately 1967 and represents a landmark in literary achievement, combining narrative depth with philosophical insight. The work reflects the dynamic cultural traditions of Central and South America. Insights into social contradictions and the human condition are effectively expressed within its literary form. As a product of trade and cultural exchange, it was born at the intersection of multiple civilizations."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200092",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "옥타비오 파스",
+      "en": "Octavio Paz"
+    },
+    "start_year": 1950,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 19.436,
+    "location_lng": -99.1332,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "멕시코 시인·외교관으로 1990년 노벨 문학상을 수상, '고독의 미로'로 멕시코 정체성을 탐구했다.",
+      "en": "Mexican poet-diplomat who won the 1990 Nobel Prize, exploring Mexican identity in 'The Labyrinth of Solitude'."
+    },
+    "description": {
+      "ko": "멕시코 시인·외교관으로 1990년 노벨 문학상을 수상, '고독의 미로'로 멕시코 정체성을 탐구했다.",
+      "en": "Mexican poet-diplomat who won the 1990 Nobel Prize, exploring Mexican identity in 'The Labyrinth of Solitude'."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200093",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "이사벨 아옌데",
+      "en": "Isabel Allende"
+    },
+    "start_year": 1982,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -33.4489,
+    "location_lng": -70.6693,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "칠레 출신 작가로, '영혼의 집'으로 마술적 리얼리즘과 가족 서사를 결합한 라틴아메리카 대표 여성 작가이다.",
+      "en": "Chilean author combining magical realism with family saga in 'The House of the Spirits,' a leading Latin American woman writer."
+    },
+    "description": {
+      "ko": "칠레 출신 작가로, '영혼의 집'으로 마술적 리얼리즘과 가족 서사를 결합한 라틴아메리카 대표 여성 작가이다.",
+      "en": "Chilean author combining magical realism with family saga in 'The House of the Spirits,' a leading Latin American woman writer."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200094",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "위폴리투 이리고옌 시대 탱고",
+      "en": "Astor Piazzolla"
+    },
+    "start_year": 1955,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -34.6037,
+    "location_lng": -58.3816,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "아르헨티나의 반도네온 연주자·작곡가로, 탱고에 재즈와 클래식을 결합한 '누에보 탱고'를 창시했다.",
+      "en": "Argentine bandoneon player and composer who created 'Nuevo Tango' fusing tango with jazz and classical music."
+    },
+    "description": {
+      "ko": "위폴리투 이리고옌 시대 탱고는 1955년경의 음악적 성취를 대표하며, 연주 기법과 악곡 구성에서 혁신적 면모를 보였다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Astor Piazzolla, originating around 1955, represents a musical heritage where cultural emotion and aesthetics are realized through sound. The work reflects the dynamic cultural traditions of Central and South America. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200097",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "칠레 누에바 칸시온",
+      "en": "Nueva Canción"
+    },
+    "start_year": 1965,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -33.4489,
+    "location_lng": -70.6693,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "비올레타 파라·빅토르 하라 등이 이끈 칠레 새노래 운동으로, 사회 변혁과 인권을 노래한 라틴아메리카 저항 음악이다.",
+      "en": "Chilean new song movement led by Violeta Parra and Víctor Jara, protest music singing of social change and human rights."
+    },
+    "description": {
+      "ko": "칠레 누에바 칸시온은 1965년경의 음악적 성취를 대표하며, 연주 기법과 악곡 구성에서 혁신적 면모를 보였다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Nueva Canción, originating around 1965, represents a musical heritage where cultural emotion and aesthetics are realized through sound. The acoustic space created by the interaction of rhythm and melody is remarkably original. It embodies the distinctive worldview of Latin American civilizations. The influence of this work spread widely beyond its original cultural boundaries."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200098",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "후안 룰포",
+      "en": "Juan Rulfo"
+    },
+    "start_year": 1955,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 19.436,
+    "location_lng": -99.1332,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "멕시코 작가로, '페드로 파라모'는 마술적 리얼리즘의 원형으로 가르시아 마르케스에게 큰 영향을 미쳤다.",
+      "en": "Mexican writer whose 'Pedro Páramo' became the prototype of magical realism, greatly influencing García Márquez."
+    },
+    "description": {
+      "ko": "후안 룰포는 1955년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 중남미 문명의 독창적 세계관이 투영된 작품이다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Juan Rulfo dates to approximately 1955 and represents a landmark in literary achievement, combining narrative depth with philosophical insight. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. The work reflects the dynamic cultural traditions of Central and South America. Today, its value continues to be re-evaluated as a subject of both scholarly research and public interest."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200100",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "샤키라",
+      "en": "Shakira"
+    },
+    "start_year": 1995,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 10.9685,
+    "location_lng": -74.7813,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "콜롬비아 출신의 세계적 팝스타로, 라틴 팝과 록을 결합하여 라틴 음악의 글로벌화를 이끌었다.",
+      "en": "Colombian global pop star who led the globalization of Latin music by fusing Latin pop and rock."
+    },
+    "description": {
+      "ko": "샤키라는 1995년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 이 음악은 즉흥성과 구조적 엄밀함이 공존하는 독특한 연주 전통을 형성했다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Shakira emerged around 1995 as a musical genre that built upon earlier traditions while pioneering new modes of expression. The acoustic space created by the interaction of rhythm and melody is remarkably original. It represents a unique fusion of indigenous aesthetics and broader cultural influences. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200106",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "페르난도 보테로",
+      "en": "Fernando Botero"
+    },
+    "start_year": 1960,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 6.2442,
+    "location_lng": -75.5812,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "콜롬비아 화가·조각가로, 과장되게 부풀린 인체를 통해 권력과 사회를 풍자하는 독보적 화풍을 창조했다.",
+      "en": "Colombian painter and sculptor who created a unique style satirizing power and society through exaggerated volumetric figures."
+    },
+    "description": {
+      "ko": "페르난도 보테로는 1960년경 제작된 미술 작품으로, 당대의 시각 언어와 표현 기법의 발전상을 보여준다. 작품에 담긴 문화적 상징과 기술적 숙련도는 당대 예술의 높은 수준을 입증한다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Fernando Botero dates to approximately 1960 and demonstrates mastery of both materials and technique in the fine arts tradition. The work reflects the dynamic cultural traditions of Central and South America. The work is recognized as the epitome of its artistic tradition, combining formal completeness with symbolic depth. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200107",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "쿰비아",
+      "en": "Cumbia"
+    },
+    "start_year": 1940,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 10.391,
+    "location_lng": -75.5144,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "콜롬비아 해안에서 탄생한 춤과 음악으로, 아프리카·원주민·스페인 문화가 융합되어 중남미 전역으로 퍼졌다.",
+      "en": "Dance and music born on Colombia's coast, fusing African, indigenous and Spanish cultures, spreading across Latin America."
+    },
+    "description": {
+      "ko": "콜롬비아 해안에서 탄생한 춤과 음악으로, 아프리카·원주민·스페인 문화가 융합되어 중남미 전역으로 퍼졌다.",
+      "en": "Dance and music born on Colombia's coast, fusing African, indigenous and Spanish cultures, spreading across Latin America."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200110",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "로베르토 볼라뇨",
+      "en": "Roberto Bolaño"
+    },
+    "start_year": 1998,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -33.4489,
+    "location_lng": -70.6693,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "칠레 출신 작가로, '야만스런 탐정들'과 '2666'으로 21세기 라틴아메리카 문학의 새로운 장을 열었다.",
+      "en": "Chilean author who opened a new chapter in 21st-century Latin American literature with 'The Savage Detectives' and '2666'."
+    },
+    "description": {
+      "ko": "칠레 출신 작가로, '야만스런 탐정들'과 '2666'으로 21세기 라틴아메리카 문학의 새로운 장을 열었다.",
+      "en": "Chilean author who opened a new chapter in 21st-century Latin American literature with 'The Savage Detectives' and '2666'."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200111",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "살사",
+      "en": "Salsa"
+    },
+    "start_year": 1970,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 40.8176,
+    "location_lng": -73.9209,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "뉴욕의 쿠바·푸에르토리코 이민자들이 발전시킨 댄스 음악으로, 쿠바 손에 재즈·R&B를 결합한 라틴 음악의 대표 장르이다.",
+      "en": "Dance music developed by Cuban and Puerto Rican immigrants in NYC, fusing Cuban son with jazz and R&B."
+    },
+    "description": {
+      "ko": "살사는 1970년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 리듬과 선율의 상호작용이 만들어내는 음향적 공간이 매우 독창적이다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Salsa, originating around 1970, represents a musical heritage where cultural emotion and aesthetics are realized through sound. The acoustic space created by the interaction of rhythm and melody is remarkably original. The work reflects the dynamic cultural traditions of Central and South America. It was the result of combining skilled craftsmanship with a shared communal aesthetic vision."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200114",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "메렝게",
+      "en": "Merengue"
+    },
+    "start_year": 1930,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 18.4861,
+    "location_lng": -69.9312,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "도미니카 공화국의 국민 음악이자 춤으로, 빠른 리듬과 아코디언 연주가 특징적인 카리브 음악이다.",
+      "en": "Dominican Republic's national music and dance, a Caribbean genre featuring fast rhythms and accordion."
+    },
+    "description": {
+      "ko": "도미니카 공화국의 국민 음악이자 춤으로, 빠른 리듬과 아코디언 연주가 특징적인 카리브 음악이다.",
+      "en": "Dominican Republic's national music and dance, a Caribbean genre featuring fast rhythms and accordion."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200116",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "마리오 바르가스 요사",
+      "en": "Mario Vargas Llosa"
+    },
+    "start_year": 1963,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -12.0464,
+    "location_lng": -77.0428,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "페루 작가로, '도시와 개들'·'세상 종말 전쟁' 등으로 2010년 노벨 문학상을 수상한 라틴아메리카 문학의 거장이다.",
+      "en": "Peruvian author and 2010 Nobel laureate, a master of Latin American literature with works like 'The Time of the Hero'."
+    },
+    "description": {
+      "ko": "마리오 바르가스 요사는 1963년경 저술된 문학 작품으로, 인간 경험의 보편적 측면을 해당 문화의 고유한 언어로 포착했다. 라틴아메리카 특유의 역동적 문화 전통에서 비롯된 결과물이다. 당대 사회의 모순과 인간 조건에 대한 통찰이 문학적 형식 안에서 효과적으로 표현되었다. 이 작품이 속한 전통은 수세기에 걸쳐 발전하며 독자적 미학 체계를 완성했다.",
+      "en": "Mario Vargas Llosa, written around 1963, shaped the narrative traditions of its linguistic sphere and continues to resonate with readers. The work maximizes the artistic potential of language and has established itself as a canonical text in its literary tradition. It represents a unique fusion of indigenous aesthetics and broader cultural influences. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200128",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "피지 전통 도자기",
+      "en": "Fijian Pottery"
+    },
+    "start_year": -1000,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": -17.7134,
+    "location_lng": 178.065,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "라피타 문화에서 유래한 피지 전통 도자기로, 독특한 문양이 태평양 도서 문화의 교류를 보여준다.",
+      "en": "Fijian pottery derived from Lapita culture, with distinctive patterns showing Pacific island cultural exchange."
+    },
+    "description": {
+      "ko": "피지 전통 도자기는 기원전 1000년경 제작된 미술 작품으로, 당대의 시각 언어와 표현 기법의 발전상을 보여준다. 이 미술 양식은 사회적 기능과 심미적 가치를 동시에 충족하는 독특한 예술 형태였다. 오세아니아 지역 고유의 예술적 전통이 담긴 결과물이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Fijian Pottery is a visual artwork created around 1000 BCE, showcasing the development of artistic techniques and visual language of the period. It reflects the unique cosmology of Pacific Island cultures. Its technique of exploiting the physical properties of materials to their fullest expanded the possibilities of the visual arts. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200139",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "앨버트 나마지라",
+      "en": "Albert Namatjira"
+    },
+    "start_year": 1938,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": -23.7,
+    "location_lng": 133.88,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "호주 원주민 최초의 수채화가로, 서양 화법으로 호주 아웃백을 그려 원주민 예술의 새 장을 열었다.",
+      "en": "First Aboriginal watercolor painter who opened a new chapter in indigenous art by painting the Australian outback in Western style."
+    },
+    "description": {
+      "ko": "앨버트 나마지라는 1938년경의 미술적 성취를 대표하는 작품으로, 재료와 기법 모두에서 높은 수준을 보인다. 오세아니아 지역 고유의 예술적 전통이 담긴 결과물이다. 색채와 구도의 혁신적 처리가 이후 미술사의 전개에 상당한 영향을 미쳤다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Albert Namatjira dates to approximately 1938 and demonstrates mastery of both materials and technique in the fine arts tradition. It reflects the unique cosmology of Pacific Island cultures. The work is recognized as the epitome of its artistic tradition, combining formal completeness with symbolic depth. Later artists and scholars drew inspiration from this work, continuing new creative endeavors and research."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200151",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "니키 카로",
+      "en": "Niki Caro"
+    },
+    "start_year": 2002,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": -36.8485,
+    "location_lng": 174.7633,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "뉴질랜드 여성 감독으로, '웨일 라이더'와 '뮬란' 등 문화적 서사를 세계 무대에 소개했다.",
+      "en": "New Zealand female director who introduced cultural narratives to the world stage with 'Whale Rider' and 'Mulan'."
+    },
+    "description": {
+      "ko": "니키 카로는 2002년경 발표된 영화로, 서사 구조와 영상미 양면에서 주목할 만한 성취를 이루었다. 오세아니아 지역 고유의 예술적 전통이 담긴 결과물이다. 카메라 워크와 편집 기법에서 보여준 혁신이 이후 영화 제작에 광범위한 영향을 끼쳤다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Niki Caro, released around 2002, captured the social and cultural context of its era through the language of cinema. It is an accomplished work that sharply captures social reality without sacrificing artistic form. The work embodies the distinctive artistic traditions of Oceania. Today, its value continues to be re-evaluated as a subject of both scholarly research and public interest."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200154",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "호주 현대 건축",
+      "en": "Australian Contemporary Architecture"
+    },
+    "start_year": 2006,
+    "end_year": null,
+    "category": "건축",
+    "location_lat": -33.8688,
+    "location_lng": 151.2093,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "글렌 머컷 등 호주 건축가들이 자연 환경에 조화하는 지속가능한 현대 건축으로 국제적 인정을 받고 있다.",
+      "en": "Australian architects like Glenn Murcutt gaining international recognition for sustainable architecture harmonizing with nature."
+    },
+    "description": {
+      "ko": "호주 현대 건축은 2006년경의 건축적 성취를 보여주는 대표적 사례로, 구조와 장식 양면에서 높은 완성도를 갖추었다. 해당 지역의 건축 전통을 집대성하면서도 독자적 양식을 확립한 기념비적 구조물이다. 대양주의 자연환경과 깊이 결합된 문화적 산물이다. 이 작품의 영향력은 원래의 문화적 경계를 넘어 광범위하게 확산되었다.",
+      "en": "Australian Contemporary Architecture is an architectural work dating to around 2006, embodying the technical capabilities and aesthetic ideals of its era. It reflects the unique cosmology of Pacific Island cultures. The structure demonstrates remarkable sensitivity in its use of space and light, serving as an important reference point for subsequent architects. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200201",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "동티모르 전통 직물 타이스",
+      "en": "Tais Weaving"
+    },
+    "start_year": 1500,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": -8.5569,
+    "location_lng": 125.5603,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "동티모르의 전통 수직 직물로, 지역마다 고유한 문양이 있으며 의식과 선물 교환에 사용된다.",
+      "en": "Traditional East Timorese hand-woven textile with region-specific patterns used in ceremonies and gift exchanges."
+    },
+    "description": {
+      "ko": "동티모르 전통 직물 타이스는 1500년경의 미술적 성취를 대표하는 작품으로, 재료와 기법 모두에서 높은 수준을 보인다. 이 미술 양식은 사회적 기능과 심미적 가치를 동시에 충족하는 독특한 예술 형태였다. 인도·중국 문명의 영향을 흡수하면서도 독창적 정체성을 확립한 결과물이다. 후대의 예술가와 학자들이 이 작품에서 영감을 받아 새로운 창작과 연구를 이어갔다.",
+      "en": "Tais Weaving dates to approximately 1500 and demonstrates mastery of both materials and technique in the fine arts tradition. The cultural symbolism and technical mastery embodied in the work attest to the high level of artistic achievement of the period. It demonstrates how Southeast Asian cultures synthesized diverse influences into unique artistic expressions. The tradition to which this work belongs developed over centuries, completing a distinctive aesthetic system."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200211",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "셀리아 크루스",
+      "en": "Celia Cruz"
+    },
+    "start_year": 1950,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 23.1136,
+    "location_lng": -82.3666,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "쿠바 출신의 '살사의 여왕'으로, 라틴 음악을 세계에 전파한 가장 영향력 있는 라틴 여성 음악가이다.",
+      "en": "Cuba's 'Queen of Salsa,' the most influential Latin female musician who spread Latin music globally."
+    },
+    "description": {
+      "ko": "쿠바 출신의 '살사의 여왕'으로, 라틴 음악을 세계에 전파한 가장 영향력 있는 라틴 여성 음악가이다.",
+      "en": "Cuba's 'Queen of Salsa,' the most influential Latin female musician who spread Latin music globally."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200212",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "에두아르도 갈레아노",
+      "en": "Eduardo Galeano"
+    },
+    "start_year": 1971,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -34.9011,
+    "location_lng": -56.1645,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "우루과이 작가로, '수탈된 대지의 열린 혈관'으로 라틴아메리카 착취의 역사를 고발했다.",
+      "en": "Uruguayan writer who denounced Latin America's history of exploitation in 'Open Veins of Latin America'."
+    },
+    "description": {
+      "ko": "에두아르도 갈레아노는 1971년경 완성된 문학 작품으로, 해당 언어권의 서사 전통에 결정적 영향을 미쳤다. 이 작품은 언어의 예술적 가능성을 극대화하며, 해당 문학 전통의 정전으로 자리잡았다. 중남미 지역의 고유한 미학과 사회적 맥락이 결합된 사례이다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Eduardo Galeano is a literary work composed around 1971, capturing universal aspects of human experience through the unique voice of its cultural tradition. It represents a unique fusion of indigenous aesthetics and broader cultural influences. The combination of intricate narrative structure and depth of characterization gives it a timeless universality. Traditional techniques and contemporary innovations harmonized to create a distinctive style."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200215",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "클라리세 리스펙토르",
+      "en": "Clarice Lispector"
+    },
+    "start_year": 1964,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": -22.9068,
+    "location_lng": -43.1729,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "브라질 여성 작가로, '별의 시간'·'G.H.에 따른 수난' 등으로 실존적 의식의 흐름을 탐구한 문학의 거장이다.",
+      "en": "Brazilian writer who explored existential stream of consciousness in masterpieces like 'The Hour of the Star'."
+    },
+    "description": {
+      "ko": "브라질 여성 작가로, '별의 시간'·'G.H.에 따른 수난' 등으로 실존적 의식의 흐름을 탐구한 문학의 거장이다.",
+      "en": "Brazilian writer who explored existential stream of consciousness in masterpieces like 'The Hour of the Star'."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200217",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "브라질 트로피칼리아",
+      "en": "Tropicália"
+    },
+    "start_year": 1967,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -22.9068,
+    "location_lng": -43.1729,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "카에타누 벨로수·질베르투 질이 이끈 브라질 음악 운동으로, 전통 음악에 사이키델릭·록을 결합하여 군사정권에 저항했다.",
+      "en": "Brazilian music movement led by Caetano Veloso and Gilberto Gil, fusing traditional music with psychedelic rock in resistance to dictatorship."
+    },
+    "description": {
+      "ko": "카에타누 벨로수·질베르투 질이 이끈 브라질 음악 운동으로, 전통 음악에 사이키델릭·록을 결합하여 군사정권에 저항했다.",
+      "en": "Brazilian music movement led by Caetano Veloso and Gilberto Gil, fusing traditional music with psychedelic rock in resistance to dictatorship."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200222",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "키리 테 카나와",
+      "en": "Kiri Te Kanawa"
+    },
+    "start_year": 1971,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": -36.8485,
+    "location_lng": 174.7633,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "뉴질랜드 마오리계 오페라 소프라노로, 세계적 오페라 하우스에서 활동하며 오세아니아 클래식 음악을 대표한다.",
+      "en": "New Zealand Māori opera soprano performing at world-class opera houses, representing Oceanian classical music."
+    },
+    "description": {
+      "ko": "키리 테 카나와는 1971년경의 음악적 성취를 대표하며, 연주 기법과 악곡 구성에서 혁신적 면모를 보였다. 오세아니아 지역 고유의 예술적 전통이 담긴 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Kiri Te Kanawa emerged around 1971 as a musical genre that built upon earlier traditions while pioneering new modes of expression. It demonstrates the deep connection between art and the natural environment in the Pacific region. This music established a unique performance tradition in which improvisation and structural rigor coexist. The tradition to which this work belongs developed over centuries, completing a distinctive aesthetic system."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200026_dup_3189",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "그레고리안 성가",
+      "en": "Gregorian Chant"
+    },
+    "start_year": 600,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 41.9,
+    "location_lng": 12.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "이탈리아",
+      "en": "Italy"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "서방 기독교 전례 음악의 근간으로, 단성 성가의 전통이 서양 음악 발전의 토대가 되었다.",
+      "en": "Monophonic liturgical chant forming the foundation of Western sacred music and musical notation."
+    },
+    "description": {
+      "ko": "그레고리안 성가는 600년경 탄생한 음악적 전통으로, 해당 문화의 정서와 미학이 소리를 통해 구현된 결과물이다. 리듬과 선율의 상호작용이 만들어내는 음향적 공간이 매우 독창적이다. 유럽 문화사의 흐름 속에서 중요한 위치를 차지하는 작품이다. 장인들의 숙련된 기술과 공동체의 미적 합의가 결합된 결과물이었다.",
+      "en": "Gregorian Chant emerged around 600 as a musical genre that built upon earlier traditions while pioneering new modes of expression. The originality of its instrumentation and tonal system grants it a distinctive position in world music history. The work represents a landmark achievement in the Western artistic tradition. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200111_dup_3273",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "아부 누와스 시",
+      "en": "Poetry of Abu Nuwas"
+    },
+    "start_year": 800,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 33.31,
+    "location_lng": 44.37,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이라크",
+      "en": "Iraq"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "아바스 왕조의 시인 아부 누와스의 주연시(酒宴詩)로, 자유분방한 주제와 세련된 표현으로 아랍 시의 혁신을 이끌었다.",
+      "en": "Wine poems by the Abbasid poet Abu Nuwas, innovative in their libertine themes and refined expression."
+    },
+    "description": {
+      "ko": "아바스 왕조의 시인 아부 누와스의 주연시(酒宴詩)로, 자유분방한 주제와 세련된 표현으로 아랍 시의 혁신을 이끌었다.",
+      "en": "Wine poems by the Abbasid poet Abu Nuwas, innovative in their libertine themes and refined expression."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200128_dup_3290",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "마르셀 할리파",
+      "en": "Marcel Khalife"
+    },
+    "start_year": 1976,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 33.89,
+    "location_lng": 35.51,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "레바논",
+      "en": "Lebanon"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "레바논의 우드 연주자·가수로, 마흐무드 다르위시의 시에 곡을 붙여 팔레스타인 저항 음악의 상징이 되었다.",
+      "en": "Lebanese oud virtuoso and singer who set Darwish's poetry to music, a symbol of Palestinian resistance."
+    },
+    "description": {
+      "ko": "레바논의 우드 연주자·가수로, 마흐무드 다르위시의 시에 곡을 붙여 팔레스타인 저항 음악의 상징이 되었다.",
+      "en": "Lebanese oud virtuoso and singer who set Darwish's poetry to music, a symbol of Palestinian resistance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200136_dup_3298",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "마흐무드 다르위시 시선",
+      "en": "Poetry of Mahmoud Darwish"
+    },
+    "start_year": 1964,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 32.92,
+    "location_lng": 35.09,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "팔레스타인",
+      "en": "Palestine"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "팔레스타인의 민족 시인 마흐무드 다르위시의 시로, 망명과 고향에 대한 그리움을 아랍 현대시의 정수로 승화시켰다.",
+      "en": "Poetry of Palestine's national poet, sublimating exile and longing into the essence of modern Arab verse."
+    },
+    "description": {
+      "ko": "팔레스타인의 민족 시인 마흐무드 다르위시의 시로, 망명과 고향에 대한 그리움을 아랍 현대시의 정수로 승화시켰다.",
+      "en": "Poetry of Palestine's national poet, sublimating exile and longing into the essence of modern Arab verse."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200146_dup_3308",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "메흐테르 군악",
+      "en": "Mehter Military Band"
+    },
+    "start_year": 1299,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 41.01,
+    "location_lng": 28.98,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "튀르키예",
+      "en": "Turkey"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "오스만 제국의 군악대로, 세계 최초의 군악대이며 유럽 행진곡과 오케스트라 타악기에 영향을 미쳤다.",
+      "en": "The Ottoman military band, the world's first, influencing European marches and orchestral percussion."
+    },
+    "description": {
+      "ko": "오스만 제국의 군악대로, 세계 최초의 군악대이며 유럽 행진곡과 오케스트라 타악기에 영향을 미쳤다.",
+      "en": "The Ottoman military band, the world's first, influencing European marches and orchestral percussion."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200151_dup_3313",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "세마 의식",
+      "en": "Sema Ceremony"
+    },
+    "start_year": 1273,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 37.87,
+    "location_lng": 32.49,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "튀르키예",
+      "en": "Turkey"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "메블라나 수피 교단의 회전 춤 의식으로, 신과의 합일을 추구하는 영적 수행이자 유네스코 무형문화유산이다.",
+      "en": "The Mevlevi whirling ceremony seeking union with God, a spiritual practice and UNESCO intangible heritage."
+    },
+    "description": {
+      "ko": "메블라나 수피 교단의 회전 춤 의식으로, 신과의 합일을 추구하는 영적 수행이자 유네스코 무형문화유산이다.",
+      "en": "The Mevlevi whirling ceremony seeking union with God, a spiritual practice and UNESCO intangible heritage."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q200153_dup_3315",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "아도니스 시선",
+      "en": "Poetry of Adonis"
+    },
+    "start_year": 1961,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 33.89,
+    "location_lng": 35.51,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "레바논",
+      "en": "Lebanon"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "시리아 출신 시인 아도니스의 시로, 아랍 시의 형식과 내용을 혁신하여 현대 아랍 문학의 거장으로 평가받다.",
+      "en": "Poetry by Adonis that revolutionized Arabic poetic form and content, making him a master of modern Arab literature."
+    },
+    "description": {
+      "ko": "시리아 출신 시인 아도니스의 시로, 아랍 시의 형식과 내용을 혁신하여 현대 아랍 문학의 거장으로 평가받다.",
+      "en": "Poetry by Adonis that revolutionized Arabic poetic form and content, making him a master of modern Arab literature."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q201036",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "수피 음악 카왈리",
+      "en": "Qawwali"
+    },
+    "start_year": 1200,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 33.69,
+    "location_lng": 73.04,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "파키스탄",
+      "en": "Pakistan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "수피 신비주의의 헌신적 음악으로, 리드미컬한 반복과 점진적 황홀경이 특징인 이슬람 영성 음악이다.",
+      "en": "Devotional Sufi music characterized by rhythmic repetition and gradual ecstasy."
+    },
+    "description": {
+      "ko": "수피 음악 카왈리는 1200년경에 등장한 음악 장르로, 이전 전통을 계승하면서도 새로운 표현 영역을 개척했다. 리듬과 선율의 상호작용이 만들어내는 음향적 공간이 매우 독창적이다. 이슬람 문화권의 정교한 미적 전통이 반영된 결과물이다. 당시의 정치적·종교적 환경이 작품의 형성에 직접적인 배경으로 작용했다.",
+      "en": "Qawwali is a musical tradition that emerged around 1200, establishing a distinctive sonic world through its unique melodic systems and rhythmic structures. The originality of its instrumentation and tonal system grants it a distinctive position in world music history. It emerges from the deep historical roots of Middle Eastern civilization. The political and religious environment of the period served as a direct backdrop to the formation of the work."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q201040",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "사이디 음악",
+      "en": "Saidi Dance Music"
+    },
+    "start_year": 1800,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 26.16,
+    "location_lng": 32.72,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "이집트",
+      "en": "Egypt"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이집트 상부 지방의 전통 음악과 무용으로, 지팡이춤(타흐팁)과 함께 이집트 민속 예술의 핵심이다.",
+      "en": "Traditional Upper Egyptian music and dance with stick dancing (Tahtib), central to Egyptian folk art."
+    },
+    "description": {
+      "ko": "사이디 음악은 1800년경 탄생한 음악적 전통으로, 해당 문화의 정서와 미학이 소리를 통해 구현된 결과물이다. 이슬람 문화권의 정교한 미적 전통이 반영된 결과물이다. 공동체의 의례와 일상 속에서 기능하면서 예술적 완성도를 동시에 추구한 음악 형태이다. 오늘날에도 학술적 연구와 대중적 관심의 대상으로 그 가치가 재조명되고 있다.",
+      "en": "Saidi Dance Music emerged around 1800 as a musical genre that built upon earlier traditions while pioneering new modes of expression. It is a musical form that functioned within communal rituals and daily life while simultaneously pursuing artistic sophistication. It represents centuries of accumulated cultural achievement in the Middle East. The work provides essential clues for understanding the cultural identity of its civilization."
+    },
+    "external_link": ""
   }
 ]
