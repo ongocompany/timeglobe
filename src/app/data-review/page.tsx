@@ -391,7 +391,18 @@ export default function DataReviewPage() {
                     <button
                       onClick={() => {
                         const text = `[${datasetKey}] ${titleText(selected.title)} (ID: ${selected.id})`;
-                        navigator.clipboard.writeText(text);
+                        if (navigator.clipboard?.writeText) {
+                          navigator.clipboard.writeText(text);
+                        } else {
+                          const ta = document.createElement("textarea");
+                          ta.value = text;
+                          ta.style.position = "fixed";
+                          ta.style.opacity = "0";
+                          document.body.appendChild(ta);
+                          ta.select();
+                          document.execCommand("copy");
+                          document.body.removeChild(ta);
+                        }
                       }}
                       className="shrink-0 rounded border border-white/20 px-2 py-1 text-[10px] text-white/60 hover:bg-white/10 hover:text-white active:bg-cyan-500/20 active:text-cyan-300 transition"
                       title="제목+ID 복사"
