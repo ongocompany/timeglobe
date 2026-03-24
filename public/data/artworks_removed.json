@@ -1,0 +1,2114 @@
+[
+  {
+    "id": "Q392302",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "마태오의 복음서",
+      "en": "Gospel of Matthew"
+    },
+    "start_year": 70,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 첫 번째 복음서로, 예수 그리스도의 생애와 가르침을 유대인 독자들에게 초점을 맞춰 기록했습니다. 예수의 메시아적 역할과 구약성경 예언의 성취를 강조하며, 기독교 신학 형성에 중요한 영향을 미쳤습니다.",
+      "en": "The first Gospel, focusing on Jesus' life and teachings for Jewish readers. It emphasizes Jesus' messianic role and Old Testament prophecies, significantly shaping Christian theology."
+    },
+    "description": {
+      "ko": "신약성경의 첫 번째 복음서로, 예수 그리스도의 생애와 가르침을 유대인 독자들에게 초점을 맞춰 기록했습니다. 예수의 메시아적 역할과 구약성경 예언의 성취를 강조하며, 기독교 신학 형성에 중요한 영향을 미쳤습니다.",
+      "en": "The first Gospel, focusing on Jesus' life and teachings for Jewish readers. It emphasizes Jesus' messianic role and Old Testament prophecies, significantly shaping Christian theology."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q107388",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "마르코의 복음서",
+      "en": "Gospel of Mark"
+    },
+    "start_year": 60,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 두 번째 복음서로, 예수 그리스도의 생애와 사역을 간결하고 역동적으로 묘사합니다. 예수의 고난과 죽음을 강조하며, 기독교 신학의 중요한 토대를 제공하고 후대 복음서 저술에 영향을 미쳤습니다.",
+      "en": "The second Gospel, concisely depicting Jesus' life and ministry. It emphasizes his suffering and death, providing a crucial foundation for Christian theology and influencing later Gospels."
+    },
+    "description": {
+      "ko": "신약성경의 두 번째 복음서로, 예수 그리스도의 생애와 사역을 간결하고 역동적으로 묘사합니다. 예수의 고난과 죽음을 강조하며, 기독교 신학의 중요한 토대를 제공하고 후대 복음서 저술에 영향을 미쳤습니다.",
+      "en": "The second Gospel, concisely depicting Jesus' life and ministry. It emphasizes his suffering and death, providing a crucial foundation for Christian theology and influencing later Gospels."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q36766",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "요한의 복음서",
+      "en": "Gospel of John"
+    },
+    "start_year": 90,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 네 번째 복음서로, 예수 그리스도의 신성과 영원한 생명에 대한 가르침을 심오하게 다룹니다. 다른 복음서와는 다른 독특한 관점과 신학적 깊이를 제공하며, 기독교 신학 발전에 지대한 영향을 미쳤습니다.",
+      "en": "The fourth Gospel, profoundly exploring Jesus' divinity and eternal life. It offers a unique theological perspective, significantly influencing the development of Christian theology."
+    },
+    "description": {
+      "ko": "신약성경의 네 번째 복음서로, 예수 그리스도의 신성과 영원한 생명에 대한 가르침을 심오하게 다룹니다. 다른 복음서와는 다른 독특한 관점과 신학적 깊이를 제공하며, 기독교 신학 발전에 지대한 영향을 미쳤습니다.",
+      "en": "The fourth Gospel, profoundly exploring Jesus' divinity and eternal life. It offers a unique theological perspective, significantly influencing the development of Christian theology."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q39939",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "루가의 복음서",
+      "en": "Gospel of Luke"
+    },
+    "start_year": 80,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 세 번째 복음서로, 예수 그리스도의 생애와 가르침을 역사적이고 문학적인 관점에서 상세하게 기록했습니다. 특히 소외된 자들에 대한 예수의 사랑과 구원의 보편성을 강조하며, 기독교 신학 형성에 중요한 영향을 미쳤습니다.",
+      "en": "The third Gospel, detailing Jesus' life and teachings from a historical and literary perspective. It emphasizes Jesus' love for the marginalized and universal salvation, influencing Christian theology."
+    },
+    "description": {
+      "ko": "신약성경의 세 번째 복음서로, 예수 그리스도의 생애와 가르침을 역사적이고 문학적인 관점에서 상세하게 기록했습니다. 특히 소외된 자들에 대한 예수의 사랑과 구원의 보편성을 강조하며, 기독교 신학 형성에 중요한 영향을 미쳤습니다.",
+      "en": "The third Gospel, detailing Jesus' life and teachings from a historical and literary perspective. It emphasizes Jesus' love for the marginalized and universal salvation, influencing Christian theology."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q34990",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "토라",
+      "en": "Torah"
+    },
+    "start_year": -1312,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "유대교, 기독교, 이슬람교 등 문명사적으로 지대한 영향을 미친 종교 경전으로, '종교/철학 경전' 기준에 해당합니다. 모세오경으로도 불리며, 유대인의 율법과 역사를 담고 있어 서구 문명의 법률, 윤리, 도덕적 가치관 형성에 근간이 되었습니다. 인류의 정신세계에 깊은 영향을 미쳤습니다.",
+      "en": "A religious scripture profoundly influencing Judaism, Christianity, and Islam. Also known as the Pentateuch, it forms the basis of Western civilization's legal and ethical values."
+    },
+    "description": {
+      "ko": "유대교, 기독교, 이슬람교 등 문명사적으로 지대한 영향을 미친 종교 경전으로, '종교/철학 경전' 기준에 해당합니다. 모세오경으로도 불리며, 유대인의 율법과 역사를 담고 있어 서구 문명의 법률, 윤리, 도덕적 가치관 형성에 근간이 되었습니다. 인류의 정신세계에 깊은 영향을 미쳤습니다.",
+      "en": "A religious scripture profoundly influencing Judaism, Christianity, and Islam. Also known as the Pentateuch, it forms the basis of Western civilization's legal and ethical values."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q40591",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "공산당 선언",
+      "en": "The Communist Manifesto"
+    },
+    "start_year": 1848,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 51.5074,
+    "location_lng": -0.1278,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전 및 사회적 영향력 입증 기준을 충족하며, 역사적 사건을 직접 다루고 시대를 대표하는 사상으로 분류될 수 있습니다. 카를 마르크스와 프리드리히 엥겔스가 저술한 이 선언문은 공산주의 이론의 핵심을 담고 있으며, 20세기 세계사에 지대한 영향을 미쳐 수많은 혁명과 사회 운동의 이론적 기반이 되었습니다.",
+      "en": "A foundational text of communism by Marx and Engels, profoundly impacting 20th-century world history. It served as the theoretical basis for numerous revolutions and social movements."
+    },
+    "description": {
+      "ko": "종교/철학 경전 및 사회적 영향력 입증 기준을 충족하며, 역사적 사건을 직접 다루고 시대를 대표하는 사상으로 분류될 수 있습니다. 카를 마르크스와 프리드리히 엥겔스가 저술한 이 선언문은 공산주의 이론의 핵심을 담고 있으며, 20세기 세계사에 지대한 영향을 미쳐 수많은 혁명과 사회 운동의 이론적 기반이 되었습니다.",
+      "en": "A foundational text of communism by Marx and Engels, profoundly impacting 20th-century world history. It served as the theoretical basis for numerous revolutions and social movements."
+    },
+    "external_link": "",
+    "_removeReason": "정치선언문"
+  },
+  {
+    "id": "Q41490",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "레위기",
+      "en": "Leviticus"
+    },
+    "start_year": -1446,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전으로 문명사적 영향력이 매우 큽니다. 구약성경의 세 번째 책으로, 이스라엘 백성이 지켜야 할 율법과 제사 의례, 정결 규례 등을 상세히 다룹니다. 유대교와 기독교의 윤리적, 종교적 토대를 형성하는 데 중요한 역할을 했으며, 고대 근동 사회의 종교적 관습을 이해하는 데 필수적인 자료입니다.",
+      "en": "A highly influential religious/philosophical text, Leviticus is the third book of the Old Testament. It details laws, rituals, and purity codes, forming a crucial ethical and religious foundation for Judaism and Christianity."
+    },
+    "description": {
+      "ko": "종교/철학 경전으로 문명사적 영향력이 매우 큽니다. 구약성경의 세 번째 책으로, 이스라엘 백성이 지켜야 할 율법과 제사 의례, 정결 규례 등을 상세히 다룹니다. 유대교와 기독교의 윤리적, 종교적 토대를 형성하는 데 중요한 역할을 했으며, 고대 근동 사회의 종교적 관습을 이해하는 데 필수적인 자료입니다.",
+      "en": "A highly influential religious/philosophical text, Leviticus is the third book of the Old Testament. It details laws, rituals, and purity codes, forming a crucial ethical and religious foundation for Judaism and Christianity."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q43290",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "탈무드",
+      "en": "Talmud"
+    },
+    "start_year": 500,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 32.08,
+    "location_lng": 34.78,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "탈무드는 유대교의 주류 종파인 랍비 유대교의 중요한 경전으로서 유대 종교법인 할라카와 유대 철학의 핵심 근간이 됩니다. 이는 유대인의 삶과 사상에 지대한 영향을 미쳤으며, 수천 년간 유대 공동체의 정신적 지주 역할을 해왔습니다.",
+      "en": "The Talmud is a central text of Rabbinic Judaism, forming the core of Jewish religious law (Halakha) and philosophy, profoundly influencing Jewish life and thought."
+    },
+    "description": {
+      "ko": "탈무드는 유대교의 주류 종파인 랍비 유대교의 중요한 경전으로서 유대 종교법인 할라카와 유대 철학의 핵심 근간이 됩니다. 이는 유대인의 삶과 사상에 지대한 영향을 미쳤으며, 수천 년간 유대 공동체의 정신적 지주 역할을 해왔습니다.",
+      "en": "The Talmud is a central text of Rabbinic Judaism, forming the core of Jewish religious law (Halakha) and philosophy, profoundly influencing Jewish life and thought."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q459842",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "몰몬경",
+      "en": "Book of Mormon"
+    },
+    "start_year": 1830,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 43,
+    "location_lng": -77.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "몰몬경은 예수 그리스도 후기 성도 교회의 핵심 경전으로, 기독교의 한 분파인 몰몬교의 교리와 신앙의 근간을 이룹니다. 이는 미국에서 시작된 새로운 종교 운동의 중요한 문서로서, 전 세계 수백만 명의 신자들에게 영향을 미치고 있습니다.",
+      "en": "The Book of Mormon is a foundational scripture for The Church of Jesus Christ of Latter-day Saints, shaping the doctrine and faith of millions worldwide."
+    },
+    "description": {
+      "ko": "몰몬경은 예수 그리스도 후기 성도 교회의 핵심 경전으로, 기독교의 한 분파인 몰몬교의 교리와 신앙의 근간을 이룹니다. 이는 미국에서 시작된 새로운 종교 운동의 중요한 문서로서, 전 세계 수백만 명의 신자들에게 영향을 미치고 있습니다.",
+      "en": "The Book of Mormon is a foundational scripture for The Church of Jesus Christ of Latter-day Saints, shaping the doctrine and faith of millions worldwide."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q11698",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "미국의 헌법",
+      "en": "United States Constitution"
+    },
+    "start_year": 1787,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 39.95,
+    "location_lng": -75.17,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "미국 헌법은 미국의 최고 법으로서 국가의 정치와 법률의 근간을 이루며, 세계에서 가장 오래된 성문 헌법 중 하나입니다. 이는 민주주의와 공화주의 원칙을 확립하고, 전 세계 여러 국가의 헌법 제정에 영감을 주었습니다.",
+      "en": "The U.S. Constitution is the supreme law of the United States, forming the basis of its politics and law, and has influenced constitutional development globally."
+    },
+    "description": {
+      "ko": "미국 헌법은 미국의 최고 법으로서 국가의 정치와 법률의 근간을 이루며, 세계에서 가장 오래된 성문 헌법 중 하나입니다. 이는 민주주의와 공화주의 원칙을 확립하고, 전 세계 여러 국가의 헌법 제정에 영감을 주었습니다.",
+      "en": "The U.S. Constitution is the supreme law of the United States, forming the basis of its politics and law, and has influenced constitutional development globally."
+    },
+    "external_link": "",
+    "_removeReason": "법률/제도"
+  },
+  {
+    "id": "Q80355",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "코린토 신자들에게 보낸 첫째 서간",
+      "en": "First Epistle to the Corinthians"
+    },
+    "start_year": 54,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 37.94,
+    "location_lng": 22.93,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 일부로, 사도 바울이 코린토 교회에 보낸 편지입니다. 초기 기독교 공동체의 문제와 교리적 질문에 대한 답변을 담고 있으며, 기독교 윤리와 신학의 중요한 근간을 이루어 기독교 문명사에 지대한 영향을 미쳤습니다.",
+      "en": "Part of the New Testament, this epistle from Paul addresses issues in the early Corinthian church, forming a crucial foundation for Christian ethics and theology."
+    },
+    "description": {
+      "ko": "신약성경의 일부로, 사도 바울이 코린토 교회에 보낸 편지입니다. 초기 기독교 공동체의 문제와 교리적 질문에 대한 답변을 담고 있으며, 기독교 윤리와 신학의 중요한 근간을 이루어 기독교 문명사에 지대한 영향을 미쳤습니다.",
+      "en": "Part of the New Testament, this epistle from Paul addresses issues in the early Corinthian church, forming a crucial foundation for Christian ethics and theology."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q48203",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "로마 신자들에게 보낸 서간",
+      "en": "Epistle to the Romans"
+    },
+    "start_year": 57,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 37.98,
+    "location_lng": 23.72,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 핵심 서신 중 하나로, 사도 바울이 로마 교회에 보낸 편지입니다. 기독교의 구원론과 칭의론 등 주요 교리를 체계적으로 설명하며, 서구 신학과 기독교 사상에 가장 큰 영향을 미친 문서 중 하나로 평가받습니다.",
+      "en": "A central New Testament epistle by Paul, Romans systematically explains key Christian doctrines like salvation and justification, profoundly influencing Western theology."
+    },
+    "description": {
+      "ko": "신약성경의 핵심 서신 중 하나로, 사도 바울이 로마 교회에 보낸 편지입니다. 기독교의 구원론과 칭의론 등 주요 교리를 체계적으로 설명하며, 서구 신학과 기독교 사상에 가장 큰 영향을 미친 문서 중 하나로 평가받습니다.",
+      "en": "A central New Testament epistle by Paul, Romans systematically explains key Christian doctrines like salvation and justification, profoundly influencing Western theology."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q128620",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "갈라티아 신자들에게 보낸 서간",
+      "en": "Epistle to the Galatians"
+    },
+    "start_year": 48,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 37.94,
+    "location_lng": 22.93,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 중요한 서신 중 하나로, 사도 바울이 갈라티아 교회에 보낸 편지입니다. 율법과 은혜, 믿음으로 말미암는 구원이라는 기독교의 핵심 교리를 강조하며, 기독교 신학과 역사에 지대한 영향을 끼쳤습니다.",
+      "en": "A key New Testament epistle by Paul, Galatians emphasizes core Christian doctrines of grace and salvation by faith, profoundly influencing Christian theology and history."
+    },
+    "description": {
+      "ko": "신약성경의 중요한 서신 중 하나로, 사도 바울이 갈라티아 교회에 보낸 편지입니다. 율법과 은혜, 믿음으로 말미암는 구원이라는 기독교의 핵심 교리를 강조하며, 기독교 신학과 역사에 지대한 영향을 끼쳤습니다.",
+      "en": "A key New Testament epistle by Paul, Galatians emphasizes core Christian doctrines of grace and salvation by faith, profoundly influencing Christian theology and history."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q128608",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "히브리인들에게 보낸 편지",
+      "en": "Epistle to the Hebrews"
+    },
+    "start_year": 60,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 중요한 서신 중 하나로, 초기 기독교 공동체에 보내진 것으로 추정됩니다. 예수 그리스도의 우월성과 새로운 언약의 중요성을 강조하며, 기독교 신학 발전에 큰 영향을 미쳤습니다.",
+      "en": "A key New Testament epistle, it emphasizes Christ's superiority and the new covenant. It significantly influenced Christian theology."
+    },
+    "description": {
+      "ko": "신약성경의 중요한 서신 중 하나로, 초기 기독교 공동체에 보내진 것으로 추정됩니다. 예수 그리스도의 우월성과 새로운 언약의 중요성을 강조하며, 기독교 신학 발전에 큰 영향을 미쳤습니다.",
+      "en": "A key New Testament epistle, it emphasizes Christ's superiority and the new covenant. It significantly influenced Christian theology."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q408673",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "에페소 신자들에게 보낸 서간",
+      "en": "Epistle to the Ephesians"
+    },
+    "start_year": 60,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 서신 중 하나로, 바울이 에페소 교회에 보낸 것으로 알려져 있습니다. 교회의 본질과 그리스도 안에서의 연합을 강조하며, 기독교 교리 형성에 중요한 역할을 했습니다.",
+      "en": "A New Testament epistle attributed to Paul, it emphasizes the nature of the church and unity in Christ, playing a key role in Christian doctrine."
+    },
+    "description": {
+      "ko": "신약성경의 서신 중 하나로, 바울이 에페소 교회에 보낸 것으로 알려져 있습니다. 교회의 본질과 그리스도 안에서의 연합을 강조하며, 기독교 교리 형성에 중요한 역할을 했습니다.",
+      "en": "A New Testament epistle attributed to Paul, it emphasizes the nature of the church and unity in Christ, playing a key role in Christian doctrine."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q123808",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "코린토 신자들에게 보낸 둘째 서간",
+      "en": "Second Epistle to the Corinthians"
+    },
+    "start_year": 55,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 37.9423,
+    "location_lng": 22.9338,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 서신 중 하나로, 사도 바울이 코린토 교회에 보낸 두 번째 편지입니다. 바울의 사도직 변호와 고난 속에서의 위로, 그리고 기독교인의 삶의 자세에 대한 가르침을 담고 있습니다.",
+      "en": "A New Testament epistle, Paul's second letter to the Corinthians. It defends his apostleship, offers comfort in suffering, and teaches on Christian living."
+    },
+    "description": {
+      "ko": "신약성경의 서신 중 하나로, 사도 바울이 코린토 교회에 보낸 두 번째 편지입니다. 바울의 사도직 변호와 고난 속에서의 위로, 그리고 기독교인의 삶의 자세에 대한 가르침을 담고 있습니다.",
+      "en": "A New Testament epistle, Paul's second letter to the Corinthians. It defends his apostleship, offers comfort in suffering, and teaches on Christian living."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q51613",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "필립비인들에게 보낸 서간",
+      "en": "Epistle to the Philippians"
+    },
+    "start_year": 60,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 서신 중 하나로, 사도 바울이 필립비 교회에 보낸 편지입니다. 기쁨과 감사, 그리스도 안에서의 겸손과 연합을 강조하며, 초기 기독교 신앙의 중요한 가르침을 담고 있습니다.",
+      "en": "A New Testament epistle from Paul to the Philippians. It emphasizes joy, gratitude, humility, and unity in Christ, containing key early Christian teachings."
+    },
+    "description": {
+      "ko": "신약성경의 서신 중 하나로, 사도 바울이 필립비 교회에 보낸 편지입니다. 기쁨과 감사, 그리스도 안에서의 겸손과 연합을 강조하며, 초기 기독교 신앙의 중요한 가르침을 담고 있습니다.",
+      "en": "A New Testament epistle from Paul to the Philippians. It emphasizes joy, gratitude, humility, and unity in Christ, containing key early Christian teachings."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q131104",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "필레몬에게 보낸 편지",
+      "en": "Epistle to Philemon"
+    },
+    "start_year": 60,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 짧은 서신 중 하나로, 사도 바울이 노예 오네시모를 주인 필레몬에게 돌려보내며 용서와 화해를 요청하는 내용을 담고 있습니다. 초기 기독교의 사회적 가치와 인간 존중에 대한 통찰을 제공합니다.",
+      "en": "A short New Testament epistle where Paul asks Philemon to forgive his runaway slave, Onesimus. It offers insight into early Christian social values and human dignity."
+    },
+    "description": {
+      "ko": "신약성경의 짧은 서신 중 하나로, 사도 바울이 노예 오네시모를 주인 필레몬에게 돌려보내며 용서와 화해를 요청하는 내용을 담고 있습니다. 초기 기독교의 사회적 가치와 인간 존중에 대한 통찰을 제공합니다.",
+      "en": "A short New Testament epistle where Paul asks Philemon to forgive his runaway slave, Onesimus. It offers insight into early Christian social values and human dignity."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q171328",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "유엔 헌장",
+      "en": "Charter of the United Nations"
+    },
+    "start_year": 1945,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 40.7128,
+    "location_lng": -74.006,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "제2차 세계 대전 이후 국제 평화와 안전 유지를 위해 설립된 국제 연합의 기본 문서입니다. 국제 관계의 근간을 이루며, 인권, 국제법, 경제 발전 등 현대 국제 사회의 주요 원칙과 목표를 제시합니다.",
+      "en": "The foundational document of the United Nations, established post-WWII for international peace. It forms the basis of international relations, outlining principles for global society."
+    },
+    "description": {
+      "ko": "제2차 세계 대전 이후 국제 평화와 안전 유지를 위해 설립된 국제 연합의 기본 문서입니다. 국제 관계의 근간을 이루며, 인권, 국제법, 경제 발전 등 현대 국제 사회의 주요 원칙과 목표를 제시합니다.",
+      "en": "The foundational document of the United Nations, established post-WWII for international peace. It forms the basis of international relations, outlining principles for global society."
+    },
+    "external_link": "",
+    "_removeReason": "법률/제도"
+  },
+  {
+    "id": "Q131180",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "티모테오에게 보낸 첫째 서간",
+      "en": "First Epistle to Timothy"
+    },
+    "start_year": 65,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 목회 서신 중 하나로, 사도 바울이 젊은 제자 티모테오에게 교회 지도자로서의 역할과 올바른 신앙 생활에 대해 가르치는 내용을 담고 있습니다. 초기 기독교 교회의 조직과 윤리 형성에 영향을 미쳤습니다.",
+      "en": "A New Testament pastoral epistle from Paul to Timothy, instructing on church leadership and faith. It influenced the organization and ethics of the early Christian church."
+    },
+    "description": {
+      "ko": "신약성경의 목회 서신 중 하나로, 사도 바울이 젊은 제자 티모테오에게 교회 지도자로서의 역할과 올바른 신앙 생활에 대해 가르치는 내용을 담고 있습니다. 초기 기독교 교회의 조직과 윤리 형성에 영향을 미쳤습니다.",
+      "en": "A New Testament pastoral epistle from Paul to Timothy, instructing on church leadership and faith. It influenced the organization and ethics of the early Christian church."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q727413",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "리그베다",
+      "en": "Rigveda"
+    },
+    "start_year": -1500,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 30.32,
+    "location_lng": 76.38,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "고대 인도의 가장 오래된 문헌 중 하나이자 힌두교의 주요 경전인 베다 중 첫 번째입니다. 다양한 신들에게 바치는 찬가들을 담고 있으며, 인도 신화, 철학, 문화의 근원을 이루는 중요한 문헌입니다.",
+      "en": "One of ancient India's oldest texts and a primary Hindu Veda. It contains hymns to various deities, forming a foundational text for Indian mythology, philosophy, and culture."
+    },
+    "description": {
+      "ko": "고대 인도의 가장 오래된 문헌 중 하나이자 힌두교의 주요 경전인 베다 중 첫 번째입니다. 다양한 신들에게 바치는 찬가들을 담고 있으며, 인도 신화, 철학, 문화의 근원을 이루는 중요한 문헌입니다.",
+      "en": "One of ancient India's oldest texts and a primary Hindu Veda. It contains hymns to various deities, forming a foundational text for Indian mythology, philosophy, and culture."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q131489",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "티모테오에게 보낸 둘째 서간",
+      "en": "Second Epistle to Timothy"
+    },
+    "start_year": 67,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 목회서신 중 하나로, 사도 바울이 로마 감옥에서 순교 직전 디모데에게 보낸 편지로 알려져 있습니다. 기독교 신앙과 교회의 지도 원리를 담고 있어 후대 기독교 신학 및 교회 조직에 지대한 영향을 미쳤습니다.",
+      "en": "One of the Pastoral Epistles in the New Testament, traditionally attributed to Paul. It offers guidance on Christian faith and church leadership, profoundly influencing Christian theology."
+    },
+    "description": {
+      "ko": "신약성경의 목회서신 중 하나로, 사도 바울이 로마 감옥에서 순교 직전 디모데에게 보낸 편지로 알려져 있습니다. 기독교 신앙과 교회의 지도 원리를 담고 있어 후대 기독교 신학 및 교회 조직에 지대한 영향을 미쳤습니다.",
+      "en": "One of the Pastoral Epistles in the New Testament, traditionally attributed to Paul. It offers guidance on Christian faith and church leadership, profoundly influencing Christian theology."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q131493",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "티토에게 보낸 서간",
+      "en": "Epistle to Titus"
+    },
+    "start_year": 65,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 목회서신 중 하나로, 사도 바울이 크레타 교회의 지도자 디도에게 보낸 편지입니다. 교회의 조직과 지도자의 자격, 그리고 건전한 신앙생활에 대한 지침을 담고 있어 초기 기독교 공동체 형성에 중요한 역할을 했습니다.",
+      "en": "A Pastoral Epistle from the New Testament, traditionally by Paul to Titus. It provides guidance on church organization and leadership, crucial for early Christian communities."
+    },
+    "description": {
+      "ko": "신약성경의 목회서신 중 하나로, 사도 바울이 크레타 교회의 지도자 디도에게 보낸 편지입니다. 교회의 조직과 지도자의 자격, 그리고 건전한 신앙생활에 대한 지침을 담고 있어 초기 기독교 공동체 형성에 중요한 역할을 했습니다.",
+      "en": "A Pastoral Epistle from the New Testament, traditionally by Paul to Titus. It provides guidance on church organization and leadership, crucial for early Christian communities."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q131115",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "테살로니카 신자들에게 보낸 첫째 서간",
+      "en": "First Epistle to the Thessalonians"
+    },
+    "start_year": 51,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 40.6401,
+    "location_lng": 22.9444,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경에 포함된 사도 바울의 서신 중 하나로, 기독교 신약성경 중 가장 먼저 기록된 것으로 알려져 있습니다. 테살로니카 교회의 신자들에게 믿음과 사랑, 소망을 격려하고 그리스도의 재림에 대한 가르침을 전합니다.",
+      "en": "One of Paul's epistles in the New Testament, believed to be the earliest. It encourages faith, love, and hope, and teaches about Christ's return to the Thessalonian church."
+    },
+    "description": {
+      "ko": "신약성경에 포함된 사도 바울의 서신 중 하나로, 기독교 신약성경 중 가장 먼저 기록된 것으로 알려져 있습니다. 테살로니카 교회의 신자들에게 믿음과 사랑, 소망을 격려하고 그리스도의 재림에 대한 가르침을 전합니다.",
+      "en": "One of Paul's epistles in the New Testament, believed to be the earliest. It encourages faith, love, and hope, and teaches about Christ's return to the Thessalonian church."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q131107",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "테살로니카 신자들에게 보낸 둘째 서간",
+      "en": "Second Epistle to the Thessalonians"
+    },
+    "start_year": 52,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 40.6401,
+    "location_lng": 22.9444,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "신약성경의 사도 바울 서신 중 하나로, 테살로니카 교회의 신자들이 겪는 박해 속에서 믿음을 굳건히 하고, 그리스도의 재림에 대한 오해를 바로잡기 위해 쓰였습니다. 초기 기독교 공동체의 신앙적 혼란을 해결하는 데 기여했습니다.",
+      "en": "One of Paul's epistles, written to the Thessalonian church to strengthen their faith amidst persecution and correct misunderstandings about Christ's return, aiding early Christian communities."
+    },
+    "description": {
+      "ko": "신약성경의 사도 바울 서신 중 하나로, 테살로니카 교회의 신자들이 겪는 박해 속에서 믿음을 굳건히 하고, 그리스도의 재림에 대한 오해를 바로잡기 위해 쓰였습니다. 초기 기독교 공동체의 신앙적 혼란을 해결하는 데 기여했습니다.",
+      "en": "One of Paul's epistles, written to the Thessalonian church to strengthen their faith amidst persecution and correct misunderstandings about Christ's return, aiding early Christian communities."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q186587",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "트로이",
+      "en": "Troy"
+    },
+    "start_year": -1200,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 39.9575,
+    "location_lng": 26.2386,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "트로이 전쟁의 배경이 되는 고대 도시로, 4000년 이상의 역사를 가진 유적지입니다. 문명사적 가치가 매우 높으며, 고대 그리스 문학의 중요한 영감의 원천이 되었습니다. 호메로스의 서사시 '일리아스'를 통해 전 세계에 알려졌습니다.",
+      "en": "An ancient city, the setting of the Trojan War, with over 4000 years of history. It holds immense civilizational value and inspired ancient Greek literature."
+    },
+    "description": {
+      "ko": "트로이 전쟁의 배경이 되는 고대 도시로, 4000년 이상의 역사를 가진 유적지입니다. 문명사적 가치가 매우 높으며, 고대 그리스 문학의 중요한 영감의 원천이 되었습니다. 호메로스의 서사시 '일리아스'를 통해 전 세계에 알려졌습니다.",
+      "en": "An ancient city, the setting of the Trojan War, with over 4000 years of history. It holds immense civilizational value and inspired ancient Greek literature."
+    },
+    "external_link": "",
+    "_removeReason": "도시/지역"
+  },
+  {
+    "id": "Q236226",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "사마베다",
+      "en": "Samaveda"
+    },
+    "start_year": -1200,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 25.3176,
+    "location_lng": 82.9739,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도 고대 음악의 전통을 이해하는 데 중요한 힌두교 경전으로, 고대 인도 문명사에 지대한 영향을 미쳤습니다.",
+      "en": "A crucial Hindu scripture for understanding ancient Indian musical traditions, profoundly influencing the civilization's history."
+    },
+    "description": {
+      "ko": "인도 고대 음악의 전통을 이해하는 데 중요한 힌두교 경전으로, 고대 인도 문명사에 지대한 영향을 미쳤습니다.",
+      "en": "A crucial Hindu scripture for understanding ancient Indian musical traditions, profoundly influencing the civilization's history."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q202211",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "간디",
+      "en": "Gandhi"
+    },
+    "start_year": 1869,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 21.1702,
+    "location_lng": 72.8311,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "인도의 독립 운동을 지도하고 비폭력 저항 운동을 전개한 역사적 인물로, 인도 역사와 불가분의 관계이며 사회적 영향력이 입증되었습니다.",
+      "en": "A historical figure who led India's independence movement and nonviolent resistance, inextricably linked to Indian history and social impact."
+    },
+    "description": {
+      "ko": "인도의 독립 운동을 지도하고 비폭력 저항 운동을 전개한 역사적 인물로, 인도 역사와 불가분의 관계이며 사회적 영향력이 입증되었습니다.",
+      "en": "A historical figure who led India's independence movement and nonviolent resistance, inextricably linked to Indian history and social impact."
+    },
+    "external_link": "",
+    "_removeReason": "인물"
+  },
+  {
+    "id": "Q477108",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "인도의 헌법",
+      "en": "Constitution of India"
+    },
+    "start_year": 1950,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 28.6139,
+    "location_lng": 77.209,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "현대 인도의 최고 법률로서 인도의 정부 구조, 정치, 시민의 권리와 의무를 규정합니다. 인도의 독립과 민주주의 정착이라는 역사적 사건을 직접 다루며, 사회적 영향력이 입증된 중요한 문서입니다.",
+      "en": "The supreme law of modern India, defining its government structure, politics, and citizens' rights and duties. It directly addresses India's independence and democratic establishment."
+    },
+    "description": {
+      "ko": "현대 인도의 최고 법률로서 인도의 정부 구조, 정치, 시민의 권리와 의무를 규정합니다. 인도의 독립과 민주주의 정착이라는 역사적 사건을 직접 다루며, 사회적 영향력이 입증된 중요한 문서입니다.",
+      "en": "The supreme law of modern India, defining its government structure, politics, and citizens' rights and duties. It directly addresses India's independence and democratic establishment."
+    },
+    "external_link": "",
+    "_removeReason": "법률/제도"
+  },
+  {
+    "id": "Q189889",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "시카고",
+      "en": "Chicago"
+    },
+    "start_year": 1837,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 41.87,
+    "location_lng": -87.62,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "시카고는 19세기 중반부터 빠르게 성장하여 미국 경제, 교통, 문화의 중심지로 발전했으며, 재즈, 블루스, 하우스 음악의 기원 등 문화적 영향력이 큽니다. '바람의 도시'로 불리며 독특한 건축 양식으로도 유명합니다.",
+      "en": "Chicago rapidly grew from the mid-19th century into a major US economic, transport, and cultural hub, significantly influencing jazz, blues, and house music. Known as the 'Windy City,' it's also famous for its unique architecture."
+    },
+    "description": {
+      "ko": "시카고는 19세기 중반부터 빠르게 성장하여 미국 경제, 교통, 문화의 중심지로 발전했으며, 재즈, 블루스, 하우스 음악의 기원 등 문화적 영향력이 큽니다. '바람의 도시'로 불리며 독특한 건축 양식으로도 유명합니다.",
+      "en": "Chicago rapidly grew from the mid-19th century into a major US economic, transport, and cultural hub, significantly influencing jazz, blues, and house music. Known as the 'Windy City,' it's also famous for its unique architecture."
+    },
+    "external_link": "",
+    "_removeReason": "도시/지역"
+  },
+  {
+    "id": "Q187715",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "아사신",
+      "en": "Order of Assassins"
+    },
+    "start_year": 1090,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 36.4472,
+    "location_lng": 36.3408,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "11세기부터 13세기에 걸쳐 시리아와 페르시아 지역에서 활동했던 이슬람 시아파의 한 분파로, 암살을 통해 정치적 영향력을 행사했습니다. 특정 지역의 역사적 정체성과 밀접하며, 서양에 '암살자'라는 단어의 기원이 되었습니다.",
+      "en": "A branch of Shia Islam active in Syria and Persia from the 11th to 13th centuries, known for political assassinations. Closely tied to regional identity, it's the origin of 'assassin'."
+    },
+    "description": {
+      "ko": "11세기부터 13세기에 걸쳐 시리아와 페르시아 지역에서 활동했던 이슬람 시아파의 한 분파로, 암살을 통해 정치적 영향력을 행사했습니다. 특정 지역의 역사적 정체성과 밀접하며, 서양에 '암살자'라는 단어의 기원이 되었습니다.",
+      "en": "A branch of Shia Islam active in Syria and Persia from the 11th to 13th centuries, known for political assassinations. Closely tied to regional identity, it's the origin of 'assassin'."
+    },
+    "external_link": "",
+    "_removeReason": "개념/기타"
+  },
+  {
+    "id": "Q185144",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "start_year": -3000,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 48.691,
+    "location_lng": 9.1406,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "유럽 대륙 자체는 지리적, 문화적, 정치적 경계가 복합적으로 작용하며 서구 문화의 기원으로서 세계사에 지대한 영향을 미친 지역이므로 타임라인 지도의 중요한 기준점입니다.",
+      "en": "Europe, a continent with complex geographical, cultural, and political boundaries, is the origin of Western culture and a key historical reference."
+    },
+    "description": {
+      "ko": "유럽 대륙 자체는 지리적, 문화적, 정치적 경계가 복합적으로 작용하며 서구 문화의 기원으로서 세계사에 지대한 영향을 미친 지역이므로 타임라인 지도의 중요한 기준점입니다.",
+      "en": "Europe, a continent with complex geographical, cultural, and political boundaries, is the origin of Western culture and a key historical reference."
+    },
+    "external_link": "",
+    "_removeReason": "도시/지역"
+  },
+  {
+    "id": "Q210752",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "디다케",
+      "en": "Didache"
+    },
+    "start_year": 100,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 31.7683,
+    "location_lng": 35.2137,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "초기 기독교의 윤리, 의식, 교회 조직에 대한 중요한 가르침을 담고 있으며, 고대 교회 명령 장르의 첫 번째 사례로 여겨져 종교/철학 경전으로 문명사적 영향력을 지닌 작품입니다.",
+      "en": "An early Christian text containing vital teachings on ethics, rituals, and church organization, considered the first example of ancient church orders."
+    },
+    "description": {
+      "ko": "초기 기독교의 윤리, 의식, 교회 조직에 대한 중요한 가르침을 담고 있으며, 고대 교회 명령 장르의 첫 번째 사례로 여겨져 종교/철학 경전으로 문명사적 영향력을 지닌 작품입니다.",
+      "en": "An early Christian text containing vital teachings on ethics, rituals, and church organization, considered the first example of ancient church orders."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q131546",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "도마 복음서",
+      "en": "Gospel of Thomas"
+    },
+    "start_year": 140,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 29.9792,
+    "location_lng": 31.1342,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "초기 기독교 시대의 중요한 영지주의 경전 중 하나로, 예수의 숨겨진 말씀들을 담고 있어 정경 복음서와는 다른 관점을 제공하며 종교/철학 경전으로 문명사적 영향력이 있는 작품입니다.",
+      "en": "An important Gnostic gospel from early Christianity, containing hidden sayings of Jesus, offering a different perspective from canonical gospels."
+    },
+    "description": {
+      "ko": "초기 기독교 시대의 중요한 영지주의 경전 중 하나로, 예수의 숨겨진 말씀들을 담고 있어 정경 복음서와는 다른 관점을 제공하며 종교/철학 경전으로 문명사적 영향력이 있는 작품입니다.",
+      "en": "An important Gnostic gospel from early Christianity, containing hidden sayings of Jesus, offering a different perspective from canonical gospels."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q152456",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "뮌헨",
+      "en": "Munich"
+    },
+    "start_year": 2005,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 32.0853,
+    "location_lng": 34.7818,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "1972년 뮌헨 올림픽 테러 사건과 그에 대한 이스라엘의 보복 작전을 다룬 영화로, 역사적 사건을 직접 다루고 장소와 불가분한 관계에 있으며 정치적, 윤리적 질문을 던집니다.",
+      "en": "A film about the 1972 Munich Olympics massacre and Israel's retaliation, directly addressing a historical event and its inseparable link to the location."
+    },
+    "description": {
+      "ko": "1972년 뮌헨 올림픽 테러 사건과 그에 대한 이스라엘의 보복 작전을 다룬 영화로, 역사적 사건을 직접 다루고 장소와 불가분한 관계에 있으며 정치적, 윤리적 질문을 던집니다.",
+      "en": "A film about the 1972 Munich Olympics massacre and Israel's retaliation, directly addressing a historical event and its inseparable link to the location."
+    },
+    "external_link": "",
+    "_removeReason": "도시/지역"
+  },
+  {
+    "id": "Q221103",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "할로윈",
+      "en": "Halloween"
+    },
+    "start_year": -500,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 53,
+    "location_lng": -8,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "할로윈은 켈트족의 서우인 축제와 기독교의 만성절 전야가 결합되어 형성된 축제로, 그 기원과 확산 과정이 역사적, 문화적으로 중요한 의미를 지니며, 현대에 이르러 전 세계적으로 즐기는 축제가 되었습니다.",
+      "en": "Halloween originated from the Celtic festival Samhain and Christian All Hallow's Eve, evolving into a globally celebrated holiday with significant cultural roots."
+    },
+    "description": {
+      "ko": "할로윈은 켈트족의 서우인 축제와 기독교의 만성절 전야가 결합되어 형성된 축제로, 그 기원과 확산 과정이 역사적, 문화적으로 중요한 의미를 지니며, 현대에 이르러 전 세계적으로 즐기는 축제가 되었습니다.",
+      "en": "Halloween originated from the Celtic festival Samhain and Christian All Hallow's Eve, evolving into a globally celebrated holiday with significant cultural roots."
+    },
+    "external_link": "",
+    "_removeReason": "개념/기타"
+  },
+  {
+    "id": "Q18288",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "카튜샤",
+      "en": "Katyusha"
+    },
+    "start_year": 1941,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 55.75,
+    "location_lng": 37.62,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "제2차 세계 대전 당시 소련의 대표적인 로켓 발사기 이름으로, 전쟁의 상징적인 무기이며 당시의 역사적 사건과 직접적으로 관련이 있습니다. '스탈린의 오르간'으로도 불렸습니다.",
+      "en": "A symbolic Soviet rocket launcher of WWII, directly linked to historical events, also known as 'Stalin's Organ'."
+    },
+    "description": {
+      "ko": "제2차 세계 대전 당시 소련의 대표적인 로켓 발사기 이름으로, 전쟁의 상징적인 무기이며 당시의 역사적 사건과 직접적으로 관련이 있습니다. '스탈린의 오르간'으로도 불렸습니다.",
+      "en": "A symbolic Soviet rocket launcher of WWII, directly linked to historical events, also known as 'Stalin's Organ'."
+    },
+    "external_link": "",
+    "_removeReason": "전쟁사건"
+  },
+  {
+    "id": "Q185129",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "유다 복음서",
+      "en": "Gospel of Judas"
+    },
+    "start_year": 200,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 29.9792,
+    "location_lng": 31.1342,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "초기 기독교 시대의 영지주의 문헌으로, 유다 이스카리옷을 전통적인 배신자가 아닌 예수의 가르침을 이해한 인물로 재해석하여 종교사적 논쟁을 불러일으켰습니다.",
+      "en": "An early Gnostic text, it reinterprets Judas Iscariot not as a betrayer but as one who understood Jesus's teachings, sparking religious debate."
+    },
+    "description": {
+      "ko": "초기 기독교 시대의 영지주의 문헌으로, 유다 이스카리옷을 전통적인 배신자가 아닌 예수의 가르침을 이해한 인물로 재해석하여 종교사적 논쟁을 불러일으켰습니다.",
+      "en": "An early Gnostic text, it reinterprets Judas Iscariot not as a betrayer but as one who understood Jesus's teachings, sparking religious debate."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q272860",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "엘리펀트 맨",
+      "en": "The Elephant Man"
+    },
+    "start_year": 1891,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 51.5074,
+    "location_lng": -0.1278,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "조지프 메릭의 삶은 심각한 기형으로 인해 인간의 호기심 대상으로 전시되었던 역사적 사건을 직접 다루며, 그의 이야기는 당시 사회의 윤리적, 인도주의적 문제를 제기했습니다.",
+      "en": "The story of Joseph Merrick, 'The Elephant Man,' directly addresses the historical exhibition of his severe deformities, raising ethical and humanitarian questions of the era."
+    },
+    "description": {
+      "ko": "조지프 메릭의 삶은 심각한 기형으로 인해 인간의 호기심 대상으로 전시되었던 역사적 사건을 직접 다루며, 그의 이야기는 당시 사회의 윤리적, 인도주의적 문제를 제기했습니다.",
+      "en": "The story of Joseph Merrick, 'The Elephant Man,' directly addresses the historical exhibition of his severe deformities, raising ethical and humanitarian questions of the era."
+    },
+    "external_link": "",
+    "_removeReason": "인물"
+  },
+  {
+    "id": "Q27959455",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "로마",
+      "en": "Roma"
+    },
+    "start_year": -753,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "로마는 고대 로마 제국의 수도였으며, 천년 이상 서양 문명의 중심지 역할을 했고, 종교 및 철학적으로도 큰 영향을 미친 역사적 도시입니다. 서구 법률, 건축, 예술, 언어 등 전반적인 문화 형성에 지대한 공헌을 했습니다.",
+      "en": "Rome was the capital of the ancient Roman Empire, a center of Western civilization for over a millennium, and profoundly influenced religion and philosophy."
+    },
+    "description": {
+      "ko": "로마는 고대 로마 제국의 수도였으며, 천년 이상 서양 문명의 중심지 역할을 했고, 종교 및 철학적으로도 큰 영향을 미친 역사적 도시입니다. 서구 법률, 건축, 예술, 언어 등 전반적인 문화 형성에 지대한 공헌을 했습니다.",
+      "en": "Rome was the capital of the ancient Roman Empire, a center of Western civilization for over a millennium, and profoundly influenced religion and philosophy."
+    },
+    "external_link": "",
+    "_removeReason": "도시/지역"
+  },
+  {
+    "id": "Q746733",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "십계",
+      "en": "The Ten Commandments"
+    },
+    "start_year": -1300,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 29.5,
+    "location_lng": 34,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "유대교와 기독교의 핵심적인 종교/철학 경전으로, 문명사적 영향력이 매우 큰 작품입니다. 서구 법률, 윤리, 도덕 체계의 근간을 이루는 중요한 문서입니다.",
+      "en": "A core religious/philosophical text for Judaism and Christianity, it has immense civilizational impact. It is a foundational document for Western legal, ethical, and moral systems."
+    },
+    "description": {
+      "ko": "유대교와 기독교의 핵심적인 종교/철학 경전으로, 문명사적 영향력이 매우 큰 작품입니다. 서구 법률, 윤리, 도덕 체계의 근간을 이루는 중요한 문서입니다.",
+      "en": "A core religious/philosophical text for Judaism and Christianity, it has immense civilizational impact. It is a foundational document for Western legal, ethical, and moral systems."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q212180",
+    "era_id": "era-medieval-high",
+    "title": {
+      "ko": "코덱스 기가스",
+      "en": "Codex Gigas"
+    },
+    "start_year": 1229,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 49.95,
+    "location_lng": 14.4167,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "세계에서 가장 방대한 중세 필사본 중 하나로, 13세기 초 보헤미아 베네딕트 수도원에서 제작되었으며 악마의 그림으로 유명하여 역사적, 종교적,",
+      "en": "One of the largest medieval manuscripts, created in a Bohemian Benedictine monastery in the early 13th century, famous for its devil illustration."
+    },
+    "description": {
+      "ko": "세계에서 가장 방대한 중세 필사본 중 하나로, 13세기 초 보헤미아 베네딕트 수도원에서 제작되었으며 악마의 그림으로 유명하여 역사적, 종교적,",
+      "en": "One of the largest medieval manuscripts, created in a Bohemian Benedictine monastery in the early 13th century, famous for its devil illustration."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q371938",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "시카고",
+      "en": "Chicago"
+    },
+    "start_year": 1837,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 41.8781,
+    "location_lng": -87.6298,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "시카고는 오대호와 미시시피강을 잇는 교통의 요지로 발전하며 19세기 중반부터 빠르게 성장했고, 재즈, 블루스, 소울, 하우스 음악의 기원이 되는 문화적 중심지입니다.",
+      "en": "Chicago grew rapidly from the mid-19th century as a transport hub connecting the Great Lakes and Mississippi River, becoming a cultural center for jazz, blues, soul, and house music."
+    },
+    "description": {
+      "ko": "시카고는 오대호와 미시시피강을 잇는 교통의 요지로 발전하며 19세기 중반부터 빠르게 성장했고, 재즈, 블루스, 소울, 하우스 음악의 기원이 되는 문화적 중심지입니다.",
+      "en": "Chicago grew rapidly from the mid-19th century as a transport hub connecting the Great Lakes and Mississippi River, becoming a cultural center for jazz, blues, soul, and house music."
+    },
+    "external_link": "",
+    "_removeReason": "도시/지역"
+  },
+  {
+    "id": "Q244975",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "발렌타인 데이",
+      "en": "Valentine's Day"
+    },
+    "start_year": 269,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "발렌타인데이는 특정 종교적 인물에서 유래하여 현대에 연인들의 기념일로 발전한 역사적, 문화적 의미를 지니고 있으며, 전 세계적으로 널리 기념되는 날입니다. 사랑과 우정을 표현하는 상징적인 날로 자리매김하며 다양한 문화권에서 고유한 방식으로 기념되고 있습니다.",
+      "en": "Originating from a religious figure, Valentine's Day evolved into a global celebration of love and affection. It holds historical and cultural significance, symbolizing love and friendship across diverse cultures."
+    },
+    "description": {
+      "ko": "발렌타인데이는 특정 종교적 인물에서 유래하여 현대에 연인들의 기념일로 발전한 역사적, 문화적 의미를 지니고 있으며, 전 세계적으로 널리 기념되는 날입니다. 사랑과 우정을 표현하는 상징적인 날로 자리매김하며 다양한 문화권에서 고유한 방식으로 기념되고 있습니다.",
+      "en": "Originating from a religious figure, Valentine's Day evolved into a global celebration of love and affection. It holds historical and cultural significance, symbolizing love and friendship across diverse cultures."
+    },
+    "external_link": "",
+    "_removeReason": "개념/기타"
+  },
+  {
+    "id": "Q32503",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "워털루",
+      "en": "Waterloo"
+    },
+    "start_year": 1815,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 50.6784,
+    "location_lng": 4.4093,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "워털루 전투는 나폴레옹 전쟁의 종결을 알린 역사적으로 매우 중요한 사건입니다. 유럽의 정치 지형을 재편하고 근대사에 지대한 영향을 미쳤습니다.",
+      "en": "The Battle of Waterloo was a historically crucial event marking the end of the Napoleonic Wars. It reshaped Europe's political landscape and profoundly influenced modern history."
+    },
+    "description": {
+      "ko": "워털루 전투는 나폴레옹 전쟁의 종결을 알린 역사적으로 매우 중요한 사건입니다. 유럽의 정치 지형을 재편하고 근대사에 지대한 영향을 미쳤습니다.",
+      "en": "The Battle of Waterloo was a historically crucial event marking the end of the Napoleonic Wars. It reshaped Europe's political landscape and profoundly influenced modern history."
+    },
+    "external_link": "",
+    "_removeReason": "전쟁사건"
+  },
+  {
+    "id": "Q757370",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "경장",
+      "en": "Sutta Pitaka"
+    },
+    "start_year": -300,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 25,
+    "location_lng": 85,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "남아시아",
+      "en": "South Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "불교의 핵심 경전을 집대성한 작품으로, 문명사적 영향력이 매우 큽니다.",
+      "en": "A compilation of core Buddhist scriptures, this work holds immense civilizational influence."
+    },
+    "description": {
+      "ko": "불교의 핵심 경전을 집대성한 작품으로, 문명사적 영향력이 매우 큽니다.",
+      "en": "A compilation of core Buddhist scriptures, this work holds immense civilizational influence."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q604981",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "마리아의 복음서",
+      "en": "Gospel of Mary"
+    },
+    "start_year": 150,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 29.9792,
+    "location_lng": 31.1342,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "초기 기독교 문헌으로 종교/철학 경전에 해당하며, 문명사적 영향력이 있는 작품입니다. 콥트어로 기록된 영지주의 복음서 중 하나로, 막달라 마리아의 중요성과 예수의 가르침에 대한 독특한 관점을 제시하여 초기 기독교 사상 연구에 귀중한 자료를 제공합니다.",
+      "en": "An early Christian text, this Gnostic gospel offers unique insights into Mary Magdalene's significance and Jesus' teachings, impacting religious thought."
+    },
+    "description": {
+      "ko": "초기 기독교 문헌으로 종교/철학 경전에 해당하며, 문명사적 영향력이 있는 작품입니다. 콥트어로 기록된 영지주의 복음서 중 하나로, 막달라 마리아의 중요성과 예수의 가르침에 대한 독특한 관점을 제시하여 초기 기독교 사상 연구에 귀중한 자료를 제공합니다.",
+      "en": "An early Christian text, this Gnostic gospel offers unique insights into Mary Magdalene's significance and Jesus' teachings, impacting religious thought."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q114246242",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "F1",
+      "en": "F1"
+    },
+    "start_year": 1950,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 44.6384,
+    "location_lng": 10.9919,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "F1은 1950년부터 시작된 가장 오래된 자동차 경주 대회로, 자동차 경주라는 장르를 정립하고 대중화했으며, 기술 발전과 스포츠 문화에 큰 영향을 미쳤습니다. 전 세계적으로 수억 명의 팬을 보유하며 모터스포츠의 정점으로 군림하고 있으며, 혁신적인 기술과 스릴 넘치는 경기로 유명합니다.",
+      "en": "F1, starting in 1950, is the oldest car racing championship, establishing and popularizing the genre, and significantly influencing technology and sports culture."
+    },
+    "description": {
+      "ko": "F1은 1950년부터 시작된 가장 오래된 자동차 경주 대회로, 자동차 경주라는 장르를 정립하고 대중화했으며, 기술 발전과 스포츠 문화에 큰 영향을 미쳤습니다. 전 세계적으로 수억 명의 팬을 보유하며 모터스포츠의 정점으로 군림하고 있으며, 혁신적인 기술과 스릴 넘치는 경기로 유명합니다.",
+      "en": "F1, starting in 1950, is the oldest car racing championship, establishing and popularizing the genre, and significantly influencing technology and sports culture."
+    },
+    "external_link": "",
+    "_removeReason": "개념/기타"
+  },
+  {
+    "id": "Q670350",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "준주성범",
+      "en": "The Imitation of Christ"
+    },
+    "start_year": 1418,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 51.8125,
+    "location_lng": 5.8373,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전으로 문명사적 영향력이 있는 작품입니다. 기독교 영성 문학의 고전으로, 겸손, 순종, 내면의 평화를 강조하며 수많은 신자들에게 영적 지침을 제공해왔습니다. 전 세계적으로 가장 많이 읽힌 종교 서적 중 하나입니다.",
+      "en": "A religious/philosophical scripture with civilizational influence, this classic of Christian spirituality emphasizes humility and inner peace, guiding countless believers."
+    },
+    "description": {
+      "ko": "종교/철학 경전으로 문명사적 영향력이 있는 작품입니다. 기독교 영성 문학의 고전으로, 겸손, 순종, 내면의 평화를 강조하며 수많은 신자들에게 영적 지침을 제공해왔습니다. 전 세계적으로 가장 많이 읽힌 종교 서적 중 하나입니다.",
+      "en": "A religious/philosophical scripture with civilizational influence, this classic of Christian spirituality emphasizes humility and inner peace, guiding countless believers."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q60867",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "빌립 복음서",
+      "en": "Gospel of Philip"
+    },
+    "start_year": 250,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 29.9792,
+    "location_lng": 31.1342,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전에 해당하며, 문명사적 영향력이 있는 종교 경전으로 분류될 수 있습니다. 나그함마디 문서 중 하나로, 영지주의 기독교의 관점을 보여주며 초기 기독교의 다양성을 이해하는 데 중요합니다.",
+      "en": "A religious/philosophical text with civilizational impact, part of the Nag Hammadi library. It offers insights into Gnostic Christianity, crucial for understanding early Christian diversity."
+    },
+    "description": {
+      "ko": "종교/철학 경전에 해당하며, 문명사적 영향력이 있는 종교 경전으로 분류될 수 있습니다. 나그함마디 문서 중 하나로, 영지주의 기독교의 관점을 보여주며 초기 기독교의 다양성을 이해하는 데 중요합니다.",
+      "en": "A religious/philosophical text with civilizational impact, part of the Nag Hammadi library. It offers insights into Gnostic Christianity, crucial for understanding early Christian diversity."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q548844",
+    "era_id": "era-prehistoric",
+    "title": {
+      "ko": "마스토돈",
+      "en": "Mastodon"
+    },
+    "start_year": -27000000,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 40.7128,
+    "location_lng": -74.006,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "마스토돈은 제3기 마이오세에서 플라이스토세에 걸쳐 번성했던 고대 동물로, 인류와 공존했던 시기가 있어 역사적 사건을 직접 다루는 것으로 볼 수 있습니다. 고대 생태계와 인류의 초기 환경을 이해하는 데 중요합니다.",
+      "en": "Mastodons were ancient animals thriving from the Miocene to Pleistocene, coexisting with humans. They are crucial for understanding ancient ecosystems and early human environments."
+    },
+    "description": {
+      "ko": "마스토돈은 제3기 마이오세에서 플라이스토세에 걸쳐 번성했던 고대 동물로, 인류와 공존했던 시기가 있어 역사적 사건을 직접 다루는 것으로 볼 수 있습니다. 고대 생태계와 인류의 초기 환경을 이해하는 데 중요합니다.",
+      "en": "Mastodons were ancient animals thriving from the Miocene to Pleistocene, coexisting with humans. They are crucial for understanding ancient ecosystems and early human environments."
+    },
+    "external_link": "",
+    "_removeReason": "동물"
+  },
+  {
+    "id": "Q858036",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "연방주의자 논집",
+      "en": "Federalist Papers"
+    },
+    "start_year": 1787,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 40.71,
+    "location_lng": -74.01,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "1787년부터 1788년까지 뉴욕에서 출판된 '연방주의자 논집'은 미국 헌법 제정 과정과 그 해석에 지대한 영향을 미친 역사적 문서로, 사회적 영향력과 장소와의 불가분성 기준을 충족합니다. 제임스 매디슨, 알렉산더 해밀턴, 존 제이가 헌법의 비준을 설득하기 위해 작성한 에세이 모음입니다.",
+      "en": "Published in New York from 1787-1788, the 'Federalist Papers' profoundly influenced the U.S. Constitution's drafting and interpretation, fulfilling criteria for social impact."
+    },
+    "description": {
+      "ko": "1787년부터 1788년까지 뉴욕에서 출판된 '연방주의자 논집'은 미국 헌법 제정 과정과 그 해석에 지대한 영향을 미친 역사적 문서로, 사회적 영향력과 장소와의 불가분성 기준을 충족합니다. 제임스 매디슨, 알렉산더 해밀턴, 존 제이가 헌법의 비준을 설득하기 위해 작성한 에세이 모음입니다.",
+      "en": "Published in New York from 1787-1788, the 'Federalist Papers' profoundly influenced the U.S. Constitution's drafting and interpretation, fulfilling criteria for social impact."
+    },
+    "external_link": "",
+    "_removeReason": "법률/제도"
+  },
+  {
+    "id": "Q898808",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "헤르마스의 목자",
+      "en": "The Shepherd of Hermas"
+    },
+    "start_year": 150,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "2세기 후반 기독교 문학 작품으로, 초대 교회 교부들이 정경으로 여기고 2, 3, 4세기 기독교인들 사이에서 인기를 끌었던 종교/철학 경전입니다.",
+      "en": "A 2nd-century Christian literary work, considered canonical by early Church Fathers and popular among Christians in the 2nd, 3rd, and 4th centuries."
+    },
+    "description": {
+      "ko": "2세기 후반 기독교 문학 작품으로, 초대 교회 교부들이 정경으로 여기고 2, 3, 4세기 기독교인들 사이에서 인기를 끌었던 종교/철학 경전입니다.",
+      "en": "A 2nd-century Christian literary work, considered canonical by early Church Fathers and popular among Christians in the 2nd, 3rd, and 4th centuries."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q808428",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "바르나바 복음서",
+      "en": "Gospel of Barnabas"
+    },
+    "start_year": 1500,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 40.85,
+    "location_lng": 14.28,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전에 해당하며, 이슬람적 요소와 정경 복음서의 이야기를 조화시키고 쿠란의 가르침과 동시대적인 내용을 담고 있어 문명사적 영향력이 있습니다.",
+      "en": "A religious/philosophical text that harmonizes Islamic elements with canonical Gospel narratives and Quranic teachings, holding significant civilizational influence."
+    },
+    "description": {
+      "ko": "종교/철학 경전에 해당하며, 이슬람적 요소와 정경 복음서의 이야기를 조화시키고 쿠란의 가르침과 동시대적인 내용을 담고 있어 문명사적 영향력이 있습니다.",
+      "en": "A religious/philosophical text that harmonizes Islamic elements with canonical Gospel narratives and Quranic teachings, holding significant civilizational influence."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q506207",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "파킨슨의 법칙",
+      "en": "Parkinson's law"
+    },
+    "start_year": 1955,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 51.5074,
+    "location_lng": 0.1278,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "조직 내 관료주의 확산에 대한 통찰을 제공하며 사회적 영향력을 입증한 작품입니다.",
+      "en": "This work provides insight into the spread of bureaucracy within organizations and has proven its social impact."
+    },
+    "description": {
+      "ko": "조직 내 관료주의 확산에 대한 통찰을 제공하며 사회적 영향력을 입증한 작품입니다.",
+      "en": "This work provides insight into the spread of bureaucracy within organizations and has proven its social impact."
+    },
+    "external_link": "",
+    "_removeReason": "비artworks"
+  },
+  {
+    "id": "Q762054",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "베드로의 복음서",
+      "en": "Gospel of Peter"
+    },
+    "start_year": 150,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 30.0444,
+    "location_lng": 31.2357,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전으로, 문명사적 영향력이 있는 외전 복음서입니다.",
+      "en": "A religious/philosophical scripture, an apocryphal gospel with civilizational influence."
+    },
+    "description": {
+      "ko": "종교/철학 경전으로, 문명사적 영향력이 있는 외전 복음서입니다.",
+      "en": "A religious/philosophical scripture, an apocryphal gospel with civilizational influence."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q20666646",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "할로윈",
+      "en": "Halloween"
+    },
+    "start_year": -500,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 53.4129,
+    "location_lng": -8.2439,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "할로윈은 켈트족의 서우인 축제와 기독교의 만성절 전야가 결합된 역사적, 종교적 기원을 가지며, 전 세계적으로 퍼져나간 문화 현상으로 역사적 사건과 밀접하게 연결되어 있습니다. 고대 풍습이 현대 문화로 이어진 대표적인 사례입니다.",
+      "en": "Halloween has historical and religious origins, combining the Celtic festival of Samhain and All Hallows' Eve. It's a global cultural phenomenon closely linked to historical events, a prime example of ancient customs evolving into modern culture."
+    },
+    "description": {
+      "ko": "할로윈은 켈트족의 서우인 축제와 기독교의 만성절 전야가 결합된 역사적, 종교적 기원을 가지며, 전 세계적으로 퍼져나간 문화 현상으로 역사적 사건과 밀접하게 연결되어 있습니다. 고대 풍습이 현대 문화로 이어진 대표적인 사례입니다.",
+      "en": "Halloween has historical and religious origins, combining the Celtic festival of Samhain and All Hallows' Eve. It's a global cultural phenomenon closely linked to historical events, a prime example of ancient customs evolving into modern culture."
+    },
+    "external_link": "",
+    "_removeReason": "개념/기타"
+  },
+  {
+    "id": "Q158069",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "올림피아",
+      "en": "Olympia"
+    },
+    "start_year": 1938,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 52.52,
+    "location_lng": 13.405,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "1936년 베를린 올림픽이라는 역사적 사건을 직접 다루고, 영상 기술적으로 혁신적인 기법을 선보여 후대의 표준을 제시한 작품입니다.",
+      "en": "A groundbreaking film documenting the 1936 Berlin Olympics, it introduced innovative cinematic techniques that set new standards for future documentaries."
+    },
+    "description": {
+      "ko": "1936년 베를린 올림픽이라는 역사적 사건을 직접 다루고, 영상 기술적으로 혁신적인 기법을 선보여 후대의 표준을 제시한 작품입니다.",
+      "en": "A groundbreaking film documenting the 1936 Berlin Olympics, it introduced innovative cinematic techniques that set new standards for future documentaries."
+    },
+    "external_link": "",
+    "_removeReason": "스포츠"
+  },
+  {
+    "id": "Q149441",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "사마리아 오경",
+      "en": "Samaritan Pentateuch"
+    },
+    "start_year": -400,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 32.2217,
+    "location_lng": 35.2662,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "사마리아교의 핵심 경전으로, 유대교 경전과 다른 고유한 계명을 포함하며 종교 및 문명사적 영향력이 큰 작품입니다. 고대 이스라엘의 종교적 다양성을 보여줍니다.",
+      "en": "The core scripture of Samaritanism, it contains unique commandments differing from Jewish texts, holding significant religious and civilizational impact."
+    },
+    "description": {
+      "ko": "사마리아교의 핵심 경전으로, 유대교 경전과 다른 고유한 계명을 포함하며 종교 및 문명사적 영향력이 큰 작품입니다. 고대 이스라엘의 종교적 다양성을 보여줍니다.",
+      "en": "The core scripture of Samaritanism, it contains unique commandments differing from Jewish texts, holding significant religious and civilizational impact."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q1604818",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "워털루",
+      "en": "Waterloo"
+    },
+    "start_year": 1815,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 50.6786,
+    "location_lng": 4.4093,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "나폴레옹 보나파르트의 삶과 프랑스 제1제국의 역사를 직접적으로 다루며, 나폴레옹 법전과 군사 전략 등 역사에 지대한 영향을 미친 인물과 사건을 배경으로 합니다. 워털루 전투는 나폴레옹 시대의 종말을 알리는 결정적인 사건으로, 유럽 역사에 큰 전환점이 되었습니다.",
+      "en": "The decisive battle in 1815 that marked the end of Napoleon Bonaparte's reign and the First French Empire, profoundly impacting European history."
+    },
+    "description": {
+      "ko": "나폴레옹 보나파르트의 삶과 프랑스 제1제국의 역사를 직접적으로 다루며, 나폴레옹 법전과 군사 전략 등 역사에 지대한 영향을 미친 인물과 사건을 배경으로 합니다. 워털루 전투는 나폴레옹 시대의 종말을 알리는 결정적인 사건으로, 유럽 역사에 큰 전환점이 되었습니다.",
+      "en": "The decisive battle in 1815 that marked the end of Napoleon Bonaparte's reign and the First French Empire, profoundly impacting European history."
+    },
+    "external_link": "",
+    "_removeReason": "전쟁사건"
+  },
+  {
+    "id": "Q662436",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "돈",
+      "en": "Don"
+    },
+    "start_year": -3000,
+    "end_year": null,
+    "category": "기타",
+    "location_lat": 30.0444,
+    "location_lng": 31.2357,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "돈은 인류 문명의 역사에서 교환, 가치 저장, 회계 단위의 기능을 수행하며 사회 경제 시스템의 근간을 이루는 핵심 개념이므로 역사적 사건을 직접 다루는 작품에 해당합니다. 고대 메소포타미아의 조개껍데기부터 현대의 디지털 화폐까지, 돈은 인류의 발전과 함께 진화해왔습니다.",
+      "en": "Money, a fundamental concept in human civilization, has served as a medium of exchange, store of value, and unit of account, evolving with human progress."
+    },
+    "description": {
+      "ko": "돈은 인류 문명의 역사에서 교환, 가치 저장, 회계 단위의 기능을 수행하며 사회 경제 시스템의 근간을 이루는 핵심 개념이므로 역사적 사건을 직접 다루는 작품에 해당합니다. 고대 메소포타미아의 조개껍데기부터 현대의 디지털 화폐까지, 돈은 인류의 발전과 함께 진화해왔습니다.",
+      "en": "Money, a fundamental concept in human civilization, has served as a medium of exchange, store of value, and unit of account, evolving with human progress."
+    },
+    "external_link": "",
+    "_removeReason": "개념/기타"
+  },
+  {
+    "id": "Q734504",
+    "era_id": "era-roman",
+    "title": {
+      "ko": "진리의 복음서",
+      "en": "Gospel of Truth"
+    },
+    "start_year": 150,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 29.9792,
+    "location_lng": 31.1342,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전으로, 문명사적 영향력이 있는 영지주의 문헌에 해당하며, 나그함마디 문서 중 하나로 초기 기독교 영지주의 연구에 중요한 자료입니다.",
+      "en": "A Gnostic text with civilizational influence, this religious/philosophical scripture is a key Nag Hammadi document for early Christian Gnosticism."
+    },
+    "description": {
+      "ko": "종교/철학 경전으로, 문명사적 영향력이 있는 영지주의 문헌에 해당하며, 나그함마디 문서 중 하나로 초기 기독교 영지주의 연구에 중요한 자료입니다.",
+      "en": "A Gnostic text with civilizational influence, this religious/philosophical scripture is a key Nag Hammadi document for early Christian Gnosticism."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q1217715",
+    "era_id": "era-ancient-early",
+    "title": {
+      "ko": "십계",
+      "en": "The Ten Commandments"
+    },
+    "start_year": -1300,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 28.5,
+    "location_lng": 33.9,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중동",
+      "en": "Middle East"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "종교/철학 경전으로, 문명사적 영향력이 매우 큰 작품입니다.",
+      "en": "A religious/philosophical scripture with immense civilizational impact."
+    },
+    "description": {
+      "ko": "종교/철학 경전으로, 문명사적 영향력이 매우 큰 작품입니다.",
+      "en": "A religious/philosophical scripture with immense civilizational impact."
+    },
+    "external_link": "",
+    "_removeReason": "종교경전/서간"
+  },
+  {
+    "id": "Q470600",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "독일 이데올로기",
+      "en": "The German Ideology"
+    },
+    "start_year": 1846,
+    "end_year": null,
+    "category": "종교/철학",
+    "location_lat": 50.93,
+    "location_lng": 6.95,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "카를 마르크스와 프리드리히 엥겔스의 공동 저작으로, 헤겔 이후 독일 철학과 독일 사회주의를 비판하며 마르크스주의의 형성에 중요한 영향을 미친 철학서입니다. 유물론적 역사관과 계급 투쟁 이론의 기초를 다진 작품으로, 현대 사회과학과 정치 사상에 지대한 영향을 주었습니다.",
+      "en": "A foundational work by Marx and Engels, 'The German Ideology' critiqued German philosophy and socialism, significantly shaping Marxist thought and historical materialism."
+    },
+    "description": {
+      "ko": "카를 마르크스와 프리드리히 엥겔스의 공동 저작으로, 헤겔 이후 독일 철학과 독일 사회주의를 비판하며 마르크스주의의 형성에 중요한 영향을 미친 철학서입니다. 유물론적 역사관과 계급 투쟁 이론의 기초를 다진 작품으로, 현대 사회과학과 정치 사상에 지대한 영향을 주었습니다.",
+      "en": "A foundational work by Marx and Engels, 'The German Ideology' critiqued German philosophy and socialism, significantly shaping Marxist thought and historical materialism."
+    },
+    "external_link": "",
+    "_removeReason": "정치선언문"
+  }
+]
