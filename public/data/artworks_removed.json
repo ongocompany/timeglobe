@@ -23966,5 +23966,741 @@
       "en": "\"Hávamál\" (800 BCE) is a European literary work of considerable importance. Rooted in the cultural soil of its time and place, it achieved both critical and popular recognition. The work's exploration of universal themes through a regional lens has secured its lasting place in world literature."
     },
     "external_link": ""
+  },
+  {
+    "id": "ART_EA_900030",
+    "era_id": "era-medieval-early",
+    "title": {
+      "ko": "안진경 서예",
+      "en": "Yan Zhenqing's Calligraphy"
+    },
+    "start_year": 770,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 34.26,
+    "location_lng": 108.94,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "당나라 서예가 안진경의 해서·행서. 웅건하고 장엄한 필체로 '안체'를 확립했다.",
+      "en": "Calligraphy of Yan Zhenqing establishing the 'Yan style' with its bold, majestic strokes in Tang dynasty."
+    },
+    "description": {
+      "ko": "'안진경 서예'은(는) 770년경 동아시아에서 창작된 미술 작품으로, 중세 초기의 시각 예술을 이해하는 데 중요한 열쇠이다. 이 작품에 담긴 조형미와 상징성은 당대 사회의 미적 이상을 반영한다. 후대 예술가들에게 지속적인 영향을 미쳤으며, 오늘날까지 미술사적 가치를 인정받고 있다. 세계 미술 유산의 중요한 일부이다.",
+      "en": "'Yan Zhenqing's Calligraphy' (770) is a defining visual art work from East Asia that encapsulates the spirit of the early medieval period. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900055",
+    "era_id": "era-enlightenment",
+    "title": {
+      "ko": "팔대산인 회화",
+      "en": "Paintings of Bada Shanren"
+    },
+    "start_year": 1670,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 28.68,
+    "location_lng": 115.89,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "명 황실 후예인 팔대산인(주답)의 수묵화. 극도로 절제된 필치와 기괴한 눈의 새·물고기가 특징이다.",
+      "en": "Ink paintings by Bada Shanren (Zhu Da), Ming royalty, known for extreme restraint and eerily expressive birds and fish."
+    },
+    "description": {
+      "ko": "'팔대산인 회화'(Paintings of Bada Shanren)은(는) 동아시아에서 1670년경에 탄생한 미술 작품이다. 17세기 특유의 미적 이상을 구현하면서도 독자적인 예술 세계를 구축했다. 재료의 사용과 표현 기법에서 당대 최고 수준의 장인 정신이 드러난다. 이 작품은 동아시아 미술 전통의 핵심을 보여주는 걸작으로 인정받고 있다.",
+      "en": "'Paintings of Bada Shanren' (1670) is a defining visual art work from East Asia that encapsulates the spirit of the 17th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900063",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "문징명 서화",
+      "en": "Calligraphy and Painting of Wen Zhengming"
+    },
+    "start_year": 1520,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 31.3,
+    "location_lng": 120.6,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "명대 오파(吳派) 대가 문징명의 서화. 문인화의 이상을 세련되게 구현했다.",
+      "en": "Calligraphy and paintings of Wen Zhengming, Wu School master embodying the literati painting ideal."
+    },
+    "description": {
+      "ko": "동아시아의 '문징명 서화'은(는) 1520년에 제작되어 르네상스 시기의 미술을 대표하는 작품이다. 시대적 배경과 문화적 맥락이 작품 전반에 깊이 스며들어 있으며, 예술적 표현의 새로운 가능성을 제시했다. 미술 애호가와 연구자 모두에게 높은 평가를 받는 작품이다.",
+      "en": "'Calligraphy and Painting of Wen Zhengming' (1520) is a defining visual art work from East Asia that encapsulates the spirit of the Renaissance. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900084",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "아이웨이웨이",
+      "en": "Ai Weiwei's Art"
+    },
+    "start_year": 2008,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 39.9,
+    "location_lng": 116.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 현대미술가 아이웨이웨이의 작품 세계. 정치적 저항과 인권을 예술로 표현하는 행동주의 예술가이다.",
+      "en": "Art of Ai Weiwei, activist artist expressing political resistance and human rights through contemporary art."
+    },
+    "description": {
+      "ko": "2008년에 만들어진 '아이웨이웨이'은(는) 동아시아 미술사의 중요한 이정표이다. 21세기의 예술적 감수성과 기법을 반영하며, 독특한 시각적 언어로 관람자에게 깊은 인상을 남긴다. 이 작품은 창작된 이후 수많은 예술가에게 영감의 원천이 되었다.",
+      "en": "'Ai Weiwei's Art' (2008) is a defining visual art work from East Asia that encapsulates the spirit of the 21st century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900085",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "모옌 문학",
+      "en": "Literature of Mo Yan"
+    },
+    "start_year": 1987,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 36.07,
+    "location_lng": 119.17,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "2012 노벨문학상 수상자 모옌의 소설 세계. '홍가오량 가족' 등 환각적 리얼리즘으로 중국 농촌을 그렸다.",
+      "en": "Literature of Nobel laureate Mo Yan, depicting rural China through hallucinatory realism in works like 'Red Sorghum Clan.'"
+    },
+    "description": {
+      "ko": "'모옌 문학'(Literature of Mo Yan)은(는) 1987년경에 탄생한 동아시아의 문학 작품이다. 20세기 말 당시의 지적·예술적 분위기를 배경으로, 독자적인 문체와 서사로 문학계에 새로운 가능성을 열었다. 이 작품이 지닌 문학적 깊이와 역사적 의의는 시대를 초월하여 꾸준히 재조명되고 있다. 동아시아 문학의 정전으로서 그 가치가 확고하다.",
+      "en": "Dating to 1987, 'Literature of Mo Yan' represents one of East Asia's most important literary contributions from the late 20th century. The work demonstrated remarkable originality and craftsmanship, earning recognition both in its time and in subsequent centuries. It continues to inspire scholars and audiences alike with its artistic vision and cultural significance."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900094",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "주윤발의 영화",
+      "en": "Films of Chow Yun-fat"
+    },
+    "start_year": 1986,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 22.28,
+    "location_lng": 114.17,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "홍콩",
+      "en": "Hong Kong"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "주윤발이 출연한 홍콩 느와르 영화들. '영웅본색' 시리즈로 홍콩 느와르의 아이콘이 되었다.",
+      "en": "Hong Kong noir films starring Chow Yun-fat, who became an icon with 'A Better Tomorrow' series."
+    },
+    "description": {
+      "ko": "'주윤발의 영화'은(는) 1986년에 동아시아에서 개봉한 영화로, 20세기 말의 영화 예술을 대표하는 작품 중 하나이다. 당대의 사회적 현실과 인간 본성에 대한 통찰을 영화적 서사로 풀어냈다. 이 영화는 관객에게 깊은 감동을 주었을 뿐 아니라, 후대 영화인들에게도 큰 영감을 제공했다.",
+      "en": "'Films of Chow Yun-fat' (1986) is a defining cinematic work from East Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900096",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "C-pop의 발전",
+      "en": "Rise of C-pop"
+    },
+    "start_year": 2000,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 31.23,
+    "location_lng": 121.47,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "2000년대 이후 발전한 중국 대중음악(C-pop). 저우제룬 등이 이끈 중화권 팝음악의 새 물결이다.",
+      "en": "Chinese pop music (C-pop) wave led by Jay Chou and others, expanding Chinese-language pop since the 2000s."
+    },
+    "description": {
+      "ko": "동아시아의 'C-pop의 발전'은(는) 2000년에 세상에 나와 20세기 말 음악을 대표하는 작품이 되었다. 창작자의 예술적 비전이 음악적 형식을 통해 완벽하게 구현되었으며, 당시 음악 문화에 새로운 방향을 제시했다. 이 작품이 끼친 영향은 음악사 전반에 걸쳐 감지된다. 세대를 넘어 꾸준히 재해석되고 있다.",
+      "en": "'Rise of C-pop' (2000) is a defining musical work from East Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900103",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "쉬빙의 현대미술",
+      "en": "Art of Xu Bing"
+    },
+    "start_year": 1988,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 39.9,
+    "location_lng": 116.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 현대미술가 쉬빙의 작품. '천서'·'지서' 등 문자와 의미의 경계를 탐구하는 설치미술이다.",
+      "en": "Art of Xu Bing exploring boundaries of language and meaning through installations like 'Book from the Sky.'"
+    },
+    "description": {
+      "ko": "'쉬빙의 현대미술'은(는) 1988년경 동아시아에서 창작된 미술 작품으로, 20세기 말의 시각 예술을 이해하는 데 중요한 열쇠이다. 이 작품에 담긴 조형미와 상징성은 당대 사회의 미적 이상을 반영한다. 후대 예술가들에게 지속적인 영향을 미쳤으며, 오늘날까지 미술사적 가치를 인정받고 있다. 세계 미술 유산의 중요한 일부이다.",
+      "en": "'Art of Xu Bing' (1988) is a defining visual art work from East Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900105",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "조무극의 음악",
+      "en": "Music of Zhao Wuji (Zao Wou-Ki)"
+    },
+    "start_year": 1950,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 31.23,
+    "location_lng": 121.47,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "자오우키(조무극)의 추상회화. 동양 서예의 기운과 서양 추상을 융합한 서정적 추상표현주의이다.",
+      "en": "Abstract paintings of Zao Wou-Ki fusing Eastern calligraphic energy with Western abstraction in lyrical expressionism."
+    },
+    "description": {
+      "ko": "1950년에 만들어진 '조무극의 음악'은(는) 동아시아 미술사의 중요한 이정표이다. 전후 시기의 예술적 감수성과 기법을 반영하며, 독특한 시각적 언어로 관람자에게 깊은 인상을 남긴다. 이 작품은 창작된 이후 수많은 예술가에게 영감의 원천이 되었다.",
+      "en": "'Music of Zhao Wuji (Zao Wou-Ki)' (1950) is a defining visual art work from East Asia that encapsulates the spirit of the postwar period. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900110",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "천이페이 영화",
+      "en": "Cinema of Tsai Ming-liang"
+    },
+    "start_year": 1992,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 25.03,
+    "location_lng": 121.57,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "대만",
+      "en": "Taiwan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "대만의 차이밍량 감독 영화들. 미니멀한 연출과 롱테이크로 도시인의 고독과 욕망을 탐구한다.",
+      "en": "Films of Tsai Ming-liang exploring urban solitude and desire through minimalist direction and long takes."
+    },
+    "description": {
+      "ko": "'천이페이 영화'은(는) 1992년에 동아시아에서 개봉한 영화로, 20세기 말의 영화 예술을 대표하는 작품 중 하나이다. 당대의 사회적 현실과 인간 본성에 대한 통찰을 영화적 서사로 풀어냈다. 이 영화는 관객에게 깊은 감동을 주었을 뿐 아니라, 후대 영화인들에게도 큰 영감을 제공했다.",
+      "en": "'Cinema of Tsai Ming-liang' (1992) is a defining cinematic work from East Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900137",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "키아로스타미 영화",
+      "en": "Cinema of Abbas Kiarostami"
+    },
+    "start_year": 1990,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 35.69,
+    "location_lng": 51.39,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "이란",
+      "en": "Iran"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이란 감독 압바스 키아로스타미의 영화들. '친구네 집은 어디인가'·'체리 향기' 등으로 미니멀리즘 영화의 거장이다.",
+      "en": "Films of Abbas Kiarostami, master of minimalist cinema with 'Where Is the Friend's Home?' and 'Taste of Cherry.'"
+    },
+    "description": {
+      "ko": "'키아로스타미 영화'(Cinema of Abbas Kiarostami)은(는) 1990년에 중앙아시아에서 만들어진 영화이다. 20세기 말의 영화 산업과 예술적 경향을 반영하면서도 독자적인 스타일을 확립했다. 이 영화의 주제 의식과 기술적 혁신은 영화사적으로 중요한 전환점을 마련했다.",
+      "en": "'Cinema of Abbas Kiarostami' (1990) is a defining cinematic work from Central Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900139",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "이란 서예",
+      "en": "Iranian Calligraphy (Nastaʿlīq)"
+    },
+    "start_year": 1400,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 32.65,
+    "location_lng": 51.68,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "이란",
+      "en": "Iran"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "이란의 나스탈리크 서체 서예. 페르시아어 필사의 아름다움을 극대화한 이슬람 서예의 한 정점이다.",
+      "en": "Iranian Nastaʿlīq calligraphy maximizing the beauty of Persian script, a pinnacle of Islamic calligraphic art."
+    },
+    "description": {
+      "ko": "'이란 서예'은(는) 1400년경 중앙아시아에서 창작된 미술 작품으로, 중세 후기에서 르네상스 시기의 시각 예술을 이해하는 데 중요한 열쇠이다. 이 작품에 담긴 조형미와 상징성은 당대 사회의 미적 이상을 반영한다. 후대 예술가들에게 지속적인 영향을 미쳤으며, 오늘날까지 미술사적 가치를 인정받고 있다. 세계 미술 유산의 중요한 일부이다.",
+      "en": "'Iranian Calligraphy (Nastaʿlīq)' (1400) is a defining visual art work from Central Asia that encapsulates the spirit of the late medieval and Renaissance period. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900152",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "키르기스 펠트 예술",
+      "en": "Kyrgyz Felt Art (Shyrdak)"
+    },
+    "start_year": 1700,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 42.87,
+    "location_lng": 74.59,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "카자흐스탄",
+      "en": "Kazakhstan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "키르기스의 전통 펠트 카펫(시르닥) 예술. 유목 생활에서 발전한 화려한 색상의 직물 공예이다.",
+      "en": "Traditional Kyrgyz felt carpet (shyrdak) art, a vibrant textile craft developed from nomadic life."
+    },
+    "description": {
+      "ko": "1700년에 만들어진 '키르기스 펠트 예술'은(는) 중앙아시아 미술사의 중요한 이정표이다. 17세기의 예술적 감수성과 기법을 반영하며, 독특한 시각적 언어로 관람자에게 깊은 인상을 남긴다. 이 작품은 창작된 이후 수많은 예술가에게 영감의 원천이 되었다.",
+      "en": "'Kyrgyz Felt Art (Shyrdak)' (1700) is a defining visual art work from Central Asia that encapsulates the spirit of the 17th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900201",
+    "era_id": "era-classical",
+    "title": {
+      "ko": "관자",
+      "en": "Guanzi"
+    },
+    "start_year": -645,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 36.81,
+    "location_lng": 118.05,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "관중의 정치경제 사상서. 부국강병과 경제 관리를 논한 중국 최초의 정치경제학 저작이다.",
+      "en": "Political-economic treatise attributed to Guan Zhong, China's earliest work on political economy."
+    },
+    "description": {
+      "ko": "'관자'(Guanzi)은(는) 기원전 645년경에 탄생한 동아시아의 문학 작품이다. 고대 당시의 지적·예술적 분위기를 배경으로, 독자적인 문체와 서사로 문학계에 새로운 가능성을 열었다. 이 작품이 지닌 문학적 깊이와 역사적 의의는 시대를 초월하여 꾸준히 재조명되고 있다. 동아시아 문학의 정전으로서 그 가치가 확고하다.",
+      "en": "'Guanzi' (645 BCE) is a defining literary work from East Asia that encapsulates the spirit of antiquity. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900213",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "심주 회화",
+      "en": "Paintings of Shen Zhou"
+    },
+    "start_year": 1480,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 31.3,
+    "location_lng": 120.6,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "명대 오파(吳派)의 창시자 심주의 산수화. 소박하고 온후한 필치로 문인화의 이상을 구현했다.",
+      "en": "Paintings of Shen Zhou, founder of the Wu School, embodying literati painting ideals."
+    },
+    "description": {
+      "ko": "'심주 회화'(Paintings of Shen Zhou)은(는) 동아시아에서 1480년경에 탄생한 미술 작품이다. 중세 후기에서 르네상스 시기 특유의 미적 이상을 구현하면서도 독자적인 예술 세계를 구축했다. 재료의 사용과 표현 기법에서 당대 최고 수준의 장인 정신이 드러난다. 이 작품은 동아시아 미술 전통의 핵심을 보여주는 걸작으로 인정받고 있다.",
+      "en": "'Paintings of Shen Zhou' (1480) is a defining visual art work from East Asia that encapsulates the spirit of the late medieval and Renaissance period. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900225",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "허진 소설",
+      "en": "Novels of Ha Jin"
+    },
+    "start_year": 1999,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 39.9,
+    "location_lng": 116.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "미국 거주 중국 작가 허진의 소설 '기다림'. 문화대혁명 시대를 그려 내셔널북어워드를 수상했다.",
+      "en": "Novel 'Waiting' by Ha Jin about the Cultural Revolution era, winning the National Book Award."
+    },
+    "description": {
+      "ko": "동아시아에서 1999년에 나온 '허진 소설'은(는) 20세기 말를 대표하는 문학 작품 중 하나이다. 당시 사회·문화적 환경 속에서 탄생한 이 작품은 인간 조건에 대한 깊은 성찰을 담고 있었다. 문학적 완성도와 주제의 보편성 덕분에 여러 언어로 번역되어 국제적 명성을 얻었다.",
+      "en": "'Novels of Ha Jin' (1999) is a defining literary work from East Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900230",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "이탁오 사상",
+      "en": "Thought of Li Zhi"
+    },
+    "start_year": 1590,
+    "end_year": null,
+    "category": "문학",
+    "location_lat": 25.07,
+    "location_lng": 118.58,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "명말 이단적 사상가 이탁오의 저작. '분서'로 유교 정통에 도전한 자유사상가이다.",
+      "en": "Works of Li Zhi, a heterodox Ming thinker who challenged Confucian orthodoxy."
+    },
+    "description": {
+      "ko": "'이탁오 사상'(Thought of Li Zhi)은(는) 1590년경에 탄생한 동아시아의 문학 작품이다. 르네상스 시기 당시의 지적·예술적 분위기를 배경으로, 독자적인 문체와 서사로 문학계에 새로운 가능성을 열었다. 이 작품이 지닌 문학적 깊이와 역사적 의의는 시대를 초월하여 꾸준히 재조명되고 있다. 동아시아 문학의 정전으로서 그 가치가 확고하다.",
+      "en": "'Thought of Li Zhi' (1590) is a defining literary work from East Asia that encapsulates the spirit of the Renaissance. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900234",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "중국 그래픽노블",
+      "en": "Chinese Graphic Novel Art"
+    },
+    "start_year": 2010,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 39.9,
+    "location_lng": 116.4,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "중국",
+      "en": "China"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "중국 현대 그래픽노블과 만화 예술. 웹툰 플랫폼의 발전으로 새로운 시각 서사를 개척하고 있다.",
+      "en": "Chinese contemporary graphic novels pioneering new visual narratives through webtoon platforms."
+    },
+    "description": {
+      "ko": "'중국 그래픽노블'(Chinese Graphic Novel Art)은(는) 동아시아에서 2010년경에 탄생한 미술 작품이다. 21세기 특유의 미적 이상을 구현하면서도 독자적인 예술 세계를 구축했다. 재료의 사용과 표현 기법에서 당대 최고 수준의 장인 정신이 드러난다. 이 작품은 동아시아 미술 전통의 핵심을 보여주는 걸작으로 인정받고 있다.",
+      "en": "'Chinese Graphic Novel Art' (2010) is a defining visual art work from East Asia that encapsulates the spirit of the 21st century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900236",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "오우양나나의 첼로",
+      "en": "Ouyang Nana Cello"
+    },
+    "start_year": 2015,
+    "end_year": null,
+    "category": "음악",
+    "location_lat": 25.03,
+    "location_lng": 121.57,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동아시아",
+      "en": "East Asia"
+    },
+    "modern_country": {
+      "ko": "대만",
+      "en": "Taiwan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "대만 첼리스트 오우양나나의 연주. 10대에 데뷔해 클래식과 대중을 잇는 젊은 음악가이다.",
+      "en": "Performances of Taiwanese cellist Ouyang Nana, bridging classical and popular music."
+    },
+    "description": {
+      "ko": "동아시아의 '오우양나나의 첼로'은(는) 2015년에 세상에 나와 21세기 음악을 대표하는 작품이 되었다. 창작자의 예술적 비전이 음악적 형식을 통해 완벽하게 구현되었으며, 당시 음악 문화에 새로운 방향을 제시했다. 이 작품이 끼친 영향은 음악사 전반에 걸쳐 감지된다. 세대를 넘어 꾸준히 재해석되고 있다.",
+      "en": "'Ouyang Nana Cello' (2015) is a defining musical work from East Asia that encapsulates the spirit of the 21st century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of East Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900246",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "우즈벡 수자니 자수",
+      "en": "Uzbek Suzani Embroidery"
+    },
+    "start_year": 1700,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 39.65,
+    "location_lng": 66.96,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "우즈베키스탄",
+      "en": "Uzbekistan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "우즈베키스탄의 전통 자수 직물 수자니. 꽃·석류 등 자연 문양의 화려한 수공예 예술이다.",
+      "en": "Traditional Uzbek suzani embroidery featuring vibrant floral and pomegranate motifs."
+    },
+    "description": {
+      "ko": "'우즈벡 수자니 자수'은(는) 1700년경 중앙아시아에서 창작된 미술 작품으로, 17세기의 시각 예술을 이해하는 데 중요한 열쇠이다. 이 작품에 담긴 조형미와 상징성은 당대 사회의 미적 이상을 반영한다. 후대 예술가들에게 지속적인 영향을 미쳤으며, 오늘날까지 미술사적 가치를 인정받고 있다. 세계 미술 유산의 중요한 일부이다.",
+      "en": "'Uzbek Suzani Embroidery' (1700) is a defining visual art work from Central Asia that encapsulates the spirit of the 17th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "ART_EA_900247",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "키아로스타미의 클로즈업",
+      "en": "Close-Up by Kiarostami"
+    },
+    "start_year": 1990,
+    "end_year": null,
+    "category": "영화",
+    "location_lat": 35.69,
+    "location_lng": 51.39,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "이란",
+      "en": "Iran"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "키아로스타미 감독의 다큐멘터리 드라마 '클로즈업'. 실제 사건을 재현한 혁신적 메타영화이다.",
+      "en": "Kiarostami's docudrama 'Close-Up' innovatively re-enacting a real incident."
+    },
+    "description": {
+      "ko": "'키아로스타미의 클로즈업'(Close-Up by Kiarostami)은(는) 1990년에 중앙아시아에서 만들어진 영화이다. 20세기 말의 영화 산업과 예술적 경향을 반영하면서도 독자적인 스타일을 확립했다. 이 영화의 주제 의식과 기술적 혁신은 영화사적으로 중요한 전환점을 마련했다.",
+      "en": "'Close-Up by Kiarostami' (1990) is a defining cinematic work from Central Asia that encapsulates the spirit of the late 20th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Central Asia."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART040",
+    "era_id": "era-early-modern",
+    "title": {
+      "ko": "아리타/이마리 도자기",
+      "en": "Arita/Imari Porcelain"
+    },
+    "start_year": 1616,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 33.19,
+    "location_lng": 129.87,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "규슈 아리타에서 시작된 일본 최초의 자기로, 유럽에 수출되어 큰 인기를 끌었다. 네덜란드 동인도회사를 통해 세계로 퍼졌다.",
+      "en": "Japan's first porcelain from Arita, Kyushu, hugely popular in Europe. Spread worldwide through the Dutch East India Company."
+    },
+    "description": {
+      "ko": "'아리타/이마리 도자기'(Arita/Imari Porcelain)은(는) 일본에서 1616년경에 탄생한 미술 작품이다. 17세기 특유의 미적 이상을 구현하면서도 독자적인 예술 세계를 구축했다. 재료의 사용과 표현 기법에서 당대 최고 수준의 장인 정신이 드러난다. 이 작품은 일본 미술 전통의 핵심을 보여주는 걸작으로 인정받고 있다.",
+      "en": "'Arita/Imari Porcelain' (1616) is a defining visual art work from Japan that encapsulates the spirit of the 17th century. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Japan."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "JPART080",
+    "era_id": "era-contemporary",
+    "title": {
+      "ko": "쿠사마 야요이",
+      "en": "Yayoi Kusama"
+    },
+    "start_year": 1958,
+    "end_year": null,
+    "category": "미술",
+    "location_lat": 35.68,
+    "location_lng": 139.69,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "modern_country": {
+      "ko": "일본",
+      "en": "Japan"
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "물방울 무늬와 호박 조각으로 유명한 세계에서 가장 영향력 있는 여성 예술가 중 한 명이다. 전위미술의 여왕으로 불린다.",
+      "en": "One of the world's most influential female artists, known for polka dots and pumpkin sculptures. Queen of avant-garde art."
+    },
+    "description": {
+      "ko": "일본의 '쿠사마 야요이'은(는) 1958년에 제작되어 전후 시기의 미술을 대표하는 작품이다. 시대적 배경과 문화적 맥락이 작품 전반에 깊이 스며들어 있으며, 예술적 표현의 새로운 가능성을 제시했다. 미술 애호가와 연구자 모두에게 높은 평가를 받는 작품이다.",
+      "en": "'Yayoi Kusama' (1958) is a defining visual art work from Japan that encapsulates the spirit of the postwar period. It combined technical mastery with profound thematic depth, setting a benchmark for excellence in its field. The work remains an essential reference point for understanding the cultural heritage of Japan."
+    },
+    "external_link": ""
   }
 ]
