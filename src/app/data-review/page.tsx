@@ -79,6 +79,7 @@ export default function DataReviewPage() {
   const [eraIdx, setEraIdx] = useState(0);
   const [categoryFilter, setCategoryFilter] = useState("전체");
   const [searchText, setSearchText] = useState("");
+  const [qualityFilter, setQualityFilter] = useState<"all" | "new" | "old">("all");
   const [sortKey, setSortKey] = useState<SortKey>("year_asc");
   const [page, setPage] = useState(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -128,6 +129,13 @@ export default function DataReviewPage() {
       result = result.filter((d) => d.category === categoryFilter);
     }
 
+    if (qualityFilter !== "all") {
+      result = result.filter((d) => {
+        const same = d.summary?.ko && d.description?.ko && d.summary.ko === d.description.ko;
+        return qualityFilter === "new" ? !same : same;
+      });
+    }
+
     if (searchText.trim()) {
       const q = searchText.trim().toLowerCase();
       result = result.filter(
@@ -139,7 +147,7 @@ export default function DataReviewPage() {
     }
 
     return result;
-  }, [allData, regionFilter, eraIdx, categoryFilter, searchText]);
+  }, [allData, regionFilter, eraIdx, categoryFilter, qualityFilter, searchText]);
 
   // 정렬
   const sorted = useMemo(() => {
@@ -286,6 +294,16 @@ export default function DataReviewPage() {
             <option value="title_desc" className="bg-gray-900">제목 ↓</option>
             <option value="region" className="bg-gray-900">지역순</option>
             <option value="category" className="bg-gray-900">카테고리순</option>
+          </select>
+
+          <select
+            value={qualityFilter}
+            onChange={(e) => { setQualityFilter(e.target.value as "all" | "new" | "old"); setPage(0); }}
+            className="rounded bg-white/10 border border-white/20 px-2 py-1.5 text-xs"
+          >
+            <option value="all" className="bg-gray-900">전체 데이터</option>
+            <option value="new" className="bg-gray-900">신규 (민철)</option>
+            <option value="old" className="bg-gray-900">기존 데이터</option>
           </select>
 
           <input
