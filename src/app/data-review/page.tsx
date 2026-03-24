@@ -380,11 +380,25 @@ export default function DataReviewPage() {
             ) : (
               <div className="space-y-3 text-xs">
                 <div>
-                  <h2 className="text-base font-bold">{titleText(selected.title)}</h2>
-                  {selected.title?.en && (
-                    <p className="text-white/50 mt-0.5">{selected.title.en}</p>
-                  )}
-                  <p className="text-white/40 mt-1 font-mono text-[10px]">ID: {selected.id}</p>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <h2 className="text-base font-bold">{titleText(selected.title)}</h2>
+                      {selected.title?.en && (
+                        <p className="text-white/50 mt-0.5">{selected.title.en}</p>
+                      )}
+                      <p className="text-white/40 mt-1 font-mono text-[10px]">ID: {selected.id}</p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        const text = `[${datasetKey}] ${titleText(selected.title)} (ID: ${selected.id})`;
+                        navigator.clipboard.writeText(text);
+                      }}
+                      className="shrink-0 rounded border border-white/20 px-2 py-1 text-[10px] text-white/60 hover:bg-white/10 hover:text-white active:bg-cyan-500/20 active:text-cyan-300 transition"
+                      title="제목+ID 복사"
+                    >
+                      복사
+                    </button>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
