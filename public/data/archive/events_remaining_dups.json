@@ -1,0 +1,450 @@
+[
+  {
+    "id": "Q233505",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "제2차 바르바리 전쟁",
+      "en": "Second Barbary War"
+    },
+    "start_year": 1815,
+    "end_year": 1815,
+    "category": "정치/전쟁",
+    "location_lat": 36.7529,
+    "location_lng": 3.042,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/DecaturOffAlgiers.jpg/330px-DecaturOffAlgiers.jpg",
+    "summary": {
+      "ko": "제2차 바르바리 전쟁은 1815년 미국과 알제리 간에 벌어진 전쟁으로, 19세기 초 북아프리카 바르바리 국가들과 미국 사이에 벌어진 두 번째 전쟁이다. 제1차 바르바리 전쟁에서 미국이 승리했으나, 미영 전쟁으로 혼란스러운 틈을 타 바르바리 국가들의 선박 약탈이 재개되었다. 이에 미국은 해군 원정을 통해 알제리를 비롯한 바르바리 국가들을 제압했다. 미국은 알",
+      "en": "The Second Barbary War was a conflict between the United States and Algeria in 1815, marking the second war between the U.S. and the Barbary states of North Africa. Following a period of renewed pirac"
+    },
+    "description": {
+      "ko": "제2차 바르바리 전쟁은 1815년 미국과 알제리 간에 벌어진 전쟁으로, 19세기 초 북아프리카 바르바리 국가들과 미국 사이에 벌어진 두 번째 전쟁이다. 제1차 바르바리 전쟁에서 미국이 승리했으나, 미영 전쟁으로 혼란스러운 틈을 타 바르바리 국가들의 선박 약탈이 재개되었다. 이에 미국은 해군 원정을 통해 알제리를 비롯한 바르바리 국가들을 제압했다. 미국은 알제리와 평화 조약을 체결하고 공납 폐지, 몸값 없는 포로 석방, 나포된 선박에 대한 배상금을 받아냈다. 또한 튀니스와 트리폴리에서도 유사한 성과를 거두었다. 이 전쟁의 성공은 신생 독립국인 미국의 위상을 높였으며, 유럽 국가들이 지중해 해적 활동 근절 정책으로 전환하는 계기가 되었다.",
+      "en": "The Second Barbary War was a conflict between the United States and Algeria in 1815, marking the second war between the U.S. and the Barbary states of North Africa. Following a period of renewed piracy after the First Barbary War, the U.S. launched a naval expedition to subdue the Barbary states. This campaign resulted in a peace treaty with Algiers and secured American maritime rights."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/%EC%A0%9C2%EC%B0%A8_%EB%B0%94%EB%A5%B4%EB%B0%94%EB%A6%AC_%EC%A0%84%EC%9F%81"
+  },
+  {
+    "id": "Q839710",
+    "era_id": "era-world-wars",
+    "title": {
+      "ko": "리디체 학살",
+      "en": "Lidice massacre"
+    },
+    "start_year": 1942,
+    "end_year": 1942,
+    "category": "정치/전쟁",
+    "location_lat": 50.11,
+    "location_lng": 14.19,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "1942년 6월 10일, 나치 독일이 라인하르트 하이드리히 암살에 대한 보복으로 체코슬로바키아 리디체 마을 주민들을 학살하고 마을을 파괴한 사건이다. 이 잔혹한 행위는 나치즘의 야만성을 전 세계에 알리고, 전쟁 범죄에 대한 국제적 비난을 고조시키는 상징적인 사건이 되었다.",
+      "en": "On June 10, 1942, Nazi Germany massacred the inhabitants of Lidice, Czechoslovakia, and destroyed the village in retaliation for the assassination of Reinhard Heydrich. This act became a symbol of Nazi barbarity and fueled international condemnation of war crimes."
+    },
+    "description": {
+      "ko": "1942년 6월 10일, 나치 독일이 라인하르트 하이드리히 암살(5월 27일)의 보복으로 체코슬로바키아 리디체 마을을 파괴했다. 남성 주민 184명이 즉결 처형됐고, 여성 184명은 강제수용소로 이송됐으며, 어린이 88명도 이송돼 대부분 가스실에서 처형됐다. 마을 건물은 모두 소각·파괴됐다.",
+      "en": "On June 10, 1942, Nazi Germany destroyed the Czech village of Lidice in reprisal for the assassination of Reinhard Heydrich on May 27. 184 male residents were shot; 184 women were sent to concentration camps; 88 children were deported, most killed in gas chambers. All village buildings were burned and demolished."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "Q4122023",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "비하치 포위전",
+      "en": "Siege of Bihać"
+    },
+    "start_year": 1992,
+    "end_year": 1995,
+    "category": "정치/전쟁",
+    "location_lat": 44.82,
+    "location_lng": 15.87,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Western_Bosnia_1994.png/330px-Western_Bosnia_1994.png",
+    "summary": {
+      "ko": "비하치 포위전은 1992년부터 1995년까지 보스니아 전쟁 중 발생한 사건이다. 피크레트 압디치가 이끄는 보스니아 반군과 스릅스카 공화국군, 세르비아 크라이나 공화국군이 3년간 비하치 마을을 포위했다. 포위전은 1992년 6월에 시작되어 1995년 8월 4~5일 크로아티아군의 폭풍 작전으로 종료되었다. 이 기간 동안 비하치 주민들은 전력과 수도 공급이 끊기",
+      "en": "The Siege of Bihać was a prolonged conflict during the Bosnian War from 1992 to 1995. Bosnian rebel forces, supported by Serb armies, besieged the town for three years, leading to severe humanitarian "
+    },
+    "description": {
+      "ko": "비하치 포위전은 1992년부터 1995년까지 보스니아 북서부 비하치 지역에서 보스니아 세르비아군이 유엔 안전구역으로 지정된 비하치 일대를 포위한 전쟁이다. 유엔은 1993년 비하치를 안전구역으로 지정했으나 세르비아군의 포격은 지속되었다. 1994년 11월 크라이나 세르비아 공화국 항공기가 클러스터 폭탄을 투하해 NATO 공습이 이루어졌다. 1995년 폭풍 작전으로 크로아티아군이 주변 세르비아 통제 지역을 탈환하면서 포위가 풀렸다. 포위 기간 수만 명의 민간인이 식량·의약품 부족으로 고통받았다.",
+      "en": "The Siege of Bihać lasted from 1992 to 1995 as Bosnian Serb forces encircled the Bihać pocket in northwestern Bosnia. The UN declared Bihać a safe area in 1993, but Serbian forces continued bombardment. In November 1994, Krajina Serb aircraft bombed Bihać with cluster munitions, provoking NATO airstrikes. Tens of thousands of civilians endured severe shortages of food and medicine. The siege was broken in August 1995 when Croatian forces liberated the surrounding Krajina region during Operation Storm. The enclave's survival was credited largely to ARBiH 5th Corps commander Atif Dudaković, whose forces repelled repeated assaults despite being surrounded on all sides."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/%EB%B9%84%ED%95%98%EC%B9%98_%ED%8F%AC%EC%9C%84%EC%A0%84_(1992%EB%85%84~1995%EB%85%84)"
+  },
+  {
+    "id": "Q705373",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "제3차 대만 해협 위기",
+      "en": "Third Taiwan Strait Crisis"
+    },
+    "start_year": 1995,
+    "end_year": 1996,
+    "category": "정치/전쟁",
+    "location_lat": 23.7,
+    "location_lng": 121,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "동남아시아",
+      "en": "Southeast Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Taiwan_ROC_political_division_map_Kinmen_County.svg/langko-330px-Taiwan_ROC_political_division_map_Kinmen_County.svg.png",
+    "summary": {
+      "ko": "제3차 대만 해협 위기는 1995년 7월부터 1996년 3월까지 대만 해협을 중심으로 중화인민공화국이 행한 일련의 미사일 실험으로 발생한 군사적 위기이다. 위기의 발단은 당시 대만 총통이었던 리덩후이가 모교인 코넬 대학교에서 연설 초청을 받으면서 시작되었다. 대만 독립을 추진한다고 주장하며 리덩후이의 미국 방문을 막으려던 중국은 미국이 결국 비자를 발급하자",
+      "en": "The Third Taiwan Strait Crisis was a military confrontation from July 1995 to March 1996, triggered by missile tests conducted by the People's Republic of China in the Taiwan Strait. The crisis escala"
+    },
+    "description": {
+      "ko": "제3차 대만 해협 위기는 1995년 7월부터 1996년 3월까지 중국이 대만의 첫 직선제 총통 선거를 앞두고 대만 주변 해역에 미사일을 발사하며 군사적 압박을 가한 사건이다. 중국은 대만 북단과 남단 해역에 미사일을 발사했다. 미국은 항공모함 2척을 대만 인근 해역에 파견해 중국을 견제했다. 위기는 대만의 민주화 진전과 리덩후이 총통의 미국 방문(코넬대 연설, 1995년 6월)에 대한 중국의 반발에서 비롯되었다. 리덩후이는 총통 선거에서 승리했다. 이 위기는 미-중 군사 관계의 긴장을 고조시켰고, 중국의 미사일 능력과 대만해협의 전략적 중요성에 대한 미국의 경각심을 높였다.",
+      "en": "The Third Taiwan Strait Crisis (1995–1996) was a period of military tensions when China conducted missile tests and military exercises in waters near Taiwan to intimidate voters ahead of Taiwan's first direct presidential election in March 1996. The crisis was triggered in part by Taiwan's President Lee Teng-hui's visit to Cornell University in June 1995, which China perceived as a step toward formal independence. China fired ballistic missiles into waters near Taiwan's major ports and conducted large-scale military exercises. The United States deployed two aircraft carrier battle groups to the region in the largest American naval mobilization in Asia since the Vietnam War. Lee Teng-hui won the election. The crisis increased U.S. awareness of China's growing missile capabilities and reinforced American commitment to Taiwan's security under the Taiwan Relations Act."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/%EC%A0%9C3%EC%B0%A8_%EB%8C%80%EB%A7%8C_%ED%95%B4%ED%98%91_%EC%9C%84%EA%B8%B0"
+  },
+  {
+    "id": "Q3362719",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "이글 어시스트 작전",
+      "en": "Operation Eagle Assist"
+    },
+    "start_year": 2001,
+    "end_year": 2002,
+    "category": "정치/전쟁",
+    "location_lat": 38.9047,
+    "location_lng": -77.0164,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/OperationEagleAssist.jpg",
+    "summary": {
+      "ko": "이글 어시스트 작전(Operation Eagle Assist)은 9월 11일 공격 이후 AWACS 항공기가 미국 상공을 순찰한 NATO 작전이었다.\n9·11 테러가 발생한 지 약 한 달 뒤인 10월 4일, 북대서양이사회는 북대서양 조약 제5조를 시행하기로 결정했다. 작전은 2001년 10월 9일에 시작되었다. 이는 \"회원국 중 하나를 방어하기 위한\" NAT",
+      "en": ""
+    },
+    "description": {
+      "ko": "이글 어시스트 작전(Operation Eagle Assist)은 9·11 테러 직후 NATO가 사상 최초로 NATO 조약 제5조(집단 자위 조항)를 발동해 미국 영공 방어를 지원한 작전이다. 2001년 10월부터 2002년 5월까지 NATO 회원국 소속 조기경보통제기(AWACS) 7대가 미국 영공 정찰과 방어 비행을 수행했다. NATO 역사상 처음으로 유럽 동맹국 항공기가 미국 방어를 위해 미국 영공에서 임무를 수행했다. 이 작전은 9·11에 대한 NATO의 집단 안보 약속 이행의 상징적 표현이었다.",
+      "en": "Operation Eagle Assist was NATO's first-ever invocation of Article 5 of the North Atlantic Treaty, the collective defense clause, in response to the September 11 attacks. From October 2001 to May 2002, seven NATO Airborne Warning and Control System (AWACS) aircraft from European member states flew air surveillance and defense missions over the continental United States. It was the first time in NATO history that European allies conducted air defense operations on behalf of the United States over American territory. The operation demonstrated Allied solidarity following the 9/11 attacks and provided tangible military support while the United States mobilized its own enhanced air defense posture."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EA%B8%80_%EC%96%B4%EC%8B%9C%EC%8A%A4%ED%8A%B8_%EC%9E%91%EC%A0%84"
+  },
+  {
+    "id": "Q109729533",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "2021년 솔로몬 제도 소요",
+      "en": "2021 Solomon Islands unrest"
+    },
+    "start_year": 2021,
+    "end_year": null,
+    "category": "정치/전쟁",
+    "location_lat": -9.43,
+    "location_lng": 160,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "오세아니아",
+      "en": "Oceania"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "2021년 솔로몬 제도 소요는 2021년 11월 24일 솔로몬 제도에서 시작된 연속적인 시위와 폭력 사태이다. 이 사건은 오랜 기간 지속된 인종 갈등과 중앙 정부에 대한 말레이타 주민들의 반감에서 비롯되었다. 2019년, 솔로몬 제도 정부가 중화민국과의 관계를 끊고 중화인민공화국과 수교한 결정이 갈등의 주요 원인 중 하나로 작용했다. 말레이타주는 이에 반발",
+      "en": "The 2021 Solomon Islands unrest was a series of protests and violent riots that began on November 24, 2021. The unrest stemmed from long-standing ethnic tensions and opposition to the central governme"
+    },
+    "description": {
+      "ko": "2021년 솔로몬 제도 소요는 2021년 11월 24일 말레이타주 주민들이 수도 호니아라에서 시위를 벌이며 시작되었다. 시위대는 이틀간 차이나타운과 주요 상업 지역을 불태우고 약탈하였다. 배경에는 말레이타주와 중앙 정부 간의 오랜 갈등, 2019년 중화민국(대만)에서 중화인민공화국으로의 외교 전환, 말레이타 자치 요구 등이 있었다. 호주가 경찰 및 군사력을 지원하기 위해 군대를 파견하였다. 솔로몬 제도 정부는 통행금지를 선포하였다.",
+      "en": "The 2021 Solomon Islands unrest began on November 24 when protesters from Malaita Province marched on the capital Honiara, accusing the central government of corruption and improper ties with China. Rioters burned and looted the Chinatown district and other commercial areas over two days, causing tens of millions of dollars in damage. The unrest reflected long-standing tensions between Malaita and the central government, rooted in anger over the government's 2019 diplomatic switch from Taiwan to the People's Republic of China — a move strongly opposed by Malaitan leaders. Australia, Papua New Guinea, and Fiji deployed security forces to assist. A curfew was imposed; three people died in the unrest."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/2021%EB%85%84_%EC%86%94%EB%A1%9C%EB%AA%AC_%EC%A0%9C%EB%8F%84_%EC%86%8C%EC%9A%94"
+  },
+  {
+    "id": "Q113635632",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "태풍 힌남노",
+      "en": "Typhoon Hinnamnor"
+    },
+    "start_year": 2022,
+    "end_year": 2022,
+    "category": "정치/전쟁",
+    "location_lat": 35.1796,
+    "location_lng": 129.0756,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "한국",
+      "en": "Korea"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Hinnamnor_2022-09-01_0220Z.jpg/330px-Hinnamnor_2022-09-01_0220Z.jpg",
+    "summary": {
+      "ko": "2022년 제11호 태풍 힌남노는 2022년 9월 6일 대한민국에 상륙한 태풍이다. 라오스에서 제출한 이름인 '힌남노'는 라오스의 국립보호구역을 의미한다. 태풍은 발생 이후 급발달하여 여러 차례 최성기를 맞이했으며, 9월 6일 경상남도 거제시에 상륙했다. 대한민국에서는 14명이 사망하고 6명이 부상당했으며, 전국적으로 6만 6천여 가구가 정전 피해를 입었다",
+      "en": "Typhoon Hinnamnor, the 11th typhoon of 2022, made landfall in South Korea on September 6, 2022. The typhoon caused significant damage, resulting in fatalities and widespread power outages. It also imp"
+    },
+    "description": {
+      "ko": "2022년 제11호 태풍 힌남노는 2022년 9월 6일 오전 대한민국 경상남도 거제시 부근에 중심기압 955hPa, 최대 풍속 110km/h로 상륙하였다. 포항에서 냉천이 범람하여 아파트 지하 주차장이 침수되며 7명이 사망하는 등 경북 동해안을 중심으로 11명이 사망하였다. 포항 제철소가 일부 침수 피해를 입어 철강 생산에 차질이 발생하였다. 일본 오키나와와 동해에서도 강풍과 폭우 피해가 발생하였다. 기상청은 50년 만의 역대급 태풍으로 평가하였다.",
+      "en": "Typhoon Hinnamnor made landfall near Geoje City, South Gyeongsang Province, South Korea, on September 6, 2022, with a central pressure of 955 hPa and sustained winds of 110 km/h. The typhoon caused catastrophic flooding in Pohang, where the Naengcheon stream overflowed, inundating underground parking garages and killing 7 people trapped inside — the deadliest single incident. South Korea recorded 11 deaths and over 1,000 households damaged. Pohang's POSCO steel mill sustained flood damage, disrupting steel production and supply chains. Hinnamnor was assessed by the Korea Meteorological Administration as one of the most powerful typhoons to strike the peninsula in 50 years. The storm also caused damage in Japan's Okinawa and on the Sea of Japan coast."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/%ED%83%9C%ED%92%8D_%ED%9E%8C%EB%82%A8%EB%85%B8"
+  },
+  {
+    "id": "Q120069037",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "2023년 프랑스 폭동",
+      "en": "Nahel Merzouk protests"
+    },
+    "start_year": 2023,
+    "end_year": 2023,
+    "category": "정치/전쟁",
+    "location_lat": 48.9,
+    "location_lng": 2.2,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Violences_urbaines_Nahel_Besan%C3%A7on-Planoise_29-06-2023_oufik-de-Planoise_1.jpg/330px-Violences_urbaines_Nahel_Besan%C3%A7on-Planoise_29-06-2023_oufik-de-Planoise_1.jpg",
+    "summary": {
+      "ko": "2023년 프랑스 폭동은 2023년 6월 27일 경찰관이 나헬 메르주크를 살해한 후 프랑스에서 발생한 일련의 폭동이다. 낭테르에서 주민들은 6월 27일 경찰 본부 밖에서 시위를 시작했고, 나중에 시위대가 차량에 불을 붙이고 버스 정류장을 파괴하고 경찰을 향해 폭죽을 쏘면서 폭동으로 확대되었다.\n\n\n== 외부 링크 ==\n 위키미디어 공용에 2023년 프랑스 ",
+      "en": ""
+    },
+    "description": {
+      "ko": "2023년 프랑스 폭동은 2023년 6월 27일 경찰관이 낭테르에서 교통 위반으로 차량을 정지시키는 과정에서 17세 알제리계 소년 나헬 메르주크를 총격 사살한 사건에서 비롯되었다. 이 사건 영상이 SNS에 유포되면서 파리 교외 지역에서 폭동이 발생하였고, 이후 프랑스 전역 200여 개 도시로 확산되었다. 6월 27일~7월 5일 약 6,000명이 체포되고 수천 대의 차량과 건물이 불탔다. 경찰관은 살인 혐의로 기소되었다. 이 사건은 이민자 집중 거주 지역에서의 경찰 폭력과 차별 문제를 전면에 부각시켰다.",
+      "en": "The 2023 French riots erupted on June 27 after police officer Florian M. fatally shot 17-year-old Nahel Merzouk, of Algerian descent, during a traffic stop in Nanterre. Video footage showing the officer firing at close range into the vehicle circulated widely, triggering immediate unrest. Riots spread within 24 hours from Paris suburbs across over 200 French cities and towns, lasting about a week. Approximately 6,000 people were arrested; thousands of vehicles and hundreds of buildings were set alight. Damage was estimated at over €1 billion. The officer was charged with voluntary homicide. The unrest reignited national debates about systemic racism, police violence, and the integration failures of France's suburban banlieues."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/2023%EB%85%84_%ED%94%84%EB%9E%91%EC%8A%A4_%ED%8F%AD%EB%8F%99"
+  },
+  {
+    "id": "Q122351413",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "2023년 마라케시사피 지진",
+      "en": "2023 Marrakesh-Safi earthquake"
+    },
+    "start_year": 2023,
+    "end_year": null,
+    "category": "자연재해",
+    "location_lat": 31.05,
+    "location_lng": -8.43,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "아프리카",
+      "en": "Africa"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Earthquake_impact_in_Tizi_N%27Test_17.jpg/330px-Earthquake_impact_in_Tizi_N%27Test_17.jpg",
+    "summary": {
+      "ko": "2023년 9월 8일 23시 11분, 모로코 마라케시사피 지방에서 규모 Mww6.8의 지진이 발생했다. 진앙은 마라케시 남서쪽 71.8km 지점의 아틀라스 산맥 이길 마을 근처로, 얕은 역단층에서 일어났다. 이 지진으로 2,946명 이상이 사망했으며, 대부분 마라케시 외곽 지역에서 발생했다. 마라케시의 건물과 역사적 명소도 손상되었다. 이번 지진은 1960",
+      "en": "The 2023 Marrakesh-Safi earthquake was a magnitude Mww6.8 earthquake that struck Morocco on September 8, 2023. Occurring near the Ighil village in the Atlas Mountains, it caused widespread damage and "
+    },
+    "description": {
+      "ko": "2023년 9월 8일 23시 11분, 모로코 마라케시사피 지방 아틀라스 산맥에서 규모 Mww6.8의 지진이 발생하였다. 진원 깊이 18.5km로 아틀라스 산맥의 얕은 역단층에서 발생하였다. 2,946명이 사망하고 5,600명 이상이 부상당하였다. 아틀라스 산맥 베르베르족 마을들이 집중 피해를 입었으며, 일부 마을은 70~90% 이상의 건물이 붕괴하였다. 피해액은 약 130억 달러로 추산되었다. 모로코 정부는 초기 국제 구호 제안을 제한적으로만 수용하여 비판을 받았다.",
+      "en": "The 2023 Marrakesh-Safi earthquake struck the Atlas Mountains of Morocco on September 8, 2023, at 11:11 p.m. local time. The magnitude Mww6.8 quake occurred at a shallow depth of 18.5 km on a previously uncharted thrust fault. It killed 2,946 people and injured over 5,600. Remote Berber mountain villages south of Marrakech bore the worst destruction — in some communities, over 70% of structures collapsed. The medina of Marrakech and its UNESCO World Heritage sites also sustained damage. Estimated economic losses reached approximately $13 billion. The Moroccan government controversially delayed accepting international search-and-rescue offers from some countries, drawing criticism that it slowed rescue operations during the critical 72-hour survival window."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/2023%EB%85%84_%EB%A7%88%EB%9D%BC%EC%BC%80%EC%8B%9C%EC%82%AC%ED%94%BC_%EC%A7%80%EC%A7%84"
+  },
+  {
+    "id": "Q125092492",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "2024년 크로쿠스 시티홀 테러",
+      "en": "Crocus City Hall attack"
+    },
+    "start_year": 2024,
+    "end_year": 2024,
+    "category": "정치/전쟁",
+    "location_lat": 55.8172,
+    "location_lng": 37.3725,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Interkomitet_crocus_hall_image.jpg/330px-Interkomitet_crocus_hall_image.jpg",
+    "summary": {
+      "ko": "2024년 3월 22일, 러시아 모스크바 외곽 크라스노고르스크에 위치한 크로쿠스 시티홀에서 대규모 총격 및 폭발 사건이 발생했다. 복면을 쓴 무장 괴한들이 콘서트홀에 모인 관객들에게 무차별 총격을 가했으며, 이로 인해 최소 137명이 사망하고 182명 이상이 부상당했다. 사건 발생 직전, 미국 대사관은 러시아 당국에 극단주의자들이 대규모 모임을 표적으로 삼",
+      "en": "On March 22, 2024, a mass shooting and bombing occurred at Crocus City Hall in Krasnogorsk, Russia. At least 137 people were killed and over 182 were injured. The Islamic State (IS) claimed responsibi"
+    },
+    "description": {
+      "ko": "2024년 3월 22일, 러시아 모스크바 외곽 크라스노고르스크의 크로쿠스 시티홀에서 총격 및 방화 테러가 발생하였다. 복면을 쓴 무장 괴한 4명이 콘서트홀 입구와 내부에서 무차별 총격을 가하고 건물에 불을 질렀다. 최소 145명이 사망하고 551명이 부상당하였다. IS-K(이슬람 국가 코라산 지부)가 범행을 주장하였다. 타지키스탄 국적의 용의자 4명이 체포되었다. 이는 현대 러시아 역사상 가장 치명적인 테러 공격으로 기록되었다.",
+      "en": "On March 22, 2024, four gunmen entered the Crocus City Hall concert venue in Krasnogorsk, near Moscow, and opened fire on concertgoers before setting the building ablaze. At least 145 people were killed and 551 injured, making it the deadliest terrorist attack in Russia in decades. The Islamic State's Khorasan branch (IS-K) claimed responsibility. Russian authorities arrested four Tajik nationals as the primary perpetrators, as well as several alleged accomplices. The attackers were captured while attempting to flee toward Ukraine — a detail Russian officials seized upon to suggest a Ukrainian link, though Western governments and IS itself maintained IS-K responsibility. President Putin initially deflected IS attribution, seeking to connect the attack to Ukraine without evidence."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/%ED%81%AC%EB%A1%9C%EC%BF%A0%EC%8A%A4_%EC%8B%9C%ED%8B%B0%ED%99%80_%ED%85%8C%EB%9F%AC"
+  },
+  {
+    "id": "Q137703947",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "2026년 이란 학살",
+      "en": "2026 Iran massacres"
+    },
+    "start_year": 2025,
+    "end_year": null,
+    "category": "정치/전쟁",
+    "location_lat": 35.6892,
+    "location_lng": 51.389,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중앙아시아",
+      "en": "Central Asia"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "2026년 이란 학살은 2025년 12월 말부터 이란 국가보안군이 2025년~2026년 이란 시위 기간 동안 반체제 인사들을 대량 학살한 것이다. 사망한 시위자의 수는 3,300명에서 20,000명에 이르는 것으로 추산되며, 이는 현대 이란 역사상 가장 큰 규모의 학살 중 하나다. HRANA에 따르면 약 135명의 보안 요원이 사망했다.\n이란 당국은 탄압 ",
+      "en": ""
+    },
+    "description": {
+      "ko": "2026년 이란 학살은 2025년 12월 말부터 이란 국가보안군이 2025~2026년 이란 시위 참가자들을 대량 처형한 사건이다. 사망자는 3,300~2만 명으로 추산되며, 국제 인권 단체들은 이를 이란 이슬람 공화국 역사상 최대 규모의 조직적 학살로 규정하였다. 이란 정부는 시위대를 외국의 사주를 받은 적대 세력으로 규정하고 법원 판결을 통한 집단 사형 집행을 자행하였다. 서방 국가들은 강력한 추가 제재를 부과하였다.",
+      "en": "The 2026 Iran massacres refer to the systematic mass execution of protesters and detainees by Iranian security forces beginning in late December 2025, as the government sought to violently suppress the ongoing 2025–2026 Iranian protests. Estimated death tolls ranged from 3,300 to 20,000, with the wide range reflecting restricted access for independent journalists and investigators. Iranian authorities processed thousands of detainees through summary judicial proceedings, issuing mass death sentences that were rapidly carried out. International human rights organizations, including Amnesty International and Human Rights Watch, described the events as the worst state-sponsored massacres in the Islamic Republic's history. Western governments imposed additional rounds of sanctions, and ICC referral discussions were initiated."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/2026%EB%85%84_%EC%9D%B4%EB%9E%80_%ED%95%99%EC%82%B4"
+  },
+  {
+    "id": "Q153122",
+    "era_id": "era-modern",
+    "title": {
+      "ko": "삼국 동맹 조약",
+      "en": "Tripartite Pact"
+    },
+    "start_year": 1940,
+    "end_year": 1945,
+    "category": "정치/외교",
+    "location_lat": 41.9028,
+    "location_lng": 12.4964,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "유럽",
+      "en": "Europe"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Tripartite_Pact_27_September_1940.jpg/330px-Tripartite_Pact_27_September_1940.jpg",
+    "summary": {
+      "ko": "삼국 동맹 조약은 1940년 9월 27일 나치 독일, 이탈리아 왕국, 일본 제국 세 나라가 독일 베를린에서 체결한 군사 동맹 조약이다. 이 조약은 제2차 세계 대전의 추축국을 형성하는 계기가 되었다. 조약의 배경에는 1936년 독일과 일본의 방공 협정, 1939년 독일과 이탈리아의 강철 조약 등이 있었다. 세 나라는 원래 소련에 대응하기 위한 군사 동맹을 ",
+      "en": "The Tripartite Pact was a military alliance signed on September 27, 1940, by Nazi Germany, the Kingdom of Italy, and the Empire of Japan. It formalized the Axis powers of World War II. The pact recogn"
+    },
+    "description": {
+      "ko": "삼국 동맹 조약은 1940년 9월 27일 나치 독일, 이탈리아 왕국, 일본 제국이 베를린에서 체결한 군사 동맹 조약으로, 제2차 세계 대전의 추축국 동맹의 기반이 되었다. 조약은 10년간의 군사·경제 협력을 규정하고, 각국이 타 서명국에 대한 공격을 받을 경우 상호 군사 지원 의무를 명시하였다. 이후 헝가리, 루마니아, 슬로바키아, 불가리아, 크로아티아 등 유럽 국가들도 가입하였다. 조약은 1945년 추축국의 패전으로 종료되었다.",
+      "en": "The Tripartite Pact was signed on September 27, 1940, by Nazi Germany, the Kingdom of Italy, and the Empire of Japan in Berlin, forming the core of the Axis Powers. The agreement provided for mutual military assistance if any signatory were attacked by a power not yet involved in the war — a provision aimed at deterring the United States. It built upon earlier agreements, including the 1936 Rome-Berlin Axis and the 1936 Anti-Comintern Pact. Hungary, Romania, Slovakia, Bulgaria, Yugoslavia, and Croatia subsequently acceded. The pact created a formal framework for Axis military cooperation across European and Pacific theaters. It remained the legal basis of the Axis alliance until the unconditional surrender of Germany in May 1945 and Japan in August 1945."
+    },
+    "external_link": "https://ko.wikipedia.org/wiki/%EC%82%BC%EA%B5%AD_%EB%8F%99%EB%A7%B9_%EC%A1%B0%EC%95%BD"
+  },
+  {
+    "id": "evt_1492_Columbus_Reaches_the_Americas",
+    "era_id": "era-medieval-late",
+    "title": {
+      "ko": "콜럼버스의 아메리카 도달",
+      "en": "Columbus Reaches the Americas"
+    },
+    "start_year": 1492,
+    "end_year": null,
+    "category": "정치/사건",
+    "location_lat": 24,
+    "location_lng": -74.5,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "1492년 10월 12일 크리스토퍼 콜럼버스가 카리브해 바하마 제도에 도달했다. 이는 유럽-아메리카 간 지속적인 접촉의 시작이 되었다. 콜럼버스의 항해는 신대륙과 구대륙 간의 생물·문화·인구의 대교환(콜럼버스 교환)을 촉발했다.",
+      "en": "On October 12, 1492, Christopher Columbus reached the Bahamas in the Caribbean. This marked the beginning of sustained contact between Europe and the Americas, triggering the Columbian Exchange — a massive transfer of plants, animals, cultures, and peoples between the New and Old Worlds."
+    },
+    "description": {
+      "ko": "1492년 10월 12일 크리스토퍼 콜럼버스가 카리브해 바하마 제도의 과나하니 섬(콜럼버스는 산살바도르로 명명)에 상륙했다. 스페인 왕실의 지원으로 90일간 대서양을 항해한 결과였다. 콜럼버스는 네 차례 항해(1492~1504년)에서 바하마·쿠바·이스파니올라·카리브해 소앤틸리스·중앙아메리카·베네수엘라 해안을 탐험했으나 아시아에 도달했다고 믿었다. 그의 도착 직후 원주민 타이노족은 노예 노동과 전염병으로 50년 안에 사실상 멸절되었다. 1493년 교황 알렉산데르 6세의 교황 칙서가 신세계를 스페인·포르투갈 간에 분할하는 토르데시야스 협상의 근거가 되었다.",
+      "en": "On October 12, 1492, Christopher Columbus landed on an island in the Bahamas he named San Salvador, 90 days after departing Spain with three ships and 90 men under the sponsorship of Queen Isabella and King Ferdinand. Columbus made four voyages (1492–1504), exploring the Bahamas, Cuba, Hispaniola, the Lesser Antilles, Central America, and the Venezuelan coast, but died convinced he had reached Asia. The indigenous Taíno people of Hispaniola, estimated at 250,000–500,000 at contact, were virtually exterminated within 50 years by Spanish forced labor, violence, and epidemic disease. Columbus's arrival initiated the Columbian Exchange — the unprecedented transfer of plants, animals, diseases, and people between hemispheres — and triggered European colonial expansion that permanently transformed both the Americas and the world."
+    },
+    "external_link": ""
+  },
+  {
+    "id": "evt_1816_Argentine_Independence",
+    "era_id": "era-industrial",
+    "title": {
+      "ko": "아르헨티나 독립",
+      "en": "Argentine Independence"
+    },
+    "start_year": 1816,
+    "end_year": null,
+    "category": "정치/사건",
+    "location_lat": -31.42,
+    "location_lng": -64.18,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "중남미",
+      "en": "Latin America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "1816년 7월 9일 투쿠만 의회에서 아르헨티나 연합주의 독립이 선언되었다. 이는 산 마르틴의 군사적 성과와 연계된 것으로, 이후 수십 년간 중앙집권파와 연방파 간의 내분이 이어졌으나 라플라타강 유역 국가들의 독립 기반이 되었다.",
+      "en": "On July 9, 1816, the Congress of Tucuman declared the independence of the United Provinces of the Rio de la Plata. Connected to San Martin's military campaigns, it was followed by decades of internal conflict between centralists and federalists but established the foundation for independence across the Rio de la Plata region."
+    },
+    "description": {
+      "ko": "1816년 7월 9일 투쿠만 의회에서 아르헨티나 연합주의 독립이 선언되었다. 1810년 부에노스아이레스 5월 혁명 이후 스페인으로부터의 자치가 시작되었으며, 1816년 완전 독립을 선언했다. 초대 총감독 마누엘 벨그라노가 아르헨티나 국기(파란색-하얀색)를 고안했다. 산 마르틴의 칠레·페루 원정이 독립 확보에 기여했다. 독립 이후 연방(부에노스아이레스 중심)와 연합(내지 주 중심) 간의 내전이 1861년까지 반복되었다. 1853년 연방 헌법이 제정되어 정치적 안정의 기반이 마련되었다.",
+      "en": "Argentine independence was declared by the Congress of Tucumán on July 9, 1816. The process began with the May Revolution of 1810 in Buenos Aires, which established a local governing junta while nominally maintaining loyalty to the deposed Spanish king. Manuel Belgrano, who designed the Argentine flag's blue-and-white colors in 1812, served as an early military leader. San Martín's Andean campaigns to liberate Chile and Peru secured the strategic position of the Argentine state against potential Spanish reconquest. After independence, Argentina was torn by conflict between Unitarians (favoring Buenos Aires-centered centralism) and Federalists (favoring provincial autonomy), producing decades of civil war until the 1853 Constitution established a federal framework and Buenos Aires province's eventual incorporation in 1862."
+    },
+    "external_link": ""
+  }
+]

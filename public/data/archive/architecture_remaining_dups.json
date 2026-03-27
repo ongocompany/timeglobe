@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Q875265",
+    "era_id": "era-cold-war",
+    "title": {
+      "ko": "홀로코스트 기념관",
+      "en": "Holocaust Memorial Center"
+    },
+    "start_year": 2004,
+    "end_year": null,
+    "category": "건축/유물",
+    "location_lat": 42.5024,
+    "location_lng": -83.359,
+    "is_fog_region": false,
+    "historical_region": {
+      "ko": "북미",
+      "en": "North America"
+    },
+    "modern_country": {
+      "ko": "",
+      "en": ""
+    },
+    "image_url": "",
+    "summary": {
+      "ko": "헝가리 부다페스트에 위치한 홀로코스트 기념 박물관으로, 제2차 세계대전 중 헝가리 유대인 학살의 역사를 기록하고 추모하는 시설이다.",
+      "en": "The Holocaust Memorial Center in Budapest, Hungary, a museum documenting and commemorating the persecution of Hungarian Jews during World War II."
+    },
+    "description": {
+      "ko": "헝가리 부다페스트에 위치한 홀로코스트 기념 박물관으로, 2004년 개관했다. 헝가리계 유대인 55만 명 이상이 학살된 홀로코스트의 역사를 다루며, 개인화된 희생자 기록과 시청각 증언 등 독창적인 전시 방식이 특징이다. 원래 신고전주의 양식 건물인 파바 거리 회당을 포함한 복합 시설로 조성되었다.",
+      "en": "The Holocaust Memorial Center (Holokauszt Emlékközpont) in Budapest opened on April 4, 2004 — the 59th anniversary of Hungary's liberation from Nazi occupation. It is the first state-supported Holocaust museum in Central and Eastern Europe. The center documents the persecution and genocide of Hungarian Jews and Roma: over 550,000 Hungarian Jews were deported, primarily to Auschwitz-Birkenau, in 1944. The complex incorporates the restored Páva Street Synagogue (1924), a Neoclassical building, alongside a modern exhibition wing designed by István Mányi. The permanent exhibition uses individual victim records and multimedia testimony to create a personalized narrative of the genocide."
+    },
+    "external_link": ""
+  }
+]
